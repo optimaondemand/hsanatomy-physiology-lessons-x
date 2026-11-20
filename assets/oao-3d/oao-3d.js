@@ -89,7 +89,8 @@
     cover.appendChild(el('span', { 'class': 'oao-3d-play' }, '<span class="tri" aria-hidden="true"></span>Open the 3D model'));
     stage.appendChild(cover);
     var foot = el('div', { 'class': 'oao-3d-foot' },
-      'Drag to turn it. Scroll or pinch to zoom. Right-drag or two-finger drag to move it.' +
+      'Drag to turn it. Scroll or pinch to zoom. <strong>Double-click (or double-tap) any spot to center on it and zoom in</strong>; ' +
+      'right-drag or two-finger drag to slide it. Reset view goes back to the start.' +
       (d.identify === 'off' ? '' : ' <strong>Tap any part to see its name.</strong>') +
       (d.credit ? ' ' + d.credit : ' 3D model by Alensia.'));
     card.appendChild(head); card.appendChild(stage); card.appendChild(foot);
@@ -104,8 +105,8 @@
       var mv = el('model-viewer', {
         src: d.src, alt: d.alt || d.title || '3D model',
         'camera-controls': '', 'auto-rotate': '', 'auto-rotate-delay': '2500', 'rotation-per-second': '20deg',
-        'touch-action': 'pan-y', 'shadow-intensity': '1', 'exposure': '1.05', 'interaction-prompt': 'none',
-        'min-camera-orbit': 'auto auto 5%', 'max-camera-orbit': 'auto auto 250%'
+        'touch-action': 'pan-y', 'shadow-intensity': '1', 'exposure': '1.05', 'interaction-prompt': 'none', 'interpolation-decay': '120', 'disable-tap': '',
+        'min-camera-orbit': 'auto auto 2%', 'max-camera-orbit': 'auto auto 250%'
       });
       if (d.orbit) { mv.setAttribute('camera-orbit', d.orbit); }
       var name = el('div', { 'class': 'oao-3d-name', 'aria-live': 'polite' });
@@ -129,33 +130,59 @@
         spin.textContent = on ? 'Spin' : 'Pause spin'; spin.setAttribute('aria-pressed', String(!on));
       });
       reset.addEventListener('click', function () {
-        mv.cameraOrbit = d.orbit || '0deg 75deg 105%'; mv.cameraTarget = 'auto auto auto'; mv.fieldOfView = 'auto';
-        mv.jumpCameraToGoal && mv.jumpCameraToGoal(); clearPick();
+        mv.cameraOrbit = d.orbit || '0deg 75deg auto'; mv.cameraTarget = 'auto auto auto'; mv.fieldOfView = 'auto';
+        clearPick();
       });
       full.addEventListener('click', function () {
         if (document.fullscreenElement) document.exitFullscreen(); else stage.requestFullscreen().catch(function () {});
       });
 
-      // Tap to identify (Sketchfab-style): each part's material is named after the structure.
-      var picked = null, down = null, timer = null;
+      // Click handling (Sketchfab-style):
+      //   single tap  -> show the part's name (each part's material is named after the structure)
+      //   double tap  -> move the turning point to that spot and zoom in on it
+      var picked = null, down = null, timer = null, lastTap = 0, lastXY = null;
       function clearPick() {
         if (picked) { try { picked.setEmissiveFactor([0, 0, 0]); } catch (e) {} picked = null; }
         name.classList.remove('on');
       }
-      if (d.identify !== 'off') {
-        mv.addEventListener('pointerdown', function (e) { down = [e.clientX, e.clientY]; });
-        mv.addEventListener('click', function (e) {
-          if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) return; // that was a drag
-          var m = mv.materialFromPoint(e.clientX, e.clientY);
-          if (!m || (m.__oaoHidden)) { clearPick(); return; }
-          if (picked && picked !== m) { try { picked.setEmissiveFactor([0, 0, 0]); } catch (er) {} }
-          picked = m;
-          try { m.setEmissiveFactor([0.28, 0.2, 0.02]); } catch (er) {}
-          name.textContent = m.name || 'Unnamed part';
-          name.classList.add('on');
-          clearTimeout(timer); timer = setTimeout(function () { name.classList.remove('on'); }, 6000);
-        });
+      function stopSpin() {
+        if (mv.hasAttribute('auto-rotate')) { mv.removeAttribute('auto-rotate'); spin.textContent = 'Spin'; spin.setAttribute('aria-pressed', 'false'); }
       }
+      function focusAt(x, y) {
+        var hit = mv.positionAndNormalFromPoint(x, y);
+        if (!hit) return false;
+        var p = hit.position, o = mv.getCameraOrbit();
+        stopSpin();
+        mv.cameraTarget = p.x + 'm ' + p.y + 'm ' + p.z + 'm';
+        mv.cameraOrbit = o.theta + 'rad ' + o.phi + 'rad ' + (o.radius * 0.35) + 'm';
+        return true;
+      }
+      function identify(x, y) {
+        var m = mv.materialFromPoint(x, y);
+        if (!m || m.__oaoHidden) { clearPick(); return; }
+        if (picked && picked !== m) { try { picked.setEmissiveFactor([0, 0, 0]); } catch (er) {} }
+        picked = m;
+        try { m.setEmissiveFactor([0.28, 0.2, 0.02]); } catch (er) {}
+        name.textContent = m.name || 'Unnamed part';
+        name.classList.add('on');
+        clearTimeout(timer); timer = setTimeout(function () { name.classList.remove('on'); }, 6000);
+      }
+      // Use pointer events, not 'click': on touch screens the viewer swallows the click.
+      mv.addEventListener('pointerdown', function (e) { if (e.isPrimary) down = [e.clientX, e.clientY, Date.now()]; });
+      mv.addEventListener('pointerup', function (e) {
+        if (!e.isPrimary || !down) return;
+        var moved = Math.hypot(e.clientX - down[0], e.clientY - down[1]), held = Date.now() - down[2];
+        down = null;
+        if (moved > 8 || held > 500 || e.button > 0) return; // a drag, a long press or a right-click
+        var now = Date.now();
+        if (now - lastTap < 400 && lastXY && Math.hypot(e.clientX - lastXY[0], e.clientY - lastXY[1]) < 30) {
+          lastTap = 0; focusAt(e.clientX, e.clientY); return;
+        }
+        lastTap = now; lastXY = [e.clientX, e.clientY];
+        if (d.identify !== 'off') identify(e.clientX, e.clientY);
+      });
+      mv.addEventListener('pointercancel', function () { down = null; });
+      mv.addEventListener('dblclick', function (e) { e.preventDefault(); });
 
       stage.innerHTML = '';
       stage.appendChild(mv); stage.appendChild(name); stage.appendChild(bar);
