@@ -60,6 +60,13 @@
     '.oao-3d-planes{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;flex-wrap:wrap}',
     '.oao-3d-planes button[aria-pressed="false"]{opacity:.55;text-decoration:line-through}',
     '.oao-3d-planes .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}',
+    '.oao-3d-move{position:absolute;left:10px;bottom:10px;max-width:62%;background:rgba(255,255,255,.94);border:1px solid #C9D2E3;border-radius:12px;padding:8px 10px;font-size:13px;color:' + NAVY + '}',
+    '.oao-3d-move .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}',
+    '.oao-3d-move .lbl{font-size:11px;color:' + GOLD + ';letter-spacing:.04em;margin-bottom:4px}',
+    '.oao-3d-move button{font:inherit;font-size:12px;border:1px solid #C9D2E3;background:#fff;color:' + NAVY + ';padding:4px 9px;border-radius:14px;cursor:pointer}',
+    '.oao-3d-move button[aria-pressed="true"]{background:' + NAVY + ';color:#fff;border-color:' + NAVY + '}',
+    '.oao-3d-move input[type=range]{width:220px;max-width:100%;accent-color:' + NAVY + ';margin:6px 0 0}',
+    '@media (max-width:600px){.oao-3d-move{max-width:calc(100% - 20px);bottom:52px}.oao-3d-move input[type=range]{width:100%}}',
     '.oao-3d-name{position:absolute;left:50%;top:12px;transform:translateX(-50%);max-width:90%;background:' + NAVY + ';color:#fff;font-size:15px;padding:7px 14px;border-radius:18px;box-shadow:0 3px 10px rgba(0,0,0,.2);pointer-events:none;opacity:0;transition:opacity .15s;text-align:center}',
     '.oao-3d-name.on{opacity:1}',
     '.oao-3d-author{position:absolute;left:10px;top:10px;font:12px/1.4 monospace;background:rgba(255,255,255,.95);border:1px dashed ' + GOLD + ';padding:6px 8px;border-radius:6px;color:#333;max-width:70%}',
@@ -185,7 +192,7 @@
         src: m.src, alt: m.alt || m.label || card.dataset.title || '3D model',
         'camera-controls': '', 'auto-rotate-delay': '2500', 'rotation-per-second': '20deg',
         'touch-action': 'pan-y', 'shadow-intensity': '1', 'exposure': '1.05', 'interaction-prompt': 'none',
-        'interpolation-decay': '120', 'disable-tap': '',
+        'interpolation-decay': '120', 'disable-tap': '', 'animation-crossfade-duration': '0',
         'min-camera-orbit': 'auto auto 2%', 'max-camera-orbit': 'auto auto 250%'
       });
       if (m.spin !== 'off') mv.setAttribute('auto-rotate', '');
@@ -207,7 +214,10 @@
         stage.innerHTML = '<div class="oao-3d-msg">The 3D model couldn’t load. Reload the page to try again.</div>';
         card.__mv = null; if (openCard === card) openCard = null;
       });
-      mv.addEventListener('load', function () { if (m.planes === 'on') addPlanes(mv, stage); });
+      mv.addEventListener('load', function () {
+        if (m.planes === 'on') addPlanes(mv, stage);
+        if ((mv.availableAnimations || []).length) addMotion(mv, stage, stopSpin);
+      });
 
       function stopSpin() {
         if (mv.hasAttribute('auto-rotate')) { mv.removeAttribute('auto-rotate'); spin.textContent = 'Spin'; spin.setAttribute('aria-pressed', 'false'); }
@@ -275,6 +285,44 @@
       showCover(card);
       var p = stage.querySelector('.oao-3d-play'); if (p) p.lastChild.textContent = 'The 3D model couldn’t load. Tap to try again.';
     });
+  }
+
+  // Moving joints: the model carries "there-and-back" clips (0 -> end -> 0 over its duration).
+  // A clip named "Label@0.46" rests at 46% of the way (used for rotations that go both ways).
+  function addMotion(mv, stage, stopSpin) {
+    var clips = mv.availableAnimations.map(function (n) { var p = n.split('@'); return { name: n, label: p[0], rest: p[1] ? parseFloat(p[1]) : 0 }; });
+    var box = el('div', { 'class': 'oao-3d-move', role: 'group', 'aria-label': 'Move the joint' });
+    box.appendChild(el('div', { 'class': 'lbl' }, 'MOVE THE JOINT'));
+    var row = el('div', { 'class': 'row' }); box.appendChild(row);
+    var btns = [], cur = null, playing = false, raf = 0;
+    var slider = el('input', { type: 'range', min: '0', max: '1000', value: '0', 'aria-label': 'Joint position' });
+    var play = el('button', { type: 'button', 'aria-pressed': 'false', title: 'Play the movement' }, '&#9654; Play');
+    function half() { return (mv.duration || 4) / 2; }
+    function setPose(f) { mv.pause(); mv.currentTime = Math.max(0, Math.min(1, f)) * half(); }
+    function stopPlay() { if (!playing) return; playing = false; mv.pause(); cancelAnimationFrame(raf); play.setAttribute('aria-pressed', 'false'); play.innerHTML = '&#9654; Play'; }
+    function select(c) {
+      stopPlay(); cur = c;
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.__clip === c)); });
+      slider.setAttribute('aria-label', c.label);
+      mv.animationName = c.name;
+      // the clip must start once before its frames can be set
+      Promise.resolve().then(function () { mv.play(); setPose(c.rest); slider.value = String(Math.round(c.rest * 1000)); });
+    }
+    if (clips.length > 1) clips.forEach(function (c) {
+      var b = el('button', { type: 'button', 'aria-pressed': 'false' }); b.textContent = c.label; b.__clip = c;
+      b.addEventListener('click', function () { stopSpin(); select(c); }); btns.push(b); row.appendChild(b);
+    });
+    else { var t = el('span'); t.textContent = clips[0].label; row.appendChild(t); }
+    row.appendChild(play); box.appendChild(slider);
+    slider.addEventListener('input', function () { stopSpin(); stopPlay(); setPose(slider.value / 1000); });
+    play.addEventListener('click', function () {
+      if (playing) { stopPlay(); return; }
+      stopSpin(); playing = true; play.setAttribute('aria-pressed', 'true'); play.innerHTML = '&#10074;&#10074; Pause';
+      mv.play();
+      (function tick() { var d = mv.duration || 4, t = mv.currentTime % d; slider.value = String(Math.round((t <= d / 2 ? t : d - t) / (d / 2) * 1000)); raf = requestAnimationFrame(tick); })();
+    });
+    stage.appendChild(box);
+    select(clips[0]);
   }
 
   function addPlanes(mv, stage) {
