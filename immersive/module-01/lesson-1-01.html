@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Phyllis">
+<title>Levels of Organization · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- L1 Levels of Organization ---- */
+.l1-fig{width:100%;height:auto;display:block}
+.l1-h{font:700 15px/1 "JetBrains Mono",monospace;letter-spacing:.06em}
+.l1-s{font:600 16px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.l1-fs text{font:700 16px/1 "Space Grotesk",sans-serif}
+@media (max-width:600px){ .l1-fs text{font-size:20px} }
+
+/* teacher card 01 */
+.l1-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.l1-q{background:#fff;border:1.5px solid var(--line2);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.l1-q b{font:700 19px/1.25 var(--disp)}
+.l1-q.ana{border-top:4px solid var(--blue)} .l1-q.phy{border-top:4px solid var(--red)}
+.l1-q.phy .cat{color:var(--red)} .l1-q.ana .cat{color:var(--blue)}
+.l1-sub{font:15px/1.4 var(--serif);color:var(--muted)}
+.l1-heart{margin:14px auto 0;max-width:420px}
+.l1-heart svg{width:100%;height:auto;display:block}
+.l1-shapes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.l1-shape{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.l1-shape svg{width:100%;max-width:150px;height:auto;margin:0 auto}
+.l1-shape b{font:700 15px/1.3 var(--ui)} .l1-shape span{font:15px/1.3 var(--serif);color:var(--red)}
+.l1-ask{margin-top:14px;font:600 18px/1.4 var(--disp);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+@media (max-width:600px){ .l1-two{grid-template-columns:1fr} .l1-shapes{grid-template-columns:1fr} .l1-shape{flex-direction:row;align-items:center;text-align:left;gap:10px} .l1-shape svg{width:96px;flex:none;margin:0} }
+
+/* ladder */
+.l1-ladder{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.l1-ladder li{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-left:8px solid var(--c);border-radius:10px;padding:9px 12px}
+.l1-ladder .lv{font:700 17px/1.2 var(--disp);min-width:9.5em;color:var(--c)}
+.l1-ladder .can{font:16px/1.35 var(--serif);color:var(--ink2)}
+.l1-up{margin-top:10px}
+@media (max-width:600px){ .l1-ladder li{flex-direction:column;align-items:flex-start;gap:2px} .l1-ladder .lv{min-width:0} }
+
+/* video facade */
+.l1-yt{display:flex;align-items:center;gap:12px;width:100%;max-width:520px;aspect-ratio:16/9;margin:6px 0 0;border:0;border-radius:12px;cursor:pointer;
+  background:#0B1B33 center/cover no-repeat;color:#fff;font:600 16px/1.2 var(--ui);justify-content:center;position:relative;overflow:hidden}
+.l1-yt::before{content:"";position:absolute;inset:0;background:rgba(5,14,30,.45)}
+.l1-yt > *{position:relative}
+.l1-yt-play{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--red);font-size:22px}
+.l1-ytf{width:100%;max-width:720px;aspect-ratio:16/9;border:0;border-radius:12px;margin-top:6px;display:block}
+
+/* zoom bench */
+.l1z-view{position:relative;aspect-ratio:4/3;max-width:520px;margin:0 auto;background:#F6F9FC;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.l1z-scene{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:scale(.55);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.l1z-scene.on{opacity:1;transform:scale(1)}
+.l1z-scene.past{opacity:0;transform:scale(2.2)}
+.l1z-can{font:600 19px/1.4 var(--disp);text-align:center;margin:14px 0 6px;min-height:2.8em}
+.l1z-can small{display:block;font:15px/1.4 var(--serif);color:var(--muted);font-weight:400}
+.l1z-ctl{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap}
+.l1z-range{flex:1;min-width:140px;max-width:280px;direction:rtl}
+
+/* six-bin sorter: 3 columns on desktop, 2 on phone */
+.l1-six .bins{grid-template-columns:repeat(3,1fr)}
+@media (max-width:600px){ .l1-six .bins{grid-template-columns:repeat(2,1fr)} .l1-jobs .bins{grid-template-columns:1fr} }
+.bin h4 small{font:500 12.5px/1 var(--mono);color:var(--muted);margin-left:6px}
+
+/* teacher card 03 */
+.l1-count{display:flex;gap:12px;flex-wrap:wrap}
+.l1-big{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;flex:1;min-width:120px}
+.l1-big b{display:block;font:700 26px/1.1 var(--disp);color:var(--red)} .l1-big span{font:15px/1.3 var(--serif);color:var(--muted)}
+.l1-ruler{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.l1-rbcs{height:22px;border-radius:4px;background-image:radial-gradient(circle at 50% 50%,#E9A3B0 0 2.5px,#C22F4A 3px 5.5px,transparent 6px);background-size:12px 22px;background-repeat:repeat-x}
+.l1-tick{display:flex;justify-content:space-between;border-top:2px solid var(--ink);margin-top:6px;padding-top:4px;font:600 13px/1 var(--mono)}
+.l1-rnote{margin-top:8px;font:15px/1.4 var(--serif);color:var(--ink2)}
+.l1-dna{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.l1-cellchip{font:600 15px/1 var(--ui);border-radius:999px;padding:8px 12px;color:#fff}
+.l1-cellchip.mus{background:var(--red)} .l1-cellchip.neu{background:var(--blue)}
+
+/* line them up */
+.l1l-track{position:relative;height:44px;background:#F6F9FC;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.l1l-fill{position:absolute;left:0;top:0;bottom:0;width:0;background-image:radial-gradient(circle at 50% 50%,#E9A3B0 0 3px,#C22F4A 3.5px 7px,transparent 7.5px);background-size:16px 44px;background-repeat:repeat-x;transition:width .15s}
+.l1l-inch{position:absolute;top:0;bottom:0;border-right:3px solid var(--blue)}
+.l1l-inch span{position:absolute;right:6px;top:4px;font:600 12.5px/1 var(--mono);color:var(--blue);white-space:nowrap}
+.l1l-range{width:100%}
+.l1-line.hit .l1l-read{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+
+/* my six levels */
+.l1-mine{display:flex;flex-direction:column;gap:8px}
+.l1m-row{display:grid;grid-template-columns:9.5em 1fr;gap:10px;align-items:center;border-left:6px solid var(--c);padding-left:10px}
+.l1m-row label{font:700 16px/1.2 var(--disp);color:var(--c)}
+.l1m-row input{width:100%}
+@media (max-width:600px){ .l1m-row{grid-template-columns:1fr;gap:4px} }
+
+/* report */
+.l1r-total{align-self:center}
+.l1r-total.met{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.l1r-pick button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.l1r-lv{display:grid;grid-template-columns:11em 1fr;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.l1r-lv:last-of-type{border-bottom:0}
+.l1r-lv textarea{margin:0}
+@media (max-width:600px){ .l1r-lv{grid-template-columns:1fr} }
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="Fluorescence micrograph of developing muscle cells: long red fibers dotted with blue nuclei" style="background-image:url(img/lesson-1-01-hero.jpg)"><span class="hlab">Skeletal muscle cells · fluorescence</span><span class="hcred">Image: NASA Johnson Space Center, Public domain, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Introduction</div>
+      <h1>Levels of Organization</h1>
+      <div class="focusq"><div class="label">Focus</div><p>How does the level of organization at which we choose to study a body part change what we can understand about it?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to distinguish anatomy from physiology and explain why neither can be fully understood without the other.</li>
+        <li>I will be able to name the six levels of structural organization of the human body, in order, and give one example of each from my own body.</li>
+        <li>I will be able to explain &ldquo;form follows function&rdquo; in my own words, using one specific anatomical example.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Six levels &middot; one body</div>
+      <svg class="l1-fig" viewBox="0 0 360 262" role="img" aria-label="Six stacked levels, each built from the one below: chemical, cellular, tissue, organ, organ system, organismal">
+        <g class="l1-fs">
+          <rect x="105" y="8" width="150" height="34" rx="8" fill="#0B1B33"/><text x="180" y="31" text-anchor="middle" fill="#fff">organismal</text>
+          <rect x="100" y="50" width="160" height="34" rx="8" fill="#0B6E7F"/><text x="180" y="73" text-anchor="middle" fill="#fff">organ system</text>
+          <rect x="80" y="92" width="200" height="34" rx="8" fill="#2C8C9C"/><text x="180" y="115" text-anchor="middle" fill="#fff">organ</text>
+          <rect x="60" y="134" width="240" height="34" rx="8" fill="#C22F4A"/><text x="180" y="157" text-anchor="middle" fill="#fff">tissue</text>
+          <rect x="40" y="176" width="280" height="34" rx="8" fill="#D9667B"/><text x="180" y="199" text-anchor="middle" fill="#fff">cellular</text>
+          <rect x="20" y="218" width="320" height="34" rx="8" fill="#E3E8EF"/><text x="180" y="241" text-anchor="middle" fill="#0B1B33">chemical</text>
+        </g>
+      </svg>
+      <div class="cap">Each level is built from the level below.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="form" role="tab"><span class="n">01</span>Structure and Function</button>
+  <button class="tab" data-tab="levels" role="tab"><span class="n">02</span>Six Levels</button>
+  <button class="tab" data-tab="systems" role="tab"><span class="n">03</span>Why Systems</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 STRUCTURE AND FUNCTION ═════════ -->
+<section class="panel" id="tab-form" role="tabpanel">
+  <div class="vo" data-clip="v_two">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Two Questions About Every Part</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage">
+      <div class="l1-two">
+        <div class="l1-q ana" data-step="0"><div class="cat">Anatomy &middot; Greek <i>anatom&#275;</i></div><b>What is it? Where does it sit?</b><span data-step="1" class="l1-sub">&ldquo;a cutting up&rdquo;: learned by dissection</span></div>
+        <div class="l1-q phy" data-step="2"><div class="cat">Physiology &middot; Greek <i>physis</i></div><b>What does it do?</b><span class="l1-sub">&ldquo;nature&rdquo; + -ology, &ldquo;the study of&rdquo;</span></div>
+      </div>
+      <div class="l1-heart" data-step="3">
+        <svg viewBox="0 0 340 120" role="img" aria-label="To explain how a heart pumps, you need the shape of its four chambers and the angle of its valves">
+          <g transform="translate(72 62)"><path d="M-14 -46V-56M8 -46V-58M24 -44V-52" stroke="#9E2239" stroke-width="7" stroke-linecap="round"/><path d="M-42 -28Q-44 -46 -24 -46H24Q46 -46 46 -24Q46 8 8 46Q-2 54 -12 44Q-46 8 -42 -28Z" fill="#C22F4A"/><path d="M2 -44V38" stroke="#fff" stroke-width="3"/><path d="M-42 -14H-30M-12 -14H16M32 -14H44" stroke="#fff" stroke-width="3"/><path d="M-30 -14l7 9M-12 -14l-7 9M16 -14l7 9M32 -14l-7 9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></g>
+          <text x="140" y="44" class="l1-s">pumps blood</text>
+          <text x="140" y="66" class="l1-s" fill="#0B6E7F">needs: four chambers</text>
+          <text x="140" y="88" class="l1-s" fill="#0B6E7F">and the angle of its valves</text>
+        </svg>
+      </div>
+      <div class="l1-shapes">
+        <div class="l1-shape" data-step="5">
+          <svg viewBox="0 0 120 70" aria-hidden="true"><rect x="10" y="30" width="100" height="12" rx="6" fill="#D9CFC0"/><circle cx="12" cy="36" r="10" fill="#D9CFC0"/><circle cx="108" cy="36" r="10" fill="#D9CFC0"/><path d="M60 52l-12 14h24z" fill="#0B6E7F"/><path d="M20 18q40 -20 80 0" stroke="#C22F4A" stroke-width="3" fill="none"/><path d="M96 12l6 7 -9 2" fill="#C22F4A"/></svg>
+          <b>long, narrow bone</b><span>leverage</span></div>
+        <div class="l1-shape" data-step="5">
+          <svg viewBox="0 0 120 70" aria-hidden="true"><ellipse cx="60" cy="48" rx="30" ry="14" fill="#F2B8C3"/><path d="M18 40q42 -42 84 0" fill="none" stroke="#D9CFC0" stroke-width="12" stroke-linecap="round"/></svg>
+          <b>flat bone</b><span>protects what is underneath</span></div>
+        <div class="l1-shape" data-step="6">
+          <svg viewBox="0 0 120 70" aria-hidden="true"><rect x="6" y="8" width="108" height="54" rx="10" fill="#E0F1F3"/><path d="M14 54V36q4 -12 8 0v18M30 54V30q4 -12 8 0v24M46 54V34q4 -12 8 0v20M62 54V28q4 -12 8 0v26M78 54V34q4 -12 8 0v20M94 54V30q4 -12 8 0v24" fill="#C22F4A" stroke="#C22F4A" stroke-width="2"/></svg>
+          <b>tube with a folded lining</b><span>more surface for absorption</span></div>
+      </div>
+      <div class="l1-ask" data-step="4 6"><span class="readout">Ask of every new structure</span> What is this shape good at?</div>
+    </div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps":[
+      "Anatomy is the study of the body's structures: what each part is, where it sits, and how it relates to everything around it.",
+      "The word comes from the Greek anatome, a cutting up. For most of medical history, anatomy was learned by careful dissection.",
+      "Physiology is the study of what those structures do. Physis is Greek for nature, so physiology is the natural functioning of the body's parts.",
+      "The two cannot be separated. You cannot understand how a heart pumps blood without the shape of its four chambers and the angle of its valves.",
+      "The phrase that captures this is form follows function. The body does not have arbitrary shapes.",
+      "A long, narrow bone is built for leverage. A flat bone is built to protect what is underneath.",
+      "A tube with a folded inner lining is built to maximize the surface area where absorption happens. So with every new structure, ask: what is this shape good at?"
+    ]}</script>
+  </div>
+
+  <div class="sec asec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>What anatomy asks, what physiology asks, and why the two can&rsquo;t be pulled apart.</span></div>
+    <p class="marg"><b>Wonder.</b> The body is ordered, beautiful, and not yet fully understood. Carry that posture into every reading.</p>
+    <article class="atlas">
+      <h3>Anatomy and physiology</h3>
+      <p><b>Anatomy</b> is the study of the body&rsquo;s structures: what each part is, where it sits, and how it relates spatially to everything around it. The word comes from the Greek <i>anatom&#275;</i> &mdash; &ldquo;a cutting up.&rdquo; For most of medical history, anatomy was learned by careful dissection of cadavers, drawing what was seen and tracing where each part led. Today we still dissect, but we also have CT and MRI scans, ultrasound, microscopy, and three-dimensional imaging tools to study the same structures without ever cutting tissue.</p>
+      <p><b>Physiology</b> is the study of what those structures do. It asks: how does this part work? What process does it carry out? What signals does it respond to, and what does it produce? &ldquo;Physiology&rdquo; comes from the Greek <i>physis</i>, meaning &ldquo;nature,&rdquo; and -ology, meaning &ldquo;the study of.&rdquo; Physiology is the natural functioning of the body&rsquo;s parts.</p>
+      <p>The two cannot be separated. You cannot understand how a heart pumps blood without first knowing the shape of its four chambers and the angle of its valves. You cannot understand how a kidney filters waste without knowing the architecture of its tubules. You cannot explain why a tendon can resist tearing while a muscle cannot, without knowing how their cells and fibers are arranged.</p>
+      <p>The phrase that captures this &mdash; and that you will hear in every module of this course &mdash; is <b>form follows function</b>. The body does not have arbitrary shapes. Each shape is, biologically speaking, the answer to a question about what that part of the body needs to do. A long, narrow bone is built for leverage. A flat bone is built to protect what is underneath. A tube with a folded inner lining is built to maximize the surface area where absorption happens. Whenever you encounter a new structure this year, your first habit should be to ask: what is this shape good at?</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Anatomy or Physiology?</h2></div>
+    <p class="hint">Tap a question, then tap the field that asks it.</p>
+    <div class="place card" id="l1sortAP">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ana" data-fb="Anatomy: where a part sits and how it relates spatially to its neighbors." data-miss="This question is about location. Which field asks where each part sits?">Where does the kidney sit relative to the spine?</button>
+        <button class="chip" data-k="b" data-ans="phy" data-fb="Physiology: what signals a part responds to." data-miss="Signals are something a part responds to while it works. Which field asks how a part works?">What signals does the heart respond to?</button>
+        <button class="chip" data-k="c" data-ans="ana" data-fb="Anatomy. The arrangement of fibers is structure, even though it explains a function." data-miss="Arrangement is a fact about the part itself, not about what it does. The reason it matters comes after.">How are a tendon&rsquo;s fibers arranged?</button>
+        <button class="chip" data-k="d" data-ans="phy" data-fb="Physiology: what process a part carries out." data-miss="This asks what the stomach does, not what it is.">What process does the stomach carry out?</button>
+        <button class="chip" data-k="e" data-ans="ana" data-fb="Anatomy: what each part is, its shape." data-miss="Shape and number are facts about the structure itself.">What shape are the heart&rsquo;s four chambers?</button>
+        <button class="chip" data-k="f" data-ans="phy" data-fb="Physiology: what a part produces." data-miss="Producing something is an action. Which field asks what a part does?">What does a gland produce?</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="ana"><h4>Anatomy <small>structure</small></h4><div class="drop"></div></div>
+        <div class="bin" data-bin="phy"><h4>Physiology <small>function</small></h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div>
+      <div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>What Is This Shape Good At?</h2></div>
+    <p class="hint">Match each shape to the job it is built for.</p>
+    <div class="place card l1-jobs" id="l1sortShape">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="lev" data-fb="Long and narrow: a lever." data-miss="A long, rigid rod is what you use to pry or swing. Which job uses that?">a long, narrow bone</button>
+        <button class="chip" data-k="b" data-ans="pro" data-fb="Flat and broad: a shield over what lies beneath." data-miss="A broad, flat plate covers things. Which job is that?">a flat bone</button>
+        <button class="chip" data-k="c" data-ans="abs" data-fb="Folds add surface without adding length." data-miss="Folding a lining packs more surface into the same tube. What needs surface?">a tube with a folded inner lining</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="lev"><h4>Leverage</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="pro"><h4>Protect what is underneath</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="abs"><h4>Maximize surface for absorption</h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div>
+      <div class="tally"></div>
+    </div>
+    <div class="fnote" style="margin-top:18px"><div class="field"><span class="label">Your turn</span><p class="q">Explain &ldquo;form follows function&rdquo; in your own words, using one specific anatomical example.</p>
+      <textarea class="jbox" id="l1n1" data-label="Form follows function, in my own words, with one example" data-min="25"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="levels" type="button">Next: Six Levels &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 SIX LEVELS ═════════ -->
+<section class="panel" id="tab-levels" role="tabpanel">
+  <div class="vo" data-clip="v_ladder">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Climbing the Ladder</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage">
+      <ol class="l1-ladder" reversed aria-label="Six levels, built from the bottom up">
+        <li data-step="6" style="--c:#0B1B33"><span class="lv">Organismal</span><span class="can">you: think, run, eat, sleep, heal, grow</span></li>
+        <li data-step="5" style="--c:#0B6E7F"><span class="lv">Organ system</span><span class="can">the muscular system can lift, run, breathe, write</span></li>
+        <li data-step="4" style="--c:#2C8C9C"><span class="lv">Organ</span><span class="can">a muscle can pull a bone</span></li>
+        <li data-step="3" style="--c:#C22F4A"><span class="lv">Tissue</span><span class="can">muscle tissue can contract along an axis</span></li>
+        <li data-step="2" style="--c:#D9667B"><span class="lv">Cellular</span><span class="can">a single muscle cell can twitch</span></li>
+        <li data-step="1" style="--c:#8A97A8"><span class="lv">Chemical</span><span class="can">atoms bond into molecules</span></li>
+      </ol>
+      <div class="l1-up" data-step="0"><span class="readout">Each level is built from the level below</span></div>
+    </div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps":[
+      "The human body is organized at six levels. Each level is built from the level below.",
+      "At the chemical level, atoms bond into molecules: small ones like water and glucose, and huge folded proteins.",
+      "Molecules organize into cells, the smallest units of life. A single muscle cell can twitch.",
+      "Cells of similar type and function group into tissues. A tissue made of muscle cells can contract along an axis.",
+      "Two or more tissue types combine into an organ. A muscle, as an organ, can pull a bone.",
+      "Organs that work together form an organ system. The muscular system can lift, run, breathe, and write.",
+      "All eleven systems together make you, a single living organism. The same cells, at higher levels, do dramatically more."
+    ]}</script>
+  </div>
+
+  <div class="sec asec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The six levels in order, one example at each, and what new ability appears at each step up.</span></div>
+    <article class="atlas">
+      <h3>The six levels of structural organization</h3>
+      <p>The human body is organized at six hierarchical levels. Each level is built from the level below.</p>
+      <figure class="plate"><img data-img="f101" alt="The levels of organization of the structural organization of the human body, from chemical to organismal"><figcaption>Figure 1.1 &mdash; Levels of Organization of the Structural Organization of the Human Body.</figcaption></figure>
+      <div class="inset watch">
+        <div class="ilabel">WATCH &mdash; LEVELS OF ORGANIZATION</div>
+        <p>Before you read the six levels below, a short video walkthrough of the structural organization of the human body: <a href="https://www.youtube.com/watch?v=ZRFykdf4kDc" target="_blank" rel="noopener">Levels of Organization of the Structural Organization of the Human Body</a>. It is the same six-level ladder you are about to read, shown visually first.</p>
+        <button type="button" class="l1-yt" data-yt="ZRFykdf4kDc" aria-label="Play the video here"><span class="l1-yt-play" aria-hidden="true">&#9654;</span><span>Play the video here</span></button>
+      </div>
+      <h4>Chemical level</h4>
+      <p>Atoms (carbon, oxygen, hydrogen, nitrogen, phosphorus, sulfur, and trace others) bond into molecules. Some molecules are small (water, glucose, the amino acid glycine). Some are very large &mdash; proteins fold into shapes thousands of atoms across, and the DNA in a single human cell, if stretched out, would span roughly six feet. All life-supporting chemistry begins here. The molecules of life &mdash; proteins, nucleic acids, carbohydrates, and lipids &mdash; make up the cellular machinery.</p>
+      <h4>Cellular level</h4>
+      <p>Molecules organize into cells, the smallest units of life. Knowing that Cyt-, which is Greek for &ldquo;cell,&rdquo; helps us understand that <b>cytology</b> is the study of cells. Your body has roughly 30 to 40 trillion cells of about 200 different types. A few are large enough to see with the unaided eye (an unfertilized human egg cell is just visible). Most are not &mdash; a typical red blood cell is about 7 micrometers across, and you would need to lay roughly 3,500 of them end-to-end to span an inch. Every cell carries the same DNA, but each one expresses only a fraction of it. The choices about which genes to use are what make a muscle cell different from a neuron, even though their genetic instruction sets are identical.</p>
+      <div class="inset">
+        <div class="ilabel">THE FIRST PERSON TO SEE THE CELLULAR LEVEL</div>
+        <p>Antonie van Leeuwenhoek (1632&ndash;1723) was a Dutch fabric merchant who taught himself to grind glass into lenses powerful enough to magnify objects nearly 270 times. He used his hand-built microscopes to examine pond water, blood, plaque scraped from his own teeth, and semen &mdash; and was the first human being to see what we now call the cellular level of organization. He called the moving creatures he found &ldquo;animalcules.&rdquo; Modern biology calls them bacteria, protozoa, and human sperm cells.</p>
+        <p>Over fifty years he sent more than 190 letters describing his observations to the Royal Society in London. Most of his contemporaries had no instruments capable of seeing what he claimed to see, and for years some assumed he was inventing it. He never let anyone else use his most powerful lenses, and his specific grinding technique was lost when he died. The cell theory we take for granted &mdash; that all living things are built from cells &mdash; was not formally proposed until more than a century after Leeuwenhoek first looked through his lens.</p>
+      </div>
+      <h4>Tissue level</h4>
+      <p>Cells of similar type and function group into tissues. Histos is a Greek word meaning &ldquo;web&rdquo; or &ldquo;tissue,&rdquo; which helps us understand that <b>histology</b> is the study of tissues. Despite the body&rsquo;s variety, there are exactly four tissue types: epithelial, connective, muscle, and nervous. Their proportions and arrangements are what give every organ its character. A liver is mostly connective tissue carrying a vast bed of epithelial cells. A biceps is mostly muscle tissue with connective sheaths. A nerve is nervous tissue wrapped in connective tissue.</p>
+      <h4>Organ level</h4>
+      <p>Two or more tissue types combine into a structure that performs a specific function &mdash; an organ. Your stomach is an organ. So is your skin (the largest organ in the body, by area and by mass). So is each kidney, each lung, each eye, the heart, and the bladder. Every organ has a job, and every organ uses multiple tissue types to do it.</p>
+      <h4>Organ system level</h4>
+      <p>Organs that work together toward a shared task form an organ system. The cardiovascular system moves blood. The skeletal system supports and protects. The eleven systems of this course are the organizational scheme of the body.</p>
+      <h4>Organismal level</h4>
+      <p>All eleven systems together comprise you, a single living organism. At this top level, life expresses itself: you can think, run, eat, sleep, heal, grow, love, and choose, because all eleven systems are coordinated. You are not a collection of parts &mdash; you are a person, and the parts exist for you.</p>
+      <p>Each level is more than the sum of its parts. A single muscle cell can twitch; a tissue made of muscle cells can contract along an axis; a muscle (organ) can pull a bone; the muscular system can lift, run, breathe, and write. The same cells, at higher levels of organization, do dramatically more.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Zoom Through the Body</h2></div>
+    <p class="hint">Start at the whole person and zoom in, one level at a time. Watch what each level can do.</p>
+    <div class="bench l1-zoom" id="l1zoom">
+      <div class="bh"><b>Specimen &middot; skeletal muscle</b><span class="readout l1z-read">Level 6 of 6 &middot; Organismal</span></div>
+      <div class="l1z-view" aria-live="polite">
+        <svg class="l1z-scene on" data-lv="6" viewBox="0 0 320 240" role="img" aria-label="A whole person, standing">
+          <g class="l1-body" fill="#0B1B33" stroke="#0B1B33"><circle cx="160" cy="30" r="17" stroke="none"/><rect x="153" y="44" width="14" height="12" stroke="none"/><path d="M128 60Q160 50 192 60L187 132Q160 140 133 132Z" stroke="none"/><path d="M131 66L116 138M189 66L204 138" stroke-width="15" stroke-linecap="round" fill="none"/><path d="M149 132L145 226M171 132L175 226" stroke-width="18" stroke-linecap="round" fill="none"/></g>
+          <circle cx="202" cy="96" r="26" fill="none" stroke="#C22F4A" stroke-width="3" stroke-dasharray="6 5"/>
+        </svg>
+        <svg class="l1z-scene" data-lv="5" viewBox="0 0 320 240" role="img" aria-label="The same person with the muscular system drawn in red over the body">
+          <g class="l1-body" fill="#DCE3EC" stroke="#DCE3EC"><circle cx="160" cy="30" r="17" stroke="none"/><rect x="153" y="44" width="14" height="12" stroke="none"/><path d="M128 60Q160 50 192 60L187 132Q160 140 133 132Z" stroke="none"/><path d="M131 66L116 138M189 66L204 138" stroke-width="15" stroke-linecap="round" fill="none"/><path d="M149 132L145 226M171 132L175 226" stroke-width="18" stroke-linecap="round" fill="none"/></g>
+          <g fill="#C22F4A" opacity=".9"><ellipse cx="148" cy="80" rx="11" ry="15"/><ellipse cx="172" cy="80" rx="11" ry="15"/><rect x="147" y="98" width="26" height="30" rx="8"/><ellipse cx="124" cy="94" rx="6.5" ry="20" transform="rotate(12 124 94)"/><ellipse cx="196" cy="94" rx="6.5" ry="20" transform="rotate(-12 196 94)"/><ellipse cx="148" cy="166" rx="8" ry="26"/><ellipse cx="172" cy="166" rx="8" ry="26"/><ellipse cx="146" cy="206" rx="6" ry="15"/><ellipse cx="174" cy="206" rx="6" ry="15"/></g>
+          <circle cx="198" cy="94" r="26" fill="none" stroke="#0B6E7F" stroke-width="3" stroke-dasharray="6 5"/>
+        </svg>
+        <svg class="l1z-scene" data-lv="4" viewBox="0 0 320 240" role="img" aria-label="An upper arm: the biceps muscle, attached by tendons, pulls the forearm bone">
+          <rect x="40" y="96" width="170" height="20" rx="10" fill="#D9CFC0"/><rect x="200" y="100" width="100" height="16" rx="8" fill="#D9CFC0" transform="rotate(-28 206 108)"/>
+          <path d="M60 90C80 40 170 40 190 88" fill="#C22F4A"/><path d="M60 90l-10 10M190 88l18 6" stroke="#B8A890" stroke-width="5" stroke-linecap="round"/>
+          <path d="M228 60q22 -14 30 8" stroke="#0B6E7F" stroke-width="3" fill="none"/><path d="M252 62l7 8 4 -10" fill="#0B6E7F"/>
+          <text x="125" y="150" text-anchor="middle" class="l1-s">biceps (an organ)</text>
+        </svg>
+        <svg class="l1z-scene" data-lv="3" viewBox="0 0 320 240" role="img" aria-label="Muscle tissue: many long muscle cells lying side by side in a bundle">
+          <rect x="30" y="50" width="260" height="140" rx="70" fill="#F7DCE2"/>
+          <g fill="#C22F4A"><rect x="50" y="68" width="220" height="16" rx="8"/><rect x="40" y="90" width="240" height="16" rx="8"/><rect x="36" y="112" width="248" height="16" rx="8"/><rect x="40" y="134" width="240" height="16" rx="8"/><rect x="50" y="156" width="220" height="16" rx="8"/></g>
+          <path d="M60 210h200" stroke="#0B6E7F" stroke-width="3"/><path d="M60 210l10 -6v12zM260 210l-10 -6v12z" fill="#0B6E7F"/>
+          <text x="160" y="232" text-anchor="middle" class="l1-s">contracts along an axis</text>
+        </svg>
+        <svg class="l1z-scene" data-lv="2" viewBox="0 0 320 240" role="img" aria-label="A single long muscle cell">
+          <rect x="30" y="96" width="260" height="46" rx="23" fill="#C22F4A"/>
+          <g fill="#F7DCE2"><ellipse cx="90" cy="119" rx="12" ry="7"/><ellipse cx="170" cy="119" rx="12" ry="7"/><ellipse cx="240" cy="119" rx="12" ry="7"/></g>
+          <text x="160" y="180" text-anchor="middle" class="l1-s">one cell: the smallest unit of life</text>
+        </svg>
+        <svg class="l1z-scene" data-lv="1" viewBox="0 0 320 240" role="img" aria-label="Molecules: a water molecule and a long folded protein chain">
+          <g transform="translate(70 80)"><circle r="22" fill="#C22F4A"/><circle cx="-24" cy="20" r="13" fill="#fff" stroke="#8A97A8" stroke-width="2"/><circle cx="24" cy="20" r="13" fill="#fff" stroke="#8A97A8" stroke-width="2"/><text y="6" text-anchor="middle" fill="#fff" class="l1-s">O</text></g>
+          <text x="70" y="140" text-anchor="middle" class="l1-s">water</text>
+          <path d="M150 60c30 -30 60 30 90 0s40 40 10 60 -60 -10 -80 20 30 50 60 40" fill="none" stroke="#0B6E7F" stroke-width="9" stroke-linecap="round"/>
+          <text x="220" y="210" text-anchor="middle" class="l1-s">a folded protein</text>
+        </svg>
+      </div>
+      <p class="l1z-can"></p>
+      <div class="l1z-ctl">
+        <button type="button" class="btn ghost l1z-out">&minus; Zoom out</button>
+        <input type="range" min="1" max="6" step="1" value="6" class="l1z-range" aria-label="Level of organization, 1 chemical to 6 organismal">
+        <button type="button" class="btn l1z-in">Zoom in +</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Which Level?</h2></div>
+    <p class="hint">Every example below comes from the Atlas. Tap one, then tap its level.</p>
+    <div class="place card l1-six" id="l1sortLv">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="chem" data-fb="Glucose is a molecule: chemical level." data-miss="Glucose is one of the small molecules named in the Atlas.">glucose</button>
+        <button class="chip" data-k="b" data-ans="chem" data-fb="DNA is a molecule, however long: chemical level." data-miss="DNA is enormous, but size does not move it up a level. What is it made of, and what is it?">DNA</button>
+        <button class="chip" data-k="c" data-ans="cell" data-fb="A red blood cell: cellular level." data-miss="It is a single cell, about 7 micrometers across.">a red blood cell</button>
+        <button class="chip" data-k="d" data-ans="cell" data-fb="An egg cell is one cell, even though it is just visible: cellular level." data-miss="Being visible to the eye does not make it more than one cell.">an unfertilized human egg cell</button>
+        <button class="chip" data-k="e" data-ans="tis" data-fb="Epithelial tissue is one of the four tissue types." data-miss="Epithelial is one of exactly four types of something. Four types of what?">epithelial tissue</button>
+        <button class="chip" data-k="f" data-ans="org" data-fb="Skin is an organ, the largest in the body." data-miss="Skin is built from more than one tissue type and does a specific job. That makes it what?">skin</button>
+        <button class="chip" data-k="g" data-ans="org" data-fb="The stomach: an organ." data-miss="The stomach combines several tissue types to do one job.">the stomach</button>
+        <button class="chip" data-k="h" data-ans="sys" data-fb="The cardiovascular system moves blood: organ system level." data-miss="It is several organs working toward one shared task.">the cardiovascular system</button>
+        <button class="chip" data-k="i" data-ans="sys" data-fb="Supports and protects: the skeletal system is an organ system." data-miss="Bones across the whole body working toward one task form what?">the skeletal system</button>
+        <button class="chip" data-k="j" data-ans="whole" data-fb="You: all eleven systems coordinated, the organismal level." data-miss="This is the level where all eleven systems work together.">you</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="chem"><h4>Chemical</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="cell"><h4>Cellular</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="tis"><h4>Tissue</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="org"><h4>Organ</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="sys"><h4>Organ system</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="whole"><h4>Organismal</h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div>
+      <div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="form" type="button">&larr; Structure and Function</button><button class="btn" data-go="systems" type="button">Next: Why Systems &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 WHY SYSTEMS ═════════ -->
+<section class="panel" id="tab-systems" role="tabpanel">
+  <div class="vo" data-clip="v_scale">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Too Many to Count</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage">
+      <div class="l1-count">
+        <div class="l1-big" data-step="0"><b>30&ndash;40 trillion</b><span>cells</span></div>
+        <div class="l1-big" data-step="0"><b>~200</b><span>cell types</span></div>
+        <div class="l1-big" data-step="5"><b>11</b><span>organ systems</span></div>
+      </div>
+      <div class="l1-ruler" data-step="1 2" aria-label="An inch-long ruler filled end to end with red blood cells">
+        <div class="l1-rbcs"></div>
+        <div class="l1-tick"><span>0</span><span>1 inch</span></div>
+        <div class="l1-rnote"><span data-step="1">each red blood cell &asymp; 7 micrometers</span> <span data-step="2">&middot; about 3,500 to span the inch</span></div>
+      </div>
+      <div class="l1-dna" data-step="3"><span class="readout">same DNA</span><span class="l1-cellchip mus">muscle cell</span><span class="l1-cellchip neu">neuron</span><span class="hint">different genes in use</span></div>
+      <div class="l1-ask" data-step="4"><span class="readout">List every cell?</span> You would never finish.</div>
+    </div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps":[
+      "Your body has roughly thirty to forty trillion cells, of about two hundred different types.",
+      "Most are far too small to see. A typical red blood cell is about seven micrometers across.",
+      "You would need to lay roughly three thousand five hundred of them end to end to span a single inch.",
+      "Every cell carries the same DNA, but each uses only a fraction of it. Those choices make a muscle cell different from a neuron.",
+      "If you tried to understand the body by listing its cells, you would never finish.",
+      "The organ system is where structure and function meet at a scale a human mind can hold: a few dozen organs, each with a clear job."
+    ]}</script>
+  </div>
+
+  <div class="sec asec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Why the organ system, not the cell or the molecule, is the level this course is built around.</span></div>
+    <article class="atlas">
+      <h3>Why this course is built around organ systems</h3>
+      <p>If you tried to understand the body by listing its 30+ trillion cells, you would never finish. If you tried by listing its molecules, you would not even begin. The organ system is the level where structure and function meet at a scale that is intelligible to a human mind: a few dozen organs at most, each with a clear job, networked in patterns that repeat across the body.</p>
+      <p>This course is built around eleven organ systems.</p>
+      <p>By the end of this year, you will be able to do something most adults cannot: hold the architecture of an entire human body in your head, system by system, and explain how each one works. You will know where things are. You will know what they do. And you will be able to explain why a particular structure is shaped exactly the way it is &mdash; because in biology, form follows function.</p>
+      <!-- 3D model card (see assets/oao-3d/oao-3d.js) -->
+      <div class="oao-3d" data-key="1.01-reading" data-title="From the whole body to one organ" data-models='[{"label": "Muscles", "src": "../../assets/models/sys-muscular.glb", "orbit": "0deg 80deg auto"}, {"label": "Skeleton", "src": "../../assets/models/03-01-skeleton.glb", "orbit": "0deg 80deg auto"}, {"label": "Nervous system", "src": "../../assets/models/sys-nervous.glb", "orbit": "0deg 80deg auto"}, {"label": "Arteries and veins", "src": "../../assets/models/sys-circulatory.glb", "orbit": "0deg 80deg auto"}, {"label": "Lungs and airway", "src": "../../assets/models/sys-respiratory.glb", "orbit": "0deg 80deg auto"}, {"label": "One organ: the heart", "src": "../../assets/models/organ-heart.glb", "orbit": "0deg 80deg auto"}]'></div>
+      <details class="selfcheck"><summary>Self-check: name the six levels in order before clicking</summary>
+        <p>Chemical &rarr; Cellular &rarr; Tissue &rarr; Organ &rarr; Organ system &rarr; Organismal.</p>
+        <p>If you got the order right, you have the spine of this course&rsquo;s first reading. If you missed one, re-read &ldquo;The six levels of structural organization&rdquo; above.</p>
+      </details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Line Them Up</h2></div>
+    <p class="hint">Drag to lay red blood cells end to end. How many does it take to span an inch?</p>
+    <div class="bench l1-line" id="l1line">
+      <div class="bh"><b>Scale bench &middot; red blood cells</b><span class="readout l1l-read">0 cells &middot; 0.00 in</span></div>
+      <div class="l1l-track" aria-hidden="true"><div class="l1l-fill"></div><div class="l1l-inch"><span>1 inch</span></div></div>
+      <input type="range" class="l1l-range" min="0" max="4000" step="50" value="0" aria-label="Number of red blood cells laid end to end">
+      <p class="l1l-note hint">Each cell is about 7 micrometers across. An inch is 25,400 micrometers.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Body, Six Levels</h2></div>
+    <p class="hint">One example from your own body at each level, smallest at the bottom.</p>
+    <div class="card l1-mine">
+      <div class="l1m-row" style="--c:#0B1B33"><label for="l1m6">Organismal</label><input class="jfield" id="l1m6" data-label="My six levels: organismal" placeholder="me"></div>
+      <div class="l1m-row" style="--c:#0B6E7F"><label for="l1m5">Organ system</label><input class="jfield" id="l1m5" data-label="My six levels: organ system" placeholder="an organ system"></div>
+      <div class="l1m-row" style="--c:#2C8C9C"><label for="l1m4">Organ</label><input class="jfield" id="l1m4" data-label="My six levels: organ" placeholder="e.g., your stomach"></div>
+      <div class="l1m-row" style="--c:#C22F4A"><label for="l1m3">Tissue</label><input class="jfield" id="l1m3" data-label="My six levels: tissue" placeholder="e.g., the smooth muscle in your stomach wall"></div>
+      <div class="l1m-row" style="--c:#D9667B"><label for="l1m2">Cellular</label><input class="jfield" id="l1m2" data-label="My six levels: cellular" placeholder="e.g., a red blood cell"></div>
+      <div class="l1m-row" style="--c:#8A97A8"><label for="l1m1">Chemical</label><input class="jfield" id="l1m1" data-label="My six levels: chemical" placeholder="a molecule"></div>
+      <div class="field" style="margin-bottom:0"><p class="q">In one sentence: what new function emerges as you move up by one level?</p>
+        <textarea class="jbox" id="l1m7" data-label="My six levels: what emerges one level up" data-min="12"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Narrate It</h2></div>
+    <div class="card">
+      <p class="q" style="font-weight:600;margin-top:0">Close the Atlas. In your own words, out loud, explain what you just read to someone who has not read it.</p>
+      <div class="narrate" data-words="150"></div>
+      <p class="hint">Now play it back while you re-read the Atlas. What did you remember well? What did you miss?</p>
+      <div class="field" style="margin-bottom:0"><p class="q">One or two corrections to your narration:</p>
+        <textarea class="jbox" id="l1nar" data-label="Narration: my corrections" data-min="10"></textarea></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="levels" type="button">&larr; Six Levels</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top">
+      <label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label>
+      <div class="l1r-total readout" aria-live="polite">0 words &middot; aim for 300&ndash;400</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">A</span><h2>Levels of Organization Reflection</h2></div>
+      <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>How does the level of organization at which we choose to study a body part change what we can understand about it?</p></div>
+        <p>Choose one body structure. Describe it at three different levels of organization, then explain how the level you choose to study changes what you can understand about it. Pair every structural observation with a functional consequence.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">B</span><h2>Choose a Structure</h2></div>
+      <div class="card">
+        <div class="seg l1r-pick" role="group" aria-label="Structure">
+          <button type="button" data-v="a single skeletal muscle (my biceps brachii)">Biceps brachii</button>
+          <button type="button" data-v="the heart">The heart</button>
+          <button type="button" data-v="a kidney">A kidney</button>
+          <button type="button" data-v="a single neuron">A single neuron</button>
+          <button type="button" data-v="">Something else</button>
+        </div>
+        <div class="field" style="margin:14px 0 0"><label class="q" for="l1rS">My structure</label><br>
+          <input class="jfield" id="l1rS" data-label="1. My structure" placeholder="Pick one above, or type one of similar specificity" style="width:100%"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">C</span><h2>Three Levels</h2></div>
+      <p class="hint">Three different levels, in correct hierarchical order. For each: what you see there, and what function emerges there. Two or three sentences each.</p>
+      <div class="card l1r-levels">
+        <div class="l1r-lv">
+          <select class="jfield l1r-sel" id="l1rL1" data-label="2. First level"><option value="">Level&hellip;</option><option value="1">Chemical</option><option value="2">Cellular</option><option value="3">Tissue</option><option value="4">Organ</option><option value="5">Organ system</option><option value="6">Organismal</option></select>
+          <textarea class="jbox" id="l1rT1" data-label="2. At this level: what I see, and what function emerges" data-min="35"></textarea>
+        </div>
+        <div class="l1r-lv">
+          <select class="jfield l1r-sel" id="l1rL2" data-label="3. Second level"><option value="">Level&hellip;</option><option value="1">Chemical</option><option value="2">Cellular</option><option value="3">Tissue</option><option value="4">Organ</option><option value="5">Organ system</option><option value="6">Organismal</option></select>
+          <textarea class="jbox" id="l1rT2" data-label="3. At this level: what I see, and what function emerges" data-min="35"></textarea>
+        </div>
+        <div class="l1r-lv">
+          <select class="jfield l1r-sel" id="l1rL3" data-label="4. Third level"><option value="">Level&hellip;</option><option value="1">Chemical</option><option value="2">Cellular</option><option value="3">Tissue</option><option value="4">Organ</option><option value="5">Organ system</option><option value="6">Organismal</option></select>
+          <textarea class="jbox" id="l1rT3" data-label="4. At this level: what I see, and what function emerges" data-min="35"></textarea>
+        </div>
+        <div class="fb l1r-order" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">D</span><h2>Answer the Focus Question</h2></div>
+      <div class="card">
+        <div class="field" style="margin:0"><p class="q">In three to five sentences: how does the level you choose to study change what you can understand about your structure? Answer it; don&rsquo;t restate it.</p>
+          <textarea class="jbox" id="l1rF" data-label="5. How the level I study changes what I can understand" data-min="60"></textarea></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+      <ul class="checks">
+        <li data-ck="l1c1">I name one specific body structure and use it the whole way through.</li>
+        <li data-ck="l1c2">I describe it at three distinct levels, in correct hierarchical order.</li>
+        <li data-ck="l1c3">Each level is tied to a specific function, not just a description of what is there.</li>
+        <li data-ck="l1c4">My final paragraph answers the focus question instead of restating it.</li>
+      </ul>
+    </div>
+
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page, including your six levels and narration notes.</span><span class="print-note"></span></div>
+  </div>
+  <div class="next"><button class="btn ghost" data-go="systems" type="button">&larr; Why Systems</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>anatomy <small>Greek anatom&#275;, &ldquo;a cutting up&rdquo;</small></dt><dd>The study of the body&rsquo;s structures: what each part is, where it sits, and how it relates spatially to everything around it.</dd>
+  <dt>physiology <small>Greek physis, &ldquo;nature&rdquo; + -ology</small></dt><dd>The study of what those structures do: the natural functioning of the body&rsquo;s parts.</dd>
+  <dt>-ology</dt><dd>&ldquo;The study of.&rdquo;</dd>
+  <dt>form follows function</dt><dd>Each shape in the body is the answer to a question about what that part needs to do.</dd>
+  <dt>chemical level</dt><dd>Atoms bond into molecules, small (water, glucose) and very large (proteins, DNA).</dd>
+  <dt>cell <small>Greek cyt-, &ldquo;cell&rdquo;</small></dt><dd>The smallest unit of life. Cytology is the study of cells.</dd>
+  <dt>tissue <small>Greek histos, &ldquo;web&rdquo; or &ldquo;tissue&rdquo;</small></dt><dd>Cells of similar type and function grouped together. Exactly four types: epithelial, connective, muscle, nervous. Histology is the study of tissues.</dd>
+  <dt>organ</dt><dd>Two or more tissue types combined into a structure that performs a specific function.</dd>
+  <dt>organ system</dt><dd>Organs working together toward a shared task. The body has eleven.</dd>
+  <dt>organism</dt><dd>All eleven systems together: you, a single living organism.</dd>
+  <dt>Antonie van Leeuwenhoek</dt><dd>Dutch fabric merchant (1632&ndash;1723) whose hand-ground lenses made him the first person to see the cellular level.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology · Week 1</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w1-l1", "title": "Levels of Organization", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 1 · Levels of Organization", "pdfTag": "AP_W1_L1"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f101":{"src":"img/w1-l1-f101.webp","alt":"The levels of organization of the structural organization of the human body, from chemical to organismal"}},"v_two":{"audio":"audio/ap-w1-l1-two.mp3","words":[[0.0,0.6,"Anatomy"],[0.6,0.86,"is"],[0.86,1.04,"the"],[1.04,1.3,"study"],[1.3,1.54,"of"],[1.54,1.66,"the"],[1.66,2.1,"body's"],[2.1,2.5,"structures:"],[3.02,3.2,"what"],[3.2,3.38,"each"],[3.38,3.64,"part"],[3.64,4.1,"is,"],[4.38,4.54,"where"],[4.54,4.7,"it"],[4.7,4.98,"sits,"],[5.28,5.46,"and"],[5.46,5.66,"how"],[5.66,5.8,"it"],[5.8,6.08,"relates"],[6.08,6.34,"to"],[6.34,6.7,"everything"],[6.7,7.06,"around"],[7.06,7.4,"it."],[7.8,7.96,"The"],[7.96,8.12,"word"],[8.12,8.36,"comes"],[8.36,8.58,"from"],[8.58,8.72,"the"],[8.72,8.92,"Greek"],[8.92,9.54,"anatome,"],[10.0,10.14,"a"],[10.14,10.38,"cutting"],[10.38,10.7,"up."],[11.24,11.4,"For"],[11.4,11.6,"most"],[11.6,11.78,"of"],[11.78,12.02,"medical"],[12.02,12.48,"history,"],[12.82,13.08,"anatomy"],[13.08,13.32,"was"],[13.32,13.62,"learned"],[13.62,13.88,"by"],[13.88,14.24,"careful"],[14.24,14.94,"dissection."],[15.76,16.22,"Physiology"],[16.22,16.56,"is"],[16.56,16.72,"the"],[16.72,16.98,"study"],[16.98,17.18,"of"],[17.18,17.38,"what"],[17.38,17.56,"those"],[17.56,17.94,"structures"],[17.94,18.4,"do."],[18.89,19.38,"Physis"],[19.4,19.68,"is"],[19.68,19.92,"Greek"],[19.92,20.18,"for"],[20.18,20.52,"nature,"],[20.74,21.06,"so"],[21.06,21.58,"physiology"],[21.58,22.08,"is"],[22.08,22.26,"the"],[22.26,22.72,"natural"],[22.72,23.12,"functioning"],[23.12,23.4,"of"],[23.4,23.54,"the"],[23.54,23.88,"body's"],[23.88,24.14,"parts."],[24.74,24.92,"The"],[24.92,25.14,"two"],[25.14,25.48,"cannot"],[25.48,25.8,"be"],[25.8,26.28,"separated."],[26.74,26.9,"You"],[26.9,27.22,"cannot"],[27.22,27.74,"understand"],[27.74,27.98,"how"],[27.98,28.1,"a"],[28.1,28.3,"heart"],[28.3,28.58,"pumps"],[28.58,28.96,"blood"],[28.96,29.34,"without"],[29.34,29.6,"the"],[29.6,29.8,"shape"],[29.8,29.98,"of"],[29.98,30.08,"its"],[30.08,30.36,"four"],[30.36,30.74,"chambers"],[30.74,31.08,"and"],[31.08,31.16,"the"],[31.16,31.38,"angle"],[31.38,31.6,"of"],[31.6,31.74,"its"],[31.74,32.0,"valves."],[32.62,32.76,"The"],[32.76,33.0,"phrase"],[33.0,33.2,"that"],[33.2,33.56,"captures"],[33.56,33.9,"this"],[33.9,34.2,"is"],[34.2,34.64,"form"],[34.64,35.08,"follows"],[35.08,35.62,"function."],[36.22,36.38,"The"],[36.38,36.62,"body"],[36.62,36.8,"does"],[36.8,37.08,"not"],[37.08,37.34,"have"],[37.34,37.88,"arbitrary"],[37.88,38.36,"shapes."],[38.94,39.02,"A"],[39.02,39.34,"long,"],[39.5,39.68,"narrow"],[39.68,40.06,"bone"],[40.06,40.28,"is"],[40.28,40.46,"built"],[40.46,40.68,"for"],[40.68,41.02,"leverage."],[41.5,41.6,"A"],[41.6,41.86,"flat"],[41.86,42.14,"bone"],[42.14,42.38,"is"],[42.38,42.56,"built"],[42.56,42.74,"to"],[42.74,43.06,"protect"],[43.06,43.26,"what"],[43.26,43.38,"is"],[43.38,43.78,"underneath."],[44.38,44.52,"A"],[44.52,44.82,"tube"],[44.82,45.02,"with"],[45.02,45.16,"a"],[45.16,45.48,"folded"],[45.48,45.76,"inner"],[45.76,46.1,"lining"],[46.1,46.42,"is"],[46.42,46.6,"built"],[46.6,46.8,"to"],[46.8,47.24,"maximize"],[47.24,47.58,"the"],[47.58,47.84,"surface"],[47.84,48.22,"area"],[48.22,48.46,"where"],[48.46,48.84,"absorption"],[48.84,49.36,"happens."],[49.84,50.0,"So"],[50.0,50.12,"with"],[50.12,50.4,"every"],[50.4,50.6,"new"],[50.6,51.06,"structure,"],[51.42,51.56,"ask:"],[52.02,52.14,"what"],[52.14,52.28,"is"],[52.28,52.44,"this"],[52.44,52.74,"shape"],[52.74,53.04,"good"],[53.04,53.32,"at?"]]},"v_ladder":{"audio":"audio/ap-w1-l1-ladder.mp3","words":[[0.0,0.16,"The"],[0.16,0.4,"human"],[0.4,0.76,"body"],[0.76,0.98,"is"],[0.98,1.42,"organized"],[1.42,1.72,"at"],[1.72,2.1,"six"],[2.1,2.54,"levels."],[3.16,3.3,"Each"],[3.3,3.64,"level"],[3.64,3.9,"is"],[3.9,4.1,"built"],[4.1,4.32,"from"],[4.32,4.46,"the"],[4.46,4.66,"level"],[4.66,5.06,"below."],[5.72,5.8,"At"],[5.8,5.96,"the"],[5.96,6.22,"chemical"],[6.22,6.64,"level,"],[7.0,7.22,"atoms"],[7.22,7.56,"bond"],[7.56,7.86,"into"],[7.86,8.4,"molecules:"],[8.98,9.2,"small"],[9.2,9.48,"ones"],[9.48,9.68,"like"],[9.68,10.0,"water"],[10.0,10.24,"and"],[10.24,10.64,"glucose,"],[11.12,11.2,"and"],[11.2,11.7,"huge"],[11.7,12.2,"folded"],[12.2,12.88,"proteins."],[13.66,13.96,"Molecules"],[13.96,14.48,"organize"],[14.48,14.82,"into"],[14.82,15.26,"cells,"],[15.66,15.7,"the"],[15.7,16.12,"smallest"],[16.12,16.48,"units"],[16.48,16.7,"of"],[16.7,16.92,"life."],[17.48,17.6,"A"],[17.6,17.92,"single"],[17.92,18.26,"muscle"],[18.26,18.62,"cell"],[18.62,18.84,"can"],[18.84,19.2,"twitch."],[20.08,20.08,"Cells"],[20.08,20.28,"of"],[20.28,20.64,"similar"],[20.64,20.96,"type"],[20.96,21.14,"and"],[21.14,21.52,"function"],[21.52,21.82,"group"],[21.82,22.16,"into"],[22.16,22.58,"tissues."],[23.2,23.28,"A"],[23.28,23.66,"tissue"],[23.66,23.86,"made"],[23.86,24.0,"of"],[24.0,24.26,"muscle"],[24.26,24.68,"cells"],[24.68,24.88,"can"],[24.88,25.38,"contract"],[25.38,25.72,"along"],[25.72,25.88,"an"],[25.88,26.24,"axis."],[26.92,27.04,"Two"],[27.04,27.2,"or"],[27.2,27.48,"more"],[27.48,27.72,"tissue"],[27.72,28.1,"types"],[28.1,28.5,"combine"],[28.5,28.86,"into"],[28.86,29.02,"an"],[29.02,29.38,"organ."],[29.74,30.04,"A"],[30.04,30.34,"muscle,"],[30.62,30.76,"as"],[30.76,30.92,"an"],[30.92,31.18,"organ,"],[31.42,31.6,"can"],[31.6,31.82,"pull"],[31.82,31.96,"a"],[31.96,32.26,"bone."],[32.98,33.14,"Organs"],[33.14,33.32,"that"],[33.32,33.5,"work"],[33.5,33.96,"together"],[33.96,34.34,"form"],[34.34,34.52,"an"],[34.52,34.82,"organ"],[34.82,35.34,"system."],[35.88,36.0,"The"],[36.0,36.34,"muscular"],[36.34,36.78,"system"],[36.78,37.02,"can"],[37.02,37.4,"lift,"],[37.7,38.0,"run,"],[38.74,38.74,"breathe,"],[39.04,39.1,"and"],[39.1,39.4,"write."],[39.98,40.18,"All"],[40.37,40.55,"eleven"],[40.56,41.0,"systems"],[41.0,41.42,"together"],[41.42,41.78,"make"],[41.78,42.16,"you,"],[42.16,42.62,"a"],[42.62,43.06,"single"],[43.06,43.48,"living"],[43.48,44.02,"organism."],[44.56,44.66,"The"],[44.66,44.9,"same"],[44.9,45.32,"cells,"],[45.4,45.64,"at"],[45.64,45.9,"higher"],[45.9,46.24,"levels,"],[46.48,46.7,"do"],[46.7,47.22,"dramatically"],[47.22,47.72,"more."]]},"v_scale":{"audio":"audio/ap-w1-l1-scale.mp3","words":[[0.0,0.18,"Your"],[0.18,0.42,"body"],[0.42,0.66,"has"],[0.66,1.06,"roughly"],[1.29,1.53,"thirty"],[1.54,1.72,"to"],[1.95,2.17,"forty"],[2.18,2.74,"trillion"],[2.74,3.22,"cells,"],[3.62,3.8,"of"],[3.8,4.02,"about"],[4.22,4.41,"two"],[4.41,4.61,"hundred"],[4.62,5.1,"different"],[5.1,5.54,"types."],[6.16,6.36,"Most"],[6.36,6.64,"are"],[6.64,6.98,"far"],[6.98,7.22,"too"],[7.22,7.48,"small"],[7.48,7.66,"to"],[7.66,7.94,"see."],[8.44,8.62,"A"],[8.62,8.88,"typical"],[8.88,9.16,"red"],[9.16,9.4,"blood"],[9.4,9.72,"cell"],[9.72,9.94,"is"],[9.94,10.14,"about"],[10.36,10.57,"seven"],[10.58,11.18,"micrometers"],[11.18,11.64,"across."],[12.32,12.42,"You"],[12.42,12.52,"would"],[12.52,12.66,"need"],[12.66,12.82,"to"],[12.82,12.96,"lay"],[12.96,13.36,"roughly"],[13.62,13.88,"three"],[13.88,14.14,"thousand"],[14.14,14.39,"five"],[14.39,14.65,"hundred"],[14.68,15.1,"of"],[15.1,15.22,"them"],[15.22,15.54,"end"],[15.54,15.72,"to"],[15.72,16.04,"end"],[16.04,16.3,"to"],[16.3,16.6,"span"],[16.6,16.78,"a"],[16.78,17.16,"single"],[17.16,17.6,"inch."],[18.34,18.62,"Every"],[18.62,18.98,"cell"],[18.98,19.32,"carries"],[19.32,19.58,"the"],[19.58,19.86,"same"],[19.86,20.22,"DNA,"],[20.66,20.86,"but"],[20.86,21.1,"each"],[21.1,21.42,"uses"],[21.42,21.72,"only"],[21.72,21.92,"a"],[21.92,22.18,"fraction"],[22.18,22.46,"of"],[22.46,22.64,"it."],[23.1,23.28,"Those"],[23.28,23.62,"choices"],[23.62,23.98,"make"],[23.98,24.14,"a"],[24.14,24.38,"muscle"],[24.38,24.74,"cell"],[24.74,25.04,"different"],[25.04,25.34,"from"],[25.34,25.44,"a"],[25.44,25.68,"neuron."],[25.68,26.32,"If"],[26.32,26.6,"you"],[26.6,26.84,"tried"],[26.84,27.0,"to"],[27.0,27.42,"understand"],[27.42,27.64,"the"],[27.64,27.92,"body"],[27.92,28.12,"by"],[28.12,28.5,"listing"],[28.5,28.7,"its"],[28.7,29.08,"cells,"],[29.52,29.56,"you"],[29.56,29.68,"would"],[29.68,30.0,"never"],[30.0,30.42,"finish."],[31.14,31.24,"The"],[31.24,31.54,"organ"],[31.54,31.88,"system"],[31.88,32.22,"is"],[32.22,32.4,"where"],[32.4,32.82,"structure"],[32.82,33.16,"and"],[33.16,33.56,"function"],[33.56,33.96,"meet"],[33.96,34.2,"at"],[34.2,34.32,"a"],[34.32,34.6,"scale"],[34.6,34.84,"a"],[34.84,35.08,"human"],[35.08,35.46,"mind"],[35.46,35.68,"can"],[35.68,36.06,"hold:"],[36.5,36.62,"a"],[36.62,36.8,"few"],[36.8,37.14,"dozen"],[37.14,37.54,"organs,"],[37.82,38.06,"each"],[38.06,38.36,"with"],[38.36,38.5,"a"],[38.5,38.72,"clear"],[38.72,39.06,"job."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'anatomy and physiology, form follows function, and the six levels of organization',
+  quick: ['What is the difference between anatomy and physiology?', 'What does form follows function mean?', 'Why is the course built around organ systems?'],
+  practice: /(write (my|the) (reflection|paragraph|report)|focus question|my structure|(describe|do) (the|my) (heart|kidney|neuron|biceps|muscle) at|three levels for|which (three )?levels should i|answer for (number|question) ?[1-5]\b)/i,
+  guide: 'That part is yours to write, so here are my questions instead. At each level you chose, what would you actually see? What can the structure do at that level that it could not do one level down? Look back at the Atlas, then write it in your own words.',
+  notes: [
+    { k: ['anatomy','anatome','cutting up','structure','dissection','dissect'], a: 'Anatomy is the study of the body\'s structures: what each part is, where it sits, and how it relates spatially to everything around it. The word comes from the Greek anatome, "a cutting up." For most of medical history it was learned by dissecting cadavers; today we also have CT and MRI scans, ultrasound, microscopy, and three-dimensional imaging tools.' },
+    { k: ['physiology','physis','nature','function','what it does'], a: 'Physiology is the study of what structures do. It asks how a part works, what process it carries out, what signals it responds to, and what it produces. Physis is Greek for "nature," and -ology means "the study of."' },
+    { k: ['difference','separate','separated','both','together','without the other'], w: 1.3, a: 'Anatomy asks what a part is and where it sits; physiology asks what it does. The two cannot be separated: you cannot understand how a heart pumps blood without the shape of its four chambers and the angle of its valves, or how a kidney filters waste without the architecture of its tubules.' },
+    { k: ['form follows function','form','shape','shapes','arbitrary','good at'], w: 1.4, a: 'Form follows function: the body has no arbitrary shapes. Each shape answers a question about what that part needs to do. A long, narrow bone is built for leverage, a flat bone protects what is underneath, and a tube with a folded inner lining maximizes the surface where absorption happens. With every new structure, ask: what is this shape good at?' },
+    { k: ['tendon','tearing','fibers','arranged'], a: 'The Atlas uses the tendon as an example of why structure matters: you cannot explain why a tendon resists tearing while a muscle cannot without knowing how their cells and fibers are arranged.' },
+    { k: ['six levels','levels','level','order','hierarchy','hierarchical','ladder'], w: 1.3, a: 'The body is organized at six levels, each built from the level below: chemical, cellular, tissue, organ, organ system, organismal. Each level is more than the sum of its parts.' },
+    { k: ['chemical','atom','atoms','molecule','molecules','glucose','water','glycine','dna','six feet'], a: 'At the chemical level, atoms bond into molecules. Some are small (water, glucose, the amino acid glycine); some are huge: proteins fold into shapes thousands of atoms across, and the DNA in one human cell would stretch roughly six feet.' },
+    { k: ['cell','cells','cellular','cytology','cyt','trillion','red blood cell','micrometer','egg'], a: 'Cells are the smallest units of life (cyt- is Greek for "cell," so cytology is the study of cells). You have roughly 30 to 40 trillion cells of about 200 types. A typical red blood cell is about 7 micrometers across; roughly 3,500 end to end span an inch. An unfertilized human egg cell is just visible to the eye.' },
+    { k: ['same dna','genes','gene','neuron','different cells','express'], w: 1.3, a: 'Every cell carries the same DNA, but each expresses only a fraction of it. The choices about which genes to use are what make a muscle cell different from a neuron.' },
+    { k: ['tissue','tissues','histology','histos','epithelial','connective','nervous','four types'], a: 'Cells of similar type and function group into tissues (histos is Greek for "web" or "tissue," so histology is the study of tissues). There are exactly four tissue types: epithelial, connective, muscle, and nervous.' },
+    { k: ['organ','organs','stomach','skin','largest organ','kidney','lung','bladder'], a: 'An organ is two or more tissue types combined into a structure with a specific function. The stomach is an organ; so is the skin, the largest organ in the body by area and by mass.' },
+    { k: ['organ system','systems','eleven','cardiovascular','skeletal','muscular system'], a: 'Organs that work together toward a shared task form an organ system. The cardiovascular system moves blood; the skeletal system supports and protects. The body has eleven systems.' },
+    { k: ['organism','organismal','you','person','whole'], a: 'At the organismal level, all eleven systems together are you. Because they are coordinated, you can think, run, eat, sleep, heal, grow, love, and choose.' },
+    { k: ['sum of its parts','emerge','emerges','new function','twitch','contract','pull a bone'], w: 1.3, a: 'Each level is more than the sum of its parts. A single muscle cell can twitch; muscle tissue can contract along an axis; a muscle can pull a bone; the muscular system can lift, run, breathe, and write.' },
+    { k: ['why organ systems','why systems','built around','intelligible','too many'], w: 1.4, a: 'Listing 30+ trillion cells, you would never finish; listing molecules, you would not even begin. The organ system is where structure and function meet at a scale a human mind can hold: a few dozen organs, each with a clear job.' },
+    { k: ['leeuwenhoek','lens','lenses','microscope','animalcules','royal society'], a: 'Antonie van Leeuwenhoek (1632 to 1723), a Dutch fabric merchant, ground lenses that magnified nearly 270 times and became the first person to see the cellular level. He sent more than 190 letters to the Royal Society; cell theory came more than a century later.' },
+    { k: ['narrate','narration','record','recording','microphone'], a: 'Close the Atlas, press Record, and explain what you read out loud in your own words, about 150 words. Then play it back while re-reading and note one or two corrections. The recording stays on your device.' }
+  ]
+};
+</script>
+
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- L1 Levels of Organization: page widgets ---- */
+(function(){
+  /* video: thumbnail facade, the player loads only when pressed */
+  $$('.l1-yt').forEach(function(b){
+    var id = b.dataset.yt;
+    b.style.backgroundImage = 'url("https://i.ytimg.com/vi/' + id + '/hqdefault.jpg")';
+    b.addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.className = 'l1-ytf'; f.title = 'Levels of Organization of the Structural Organization of the Human Body';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0'; f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+      b.replaceWith(f);
+    });
+  });
+
+  /* zoom bench: level 6 (organismal) down to level 1 (chemical) */
+  var Z = $('#l1zoom');
+  if (Z) {
+    var NAMES = { 1: 'Chemical', 2: 'Cellular', 3: 'Tissue', 4: 'Organ', 5: 'Organ system', 6: 'Organismal' };
+    var CAN = {
+      6: ['You can think, run, eat, sleep, heal, grow, love, and choose.', 'all eleven systems, coordinated'],
+      5: ['The muscular system can lift, run, breathe, and write.', 'organs working toward a shared task'],
+      4: ['A muscle can pull a bone.', 'two or more tissue types with one job'],
+      3: ['A tissue made of muscle cells can contract along an axis.', 'cells of similar type and function, grouped'],
+      2: ['A single muscle cell can twitch.', 'the smallest unit of life'],
+      1: ['Atoms bond into molecules.', 'where all life-supporting chemistry begins']
+    };
+    var range = $('.l1z-range', Z), read = $('.l1z-read', Z), can = $('.l1z-can', Z), scenes = $$('.l1z-scene', Z);
+    function go(lv){
+      lv = Math.max(1, Math.min(6, lv)); range.value = lv;
+      scenes.forEach(function(s){ var k = +s.dataset.lv; s.classList.toggle('on', k === lv); s.classList.toggle('past', k > lv); s.setAttribute('aria-hidden', k === lv ? 'false' : 'true'); });
+      read.textContent = 'Level ' + lv + ' of 6 · ' + NAMES[lv];
+      can.innerHTML = esc(CAN[lv][0]) + '<small>' + esc(CAN[lv][1]) + '</small>';
+      $('.l1z-in', Z).disabled = lv === 1; $('.l1z-out', Z).disabled = lv === 6;
+      STORE.set('l1zoom', lv);
+    }
+    $('.l1z-in', Z).addEventListener('click', function(){ go(+range.value - 1); });
+    $('.l1z-out', Z).addEventListener('click', function(){ go(+range.value + 1); });
+    range.addEventListener('input', function(){ go(+range.value); });
+    go(+(STORE.get('l1zoom') || 6));
+  }
+
+  /* line them up: red blood cells end to end (7 micrometers each; an inch is 25,400 micrometers) */
+  var L = $('#l1line');
+  if (L) {
+    var r = $('.l1l-range', L), fill = $('.l1l-fill', L), inch = $('.l1l-inch', L), rd = $('.l1l-read', L), note = $('.l1l-note', L);
+    var MAXUM = 4000 * 7;   /* the track shows 0 to 28,000 micrometers */
+    inch.style.left = '0'; inch.style.width = (25400 / MAXUM * 100) + '%';
+    function draw(){
+      var n = +r.value, um = n * 7, inches = um / 25400;
+      fill.style.width = (um / MAXUM * 100) + '%';
+      rd.textContent = n.toLocaleString('en-US') + ' cells · ' + inches.toFixed(2) + ' in';
+      var hit = n >= 3400 && n <= 3700; L.classList.toggle('hit', hit);
+      note.textContent = n === 0 ? 'Each cell is about 7 micrometers across. An inch is 25,400 micrometers.'
+        : hit ? 'There it is: roughly 3,500 red blood cells, end to end, span about an inch.'
+        : n < 3400 ? 'Keep going. ' + n.toLocaleString('en-US') + ' cells reach only ' + (um / 1000).toFixed(1) + ' millimeters.'
+        : 'Past the inch now. Slide back a little.';
+      STORE.set('l1line', n);
+    }
+    r.value = +(STORE.get('l1line') || 0); r.addEventListener('input', draw); draw();
+  }
+
+  /* lab report: structure picker, level-order check, running word total */
+  var pick = $('.l1r-pick'), sIn = $('#l1rS');
+  if (pick && sIn) {
+    function mark(){ $$('button', pick).forEach(function(b){ b.classList.toggle('on', !!b.dataset.v && b.dataset.v === sIn.value); }); }
+    $$('button', pick).forEach(function(b){ b.addEventListener('click', function(){ sIn.value = b.dataset.v; STORE.set('j-' + sIn.id, sIn.value); mark(); if (!b.dataset.v) sIn.focus(); }); });
+    sIn.addEventListener('input', mark); mark();
+  }
+  var ord = $('.l1r-order'), sels = $$('.l1r-sel');
+  function checkOrder(){
+    if (!ord) return;
+    var v = sels.map(function(s){ return +s.value || 0; });
+    if (v.some(function(x){ return !x; })) { ord.className = 'fb l1r-order'; ord.textContent = ''; return; }
+    var distinct = v[0] !== v[1] && v[1] !== v[2] && v[0] !== v[2];
+    var up = v[0] < v[1] && v[1] < v[2], down = v[0] > v[1] && v[1] > v[2];
+    if (!distinct) { ord.className = 'fb show try l1r-order'; ord.textContent = 'Two of your levels are the same. Choose three different levels.'; }
+    else if (!(up || down)) { ord.className = 'fb show try l1r-order'; ord.textContent = 'Put the three levels in hierarchical order, smallest to largest or largest to smallest.'; }
+    else { ord.className = 'fb show good l1r-order'; ord.textContent = 'Three distinct levels, in hierarchical order.'; }
+  }
+  sels.forEach(function(s){ s.addEventListener('change', checkOrder); }); checkOrder();
+  var tot = $('.l1r-total'), boxes = ['l1rT1', 'l1rT2', 'l1rT3', 'l1rF'].map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  function total(){
+    var n = boxes.reduce(function(a, b){ return a + words(b.value); }, 0);
+    tot.textContent = n + (n === 1 ? ' word' : ' words') + ' · aim for 300–400'; tot.classList.toggle('met', n >= 300 && n <= 400);
+  }
+  if (tot) { boxes.forEach(function(b){ b.addEventListener('input', total); }); total(); }
+})();
+</script>
+
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+</body>
+</html>

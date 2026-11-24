@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Phyllis">
+<title>Enzymes: Biological Catalysts · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- L4 Enzymes: Biological Catalysts ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.l4-fig{width:100%;height:auto;display:block}
+.l4-t{font:600 17.5px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.l4-tw{font:700 17.5px/1 "Space Grotesk",sans-serif;fill:#fff}
+.l4-h{font:600 19px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.l4-defs{position:absolute;width:0;height:0}
+[data-on]{transition:opacity .5s ease}
+.l4-off{opacity:0!important}
+.l4-model{margin:10px 0 0;font:500 13.5px/1.4 var(--mono)}
+
+/* teacher cards */
+.l4-two{display:grid;grid-template-columns:1.15fr 1fr;gap:14px}
+.l4-two3{grid-template-columns:1fr 1fr 1fr}
+.l4-pane{background:#fff;border:1.5px solid var(--line2);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.l4-pane svg{width:100%;height:auto;display:block}
+.l4-path{margin-top:14px}
+.l4-path svg{max-width:560px;margin:0 auto}
+.l4-path .l4-tw,.l4f-svg .l4-tw{font-size:20px}
+.l4-path .l4-t,.l4f-svg .l4-t{font-size:19px}
+.l4-two3 .l4-pane svg{max-width:240px;margin:0 auto}
+.l4-dsub{font:15px/1.4 var(--serif);color:var(--muted);text-align:center;display:block}
+.l4-tags{justify-content:center;align-items:center;gap:8px;text-align:center}
+.l4-tags span{font:600 16px/1.2 var(--ui);background:var(--blue-t);color:var(--blue);border-radius:999px;padding:8px 14px}
+.l4-tags b{font:700 17px/1.3 var(--disp);color:var(--red)}
+@media (max-width:700px){ .l4-two,.l4-two3{grid-template-columns:1fr} .l4-pane{padding:8px 8px} .l4-dial{padding:10px 10px} }
+
+.l4-dials{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.l4-dial{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.l4-dial b{font:700 19px/1.2 var(--disp)}
+.l4-dial svg{width:100%;max-width:230px;height:auto;display:block}
+.l4-dtag{font:600 15px/1.4 var(--ui);color:var(--ink)}
+.l4-dtag .r{color:var(--red);font-style:normal;font-weight:700}
+.l4-dtag .t{color:var(--blue);font-style:normal;font-weight:700}
+.l4-dial .l4-dsub{text-align:left}
+.l4-qm{margin-top:12px}
+@media (max-width:640px){ .l4-dials{grid-template-columns:1fr} }
+
+/* energy hill bench */
+.l4h-svg,.l4s-svg,.l4i-svg,.l4f-svg{display:block;width:100%;max-width:560px;height:auto;margin:10px auto 6px;background:#F6F9FC;border:1px solid var(--line);border-radius:14px}
+.l4h-ctl,.l4s-ctl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.l4h-say{font:600 16px/1.35 var(--serif);color:var(--ink2);flex:1 1 220px}
+.l4h-seg,.l4s-seg{display:flex;justify-content:center}
+.l4-hill.fast .l4h-read{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.l4h-l1,.l4h-l2{fill:#C22F4A}
+.l4-hill.fast .l4h-l1,.l4-hill.fast .l4h-l2{fill:#0B6E7F}
+
+/* active site bench */
+.l4s-svg{max-width:520px}
+.l4s-sub,.l4s-wide,.l4s-p1,.l4s-p2{transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .45s ease}
+.l4s-no{transition:opacity .3s}
+.l4s-say{font:600 18px/1.45 var(--serif);text-align:center;min-height:2.9em;margin:8px 0 4px;color:var(--ink)}
+
+/* enzyme bench */
+.l4b-enz{margin-bottom:4px}
+.l4b-enz small{font:500 12px/1 var(--mono);opacity:.8;margin-left:6px}
+.l4b-opt{font:500 15px/1.45 var(--mono);color:var(--ink2);margin:8px 0 14px;min-height:1.5em}
+.l4b-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.l4b-sl{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:baseline;margin-bottom:14px}
+.l4b-sl label{font:600 16px/1.3 var(--disp)}
+.l4b-sl output{font:600 14px/1.2 var(--mono);color:var(--blue);background:var(--blue-t);border-radius:6px;padding:4px 8px}
+.l4b-sl input{grid-column:1 / -1;width:100%;margin:6px 0 0;min-height:26px}
+.l4b-sl.lock{opacity:.5}
+.l4b-mh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.l4b-mh b{font:700 22px/1 var(--disp);letter-spacing:-.01em;text-transform:none;color:var(--ink)}
+.l4b-bar{height:16px;background:#E8EEF4;border-radius:8px;overflow:hidden;margin-top:8px}
+.l4b-fill{display:block;height:100%;width:30%;background:var(--blue);border-radius:8px;transition:width .25s,background .25s}
+.l4b-fill.bad{background:var(--red)}
+.l4b-flags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px;min-height:34px}
+.l4b-flags span{font:600 13.5px/1.2 var(--ui);border-radius:999px;padding:7px 11px;background:var(--blue-t);color:var(--blue)}
+.l4b-flags span.w{background:var(--red-t);color:var(--red)}
+.l4b-flask{display:block;width:100%;max-width:360px;height:auto;background:#F6F9FC;border:1px solid var(--line);border-radius:12px;margin:6px 0}
+.l4b-occ{margin-top:2px}
+.l4b-chart{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}
+.l4b-ch{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px}
+.l4b-svg{display:block;width:100%;max-width:520px;height:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+.l4b-log{margin-top:16px}
+.l4b-lh{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.l4b-tw{overflow-x:auto;margin-top:8px}
+.l4b-tab{border-collapse:collapse;width:100%;font:14px/1.3 var(--ui)}
+.l4b-tab th{font:600 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1.5px solid var(--line2);white-space:nowrap}
+.l4b-tab td{padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+@media (max-width:760px){ .l4b-grid{grid-template-columns:1fr} }
+
+/* narration word check */
+.l4-wchk{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 12px}
+.l4-wchk span{font:600 14px/1 var(--mono);border:1.5px solid var(--line2);border-radius:999px;padding:8px 12px;color:var(--muted);background:#fff}
+.l4-wchk span.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.l4-wchk span.on::before{content:"\2713 "}
+
+/* inhibitor lab + feedback */
+.l4i-btns{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 6px}
+.l4i-btns .btn{display:inline-flex;align-items:center;gap:8px;padding-left:10px}
+.l4i-btns svg{width:40px;height:24px;flex:none;background:#F6F9FC;border-radius:6px}
+.l4i-svg{max-width:520px}
+.l4i-ci,.l4i-ni,.l4i-sub,.l4i-p1,.l4i-p2{transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .45s ease}
+.l4i-say{font:600 18px/1.45 var(--serif);text-align:center;min-height:2.9em;margin:8px 0 4px;color:var(--ink)}
+.l4f-svg{max-width:560px}
+.l4f-fl{animation:l4flow var(--d,1.2s) linear infinite}
+@keyframes l4flow{to{stroke-dashoffset:-24}}
+.l4f-sl{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:8px}
+.l4f-sl label{font:600 16px/1.3 var(--disp)}
+.l4f-sl input{flex:1 1 180px;max-width:320px;min-height:26px}
+.l4f-ctl{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.l4f-say{font:600 17px/1.45 var(--serif);margin:10px 0 0;color:var(--ink)}
+
+/* labeling pins */
+.l4-pfig{margin:0 0 14px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.l4-pp{background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 6px 4px;position:relative}
+.l4-pp svg{display:block;width:100%;height:auto}
+.l4-pp span{position:absolute;left:8px;bottom:6px;font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.l4-pin circle{fill:#0B1B33}
+.l4-pin text{fill:#fff;font:700 16px/1 "Space Grotesk",sans-serif;text-anchor:middle}
+@media (max-width:900px){ .l4-pfig{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:520px){ .l4-pfig{grid-template-columns:repeat(2,1fr)} }
+#l4pin .bins{grid-template-columns:repeat(3,1fr)}
+.l4-five .bins{grid-template-columns:repeat(3,1fr)}
+@media (max-width:600px){ #l4pin .bins,.l4-five .bins{grid-template-columns:repeat(2,1fr)} }
+.bin h4 small{font:500 12.5px/1 var(--mono);color:var(--muted);margin-left:6px;text-transform:none;letter-spacing:0}
+
+/* roots grid */
+.l4-roots{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.l4-roots div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:16px/1.4 var(--serif)}
+.l4-roots b{font:700 16px/1.4 var(--disp);color:var(--blue)}
+
+/* report */
+.l4r-total{align-self:center}
+.l4r-total.met{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.l4r-pick button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.l4r-cond{display:flex;flex-direction:column;gap:10px}
+.l4r-row{display:grid;grid-template-columns:12em 1fr;gap:10px;align-items:center;border-left:6px solid var(--c);padding-left:10px}
+.l4r-row label{font:700 16px/1.2 var(--disp);color:var(--c)}
+.l4r-row input{width:100%}
+@media (max-width:600px){ .l4r-row{grid-template-columns:1fr;gap:4px} }
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+</style>
+
+</head>
+<body>
+
+<svg class="l4-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs>
+  <path id="l4-e0" d="M-62 -8C-62 -46 -40 -52 -26 -46L-18 -40L-14 -24Q0 -14 14 -24L18 -40L26 -46C40 -52 62 -46 62 -8C62 36 30 48 0 48C-30 48 -62 36 -62 -8Z"/>
+  <path id="l4-e1" d="M-62 -8C-62 -46 -34 -54 -14 -50L-12 -42L-12 -24Q0 -16 12 -24L12 -42L14 -50C34 -54 62 -46 62 -8C62 36 30 48 0 48C-30 48 -62 36 -62 -8Z"/>
+  <path id="l4-e2" d="M-62 -8C-62 -46 -30 -50 -12 -44L-6 -40L-5 -30Q0 -26 5 -30L6 -40L12 -44C30 -50 66 -46 66 -8C66 36 30 48 0 48C-30 48 -62 36 -62 -8Z"/>
+  <path id="l4-sl" d="M-12 0H0V18Q-12 18 -12 8Z"/>
+  <path id="l4-sr" d="M0 0H12V8Q12 18 0 18Z"/>
+  <path id="l4-ci" d="M-12 0H12V8Q12 18 0 18Q-12 18 -12 8Z"/>
+  <path id="l4-ni" d="M-9 0L-4.5 -8L4.5 -8L9 0L4.5 8L-4.5 8Z"/>
+  <path id="l4-wl" d="M-22 6H0V24H-10Q-22 24 -22 14Z"/>
+  <path id="l4-wr" d="M0 6H22V14Q22 24 12 24H0Z"/>
+  <path id="l4-wp" d="M-7 6L0 -6L7 6Z"/>
+</defs></svg>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A ribbon model of the enzyme carbonic anhydrase, its folded chain colored blue to red" style="background-image:url(img/lesson-1-04-hero.jpg)"><span class="hlab">Carbonic anhydrase · protein structure</span><span class="hcred">Image: Own work, Public domain, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Introduction</div>
+      <h1>Enzymes: Biological Catalysts</h1>
+      <div class="focusq"><div class="label">Focus</div><p>How do environmental conditions in the body &mdash; temperature, pH, and concentration &mdash; control the rates of life&rsquo;s chemical reactions?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to explain how an enzyme lowers the activation energy of a reaction by binding substrate at its active site.</li>
+        <li>I will be able to name and explain the four conditions that affect enzyme activity (temperature, pH, substrate concentration, enzyme concentration).</li>
+        <li>I will be able to distinguish competitive and noncompetitive inhibition and give one example of each.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Reaction energy &middot; schematic</div>
+      <svg class="l4-fig" viewBox="0 0 300 180" role="img" aria-label="Reaction energy diagram: reactants must climb an energy hill, the activation energy, to become products; an enzyme lowers the hill">
+        <path d="M8 10V168H294" fill="none" stroke="#5D6B80" stroke-width="2"/>
+        <path d="M122 130H136C158 130 160 40 184 40C208 40 210 156 236 156H292" fill="none" stroke="#C22F4A" stroke-width="4"/>
+        <path d="M122 130H136C158 130 162 88 184 88C206 88 210 156 236 156H292" fill="none" stroke="#0B6E7F" stroke-width="4"/>
+        <path d="M112 40H184" stroke="#8A97A8" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <path d="M112 40V130M107 48L112 40L117 48M107 122L112 130L117 122" fill="none" stroke="#C22F4A" stroke-width="2.5"/>
+        <text x="102" y="80" class="l4-h" text-anchor="end">activation</text><text x="102" y="101" class="l4-h" text-anchor="end">energy</text>
+        <text x="184" y="26" class="l4-h" text-anchor="middle" style="fill:#C22F4A">without enzyme</text>
+        <text x="296" y="118" class="l4-h" text-anchor="end" style="fill:#0B6E7F">with</text><text x="296" y="139" class="l4-h" text-anchor="end" style="fill:#0B6E7F">enzyme</text>
+      </svg>
+      <div class="cap">An enzyme lowers the hill the reactants must climb.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="what" role="tab"><span class="n">01</span>What Enzymes Do</button>
+  <button class="tab" data-tab="cond" role="tab"><span class="n">02</span>Conditions</button>
+  <button class="tab" data-tab="ctrl" role="tab"><span class="n">03</span>Control</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 WHAT ENZYMES DO ═════════ -->
+<section class="panel" id="tab-what" role="tabpanel">
+  <div class="vo" data-clip="v_hill">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Hill and the Pocket</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage">
+      <div class="l4-two">
+        <div class="l4-pane" data-step="0">
+          <div class="cat">Energy hill</div>
+          <svg viewBox="0 0 360 224" role="img" aria-label="Reaction energy diagram: reactants climb a tall energy hill; with an enzyme the hill is lower">
+            <path d="M8 16V196H350" fill="none" stroke="#5D6B80" stroke-width="2"/>
+            <text x="16" y="18" class="l4-t" fill="#5D6B80">energy</text>
+            <text x="346" y="218" class="l4-t" text-anchor="end" fill="#5D6B80">reaction progress</text>
+            <text x="100" y="162" class="l4-t">reactants</text>
+            <text x="344" y="158" class="l4-t" text-anchor="end">products</text>
+            <path data-on="0 1" d="M104 140H124C160 140 164 44 200 44C236 44 238 170 272 170H340" fill="none" stroke="#C22F4A" stroke-width="4"/>
+            <path data-on="2 3 4 5 6" d="M104 140H124C160 140 164 44 200 44C236 44 238 170 272 170H340" fill="none" stroke="#8A97A8" stroke-width="2.5" stroke-dasharray="6 5"/>
+            <path data-on="2 3 4 5 6" d="M104 140H124C160 140 166 96 200 96C234 96 238 170 272 170H340" fill="none" stroke="#0B6E7F" stroke-width="4"/>
+            <g data-on="0 1"><path d="M96 44H200" stroke="#8A97A8" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M96 44V140M91 52L96 44L101 52M91 132L96 140L101 132" fill="none" stroke="#C22F4A" stroke-width="2.5"/>
+              <text x="88" y="86" class="l4-t" text-anchor="end">activation</text><text x="88" y="104" class="l4-t" text-anchor="end">energy</text></g>
+            <g data-on="2 3 4 5 6"><path d="M96 96H200" stroke="#8A97A8" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M96 96V140M91 104L96 96L101 104M91 132L96 140L101 132" fill="none" stroke="#0B6E7F" stroke-width="2.5"/>
+              <text x="88" y="118" class="l4-t" text-anchor="end">activation</text><text x="88" y="136" class="l4-t" text-anchor="end">energy</text></g>
+            <text data-on="1" x="200" y="30" class="l4-t" text-anchor="middle" fill="#C22F4A">tall hill: slow</text>
+            <text data-on="2 3 4 5 6" x="262" y="112" class="l4-t" fill="#0B6E7F">lower hill:</text><text data-on="2 3 4 5 6" x="262" y="130" class="l4-t" fill="#0B6E7F">faster</text>
+          </svg>
+        </div>
+        <div class="l4-pane" data-step="3">
+          <div class="cat">Active site</div>
+          <svg viewBox="0 0 340 230" role="img" aria-label="An enzyme with a pocket, the active site, binds its substrate, clamps around it, releases the product unchanged, and accepts only the matching substrate">
+            <g data-on="3 5 6"><use href="#l4-e0" transform="translate(170 150)" fill="#0B6E7F"/></g>
+            <g data-on="4"><use href="#l4-e1" transform="translate(170 150)" fill="#0B6E7F"/></g>
+            <text data-on="3 4 5" x="170" y="164" class="l4-tw" text-anchor="middle">enzyme</text>
+            <text data-on="6" x="170" y="164" class="l4-tw" text-anchor="middle">lactase</text>
+            <g data-on="3"><use href="#l4-sl" transform="translate(170 62)" fill="#C22F4A"/><use href="#l4-sr" transform="translate(170 62)" fill="#E88A9A"/><path d="M170 86V102M165 96L170 102L175 96" fill="none" stroke="#5D6B80" stroke-width="2"/>
+              <text x="170" y="40" class="l4-t" text-anchor="middle">substrate</text></g>
+            <g data-on="3 5"><text x="14" y="88" class="l4-t">active site</text><path d="M60 94L150 112" fill="none" stroke="#5D6B80" stroke-width="1.5"/></g>
+            <g data-on="4"><use href="#l4-sl" transform="translate(170 108)" fill="#C22F4A"/><use href="#l4-sr" transform="translate(170 108)" fill="#E88A9A"/>
+              <text x="332" y="72" class="l4-t" text-anchor="end">induced fit</text><path d="M262 78L206 102" fill="none" stroke="#5D6B80" stroke-width="1.5"/></g>
+            <g data-on="5"><use href="#l4-sl" transform="translate(112 50)" fill="#C22F4A"/><use href="#l4-sr" transform="translate(228 50)" fill="#E88A9A"/>
+              <path d="M158 100L132 74M182 100L208 74" fill="none" stroke="#5D6B80" stroke-width="2"/><text x="170" y="30" class="l4-t" text-anchor="middle">product</text>
+              <text x="170" y="222" class="l4-t" text-anchor="middle" fill="#0B6E7F">enzyme unchanged</text></g>
+            <g data-on="6"><use href="#l4-sl" transform="translate(96 64)" fill="#C22F4A"/><use href="#l4-sr" transform="translate(96 64)" fill="#E88A9A"/><text x="96" y="40" class="l4-t" text-anchor="middle" fill="#0B6E7F">fits</text><path d="M104 92L152 110M143 100L153 110L140 112" fill="none" stroke="#0B6E7F" stroke-width="2"/><path d="M226 100L246 120M246 100L226 120" fill="none" stroke="#0B1B33" stroke-width="3.5" stroke-linecap="round"/>
+              <use href="#l4-wl" transform="translate(250 50)" fill="#C22F4A"/><use href="#l4-wr" transform="translate(250 50)" fill="#E88A9A"/><use href="#l4-wp" transform="translate(250 50)" fill="#C22F4A"/><text x="250" y="30" class="l4-t" text-anchor="middle" fill="#C22F4A">no fit</text></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps":[
+      "A reaction usually needs energy to get started. That energy hill is called the activation energy, and the reactants must climb it.",
+      "The higher the hill, the slower the reaction. Here the hill is tall, so this reaction is slow.",
+      "Enzymes lower the hill. The same reactants, the same products, but a much smaller climb to get from one to the other.",
+      "They do it by binding the substrate, the molecule the reaction acts on, in a specific pocket called the active site.",
+      "The pocket fits the substrate the way a glove fits a hand. The enzyme then shifts slightly to clamp around it. That is induced fit.",
+      "Inside that tight space the enzyme can stress, position, or stabilize the substrate. Then the product is released, and the enzyme, unchanged, moves on.",
+      "Most enzymes are highly specific. Lactase breaks down lactose, and sucrase breaks down sucrose. Only the matching substrate fits."
+    ]}</script>
+  </div>
+
+  <div class="sec asec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>What an enzyme is, how it lowers the hill, and why each enzyme fits only one job.</span></div>
+    <p class="marg"><b>Wonder.</b> The body is ordered, beautiful, and not yet fully understood. Carry that posture into every reading.</p>
+    <article class="atlas">
+      <h3>What an enzyme is</h3>
+      <p>An <b>enzyme</b> is a biological catalyst &mdash; a molecule that speeds up a chemical reaction without being consumed by it. The vast majority of enzymes are proteins. (A small minority are RNA molecules called ribozymes; they are exceptions.) When you eat starchy food, an enzyme in your saliva called <i>amylase</i> begins breaking the starch into smaller sugars before you have even swallowed. When your blood carries carbon dioxide back to your lungs, an enzyme called <i>carbonic anhydrase</i> converts CO&#8322; and water into bicarbonate ion thousands of times per second. Without enzymes, the chemistry of your body would happen so slowly that you could not exist.</p>
+      <p>The number of reactions an enzyme can catalyze per second is staggering. Carbonic anhydrase can process about a million CO&#8322; molecules per second. Catalase, an enzyme that decomposes hydrogen peroxide, can process tens of millions per second. The body&rsquo;s chemistry runs at the speed of life because enzymes make it run fast.</p>
+      <h3>How enzymes work</h3>
+      <p>A reaction usually requires energy to start &mdash; an &ldquo;energy hill&rdquo; called the <b>activation energy</b> that the reactants must climb before they can convert into products. The higher the hill, the slower the reaction. Enzymes lower the hill.</p>
+      <figure class="plate"><img data-img="f401" alt="Diagram showing how enzymes decrease the activation energy required for a reaction"><figcaption>Enzymes decrease the activation energy required for a given chemical reaction to occur. (a) Without an enzyme, the energy input needed is high. (b) With an enzyme, less energy is needed. (Image credit: OpenStax)</figcaption></figure>
+      <p>They do this by binding to their <b>substrate</b> &mdash; the molecule the reaction acts on &mdash; at a specific pocket called the <b>active site</b>. The active site is shaped to fit the substrate the way a glove fits a hand. When substrate enters the active site, the enzyme typically shifts shape slightly to clamp around it (a phenomenon called <i>induced fit</i>). The chemistry happens inside this confined space, where the enzyme can stress, position, or stabilize the substrate &mdash; dramatically lowering the activation energy. The product is then released, and the enzyme &mdash; unchanged &mdash; moves on to its next substrate.</p>
+      <figure class="plate"><img data-img="f402" alt="Diagram of an enzyme-substrate complex"><figcaption>Enzyme&ndash;substrate complex. (Image credit: TimVickers/Fvasconcellos, Wikimedia Commons, public domain)</figcaption></figure>
+      <p>Most enzymes are highly <b>specific</b>. Lactase breaks down lactose. Sucrase breaks down sucrose. They will not interchange. The active site shape is the reason &mdash; only the matching substrate can enter, and only the matching reaction can happen.</p>
+      <figure class="plate"><img data-img="f403" alt="Diagram of lactase enzyme function"><figcaption>Lactase enzyme function. (Image credit: LabXchange)</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Energy Hill</h2></div>
+    <p class="hint">Switch the enzyme on and off, then send reactants over the hill.</p>
+    <div class="bench l4-hill" id="l4hill">
+      <div class="bh"><b>Energy bench</b><span class="readout l4h-read">Without enzyme</span></div>
+      <div class="seg l4h-seg" role="group" aria-label="Enzyme">
+        <button type="button" data-v="0" aria-pressed="true">Without enzyme</button>
+        <button type="button" data-v="1" aria-pressed="false">With enzyme</button>
+      </div>
+      <svg class="l4h-svg" viewBox="0 0 360 224" role="img" aria-label="Reaction energy diagram with a token that crosses the hill">
+        <path d="M8 16V196H350" fill="none" stroke="#5D6B80" stroke-width="2"/>
+        <text x="16" y="18" class="l4-t" fill="#5D6B80">energy</text>
+        <text x="346" y="218" class="l4-t" text-anchor="end" fill="#5D6B80">reaction progress</text>
+        <text x="100" y="162" class="l4-t">reactants</text>
+        <text x="344" y="158" class="l4-t" text-anchor="end">products</text>
+        <path class="l4h-ghost" d="M104 140H124C160 140 164 44 200 44C236 44 238 170 272 170H340" fill="none" stroke="#8A97A8" stroke-width="2.5" stroke-dasharray="6 5"/>
+        <path class="l4h-curve" d="M104 140H124C160 140 164 44 200 44C236 44 238 170 272 170H340" fill="none" stroke="#C22F4A" stroke-width="4"/>
+        <g class="l4h-br"><path class="l4h-guide" d="M96 44H200" stroke="#8A97A8" stroke-width="1.5" stroke-dasharray="3 4"/><path class="l4h-arrow" d="M96 44V140M91 52L96 44L101 52M91 132L96 140L101 132" fill="none" stroke="#C22F4A" stroke-width="2.5"/></g>
+        <text class="l4h-l1" x="88" y="86" text-anchor="end" font-size="17.5" font-weight="600">activation</text><text class="l4h-l2" x="88" y="104" text-anchor="end" font-size="17.5" font-weight="600">energy</text>
+        <circle class="l4h-token" r="10" cx="104" cy="130" fill="#C22F4A" stroke="#fff" stroke-width="2.5"/>
+      </svg>
+      <div class="l4h-ctl"><button class="btn l4h-go" type="button">Send reactants</button><span class="readout l4h-count">Converted: 0</span><span class="l4h-say" aria-live="polite"></span></div>
+      <p class="hint l4-model">Model: shapes from the reading, not lab data.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Active Site</h2></div>
+    <p class="hint">Step a substrate through the enzyme. Then try the other substrate.</p>
+    <div class="bench l4-site" id="l4site">
+      <div class="bh"><b>Lactase bench</b><span class="readout l4s-read">Step 1 of 4</span></div>
+      <div class="seg l4s-seg" role="group" aria-label="Substrate">
+        <button type="button" data-v="lac" aria-pressed="true">Lactose</button>
+        <button type="button" data-v="suc" aria-pressed="false">Sucrose</button>
+      </div>
+      <svg class="l4s-svg" viewBox="0 0 340 230" role="img" aria-label="Lactase with its active site, and a substrate that approaches, docks or fails to fit">
+        <g class="l4s-enz"><use class="l4s-e" href="#l4-e0" transform="translate(170 150)" fill="#0B6E7F"/></g>
+        <text x="170" y="164" class="l4-tw" text-anchor="middle">lactase</text>
+        <g class="l4s-sub"><use href="#l4-sl" fill="#C22F4A"/><use href="#l4-sr" fill="#E88A9A"/></g>
+        <g class="l4s-wide"><use href="#l4-wl" fill="#C22F4A"/><use href="#l4-wr" fill="#E88A9A"/><use href="#l4-wp" fill="#C22F4A"/></g>
+        <g class="l4s-p1"><use href="#l4-sl" fill="#C22F4A"/></g><g class="l4s-p2"><use href="#l4-sr" fill="#E88A9A"/></g>
+        <text class="l4s-lab l4-t" x="170" y="24" text-anchor="middle">lactose</text>
+        <path class="l4s-no" d="M158 74L182 96M182 74L158 96" fill="none" stroke="#C22F4A" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <p class="l4s-say" aria-live="polite"></p>
+      <div class="l4s-ctl"><button class="btn ghost l4s-back" type="button">&larr; Back</button><button class="btn l4s-next" type="button">Next step &rarr;</button></div>
+      <p class="hint l4-model">Schematic, not to scale.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Which Part Is This?</h2></div>
+    <p class="hint">Tap a description, then tap the term it fits.</p>
+    <div class="place card l4-five" id="l4sortParts">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="sub" data-fb="Substrate: the molecule the reaction acts on." data-miss="This is the thing being worked on, not the thing doing the work.">The molecule that gets broken down or changed</button>
+        <button class="chip" data-k="b" data-ans="act" data-fb="Active site: the pocket shaped to fit the substrate." data-miss="This is a place, not a molecule. Where on the enzyme does the substrate bind?">The pocket on the enzyme where the substrate binds</button>
+        <button class="chip" data-k="c" data-ans="enz" data-fb="Enzyme: unchanged, it moves on to its next substrate." data-miss="Something comes out of the reaction changed, and something comes out the same. Which is this?">Comes out of the reaction unchanged, ready for another round</button>
+        <button class="chip" data-k="d" data-ans="pro" data-fb="Product: what is released once the chemistry is done." data-miss="This is what is left after the chemistry. Is it what goes in, or what comes out?">What is released from the active site after the chemistry</button>
+        <button class="chip" data-k="e" data-ans="aen" data-fb="Activation energy: the energy hill the reactants must climb." data-miss="This is neither a molecule nor a place. It is an amount of energy.">The energy needed to get the reaction started</button>
+        <button class="chip" data-k="f" data-ans="fit" data-fb="Induced fit: the enzyme shifts shape slightly to clamp around the substrate." data-miss="Here the enzyme itself moves. Which term describes the enzyme changing shape around what it binds?">The enzyme shifting slightly to clamp around what entered</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="enz"><h4>Enzyme</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="sub"><h4>Substrate</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="act"><h4>Active site</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="fit"><h4>Induced fit</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="pro"><h4>Product</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="aen"><h4>Activation energy</h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div>
+      <div class="tally"></div>
+    </div>
+    <div class="fnote" style="margin-top:18px"><div class="field"><span class="label">Your turn</span><p class="q">In your own words: how does an enzyme make a reaction faster? Use the hill and the pocket.</p>
+      <textarea class="jbox" id="l4n1" data-label="How an enzyme speeds up a reaction, in my own words" data-min="25"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="cond" type="button">Next: Conditions &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 CONDITIONS ═════════ -->
+<section class="panel" id="tab-cond" role="tabpanel">
+  <div class="vo" data-clip="v_dials">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Four Dials</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage">
+      <div class="l4-dials">
+        <div class="l4-dial" data-step="1">
+          <div class="cat">Dial 1</div><b>Temperature</b>
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path d="M8 8V80H152" fill="none" stroke="#8A97A8" stroke-width="1.5"/><path d="M10 78C40 74 70 30 98 20C112 16 118 24 124 44L136 80" fill="none" stroke="#C22F4A" stroke-width="3.5"/><path d="M98 80V20" stroke="#0B6E7F" stroke-width="1.5" stroke-dasharray="3 3"/></svg>
+          <span class="l4-dtag" data-step="2">optimum near 37&deg;C &middot; 41&deg;C already losing efficiency</span>
+          <span class="l4-dsub">rises, then the protein denatures</span>
+        </div>
+        <div class="l4-dial" data-step="3">
+          <div class="cat">Dial 2</div><b>pH</b>
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path d="M8 8V80H152" fill="none" stroke="#8A97A8" stroke-width="1.5"/><path d="M10 78C18 78 20 22 27 22C34 22 36 78 46 78" fill="none" stroke="#C22F4A" stroke-width="3.5"/><path d="M72 78C82 78 84 22 90 22C96 22 98 78 108 78" fill="none" stroke="#0B6E7F" stroke-width="3.5"/></svg>
+          <span class="l4-dtag"><i class="r">pepsin</i> pH 1.5&ndash;2 &middot; <i class="t">trypsin</i> pH 8</span>
+          <span class="l4-dsub">each enzyme has its own optimum</span>
+        </div>
+        <div class="l4-dial" data-step="4">
+          <div class="cat">Dial 3</div><b>Substrate concentration</b>
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path d="M8 8V80H152" fill="none" stroke="#8A97A8" stroke-width="1.5"/><path d="M10 78C30 36 56 26 84 22L150 20" fill="none" stroke="#C22F4A" stroke-width="3.5"/><path d="M100 80V22" stroke="#0B6E7F" stroke-width="1.5" stroke-dasharray="3 3"/></svg>
+          <span class="l4-dtag">all active sites occupied: saturated</span>
+          <span class="l4-dsub">rises, then levels off</span>
+        </div>
+        <div class="l4-dial" data-step="5">
+          <div class="cat">Dial 4</div><b>Enzyme concentration</b>
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path d="M8 8V80H152" fill="none" stroke="#8A97A8" stroke-width="1.5"/><path d="M10 78L150 20" fill="none" stroke="#C22F4A" stroke-width="3.5"/></svg>
+          <span class="l4-dtag">substrate plentiful: more enzyme, faster</span>
+          <span class="l4-dsub">rises with the amount of enzyme</span>
+        </div>
+      </div>
+      <div class="l4-qm" data-step="0"><span class="readout">Schematic curves: shapes from the reading, not lab data.</span></div>
+    </div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps":[
+      "Enzymes work best within a narrow set of physical conditions. Think of four dials: temperature, pH, substrate concentration, and enzyme concentration.",
+      "As temperature rises, molecules move faster and reactions speed up, until the protein denatures and loses the shape its active site depends on.",
+      "Most human enzymes work best near thirty-seven degrees Celsius. At forty-one, the temperature of a high fever, many are already losing efficiency.",
+      "Each enzyme has its own optimum pH. Pepsin, in the stomach, works best around pH one point five to two. Trypsin, in the small intestine, around pH eight.",
+      "Reaction rate rises with substrate concentration until all the active sites are occupied. After that, more substrate speeds nothing up. The enzyme is saturated.",
+      "The last dial is enzyme concentration. With substrate plentiful, more enzyme means a faster reaction."
+    ]}</script>
+  </div>
+
+  <div class="sec asec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The four conditions, what each one does to the rate, and where each enzyme works best.</span></div>
+    <article class="atlas">
+      <h3>Factors affecting enzyme activity</h3>
+      <p>Enzymes work best within a narrow set of physical conditions.</p>
+      <h4>Temperature</h4>
+      <p>As temperature rises, molecules move faster and reactions speed up &mdash; until the temperature gets too high and the protein <b>denatures</b>, losing the precise shape its active site depends on. Most human enzymes have an optimum around 37&deg;C (body temperature). At 41&deg;C &mdash; the temperature of a high fever &mdash; many enzymes are already losing efficiency. This is one reason high fevers are medically dangerous.</p>
+      <h4>pH</h4>
+      <p>Each enzyme has an optimum pH. <b>Pepsin</b>, the protein-digesting enzyme in the stomach, works best around pH 1.5&ndash;2 &mdash; exactly the acid environment the stomach maintains. <b>Trypsin</b>, a protein-digesting enzyme in the small intestine, works best around pH 8 &mdash; exactly the slightly basic environment there. Move pepsin to the small intestine and it stops working; move trypsin into the stomach and it stops working too.</p>
+      <figure class="plate"><img data-img="f404" alt="Graph of enzyme activity across different pH values"><figcaption>Enzyme activity across different pH values. (Image source: Save My Exams)</figcaption></figure>
+      <h4>Substrate concentration</h4>
+      <p>Reaction rate rises as substrate concentration rises &mdash; until all the active sites are occupied. Beyond that point, adding more substrate does not speed anything up. The enzyme is &ldquo;saturated.&rdquo;</p>
+      <h4>Enzyme concentration</h4>
+      <p>With substrate plentiful, more enzyme means a faster reaction.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Enzyme Bench</h2></div>
+    <p class="hint">Choose an enzyme. Move the four dials and watch the rate, the curve, and the enzyme molecules.</p>
+    <div class="bench l4-bench" id="l4bench">
+      <div class="bh"><b>Enzyme bench</b><span class="readout l4b-top">pepsin</span></div>
+      <div class="seg l4b-enz" role="group" aria-label="Enzyme">
+        <button type="button" data-v="pepsin" aria-pressed="false">Pepsin <small>stomach</small></button>
+        <button type="button" data-v="trypsin" aria-pressed="false">Trypsin <small>small intestine</small></button>
+        <button type="button" data-v="typical" aria-pressed="true">A typical human enzyme</button>
+      </div>
+      <p class="l4b-opt"></p>
+      <div class="l4b-grid">
+        <div class="l4b-dials">
+          <div class="l4b-sl"><label for="l4bT">Temperature</label><output class="l4b-oT"></output><input type="range" id="l4bT" min="10" max="60" step="1" value="37"></div>
+          <div class="l4b-sl"><label for="l4bP">pH</label><output class="l4b-oP"></output><input type="range" id="l4bP" min="0" max="14" step="0.1" value="7"></div>
+          <div class="l4b-sl"><label for="l4bS">Substrate concentration</label><output class="l4b-oS"></output><input type="range" id="l4bS" min="0" max="10" step="1" value="6"></div>
+          <div class="l4b-sl"><label for="l4bE">Enzyme concentration</label><output class="l4b-oE"></output><input type="range" id="l4bE" min="1" max="10" step="1" value="4"></div>
+        </div>
+        <div class="l4b-out">
+          <div class="l4b-meter"><div class="l4b-mh"><span>Relative rate</span><b class="l4b-word">moderate</b></div><div class="l4b-bar"><i class="l4b-fill"></i></div></div>
+          <div class="l4b-flags" aria-live="polite"></div>
+          <svg class="l4b-flask" viewBox="0 0 340 130" role="img" aria-label="Enzyme molecules in solution; filled pockets show bound substrate"></svg>
+          <div class="l4b-occ readout"></div>
+        </div>
+      </div>
+      <div class="l4b-chart">
+        <div class="l4b-ch"><span class="label">Rate curve for</span>
+          <div class="seg l4b-cur" role="group" aria-label="Condition to plot">
+            <button type="button" data-v="T" aria-pressed="true">Temperature</button><button type="button" data-v="P" aria-pressed="false">pH</button><button type="button" data-v="S" aria-pressed="false">Substrate</button><button type="button" data-v="E" aria-pressed="false">Enzyme</button>
+          </div></div>
+        <svg class="l4b-svg" viewBox="0 0 340 190" role="img" aria-label="Relative rate against the chosen condition, with a marker at the current setting"></svg>
+      </div>
+      <div class="l4b-log">
+        <div class="l4b-lh"><button class="btn ghost small l4b-add" type="button">Log this setting</button><button class="btn ghost small l4b-clr" type="button">Clear log</button><span class="hint l4b-ln"></span></div>
+        <div class="l4b-tw"><table class="l4b-tab"><thead><tr><th>Enzyme</th><th>Temp</th><th>pH</th><th>Substrate</th><th>Enzyme</th><th>Rate</th><th>Flag</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <p class="hint l4-model">Model: shapes from the reading, not lab data. Concentrations are on a 1 to 10 scale.</p>
+      <p class="hint">Optional extra: the <a href="https://biomanbio.com/HTML5GamesandLabs/LifeChemgames/enzymatichtml5page.html" target="_blank" rel="noopener">BioMan Biology enzyme simulation</a> opens in a new tab.</p>
+    </div>
+    <div class="fnote" style="margin-top:18px"><div class="field"><span class="label">Your turn</span><p class="q">Which condition produced the slowest rate, and why?</p>
+      <textarea class="jbox" id="l4n2" data-label="Which condition produced the slowest rate, and why" data-min="20"></textarea></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Which Dial?</h2></div>
+    <p class="hint">Tap a situation, then tap the dial that explains it.</p>
+    <div class="place card l4-four" id="l4sortDial">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ph" data-fb="pH: the two organs differ in how acid their surroundings are." data-miss="Heat is not what changed here. What environmental setting differs between the two organs?">Pepsin is moved from the stomach to the small intestine</button>
+        <button class="chip" data-k="b" data-ans="tmp" data-fb="Temperature: this is the dial that moves in a fever." data-miss="Count what is being added or removed. Here, nothing is. What about the surroundings has shifted?">Body temperature climbs to 41&deg;C in a high fever</button>
+        <button class="chip" data-k="c" data-ans="sub" data-fb="Substrate concentration: it is about how full the active sites are." data-miss="The enzyme is the same amount here. Ask what is already full.">Every active site is occupied, and more substrate is added</button>
+        <button class="chip" data-k="d" data-ans="enz" data-fb="Enzyme concentration: with substrate plentiful, more enzyme is a faster reaction." data-miss="Substrate is not the limit here. What is being increased?">Substrate is plentiful and the amount of enzyme goes up</button>
+        <button class="chip" data-k="e" data-ans="ph" data-fb="pH: the stomach is a very different environment from the small intestine." data-miss="Both organs are part of one body, so temperature matches. What is different about them?">Trypsin ends up in the acid environment of the stomach</button>
+        <button class="chip" data-k="f" data-ans="tmp" data-fb="Temperature: molecules move faster, so reactions speed up, up to a point." data-miss="Nothing is being added. What property of the surroundings makes molecules move faster?">Molecules move faster and reactions speed up</button>
+        <button class="chip" data-k="g" data-ans="sub" data-fb="Substrate concentration: the rate rises as it rises, until the sites are occupied." data-miss="This is about how much of the molecule being worked on is present, not how much enzyme.">Rate climbs as more of the molecule being broken down is supplied</button>
+        <button class="chip" data-k="h" data-ans="enz" data-fb="Enzyme concentration: more enzyme molecules, more active sites at work." data-miss="Look at what is doubling. Is it the molecule being worked on, or the one doing the work?">Twice as many enzyme molecules are present</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="tmp"><h4>Temperature</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="ph"><h4>pH</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="sub"><h4>Substrate concentration</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="enz"><h4>Enzyme concentration</h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div>
+      <div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Narrate It</h2></div>
+    <div class="card">
+      <p class="q" style="font-weight:600;margin-top:0">Close the Atlas. Out loud, in your own words, explain what an enzyme does. About 150 words. Use the words below.</p>
+      <div class="l4-wchk" aria-label="Words to use"><span data-w="activation energy">activation energy</span><span data-w="substrate">substrate</span><span data-w="active site">active site</span><span data-w="induced fit">induced fit</span></div>
+      <div class="narrate" data-words="150"></div>
+      <p class="hint">Play it back while you re-read the Atlas. Then write the sentence in which you used each word, and fix anything the Atlas shows you got wrong. A word lights up when it appears below.</p>
+      <div class="field" style="margin-bottom:0"><p class="q">Corrections to your narration:</p>
+        <textarea class="jbox" id="l4nar" data-label="Narration: the sentences where I used each word, and my corrections" data-min="25"></textarea></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="what" type="button">&larr; What Enzymes Do</button><button class="btn" data-go="ctrl" type="button">Next: Control &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 CONTROL ═════════ -->
+<section class="panel" id="tab-ctrl" role="tabpanel">
+  <div class="vo" data-clip="v_brakes">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Brakes and Feedback</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage">
+      <div class="l4-two l4-two3">
+        <div class="l4-pane" data-step="1">
+          <div class="cat">Competitive</div>
+          <svg viewBox="0 0 200 150" role="img" aria-label="A competitive inhibitor sits in the active site while the real substrate is turned away">
+            <use href="#l4-e0" transform="translate(100 98) scale(.8)" fill="#0B6E7F"/>
+            <use href="#l4-ci" transform="translate(100 63) scale(.8)" fill="#0B1B33"/>
+            <g transform="translate(34 20)"><use href="#l4-sl" fill="#C22F4A"/><use href="#l4-sr" fill="#E88A9A"/></g>
+            <path d="M40 46L62 62M62 46L40 62" stroke="#C22F4A" stroke-width="3.5" stroke-linecap="round"/>
+            <text x="194" y="30" class="l4-t" text-anchor="end">inhibitor</text><path d="M158 36L110 64" fill="none" stroke="#5D6B80" stroke-width="1.5"/>
+          </svg>
+          <span class="l4-dsub">enters the active site, is not processed</span>
+        </div>
+        <div class="l4-pane" data-step="2">
+          <div class="cat">Noncompetitive</div>
+          <svg viewBox="0 0 200 150" role="img" aria-label="A noncompetitive inhibitor binds the side of the enzyme and distorts the active site">
+            <use href="#l4-e2" transform="translate(68 98) scale(.8)" fill="#0B6E7F"/>
+            <use href="#l4-ni" transform="translate(154 98) scale(1.3)" fill="#5D6B80"/>
+            <g transform="translate(68 18)"><use href="#l4-sl" fill="#C22F4A"/><use href="#l4-sr" fill="#E88A9A"/></g>
+            <path d="M56 40L80 58M80 40L56 58" stroke="#C22F4A" stroke-width="3.5" stroke-linecap="round"/>
+            <text x="154" y="132" class="l4-t" text-anchor="middle">inhibitor</text>
+          </svg>
+          <span class="l4-dsub">binds elsewhere, distorts the active site</span>
+        </div>
+        <div class="l4-pane l4-tags" data-step="3"><span>many medications</span><span>many natural toxins</span><b>work as enzyme inhibitors</b></div>
+      </div>
+      <div class="l4-pane l4-path" data-step="4">
+        <div class="cat">Feedback inhibition</div>
+        <svg viewBox="0 0 360 140" role="img" aria-label="A four-molecule pathway run by three enzymes; the end product loops back and slows the first enzyme">
+          <g fill="none" stroke="#8A97A8" stroke-width="3"><path d="M52 70H78M120 70H150M192 70H222M264 70H292"/></g>
+          <g fill="#5D6B80"><path d="M78 64L88 70L78 76Z"/><path d="M150 64L160 70L150 76Z"/><path d="M222 64L232 70L222 76Z"/><path d="M292 64L302 70L292 76Z"/></g>
+          <g fill="#C22F4A"><circle cx="34" cy="70" r="18"/><circle cx="100" cy="70" r="14" fill="#D9667B"/><circle cx="172" cy="70" r="14" fill="#D9667B"/><circle cx="244" cy="70" r="14" fill="#D9667B"/><circle cx="326" cy="70" r="18"/></g>
+          <g fill="#0B6E7F"><rect x="68" y="31" width="60" height="26" rx="8"/><rect x="140" y="31" width="60" height="26" rx="8"/><rect x="212" y="31" width="60" height="26" rx="8"/></g>
+          <g class="l4-tw" text-anchor="middle" font-size="18"><text x="98" y="50">enz 1</text><text x="170" y="50">enz 2</text><text x="242" y="50">enz 3</text></g>
+          <text x="34" y="112" class="l4-t" text-anchor="middle">start</text><text x="352" y="112" class="l4-t" text-anchor="end">end product</text>
+          <g data-step="5"><path d="M326 50C326 12 120 6 98 28" fill="none" stroke="#C22F4A" stroke-width="3" stroke-dasharray="7 5"/><path d="M86 32H110" stroke="#C22F4A" stroke-width="5" stroke-linecap="round"/></g>
+        </svg>
+        <span class="l4-dsub" data-step="6">the cell stops making what it already has enough of</span>
+      </div>
+    </div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps":[
+      "The body needs to control when reactions happen, which means it must be able to slow enzymes down or shut them off.",
+      "A competitive inhibitor resembles the substrate enough to enter the active site. It blocks the real substrate without being processed.",
+      "A noncompetitive inhibitor binds somewhere else on the enzyme. It distorts the shape and disables the active site indirectly.",
+      "Many medications and many natural toxins work as enzyme inhibitors. The difference between the two kinds is where they bind.",
+      "A particularly elegant form of regulation is feedback inhibition. It starts with a pathway of several steps, each run by an enzyme.",
+      "When the end product of the pathway accumulates, it binds to and slows down an enzyme earlier in the same pathway.",
+      "The result is simple. The cell stops producing what it already has enough of."
+    ]}</script>
+  </div>
+
+  <div class="sec asec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Two ways to slow an enzyme, one way a cell slows its own pathway, and four enzymes to know.</span></div>
+    <article class="atlas">
+      <h3>Inhibition and regulation</h3>
+      <p>The body needs to control when reactions happen, which means it needs to slow enzymes down or shut them off. <b>Competitive inhibitors</b> are molecules that resemble the substrate enough to enter the active site, blocking the real substrate without being processed. <b>Noncompetitive inhibitors</b> bind elsewhere on the enzyme, distorting its shape and disabling the active site indirectly. Many medications and many natural toxins work as enzyme inhibitors.</p>
+      <figure class="plate"><img data-img="f405" alt="Diagram comparing a normal reaction, a competitive inhibitor, and a noncompetitive inhibitor"><figcaption>Normal enzyme activity compared with competitive inhibition (blocks the active site directly) and noncompetitive inhibition (binds elsewhere and distorts the active site).</figcaption></figure>
+      <p>A particularly elegant form of regulation is <b>feedback inhibition</b>: when the end product of a multi-step pathway accumulates, it binds to and slows down an enzyme earlier in the same pathway. The cell stops producing what it already has enough of. You will see this pattern throughout the course.</p>
+      <h3>A few enzymes you will meet again</h3>
+      <p><b>Salivary amylase</b> &mdash; starts carbohydrate digestion in the mouth.</p>
+      <p><b>Pepsin</b> &mdash; digests proteins in the stomach.</p>
+      <p><b>Carbonic anhydrase</b> &mdash; interconverts CO&#8322; and bicarbonate; central to gas transport in the blood and pH regulation.</p>
+      <p><b>DNA polymerase</b> &mdash; copies DNA when cells divide.</p>
+      <div class="inset">
+        <div class="ilabel">CONTEMPORARY RESEARCH &mdash; ENZYMES DESIGNED IN THE LAB</div>
+        <p>Most enzymes used in industry &mdash; the enzymes in laundry detergent, the enzymes that convert corn into syrup, the enzymes that make leather and cheese &mdash; are not the enzymes nature provides. They are engineered.</p>
+        <p>The technique is called <b>directed evolution</b>. Researchers introduce random mutations into the gene that codes for an enzyme, generating thousands of slightly different versions. They then screen the versions for whichever performs best at the task they care about &mdash; stability at high temperature, faster reaction rate, tolerance for industrial chemicals. The best performers are mutated again, and the cycle repeats. Over many rounds, the enzyme has effectively been &ldquo;evolved&rdquo; in the lab to do something it never did in nature.</p>
+        <p>The 2018 Nobel Prize in Chemistry recognized this technique. Researchers continue to apply it to design enzymes for everything from carbon-capture chemistry to plastic-degrading reactions.</p>
+      </div>
+      <p>Every reaction your body needs in order to live is sped along by an enzyme. Understanding what controls enzyme activity is understanding what controls the body&rsquo;s chemistry.</p>
+      <details class="selfcheck"><summary>Self-check: name the four conditions that affect enzyme activity before clicking</summary>
+        <p>Temperature, pH, substrate concentration, enzyme concentration.</p>
+        <p>If you missed any, scroll back up to &ldquo;Factors affecting enzyme activity&rdquo; before moving on. (Bonus: name two kinds of enzyme inhibitors. Answer: competitive and noncompetitive.)</p>
+      </details>
+      <div class="inset">
+        <div class="ilabel">GREEK &amp; LATIN ROOTS</div>
+        <div class="l4-roots">
+          <div><b>-ology</b> &mdash; &ldquo;the study of&rdquo;</div>
+          <div><b>Cyt-</b> &mdash; &ldquo;cell&rdquo; (<i>cytology</i>)</div>
+          <div><b>Histo-</b> &mdash; &ldquo;web&rdquo; or &ldquo;tissue&rdquo; (<i>histology</i>)</div>
+          <div><b>Epi-</b> &mdash; &ldquo;upon&rdquo; or &ldquo;above&rdquo; (<i>epigastric</i>)</div>
+          <div><b>Gastric-</b> &mdash; &ldquo;stomach&rdquo; (<i>epigastric</i>)</div>
+          <div><b>Hypo-</b> &mdash; &ldquo;below&rdquo; (<i>hypochondriac</i>)</div>
+          <div><b>Chondro-</b> &mdash; &ldquo;cartilage&rdquo; (<i>hypochondriac</i>)</div>
+          <div><b>Mono-</b> &mdash; &ldquo;one&rdquo; (<i>monosaccharide</i>)</div>
+          <div><b>Di-</b> &mdash; &ldquo;two&rdquo; (<i>disaccharide</i>)</div>
+          <div><b>Poly-</b> &mdash; &ldquo;many&rdquo; (<i>polysaccharide</i>)</div>
+          <div><b>Sacchar-/Glyco-</b> &mdash; &ldquo;sugar,&rdquo; &ldquo;sweet&rdquo;</div>
+          <div><b>Tri-</b> &mdash; &ldquo;three&rdquo; (<i>triglyceride</i>)</div>
+          <div><b>-ose</b> &mdash; sugar-name ending (glucose, fructose)</div>
+          <div><b>-ase</b> &mdash; enzyme-name ending (lactase, amylase)</div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Inhibitor Lab</h2></div>
+    <p class="hint">Add a molecule to the enzyme. Then send in the substrate and see what happens.</p>
+    <div class="bench l4-inh" id="l4inh">
+      <div class="bh"><b>Inhibitor bench</b><span class="readout l4i-read">No inhibitor</span></div>
+      <div class="l4i-btns">
+        <button type="button" class="btn ghost" data-a="sub"><svg viewBox="0 0 40 24" aria-hidden="true"><use href="#l4-sl" transform="translate(20 3)" fill="#C22F4A"/><use href="#l4-sr" transform="translate(20 3)" fill="#E88A9A"/></svg>Send substrate</button>
+        <button type="button" class="btn ghost" data-a="comp"><svg viewBox="0 0 40 24" aria-hidden="true"><use href="#l4-ci" transform="translate(20 3)" fill="#0B1B33"/></svg>Add competitive inhibitor</button>
+        <button type="button" class="btn ghost" data-a="non"><svg viewBox="0 0 40 24" aria-hidden="true"><use href="#l4-ni" transform="translate(20 12) scale(1.1)" fill="#5D6B80"/></svg>Add noncompetitive inhibitor</button>
+        <button type="button" class="btn ghost small" data-a="reset">Reset</button>
+      </div>
+      <svg class="l4i-svg" viewBox="0 0 340 230" role="img" aria-label="An enzyme with an active site, a substrate, a competitive inhibitor and a noncompetitive inhibitor">
+        <use class="l4i-e" href="#l4-e0" transform="translate(200 165)" fill="#0B6E7F"/>
+        <text x="200" y="179" class="l4-tw" text-anchor="middle">enzyme</text>
+        <g class="l4i-ci"><use href="#l4-ci" fill="#0B1B33"/></g>
+        <g class="l4i-ni"><use href="#l4-ni" transform="scale(1.4)" fill="#5D6B80"/></g>
+        <g class="l4i-sub"><use href="#l4-sl" fill="#C22F4A"/><use href="#l4-sr" fill="#E88A9A"/></g>
+        <g class="l4i-p1"><use href="#l4-sl" fill="#C22F4A"/></g><g class="l4i-p2"><use href="#l4-sr" fill="#E88A9A"/></g>
+        <text class="l4i-lab l4i-lab-ci l4-t" x="14" y="84">competitive</text><text class="l4i-lab l4i-lab-ci l4-t" x="14" y="102">inhibitor</text>
+        <text class="l4i-lab l4i-lab-ni l4-t" x="14" y="152">noncompetitive</text><text class="l4i-lab l4i-lab-ni l4-t" x="14" y="170">inhibitor</text>
+        <text class="l4i-lab l4i-lab-sub l4-t" x="290" y="84" text-anchor="middle">substrate</text>
+      </svg>
+      <p class="l4i-say" aria-live="polite">Substrate and enzyme are ready. Add a molecule or send the substrate.</p>
+      <p class="hint l4-model">Schematic, not to scale.</p>
+    </div>
+
+    <div class="bench l4-fb" id="l4fb" style="margin-top:18px">
+      <div class="bh"><b>Feedback bench</b><span class="readout l4f-read">Pathway at full speed</span></div>
+      <svg class="l4f-svg" viewBox="0 0 360 150" role="img" aria-label="A three-step pathway whose end product builds up and binds the first enzyme">
+        <path class="l4f-fl" d="M52 70H78M120 70H150M192 70H222M264 70H292" fill="none" stroke="#C22F4A" stroke-width="4" stroke-dasharray="6 6"/>
+        <g fill="#5D6B80"><path d="M78 64L88 70L78 76Z"/><path d="M150 64L160 70L150 76Z"/><path d="M222 64L232 70L222 76Z"/><path d="M292 64L302 70L292 76Z"/></g>
+        <g fill="#C22F4A"><circle cx="34" cy="70" r="18"/><circle cx="100" cy="70" r="14" fill="#D9667B"/><circle cx="172" cy="70" r="14" fill="#D9667B"/><circle cx="244" cy="70" r="14" fill="#D9667B"/></g>
+        <circle class="l4f-end" cx="326" cy="70" r="18" fill="#C22F4A"/>
+        <g fill="#0B6E7F"><rect x="68" y="31" width="60" height="26" rx="8"/><rect x="140" y="31" width="60" height="26" rx="8"/><rect x="212" y="31" width="60" height="26" rx="8"/></g>
+        <g class="l4-tw" text-anchor="middle" font-size="18"><text x="98" y="50">enz 1</text><text x="170" y="50">enz 2</text><text x="242" y="50">enz 3</text></g>
+        <text x="34" y="112" class="l4-t" text-anchor="middle">start</text><text x="352" y="112" class="l4-t" text-anchor="end">end product</text>
+        <g class="l4f-loop"><path d="M326 50C326 12 120 6 98 28" fill="none" stroke="#C22F4A" stroke-width="3" stroke-dasharray="7 5"/><path d="M86 32H110" stroke="#C22F4A" stroke-width="5" stroke-linecap="round"/></g>
+        <text class="l4f-bound l4-t" x="180" y="140" text-anchor="middle" style="fill:#C22F4A">end product bound to enz 1</text>
+      </svg>
+      <div class="l4f-sl"><label for="l4fR">End product level</label><input type="range" id="l4fR" min="0" max="10" step="1" value="0"><span class="l4f-val readout">low</span></div>
+      <div class="l4f-ctl"><button class="btn l4f-run" type="button">Run the pathway</button><button class="btn ghost l4f-use" type="button">Use up the product</button></div>
+      <p class="l4f-say" aria-live="polite"></p>
+      <p class="hint l4-model">Model: shapes from the reading, not lab data.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Label the Reaction</h2></div>
+    <p class="hint">Each numbered pin marks one part of the reaction. Tap a term, then tap its pin.</p>
+    <div class="l4-pins">
+      <figure class="l4-pfig">
+        <div class="l4-pp"><svg viewBox="0 0 160 140" role="img" aria-label="Panel a: an open enzyme with a substrate above it; pin 1 marks the pocket, pin 2 marks the substrate">
+          <use href="#l4-e0" transform="translate(80 92) scale(.62)" fill="#0B6E7F"/>
+          <g transform="translate(80 30) scale(.62)"><use href="#l4-sl" fill="#C22F4A"/><use href="#l4-sr" fill="#E88A9A"/></g>
+          <path d="M28 54L70 72M118 28L92 38" stroke="#0B1B33" stroke-width="1.5"/>
+          <g class="l4-pin"><circle cx="24" cy="50" r="11"/><text x="24" y="55.5">1</text></g><g class="l4-pin"><circle cx="124" cy="26" r="11"/><text x="124" y="31.5">2</text></g></svg><span>a</span></div>
+        <div class="l4-pp"><svg viewBox="0 0 160 140" role="img" aria-label="Panel b: the enzyme has clamped around the substrate; pin 3 marks the change">
+          <use href="#l4-e1" transform="translate(80 92) scale(.62)" fill="#0B6E7F"/>
+          <g transform="translate(80 66) scale(.62)"><use href="#l4-sl" fill="#C22F4A"/><use href="#l4-sr" fill="#E88A9A"/></g>
+          <path d="M120 44L96 62" stroke="#0B1B33" stroke-width="1.5"/>
+          <g class="l4-pin"><circle cx="124" cy="40" r="11"/><text x="124" y="45.5">3</text></g></svg><span>b</span></div>
+        <div class="l4-pp"><svg viewBox="0 0 160 140" role="img" aria-label="Panel c: the enzyme is open again and two pieces are leaving; pin 4 marks them">
+          <use href="#l4-e0" transform="translate(80 92) scale(.62)" fill="#0B6E7F"/>
+          <g transform="translate(46 28) scale(.62)"><use href="#l4-sl" fill="#C22F4A"/></g><g transform="translate(112 28) scale(.62)"><use href="#l4-sr" fill="#E88A9A"/></g>
+          <path d="M60 50L40 66M100 50L120 66" stroke="#5D6B80" stroke-width="2"/>
+          <g class="l4-pin"><circle cx="80" cy="16" r="11"/><text x="80" y="21.5">4</text></g></svg><span>c</span></div>
+        <div class="l4-pp"><svg viewBox="0 0 160 140" role="img" aria-label="Panel d: a dark look-alike molecule sits in the pocket; pin 5 marks it">
+          <use href="#l4-e0" transform="translate(80 92) scale(.62)" fill="#0B6E7F"/>
+          <g transform="translate(80 66) scale(.62)"><use href="#l4-ci" fill="#0B1B33"/></g>
+          <path d="M122 42L94 64" stroke="#0B1B33" stroke-width="1.5"/>
+          <g class="l4-pin"><circle cx="126" cy="38" r="11"/><text x="126" y="43.5">5</text></g></svg><span>d</span></div>
+        <div class="l4-pp"><svg viewBox="0 0 160 140" role="img" aria-label="Panel e: a grey hexagon is bound to the side of the enzyme and the pocket is squeezed shut; pin 6 marks it">
+          <use href="#l4-e2" transform="translate(74 92) scale(.62)" fill="#0B6E7F"/>
+          <use href="#l4-ni" transform="translate(130 92) scale(.95)" fill="#5D6B80"/>
+          <path d="M134 50L132 82" stroke="#0B1B33" stroke-width="1.5"/>
+          <g class="l4-pin"><circle cx="134" cy="38" r="11"/><text x="134" y="43.5">6</text></g></svg><span>e</span></div>
+      </figure>
+      <div class="place card" id="l4pin">
+        <div class="bank">
+          <button class="chip" data-k="a" data-ans="p3" data-fb="Induced fit: the enzyme shifts slightly to clamp around the substrate." data-miss="That is a molecule or a place. Which pin marks the enzyme itself changing shape?">induced fit</button>
+          <button class="chip" data-k="b" data-ans="p5" data-fb="Competitive inhibitor: resembles the substrate and sits in the active site." data-miss="Find the molecule that looks like the substrate but is a different color and does not split.">competitive inhibitor</button>
+          <button class="chip" data-k="c" data-ans="p1" data-fb="Active site: the pocket shaped to fit the substrate." data-miss="That marks a molecule, not a pocket. Which pin points at a place on the enzyme?">active site</button>
+          <button class="chip" data-k="d" data-ans="p6" data-fb="Noncompetitive inhibitor: binds elsewhere and distorts the active site." data-miss="This inhibitor does not enter the pocket. Which pin is outside it, with the pocket squeezed?">noncompetitive inhibitor</button>
+          <button class="chip" data-k="e" data-ans="p2" data-fb="Substrate: the molecule the reaction acts on." data-miss="Look for the molecule that is about to enter the pocket in the first panel.">substrate</button>
+          <button class="chip" data-k="f" data-ans="p4" data-fb="Product: what leaves after the chemistry." data-miss="Look for what is leaving the enzyme, not arriving.">product</button>
+        </div>
+        <div class="bins">
+          <div class="bin" data-bin="p1"><h4>Pin 1</h4><div class="drop"></div></div>
+          <div class="bin" data-bin="p2"><h4>Pin 2</h4><div class="drop"></div></div>
+          <div class="bin" data-bin="p3"><h4>Pin 3</h4><div class="drop"></div></div>
+          <div class="bin" data-bin="p4"><h4>Pin 4</h4><div class="drop"></div></div>
+          <div class="bin" data-bin="p5"><h4>Pin 5</h4><div class="drop"></div></div>
+          <div class="bin" data-bin="p6"><h4>Pin 6</h4><div class="drop"></div></div>
+        </div>
+        <div class="place-fb"></div>
+        <div class="tally"></div>
+      </div>
+      <p class="hint l4-model">Schematic, not to scale.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Which Enzyme Acts on It?</h2></div>
+    <p class="hint">Tap a molecule, then tap the enzyme that acts on it.</p>
+    <div class="place card l4-five" id="l4sortSub">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="lac" data-fb="Lactase breaks down lactose." data-miss="Both sugars end in -ose. Match the start of the sugar&rsquo;s name to the start of the enzyme&rsquo;s name.">lactose</button>
+        <button class="chip" data-k="b" data-ans="amy" data-fb="Amylase in saliva begins breaking starch into smaller sugars." data-miss="Starch is not named after its enzyme. Which enzyme starts on starchy food before you swallow?">starch</button>
+        <button class="chip" data-k="c" data-ans="car" data-fb="Carbonic anhydrase converts CO&#8322; and water into bicarbonate." data-miss="This reaction happens as blood carries CO&#8322; back to the lungs. Which enzyme does that job?">CO&#8322; and water</button>
+        <button class="chip" data-k="d" data-ans="suc" data-fb="Sucrase breaks down sucrose." data-miss="Lactase will not take it: the two will not interchange. Which enzyme name shares this sugar&rsquo;s stem?">sucrose</button>
+        <button class="chip" data-k="e" data-ans="pep" data-fb="Pepsin digests proteins in the stomach." data-miss="This is not a sugar, so no sugar-splitting enzyme fits. Which enzyme digests it in the stomach?">proteins</button>
+        <button class="chip" data-k="f" data-ans="cat" data-fb="Catalase decomposes hydrogen peroxide, tens of millions of molecules per second." data-miss="This is the molecule handled at tens of millions per second. Which enzyme was that?">hydrogen peroxide</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="lac"><h4>Lactase</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="suc"><h4>Sucrase</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="amy"><h4>Amylase</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="pep"><h4>Pepsin</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="cat"><h4>Catalase</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="car"><h4>Carbonic anhydrase</h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div>
+      <div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="cond" type="button">&larr; Conditions</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top">
+      <label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label>
+      <div class="l4r-total readout" aria-live="polite">0 words &middot; aim for 300&ndash;400</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">A</span><h2>Enzymes Under Physiological Conditions</h2></div>
+      <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>How do environmental conditions in the body &mdash; temperature, pH, and concentration &mdash; control the rates of life&rsquo;s chemical reactions?</p></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">B</span><h2>Choose an Enzyme</h2></div>
+      <div class="card">
+        <div class="seg l4r-pick" role="group" aria-label="Enzyme" data-t="l4rE">
+          <button type="button" data-v="pepsin">Pepsin</button>
+          <button type="button" data-v="salivary amylase">Salivary amylase</button>
+          <button type="button" data-v="carbonic anhydrase">Carbonic anhydrase</button>
+          <button type="button" data-v="trypsin">Trypsin</button>
+          <button type="button" data-v="">Another enzyme from the Atlas</button>
+        </div>
+        <div class="field" style="margin:14px 0 0"><label class="q" for="l4rE">My enzyme</label><br>
+          <input class="jfield" id="l4rE" data-label="1. My enzyme" placeholder="Pick one above, or type another specific enzyme" style="width:100%"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">C</span><h2>What It Does and Where</h2></div>
+      <div class="card"><div class="field" style="margin:0"><p class="q">In two or three sentences: what does your enzyme do, and where in the body does it work?</p>
+        <textarea class="jbox" id="l4rW" data-label="2. What my enzyme does and where in the body it works" data-min="30"></textarea></div></div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">D</span><h2>Its Conditions</h2></div>
+      <p class="hint">Be specific about values where you can: for example, the optimum pH range.</p>
+      <div class="card l4r-cond">
+        <div class="l4r-row" style="--c:#C22F4A"><label for="l4rT">Temperature</label><input class="jfield" id="l4rT" data-label="3a. Temperature" placeholder="value or range, and what happens away from it"></div>
+        <div class="l4r-row" style="--c:#0B6E7F"><label for="l4rP">pH</label><input class="jfield" id="l4rP" data-label="3b. pH" placeholder="optimum value or range, and why that fits the location"></div>
+        <div class="l4r-row" style="--c:#C22F4A"><label for="l4rS">Substrate concentration</label><input class="jfield" id="l4rS" data-label="3c. Substrate concentration" placeholder="what happens as it rises"></div>
+        <div class="l4r-row" style="--c:#0B6E7F"><label for="l4rN">Enzyme concentration</label><input class="jfield" id="l4rN" data-label="3d. Enzyme concentration" placeholder="what happens as it rises"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">E</span><h2>When a Condition Changes</h2></div>
+      <div class="card">
+        <div class="seg l4r-pick" role="group" aria-label="Scenario starting points" data-t="l4rC">
+          <button type="button" data-v="Pepsin leaves the stomach and enters the small intestine">Pepsin enters the small intestine</button>
+          <button type="button" data-v="Salivary amylase reaches the stomach">Salivary amylase reaches the stomach</button>
+          <button type="button" data-v="A human enzyme during a 41&deg;C fever">A human enzyme at 41&deg;C</button>
+          <button type="button" data-v="">My own scenario</button>
+        </div>
+        <div class="field" style="margin:14px 0 0"><label class="q" for="l4rC">The change</label><br>
+          <input class="jfield" id="l4rC" data-label="4a. The change I am explaining" placeholder="Pick a starting point, or describe your own" style="width:100%"></div>
+        <div class="field" style="margin:14px 0 0"><p class="q">What happens to your enzyme&rsquo;s activity when that condition changes? Cite the specific scenario.</p>
+          <textarea class="jbox" id="l4rX" data-label="4b. What happens to my enzyme&rsquo;s activity when the condition changes" data-min="50"></textarea></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">F</span><h2>Answer the Focus Question</h2></div>
+      <div class="card">
+        <div class="field" style="margin:0"><p class="q">In three to five sentences: how do environmental conditions control the rates of life&rsquo;s chemistry? Use your enzyme as the central example. Answer it; don&rsquo;t restate it.</p>
+          <textarea class="jbox" id="l4rF" data-label="5. How conditions control the rates of life&rsquo;s chemistry" data-min="60"></textarea></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">G</span><h2>Before You Download</h2></div>
+      <ul class="checks">
+        <li data-ck="l4c1"><span class="bx"></span>Names one specific enzyme and the body location where it works.</li>
+        <li data-ck="l4c2"><span class="bx"></span>Describes the conditions optimizing its activity, with specific values where possible.</li>
+        <li data-ck="l4c3"><span class="bx"></span>Explains what happens when those conditions change, citing a specific scenario.</li>
+        <li data-ck="l4c4"><span class="bx"></span>Final paragraph engages the focus question with reasoning grounded in the chosen enzyme.</li>
+      </ul>
+    </div>
+
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page, including your narration notes.</span><span class="print-note"></span></div>
+  </div>
+  <div class="next"><button class="btn ghost" data-go="ctrl" type="button">&larr; Control</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>enzyme</dt><dd>A biological catalyst: a molecule that speeds up a chemical reaction without being consumed by it. Most are proteins.</dd>
+  <dt>catalyst</dt><dd>Something that speeds up a reaction without being used up.</dd>
+  <dt>ribozyme</dt><dd>One of a small minority of enzymes that are RNA molecules, not proteins.</dd>
+  <dt>amylase <small>-ase, enzyme-name ending</small></dt><dd>An enzyme in saliva that begins breaking starch into smaller sugars.</dd>
+  <dt>carbonic anhydrase</dt><dd>An enzyme that interconverts CO&#8322; and bicarbonate; it can process about a million CO&#8322; molecules per second.</dd>
+  <dt>catalase</dt><dd>An enzyme that decomposes hydrogen peroxide, at tens of millions of molecules per second.</dd>
+  <dt>activation energy</dt><dd>The &ldquo;energy hill&rdquo; reactants must climb before they can convert into products. The higher the hill, the slower the reaction.</dd>
+  <dt>substrate</dt><dd>The molecule the reaction acts on.</dd>
+  <dt>active site</dt><dd>The specific pocket on an enzyme where the substrate binds, shaped to fit it the way a glove fits a hand.</dd>
+  <dt>induced fit</dt><dd>The slight shift in the enzyme&rsquo;s shape as substrate enters, so that it clamps around the substrate.</dd>
+  <dt>specific</dt><dd>Most enzymes act on one matching substrate only. Lactase breaks down lactose; sucrase breaks down sucrose.</dd>
+  <dt>lactase</dt><dd>The enzyme that breaks down lactose.</dd>
+  <dt>sucrase</dt><dd>The enzyme that breaks down sucrose.</dd>
+  <dt>optimum</dt><dd>The condition, such as a temperature or pH, at which an enzyme works best.</dd>
+  <dt>denature</dt><dd>To lose the precise shape the active site depends on, as when the temperature gets too high.</dd>
+  <dt>pepsin</dt><dd>The protein-digesting enzyme of the stomach.</dd>
+  <dt>trypsin</dt><dd>A protein-digesting enzyme of the small intestine.</dd>
+  <dt>saturated</dt><dd>Every active site is occupied, so adding more substrate speeds nothing up.</dd>
+  <dt>competitive inhibitor</dt><dd>A molecule that resembles the substrate enough to enter the active site, blocking the real substrate without being processed.</dd>
+  <dt>noncompetitive inhibitor</dt><dd>A molecule that binds elsewhere on the enzyme, distorting its shape and disabling the active site indirectly.</dd>
+  <dt>feedback inhibition</dt><dd>When the end product of a multi-step pathway accumulates, it binds to and slows down an enzyme earlier in the same pathway.</dd>
+  <dt>directed evolution</dt><dd>A technique that mutates the gene for an enzyme, screens the versions, and repeats with the best performers. Recognized by the 2018 Nobel Prize in Chemistry.</dd>
+  <dt>DNA polymerase</dt><dd>The enzyme that copies DNA when cells divide.</dd>
+  <dt>-ase <small>enzyme-name ending</small></dt><dd>As in lactase and amylase.</dd>
+  <dt>-ose <small>sugar-name ending</small></dt><dd>As in glucose and fructose.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology · Week 1</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w1-l4", "title": "Enzymes: Biological Catalysts", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 1 · Enzymes: Biological Catalysts", "pdfTag": "AP_W1_L4"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f401":{"src":"img/w1-l4-f401.webp","alt":"Diagram showing how enzymes decrease the activation energy required for a reaction"},"f402":{"src":"img/w1-l4-f402.webp","alt":"Diagram of an enzyme-substrate complex"},"f403":{"src":"img/w1-l4-f403.webp","alt":"Diagram of lactase enzyme function"},"f404":{"src":"img/w1-l4-f404.webp","alt":"Graph of enzyme activity across different pH values"},"f405":{"src":"img/w1-l4-f405.webp","alt":"Diagram comparing a normal reaction, a competitive inhibitor, and a noncompetitive inhibitor"}},"v_hill":{"audio":"audio/ap-w1-l4-hill.mp3","words":[[0,0.08,"A"],[0.36,0.64,"reaction"],[0.8,1.12,"usually"],[1.2,1.44,"needs"],[1.52,1.92,"energy"],[1.96,2,"to"],[2.08,2.24,"get"],[2.44,3.04,"started."],[3.16,3.28,"That"],[3.44,3.6,"energy"],[3.68,3.92,"hill"],[4,4.08,"is"],[4.2,4.32,"called"],[4.4,4.48,"the"],[4.8,5.12,"activation"],[5.2,5.76,"energy,"],[5.8,5.84,"and"],[5.92,5.96,"the"],[6,6.56,"reactants"],[6.68,6.8,"must"],[6.88,7.12,"climb"],[7.2,7.76,"it."],[7.84,7.92,"The"],[8.04,8.16,"higher"],[8.24,8.32,"the"],[8.44,8.8,"hill,"],[8.88,8.96,"the"],[9.04,9.36,"slower"],[9.4,9.44,"the"],[9.72,10.48,"reaction."],[10.68,10.88,"Here"],[10.92,10.96,"the"],[11.04,11.12,"hill"],[11.2,11.36,"is"],[11.4,11.92,"tall,"],[12,12.24,"so"],[12.32,12.4,"this"],[12.48,12.96,"reaction"],[13.04,13.12,"is"],[13.32,14,"slow."],[14.08,14.72,"Enzymes"],[14.88,15.12,"lower"],[15.16,15.2,"the"],[15.28,16,"hill."],[16.08,16.16,"The"],[16.28,16.4,"same"],[16.6,17.2,"reactants,"],[17.28,17.36,"the"],[17.48,17.6,"same"],[17.68,18.4,"products,"],[18.44,18.48,"but"],[18.56,18.72,"a"],[18.84,18.96,"much"],[19.08,19.36,"smaller"],[19.44,19.76,"climb"],[19.84,19.92,"to"],[20,20.08,"get"],[20.2,20.32,"from"],[20.44,20.56,"one"],[20.6,20.64,"to"],[20.68,20.72,"the"],[20.8,21.52,"other."],[21.6,21.76,"They"],[21.84,21.92,"do"],[22,22.08,"it"],[22.2,22.32,"by"],[22.52,22.72,"binding"],[22.8,22.88,"the"],[23.08,23.68,"substrate,"],[23.72,23.76,"the"],[23.8,24.16,"molecule"],[24.24,24.28,"the"],[24.32,24.72,"reaction"],[24.8,25.04,"acts"],[25.12,25.52,"on,"],[25.6,25.64,"in"],[25.68,25.76,"a"],[26.04,26.32,"specific"],[26.4,26.8,"pocket"],[26.88,27.04,"called"],[27.12,27.2,"the"],[27.28,27.6,"active"],[27.68,28.48,"site."],[28.56,28.64,"The"],[28.68,28.96,"pocket"],[29.12,29.28,"fits"],[29.36,29.44,"the"],[29.52,30,"substrate"],[30.04,30.08,"the"],[30.16,30.24,"way"],[30.28,30.32,"a"],[30.4,30.8,"glove"],[30.92,31.04,"fits"],[31.08,31.12,"a"],[31.2,32,"hand."],[32.04,32.08,"The"],[32.16,32.56,"enzyme"],[32.72,32.88,"then"],[33,33.2,"shifts"],[33.28,33.6,"slightly"],[33.68,33.76,"to"],[33.84,34.08,"clamp"],[34.24,34.4,"around"],[34.48,35.04,"it."],[35.2,35.36,"That"],[35.44,35.52,"is"],[35.6,36.08,"induced"],[36.16,37.04,"fit."],[37.12,37.52,"Inside"],[37.6,37.68,"that"],[37.76,37.92,"tight"],[38,38.4,"space"],[38.48,38.56,"the"],[38.64,38.96,"enzyme"],[39.04,39.2,"can"],[39.28,39.84,"stress,"],[40.08,40.4,"position,"],[40.44,40.48,"or"],[40.64,41.12,"stabilize"],[41.2,41.28,"the"],[41.48,42.32,"substrate."],[42.4,42.56,"Then"],[42.64,42.72,"the"],[42.88,43.04,"product"],[43.12,43.2,"is"],[43.44,43.84,"released,"],[43.88,43.92,"and"],[43.96,44,"the"],[44.08,44.72,"enzyme,"],[44.92,45.6,"unchanged,"],[45.72,45.84,"moves"],[45.92,46.72,"on."],[46.84,46.96,"Most"],[47.04,47.44,"enzymes"],[47.52,47.68,"are"],[47.76,48.08,"highly"],[48.4,48.96,"specific."],[49.2,49.76,"Lactase"],[49.84,50.08,"breaks"],[50.16,50.24,"down"],[50.32,51.04,"lactose,"],[51.12,51.2,"and"],[51.28,51.76,"sucrase"],[51.84,52.04,"breaks"],[52.08,52.24,"down"],[52.32,53.28,"sucrose."],[53.44,53.6,"Only"],[53.64,53.68,"the"],[53.84,54.16,"matching"],[54.24,54.72,"substrate"],[54.8,55.44,"fits."]]},"v_dials":{"audio":"audio/ap-w1-l4-dials.mp3","words":[[0,0.48,"Enzymes"],[0.56,0.8,"work"],[0.96,1.12,"best"],[1.24,1.36,"within"],[1.44,1.52,"a"],[1.6,1.84,"narrow"],[2,2.16,"set"],[2.24,2.32,"of"],[2.4,2.72,"physical"],[3.04,3.76,"conditions."],[3.84,3.92,"Think"],[4.04,4.16,"of"],[4.28,4.4,"four"],[4.48,5.36,"dials:"],[5.64,6.24,"temperature,"],[6.32,7.2,"pH,"],[7.28,7.68,"substrate"],[7.76,8.64,"concentration,"],[8.76,8.88,"and"],[9.08,9.28,"enzyme"],[9.36,10.64,"concentration."],[10.72,10.8,"As"],[11.04,11.28,"temperature"],[11.32,11.96,"rises,"],[12,12.48,"molecules"],[12.56,12.8,"move"],[12.84,13.36,"faster"],[13.44,13.52,"and"],[13.6,14.08,"reactions"],[14.2,14.32,"speed"],[14.4,14.8,"up,"],[14.92,15.04,"until"],[15.08,15.12,"the"],[15.2,15.6,"protein"],[15.68,16.32,"denatures"],[16.44,16.56,"and"],[16.72,16.88,"loses"],[16.96,17.12,"the"],[17.24,17.36,"shape"],[17.44,17.52,"its"],[17.72,17.92,"active"],[18.04,18.16,"site"],[18.36,18.56,"depends"],[18.64,19.36,"on."],[19.48,19.6,"Most"],[19.76,19.92,"human"],[20.04,20.4,"enzymes"],[20.56,20.72,"work"],[20.84,20.96,"best"],[21.04,21.28,"near"],[21.36,21.84,"thirty-seven"],[21.92,22.24,"degrees"],[22.32,23.28,"Celsius."],[23.36,23.44,"At"],[23.56,24.32,"forty-one,"],[24.36,24.4,"the"],[24.6,24.8,"temperature"],[24.84,24.88,"of"],[24.96,25.013,"a"],[25.067,25.12,"high"],[25.28,26,"fever,"],[26.08,26.32,"many"],[26.44,26.56,"are"],[26.64,27.04,"already"],[27.16,27.28,"losing"],[27.36,28.56,"efficiency."],[28.64,28.72,"Each"],[28.8,29.2,"enzyme"],[29.28,29.36,"has"],[29.48,29.6,"its"],[29.68,29.92,"own"],[30,30.4,"optimum"],[30.52,31.04,"pH."],[31.44,32,"Pepsin,"],[32.04,32.08,"in"],[32.12,32.16,"the"],[32.24,32.88,"stomach,"],[33.04,33.2,"works"],[33.32,33.44,"best"],[33.56,33.68,"around"],[33.76,34.16,"pH"],[34.24,34.32,"one"],[34.4,34.56,"point"],[34.72,34.88,"five"],[35.04,35.2,"to"],[35.28,36,"two."],[36.08,36.56,"Trypsin,"],[36.6,36.64,"in"],[36.68,36.72,"the"],[36.84,36.96,"small"],[37.04,37.68,"intestine,"],[37.84,38,"around"],[38.08,38.48,"pH"],[38.56,39.12,"eight."],[39.44,39.84,"Reaction"],[39.92,40.08,"rate"],[40.16,40.64,"rises"],[40.72,40.8,"with"],[40.88,41.28,"substrate"],[41.36,42.08,"concentration"],[42.28,42.48,"until"],[42.56,42.72,"all"],[42.76,42.8,"the"],[42.88,43.2,"active"],[43.28,43.52,"sites"],[43.56,43.6,"are"],[43.68,44.64,"occupied."],[44.8,44.96,"After"],[45.08,45.52,"that,"],[45.6,45.76,"more"],[45.84,46.32,"substrate"],[46.48,46.72,"speeds"],[46.8,47.12,"nothing"],[47.2,47.52,"up."],[47.68,47.76,"The"],[48,48.24,"enzyme"],[48.32,48.4,"is"],[48.48,49.2,"saturated."],[49.68,49.76,"The"],[49.88,50,"last"],[50.08,50.4,"dial"],[50.48,50.56,"is"],[50.64,51.04,"enzyme"],[51.12,51.92,"concentration."],[52.24,52.4,"With"],[52.56,52.8,"substrate"],[52.88,53.68,"plentiful,"],[53.8,53.92,"more"],[54,54.4,"enzyme"],[54.48,54.64,"means"],[54.68,54.72,"a"],[54.88,55.2,"faster"],[55.48,56.08,"reaction."]]},"v_brakes":{"audio":"audio/ap-w1-l4-brakes.mp3","words":[[0,0.16,"The"],[0.32,0.48,"body"],[0.56,0.64,"needs"],[0.72,0.8,"to"],[1.08,1.36,"control"],[1.44,1.52,"when"],[1.6,2.08,"reactions"],[2.16,2.8,"happen,"],[2.88,2.96,"which"],[3.04,3.28,"means"],[3.4,3.52,"it"],[3.64,3.76,"must"],[3.84,3.92,"be"],[4.04,4.16,"able"],[4.24,4.32,"to"],[4.4,4.72,"slow"],[4.84,5.2,"enzymes"],[5.28,5.68,"down"],[5.76,5.84,"or"],[6,6.16,"shut"],[6.24,6.32,"them"],[6.48,7.12,"off."],[7.16,7.2,"A"],[7.28,7.76,"competitive"],[7.84,8.4,"inhibitor"],[8.48,8.88,"resembles"],[8.96,9.12,"the"],[9.28,9.6,"substrate"],[9.72,10.08,"enough"],[10.16,10.24,"to"],[10.32,10.48,"enter"],[10.56,10.64,"the"],[10.8,10.96,"active"],[11.04,11.68,"site."],[11.8,11.92,"It"],[12.12,12.32,"blocks"],[12.4,12.48,"the"],[12.6,12.72,"real"],[12.8,13.36,"substrate"],[13.44,13.76,"without"],[13.88,14,"being"],[14.28,15.04,"processed."],[15.16,15.28,"A"],[15.4,16,"noncompetitive"],[16.08,16.56,"inhibitor"],[16.64,16.96,"binds"],[17.04,17.44,"somewhere"],[17.56,17.68,"else"],[17.72,17.76,"on"],[17.84,17.92,"the"],[18.16,18.8,"enzyme."],[18.84,18.88,"It"],[18.96,19.36,"distorts"],[19.44,19.52,"the"],[19.72,19.92,"shape"],[19.96,20,"and"],[20.12,20.56,"disables"],[20.6,20.64,"the"],[20.8,20.96,"active"],[21.04,21.28,"site"],[21.36,22.56,"indirectly."],[22.64,22.72,"Many"],[22.8,23.52,"medications"],[23.6,23.76,"and"],[23.84,24,"many"],[24.08,24.48,"natural"],[24.56,25.04,"toxins"],[25.12,25.36,"work"],[25.44,25.52,"as"],[25.72,25.92,"enzyme"],[26,26.96,"inhibitors."],[27,27.04,"The"],[27.2,27.36,"difference"],[27.44,27.68,"between"],[27.72,27.76,"the"],[27.84,27.92,"two"],[28,28.4,"kinds"],[28.48,28.56,"is"],[28.68,28.8,"where"],[28.88,28.96,"they"],[29.04,29.92,"bind."],[29.96,30,"A"],[30.08,30.72,"particularly"],[30.8,31.12,"elegant"],[31.2,31.44,"form"],[31.48,31.52,"of"],[31.6,32.24,"regulation"],[32.32,32.4,"is"],[32.56,33.04,"feedback"],[33.12,34.08,"inhibition."],[34.16,34.24,"It"],[34.32,34.56,"starts"],[34.6,34.64,"with"],[34.72,34.8,"a"],[34.92,35.2,"pathway"],[35.28,35.44,"of"],[35.52,35.76,"several"],[35.84,36.48,"steps,"],[36.6,36.72,"each"],[36.8,36.96,"run"],[37.04,37.12,"by"],[37.2,37.24,"an"],[37.28,38,"enzyme."],[38.24,38.32,"When"],[38.4,38.48,"the"],[38.56,38.72,"end"],[38.8,39.12,"product"],[39.16,39.2,"of"],[39.24,39.28,"the"],[39.36,39.68,"pathway"],[39.84,40.72,"accumulates,"],[40.8,40.88,"it"],[40.96,41.28,"binds"],[41.36,41.6,"to"],[41.68,41.76,"and"],[41.92,42.24,"slows"],[42.32,42.56,"down"],[42.64,42.72,"an"],[42.96,43.2,"enzyme"],[43.32,43.68,"earlier"],[43.72,43.76,"in"],[43.84,43.92,"the"],[44.04,44.16,"same"],[44.24,44.8,"pathway."],[45.2,45.28,"The"],[45.44,45.6,"result"],[45.76,45.84,"is"],[46.04,46.32,"simple."],[46.72,46.8,"The"],[46.92,47.04,"cell"],[47.12,47.44,"stops"],[47.52,48,"producing"],[48.04,48.08,"what"],[48.16,48.24,"it"],[48.32,48.64,"already"],[48.72,48.88,"has"],[48.96,49.2,"enough"],[49.28,49.76,"of."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'enzymes: activation energy, the active site, the four conditions that affect activity, and inhibition',
+  quick: ['What is the activation energy?', 'What does it mean for an enzyme to denature?', 'What is the difference between the two kinds of inhibitor?'],
+  practice: /(write (my|the) (paragraph|report|response|answer)|which enzyme (should|do) i (pick|choose|use)|what (happens|would happen) to my enzyme|(optimum|optimal) (ph|temperature) (for|of) my enzyme|my (enzyme|scenario)\b|answer for (number|question) ?[1-5]\b|focus question)/i,
+  guide: 'That part is yours to write, so here are my questions instead. Which enzyme will you stand behind, and where does it work? What conditions does that place provide? Change one of them on the Enzyme Bench and watch what the rate does, then say why in your own words.',
+  notes: [
+    { k: ['enzyme','enzymes','catalyst','biological catalyst','what is an enzyme'], w: 1.3, a: 'An enzyme is a biological catalyst: a molecule that speeds up a chemical reaction without being consumed by it. The vast majority of enzymes are proteins; a small minority are RNA molecules called ribozymes. Without enzymes, the chemistry of the body would happen so slowly that you could not exist.' },
+    { k: ['amylase','saliva','starch','carbonic anhydrase','catalase','how fast','per second'], a: 'Examples from the Atlas: amylase in saliva begins breaking starch into smaller sugars. Carbonic anhydrase converts CO2 and water into bicarbonate and can process about a million CO2 molecules per second. Catalase decomposes hydrogen peroxide, at tens of millions of molecules per second.' },
+    { k: ['activation energy','energy hill','hill','climb'], w: 1.4, a: 'A reaction usually requires energy to start. That energy hill is the activation energy, and the reactants must climb it before they can convert into products. The higher the hill, the slower the reaction. Enzymes lower the hill.' },
+    { k: ['substrate'], a: 'The substrate is the molecule the reaction acts on. It binds to the enzyme at a specific pocket called the active site.' },
+    { k: ['active site','pocket','glove','lock'], w: 1.3, a: 'The active site is a specific pocket on the enzyme. It is shaped to fit the substrate the way a glove fits a hand. The chemistry happens inside this confined space, where the enzyme can stress, position, or stabilize the substrate.' },
+    { k: ['induced fit','clamp','shifts shape'], w: 1.3, a: 'Induced fit: when substrate enters the active site, the enzyme typically shifts shape slightly to clamp around it. The product is then released, and the enzyme, unchanged, moves on to its next substrate.' },
+    { k: ['specific','specificity','lactase','lactose','sucrase','sucrose','interchange'], a: 'Most enzymes are highly specific. Lactase breaks down lactose and sucrase breaks down sucrose; they will not interchange. The shape of the active site is the reason: only the matching substrate can enter, and only the matching reaction can happen.' },
+    { k: ['temperature','heat','hot','fever','37','41','denature','denatures','denaturation'], w: 1.3, a: 'As temperature rises, molecules move faster and reactions speed up, until the protein denatures and loses the precise shape its active site depends on. Most human enzymes have an optimum around 37 degrees C. At 41 degrees C, the temperature of a high fever, many enzymes are already losing efficiency.' },
+    { k: ['ph','optimum ph','acid','stomach','small intestine','pepsin','trypsin'], w: 1.3, a: 'Each enzyme has an optimum pH. Pepsin, the protein-digesting enzyme of the stomach, works best around pH 1.5 to 2. Trypsin, a protein-digesting enzyme of the small intestine, works best around pH 8. Move either one into the other\'s environment and it stops working.' },
+    { k: ['substrate concentration','saturated','saturation','plateau','levels off'], w: 1.3, a: 'Reaction rate rises as substrate concentration rises, until all the active sites are occupied. Beyond that point, adding more substrate does not speed anything up. The enzyme is saturated.' },
+    { k: ['enzyme concentration','more enzyme','amount of enzyme'], a: 'With substrate plentiful, more enzyme means a faster reaction.' },
+    { k: ['four conditions','conditions','factors','dials'], w: 1.2, a: 'Four conditions affect enzyme activity: temperature, pH, substrate concentration, and enzyme concentration. Enzymes work best within a narrow set of physical conditions.' },
+    { k: ['inhibitor','inhibitors','inhibition','slow down','shut off'], a: 'The body needs to slow enzymes down or shut them off. Many medications and many natural toxins work as enzyme inhibitors. The two kinds differ in where they bind.' },
+    { k: ['competitive','competitive inhibitor'], w: 1.3, a: 'Competitive inhibitors resemble the substrate enough to enter the active site, blocking the real substrate without being processed.' },
+    { k: ['noncompetitive','non competitive','binds elsewhere','allosteric'], w: 1.4, a: 'Noncompetitive inhibitors bind elsewhere on the enzyme, distorting its shape and disabling the active site indirectly.' },
+    { k: ['feedback','feedback inhibition','end product','pathway'], w: 1.3, a: 'Feedback inhibition: when the end product of a multi-step pathway accumulates, it binds to and slows down an enzyme earlier in the same pathway. The cell stops producing what it already has enough of.' },
+    { k: ['directed evolution','engineered','nobel','detergent','industry'], a: 'Most enzymes used in industry are engineered. In directed evolution, researchers introduce random mutations into an enzyme\'s gene, screen the thousands of versions for the best performer, and repeat. The 2018 Nobel Prize in Chemistry recognized the technique.' },
+    { k: ['ase','ose','ending','roots','greek','latin'], a: 'The Atlas ends with Greek and Latin roots. Two to know here: -ase is an enzyme-name ending (lactase, amylase) and -ose is a sugar-name ending (glucose, fructose).' },
+    { k: ['narrate','narration','record','recording','four words'], a: 'Close the Atlas, press Record, and explain what an enzyme does out loud, about 150 words, using activation energy, substrate, active site, and induced fit. Play it back while you re-read, then write the sentence where you used each word and any corrections. The recording stays on your device.' }
+  ]
+};
+</script>
+
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- L4 Enzymes: page widgets ---- */
+(function(){
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function put(g, x, y, op, sc){ g.style.transform = 'translate(' + x + 'px,' + y + 'px)' + (sc ? ' scale(' + sc + ')' : ''); g.style.opacity = op; }
+  function pressed(group, v){ $$('button', group).forEach(function(b){ var on = b.dataset.v === v; b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.classList.toggle('on', on); }); }
+
+  /* ---------- teacher card 01: state-driven panels ---------- */
+  function applyState(card, i){
+    $$('[data-on]', card).forEach(function(n){
+      var ons = n.dataset.on.split(' ').map(Number), pane = n.closest('.l4-pane');
+      var s = (pane && pane.getAttribute('data-step') === '3') ? Math.max(i, 3) : Math.max(i, 0);
+      n.classList.toggle('l4-off', ons.indexOf(s) < 0);
+    });
+  }
+  var c1 = $('.vo[data-clip="v_hill"]');
+  if (c1) {
+    applyState(c1, c1.classList.contains('finished') ? 6 : -1);
+    document.addEventListener('vo-step', function(e){ if (e.detail.clip === 'v_hill') applyState(c1, e.detail.i); });
+  }
+
+  /* ---------- Energy Hill ---------- */
+  var H = $('#l4hill');
+  if (H) {
+    var D0 = 'M104 140H124C160 140 164 44 200 44C236 44 238 170 272 170H340', D1 = 'M104 140H124C160 140 166 96 200 96C234 96 238 170 272 170H340';
+    var curve = $('.l4h-curve', H), ghost = $('.l4h-ghost', H), tok = $('.l4h-token', H), arrow = $('.l4h-arrow', H), guide = $('.l4h-guide', H), read = $('.l4h-read', H), say = $('.l4h-say', H), cnt = $('.l4h-count', H), go = $('.l4h-go', H);
+    var l1 = $('.l4h-l1', H), l2 = $('.l4h-l2', H);
+    var mode = 0, run = null, n = +(STORE.get('l4hill') || 0);
+    var meas = el('path', { d: D0 }); /* measuring path, never added to the page */
+    var tr = { len: 0, peak: 0 };
+    function measure(){
+      meas.setAttribute('d', mode ? D1 : D0); tr.len = meas.getTotalLength();
+      var best = 1e9, at = 0; for (var s = 0; s <= tr.len; s += 2) { var p = meas.getPointAtLength(s); if (p.y < best) { best = p.y; at = s; } } tr.peak = at;
+    }
+    function place(frac){ var p = meas.getPointAtLength(16 + Math.max(0, Math.min(1, frac)) * (tr.len - 16)); tok.setAttribute('cx', p.x); tok.setAttribute('cy', p.y - 11); }
+    function setMode(m){
+      if (run) { cancelAnimationFrame(run.raf); run = null; go.disabled = false; }
+      mode = m; pressed($('.l4h-seg', H), String(m)); measure();
+      curve.setAttribute('d', m ? D1 : D0); curve.setAttribute('stroke', m ? '#0B6E7F' : '#C22F4A');
+      ghost.style.display = m ? '' : 'none';
+      var top = m ? 96 : 44, c = m ? '#0B6E7F' : '#C22F4A';
+      guide.setAttribute('d', 'M96 ' + top + 'H200');
+      arrow.setAttribute('d', 'M96 ' + top + 'V140M91 ' + (top + 8) + 'L96 ' + top + 'L101 ' + (top + 8) + 'M91 132L96 140L101 132'); arrow.setAttribute('stroke', c);
+      var ly = m ? 118 : 86; l1.setAttribute('y', ly); l2.setAttribute('y', ly + 18);
+      H.classList.toggle('fast', !!m);
+      read.textContent = m ? 'With enzyme: lower hill' : 'Without enzyme: tall hill';
+      say.textContent = ''; place(0);
+    }
+    function climb(seq, done){
+      var k = 0, from = 0, t0 = performance.now(), cur = seq[0];
+      function step(now){
+        var u = Math.min(1, (now - t0) / cur.d), e = u < .5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+        place(from + (cur.to - from) * e);
+        if (u >= 1) { from = cur.to; k++; if (k >= seq.length) { run = null; done(); return; } cur = seq[k]; t0 = now; }
+        run.raf = requestAnimationFrame(step);
+      }
+      run = { raf: requestAnimationFrame(step) };
+    }
+    go.addEventListener('click', function(){
+      if (run) return; go.disabled = true; place(0);
+      var pk = tr.peak / tr.len, seq;
+      if (mode) { seq = [{ to: 1, d: 1700 }]; say.textContent = 'Lower hill: the crossing is fast.'; }
+      else { seq = [{ to: pk * .8, d: 1500 }, { to: pk * .35, d: 900 }, { to: pk * .92, d: 1500 }, { to: pk * .5, d: 900 }, { to: 1, d: 2600 }]; say.textContent = 'Tall hill: the token slides back before it gets over.'; }
+      climb(seq, function(){ n++; STORE.set('l4hill', n); cnt.textContent = 'Converted: ' + n; go.disabled = false; setTimeout(function(){ if (!run) place(0); }, 1100); });
+    });
+    $$('.l4h-seg button', H).forEach(function(b){ b.addEventListener('click', function(){ setMode(+b.dataset.v); }); });
+    cnt.textContent = 'Converted: ' + n; setMode(0);
+  }
+
+  /* ---------- Active Site (lactase) ---------- */
+  var A = $('#l4site');
+  if (A) {
+    var sub = $('.l4s-sub', A), wide = $('.l4s-wide', A), p1 = $('.l4s-p1', A), p2 = $('.l4s-p2', A), eUse = $('.l4s-e', A), lab = $('.l4s-lab', A), no = $('.l4s-no', A), sayA = $('.l4s-say', A), rd = $('.l4s-read', A), nx = $('.l4s-next', A), bk = $('.l4s-back', A);
+    var kind = 'lac', st = 0;
+    var TXT = {
+      lac: ['Lactose approaches the active site of lactase.', 'It fits. The enzyme shifts shape slightly to clamp around it: induced fit.', 'The product is released. The enzyme is unchanged.', 'Lactase moves on to its next lactose.'],
+      suc: ['Sucrose approaches the active site of lactase.', 'It does not fit. Nothing clamps, and no reaction happens.', 'Only the matching substrate can enter, and only the matching reaction can happen.']
+    };
+    function renderA(){
+      var N = TXT[kind].length; st = Math.max(0, Math.min(N - 1, st));
+      pressed($('.l4s-seg', A), kind);
+      var shape = kind === 'lac' ? sub : wide, other = kind === 'lac' ? wide : sub;
+      put(other, 300, 20, 0); no.style.opacity = 0; put(p1, 120, 56, 0); put(p2, 220, 56, 0);
+      eUse.setAttribute('href', '#l4-e0'); lab.textContent = kind === 'lac' ? 'lactose' : 'sucrose';
+      if (kind === 'lac') {
+        if (st === 0) put(sub, 170, 62, 1);
+        if (st === 1) { put(sub, 170, 108, 1); eUse.setAttribute('href', '#l4-e1'); lab.textContent = 'enzyme–substrate complex'; }
+        if (st === 2) { put(sub, 170, 108, 0); put(p1, 118, 50, 1); put(p2, 222, 50, 1); lab.textContent = 'products'; }
+        if (st === 3) put(sub, 170, 62, 1);
+      } else {
+        if (st === 0) put(wide, 170, 60, 1);
+        if (st === 1) { put(wide, 170, 78, 1); no.style.opacity = 1; }
+        if (st === 2) { put(wide, 300, 52, 0); lab.textContent = ''; }
+      }
+      sayA.textContent = TXT[kind][st];
+      rd.textContent = 'Step ' + (st + 1) + ' of ' + N;
+      bk.disabled = st === 0; nx.textContent = st === N - 1 ? 'Start over' : 'Next step →';
+    }
+    nx.addEventListener('click', function(){ if (st === TXT[kind].length - 1) st = 0; else st++; renderA(); });
+    bk.addEventListener('click', function(){ st--; renderA(); });
+    $$('.l4s-seg button', A).forEach(function(b){ b.addEventListener('click', function(){ kind = b.dataset.v; st = 0; renderA(); }); });
+    no.setAttribute('stroke', '#0B1B33'); no.setAttribute('transform', 'translate(0 14)');
+    renderA();
+  }
+
+  /* ---------- Enzyme Bench ---------- */
+  var B = $('#l4bench');
+  if (B) {
+    var ENZ = {
+      pepsin: { name: 'Pepsin', lo: 1.5, hi: 2, home: 1.7, note: 'Pepsin works in the stomach. Optimum pH around 1.5 to 2. Temperature in this model: the usual human optimum, around 37°C.' },
+      trypsin: { name: 'Trypsin', lo: 7.8, hi: 8.2, home: 8, note: 'Trypsin works in the small intestine. Optimum pH around 8. Temperature in this model: the usual human optimum, around 37°C.' },
+      typical: { name: 'Typical', lo: 7, hi: 7, home: 7, lock: true, note: 'Most human enzymes have an optimum around 37°C. At 41°C many are already losing efficiency. pH is held fixed: each enzyme has its own optimum.' }
+    };
+    var cur = 'typical';
+    var iT = $('#l4bT'), iP = $('#l4bP'), iS = $('#l4bS'), iE = $('#l4bE');
+    function tf(T){ var fall = function(x){ return 1 / (1 + Math.exp((x - 42.5) / 1.8)); }; var rise = Math.pow(Math.min(T, 37) / 37, 2); return rise * fall(T) / fall(37); }
+    function pf(pH, k){ var e = ENZ[k]; if (e.lock) return 1; var d = Math.max(0, e.lo - pH, pH - e.hi); return Math.exp(-Math.pow(d / 1.3, 2)); }
+    function sat(S, E){ return 1 - Math.exp(-S / (0.6 * E)); }
+    var RMAX = 10 * (1 - Math.exp(-10 / 6));
+    function rate(T, pH, S, E, k){ return Math.max(0, tf(T) * pf(pH, k) * E * sat(S, E) / RMAX); }
+    function word(r){ return r < .03 ? 'none' : r < .15 ? 'very slow' : r < .3 ? 'slow' : r < .5 ? 'moderate' : r < .75 ? 'fast' : 'fastest here'; }
+    var flask = $('.l4b-flask', B), chart = $('.l4b-svg', B), flags = $('.l4b-flags', B), occ = $('.l4b-occ', B), fill = $('.l4b-fill', B), wordEl = $('.l4b-word', B), optEl = $('.l4b-opt', B), top = $('.l4b-top', B);
+    var which = 'T';
+    function vals(){ return { T: +iT.value, P: +iP.value, S: +iS.value, E: +iE.value }; }
+    function heat(T){ var t = tf(T); return { t: t, lost: T > 39.5 ? Math.round(10 * (1 - Math.min(1, t))) / 10 : 0, state: t < .03 ? 'denatured' : (T > 39.5 && t < .35 ? 'denaturing' : (T > 39.5 ? 'losing' : '')) }; }
+    function drawFlask(v, lost, pfv, n){
+      flask.innerHTML = '';
+      for (var k = 0; k < v.E; k++) {
+        var x = 36 + (k % 5) * 67, y = 44 + Math.floor(k / 5) * 60, bad = k < lost;
+        var u = el('use', { href: bad ? '#l4-e2' : '#l4-e0', transform: 'translate(' + x + ' ' + y + ') scale(.42)', fill: bad ? '#8A97A8' : '#0B6E7F', opacity: bad ? .8 : (0.4 + 0.6 * pfv).toFixed(2) }, flask);
+        if (!bad && k - lost < n) { var g = el('g', { transform: 'translate(' + x + ' ' + (y - 17.6) + ') scale(.42)' }, flask); el('use', { href: '#l4-sl', fill: '#C22F4A' }, g); el('use', { href: '#l4-sr', fill: '#E88A9A' }, g); }
+      }
+    }
+    function drawChart(v, k){
+      var R = { T: [10, 60], P: [0, 14], S: [0, 10], E: [1, 10] }[which], x0 = 34, x1 = 330, y0 = 14, y1 = 150;
+      chart.innerHTML = '';
+      el('path', { d: 'M' + x0 + ' ' + y0 + 'V' + y1 + 'H' + x1, fill: 'none', stroke: '#8A97A8', 'stroke-width': 1.5 }, chart);
+      var pts = [], N = 80;
+      for (var i = 0; i <= N; i++) {
+        var xv = R[0] + (R[1] - R[0]) * i / N, a = { T: v.T, P: v.P, S: v.S, E: v.E }; a[which] = xv;
+        var r = rate(a.T, a.P, a.S, a.E, k); pts.push([x0 + (x1 - x0) * i / N, y1 - r * (y1 - y0 - 6)]);
+      }
+      var d = pts.map(function(p, i){ return (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join('');
+      el('path', { d: d + 'L' + x1 + ' ' + y1 + 'L' + x0 + ' ' + y1 + 'Z', fill: '#E0F1F3' }, chart);
+      el('path', { d: d, fill: 'none', stroke: '#0B6E7F', 'stroke-width': 3.5 }, chart);
+      var cx = x0 + (x1 - x0) * (v[which] - R[0]) / (R[1] - R[0]), cr = rate(v.T, v.P, v.S, v.E, k), cy = y1 - cr * (y1 - y0 - 6);
+      el('path', { d: 'M' + cx + ' ' + y0 + 'V' + y1, stroke: '#C22F4A', 'stroke-width': 1.5, 'stroke-dasharray': '4 4' }, chart);
+      el('circle', { cx: cx, cy: cy, r: 8, fill: '#C22F4A', stroke: '#fff', 'stroke-width': 2.5 }, chart);
+      var lbl = { T: ['10°C', '60°C'], P: ['pH 0', 'pH 14'], S: ['low', 'high'], E: ['low', 'high'] }[which];
+      var t1 = el('text', { x: x0, y: 176, class: 'l4-t' }, chart); t1.textContent = lbl[0];
+      var t2 = el('text', { x: x1, y: 176, class: 'l4-t', 'text-anchor': 'end' }, chart); t2.textContent = lbl[1];
+      var t3 = el('text', { x: 14, y: 84, class: 'l4-t', 'text-anchor': 'middle', transform: 'rotate(-90 14 84)' }, chart); t3.textContent = 'relative rate';
+    }
+    function update(){
+      var v = vals(), e = ENZ[cur], r = rate(v.T, v.P, v.S, v.E, cur), tfv = tf(v.T), pfv = pf(v.P, cur), s = sat(v.S, v.E);
+      var hs = heat(v.T), denat = hs.state === 'denatured', lost = Math.round(v.E * hs.lost), fl = [];
+      $('.l4b-oT', B).textContent = v.T + ' °C'; $('.l4b-oP', B).textContent = e.lock ? 'held fixed' : 'pH ' + v.P.toFixed(1);
+      $('.l4b-oS', B).textContent = 'level ' + v.S; $('.l4b-oE', B).textContent = 'level ' + v.E;
+      fill.style.width = Math.max(2, r * 100) + '%'; wordEl.textContent = word(r);
+      if (denat) fl.push(['w', 'Denatured: the active site shape is lost']);
+      else if (hs.state === 'denaturing') fl.push(['w', 'Denaturing: many active sites are losing their shape']);
+      else if (hs.state === 'losing') fl.push(['w', 'Losing efficiency: above the optimum']);
+      else if (v.T < 25) fl.push(['', 'Cool: molecules move slowly']);
+      if (!e.lock && pfv < .35) fl.push(['w', 'Outside this enzyme’s pH range']);
+      if (!denat && v.S > 0 && s > .9) fl.push(['', 'Saturated: more substrate adds nothing']);
+      if (v.S === 0) fl.push(['w', 'No substrate: nothing to work on']);
+      if (!denat && tfv > .95 && pfv > .95 && s > .5) fl.push(['', 'At its optimum conditions']);
+      flags.innerHTML = fl.map(function(f){ return '<span class="' + f[0] + '">' + esc(f[1]) + '</span>'; }).join('');
+      fill.classList.toggle('bad', denat || hs.state === 'denaturing' || (!e.lock && pfv < .35));
+      var n = denat ? 0 : Math.round((v.E - lost) * s * Math.min(1, pfv * 2));
+      drawFlask(v, lost, pfv, n); occ.textContent = 'Pockets filled: ' + n + ' of ' + v.E;
+      drawChart(v, cur);
+      top.textContent = (cur === 'typical' ? 'A typical human enzyme' : e.name);
+    }
+    function pick(k){
+      cur = k; var e = ENZ[k]; pressed($('.l4b-enz', B), k); optEl.textContent = e.note;
+      iP.value = e.home; iP.disabled = !!e.lock; iP.parentNode.classList.toggle('lock', !!e.lock); update();
+    }
+    $$('.l4b-enz button', B).forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.v); }); });
+    [iT, iP, iS, iE].forEach(function(i){ i.addEventListener('input', update); });
+    $$('.l4b-cur button', B).forEach(function(b){ b.addEventListener('click', function(){ which = b.dataset.v; pressed($('.l4b-cur', B), which); update(); }); });
+    /* run log */
+    var log = []; try { log = JSON.parse(STORE.get('l4log') || '[]'); } catch (x) { log = []; }
+    var tb = $('.l4b-tab tbody', B), ln = $('.l4b-ln', B);
+    function drawLog(){
+      tb.innerHTML = log.map(function(r){ return '<tr>' + r.map(function(c){ return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('');
+      ln.textContent = log.length ? log.length + ' logged' : 'Log settings to compare them.'; $('.l4b-tw', B).style.display = log.length ? '' : 'none';
+    }
+    $('.l4b-add', B).addEventListener('click', function(){
+      var v = vals(), r = rate(v.T, v.P, v.S, v.E, cur), e = ENZ[cur];
+      log.push([cur === 'typical' ? 'Typical' : e.name, v.T + '°C', e.lock ? 'fixed' : v.P.toFixed(1), v.S, v.E, word(r), /^denatur/.test(heat(v.T).state) ? heat(v.T).state : (v.S > 0 && sat(v.S, v.E) > .9 ? 'saturated' : '')]);
+      if (log.length > 8) log.shift(); STORE.set('l4log', JSON.stringify(log)); drawLog();
+    });
+    $('.l4b-clr', B).addEventListener('click', function(){ log = []; STORE.set('l4log', '[]'); drawLog(); });
+    drawLog(); pick('typical');
+  }
+
+  /* ---------- narration: the four words ---------- */
+  var nar = $('#l4nar'), chips = $$('.l4-wchk span');
+  if (nar && chips.length) {
+    function chk(){ var t = nar.value.toLowerCase(); chips.forEach(function(c){ c.classList.toggle('on', t.indexOf(c.dataset.w) > -1); }); }
+    nar.addEventListener('input', chk); chk();
+  }
+
+  /* ---------- Inhibitor Lab ---------- */
+  var I = $('#l4inh');
+  if (I) {
+    var ie = $('.l4i-e', I), ci = $('.l4i-ci', I), ni = $('.l4i-ni', I), si = $('.l4i-sub', I), ip1 = $('.l4i-p1', I), ip2 = $('.l4i-p2', I), isay = $('.l4i-say', I), ird = $('.l4i-read', I);
+    var inh = 'none', busy = false, tm = [];
+    function later(fn, ms){ tm.push(setTimeout(fn, ms)); }
+    function ilab(k, on){ $$('.l4i-lab-' + k, I).forEach(function(t){ t.style.opacity = on ? 1 : 0; }); }
+    function rest(){
+      put(si, 290, 46, 1); put(ip1, 150, 60, 0); put(ip2, 250, 60, 0);
+      put(ci, 50, 46, inh === 'comp' ? 1 : 1); put(ni, 50, 120, 1);
+      if (inh === 'comp') put(ci, 200, 123, 1); if (inh === 'non') put(ni, 279, 155, 1);
+      ie.setAttribute('href', inh === 'non' ? '#l4-e2' : '#l4-e0');
+      ilab('sub', true); ilab('ci', inh !== 'comp'); ilab('ni', inh !== 'non');
+      ird.textContent = inh === 'comp' ? 'Competitive inhibitor in the active site' : inh === 'non' ? 'Noncompetitive inhibitor bound elsewhere' : 'No inhibitor';
+    }
+    function act(a){
+      if (a === 'reset') { tm.forEach(clearTimeout); tm = []; busy = false; inh = 'none'; rest(); isay.textContent = 'Substrate and enzyme are ready. Add a molecule or send the substrate.'; return; }
+      if (busy) return;
+      if (a === 'comp') { inh = 'comp'; rest(); isay.textContent = 'The inhibitor resembles the substrate, so it enters the active site. It is not processed.'; return; }
+      if (a === 'non') { inh = 'non'; rest(); isay.textContent = 'It binds elsewhere on the enzyme. The enzyme’s shape is distorted and the active site is disabled indirectly.'; return; }
+      busy = true; ilab('sub', false);
+      if (inh === 'none') {
+        put(si, 200, 123, 1); ie.setAttribute('href', '#l4-e1'); isay.textContent = 'Substrate fits. The enzyme clamps around it.';
+        later(function(){ put(si, 200, 123, 0); ie.setAttribute('href', '#l4-e0'); put(ip1, 150, 62, 1); put(ip2, 250, 62, 1); isay.textContent = 'The product is released. The enzyme is unchanged and ready for the next substrate.'; }, 1300);
+        later(function(){ put(ip1, 110, 40, 0); put(ip2, 290, 40, 0); put(si, 290, 46, 1); ilab('sub', true); busy = false; }, 2900);
+      } else if (inh === 'comp') {
+        put(si, 200, 80, 1); isay.textContent = 'Blocked: the real substrate cannot enter the active site, and the inhibitor is not processed.';
+        later(function(){ put(si, 290, 46, 1); ilab('sub', true); busy = false; }, 1800);
+      } else {
+        put(si, 200, 82, 1); isay.textContent = 'No fit: the substrate arrives, but the distorted active site no longer matches it.';
+        later(function(){ put(si, 290, 46, 1); ilab('sub', true); busy = false; }, 1800);
+      }
+    }
+    $$('.l4i-btns button', I).forEach(function(b){ b.addEventListener('click', function(){ act(b.dataset.a); }); });
+    rest();
+  }
+
+  /* ---------- Feedback bench ---------- */
+  var F = $('#l4fb');
+  if (F) {
+    var rng = $('#l4fR', F), fl = $('.l4f-fl', F), loop = $('.l4f-loop', F), endc = $('.l4f-end', F), fsay = $('.l4f-say', F), frd = $('.l4f-read', F), fval = $('.l4f-val', F), bound = $('.l4f-bound', F), runB = $('.l4f-run', F);
+    var lvl = 0, iv = null;
+    function draw(){
+      var L = Math.round(lvl), r = Math.max(0, 1 - L / 10);
+      rng.value = L; fval.textContent = L <= 3 ? 'low' : L <= 7 ? 'rising' : 'high';
+      endc.setAttribute('r', 16 + L * .7);
+      loop.style.opacity = Math.max(0, Math.min(1, (L - 3) / 4)); bound.style.opacity = L >= 7 ? 1 : 0;
+      fl.setAttribute('stroke-width', (1.5 + 3 * r).toFixed(1)); fl.style.setProperty('--d', (0.6 + 3.4 * (1 - r)).toFixed(2) + 's'); fl.style.animationPlayState = r < .12 ? 'paused' : 'running';
+      frd.textContent = L <= 3 ? 'Pathway at full speed' : L <= 7 ? 'Pathway slowing' : 'Pathway nearly stopped';
+      fsay.textContent = L <= 3 ? 'Little end product so far. The first enzyme runs freely.' : L <= 7 ? 'End product is accumulating and starts to bind the first enzyme.' : 'Plenty of end product, bound to the first enzyme. The pathway crawls: the cell stops making what it already has enough of.';
+    }
+    function stop(){ if (iv) { clearInterval(iv); iv = null; } runB.textContent = 'Run the pathway'; }
+    rng.addEventListener('input', function(){ lvl = +rng.value; draw(); });
+    runB.addEventListener('click', function(){
+      if (iv) { stop(); return; }
+      runB.textContent = 'Pause';
+      iv = setInterval(function(){ lvl = Math.min(10, lvl + .5 * Math.max(.15, 1 - lvl / 10)); draw(); if (lvl >= 10) stop(); }, 450);
+    });
+    $('.l4f-use', F).addEventListener('click', function(){ stop(); lvl = 0; draw(); });
+    draw();
+  }
+
+  /* ---------- Lab Report: pickers + running word total ---------- */
+  $$('.l4r-pick').forEach(function(pick){
+    var inp = document.getElementById(pick.dataset.t); if (!inp) return;
+    function mark(){ $$('button', pick).forEach(function(b){ b.classList.toggle('on', !!b.dataset.v && b.dataset.v === inp.value); }); }
+    $$('button', pick).forEach(function(b){ b.addEventListener('click', function(){ inp.value = b.dataset.v; STORE.set('j-' + inp.id, inp.value); mark(); if (!b.dataset.v) inp.focus(); }); });
+    inp.addEventListener('input', mark); mark();
+  });
+  var tot = $('.l4r-total'), parts = ['l4rW', 'l4rT', 'l4rP', 'l4rS', 'l4rN', 'l4rX', 'l4rF'].map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  function total(){
+    var n = parts.reduce(function(a, b){ return a + words(b.value); }, 0);
+    tot.textContent = n + (n === 1 ? ' word' : ' words') + ' · aim for 300–400'; tot.classList.toggle('met', n >= 300 && n <= 400);
+  }
+  if (tot) { parts.forEach(function(b){ b.addEventListener('input', total); }); total(); }
+})();
+</script>
+
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+</body>
+</html>

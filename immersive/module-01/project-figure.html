@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Your First Orientation in the Body · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>/* ---- Module 1 Assembled Figure: Your First Orientation in the Body ---- */
+.af-fig{width:100%;height:auto;display:block}
+.af-fig .af-t{font:600 11px var(--mono,monospace);fill:#38434F;letter-spacing:.04em}
+.af-stage{display:grid;grid-template-columns:minmax(160px,240px) 1fr;gap:22px;align-items:center;padding:18px 22px}
+.af-body{width:100%;height:auto;max-height:360px}
+.af-q{font:700 26px var(--ui);fill:var(--red)}
+.af-side{display:flex;flex-direction:column;gap:12px}
+.af-tag{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line2);border-radius:12px;padding:10px 14px;align-self:flex-start}
+.af-tag b{font:700 20px/1.2 var(--disp,var(--ui));color:var(--ink)}
+.af-layers{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.af-layers li{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:500 15px/1.3 var(--ui);color:var(--ink)}
+.af-layers li i{font-style:normal;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--blue);color:#fff;font:700 12px/1 var(--mono,monospace)}
+.af-note,.af-wave{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:1px dashed var(--line2);border-radius:10px;padding:8px 12px;font:500 15px/1.3 var(--serif)}
+.af-note b{color:var(--red)}
+.af-wave .bars{display:inline-flex;gap:3px;align-items:center;height:22px}
+.af-wave .bars i{display:block;width:4px;border-radius:2px;background:var(--blue);height:30%}
+.af-wave .bars i:nth-child(3n){height:80%}.af-wave .bars i:nth-child(3n+1){height:55%}.af-wave .bars i:nth-child(4n){height:100%}
+.vo.playing .af-wave.now .bars i{animation:afw .9s ease-in-out infinite alternate}
+.af-wave .bars i:nth-child(2n){animation-delay:.3s}
+@keyframes afw{from{transform:scaleY(.4)}to{transform:scaleY(1)}}
+@media (max-width:640px){.af-stage{grid-template-columns:1fr}.af-body{max-height:260px}}
+
+.af-plan{padding:18px 20px}
+.af-qstat,.af-cstat{margin-bottom:10px;color:var(--muted)}
+.af-qstat.warn,.af-kstat.warn{color:var(--red)}
+.af-qstat.ok,.af-cstat.ok{color:var(--ok,#2F6B4F)}
+.af-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px 16px}
+.af-grid label,.af-cav label{display:flex;flex-direction:column;gap:4px;font:600 13px/1.3 var(--ui);color:var(--ink)}
+.af-grid input,.af-cav input,.af-ann input,.af-ann select,.af-key select{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:8px 10px;background:#fff;color:var(--ink);min-width:0}
+.af-cav{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px 16px;padding:18px 20px}
+.af-key{display:grid;gap:10px;padding:18px 20px}
+.af-key label{display:grid;grid-template-columns:34px 110px 1fr;align-items:center;gap:10px;font:15px var(--ui)}
+.af-sw{display:block;width:34px;height:0;border-top:4px solid #C3CED9}
+.af-mcqs{display:grid;gap:12px;margin-top:14px}
+.af-mcqs .mcq{padding:16px 18px}
+.af-mcqs .mcq .q{margin:0 0 10px}
+.af-mcqs .opt{margin:0 8px 8px 0}
+.af-anns{display:grid;gap:10px}
+.af-ann{display:grid;grid-template-columns:30px minmax(0,1.3fr) auto minmax(0,1fr) auto minmax(0,1.3fr);align-items:center;gap:8px;padding:12px 14px;font:15px var(--ui);color:var(--muted)}
+.af-ann .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;background:var(--blue);color:#fff;font:700 12px/1 var(--mono,monospace)}
+.af-ann.dup select{border-color:var(--red);background:var(--red-t)}
+@media (max-width:640px){.af-ann{grid-template-columns:30px 1fr;}.af-ann>span:not(.n){display:none}.af-ann input,.af-ann select{grid-column:2}}
+.af-out{margin-top:14px}
+.af-sent{margin:6px 0 0;padding-left:22px;font:16px/1.6 var(--serif);color:var(--ink)}
+.af-sent li.todo{color:var(--muted);font-style:italic}
+.af-sent b{color:var(--red)}
+.af-photo{padding:18px 20px}
+.af-pick{cursor:pointer;display:inline-flex}
+.af-prev{display:block;max-width:100%;max-height:520px;margin-top:12px;border:1px solid var(--line2);border-radius:10px}
+.af-prev[hidden]{display:none}
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+</style>
+
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="af-front" viewBox="0 0 200 430">
+    <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="100" cy="28" rx="21" ry="26" stroke="none"/>
+      <rect x="91" y="50" width="18" height="24" stroke="none"/>
+      <path stroke="none" d="M56 82Q100 66 144 82L136 150Q132 186 136 214L138 242Q100 254 62 242L64 214Q68 186 64 150Z"/>
+      <path fill="none" stroke-width="17" d="M58 90L44 158"/><path fill="none" stroke-width="13" d="M44 160L36 230"/>
+      <path fill="none" stroke-width="17" d="M142 90L156 158"/><path fill="none" stroke-width="13" d="M156 160L164 230"/>
+      <ellipse cx="34" cy="242" rx="8" ry="13" stroke="none"/><ellipse cx="25" cy="238" rx="3.4" ry="9" stroke="none" transform="rotate(10 25 238)"/>
+      <ellipse cx="166" cy="242" rx="8" ry="13" stroke="none"/><ellipse cx="175" cy="238" rx="3.4" ry="9" stroke="none" transform="rotate(-10 175 238)"/>
+      <path fill="none" stroke-width="30" d="M80 244L78 332"/><path fill="none" stroke-width="19" d="M78 334L76 410"/><ellipse cx="68" cy="420" rx="16" ry="6" stroke="none"/>
+      <path fill="none" stroke-width="30" d="M120 244L122 332"/><path fill="none" stroke-width="19" d="M122 334L124 410"/><ellipse cx="132" cy="420" rx="16" ry="6" stroke="none"/>
+    </g>
+  </symbol>
+</defs></svg>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A 1543 woodcut by Vesalius: a standing figure with its skin removed, arm raised, showing the muscles of the arm, neck and chest" style="background-image:url(img/project-figure-hero.jpg);background-position:center 30%"><span class="hlab">Vesalius · second plate of the muscles · 1543</span><span class="hcred">Image: Andreas Vesalius, De humani corporis fabrica (1543), public domain, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Module 1 Assembled Figure</div>
+      <h1>Your First Orientation in the Body</h1>
+      <div class="focusq"><div class="label">Module thread &middot; Wonder</div><p>Before you can learn any one system in detail, you need to know where you are standing. Your figure is proof that you can navigate the body using the same vocabulary a surgeon or anatomist would use.</p></div>
+      <details class="objs"><summary>Figure at a glance</summary><ul>
+        <li>One figure + a 60&ndash;80 word caption, 12 points.</li>
+        <li>Started in Lesson 1.01, added to in Lesson 1.02, finished here.</li>
+        <li>About placing and naming, not artistic polish.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Outline &middot; planes &middot; cavities</div>
+      <svg class="af-fig" viewBox="0 0 360 262" role="img" aria-label="A front-view outline with the three body planes and four cavities marked">
+        <g transform="translate(118 8) scale(.57)">
+          <use href="#af-front" width="200" height="430" style="color:#CFE0E8"/>
+          <ellipse cx="100" cy="27" rx="16" ry="20" fill="#0B6E7F" fill-opacity=".4"/>
+          <rect x="72" y="84" width="56" height="66" rx="10" fill="#0B6E7F" fill-opacity=".28"/>
+          <rect x="72" y="154" width="56" height="52" rx="8" fill="#0B6E7F" fill-opacity=".4"/>
+          <rect x="74" y="210" width="52" height="30" rx="8" fill="#0B6E7F" fill-opacity=".28"/>
+          <line x1="100" y1="-8" x2="100" y2="436" stroke="#0B1B33" stroke-width="3"/>
+          <line x1="-12" y1="168" x2="212" y2="168" stroke="#C22F4A" stroke-width="3" stroke-dasharray="9 6"/>
+        </g>
+        <text x="40" y="40" class="af-t">sagittal</text><path d="M104 36 L170 36" stroke="#0B1B33" stroke-width="1" fill="none"/>
+        <text x="246" y="110" class="af-t" style="fill:#C22F4A">transverse</text>
+        <text x="246" y="40" class="af-t">cranial</text><text x="246" y="72" class="af-t">thoracic</text><text x="246" y="140" class="af-t">abdominal</text><text x="246" y="162" class="af-t">pelvic</text>
+      </svg>
+      <div class="cap">One figure, four layers: outline, organs, planes, cavities.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my figure plan (PDF)</b> on the Caption and Check tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Figure sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="task" role="tab"><span class="n">01</span>The Task</button>
+  <button class="tab" data-tab="organs" role="tab"><span class="n">02</span>Outline and Organs</button>
+  <button class="tab" data-tab="planes" role="tab"><span class="n">03</span>Planes and Cavities</button>
+  <button class="tab" data-tab="dirs" role="tab"><span class="n">04</span>Directions</button>
+  <button class="tab" data-tab="close" role="tab"><span class="n">05</span>Caption and Check</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 THE TASK ═════════ -->
+<section class="panel" id="tab-task" role="tabpanel">
+  <div class="vo" data-clip="v_fig">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">One Figure, Four Layers</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage">
+      <div class="af-stage">
+        <svg class="af-body" viewBox="-30 -20 260 470" aria-label="A front-view figure that builds layer by layer">
+          <g data-step="1" class="nohalo"><use href="#af-front" width="200" height="430" style="color:#CFE0E8"/></g>
+          <g data-step="2" class="nohalo">
+            <circle cx="100" cy="24" r="9" fill="#5B6B7E"/><circle cx="108" cy="118" r="9" fill="#C22F4A"/>
+            <ellipse cx="80" cy="112" rx="11" ry="20" fill="#E9A3B0"/><ellipse cx="122" cy="112" rx="11" ry="20" fill="#E9A3B0"/>
+            <ellipse cx="88" cy="160" rx="16" ry="9" fill="#8B5A2B" fill-opacity=".75"/><ellipse cx="114" cy="168" rx="10" ry="12" fill="#D9A441"/>
+            <path d="M80 190 q20 -10 40 0 q-20 14 -40 0 Z" fill="#E7B98C"/><ellipse cx="100" cy="228" rx="9" ry="7" fill="#F0D36B"/>
+            <text x="150" y="20" class="af-q">?</text>
+          </g>
+          <g data-step="3" class="nohalo">
+            <line x1="100" y1="-14" x2="100" y2="444" stroke="#0B1B33" stroke-width="3"/>
+            <ellipse cx="100" cy="150" rx="12" ry="160" fill="#1E5AA0" fill-opacity=".10" stroke="#1E5AA0" stroke-width="2.4" stroke-dasharray="3 5"/>
+            <line x1="-22" y1="176" x2="222" y2="176" stroke="#C22F4A" stroke-width="3" stroke-dasharray="10 6"/>
+          </g>
+          <g data-step="4" class="nohalo" fill="none" stroke="#0B6E7F" stroke-width="2.4">
+            <ellipse cx="100" cy="27" rx="16" ry="20"/><rect x="72" y="84" width="56" height="66" rx="10"/>
+            <rect x="72" y="154" width="56" height="52" rx="8"/><rect x="74" y="210" width="52" height="30" rx="8"/>
+          </g>
+        </svg>
+        <div class="af-side">
+          <div class="af-tag" data-step="0"><span class="readout">Module 1</span><b>One figure, finished</b></div>
+          <ol class="af-layers">
+            <li data-step="1"><i>1</i>Outline in anatomical position</li>
+            <li data-step="2"><i>2</i>Organs of all eleven systems</li>
+            <li data-step="3"><i>3</i>Three planes, three line styles</li>
+            <li data-step="4"><i>4</i>Four cavities, one organ in each</li>
+          </ol>
+          <div class="af-note" data-step="5"><span class="readout">annotation</span>the stomach is <b>inferior</b> to the heart</div>
+          <div class="af-wave" data-step="6"><span class="readout">caption</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>60&ndash;80 words</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps":["This module ends with one figure: your first orientation in the body. You started it in the first lesson, added to it in the second, and now you finish it.", "Start with the outline. Draw a large person in anatomical position, seen from the front: standing upright, facing you, palms forward.", "Then place the main organs of all eleven organ systems where you expect them, and label each one. A question mark is fine for no more than two.", "Next, add the three body planes. Draw the sagittal, frontal, and transverse planes, each in its own color or line style, and label them.", "Then outline the four major cavities: cranial, thoracic, abdominal, and pelvic. Name at least one organ inside each.", "Now write four directional annotations, each with a different term. For example: the stomach is inferior to the heart.", "Last, record a short caption of about sixty to eighty words. Explain one placement, use two directional terms, and name one thing that surprised you."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Assignment</h2></div>
+    <div class="card pj-over">
+      <p>In Lesson 1.01 you drew an anatomical-position outline and placed the main organs of the eleven organ systems where you expected them. In Lesson 1.02 you added the three body planes, labeled the four major body cavities, and wrote directional annotations. For this assignment you tidy that single figure into its finished form and submit it with a short caption. It is about placing and naming, which is exactly what the rest of the year will build on.</p>
+    </div>
+    <p class="marg"><b>Different from later modules.</b> Module 1 is a one-week orientation, so your Assembled Figure is a single figure you start in Lesson 1.01 and finish in Lesson 1.02 &mdash; not yet a whole body system. From Module 3 on, the figure grows week by week as you build each system.</p>
+    <div class="pj-facts"><div class="readout">Figure + caption</div><div class="readout">60&ndash;80 word caption</div><div class="readout">12 pts</div><div class="readout">Due end of Week 1</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>What Your Figure Must Show</h2></div>
+    <p class="hint">Paper is highly recommended: draw your figure by hand on one large page, then photograph or scan it flat in good light. A digital figure (a drawing in Microsoft 365 Word, PowerPoint, or OneNote, exported as an image or PDF) is also accepted. Either way, submit one clear file.</p>
+    <ol class="pj-mv">
+      <li><span class="n">1</span><div>A large outline of a person in <b>anatomical position</b>, front view.</div></li>
+      <li><span class="n">2</span><div>The <b>main organs of each of the eleven organ systems</b>, placed where you expect them and labeled (a &ldquo;?&rdquo; is fine for no more than two).</div></li>
+      <li><span class="n">3</span><div>The <b>three body planes</b> (sagittal, frontal, transverse), each in a different color or line style and labeled.</div></li>
+      <li><span class="n">4</span><div>The <b>four major cavities</b> (cranial, thoracic, abdominal, pelvic) outlined and labeled, with at least one organ named in each.</div></li>
+      <li><span class="n">5</span><div>At least <b>four directional annotations</b> using four different directional terms (for example, &ldquo;the stomach is inferior to the heart&rdquo;).</div></li>
+    </ol>
+    <p class="hint">The next three tabs walk through the figure layer by layer. What you type here is your plan; the figure itself is on your page.</p>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="organs" type="button">Next: Outline and Organs &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 OUTLINE AND ORGANS ═════════ -->
+<section class="panel" id="tab-organs" role="tabpanel">
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Look Before You Place</h2></div>
+    <p class="hint">Turn each system in 3D. Notice where it sits in the body: high or low, near the midline or out to the side, toward the front or the back.</p>
+    <!-- 3D model card (see assets/oao-3d/oao-3d.js) -->
+    <div class="oao-3d" data-key="1.af-systems" data-title="The organ systems in place" data-models='[{"label": "Muscles", "src": "../../assets/models/sys-muscular.glb", "orbit": "0deg 80deg auto"}, {"label": "Skeleton", "src": "../../assets/models/03-01-skeleton.glb", "orbit": "0deg 80deg auto"}, {"label": "Nervous system", "src": "../../assets/models/sys-nervous.glb", "orbit": "0deg 80deg auto"}, {"label": "Arteries and veins", "src": "../../assets/models/sys-circulatory.glb", "orbit": "0deg 80deg auto"}, {"label": "Lungs and airway", "src": "../../assets/models/sys-respiratory.glb", "orbit": "0deg 80deg auto"}, {"label": "One organ: the heart", "src": "../../assets/models/organ-heart.glb", "orbit": "0deg 80deg auto"}]'></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Cavity Holds It?</h2></div>
+    <p class="hint">Tap an organ, then tap the cavity it sits in.</p>
+    <div class="place card" id="afCav">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="cr" data-fb="Brain: inside the skull, in the cranial cavity." data-miss="Which cavity is enclosed by the skull?">brain</button>
+        <button class="chip" data-k="b" data-ans="th" data-fb="Heart: in the thoracic cavity, between the lungs." data-miss="It sits in the chest, above the diaphragm.">heart</button>
+        <button class="chip" data-k="c" data-ans="th" data-fb="Lungs: the thoracic cavity, on either side of the heart." data-miss="They fill most of the chest, above the diaphragm.">lungs</button>
+        <button class="chip" data-k="d" data-ans="ab" data-fb="Stomach: the abdominal cavity, just below the diaphragm on the left." data-miss="It lies just below the diaphragm. Is that chest or abdomen?">stomach</button>
+        <button class="chip" data-k="e" data-ans="ab" data-fb="Liver: the abdominal cavity, upper right, under the diaphragm." data-miss="It tucks under the diaphragm on the right side.">liver</button>
+        <button class="chip" data-k="f" data-ans="ab" data-fb="Small intestine: coiled in the abdominal cavity." data-miss="It fills the middle of the belly, above the hips.">small intestine</button>
+        <button class="chip" data-k="g" data-ans="pe" data-fb="Urinary bladder: the pelvic cavity, low and toward the front." data-miss="It is the lowest of these organs, inside the ring of the hip bones.">urinary bladder</button>
+        <button class="chip" data-k="h" data-ans="pe" data-fb="Rectum: the pelvic cavity, the last stretch of the large intestine." data-miss="It is the final part of the intestine, inside the hips.">rectum</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="cr"><h4>Cranial</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="th"><h4>Thoracic</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="ab"><h4>Abdominal</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="pe"><h4>Pelvic</h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div>
+      <div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>My Organ Plan</h2></div>
+    <p class="hint">For each system, write the main organ or organs you placed on your figure. Type a &ldquo;?&rdquo; if you are unsure; no more than two may be &ldquo;?&rdquo;.</p>
+    <div class="card af-plan">
+      <div class="af-qstat readout" aria-live="polite">0 of 11 systems planned</div>
+      <div class="af-grid">
+        <label><span>Integumentary</span><input class="jfield" id="afS1" data-label="Organs placed: integumentary" placeholder="e.g. skin"></label>
+        <label><span>Skeletal</span><input class="jfield" id="afS2" data-label="Organs placed: skeletal" placeholder="bones I drew"></label>
+        <label><span>Muscular</span><input class="jfield" id="afS3" data-label="Organs placed: muscular" placeholder="muscles I drew"></label>
+        <label><span>Nervous</span><input class="jfield" id="afS4" data-label="Organs placed: nervous" placeholder="organ(s)"></label>
+        <label><span>Endocrine</span><input class="jfield" id="afS5" data-label="Organs placed: endocrine" placeholder="gland(s)"></label>
+        <label><span>Cardiovascular</span><input class="jfield" id="afS6" data-label="Organs placed: cardiovascular" placeholder="organ(s)"></label>
+        <label><span>Lymphatic</span><input class="jfield" id="afS7" data-label="Organs placed: lymphatic" placeholder="organ(s)"></label>
+        <label><span>Respiratory</span><input class="jfield" id="afS8" data-label="Organs placed: respiratory" placeholder="organ(s)"></label>
+        <label><span>Digestive</span><input class="jfield" id="afS9" data-label="Organs placed: digestive" placeholder="organ(s)"></label>
+        <label><span>Urinary</span><input class="jfield" id="afS10" data-label="Organs placed: urinary" placeholder="organ(s)"></label>
+        <label><span>Reproductive</span><input class="jfield" id="afS11" data-label="Organs placed: reproductive" placeholder="organ(s)"></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="task" type="button">&larr; The Task</button><button class="btn" data-go="planes" type="button">Next: Planes and Cavities &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 PLANES AND CAVITIES ═════════ -->
+<section class="panel" id="tab-planes" role="tabpanel">
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Three Planes in 3D</h2></div>
+    <p class="hint">Switch each plane on and off. Then check the three questions below.</p>
+    <!-- 3D model card (see assets/oao-3d/oao-3d.js) -->
+    <div class="oao-3d" data-key="1.af-planes" data-title="The three body planes" data-src="../../assets/models/01-02-body-planes.glb" data-poster="../../assets/models/01-02-body-planes.webp" data-alt="3D model: Body planes" data-orbit="30deg 75deg auto" data-planes="on"></div>
+    <div class="af-mcqs">
+      <div class="mcq card" data-qid="afq1"><p class="q">Which plane divides the body into <b>anterior</b> and <b>posterior</b> portions?</p>
+        <button class="opt" data-fb="The sagittal plane divides left from right.">Sagittal</button>
+        <button class="opt" data-ok="1" data-fb="Right. The frontal (coronal) plane splits front from back.">Frontal</button>
+        <button class="opt" data-fb="The transverse plane divides upper from lower.">Transverse</button></div>
+      <div class="mcq card" data-qid="afq2"><p class="q">A cut that runs exactly down the midline, splitting left and right evenly, is the&hellip;</p>
+        <button class="opt" data-ok="1" data-fb="Right. Midsagittal (or median): the sagittal plane on the midline.">Midsagittal plane</button>
+        <button class="opt" data-fb="Parasagittal is parallel to the midline but off center.">Parasagittal plane</button>
+        <button class="opt" data-fb="Frontal splits front from back, not left from right.">Frontal plane</button></div>
+      <div class="mcq card" data-qid="afq3"><p class="q">A standard CT scan of the abdomen, stacked like slices of bread, is taken in which plane?</p>
+        <button class="opt" data-fb="A sagittal slice runs vertically, left to right.">Sagittal</button>
+        <button class="opt" data-fb="A frontal slice runs vertically, front to back.">Frontal</button>
+        <button class="opt" data-ok="1" data-fb="Right. Transverse sections are horizontal cross-sections.">Transverse</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>My Plane Key</h2></div>
+    <p class="hint">Each plane needs its own color or line style. Choose yours so a reader can tell them apart.</p>
+    <div class="card af-key">
+      <label><span class="af-sw" data-sw="afP1"></span><b>Sagittal</b><select class="jfield" id="afP1" data-label="Plane key: sagittal"><option value="">choose a style</option><option value="solid black line">solid black line</option><option value="dashed red line">dashed red line</option><option value="dotted blue line">dotted blue line</option><option value="solid green line">solid green line</option><option value="dashed orange line">dashed orange line</option><option value="dotted purple line">dotted purple line</option><option value="shaded band">shaded band</option></select></label>
+      <label><span class="af-sw" data-sw="afP2"></span><b>Frontal</b><select class="jfield" id="afP2" data-label="Plane key: frontal"><option value="">choose a style</option><option value="solid black line">solid black line</option><option value="dashed red line">dashed red line</option><option value="dotted blue line">dotted blue line</option><option value="solid green line">solid green line</option><option value="dashed orange line">dashed orange line</option><option value="dotted purple line">dotted purple line</option><option value="shaded band">shaded band</option></select></label>
+      <label><span class="af-sw" data-sw="afP3"></span><b>Transverse</b><select class="jfield" id="afP3" data-label="Plane key: transverse"><option value="">choose a style</option><option value="solid black line">solid black line</option><option value="dashed red line">dashed red line</option><option value="dotted blue line">dotted blue line</option><option value="solid green line">solid green line</option><option value="dashed orange line">dashed orange line</option><option value="dotted purple line">dotted purple line</option><option value="shaded band">shaded band</option></select></label>
+      <div class="af-kstat hint" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>One Organ in Each Cavity</h2></div>
+    <p class="hint">Outline the four cavities on your figure and name at least one organ inside each.</p>
+    <div class="card af-cav">
+      <label><span>Cranial cavity</span><input class="jfield" id="afC1" data-label="Cranial cavity: organ named" placeholder="an organ"></label>
+      <label><span>Thoracic cavity</span><input class="jfield" id="afC2" data-label="Thoracic cavity: organ named" placeholder="an organ"></label>
+      <label><span>Abdominal cavity</span><input class="jfield" id="afC3" data-label="Abdominal cavity: organ named" placeholder="an organ"></label>
+      <label><span>Pelvic cavity</span><input class="jfield" id="afC4" data-label="Pelvic cavity: organ named" placeholder="an organ"></label>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="organs" type="button">&larr; Outline and Organs</button><button class="btn" data-go="dirs" type="button">Next: Directions &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 DIRECTIONS ═════════ -->
+<section class="panel" id="tab-dirs" role="tabpanel">
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Warm Up</h2></div>
+    <div class="af-mcqs">
+      <div class="mcq card" data-qid="afq4"><p class="q">The sternum is ____ to the spine.</p>
+        <button class="opt" data-ok="1" data-fb="Right. The sternum is toward the front of the body.">anterior</button>
+        <button class="opt" data-fb="Posterior means toward the back. The spine is posterior to the sternum.">posterior</button>
+        <button class="opt" data-fb="Medial and lateral compare distance from the midline; both bones are on it.">medial</button></div>
+      <div class="mcq card" data-qid="afq5"><p class="q">The shoulder is ____ to the elbow.</p>
+        <button class="opt" data-fb="Distal means farther from the trunk. That describes the elbow.">distal</button>
+        <button class="opt" data-ok="1" data-fb="Right. Proximal means closer to the trunk, used for limbs.">proximal</button>
+        <button class="opt" data-fb="Superficial and deep compare distance from the body&rsquo;s surface.">superficial</button></div>
+      <div class="mcq card" data-qid="afq6"><p class="q">The nose is ____ to the eyes.</p>
+        <button class="opt" data-ok="1" data-fb="Right. The nose is closer to the midline.">medial</button>
+        <button class="opt" data-fb="Lateral means away from the midline. The eyes are lateral to the nose.">lateral</button>
+        <button class="opt" data-fb="Inferior is about height, and the nose and eyes are close in height; the clearer contrast is the midline.">inferior</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Four Annotations</h2></div>
+    <p class="hint">Build the four directional annotations you will write on your figure. Each one uses a <b>different</b> directional term.</p>
+    <div class="af-anns">
+      <div class="card af-ann" data-n="1"><span class="n">1</span><input class="jfield" id="afA1a" data-label="Annotation 1: structure" placeholder="the stomach"><span>is</span><select class="jfield af-term" id="afA1t" data-label="Annotation 1: term"><option value="">choose a term</option><option value="superior">superior</option><option value="inferior">inferior</option><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="medial">medial</option><option value="lateral">lateral</option><option value="proximal">proximal</option><option value="distal">distal</option><option value="superficial">superficial</option><option value="deep">deep</option></select><span>to</span><input class="jfield" id="afA1b" data-label="Annotation 1: compared to" placeholder="the heart"></div>
+      <div class="card af-ann" data-n="2"><span class="n">2</span><input class="jfield" id="afA2a" data-label="Annotation 2: structure" placeholder="a structure"><span>is</span><select class="jfield af-term" id="afA2t" data-label="Annotation 2: term"><option value="">choose a term</option><option value="superior">superior</option><option value="inferior">inferior</option><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="medial">medial</option><option value="lateral">lateral</option><option value="proximal">proximal</option><option value="distal">distal</option><option value="superficial">superficial</option><option value="deep">deep</option></select><span>to</span><input class="jfield" id="afA2b" data-label="Annotation 2: compared to" placeholder="another structure"></div>
+      <div class="card af-ann" data-n="3"><span class="n">3</span><input class="jfield" id="afA3a" data-label="Annotation 3: structure" placeholder="a structure"><span>is</span><select class="jfield af-term" id="afA3t" data-label="Annotation 3: term"><option value="">choose a term</option><option value="superior">superior</option><option value="inferior">inferior</option><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="medial">medial</option><option value="lateral">lateral</option><option value="proximal">proximal</option><option value="distal">distal</option><option value="superficial">superficial</option><option value="deep">deep</option></select><span>to</span><input class="jfield" id="afA3b" data-label="Annotation 3: compared to" placeholder="another structure"></div>
+      <div class="card af-ann" data-n="4"><span class="n">4</span><input class="jfield" id="afA4a" data-label="Annotation 4: structure" placeholder="a structure"><span>is</span><select class="jfield af-term" id="afA4t" data-label="Annotation 4: term"><option value="">choose a term</option><option value="superior">superior</option><option value="inferior">inferior</option><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="medial">medial</option><option value="lateral">lateral</option><option value="proximal">proximal</option><option value="distal">distal</option><option value="superficial">superficial</option><option value="deep">deep</option></select><span>to</span><input class="jfield" id="afA4b" data-label="Annotation 4: compared to" placeholder="another structure"></div>
+    </div>
+    <div class="bench af-out">
+      <div class="bh"><b>Your annotations</b><span class="readout af-astat">0 of 4 complete</span></div>
+      <ol class="af-sent"></ol>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="planes" type="button">&larr; Planes and Cavities</button><button class="btn" data-go="close" type="button">Next: Caption and Check &rarr;</button></div>
+</section>
+
+<!-- ═════════ 05 CAPTION AND CHECK ═════════ -->
+<section class="panel" id="tab-close" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top">
+      <label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">A</span><h2>Your Figure</h2></div>
+      <div class="card af-photo">
+        <p class="q" style="margin-top:0">Add a photo or scan of your finished figure. It goes into your PDF. (Optional here; you still submit the figure on the Canvas assignment.)</p>
+        <label class="btn ghost af-pick"><input type="file" accept="image/*" hidden>Choose a photo</label>
+        <button type="button" class="btn ghost small af-clear" hidden>Remove photo</button>
+        <img class="af-prev" data-pdf-img="My figure" alt="Your figure" hidden>
+        <p class="hint af-pnote">Photograph it flat, in good light, with the whole page in the frame.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">B</span><h2>Reflection Caption (60&ndash;80 words)</h2></div>
+      <p class="hint">Record yourself speaking a caption of about 60&ndash;80 words (roughly 30&ndash;45 seconds) with your phone, laptop, or the Canvas media recorder. If you genuinely cannot record, a written caption is accepted. Plan it in three parts first.</p>
+      <div class="card">
+        <div class="field"><p class="q"><b>1.</b> Name one structure or system you placed on your figure and explain why you put it where you did.</p>
+          <textarea class="jbox" id="afR1" data-label="Caption plan 1: one placement and why" data-min="15"></textarea></div>
+        <div class="field"><p class="q"><b>2.</b> Use at least two directional terms (superior, inferior, anterior, posterior, medial, lateral) to accurately describe the position of something on your figure relative to something else. <i>(Example: &ldquo;The heart sits medial to the lungs and slightly left of the midsagittal plane.&rdquo;)</i></p>
+          <textarea class="jbox" id="afR2" data-label="Caption plan 2: two directional terms" data-min="12" data-mark="superior|inferior|anterior|posterior|medial|lateral|proximal|distal|superficial|deep"></textarea></div>
+        <div class="field" style="margin-bottom:0"><p class="q"><b>3.</b> Name at least one organ system on your figure and one thing you were unsure of or did not expect when you tried to place it.</p>
+          <textarea class="jbox" id="afR3" data-label="Caption plan 3: a system and something unexpected" data-min="15"></textarea></div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <div class="field"><p class="q"><b>Your caption.</b> Join the three parts into one caption of 60&ndash;80 words.</p>
+          <textarea class="jbox" id="afCap" data-label="Reflection caption" data-min="60" data-mark="superior|inferior|anterior|posterior|medial|lateral|proximal|distal|superficial|deep"></textarea>
+          <div class="af-cstat readout" aria-live="polite"></div></div>
+        <p class="q" style="font-weight:600">Record it here (30&ndash;45 seconds), then download the recording and upload it to the Canvas assignment.</p>
+        <div class="narrate" data-words="70"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">C</span><h2>Success Criteria</h2></div>
+      <ul class="checks">
+        <li data-ck="afc1">Figure shows the anatomical-position outline, the three planes, and the four cavities, all labeled.</li>
+        <li data-ck="afc2">Figure carries four directional annotations and the caption uses at least two directional terms correctly.</li>
+        <li data-ck="afc3">Main organs of all eleven organ systems placed and labeled (a &ldquo;?&rdquo; for no more than two).</li>
+        <li data-ck="afc4">Caption identifies something genuinely unexpected or uncertain, not a generic statement.</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">D</span><h2>Rubric &middot; 12 pts</h2></div>
+      <div class="card pj-rubwrap">
+        <table class="pj-rub">
+          <thead><tr><th>Criterion</th><th>Excellent</th><th>Proficient</th><th>Developing</th><th>Beginning</th><th>Pts</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Figure completeness<small>4 pts</small></th>
+              <td data-l="Excellent">Outline, all three planes, all four cavities, and organs of all eleven systems present and clearly labeled.</td>
+              <td data-l="Proficient">Most elements present; one or two missing or unclear.</td>
+              <td data-l="Developing">Several elements missing or hard to read.</td>
+              <td data-l="Beginning">Missing or off-topic.</td><td class="pts" data-l="Pts">4</td></tr>
+            <tr><th scope="row">Directional vocabulary<small>4 pts</small></th>
+              <td data-l="Excellent">Four annotations on the figure plus two or more terms in the caption, all used correctly and specifically.</td>
+              <td data-l="Proficient">Most annotations and caption terms correct; one slightly imprecise.</td>
+              <td data-l="Developing">Only one or two terms used correctly.</td>
+              <td data-l="Beginning">Missing or incorrect.</td><td class="pts" data-l="Pts">4</td></tr>
+            <tr><th scope="row">Organ system &amp; reflection<small>4 pts</small></th>
+              <td data-l="Excellent">System correctly named; reflection is specific and genuine.</td>
+              <td data-l="Proficient">System named; reflection somewhat generic.</td>
+              <td data-l="Developing">System named without reflection.</td>
+              <td data-l="Beginning">Missing.</td><td class="pts" data-l="Pts">4</td></tr>
+          </tbody>
+          <tfoot><tr><th scope="row" colspan="5">Total</th><td class="pts">12 pts</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="hint">This is a high school assignment. We are looking for evidence that you can navigate and describe the body using this module&rsquo;s vocabulary &mdash; not artistic polish.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span class="num">E</span><h2>Submit</h2></div>
+      <div class="card pj-submit">
+        <p><b>Canvas Assignment Name:</b> Module 1 Assembled Figure &mdash; Your First Orientation in the Body</p>
+        <p><b>What to submit:</b></p>
+        <ol>
+          <li>Your finished figure: a photo or scan of your paper figure (highly recommended), or a digital figure exported as an image or PDF.</li>
+          <li>Your 60&ndash;80 word reflection caption (audio recording preferred; Canvas text entry or .docx accepted if you cannot record).</li>
+        </ol>
+        <p><b>Due:</b> End of Week 1, Module 1.</p>
+        <p class="hint" style="margin-bottom:0">The PDF below holds your plan, your photo and your written caption. You can upload it as your figure file if it includes the photo.</p>
+      </div>
+      <p class="marg">Starting in Module 3, you will go from placing organs to building whole systems, structure by structure &mdash; the vocabulary you practice here is what makes every future building session possible.</p>
+    </div>
+
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my figure plan (PDF)</button><span class="hint">Your organ plan, plane key, annotations, photo, caption and checklist.</span><span class="print-note"></span></div>
+  </div>
+  <div class="next"><button class="btn ghost" data-go="dirs" type="button">&larr; Directions</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>anatomical position</dt><dd>Standing upright, facing forward, feet parallel, arms at the sides, palms forward. Every directional term assumes it.</dd>
+  <dt>superior / inferior</dt><dd>Toward the head / toward the feet.</dd>
+  <dt>anterior / posterior</dt><dd>Toward the front / toward the back. In humans, ventral and dorsal mean roughly the same.</dd>
+  <dt>medial / lateral</dt><dd>Toward the body&rsquo;s midline / away from the midline.</dd>
+  <dt>proximal / distal</dt><dd>Closer to the trunk / farther from the trunk. Used for limbs.</dd>
+  <dt>superficial / deep</dt><dd>Closer to the body&rsquo;s surface / farther from it.</dd>
+  <dt>sagittal plane</dt><dd>A vertical plane dividing the body into left and right portions. On the midline it is the midsagittal (median) plane; off center, parasagittal.</dd>
+  <dt>frontal plane <small>also called coronal</small></dt><dd>A vertical plane dividing the body into anterior and posterior portions.</dd>
+  <dt>transverse plane <small>also called horizontal</small></dt><dd>A horizontal plane dividing the body into superior and inferior portions.</dd>
+  <dt>cranial cavity</dt><dd>The space inside the skull; holds the brain.</dd>
+  <dt>thoracic cavity</dt><dd>The chest cavity, above the diaphragm; holds the heart and lungs.</dd>
+  <dt>abdominal cavity</dt><dd>Between the diaphragm and the pelvis; holds most digestive organs.</dd>
+  <dt>pelvic cavity</dt><dd>The lowest cavity, inside the hip bones; holds the urinary bladder and the rectum.</dd>
+  <dt>organ system</dt><dd>A group of organs working together on a shared task. This course is built around eleven.</dd>
+</dl></template>
+
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w1-fig", "title": "Your First Orientation in the Body", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Module 1 Assembled Figure", "pdfTag": "AP_M1_FIG"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""}},"v_fig":{"audio":"audio/ap-w1-fig-layers.mp3","words":[[0,0.16,"This"],[0.24,0.64,"module"],[0.72,1.04,"ends"],[1.12,1.2,"with"],[1.36,1.52,"one"],[1.6,2.4,"figure:"],[2.48,2.56,"your"],[2.72,2.96,"first"],[3.04,3.68,"orientation"],[3.76,3.8,"in"],[3.84,3.92,"the"],[4.08,4.32,"body."],[4.88,4.96,"You"],[5.04,5.36,"started"],[5.4,5.44,"it"],[5.52,5.56,"in"],[5.6,5.68,"the"],[5.76,5.92,"first"],[6,6.64,"lesson,"],[6.8,6.96,"added"],[7.04,7.12,"to"],[7.16,7.2,"it"],[7.24,7.28,"in"],[7.36,7.44,"the"],[7.52,8.08,"second,"],[8.16,8.24,"and"],[8.36,8.48,"now"],[8.64,8.72,"you"],[8.8,9.04,"finish"],[9.12,9.28,"it."],[9.84,10.08,"Start"],[10.16,10.24,"with"],[10.28,10.32,"the"],[10.4,10.88,"outline."],[11.36,11.6,"Draw"],[11.68,11.76,"a"],[11.84,12.08,"large"],[12.16,12.56,"person"],[12.64,12.72,"in"],[12.8,13.36,"anatomical"],[13.44,14.08,"position,"],[14.2,14.32,"seen"],[14.4,14.48,"from"],[14.52,14.56,"the"],[14.64,15.28,"front:"],[15.44,15.6,"standing"],[15.68,16.24,"upright,"],[16.28,16.64,"facing"],[16.72,16.96,"you,"],[17.08,17.36,"palms"],[17.44,17.84,"forward."],[18.4,18.64,"Then"],[18.8,19.04,"place"],[19.12,19.2,"the"],[19.28,19.52,"main"],[19.6,19.92,"organs"],[20,20.08,"of"],[20.16,20.4,"all"],[20.48,20.8,"eleven"],[20.88,21.12,"organ"],[21.2,21.52,"systems"],[21.6,21.76,"where"],[21.8,21.84,"you"],[21.92,22.24,"expect"],[22.32,22.64,"them,"],[22.68,22.72,"and"],[22.8,23.12,"label"],[23.2,23.36,"each"],[23.44,23.88,"one."],[24.08,24.16,"A"],[24.32,24.48,"question"],[24.56,24.64,"mark"],[24.72,24.8,"is"],[24.88,25.12,"fine"],[25.2,25.28,"for"],[25.36,25.44,"no"],[25.52,25.6,"more"],[25.68,25.76,"than"],[25.84,26.16,"two."],[26.96,27.44,"Next,"],[27.52,27.68,"add"],[27.72,27.76,"the"],[27.92,28.08,"three"],[28.24,28.4,"body"],[28.56,29.16,"planes."],[29.36,29.52,"Draw"],[29.56,29.6,"the"],[29.76,30.4,"sagittal,"],[30.52,30.88,"frontal,"],[30.92,30.96,"and"],[31.04,31.6,"transverse"],[31.68,32.24,"planes,"],[32.32,32.4,"each"],[32.48,32.56,"in"],[32.64,32.72,"its"],[32.8,32.88,"own"],[33.04,33.28,"color"],[33.36,33.44,"or"],[33.52,33.76,"line"],[33.96,34.24,"style,"],[34.32,34.4,"and"],[34.52,34.64,"label"],[34.72,35.24,"them."],[35.6,35.84,"Then"],[35.92,36.32,"outline"],[36.36,36.4,"the"],[36.56,36.72,"four"],[36.88,37.12,"major"],[37.2,38,"cavities:"],[38.08,38.72,"cranial,"],[38.76,39.44,"thoracic,"],[39.52,40.16,"abdominal,"],[40.2,40.24,"and"],[40.32,40.8,"pelvic."],[41.28,41.44,"Name"],[41.48,41.52,"at"],[41.64,41.76,"least"],[41.92,42.08,"one"],[42.16,42.48,"organ"],[42.68,42.88,"inside"],[42.96,43.36,"each."],[44.32,44.4,"Now"],[44.72,44.84,"write"],[44.96,45.04,"four"],[45.44,45.96,"directional"],[46.32,46.56,"annotations,"],[46.72,46.8,"each"],[46.88,46.92,"with"],[46.96,47.12,"a"],[47.28,47.44,"different"],[47.6,48.04,"term."],[48.08,48.28,"For"],[48.48,48.92,"example:"],[48.96,49.04,"the"],[49.2,49.6,"stomach"],[49.76,49.84,"is"],[50.24,50.44,"inferior"],[50.48,50.56,"to"],[50.6,50.64,"the"],[50.96,51.84,"heart."],[52.24,52.56,"Last,"],[52.72,52.8,"record"],[52.88,53,"a"],[53.12,53.2,"short"],[53.6,53.68,"caption"],[53.76,53.92,"of"],[54.08,54.2,"about"],[54.32,54.48,"sixty"],[54.56,54.64,"to"],[54.72,54.88,"eighty"],[55.28,55.8,"words."],[55.92,56.24,"Explain"],[56.4,56.48,"one"],[56.88,57.36,"placement,"],[57.52,57.6,"use"],[57.68,57.76,"two"],[58.08,58.44,"directional"],[58.64,58.96,"terms,"],[59.04,59.2,"and"],[59.36,59.44,"name"],[59.6,59.68,"one"],[59.92,60,"thing"],[60.08,60.16,"that"],[60.24,60.6,"surprised"],[60.64,61.04,"you."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the Module 1 Assembled Figure: what it must show, the organ systems and cavities, the body planes, directional terms, the caption, and the rubric',
+  quick: ['What does my figure have to show?', 'What goes in the caption?', 'How is the figure graded?'],
+  practice: /(write (my|the) (caption|reflection|annotation)s?|(what|which) (should|do) i (write|say|put)( for| in)? (my )?(caption|reflection)|give me (four|4|the) annotations|what (was|is) (unexpected|surprising) for me)/i,
+  guide: 'That part is yours, so here are my questions instead. Which placement on your figure were you least sure of? Where is it relative to its neighbors: above, below, nearer the midline? Say it out loud first, then type it in the caption plan.',
+  notes: [
+    { k: ['figure','assignment','task','what do i do','show','must show','include'], w: 1.4, a: 'Your figure must show five things: a large outline of a person in anatomical position, front view; the main organs of each of the eleven organ systems, placed and labeled (a “?” is fine for no more than two); the three body planes, each in a different color or line style and labeled; the four major cavities outlined and labeled, with at least one organ named in each; and at least four directional annotations using four different terms.' },
+    { k: ['paper','digital','draw','photo','scan','file','powerpoint','word','onenote'], a: 'Paper is highly recommended: draw it by hand on one large page, then photograph or scan it flat in good light. A digital figure made in Word, PowerPoint or OneNote and exported as an image or PDF is also accepted. Either way, submit one clear file.' },
+    { k: ['caption','reflection','record','recording','words','60','80','how long'], w: 1.4, a: 'The caption is 60 to 80 words, about 30 to 45 seconds spoken. Record it if you can (a written caption is accepted if you cannot). It must name one structure or system and why you placed it there, use at least two directional terms correctly, and name one organ system and one thing you were unsure of or did not expect.' },
+    { k: ['points','grade','graded','rubric','score','12'], w: 1.3, a: 'The figure is worth 12 points: figure completeness 4, directional vocabulary 4, and organ system and reflection 4. We are looking for evidence that you can navigate and describe the body with this module’s vocabulary, not artistic polish.' },
+    { k: ['eleven','11','systems','organ systems','which systems','list'], w: 1.2, a: 'The eleven organ systems are integumentary, skeletal, muscular, nervous, endocrine, cardiovascular, lymphatic, respiratory, digestive, urinary and reproductive. Place the main organs of each one where you expect them.' },
+    { k: ['anatomical position','position','outline','pose','palms'], a: 'Anatomical position: standing upright, facing forward, feet parallel, arms at the sides, palms facing forward. Draw your outline from the front in that pose; every directional term assumes it.' },
+    { k: ['plane','planes','sagittal','frontal','coronal','transverse','horizontal'], w: 1.2, a: 'Three planes. Sagittal divides left from right (midsagittal on the midline, parasagittal off center). Frontal, also called coronal, divides anterior from posterior. Transverse, also called horizontal, divides superior from inferior. Give each its own color or line style on your figure.' },
+    { k: ['cavity','cavities','cranial','thoracic','abdominal','pelvic','diaphragm'], w: 1.2, a: 'Four cavities, top to bottom: cranial (inside the skull, the brain), thoracic (the chest, above the diaphragm: heart and lungs), abdominal (below the diaphragm: stomach, liver, intestines) and pelvic (inside the hip bones: urinary bladder, rectum). Name at least one organ in each.' },
+    { k: ['directional','direction','terms','annotation','annotations','superior','inferior','anterior','posterior','medial','lateral','proximal','distal'], w: 1.2, a: 'Directional terms come in pairs: superior and inferior (toward head, toward feet), anterior and posterior (front, back), medial and lateral (toward or away from the midline), proximal and distal (nearer or farther from the trunk, for limbs), superficial and deep. Your four annotations need four different terms, for example “the stomach is inferior to the heart.”' },
+    { k: ['question mark','unsure','not sure','?','guess'], a: 'If you are not sure where a system’s main organ goes, mark it with a “?”. That is fine for no more than two systems; the rest should be placed and labeled.' },
+    { k: ['submit','turn in','upload','due','canvas','pdf'], w: 1.2, a: 'On the Canvas assignment, submit your finished figure (a photo or scan, or a digital figure as an image or PDF) and your 60 to 80 word caption, recorded if possible. It is due at the end of Week 1. The PDF from this page holds your plan, photo and written caption.' },
+    { k: ['module 3','later','next','why'], a: 'Module 1 is a one-week orientation, so this is a single figure. From Module 3 on, the figure grows week by week as you build each system, and the vocabulary you practice here is what makes every future building session possible.' }
+  ]
+};
+</script>
+
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>/* ---- Module 1 Assembled Figure: page widgets ---- */
+(function(){
+  function val(id){ var el = document.getElementById(id); return el ? (el.value || '').trim() : ''; }
+  /* organ plan: count planned systems and "?" answers */
+  var plan = $$('.af-grid input'), qs = $('.af-qstat');
+  function planStat(){
+    var done = plan.filter(function(i){ return i.value.trim(); }).length;
+    var unsure = plan.filter(function(i){ return /\?/.test(i.value); }).length;
+    qs.textContent = done + ' of 11 systems planned' + (unsure ? ' · ' + unsure + ' marked “?”' + (unsure > 2 ? ' (no more than two)' : '') : '');
+    qs.classList.toggle('warn', unsure > 2); qs.classList.toggle('ok', done === 11 && unsure <= 2);
+  }
+  plan.forEach(function(i){ i.addEventListener('input', planStat); }); planStat();
+
+  /* plane key: three different styles */
+  var STYLE = { 'solid black line': 'solid #0B1B33', 'dashed red line': 'dashed #C22F4A', 'dotted blue line': 'dotted #1E5AA0', 'solid green line': 'solid #2F6B4F', 'dashed orange line': 'dashed #D07A1E', 'dotted purple line': 'dotted #6B4AA0', 'shaded band': 'solid #9FC3DA' };
+  var keys = ['afP1', 'afP2', 'afP3'], ks = $('.af-kstat');
+  function keyStat(){
+    var v = keys.map(val);
+    keys.forEach(function(k, i){ var sw = $('[data-sw="' + k + '"]'); if (sw) sw.style.borderTop = '4px ' + (STYLE[v[i]] || 'solid #C3CED9'); });
+    var set = v.filter(Boolean), dup = set.length !== new Set(set).size;
+    ks.textContent = dup ? 'Two planes share a style. Give each plane its own.' : (set.length === 3 ? 'Three planes, three styles.' : '');
+    ks.classList.toggle('warn', dup);
+  }
+  keys.forEach(function(k){ var el = document.getElementById(k); if (el) el.addEventListener('change', keyStat); }); keyStat();
+
+  /* annotations: sentence preview, four different terms */
+  var out = $('.af-sent'), as = $('.af-astat');
+  function annStat(){
+    var rows = $$('.af-ann'), terms = rows.map(function(r){ return val('afA' + r.dataset.n + 't'); }), done = 0, h = '';
+    rows.forEach(function(r, i){
+      var n = r.dataset.n, a = val('afA' + n + 'a'), t = terms[i], b = val('afA' + n + 'b');
+      var dup = t && terms.indexOf(t) !== i; r.classList.toggle('dup', !!dup || (t && terms.lastIndexOf(t) !== i));
+      if (a && t && b) { done++; h += '<li>' + esc(a.charAt(0).toUpperCase() + a.slice(1)) + ' is <b>' + esc(t) + '</b> to ' + esc(b) + '.</li>'; }
+      else h += '<li class="todo">Annotation ' + n + ' not finished yet.</li>';
+    });
+    out.innerHTML = h;
+    var distinct = new Set(terms.filter(Boolean)).size;
+    as.textContent = done + ' of 4 complete' + (distinct < terms.filter(Boolean).length ? ' · use four different terms' : '');
+  }
+  $$('.af-ann input, .af-ann select').forEach(function(el){ el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', annStat); }); annStat();
+
+  /* caption: 60–80 words */
+  var cap = document.getElementById('afCap'), cs = $('.af-cstat');
+  function capStat(){
+    var n = (cap.value.trim().match(/\S+/g) || []).length;
+    var t = (cap.value.match(/\b(superior|inferior|anterior|posterior|medial|lateral|proximal|distal|superficial|deep)\b/gi) || []).map(function(x){ return x.toLowerCase(); });
+    var nt = new Set(t).size;
+    cs.textContent = n + ' words' + (n < 60 ? ' · aim for 60–80' : n > 80 ? ' · trim to 80 or fewer' : ' · on target') + ' · ' + nt + ' directional ' + (nt === 1 ? 'term' : 'terms');
+    cs.classList.toggle('ok', n >= 60 && n <= 80 && nt >= 2);
+  }
+  if (cap) { cap.addEventListener('input', capStat); capStat(); }
+
+  /* photo of the figure: shrunk in the browser, kept on this device, printed in the PDF */
+  var pick = $('.af-pick input'), prev = $('.af-prev'), clr = $('.af-clear'), note = $('.af-pnote');
+  function showPhoto(src){ if (src) { prev.src = src; prev.hidden = false; clr.hidden = false; } else { prev.removeAttribute('src'); prev.hidden = true; clr.hidden = true; } }
+  showPhoto(STORE.get('af-photo'));
+  if (pick) pick.addEventListener('change', function(){
+    var f = pick.files && pick.files[0]; if (!f) return;
+    var img = new Image(), url = URL.createObjectURL(f);
+    img.onload = function(){
+      var s = Math.min(1, 1400 / Math.max(img.width, img.height)), c = document.createElement('canvas');
+      c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      var d = c.toDataURL('image/jpeg', .82); showPhoto(d);
+      try { STORE.set('af-photo', d); note.textContent = 'Photo added. It will print in your PDF.'; }
+      catch(e){ note.textContent = 'Photo added for now, but this browser has no room to keep it. Download your PDF before you leave.'; }
+      pick.value = '';
+    };
+    img.src = url;
+  });
+  if (clr) clr.addEventListener('click', function(){ showPhoto(''); try { STORE.set('af-photo', ''); } catch(e){} });
+})();
+</script>
+
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+</body>
+</html>
