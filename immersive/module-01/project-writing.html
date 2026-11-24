@@ -1688,6 +1688,11 @@ $$('.narrate').forEach(function(box){
    2. keep the drawers, the figure zoom and the tab bar inside that slice,
    3. after a tab change, bring the tab bar back into view,
    4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
 (function(){
   var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
   if (!framed) return;
