@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Epithelial and Connective Tissues · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+@media (max-width:640px){.idrow,.idhead{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.w2eb-ctl{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 10px}
+.w2eb-svg{width:100%;height:auto;max-height:240px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px}
+.w2eb-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.w2eb-list li{font:15px/1.4 var(--ui);padding:7px 12px;border:1px dashed var(--line2);border-radius:10px;color:var(--ink)}
+.w2eb-list li.done{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE)}
+.w2eb-list li.done::before{content:"✓ ";color:var(--ok,#2F6B4F);font-weight:700}
+.w2d-r{width:100%;accent-color:var(--blue);margin:8px 0 2px}
+.w2d-scale{display:flex;justify-content:space-between;font:600 11px/1 var(--mono,monospace);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.w2d-card{display:grid;grid-template-columns:minmax(160px,300px) 1fr;gap:16px;align-items:center;margin-top:12px}
+.w2d-svg{width:100%;height:auto;background:#FFFDF8;border:1px solid var(--line);border-radius:12px}
+.w2d-what{font:500 17px/1.5 var(--serif);margin:0 0 6px}
+@media (max-width:640px){.w2d-card{grid-template-columns:1fr}}
+.w2r-locs{display:grid;gap:8px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A stained micrograph of stratified squamous epithelium: many layers of pink cells, flattening toward the surface" style="background-image:url(img/lesson-2-01-hero.jpg);background-position:center 30%"><span class="hlab">Stratified squamous epithelium · 100×</span><span class="hcred">Image: Berkshire Community College Bioscience Image Library, CC0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 2.01</div>
+      <h1>Epithelial and Connective Tissues</h1>
+      <div class="focusq"><div class="label">Focus</div><p>How does the structure of a tissue at a given body location predict the function it must perform there?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to name the three structural features that define epithelial tissue and explain why each one matters.</li><li>I will be able to classify any epithelium by number of layers and cell shape &mdash; including pseudostratified columnar and transitional epithelium &mdash; and give one body location for each major type.</li><li>I will be able to distinguish loose, dense, and specialized connective tissues, and name an example of each.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Four tissues &middot; two today</div>
+      <svg class="m2-fig" viewBox="0 0 360 262" role="img" aria-label="A sheet of epithelial cells resting on a basement membrane above connective tissue with fibers, scattered cells and a capillary">
+  <rect x="10" y="10" width="340" height="242" rx="14" fill="#F4F7FB"/>
+  <g><rect x="24" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="42" cy="74" r="7" fill="#7A2A3A"/><rect x="63" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="81" cy="74" r="7" fill="#7A2A3A"/><rect x="102" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="120" cy="74" r="7" fill="#7A2A3A"/><rect x="141" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="159" cy="74" r="7" fill="#7A2A3A"/><rect x="180" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="198" cy="74" r="7" fill="#7A2A3A"/><rect x="219" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="237" cy="74" r="7" fill="#7A2A3A"/><rect x="258" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="276" cy="74" r="7" fill="#7A2A3A"/><rect x="297" y="40" width="36" height="58" rx="7" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><circle cx="315" cy="74" r="7" fill="#7A2A3A"/></g>
+  <line x1="20" y1="104" x2="340" y2="104" stroke="#1E5AA0" stroke-width="4"/>
+  <g stroke="#C9A66B" stroke-width="2.2" fill="none" stroke-linecap="round"><path d="M30 140 C80 120 120 170 180 140 S280 130 330 160"/><path d="M40 190 C100 170 140 220 200 190 S290 180 330 205"/><path d="M60 225 C120 205 170 240 240 222"/></g>
+  <g fill="#8FB3D9"><circle cx="70" cy="160" r="6"/><circle cx="150" cy="200" r="6"/><circle cx="250" cy="165" r="6"/><circle cx="300" cy="225" r="6"/></g>
+  <ellipse cx="205" cy="232" rx="34" ry="10" fill="none" stroke="#C22F4A" stroke-width="3"/>
+  <text x="24" y="30" class="m2-ts">epithelium: packed, polar, no vessels</text>
+  <text x="24" y="122" class="m2-ts" style="fill:#1E5AA0">basement membrane</text>
+  <text x="246" y="250" class="m2-ts" style="fill:#C22F4A">capillary</text>
+  <text x="196" y="122" class="m2-ts">connective tissue: cells in a matrix</text>
+</svg>
+      <div class="cap">Epithelium on top, connective tissue beneath: the pairing you will find in almost every organ.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="four" role="tab"><span class="n">01</span>Four Tissues, One Boundary</button>
+  <button class="tab" data-tab="epi" role="tab"><span class="n">02</span>Naming Epithelium</button>
+  <button class="tab" data-tab="conn" role="tab"><span class="n">03</span>Connective Tissue</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 FOUR TISSUES, ONE BOUNDARY ═════════ -->
+<section class="panel" id="tab-four" role="tabpanel">
+  <div class="vo" data-clip="w2_four">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Four Tissues, One Boundary</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The four tissue types, then an epithelial sheet with its three defining features">
+  <g data-step="0" class="nohalo">
+    <rect x="16" y="20" width="140" height="58" rx="12" fill="#C22F4A"/><text x="86" y="55" text-anchor="middle" class="m2-tw">epithelial</text>
+    <rect x="16" y="86" width="140" height="58" rx="12" fill="#C9A66B"/><text x="86" y="121" text-anchor="middle" class="m2-tw">connective</text>
+    <rect x="16" y="152" width="140" height="58" rx="12" fill="#8C99A8"/><text x="86" y="187" text-anchor="middle" class="m2-tw">muscle</text>
+    <rect x="16" y="218" width="140" height="58" rx="12" fill="#8C99A8"/><text x="86" y="253" text-anchor="middle" class="m2-tw">nervous</text>
+  </g>
+  <g data-step="1,2" class="nohalo">
+    <text x="200" y="36" class="m2-t">a boundary: surfaces, linings, glands</text>
+    <rect x="200" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="227" cy="112" r="10" fill="#7A2A3A"/><rect x="258" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="285" cy="112" r="10" fill="#7A2A3A"/><rect x="316" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="343" cy="112" r="10" fill="#7A2A3A"/><rect x="374" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="401" cy="112" r="10" fill="#7A2A3A"/><rect x="432" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="459" cy="112" r="10" fill="#7A2A3A"/><rect x="490" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="517" cy="112" r="10" fill="#7A2A3A"/><rect x="548" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="575" cy="112" r="10" fill="#7A2A3A"/><rect x="606" y="60" width="54" height="92" rx="8" fill="#E9A3B0" stroke="#C22F4A" stroke-width="2"/><circle cx="633" cy="112" r="10" fill="#7A2A3A"/>
+  </g>
+  <g data-step="3" class="nohalo"><text x="200" y="196" class="m2-ts">1 &middot; packed shoulder to shoulder, little matrix</text></g>
+  <g data-step="4" class="nohalo">
+    <text x="664" y="52" text-anchor="end" class="m2-ts" style="fill:#C22F4A">apical surface &#8593;</text>
+    <line x1="196" y1="158" x2="666" y2="158" stroke="#1E5AA0" stroke-width="6"/>
+    <text x="200" y="220" class="m2-ts" style="fill:#1E5AA0">2 &middot; polarity: basal surface on the basement membrane</text>
+  </g>
+  <g data-step="5" class="nohalo">
+    <text x="200" y="244" class="m2-ts">3 &middot; no vessels: fed by diffusion, renews fast</text>
+    <ellipse cx="600" cy="280" rx="62" ry="14" fill="#FBEBE7" stroke="#C22F4A" stroke-width="3"/><text x="600" y="284" text-anchor="middle" class="m2-ts" style="fill:#C22F4A">vessel below</text>
+    <g stroke="#C22F4A" stroke-width="2.5"><path d="M570 264 v-98"/><path d="M630 264 v-98"/></g>
+  </g>
+</svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Every organ in your body is built from just four tissue types: epithelial, connective, muscle, and nervous.", "This lesson takes the first two. Epithelial tissue covers the body's surfaces, lines its cavities, and forms its glands.", "Wherever the body needs a boundary, outside the body or between compartments inside it, epithelium does the work.", "Three features define it. First, cellular packing: the cells sit shoulder to shoulder, with very little matrix between them.", "Second, polarity. Each cell has an apical surface facing the outside world or a hollow space, and a basal surface resting on a thin sheet called the basement membrane.", "Third, epithelium has no blood vessels of its own. It is fed by diffusion from the connective tissue beneath, so its cells divide quickly and replace themselves often."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The four tissue types, and the three features that make a tissue epithelial.</span></div>
+    <p class="marg"><b>Wonder.</b> The body is ordered, beautiful, and not yet fully understood. Carry that posture into every reading.</p>
+    <article class="atlas">
+      <h3>The four tissue types</h3>
+      <p>Welcome to Module 2. Last week you read that the body is built from cells, and that cells of similar type and function group into <b>tissues</b>. Despite the body’s variety, there are exactly four tissue types: <b>epithelial</b><button type="button" class="say" data-say="epithelial" aria-label="Hear it: epithelial" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, <b>connective</b>, <b>muscle</b>, and <b>nervous</b>. Every organ in your body is built from some combination of these four. This lesson covers the first two; tomorrow’s reading covers the other two.</p>
+      <figure class="plate"><img data-img="f10501" alt="The four tissue types shown in their locations on the body: nervous, muscle, epithelial, and connective"><figcaption>The four tissue types, shown in representative locations throughout the body.</figcaption></figure>
+      <h3>Epithelial tissue</h3>
+      <p><b>Epithelial tissue</b> (from the Greek <i>epithe-</i>, “laid on, covering”) covers the body’s surfaces, lines its cavities, and forms its glands. The outer layer of your skin is epithelium. So is the lining of your stomach, the lining of your blood vessels, the lining of your lungs, and the cells that produce sweat, saliva, hormones, and enzymes. Wherever the body needs a boundary — outside the body or between compartments inside it — epithelium does the work.</p>
+      <p>Three structural features define epithelium.</p>
+      <p><b>Cellular packing.</b> Cells are tightly bound to each other with little extracellular matrix between them. The cells are essentially shoulder to shoulder.</p>
+      <p><b>Polarity.</b> Epithelial cells have a top (apical surface, facing the outside world or a hollow space) and a bottom (basal surface, facing the body’s interior). The basal surface attaches to a thin sheet of extracellular matrix called the <b>basement membrane</b><button type="button" class="say" data-say="basement-membrane" aria-label="Hear it: basement membrane" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>.</p>
+      <p><b>Avascularity and regeneration.</b> Epithelium has no blood vessels of its own — it gets its nutrients by diffusion from the connective tissue beneath. To compensate, epithelial cells divide rapidly and replace themselves frequently. The cells lining your small intestine, for example, are completely replaced every 3–5 days.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Sort the Tissues</h2></div>
+    <p class="hint">Tap an example, then tap the tissue type that does most of its work.</p>
+    <div class="place card" id="w2sort4">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ep" data-fb="Epithelial: the stomach lining is a boundary between the body and a hollow space." data-miss="It lines a hollow space. Which tissue makes boundaries?">lining of the stomach</button>
+        <button class="chip" data-k="b" data-ans="ct" data-fb="Connective: a tendon is dense regular connective tissue." data-miss="A tendon is mostly collagen fibers. Which tissue is built around fibers in a matrix?">a tendon</button>
+        <button class="chip" data-k="c" data-ans="mu" data-fb="Muscle: the biceps contracts." data-miss="Its job is to contract.">the biceps</button>
+        <button class="chip" data-k="d" data-ans="nv" data-fb="Nervous: the spinal cord carries signals." data-miss="Its job is to carry signals.">the spinal cord</button>
+        <button class="chip" data-k="e" data-ans="ct" data-fb="Connective: blood is a connective tissue with a liquid matrix." data-miss="Its cells float in a liquid matrix, plasma.">blood</button>
+        <button class="chip" data-k="f" data-ans="ep" data-fb="Epithelial: glands are made of epithelium." data-miss="Glands are built from the boundary tissue.">a sweat gland</button>
+        <button class="chip" data-k="g" data-ans="ct" data-fb="Connective: fat is adipose, a loose connective tissue." data-miss="Fat cells sit in a soft matrix.">fat under the skin</button>
+        <button class="chip" data-k="h" data-ans="ep" data-fb="Epithelial: the outer layer of skin is stratified squamous epithelium." data-miss="It covers the body&rsquo;s outer surface.">outer layer of the skin</button>
+      </div>
+      <div class="bins">
+        <div class="bin" data-bin="ep"><h4>Epithelial</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="ct"><h4>Connective</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="mu"><h4>Muscle</h4><div class="drop"></div></div>
+        <div class="bin" data-bin="nv"><h4>Nervous</h4><div class="drop"></div></div>
+      </div>
+      <div class="place-fb"></div><div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Which Feature?</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w2q1"><p class="q">The cells lining your small intestine are completely replaced every 3&ndash;5 days. Which feature of epithelium makes that rapid turnover necessary?</p>
+        <button class="opt" data-fb="Packing explains why there is little matrix, not why cells are replaced.">Cellular packing</button>
+        <button class="opt" data-fb="Polarity is about the apical and basal surfaces.">Polarity</button>
+        <button class="opt" data-ok="1" data-fb="Right. With no blood vessels of its own, epithelium is fed by diffusion and compensates by dividing rapidly.">Avascularity and regeneration</button></div>
+      <div class="mcq card" data-qid="w2q2"><p class="q">An epithelial cell&rsquo;s basal surface attaches to&hellip;</p>
+        <button class="opt" data-ok="1" data-fb="Right. The basement membrane is a thin sheet of extracellular matrix.">the basement membrane</button>
+        <button class="opt" data-fb="The apical surface faces the outside world or a hollow space.">the hollow space it lines</button>
+        <button class="opt" data-fb="Epithelium has no blood vessels of its own.">a capillary inside the epithelium</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Pick one of the three features of epithelium. In two or three sentences, explain why a boundary tissue needs it.</p>
+      <textarea class="jbox" id="w2y1" data-label="Your turn: one feature of epithelium and why a boundary needs it" data-min="30"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="epi" type="button">Next: Naming Epithelium &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 NAMING EPITHELIUM ═════════ -->
+<section class="panel" id="tab-epi" role="tabpanel">
+  <div class="vo" data-clip="w2_name">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Layers and Shape</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 320" aria-label="A naming grid: rows simple and stratified, columns squamous, cuboidal and columnar">
+  <g data-step="0" class="nohalo"><text x="20" y="30" class="m2-t">name = layers + shape of the top cells</text></g>
+  <g data-step="1" class="nohalo"><text x="20" y="128" class="m2-t">simple</text><text x="20" y="146" class="m2-ts">one layer</text><text x="20" y="258" class="m2-t">stratified</text><text x="20" y="276" class="m2-ts">many layers</text></g>
+  <g data-step="2" class="nohalo"><text x="200" y="62" text-anchor="middle" class="m2-t">squamous</text><text x="360" y="62" text-anchor="middle" class="m2-t">cuboidal</text><text x="520" y="62" text-anchor="middle" class="m2-t">columnar</text>
+    <g><rect x="128" y="118" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="145" cy="124" rx="7" ry="3" fill="#7A2A3A"/><rect x="164" y="118" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="181" cy="124" rx="7" ry="3" fill="#7A2A3A"/><rect x="200" y="118" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="217" cy="124" rx="7" ry="3" fill="#7A2A3A"/><rect x="236" y="118" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="253" cy="124" rx="7" ry="3" fill="#7A2A3A"/><line x1="124" y1="132" x2="272" y2="132" stroke="#1E5AA0" stroke-width="3"/><rect x="296" y="100" width="30" height="30" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="311" cy="115" r="6" fill="#7A2A3A"/><rect x="328" y="100" width="30" height="30" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="343" cy="115" r="6" fill="#7A2A3A"/><rect x="360" y="100" width="30" height="30" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="375" cy="115" r="6" fill="#7A2A3A"/><rect x="392" y="100" width="30" height="30" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="407" cy="115" r="6" fill="#7A2A3A"/><line x1="292" y1="132" x2="424" y2="132" stroke="#1E5AA0" stroke-width="3"/><rect x="472" y="72" width="22" height="58" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="483" cy="116" r="5" fill="#7A2A3A"/><rect x="496" y="72" width="22" height="58" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="507" cy="116" r="5" fill="#7A2A3A"/><rect x="520" y="72" width="22" height="58" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="531" cy="116" r="5" fill="#7A2A3A"/><rect x="544" y="72" width="22" height="58" rx="4" fill="#E9A3B0" stroke="#C22F4A"/><circle cx="555" cy="116" r="5" fill="#7A2A3A"/><line x1="468" y1="132" x2="568" y2="132" stroke="#1E5AA0" stroke-width="3"/></g></g>
+  <g data-step="3" class="nohalo"><rect x="118" y="74" width="168" height="90" rx="10" fill="none" stroke="#2F6B4F" stroke-width="3"/><text x="202" y="182" text-anchor="middle" class="m2-ts" style="fill:#2F6B4F">vessels, lung air sacs</text></g>
+  <g data-step="4" class="nohalo"><rect x="128" y="258" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="145" cy="264" rx="7" ry="3" fill="#7A2A3A"/><rect x="164" y="258" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="181" cy="264" rx="7" ry="3" fill="#7A2A3A"/><rect x="200" y="258" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="217" cy="264" rx="7" ry="3" fill="#7A2A3A"/><rect x="236" y="258" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="253" cy="264" rx="7" ry="3" fill="#7A2A3A"/><rect x="128" y="242" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="145" cy="248" rx="7" ry="3" fill="#7A2A3A"/><rect x="164" y="242" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="181" cy="248" rx="7" ry="3" fill="#7A2A3A"/><rect x="200" y="242" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="217" cy="248" rx="7" ry="3" fill="#7A2A3A"/><rect x="236" y="242" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="253" cy="248" rx="7" ry="3" fill="#7A2A3A"/><rect x="128" y="226" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="145" cy="232" rx="7" ry="3" fill="#7A2A3A"/><rect x="164" y="226" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="181" cy="232" rx="7" ry="3" fill="#7A2A3A"/><rect x="200" y="226" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="217" cy="232" rx="7" ry="3" fill="#7A2A3A"/><rect x="236" y="226" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="253" cy="232" rx="7" ry="3" fill="#7A2A3A"/><rect x="128" y="210" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="145" cy="216" rx="7" ry="3" fill="#7A2A3A"/><rect x="164" y="210" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="181" cy="216" rx="7" ry="3" fill="#7A2A3A"/><rect x="200" y="210" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="217" cy="216" rx="7" ry="3" fill="#7A2A3A"/><rect x="236" y="210" width="34" height="12" rx="5" fill="#E9A3B0" stroke="#C22F4A"/><ellipse cx="253" cy="216" rx="7" ry="3" fill="#7A2A3A"/><line x1="124" y1="272" x2="272" y2="272" stroke="#1E5AA0" stroke-width="3"/><rect x="118" y="186" width="168" height="98" rx="10" fill="none" stroke="#2F6B4F" stroke-width="3"/><text x="202" y="302" text-anchor="middle" class="m2-ts" style="fill:#2F6B4F">skin, mouth</text></g>
+  <g data-step="5" class="nohalo"><text x="520" y="200" text-anchor="middle" class="m2-t" style="fill:#C22F4A">two that fool the eye</text><text x="520" y="226" text-anchor="middle" class="m2-ts">pseudostratified: one layer, looks like many</text><text x="520" y="248" text-anchor="middle" class="m2-ts">transitional: stretches as the bladder fills</text></g>
+</svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Epithelium is named by two features: how many layers of cells, and the shape of the cells in the top layer.", "One layer is simple. Many layers is stratified.", "Flat, scale-like cells are squamous. Cube-shaped cells are cuboidal. Tall cells are columnar.", "Put the two together and you have the name. One flat layer, simple squamous, lines blood vessels and the air sacs of the lungs, where thin means fast diffusion.", "Many flat layers, stratified squamous, covers the skin and lines the mouth, where layers protect against wear.", "Two types fool the eye. Pseudostratified columnar is really one layer that only looks layered, and transitional epithelium stretches as the bladder fills."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>How layers and cell shape combine into a name, and where each type lives.</span></div>
+    <article class="atlas">
+      <h3>Classifying epithelium</h3>
+      <p>Epithelium is named by two features: how many layers of cells, and the shape of the cells in the top layer.</p>
+      <p><b>Number of layers.</b> <i>Simple</i> epithelium is one cell layer thick (from the Greek <i>strata-</i>/<i>stratum-</i>, “layer”). <i>Stratified</i> epithelium is multiple cell layers thick.</p>
+      <p><b>Cell shape.</b> <i>Squamous</i> cells are flat and scale-like (from <i>squam-</i>, “scale”). <i>Cuboidal</i> cells are roughly cube-shaped. <i>Columnar</i> cells are tall, like columns.</p>
+      <p>Combine the two and you get the names. <b>Simple squamous</b><button type="button" class="say" data-say="simple-squamous" aria-label="Hear it: simple squamous" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> epithelium — one flat layer — lines blood vessels and forms the air-exchange surface of the lungs (where flatness allows fast diffusion). <b>Stratified squamous</b><button type="button" class="say" data-say="stratified-squamous" aria-label="Hear it: stratified squamous" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> epithelium — many flat layers — covers the skin and the inside of the mouth (where many layers protect against abrasion). <b>Simple columnar</b><button type="button" class="say" data-say="simple-columnar" aria-label="Hear it: simple columnar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> epithelium lines the small intestine (where the tall cells absorb nutrients and contain glands). The naming is mechanical: figure out the layers and the shape, name the tissue.</p>
+      <p>Two further types are worth knowing because they look deceptively simple but aren’t. <b>Pseudostratified columnar</b><button type="button" class="say" data-say="pseudostratified" aria-label="Hear it: pseudostratified columnar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> epithelium (from <i>pseud-</i>, “false”) is actually a single layer of cells, but the cells vary in height and their nuclei sit at different levels, making the tissue look layered under a microscope when it isn’t. It lines much of the respiratory tract, where it is often ciliated to sweep mucus and trapped particles up and out of the airway. <b>Transitional</b><button type="button" class="say" data-say="transitional" aria-label="Hear it: transitional" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> epithelium is a stratified tissue whose cells can change shape — flattening when stretched, rounding up when relaxed — which lets it stretch dramatically without tearing. It lines the bladder and ureters, organs whose volume changes constantly as they fill and empty.</p>
+      <figure class="plate"><img data-img="f10502" alt="Table classifying the eight types of epithelium by cell layers and cell shape, with location and function"><figcaption>The eight types of epithelium, classified by number of layers and cell shape, including pseudostratified columnar and transitional epithelium.</figcaption></figure>
+      <p>Glands are also made of epithelium. <b>Exocrine glands</b><button type="button" class="say" data-say="exocrine" aria-label="Hear it: exocrine glands" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> release their products through ducts to a body surface or cavity (sweat glands, salivary glands, mammary glands). <b>Endocrine glands</b><button type="button" class="say" data-say="endocrine" aria-label="Hear it: endocrine glands" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> release their products — hormones — directly into the bloodstream (thyroid, pituitary, adrenal). You will meet endocrine glands in detail in Module 6.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Epithelium Builder</h2></div>
+    <p class="hint">Choose the number of layers, then the shape of the top cells. Then build the four targets below.</p>
+    <div class="bench" id="w2eb">
+      <div class="bh"><b>Builder &middot; layers + shape</b><span class="readout w2eb-name">Pick layers and a shape</span></div>
+      <div class="w2eb-ctl">
+        <div class="seg w2eb-lay" role="group" aria-label="Layers"><button type="button" data-v="simple">Simple</button><button type="button" data-v="stratified">Stratified</button><button type="button" data-v="pseudo">Pseudostratified</button><button type="button" data-v="trans">Transitional</button></div>
+        <div class="seg w2eb-shp" role="group" aria-label="Cell shape"><button type="button" data-v="squamous">Squamous</button><button type="button" data-v="cuboidal">Cuboidal</button><button type="button" data-v="columnar">Columnar</button></div>
+      </div>
+      <svg class="w2eb-svg" viewBox="0 0 600 220" aria-live="polite"></svg>
+      <p class="w2eb-where hint"></p>
+      <div class="w2eb-goals"><p class="q" style="margin:0 0 6px">Build each one:</p><ul class="w2eb-list"></ul></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Exocrine or Endocrine?</h2></div>
+    <div class="place card" id="w2glands">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="exo" data-fb="Exocrine: sweat leaves through a duct to the skin surface." data-miss="Sweat reaches the skin surface. Through a duct, or into the blood?">sweat gland</button>
+        <button class="chip" data-k="b" data-ans="exo" data-fb="Exocrine: saliva flows through ducts into the mouth." data-miss="Saliva goes into a cavity, the mouth.">salivary gland</button>
+        <button class="chip" data-k="c" data-ans="endo" data-fb="Endocrine: the thyroid releases hormones into the bloodstream." data-miss="It releases hormones.">thyroid</button>
+        <button class="chip" data-k="d" data-ans="endo" data-fb="Endocrine: the pituitary releases hormones into the blood." data-miss="It releases hormones.">pituitary</button>
+        <button class="chip" data-k="e" data-ans="exo" data-fb="Exocrine: milk travels through ducts to the surface." data-miss="Its product leaves through ducts.">mammary gland</button>
+        <button class="chip" data-k="f" data-ans="endo" data-fb="Endocrine: the adrenal glands release hormones into the blood." data-miss="It releases hormones.">adrenal gland</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="exo"><h4>Exocrine &middot; through ducts</h4><div class="drop"></div></div><div class="bin" data-bin="endo"><h4>Endocrine &middot; into the blood</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Pseudostratified columnar epithelium looks layered but isn&rsquo;t. In two or three sentences, explain why it fools the eye, and what its cilia do in the airway.</p>
+      <textarea class="jbox" id="w2y2" data-label="Your turn: why pseudostratified epithelium looks layered" data-min="30"></textarea></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="four" type="button">&larr; Four Tissues, One Boundary</button><button class="btn" data-go="conn" type="button">Next: Connective Tissue &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 CONNECTIVE TISSUE ═════════ -->
+<section class="panel" id="tab-conn" role="tabpanel">
+  <div class="vo" data-clip="w2_matrix">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Cells in a Matrix</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Connective tissue: sparse cells in a matrix of ground substance and fibers, then loose, dense and specialized types">
+  <g data-step="0,1" class="nohalo"><rect x="20" y="30" width="250" height="230" rx="14" fill="#FFFFFF" stroke="#C3CED9"/><g fill="#8FB3D9"><circle cx="70" cy="80" r="9"/><circle cx="200" cy="110" r="9"/><circle cx="110" cy="200" r="9"/><circle cx="230" cy="220" r="9"/></g><text x="145" y="285" text-anchor="middle" class="m2-ts">few cells, lots of matrix</text></g>
+  <g data-step="2" class="nohalo"><rect x="22" y="32" width="246" height="226" rx="12" fill="#C9A66B" fill-opacity=".14"/><g stroke="#C9A66B" stroke-width="3" fill="none" stroke-linecap="round"><path d="M30 150 C90 120 150 190 260 140"/><path d="M40 70 C110 100 170 40 250 80"/><path d="M40 240 C120 200 180 250 260 210"/></g><text x="145" y="22" text-anchor="middle" class="m2-ts">ground substance + fibers</text></g>
+  <g data-step="3" class="nohalo"><rect x="300" y="30" width="110" height="230" rx="12" fill="#F4F7FB" stroke="#C3CED9"/><text x="355" y="58" text-anchor="middle" class="m2-t">loose</text><text x="355" y="90" text-anchor="middle" class="m2-ts">areolar</text><text x="355" y="112" text-anchor="middle" class="m2-ts">adipose</text><text x="355" y="134" text-anchor="middle" class="m2-ts">reticular</text><text x="355" y="240" text-anchor="middle" class="m2-ts">packing</text></g>
+  <g data-step="4" class="nohalo"><rect x="425" y="30" width="110" height="230" rx="12" fill="#F4F7FB" stroke="#C3CED9"/><text x="480" y="58" text-anchor="middle" class="m2-t">dense</text><g stroke="#C9A66B" stroke-width="3"><path d="M445 90 h70"/><path d="M445 104 h70"/><path d="M445 118 h70"/></g><text x="480" y="140" text-anchor="middle" class="m2-ts">regular</text><g stroke="#C9A66B" stroke-width="3"><path d="M448 170 l30 18"/><path d="M500 162 l-26 30"/><path d="M450 196 l60 -6"/></g><text x="480" y="220" text-anchor="middle" class="m2-ts">irregular</text></g>
+  <g data-step="5" class="nohalo"><rect x="550" y="30" width="110" height="230" rx="12" fill="#F4F7FB" stroke="#C3CED9"/><text x="605" y="58" text-anchor="middle" class="m2-t">specialized</text><text x="605" y="100" text-anchor="middle" class="m2-ts">cartilage: firm gel</text><text x="605" y="140" text-anchor="middle" class="m2-ts">bone: hardened</text><text x="605" y="180" text-anchor="middle" class="m2-ts">blood: liquid</text></g>
+</svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Connective tissue is the most diverse and the most abundant tissue type in the body.", "Its cells are sparse. They sit in a large amount of extracellular matrix that they make themselves.", "The matrix has two parts: ground substance, a gel that fills the spaces between cells, and fibers of collagen, elastic, and reticular protein.", "Loose connective tissue has a soft, watery matrix with few fibers. It is the body's packing material: areolar, adipose, and reticular tissue.", "Dense connective tissue is mostly collagen. In tendons and ligaments the fibers run parallel; in the deep dermis they run in every direction.", "And three tissues have specialized matrices: cartilage is a firm gel, bone is hardened with calcium phosphate, and the matrix of blood is a liquid."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>What every connective tissue shares, and how the matrix gives each one its character.</span></div>
+    <article class="atlas">
+      <h3>Connective tissue</h3>
+      <p><b>Connective tissue</b> is the most diverse and most abundant tissue type in the body. It includes the loose padding under your skin, the dense fibrous bands of your tendons and ligaments, the cartilage in your joints, the bone of your skeleton, and the blood circulating in your vessels — all of them connective tissues. The shared trait is structural: connective tissue cells are sparse, and they sit in a large amount of <b>extracellular matrix</b><button type="button" class="say" data-say="extracellular-matrix" aria-label="Hear it: extracellular matrix" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> that they themselves produce.</p>
+      <p>The matrix has two components. <b>Ground substance</b><button type="button" class="say" data-say="ground-substance" aria-label="Hear it: ground substance" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a gel-like fluid (sometimes thin, sometimes very stiff) that fills the spaces between cells. <b>Fibers</b> — collagen, elastic, and reticular — are protein strands woven through the ground substance that give the tissue its mechanical properties. Different proportions of cells, ground substance, and fibers produce different connective tissues. A connective tissue that transports rather than supports needs a matrix built entirely differently — which is exactly what you’ll see when blood, below, turns the matrix into a liquid (from <i>vas-</i>, “vessel”).</p>
+      <h3>Loose (areolar, adipose, reticular) connective tissue</h3>
+      <p><b>Loose connective tissue</b> has cells suspended in a soft, watery matrix with relatively few fibers. It is the body’s general-purpose packing material. Three subtypes:</p>
+      <p><b>Areolar</b><button type="button" class="say" data-say="areolar" aria-label="Hear it: areolar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> tissue is found beneath every epithelium, around every blood vessel, between muscle bundles — everywhere general support and cushioning are needed.</p>
+      <figure class="plate"><img data-img="f10503" alt="Diagram and micrograph of areolar tissue, showing reticular fibers, adipocytes, collagen fibers, fibroblasts, and macrophages"><figcaption>Areolar tissue. LM × 400. (Micrograph provided by the Regents of University of Michigan Medical School © 2012)</figcaption></figure>
+      <p><b>Adipose</b><button type="button" class="say" data-say="adipose" aria-label="Hear it: adipose" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> tissue is fat — cells full of stored lipids that act as energy reserves, thermal insulation, and physical cushioning around organs.</p>
+      <figure class="plate"><img data-img="f10504" alt="Diagram and micrograph of adipose tissue showing adipocytes and stored lipids"><figcaption>Adipose tissue, showing adipocytes and their stored lipid droplets.</figcaption></figure>
+      <p><b>Reticular</b><button type="button" class="say" data-say="reticular" aria-label="Hear it: reticular" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> tissue forms the structural mesh of organs like the spleen and lymph nodes, where it cradles populations of immune cells.</p>
+      <figure class="plate"><img data-img="f10505" alt="Diagram and micrograph of reticular tissue and its fibers"><figcaption>Reticular tissue. LM × 1600. (Micrograph provided by the Regents of University of Michigan Medical School © 2012)</figcaption></figure>
+      <h3>Dense (regular, irregular) connective tissue</h3>
+      <p><b>Dense connective tissue</b> is mostly collagen fibers. The matrix is reduced; the fibers dominate. Two subtypes:</p>
+      <p><b>Dense regular</b> tissue has its collagen fibers all running in the same direction — tendons (muscle to bone) and ligaments (bone to bone). The parallel arrangement makes them very strong along the line of pull, but with little stretch sideways.</p>
+      <figure class="plate"><img data-img="f10506" alt="Diagram and micrograph of dense regular connective tissue with parallel collagen fibers"><figcaption>Dense regular connective tissue: collagen fibers and fibroblast nuclei run in parallel, as in a tendon. LM × 1000.</figcaption></figure>
+      <p><b>Dense irregular</b> tissue has its collagen fibers running in many directions, like a tangled mat. It is found in the deep dermis of skin and in the protective capsules around many organs, where forces can come from any direction.</p>
+      <figure class="plate"><img data-img="f10507" alt="Diagram and micrograph of dense irregular connective tissue with collagen fibers running in many directions"><figcaption>Dense irregular connective tissue: collagen fiber bundles and fibroblast nuclei run in a tangled mat, as in the deep dermis. LM × 200.</figcaption></figure>
+      <h3>Specialized connective tissues</h3>
+      <p>Three connective tissues sit apart because their matrices are highly specialized.</p>
+      <p><b>Cartilage</b><button type="button" class="say" data-say="cartilage" aria-label="Hear it: cartilage" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> has a dense, gel-like matrix loaded with collagen and other fibers, with cells (chondrocytes) housed in small cavities called lacunae. It is firm but flexible, and it has no blood supply. You will return to cartilage in Module 3 (skeletal joints).</p>
+      <figure class="plate"><img data-img="f10508" alt="Diagrams and micrographs of hyaline cartilage, fibrocartilage, and elastic cartilage"><figcaption>Types of Cartilage: (a) hyaline cartilage, (b) fibrocartilage, and (c) elastic cartilage, each with chondrocytes housed in lacunae.</figcaption></figure>
+      <p><b>Bone</b> has a matrix hardened with calcium phosphate, giving it the rigidity of stone with the responsiveness of living tissue. Module 3 covers bone in depth.</p>
+      <p><b>Blood</b> is a connective tissue in which the matrix is liquid (plasma) and the “cells” (erythrocytes, leukocytes, platelets) are suspended in it. Module 7 covers blood in depth.</p>
+      <figure class="plate"><img data-img="f10509" alt="Micrograph of blood showing erythrocytes and a lymphocyte"><figcaption>Blood: a fluid connective tissue containing erythrocytes and leukocytes (here, a lymphocyte) circulating in a liquid extracellular matrix. LM × 1600.</figcaption></figure>
+      <p>Notice the pattern: in connective tissue, the matrix can be liquid, gel, fibrous, or stone-hard. The cells are similar enough to share a name; the matrix is what gives each connective tissue its character.</p>
+      <div class="inset"><div class="ilabel">MARCELLO MALPIGHI AND THE LAYERS NO ONE COULD SEE</div><p>Marcello Malpighi (1628–1694) was an Italian physician and anatomist, working in Bologna a generation before the modern compound microscope reached its mature form. He used the early microscopes that were available to look more carefully at tissues than anyone before him. In 1661 he became the first person to observe <b>capillaries</b><button type="button" class="say" data-say="capillaries" aria-label="Hear it: capillaries" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the tiny vessels that connect arteries to veins. William Harvey had argued in 1628 that blood must circulate from arteries to veins through some unseen connection, but he had never been able to see one. Malpighi saw them, in a frog’s lungs, and the model of circulation was complete.</p><p>Malpighi also made the first detailed observations of the layered structure of skin and the internal architecture of the spleen, kidney, and lungs. The deep cellular layer of the epidermis still bears his name — the <i>stratum basale</i> is sometimes called the “Malpighian layer.” He pushed anatomy from the gross-organ scale, where Vesalius had worked, to the tissue and microscopic scale — the level at which most disease begins, and at which most modern medicine still operates. You will meet the stratum basale again this week, when it becomes the engine of the epidermis in Reading 2.03.</p></div>
+      <p>When you look at any organ in this course, your first habit should be to ask: <i>what tissues is it made of, and in what proportions?</i> A liver is mostly epithelial cells in a connective-tissue scaffold. A tendon is almost pure dense regular connective tissue. A heart is mostly muscle (next reading), wrapped in connective tissue, lined with epithelium. The four tissue types are the alphabet of every organ.</p>
+      <details class="selfcheck"><summary>Self-check: name what kind of epithelium lines the lungs (alveoli) and what kind of connective tissue makes up a tendon</summary><p><b>Lung alveoli:</b> simple squamous epithelium — one flat layer to allow rapid gas diffusion.</p><p><b>Tendon:</b> dense regular connective tissue — collagen fibers running parallel along the line of pull.</p><p>If you missed either, re-read the relevant sections above. Specific tissues with specific functions are exactly the form-follows-function exercise this course will run all year.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Matrix Dial</h2></div>
+    <p class="hint">Turn the dial. The cells barely change; watch what happens to the matrix.</p>
+    <div class="bench" id="w2dial">
+      <div class="bh"><b>Dial &middot; from liquid to stone</b><span class="readout w2d-name"></span></div>
+      <input type="range" class="w2d-r" min="0" max="7" step="1" value="0" aria-label="Connective tissue">
+      <div class="w2d-scale"><span>liquid</span><span>soft gel</span><span>fibrous</span><span>firm gel</span><span>stone-hard</span></div>
+      <div class="w2d-card"><svg class="w2d-svg" viewBox="0 0 300 150" aria-hidden="true"></svg><div><p class="w2d-what"></p><p class="w2d-where hint"></p></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Loose, Dense, or Specialized?</h2></div>
+    <div class="place card" id="w2ct">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="lo" data-fb="Loose: areolar tissue is general-purpose packing beneath every epithelium." data-miss="Soft, watery matrix, few fibers.">areolar</button>
+        <button class="chip" data-k="b" data-ans="lo" data-fb="Loose: adipose stores lipids for energy, insulation and cushioning." data-miss="It is fat.">adipose</button>
+        <button class="chip" data-k="c" data-ans="lo" data-fb="Loose: reticular tissue is the mesh inside the spleen and lymph nodes." data-miss="A soft mesh that cradles immune cells.">reticular</button>
+        <button class="chip" data-k="d" data-ans="de" data-fb="Dense: dense regular, parallel collagen in tendons and ligaments." data-miss="Mostly collagen, all in one direction.">dense regular</button>
+        <button class="chip" data-k="e" data-ans="de" data-fb="Dense: dense irregular, a tangled collagen mat in the deep dermis." data-miss="Mostly collagen, in every direction.">dense irregular</button>
+        <button class="chip" data-k="f" data-ans="sp" data-fb="Specialized: cartilage has a firm, gel-like matrix and no blood supply." data-miss="Its matrix is a firm gel.">cartilage</button>
+        <button class="chip" data-k="g" data-ans="sp" data-fb="Specialized: bone&rsquo;s matrix is hardened with calcium phosphate." data-miss="Its matrix is mineral-hard.">bone</button>
+        <button class="chip" data-k="h" data-ans="sp" data-fb="Specialized: blood&rsquo;s matrix is liquid plasma." data-miss="Its matrix is a liquid.">blood</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="lo"><h4>Loose</h4><div class="drop"></div></div><div class="bin" data-bin="de"><h4>Dense</h4><div class="drop"></div></div><div class="bin" data-bin="sp"><h4>Specialized</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Tissue Identification Table</h2></div>
+    <p class="hint">Fill in all five rows from memory, then check your work. Use the &ldquo;why&rdquo; box to say why that tissue suits that place.</p>
+    <div class="card idtable" id="w2idt" style="padding:16px 20px">
+      <div class="idhead"><span>Body location</span><span>Tissue type</span><span>Specific name</span><span></span></div>
+      <div class="idrow"><span class="loc">lining of blood vessels</span><select class="jfield" id="w2id1t" data-label="ID table, lining of blood vessels: tissue type" data-ans="epithelial"><option value="">type&hellip;</option><option value="epithelial">epithelial</option><option value="connective">connective</option></select><select class="jfield" id="w2id1s" data-label="ID table, lining of blood vessels: specific name" data-ans="simple squamous"><option value="">specific name&hellip;</option><option value="simple squamous">simple squamous</option><option value="simple cuboidal">simple cuboidal</option><option value="simple columnar">simple columnar</option><option value="stratified squamous">stratified squamous</option><option value="pseudostratified columnar">pseudostratified columnar</option><option value="transitional">transitional</option><option value="areolar">areolar</option><option value="adipose">adipose</option><option value="reticular">reticular</option><option value="dense regular">dense regular</option><option value="dense irregular">dense irregular</option><option value="cartilage">cartilage</option><option value="bone">bone</option><option value="blood">blood</option></select><span class="mk" aria-live="polite"></span><div class="why"><textarea class="jbox" id="w2id1w" data-label="ID table, lining of blood vessels: why this tissue here" placeholder="Why this tissue here?" data-min="8"></textarea></div></div><div class="idrow"><span class="loc">outer layer of skin</span><select class="jfield" id="w2id2t" data-label="ID table, outer layer of skin: tissue type" data-ans="epithelial"><option value="">type&hellip;</option><option value="epithelial">epithelial</option><option value="connective">connective</option></select><select class="jfield" id="w2id2s" data-label="ID table, outer layer of skin: specific name" data-ans="stratified squamous"><option value="">specific name&hellip;</option><option value="simple squamous">simple squamous</option><option value="simple cuboidal">simple cuboidal</option><option value="simple columnar">simple columnar</option><option value="stratified squamous">stratified squamous</option><option value="pseudostratified columnar">pseudostratified columnar</option><option value="transitional">transitional</option><option value="areolar">areolar</option><option value="adipose">adipose</option><option value="reticular">reticular</option><option value="dense regular">dense regular</option><option value="dense irregular">dense irregular</option><option value="cartilage">cartilage</option><option value="bone">bone</option><option value="blood">blood</option></select><span class="mk" aria-live="polite"></span><div class="why"><textarea class="jbox" id="w2id2w" data-label="ID table, outer layer of skin: why this tissue here" placeholder="Why this tissue here?" data-min="8"></textarea></div></div><div class="idrow"><span class="loc">lining of small intestine</span><select class="jfield" id="w2id3t" data-label="ID table, lining of small intestine: tissue type" data-ans="epithelial"><option value="">type&hellip;</option><option value="epithelial">epithelial</option><option value="connective">connective</option></select><select class="jfield" id="w2id3s" data-label="ID table, lining of small intestine: specific name" data-ans="simple columnar"><option value="">specific name&hellip;</option><option value="simple squamous">simple squamous</option><option value="simple cuboidal">simple cuboidal</option><option value="simple columnar">simple columnar</option><option value="stratified squamous">stratified squamous</option><option value="pseudostratified columnar">pseudostratified columnar</option><option value="transitional">transitional</option><option value="areolar">areolar</option><option value="adipose">adipose</option><option value="reticular">reticular</option><option value="dense regular">dense regular</option><option value="dense irregular">dense irregular</option><option value="cartilage">cartilage</option><option value="bone">bone</option><option value="blood">blood</option></select><span class="mk" aria-live="polite"></span><div class="why"><textarea class="jbox" id="w2id3w" data-label="ID table, lining of small intestine: why this tissue here" placeholder="Why this tissue here?" data-min="8"></textarea></div></div><div class="idrow"><span class="loc">tendon</span><select class="jfield" id="w2id4t" data-label="ID table, tendon: tissue type" data-ans="connective"><option value="">type&hellip;</option><option value="epithelial">epithelial</option><option value="connective">connective</option></select><select class="jfield" id="w2id4s" data-label="ID table, tendon: specific name" data-ans="dense regular"><option value="">specific name&hellip;</option><option value="simple squamous">simple squamous</option><option value="simple cuboidal">simple cuboidal</option><option value="simple columnar">simple columnar</option><option value="stratified squamous">stratified squamous</option><option value="pseudostratified columnar">pseudostratified columnar</option><option value="transitional">transitional</option><option value="areolar">areolar</option><option value="adipose">adipose</option><option value="reticular">reticular</option><option value="dense regular">dense regular</option><option value="dense irregular">dense irregular</option><option value="cartilage">cartilage</option><option value="bone">bone</option><option value="blood">blood</option></select><span class="mk" aria-live="polite"></span><div class="why"><textarea class="jbox" id="w2id4w" data-label="ID table, tendon: why this tissue here" placeholder="Why this tissue here?" data-min="8"></textarea></div></div><div class="idrow"><span class="loc">fat under the skin</span><select class="jfield" id="w2id5t" data-label="ID table, fat under the skin: tissue type" data-ans="connective"><option value="">type&hellip;</option><option value="epithelial">epithelial</option><option value="connective">connective</option></select><select class="jfield" id="w2id5s" data-label="ID table, fat under the skin: specific name" data-ans="adipose"><option value="">specific name&hellip;</option><option value="simple squamous">simple squamous</option><option value="simple cuboidal">simple cuboidal</option><option value="simple columnar">simple columnar</option><option value="stratified squamous">stratified squamous</option><option value="pseudostratified columnar">pseudostratified columnar</option><option value="transitional">transitional</option><option value="areolar">areolar</option><option value="adipose">adipose</option><option value="reticular">reticular</option><option value="dense regular">dense regular</option><option value="dense irregular">dense irregular</option><option value="cartilage">cartilage</option><option value="bone">bone</option><option value="blood">blood</option></select><span class="mk" aria-live="polite"></span><div class="why"><textarea class="jbox" id="w2id5w" data-label="ID table, fat under the skin: why this tissue here" placeholder="Why this tissue here?" data-min="8"></textarea></div></div>
+      <div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Try it without looking back. Then check.</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Narrate It</h2></div>
+    <div class="card">
+      <p class="q" style="font-weight:600;margin-top:0">Pick one tissue from your table. Out loud, for 60 to 90 seconds, explain how its structural features (cell shape, layers, fiber arrangement) match the function it performs at that location. Speak from your table; don&rsquo;t read a script.</p>
+      <div class="narrate" data-words="150"></div>
+      <p class="hint">Now play it back. What did you explain well? What did you leave out?</p>
+      <div class="field" style="margin-bottom:0"><p class="q">One or two corrections to your narration:</p><textarea class="jbox" id="w2nar" data-label="Narrate It: corrections to my form-function recording" data-min="15"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">F</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 15 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; begin the integument cross-section</span>
+      <p>Today you begin drawing the cross-section of the integument (skin) that you will build up through Lesson 2.04 and submit at the end of the week as your Module 2 Assembled Figure.</p>
+      <p><b>What to do.</b> On a large page (paper highly recommended; a digital drawing file is also fine), sketch a simplified vertical cross-section of skin. Make it tall and wide &mdash; you will add to it all week, so leave room. Draw three horizontal layers stacked on top of each other and label them: epidermis (the top layer, stratified squamous epithelium), dermis (middle, dense irregular connective tissue), hypodermis (bottom, loose / adipose connective tissue).</p>
+      <ul class="checks"><li data-ck="w2d1">Three layers drawn, tall and wide, with room to add.</li><li data-ck="w2d2">Each layer labeled with its tissue type.</li><li data-ck="w2d3">Photographed or saved as my first dated progress image.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep the page. You will build on the same drawing in Lessons 2.03 and 2.04. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="epi" type="button">&larr; Naming Epithelium</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top">
+      <label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label>
+    </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Tissue Identification &amp; Form-Function</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>How does the structure of a tissue at a given body location predict the function it must perform there?</p></div>
+        <p>Each tissue in the body is shaped to do a specific job. Simple squamous epithelium is one cell thick because thin layers diffuse fast. Tendons run their collagen fibers in one direction because that is the direction they need to resist pull. In this assignment you will pick three specific body locations and explain why the tissue at each is built the way it is.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Choose Three Locations</h2></div>
+    <p class="hint">Tap three from the list, or type three of your own at similar specificity.</p>
+    <div class="pickset" data-targets="w2rL1,w2rL2,w2rL3">
+        <button data-v="The lining of a blood capillary">The lining of a blood capillary</button><button data-v="The outer surface of the skin">The outer surface of the skin</button><button data-v="The lining of the small intestine">The lining of the small intestine</button><button data-v="The Achilles tendon">The Achilles tendon</button><button data-v="The cartilage at the end of the femur">The cartilage at the end of the femur</button><button data-v="The fat layer beneath the skin (hypodermis)">The fat layer beneath the skin (hypodermis)</button>
+      </div>
+      <div class="w2r-locs"><input class="jfield m2-in" id="w2rL1" data-label="Location 1" placeholder="Location 1"><input class="jfield m2-in" id="w2rL2" data-label="Location 2" placeholder="Location 2"><input class="jfield m2-in" id="w2rL3" data-label="Location 3" placeholder="Location 3"></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Three Locations, Three Tissues</h2></div>
+    <p class="hint">For each location: (a) name the tissue type and the specific subtype, (b) describe its structural features, (c) explain how those features match the function.</p>
+    <div class="card loccard"><h4>Location 1: <span class="w2r-echo" data-src="w2rL1">not chosen yet</span></h4>
+        <input class="jfield m2-in" id="w2rT1" data-label="Location 1: tissue type and subtype" placeholder="Tissue type and subtype, e.g. simple squamous epithelium" style="margin-bottom:8px">
+        <p class="sub">In 3&ndash;4 sentences: (b) describe its structural features (cell shape, layers, fiber arrangement, matrix), and (c) explain how those features match the function it performs at this location.</p>
+        <textarea class="jbox" id="w2rS1" data-label="Location 1: structure and how it matches function" data-min="60"></textarea></div><div class="card loccard"><h4>Location 2: <span class="w2r-echo" data-src="w2rL2">not chosen yet</span></h4>
+        <input class="jfield m2-in" id="w2rT2" data-label="Location 2: tissue type and subtype" placeholder="Tissue type and subtype, e.g. simple squamous epithelium" style="margin-bottom:8px">
+        <p class="sub">In 3&ndash;4 sentences: (b) describe its structural features (cell shape, layers, fiber arrangement, matrix), and (c) explain how those features match the function it performs at this location.</p>
+        <textarea class="jbox" id="w2rS2" data-label="Location 2: structure and how it matches function" data-min="60"></textarea></div><div class="card loccard"><h4>Location 3: <span class="w2r-echo" data-src="w2rL3">not chosen yet</span></h4>
+        <input class="jfield m2-in" id="w2rT3" data-label="Location 3: tissue type and subtype" placeholder="Tissue type and subtype, e.g. simple squamous epithelium" style="margin-bottom:8px">
+        <p class="sub">In 3&ndash;4 sentences: (b) describe its structural features (cell shape, layers, fiber arrangement, matrix), and (c) explain how those features match the function it performs at this location.</p>
+        <textarea class="jbox" id="w2rS3" data-label="Location 3: structure and how it matches function" data-min="60"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Answer the Focus Question</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In a final 3&ndash;5 sentence paragraph, engage the focus question: how does structure predict function for tissues? Use observations from your three locations as evidence. Do not restate the question.</p>
+        <textarea class="jbox" id="w2rF" data-label="Final paragraph: how structure predicts function" data-min="50"></textarea></div>
+        <div class="wmeter" data-fields="w2rS1,w2rS2,w2rS3,w2rF" data-min="350" data-max="450"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks">
+        <li data-ck="w2c1">Names three specific body locations and the correct tissue subtype at each.</li>
+        <li data-ck="w2c2">Describes the structural features of each tissue accurately and specifically.</li>
+        <li data-ck="w2c3">Connects each tissue&rsquo;s structure to its specific function at that body location.</li>
+        <li data-ck="w2c4">Final paragraph engages the focus question with evidence from the three examples.</li>
+      </ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 2.01 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="conn" type="button">&larr; Connective Tissue</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>tissue<button type="button" class="say" data-say="tissue" aria-label="Hear it: tissue" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A group of cells of similar type and function. The body has exactly four tissue types.</dd>
+  <dt>epithelial tissue<button type="button" class="say" data-say="epithelial" aria-label="Hear it: epithelial tissue" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek epithe-, &ldquo;laid on, covering&rdquo;</small></dt><dd>Covers surfaces, lines cavities, forms glands: the body&rsquo;s boundary tissue.</dd>
+  <dt>apical<button type="button" class="say" data-say="apical" aria-label="Hear it: apical" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / basal<button type="button" class="say" data-say="basal" aria-label="Hear it: basal" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The surface facing the outside or a hollow space / the surface facing the body&rsquo;s interior.</dd>
+  <dt>basement membrane<button type="button" class="say" data-say="basement-membrane" aria-label="Hear it: basement membrane" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The thin sheet of extracellular matrix that the basal surface of an epithelium attaches to.</dd>
+  <dt>avascular<button type="button" class="say" data-say="avascular" aria-label="Hear it: avascular" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>a- &ldquo;without&rdquo; + vas- &ldquo;vessel&rdquo;</small></dt><dd>Without blood vessels; epithelium is fed by diffusion from the connective tissue beneath.</dd>
+  <dt>simple / stratified<button type="button" class="say" data-say="stratified" aria-label="Hear it: stratified" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>strata-, stratum- &ldquo;layer&rdquo;</small></dt><dd>One cell layer / many cell layers.</dd>
+  <dt>squamous<button type="button" class="say" data-say="squamous" aria-label="Hear it: squamous" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / cuboidal<button type="button" class="say" data-say="cuboidal" aria-label="Hear it: cuboidal" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / columnar<button type="button" class="say" data-say="columnar" aria-label="Hear it: columnar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>squam- &ldquo;scale&rdquo;</small></dt><dd>Flat and scale-like / cube-shaped / tall like columns.</dd>
+  <dt>pseudostratified columnar<button type="button" class="say" data-say="pseudostratified" aria-label="Hear it: pseudostratified columnar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>pseud- &ldquo;false&rdquo;</small></dt><dd>One layer of cells of different heights that looks layered. Often ciliated in the airway.</dd>
+  <dt>transitional epithelium<button type="button" class="say" data-say="transitional" aria-label="Hear it: transitional epithelium" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A stratified epithelium whose cells flatten when stretched; lines the bladder and ureters.</dd>
+  <dt>exocrine<button type="button" class="say" data-say="exocrine" aria-label="Hear it: exocrine" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / endocrine gland<button type="button" class="say" data-say="endocrine" aria-label="Hear it: endocrine gland" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>exo- &ldquo;out of&rdquo;, endo- &ldquo;within&rdquo;</small></dt><dd>Releases products through ducts to a surface or cavity / releases hormones into the bloodstream.</dd>
+  <dt>connective tissue</dt><dd>Sparse cells in a large extracellular matrix they produce. The most diverse and abundant tissue.</dd>
+  <dt>extracellular matrix<button type="button" class="say" data-say="extracellular-matrix" aria-label="Hear it: extracellular matrix" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Ground substance plus fibers, made by the cells of connective tissue.</dd>
+  <dt>ground substance<button type="button" class="say" data-say="ground-substance" aria-label="Hear it: ground substance" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The gel-like fluid, thin or stiff, that fills the spaces between connective tissue cells.</dd>
+  <dt>collagen<button type="button" class="say" data-say="collagen" aria-label="Hear it: collagen" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> · elastic · reticular fibers<button type="button" class="say" data-say="reticular" aria-label="Hear it: reticular fibers" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Protein strands woven through the ground substance that give a tissue its mechanical properties.</dd>
+  <dt>areolar<button type="button" class="say" data-say="areolar" aria-label="Hear it: areolar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> · adipose<button type="button" class="say" data-say="adipose" aria-label="Hear it: adipose" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> · reticular<button type="button" class="say" data-say="reticular" aria-label="Hear it: reticular" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The three loose connective tissues: packing, fat, and the mesh of the spleen and lymph nodes.</dd>
+  <dt>dense regular / dense irregular</dt><dd>Collagen in parallel (tendons, ligaments) / collagen in a tangled mat (deep dermis, organ capsules).</dd>
+  <dt>cartilage<button type="button" class="say" data-say="cartilage" aria-label="Hear it: cartilage" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Firm, flexible connective tissue with a gel-like matrix; chondrocytes sit in lacunae. No blood supply.</dd>
+  <dt>chondrocyte<button type="button" class="say" data-say="chondrocyte" aria-label="Hear it: chondrocyte" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A cartilage cell, housed in a small cavity called a lacuna.</dd>
+  <dt>Marcello Malpighi<button type="button" class="say" data-say="malpighi" aria-label="Hear it: marcello malpighi" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>1628&ndash;1694</small></dt><dd>First to see capillaries (1661); the stratum basale is still called the Malpighian layer.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w2-l1", "title": "Epithelial and Connective Tissues", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 2 · Epithelial and Connective Tissues", "pdfTag": "AP_W2_L1"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f10501":{"src":"img/w2-1.05-01-epithelial-connective-tissues.webp","alt":""},"f10502":{"src":"img/w2-1.05-02-four-tissue-types.webp","alt":""},"f10503":{"src":"img/w2-1.05-03-classifying-epithelium-photo.webp","alt":""},"f10504":{"src":"img/w2-1.05-04-areolar-tissue.webp","alt":""},"f10505":{"src":"img/w2-1.05-05-adipose-tissue-lm.webp","alt":""},"f10506":{"src":"img/w2-1.05-06-reticular-tissue-lm.webp","alt":""},"f10507":{"src":"img/w2-1.05-07-regular-dense-dense-regular-conn.webp","alt":""},"f10508":{"src":"img/w2-1.05-08-irregular-dense-dense-irregular-.webp","alt":""},"f10509":{"src":"img/w2-1.05-09-types-cartilage-cartilage-connec.webp","alt":""}},"w2_four":{"audio":"audio/ap-w2-l1-four.mp3","words":[[0,0.32,"Every"],[0.4,0.64,"organ"],[0.68,0.72,"in"],[0.8,0.88,"your"],[0.96,1.28,"body"],[1.36,1.44,"is"],[1.52,1.68,"built"],[1.76,1.84,"from"],[1.92,2.16,"just"],[2.32,2.56,"four"],[2.64,2.96,"tissue"],[3.04,3.76,"types:"],[3.84,4.72,"epithelial,"],[4.92,5.6,"connective,"],[5.72,6.24,"muscle,"],[6.28,6.32,"and"],[6.4,6.96,"nervous."],[7.44,7.6,"This"],[7.76,7.92,"lesson"],[8,8.16,"takes"],[8.24,8.32,"the"],[8.44,8.56,"first"],[8.64,8.88,"two."],[9.44,10.08,"Epithelial"],[10.12,10.48,"tissue"],[10.56,10.88,"covers"],[10.92,10.96,"the"],[11.04,11.36,"body's"],[11.48,12.24,"surfaces,"],[12.4,12.56,"lines"],[12.64,12.72,"its"],[12.76,13.36,"cavities,"],[13.4,13.44,"and"],[13.52,13.84,"forms"],[13.92,14,"its"],[14.04,14.56,"glands."],[15.12,15.36,"Wherever"],[15.44,15.52,"the"],[15.64,15.76,"body"],[15.84,16,"needs"],[16.04,16.08,"a"],[16.16,16.88,"boundary,"],[17.12,17.36,"outside"],[17.4,17.44,"the"],[17.6,17.76,"body"],[17.84,18,"or"],[18.08,18.4,"between"],[18.48,18.96,"compartments"],[19.16,19.36,"inside"],[19.44,19.84,"it,"],[19.92,20.56,"epithelium"],[20.64,20.8,"does"],[20.88,20.92,"the"],[20.96,21.6,"work."],[21.92,22.08,"Three"],[22.24,22.56,"features"],[22.64,22.96,"define"],[23.04,23.2,"it."],[23.68,24.32,"First,"],[24.4,24.8,"cellular"],[24.88,25.76,"packing:"],[25.84,25.92,"the"],[26,26.32,"cells"],[26.44,26.56,"sit"],[26.64,26.96,"shoulder"],[27.04,27.12,"to"],[27.24,27.6,"shoulder,"],[27.68,27.76,"with"],[27.84,28.08,"very"],[28.16,28.32,"little"],[28.4,28.72,"matrix"],[28.8,29.12,"between"],[29.2,29.92,"them."],[30.08,30.56,"Second,"],[30.6,31.68,"polarity."],[31.76,31.92,"Each"],[32,32.24,"cell"],[32.32,32.4,"has"],[32.48,32.56,"an"],[32.64,32.96,"apical"],[33.04,33.44,"surface"],[33.52,33.84,"facing"],[33.88,33.92,"the"],[34,34.4,"outside"],[34.48,34.8,"world"],[34.96,35.12,"or"],[35.2,35.28,"a"],[35.32,35.52,"hollow"],[35.6,36.32,"space,"],[36.4,36.48,"and"],[36.56,36.64,"a"],[36.76,36.96,"basal"],[37.04,37.44,"surface"],[37.52,37.84,"resting"],[37.92,37.96,"on"],[38,38.16,"a"],[38.28,38.4,"thin"],[38.48,38.72,"sheet"],[38.8,38.96,"called"],[39,39.04,"the"],[39.12,39.52,"basement"],[39.6,40.56,"membrane."],[40.76,41.28,"Third,"],[41.36,42,"epithelium"],[42.12,42.24,"has"],[42.32,42.48,"no"],[42.56,42.72,"blood"],[42.8,43.12,"vessels"],[43.16,43.2,"of"],[43.28,43.36,"its"],[43.44,44.08,"own."],[44.12,44.16,"It"],[44.24,44.32,"is"],[44.4,44.56,"fed"],[44.64,44.72,"by"],[44.88,45.36,"diffusion"],[45.44,45.52,"from"],[45.6,45.68,"the"],[45.84,46.08,"connective"],[46.16,46.4,"tissue"],[46.48,47.2,"beneath,"],[47.28,47.36,"so"],[47.44,47.52,"its"],[47.6,47.84,"cells"],[47.92,48.32,"divide"],[48.44,48.8,"quickly"],[48.84,48.88,"and"],[49.08,49.28,"replace"],[49.36,49.84,"themselves"],[50.04,50.531,"often."]]},"w2_name":{"audio":"audio/ap-w2-l1-name.mp3","words":[[0.349,0.909,"Epithelium"],[0.989,1.069,"is"],[1.149,1.389,"named"],[1.509,1.629,"by"],[1.749,1.869,"two"],[1.949,2.829,"features:"],[2.909,2.989,"how"],[3.069,3.229,"many"],[3.389,3.549,"layers"],[3.589,3.629,"of"],[3.709,4.349,"cells,"],[4.389,4.429,"and"],[4.509,4.589,"the"],[4.669,4.829,"shape"],[4.909,4.989,"of"],[5.029,5.069,"the"],[5.149,5.389,"cells"],[5.469,5.549,"in"],[5.589,5.629,"the"],[5.709,5.869,"top"],[5.949,6.269,"layer."],[6.909,7.069,"One"],[7.149,7.389,"layer"],[7.469,7.549,"is"],[7.749,8.029,"simple."],[8.509,8.669,"Many"],[8.749,9.149,"layers"],[9.229,9.309,"is"],[9.429,10.349,"stratified."],[10.669,11.149,"Flat,"],[11.309,11.709,"scale-like"],[11.789,12.109,"cells"],[12.189,12.269,"are"],[12.349,12.989,"squamous."],[13.389,13.949,"Cube-shaped"],[14.109,14.269,"cells"],[14.349,14.429,"are"],[14.509,15.149,"cuboidal."],[15.629,15.869,"Tall"],[15.949,16.269,"cells"],[16.349,16.429,"are"],[16.509,17.069,"columnar."],[17.549,17.629,"Put"],[17.709,17.749,"the"],[17.789,17.869,"two"],[17.949,18.349,"together"],[18.509,18.589,"and"],[18.669,18.709,"you"],[18.749,18.909,"have"],[18.949,18.989,"the"],[19.149,19.629,"name."],[19.949,20.109,"One"],[20.269,20.509,"flat"],[20.589,21.149,"layer,"],[21.229,21.469,"simple"],[21.549,22.349,"squamous,"],[22.429,22.669,"lines"],[22.749,22.909,"blood"],[22.989,23.389,"vessels"],[23.469,23.549,"and"],[23.589,23.629,"the"],[23.709,23.869,"air"],[23.949,24.189,"sacs"],[24.269,24.349,"of"],[24.389,24.429,"the"],[24.509,25.069,"lungs,"],[25.149,25.229,"where"],[25.389,25.709,"thin"],[25.789,26.029,"means"],[26.109,26.429,"fast"],[26.549,27.069,"diffusion."],[27.629,27.869,"Many"],[27.949,28.189,"flat"],[28.389,28.829,"layers,"],[28.909,29.389,"stratified"],[29.469,30.189,"squamous,"],[30.269,30.509,"covers"],[30.589,30.669,"the"],[30.749,31.069,"skin"],[31.149,31.229,"and"],[31.389,31.549,"lines"],[31.589,31.629,"the"],[31.709,32.269,"mouth,"],[32.349,32.429,"where"],[32.509,32.909,"layers"],[33.109,33.309,"protect"],[33.469,33.629,"against"],[33.789,34.029,"wear."],[34.669,34.829,"Two"],[34.909,35.229,"types"],[35.309,35.469,"fool"],[35.549,35.629,"the"],[35.709,36.029,"eye."],[36.509,37.389,"Pseudostratified"],[37.469,37.949,"columnar"],[38.029,38.109,"is"],[38.189,38.509,"really"],[38.589,38.749,"one"],[38.829,39.069,"layer"],[39.149,39.229,"that"],[39.309,39.549,"only"],[39.629,39.869,"looks"],[39.949,40.589,"layered,"],[40.669,40.749,"and"],[40.909,41.389,"transitional"],[41.469,42.109,"epithelium"],[42.189,42.669,"stretches"],[42.749,42.829,"as"],[42.869,42.909,"the"],[42.949,43.309,"bladder"],[43.469,43.962,"fills."]]},"w2_matrix":{"audio":"audio/ap-w2-l1-matrix.mp3","words":[[0.308,0.708,"Connective"],[0.788,1.108,"tissue"],[1.188,1.268,"is"],[1.348,1.428,"the"],[1.508,1.748,"most"],[1.828,2.228,"diverse"],[2.268,2.308,"and"],[2.388,2.468,"the"],[2.548,2.628,"most"],[2.708,3.268,"abundant"],[3.375,3.588,"tissue"],[3.708,3.828,"type"],[3.868,3.908,"in"],[3.948,3.988,"the"],[4.148,4.868,"body."],[4.948,5.028,"Its"],[5.108,5.428,"cells"],[5.508,5.588,"are"],[5.668,6.548,"sparse."],[6.628,6.788,"They"],[6.868,6.948,"sit"],[6.988,7.028,"in"],[7.188,7.228,"a"],[7.268,7.508,"large"],[7.668,7.828,"amount"],[7.908,7.988,"of"],[8.068,8.788,"extracellular"],[9.028,9.268,"matrix"],[9.308,9.348,"that"],[9.428,9.508,"they"],[9.588,9.668,"make"],[9.748,10.868,"themselves."],[10.908,10.948,"The"],[11.028,11.348,"matrix"],[11.428,11.668,"has"],[11.788,11.908,"two"],[12.108,12.708,"parts:"],[12.868,13.028,"ground"],[13.108,13.828,"substance,"],[13.908,13.988,"a"],[14.148,14.308,"gel"],[14.388,14.468,"that"],[14.548,14.708,"fills"],[14.788,14.868,"the"],[15.068,15.268,"spaces"],[15.468,15.668,"between"],[15.868,16.388,"cells,"],[16.508,16.628,"and"],[16.748,17.028,"fibers"],[17.108,17.188,"of"],[17.308,17.908,"collagen,"],[18.228,18.628,"elastic,"],[18.668,18.708,"and"],[18.828,19.268,"reticular"],[19.348,20.308,"protein."],[20.388,20.628,"Loose"],[20.788,21.028,"connective"],[21.108,21.428,"tissue"],[21.508,21.588,"has"],[21.668,21.748,"a"],[21.948,22.308,"soft,"],[22.428,22.708,"watery"],[22.788,23.188,"matrix"],[23.268,23.348,"with"],[23.428,23.668,"few"],[23.748,24.628,"fibers."],[24.708,24.748,"It"],[24.788,24.868,"is"],[24.908,24.948,"the"],[25.028,25.348,"body's"],[25.548,25.748,"packing"],[25.988,26.628,"material:"],[26.788,27.508,"areolar,"],[27.588,28.148,"adipose,"],[28.228,28.268,"and"],[28.308,28.788,"reticular"],[28.868,29.268,"tissue."],[29.908,30.148,"Dense"],[30.308,30.548,"connective"],[30.628,30.948,"tissue"],[31.028,31.188,"is"],[31.348,31.508,"mostly"],[31.668,32.228,"collagen."],[32.628,32.788,"In"],[32.828,33.188,"tendons"],[33.228,33.268,"and"],[33.348,33.748,"ligaments"],[33.828,33.908,"the"],[33.988,34.308,"fibers"],[34.388,34.548,"run"],[34.628,35.428,"parallel;"],[35.468,35.508,"in"],[35.588,35.628,"the"],[35.668,35.828,"deep"],[35.908,36.308,"dermis"],[36.388,36.548,"they"],[36.628,36.708,"run"],[36.788,36.868,"in"],[36.948,37.108,"every"],[37.188,37.748,"direction."],[38.228,38.388,"And"],[38.508,38.628,"three"],[38.708,39.028,"tissues"],[39.108,39.268,"have"],[39.508,39.908,"specialized"],[39.988,41.028,"matrices:"],[41.108,41.588,"cartilage"],[41.628,41.668,"is"],[41.748,41.828,"a"],[41.908,42.148,"firm"],[42.308,43.028,"gel,"],[43.108,43.428,"bone"],[43.508,43.668,"is"],[43.788,44.068,"hardened"],[44.108,44.148,"with"],[44.228,44.628,"calcium"],[44.708,45.508,"phosphate,"],[45.548,45.588,"and"],[45.668,45.708,"the"],[45.748,46.068,"matrix"],[46.148,46.228,"of"],[46.308,46.548,"blood"],[46.708,46.788,"is"],[46.828,46.868,"a"],[46.948,47.535,"liquid."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the four tissue types, epithelial tissue and how it is named, glands, and connective tissue',
+  quick: ['What are the three features of epithelium?', 'How is epithelium named?', 'What is extracellular matrix?'],
+  practice: /(write|answer|do) (my|the) (notebook|lab report|paragraph|final paragraph|focus question)|which (three )?locations? should i (pick|choose)|fill (in )?(my|the) (table|id table)/i,
+  guide: 'That part is yours to write, so here are my questions instead. Where in the body is your tissue, and what has to happen there? Which feature of its structure makes that possible? Say it out loud first, then write it in the box.',
+  notes: [
+    { k: ['four','tissue types','tissues','four tissue'], w: 1.3, a: 'There are exactly four tissue types: epithelial, connective, muscle, and nervous. Every organ is built from some combination of them. This lesson covers epithelial and connective tissue; Lesson 2.02 covers muscle and nervous.' },
+    { k: ['epithelium','epithelial','boundary','covers','lines'], w: 1.2, a: 'Epithelial tissue covers the body&rsquo;s surfaces, lines its cavities, and forms its glands. Wherever the body needs a boundary, outside the body or between compartments inside it, epithelium does the work.' },
+    { k: ['features','three features','packing','polarity','avascular','avascularity','regeneration','apical','basal','basement membrane'], w: 1.3, a: 'Three features define epithelium. Cellular packing: cells shoulder to shoulder with little matrix. Polarity: an apical surface facing outward or into a hollow space, and a basal surface attached to the basement membrane. Avascularity and regeneration: no blood vessels of its own, fed by diffusion from the connective tissue beneath, so the cells divide rapidly and replace themselves often.' },
+    { k: ['name','naming','classify','classifying','simple','stratified','squamous','cuboidal','columnar','layers','shape'], w: 1.2, a: 'Epithelium is named by the number of layers (simple is one, stratified is many) and the shape of the cells in the top layer (squamous is flat, cuboidal is cube-shaped, columnar is tall). Simple squamous lines blood vessels and lung air sacs; stratified squamous covers the skin and lines the mouth; simple columnar lines the small intestine.' },
+    { k: ['pseudostratified','transitional','cilia','ciliated','bladder','airway'], a: 'Pseudostratified columnar epithelium is one layer whose cells vary in height, so their nuclei sit at different levels and it looks layered; it lines much of the airway and is often ciliated to sweep mucus out. Transitional epithelium is stratified, and its cells flatten when stretched, so it lines the bladder and ureters.' },
+    { k: ['gland','glands','exocrine','endocrine','duct','hormone'], a: 'Glands are made of epithelium. Exocrine glands release products through ducts to a surface or cavity (sweat, salivary, mammary). Endocrine glands release hormones directly into the bloodstream (thyroid, pituitary, adrenal). Module 6 covers endocrine glands.' },
+    { k: ['connective','matrix','extracellular','ground substance','fibers','collagen','elastic','reticular fibers'], w: 1.2, a: 'Connective tissue cells are sparse and sit in a large extracellular matrix they make. The matrix has ground substance, a gel that fills the spaces, and fibers (collagen, elastic, reticular) that give the tissue its mechanical properties.' },
+    { k: ['loose','areolar','adipose','fat','reticular','spleen','lymph'], a: 'Loose connective tissue has a soft, watery matrix with few fibers. Areolar tissue is packing beneath every epithelium and around vessels; adipose is fat (energy, insulation, cushioning); reticular tissue is the mesh of the spleen and lymph nodes.' },
+    { k: ['dense','tendon','ligament','regular','irregular','dermis'], a: 'Dense connective tissue is mostly collagen. Dense regular has parallel fibers (tendons and ligaments), strong along the line of pull. Dense irregular has fibers in many directions (the deep dermis, organ capsules), where force can come from anywhere.' },
+    { k: ['cartilage','bone','blood','specialized','chondrocyte','lacunae','plasma'], a: 'Three connective tissues have specialized matrices: cartilage (a firm gel, chondrocytes in lacunae, no blood supply), bone (hardened with calcium phosphate), and blood (a liquid matrix, plasma, carrying erythrocytes, leukocytes, and platelets).' },
+    { k: ['malpighi','capillaries','capillary','harvey'], a: 'Marcello Malpighi, working in Bologna, was the first to see capillaries, in 1661, in a frog&rsquo;s lungs, completing Harvey&rsquo;s model of circulation. He also described the layers of skin; the stratum basale is still called the Malpighian layer.' },
+    { k: ['drawing','draw','cross-section','figure','integument'], a: 'Today you begin the skin cross-section: three layers, epidermis (stratified squamous epithelium), dermis (dense irregular connective tissue), and hypodermis (loose and adipose connective tissue). Keep the page; you add to it in Lessons 2.03 and 2.04.' },
+    { k: ['notebook','lab report','submit','pdf','words','length'], w: 1.2, a: 'The 2.01 Notebook asks for three body locations, each with the tissue subtype, its structural features, and how they match its function, plus a final paragraph on the focus question. 350 to 450 words. Download the PDF from the Lab Report tab and upload it to the assignment.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+/* ---- Lesson 2.01 widgets ---- */
+(function(){
+  /* epithelium builder */
+  var eb = document.getElementById('w2eb'); if (eb) {
+    var lay = '', shp = '', svg = $('.w2eb-svg', eb), nm = $('.w2eb-name', eb), wh = $('.w2eb-where', eb), list = $('.w2eb-list', eb);
+    var WHERE = { 'simple squamous': 'Lines blood vessels and forms the air-exchange surface of the lungs, where flatness allows fast diffusion.', 'stratified squamous': 'Covers the skin and the inside of the mouth, where many layers protect against abrasion.', 'simple columnar': 'Lines the small intestine, where the tall cells absorb nutrients and contain glands.', 'pseudostratified columnar': 'Lines much of the respiratory tract, often ciliated to sweep mucus and trapped particles up and out of the airway.', 'transitional': 'Lines the bladder and ureters; its cells flatten when stretched and round up when relaxed.' };
+    var GOALS = ['simple squamous', 'stratified squamous', 'simple columnar', 'pseudostratified columnar'];
+    var done = (STORE.get('w2eb') || '').split(',').filter(Boolean);
+    function cell(x, y, w, h){ return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="' + Math.min(6, h / 3) + '" fill="#E9A3B0" stroke="#C22F4A" stroke-width="1.5"/><ellipse cx="' + (x + w / 2) + '" cy="' + (y + h / 2) + '" rx="' + Math.min(7, w / 4) + '" ry="' + Math.min(6, h / 3) + '" fill="#7A2A3A"/>'; }
+    function draw(){
+      var g = '', base = 190, name = '';
+      if (lay === 'trans') { name = 'transitional'; for (var r = 0; r < 4; r++) for (var i = 0; i < 9; i++) g += cell(40 + i * 58 + (r % 2) * 14, base - 34 - r * 36, 50, 32); }
+      else if (lay === 'pseudo') { name = 'pseudostratified columnar'; for (var i = 0; i < 14; i++) { var h = i % 2 ? 140 : 90; g += cell(40 + i * 37, base - h, 34, h); } for (var i = 0; i < 14; i += 2) g += '<g stroke="#2F6B4F" stroke-width="2">' + [0,6,12,18].map(function(d){ return '<path d="M' + (46 + i * 37 + d) + ' ' + (base - 140) + ' v-10"/>'; }).join('') + '</g>'; }
+      else if (lay && shp) {
+        name = lay + ' ' + shp; var rows = lay === 'simple' ? 1 : 4, W = { squamous: 70, cuboidal: 44, columnar: 30 }[shp], H = { squamous: 16, cuboidal: 40, columnar: 100 }[shp];
+        for (var r = 0; r < rows; r++) { var w = (lay === 'stratified' && r < rows - 1) ? 44 : W, h = (lay === 'stratified' && r < rows - 1) ? 32 : H, y = base - (r === rows - 1 ? 0 : 0); var yy = base - h - r * 36 - (r === rows - 1 && rows > 1 ? 0 : 0); for (var x = 40; x + w <= 560; x += w + 2) g += cell(x, yy, w, h); }
+      }
+      if (!name) { svg.innerHTML = '<text x="300" y="110" text-anchor="middle" class="m2-t" style="fill:#65707C">Pick the number of layers, then a shape.</text>'; } else svg.innerHTML = '<line x1="30" y1="' + (base + 4) + '" x2="570" y2="' + (base + 4) + '" stroke="#1E5AA0" stroke-width="5"/><text x="570" y="' + (base + 24) + '" text-anchor="end" class="m2-ts" style="fill:#1E5AA0">basement membrane</text>' + g;
+      nm.textContent = name ? name + ' epithelium' : 'Pick layers and a shape';
+      wh.textContent = WHERE[name] || (name ? 'Not one of the main types in this reading; it exists, but you will not need it this week.' : '');
+      if (name && GOALS.indexOf(name) > -1 && done.indexOf(name) < 0) { done.push(name); STORE.set('w2eb', done.join(',')); }
+      list.innerHTML = GOALS.map(function(gl){ return '<li class="' + (done.indexOf(gl) > -1 ? 'done' : '') + '">' + gl + ' &mdash; ' + { 'simple squamous': 'the lining of a lung air sac', 'stratified squamous': 'the outer layer of the skin', 'simple columnar': 'the lining of the small intestine', 'pseudostratified columnar': 'the lining of the airway' }[gl] + '</li>'; }).join('');
+      $$('.w2eb-lay button', eb).forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.v === lay ? 'true' : 'false'); });
+      $$('.w2eb-shp button', eb).forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.v === shp ? 'true' : 'false'); b.disabled = lay === 'trans' || lay === 'pseudo'; });
+    }
+    $$('.w2eb-lay button', eb).forEach(function(b){ b.addEventListener('click', function(){ lay = b.dataset.v; if (lay === 'pseudo') shp = 'columnar'; draw(); }); });
+    $$('.w2eb-shp button', eb).forEach(function(b){ b.addEventListener('click', function(){ shp = b.dataset.v; draw(); }); });
+    draw();
+  }
+  /* matrix dial */
+  var d = document.getElementById('w2dial'); if (d) {
+    var T = [
+      ['blood', 'liquid', 'The matrix is liquid plasma; erythrocytes, leukocytes and platelets float in it.', 'Inside every blood vessel. Module 7.'],
+      ['areolar', 'soft gel', 'Cells suspended in a soft, watery matrix with relatively few fibers: general-purpose packing.', 'Beneath every epithelium, around every blood vessel, between muscle bundles.'],
+      ['adipose', 'soft gel', 'Cells full of stored lipid: energy reserve, insulation, cushioning.', 'Under the skin (hypodermis) and around organs.'],
+      ['reticular', 'soft gel', 'A fine fiber mesh that cradles populations of immune cells.', 'The spleen and lymph nodes.'],
+      ['dense irregular', 'fibrous', 'Mostly collagen, running in many directions like a tangled mat.', 'The deep dermis and the capsules around many organs.'],
+      ['dense regular', 'fibrous', 'Mostly collagen, all running one way: strong along the line of pull.', 'Tendons (muscle to bone) and ligaments (bone to bone).'],
+      ['cartilage', 'firm gel', 'A dense, gel-like matrix loaded with fibers; chondrocytes sit in lacunae. No blood supply.', 'The ends of bones in joints. Module 3.'],
+      ['bone', 'stone-hard', 'A matrix hardened with calcium phosphate: the rigidity of stone, with living cells.', 'The skeleton. Module 3.']];
+    var r = $('.w2d-r', d), sv = $('.w2d-svg', d);
+    function pic(i){
+      var g = '', k;
+      function c(x, y){ return '<circle cx="' + x + '" cy="' + y + '" r="6" fill="#5B6B7E"/>'; }
+      if (i === 0) { g = '<rect width="300" height="150" fill="#FBEBE7"/>'; for (k = 0; k < 18; k++) g += '<ellipse cx="' + (20 + (k * 53) % 270) + '" cy="' + (20 + (k * 37) % 115) + '" rx="10" ry="6" fill="#C22F4A" opacity=".8"/>'; }
+      else if (i === 2) { for (k = 0; k < 12; k++) g += '<circle cx="' + (40 + (k % 4) * 70) + '" cy="' + (30 + Math.floor(k / 4) * 45) + '" r="22" fill="#F6E7B8" stroke="#C9A66B"/>'; }
+      else if (i === 7) { g = '<rect width="300" height="150" fill="#E8E2D6"/>'; for (k = 0; k < 5; k++) g += '<ellipse cx="150" cy="75" rx="' + (30 + k * 24) + '" ry="' + (16 + k * 12) + '" fill="none" stroke="#B8AC94" stroke-width="2"/>'; g += c(90, 75) + c(210, 75) + c(150, 40) + c(150, 110); }
+      else if (i === 6) { g = '<rect width="300" height="150" fill="#E7EEF6"/>'; [[70,50],[180,40],[240,100],[110,110]].forEach(function(p){ g += '<ellipse cx="' + p[0] + '" cy="' + p[1] + '" rx="16" ry="12" fill="#fff" stroke="#8FB3D9"/>' + c(p[0], p[1]); }); }
+      else {
+        var lines = i === 5 ? [0,1,2,3,4,5,6,7].map(function(k){ return 'M10 ' + (15 + k * 17) + ' H290'; }) : i === 4 ? [0,1,2,3,4,5,6].map(function(k){ return 'M' + (10 + k * 40) + ' ' + (k % 2 ? 10 : 140) + ' L' + (60 + k * 30) + ' ' + (k % 2 ? 140 : 10); }) : i === 3 ? [0,1,2,3,4,5].map(function(k){ return 'M' + (20 + k * 50) + ' 10 Q' + (40 + k * 50) + ' 75 ' + (20 + k * 50) + ' 140'; }).concat(['M10 50 H290','M10 100 H290']) : ['M20 40 C90 10 150 90 280 50','M20 110 C100 140 170 70 280 120'];
+        g = '<g stroke="#C9A66B" stroke-width="' + (i >= 4 ? 4 : 2) + '" fill="none">' + lines.map(function(p){ return '<path d="' + p + '"/>'; }).join('') + '</g>' + c(60, 70) + c(200, 100) + c(240, 40);
+      }
+      sv.innerHTML = g;
+    }
+    function up(){ var i = +r.value, t = T[i]; $('.w2d-name', d).textContent = t[0] + ' · ' + t[1]; $('.w2d-what', d).textContent = t[2]; $('.w2d-where', d).textContent = t[3]; pic(i); STORE.set('w2dial', String(i)); }
+    r.value = STORE.get('w2dial') || 0; r.addEventListener('input', up); up();
+  }
+  /* echo chosen locations into the card headings */
+  $$('.w2r-echo').forEach(function(e){ var src = document.getElementById(e.dataset.src); function up(){ e.textContent = src.value.trim() || 'not chosen yet'; } src.addEventListener('input', up); up(); });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>

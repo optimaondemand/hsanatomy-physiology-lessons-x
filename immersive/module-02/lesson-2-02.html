@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Muscle and Nervous Tissues · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+@media (max-width:640px){.idrow,.idhead{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3{grid-template-columns:1fr 1fr 1fr}.idrow.c3 .loc{grid-column:1/-1}.idrow.c3 .mk{grid-column:3}}
+.w2n-grid{display:grid;gap:12px}.w2n-fig{padding:10px}.w2n-fig svg{width:100%;height:auto;display:block}
+.w2n-lab circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.w2n-lab text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.w2g-svg{width:100%;height:auto;background:#FFFDF8;border:1px solid var(--line);border-radius:12px}
+.w2g-ctl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><marker id="m2arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#C22F4A"/></marker></defs></svg>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="Glowing green neurons on a black background, their cell bodies linked by a web of thin branches" style="background-image:url(img/lesson-2-02-hero.jpg);background-position:center"><span class="hlab">Cultured neurons · GFP fluorescence</span><span class="hcred">Image: Manuel Schottdorf, CC BY-SA 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 2.02</div>
+      <h1>Muscle and Nervous Tissues</h1>
+      <div class="focusq"><div class="label">Focus</div><p>What makes muscle and nervous tissue distinct from epithelial and connective tissue &mdash; and what makes a muscle cell distinct from a neuron?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to distinguish skeletal, cardiac, and smooth muscle by structure, location, and voluntary vs. involuntary control.</li><li>I will be able to name the three structural parts of a neuron and explain what each does.</li><li>I will be able to describe, in general terms, why excitability depends on ions moving across the cell membrane &mdash; without yet needing the full electrical detail that comes in Module 5.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Two tissues that respond</div>
+      <svg class="m2-fig" viewBox="0 0 360 262" role="img" aria-label="A long striated skeletal muscle fiber with several nuclei above a neuron with a cell body, dendrites and a myelinated axon">
+  <rect x="10" y="10" width="340" height="242" rx="14" fill="#F4F7FB"/>
+  <rect x="28" y="44" width="304" height="36" rx="18.0" fill="#F3C4CD" stroke="#C22F4A" stroke-width="2"/><g stroke="#C22F4A" stroke-opacity=".55" stroke-width="2"><path d="M38 48 v28"/><path d="M47 48 v28"/><path d="M56 48 v28"/><path d="M65 48 v28"/><path d="M74 48 v28"/><path d="M83 48 v28"/><path d="M92 48 v28"/><path d="M101 48 v28"/><path d="M110 48 v28"/><path d="M119 48 v28"/><path d="M128 48 v28"/><path d="M137 48 v28"/><path d="M146 48 v28"/><path d="M155 48 v28"/><path d="M164 48 v28"/><path d="M173 48 v28"/><path d="M182 48 v28"/><path d="M191 48 v28"/><path d="M200 48 v28"/><path d="M209 48 v28"/><path d="M218 48 v28"/><path d="M227 48 v28"/><path d="M236 48 v28"/><path d="M245 48 v28"/><path d="M254 48 v28"/><path d="M263 48 v28"/><path d="M272 48 v28"/><path d="M281 48 v28"/><path d="M290 48 v28"/><path d="M299 48 v28"/><path d="M308 48 v28"/></g><ellipse cx="88.8" cy="62.0" rx="7" ry="4" fill="#5B2333"/><ellipse cx="149.6" cy="62.0" rx="7" ry="4" fill="#5B2333"/><ellipse cx="210.4" cy="62.0" rx="7" ry="4" fill="#5B2333"/><ellipse cx="271.2" cy="62.0" rx="7" ry="4" fill="#5B2333"/>
+  <text x="28" y="34" class="m2-ts">skeletal muscle fiber: striated, many nuclei</text>
+  <g transform="translate(0,40)"><circle cx="80" cy="150" r="26" fill="#D8E6F4" stroke="#1E5AA0" stroke-width="2.5"/><circle cx="80" cy="150" r="9" fill="#1E5AA0"/>
+  <g stroke="#1E5AA0" stroke-width="3" fill="none" stroke-linecap="round"><path d="M60 132 l-22 -24 m10 11 l-14 2"/><path d="M62 168 l-24 20 m10 -8 l-4 14"/><path d="M80 124 l-4 -30"/><path d="M106 150 H330"/></g>
+  <g fill="#F6E7B8" stroke="#C9A66B" stroke-width="1.5"><rect x="130" y="141" width="42" height="18" rx="9"/><rect x="184" y="141" width="42" height="18" rx="9"/><rect x="238" y="141" width="42" height="18" rx="9"/></g>
+  <text x="128" y="190" class="m2-ts">axon wrapped in myelin</text><text x="20" y="214" class="m2-ts">cell body, dendrites</text></g>
+</svg>
+      <div class="cap">A striated muscle fiber and a neuron: one contracts, one signals, and both are excitable.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="muscle" role="tab"><span class="n">01</span>Three Kinds of Muscle</button>
+  <button class="tab" data-tab="nerve" role="tab"><span class="n">02</span>Neurons and Glia</button>
+  <button class="tab" data-tab="excite" role="tab"><span class="n">03</span>Excitability</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 THREE KINDS OF MUSCLE ═════════ -->
+<section class="panel" id="tab-muscle" role="tabpanel">
+  <div class="vo" data-clip="w2_muscle">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Three Ways to Contract</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Three muscle types side by side">
+  <g data-step="0,1" class="nohalo"><text x="340" y="28" text-anchor="middle" class="m2-t">all muscle is contractile: proteins slide, the cell shortens</text></g>
+  <g data-step="2" class="nohalo"><text x="110" y="70" text-anchor="middle" class="m2-t">skeletal</text><rect x="20" y="90" width="180" height="40" rx="20.0" fill="#F3C4CD" stroke="#C22F4A" stroke-width="2"/><g stroke="#C22F4A" stroke-opacity=".55" stroke-width="2"><path d="M30 94 v32"/><path d="M39 94 v32"/><path d="M48 94 v32"/><path d="M57 94 v32"/><path d="M66 94 v32"/><path d="M75 94 v32"/><path d="M84 94 v32"/><path d="M93 94 v32"/><path d="M102 94 v32"/><path d="M111 94 v32"/><path d="M120 94 v32"/><path d="M129 94 v32"/><path d="M138 94 v32"/><path d="M147 94 v32"/><path d="M156 94 v32"/><path d="M165 94 v32"/><path d="M174 94 v32"/></g><ellipse cx="56.0" cy="110.0" rx="7" ry="4" fill="#5B2333"/><ellipse cx="92.0" cy="110.0" rx="7" ry="4" fill="#5B2333"/><ellipse cx="128.0" cy="110.0" rx="7" ry="4" fill="#5B2333"/><ellipse cx="164.0" cy="110.0" rx="7" ry="4" fill="#5B2333"/><text x="110" y="160" text-anchor="middle" class="m2-ts">long, striated, many nuclei</text><text x="110" y="180" text-anchor="middle" class="m2-ts">moves bones</text><text x="110" y="230" text-anchor="middle" class="m2-t" style="fill:#2F6B4F">voluntary</text></g>
+  <g data-step="3" class="nohalo"><text x="340" y="70" text-anchor="middle" class="m2-t">cardiac</text><rect x="262" y="92" width="70" height="34" rx="17.0" fill="#F3C4CD" stroke="#C22F4A" stroke-width="2"/><g stroke="#C22F4A" stroke-opacity=".55" stroke-width="2"><path d="M272 96 v26"/><path d="M281 96 v26"/><path d="M290 96 v26"/><path d="M299 96 v26"/><path d="M308 96 v26"/></g><ellipse cx="297.0" cy="109.0" rx="7" ry="4" fill="#5B2333"/><rect x="338" y="92" width="70" height="34" rx="17.0" fill="#F3C4CD" stroke="#C22F4A" stroke-width="2"/><g stroke="#C22F4A" stroke-opacity=".55" stroke-width="2"><path d="M348 96 v26"/><path d="M357 96 v26"/><path d="M366 96 v26"/><path d="M375 96 v26"/><path d="M384 96 v26"/></g><ellipse cx="373.0" cy="109.0" rx="7" ry="4" fill="#5B2333"/><path d="M335 92 v34" stroke="#0B1B33" stroke-width="4"/><text x="340" y="160" text-anchor="middle" class="m2-ts">short, striated, one nucleus</text><text x="340" y="180" text-anchor="middle" class="m2-ts">intercalated discs: heart only</text></g>
+  <g data-step="4" class="nohalo"><text x="570" y="70" text-anchor="middle" class="m2-t">smooth</text><path d="M490 110 q25 -22 50 0 q-25 22 -50 0z" fill="#F3C4CD" stroke="#C22F4A" stroke-width="2"/><ellipse cx="515" cy="110" rx="6" ry="3.5" fill="#5B2333"/><path d="M540 110 q25 -22 50 0 q-25 22 -50 0z" fill="#F3C4CD" stroke="#C22F4A" stroke-width="2"/><ellipse cx="565" cy="110" rx="6" ry="3.5" fill="#5B2333"/><path d="M590 110 q25 -22 50 0 q-25 22 -50 0z" fill="#F3C4CD" stroke="#C22F4A" stroke-width="2"/><ellipse cx="615" cy="110" rx="6" ry="3.5" fill="#5B2333"/><text x="570" y="160" text-anchor="middle" class="m2-ts">spindle-shaped, no stripes, one nucleus</text><text x="570" y="180" text-anchor="middle" class="m2-ts">tubes and hollow organs</text></g>
+  <g data-step="5" class="nohalo"><text x="340" y="230" text-anchor="middle" class="m2-t" style="fill:#C22F4A">involuntary</text><text x="570" y="230" text-anchor="middle" class="m2-t" style="fill:#C22F4A">involuntary</text><text x="570" y="254" text-anchor="middle" class="m2-ts">slow, long-lasting, tireless</text></g>
+</svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Muscle and nervous tissue share one property the other two tissues lack: excitability. Their cells can change their electrical state.", "All muscle cells are contractile. When they are triggered, their proteins slide past each other and the cell shortens.", "Skeletal muscle moves your bones. Its fibers are long, striated, and full of nuclei, and it is voluntary.", "Cardiac muscle is found only in the heart. Its cells are striated too, but short, with one nucleus each, joined by intercalated discs so the whole heart contracts together.", "Smooth muscle lines the body's tubes and hollow organs. Its spindle-shaped cells have no visible stripes and one nucleus each.", "Cardiac and smooth muscle are both involuntary. Smooth muscle contracts slowly and can stay contracted for a long time without tiring."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>What all muscle shares, and the three ways the body builds it.</span></div>
+    <p class="marg"><b>Wonder.</b> The body is ordered, beautiful, and not yet fully understood. Carry that posture into every reading.</p>
+    <article class="atlas">
+      <h3>The other two of the four</h3>
+      <p>The previous reading covered epithelial and connective tissues — the body’s boundaries and its scaffolding. The remaining two tissue types share a different defining property: <b>excitability</b><button type="button" class="say" data-say="excitability" aria-label="Hear it: excitability" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. Cells in muscle and nervous tissue can change their electrical state and respond to that change in ways no other cells can. They are the body’s movement and signaling tissues.</p>
+      <h3>Muscle tissue</h3>
+      <p>All muscle cells are <b>contractile</b><button type="button" class="say" data-say="contractile" aria-label="Hear it: contractile" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>: they have proteins arranged so that, when triggered, they slide past each other and shorten the cell. The body has three muscle types, each tuned to a different job.</p>
+      <figure class="plate"><img data-img="g10601" alt="Table comparing skeletal, cardiac, and smooth muscle tissue by cell structure, function, and location"><figcaption>Muscle tissue types compared: cell structure, major function, and location for skeletal, cardiac, and smooth muscle.</figcaption></figure>
+      <h4>Skeletal muscle</h4>
+      <p>The muscle that moves your bones. Skeletal muscle cells are unusually large — long, thin fibers that can run the entire length of a muscle. They appear <i>striated</i> under a microscope (the contractile proteins are arranged in repeating bands), and each fiber contains many nuclei (because, during development, many smaller cells fused). Skeletal muscle is <b>voluntary</b>: under conscious control by motor neurons. You will study its ultrastructure, the sliding-filament theory, and the neuromuscular junction in detail in Module 4.</p>
+      <h4>Cardiac muscle</h4>
+      <p>The muscle of the heart, found nowhere else in the body. Cardiac cells are also striated, but each one has a single nucleus and is much shorter than a skeletal-muscle fiber. They connect to each other through specialized junctions called <b>intercalated discs</b><button type="button" class="say" data-say="intercalated" aria-label="Hear it: intercalated discs" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, which let electrical signals pass directly from cell to cell — allowing the entire heart to contract as a coordinated unit. Cardiac muscle is <b>involuntary</b>: it generates its own rhythm and does not require conscious thought. You will study cardiac muscle in Module 7.</p>
+      <h4>Smooth muscle</h4>
+      <p>The muscle of the body’s tubes and hollow organs — blood vessels, the digestive tract, the bladder, the uterus, the airways, and many others. Smooth muscle cells are spindle-shaped and lack visible striations under a microscope (hence “smooth”). Each cell has one nucleus. Smooth muscle is <b>involuntary</b>: it contracts slowly and can stay contracted for long periods without fatigue. It is the muscle that moves food through your gut, that constricts a blood vessel to raise blood pressure, that pushes a baby through the birth canal. You will meet smooth muscle in nearly every system module from Module 7 onward.</p>
+      <figure class="plate"><img data-img="g10602" alt="Micrographs comparing skeletal, cardiac, and smooth muscle tissue"><figcaption>Muscle tissue micrographs: (a) skeletal, (b) smooth, and (c) cardiac muscle. All images LM × 1600.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Compare the Three</h2></div>
+    <p class="hint">The compare-and-contrast table from the lesson: fill every cell, then check.</p>
+    <div class="card idtable" id="w2cmp" style="padding:16px 20px"><div class="idhead c3"><span></span><span>Skeletal</span><span>Cardiac</span><span>Smooth</span><span></span></div><div class="idrow c3"><span class="loc">striated?</span><select class="jfield" id="w2c10" data-label="Compare table, skeletal: striated?" data-ans="yes"><option value="">&hellip;</option><option value="yes">yes</option><option value="no">no</option></select><select class="jfield" id="w2c11" data-label="Compare table, cardiac: striated?" data-ans="yes"><option value="">&hellip;</option><option value="yes">yes</option><option value="no">no</option></select><select class="jfield" id="w2c12" data-label="Compare table, smooth: striated?" data-ans="no"><option value="">&hellip;</option><option value="yes">yes</option><option value="no">no</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">nuclei per cell</span><select class="jfield" id="w2c20" data-label="Compare table, skeletal: nuclei per cell" data-ans="many"><option value="">&hellip;</option><option value="many">many</option><option value="one">one</option></select><select class="jfield" id="w2c21" data-label="Compare table, cardiac: nuclei per cell" data-ans="one"><option value="">&hellip;</option><option value="many">many</option><option value="one">one</option></select><select class="jfield" id="w2c22" data-label="Compare table, smooth: nuclei per cell" data-ans="one"><option value="">&hellip;</option><option value="many">many</option><option value="one">one</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">control</span><select class="jfield" id="w2c30" data-label="Compare table, skeletal: control" data-ans="voluntary"><option value="">&hellip;</option><option value="voluntary">voluntary</option><option value="involuntary">involuntary</option></select><select class="jfield" id="w2c31" data-label="Compare table, cardiac: control" data-ans="involuntary"><option value="">&hellip;</option><option value="voluntary">voluntary</option><option value="involuntary">involuntary</option></select><select class="jfield" id="w2c32" data-label="Compare table, smooth: control" data-ans="involuntary"><option value="">&hellip;</option><option value="voluntary">voluntary</option><option value="involuntary">involuntary</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">one body location</span><select class="jfield" id="w2c40" data-label="Compare table, skeletal: one body location" data-ans="attached to bones"><option value="">&hellip;</option><option value="attached to bones">attached to bones</option><option value="heart only">heart only</option><option value="walls of hollow organs">walls of hollow organs</option></select><select class="jfield" id="w2c41" data-label="Compare table, cardiac: one body location" data-ans="heart only"><option value="">&hellip;</option><option value="attached to bones">attached to bones</option><option value="heart only">heart only</option><option value="walls of hollow organs">walls of hollow organs</option></select><select class="jfield" id="w2c42" data-label="Compare table, smooth: one body location" data-ans="walls of hollow organs"><option value="">&hellip;</option><option value="attached to bones">attached to bones</option><option value="heart only">heart only</option><option value="walls of hollow organs">walls of hollow organs</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">signature feature</span><select class="jfield" id="w2c50" data-label="Compare table, skeletal: signature feature" data-ans="long multinucleate fibers"><option value="">&hellip;</option><option value="long multinucleate fibers">long multinucleate fibers</option><option value="intercalated discs">intercalated discs</option><option value="spindle-shaped cells">spindle-shaped cells</option></select><select class="jfield" id="w2c51" data-label="Compare table, cardiac: signature feature" data-ans="intercalated discs"><option value="">&hellip;</option><option value="long multinucleate fibers">long multinucleate fibers</option><option value="intercalated discs">intercalated discs</option><option value="spindle-shaped cells">spindle-shaped cells</option></select><select class="jfield" id="w2c52" data-label="Compare table, smooth: signature feature" data-ans="spindle-shaped cells"><option value="">&hellip;</option><option value="long multinucleate fibers">long multinucleate fibers</option><option value="intercalated discs">intercalated discs</option><option value="spindle-shaped cells">spindle-shaped cells</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill it in without looking back. Then check.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Which Muscle?</h2></div>
+    <div class="place card" id="w2wm">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="sk" data-fb="Skeletal: lifting is a voluntary movement of bones." data-miss="You decide to lift it, and bones move.">lifting a backpack</button>
+        <button class="chip" data-k="b" data-ans="ca" data-fb="Cardiac: the heartbeat, with its own rhythm." data-miss="Found nowhere else in the body.">your heartbeat</button>
+        <button class="chip" data-k="c" data-ans="sm" data-fb="Smooth: it moves food through your gut." data-miss="The wall of a hollow organ, working without thought.">moving food through the gut</button>
+        <button class="chip" data-k="d" data-ans="sm" data-fb="Smooth: vessel walls constrict to raise blood pressure." data-miss="Blood vessels are tubes.">constricting a blood vessel</button>
+        <button class="chip" data-k="e" data-ans="sk" data-fb="Skeletal: a deliberate movement is voluntary." data-miss="You chose to do it.">blinking on purpose</button>
+        <button class="chip" data-k="f" data-ans="ca" data-fb="Cardiac: intercalated discs pass signals cell to cell." data-miss="Those junctions let the whole heart contract as a unit.">cells joined by intercalated discs</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="sk"><h4>Skeletal</h4><div class="drop"></div></div><div class="bin" data-bin="ca"><h4>Cardiac</h4><div class="drop"></div></div><div class="bin" data-bin="sm"><h4>Smooth</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Skeletal and cardiac muscle are both striated, yet one is voluntary and one is not. In two or three sentences, explain what the intercalated discs let the heart do that separate skeletal fibers do not.</p>
+      <textarea class="jbox" id="w2y3" data-label="Your turn: what intercalated discs let the heart do" data-min="30"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="nerve" type="button">Next: Neurons and Glia &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 NEURONS AND GLIA ═════════ -->
+<section class="panel" id="tab-nerve" role="tabpanel">
+  <div class="vo" data-clip="w2_neuron">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A Cell Built to Signal</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A neuron builds part by part, then glia">
+  <g data-step="0" class="nohalo"><text x="20" y="30" class="m2-t">brain, spinal cord, nerves: cells that signal</text></g>
+  <g data-step="1" class="nohalo"><circle cx="150" cy="150" r="40" fill="#D8E6F4" stroke="#1E5AA0" stroke-width="3"/><circle cx="150" cy="150" r="13" fill="#1E5AA0"/><text x="150" y="215" text-anchor="middle" class="m2-ts">cell body + nucleus</text></g>
+  <g data-step="2" class="nohalo"><g stroke="#1E5AA0" stroke-width="4" fill="none" stroke-linecap="round"><path d="M118 126 l-40 -40 m18 18 l-24 4 m30 -14 l-4 -24"/><path d="M116 172 l-44 36 m20 -16 l-6 24"/><path d="M150 110 l-6 -54 m3 26 l-20 -14"/></g><text x="40" y="60" class="m2-ts">dendrites: receive</text></g>
+  <g data-step="3" class="nohalo"><path d="M190 150 H640" stroke="#1E5AA0" stroke-width="5"/><path d="M640 150 l20 -18 m-20 18 l22 0 m-22 0 l20 18" stroke="#1E5AA0" stroke-width="4" fill="none"/><text x="420" y="130" text-anchor="middle" class="m2-ts">axon: carries the signal away &#8594;</text></g>
+  <g data-step="4" class="nohalo"><g fill="#F6E7B8" stroke="#C9A66B" stroke-width="2"><rect x="230" y="139" width="64" height="22" rx="11"/><rect x="310" y="139" width="64" height="22" rx="11"/><rect x="390" y="139" width="64" height="22" rx="11"/><rect x="470" y="139" width="64" height="22" rx="11"/><rect x="550" y="139" width="64" height="22" rx="11"/></g><text x="420" y="190" text-anchor="middle" class="m2-ts">myelin from oligodendrocytes: a faster signal</text>
+    <g transform="translate(560 240)"><circle r="16" fill="#E7DDF5" stroke="#6B4AA0" stroke-width="2"/><path d="M-12 -10 l-14 -10 M12 -10 l14 -10 M-14 8 l-16 8 M14 8 l16 8" stroke="#6B4AA0" stroke-width="2"/></g><text x="530" y="285" class="m2-ts" style="fill:#6B4AA0">astrocyte</text></g>
+  <g data-step="5" class="nohalo"><text x="20" y="270" class="m2-ts" style="fill:#C22F4A">mature neurons largely do not divide: slow healing</text></g>
+</svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Nervous tissue is found in the brain, the spinal cord, and the nerves. Its cells are excitable, but instead of contracting, they send signals.", "The neuron is the signaling cell. Its cell body holds the nucleus and most of the organelles.", "Short, branched dendrites receive signals from other cells.", "A single long axon carries the signal away, toward the next neuron, a muscle, or a gland. In the spinal cord, one axon can be a meter long.", "Glia are the support cells. Astrocytes help regulate the chemical environment of the brain, and oligodendrocytes wrap axons in myelin, which speeds the signal.", "Mature neurons largely do not divide, which is why injuries to nervous tissue heal so poorly."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The three parts of a neuron, and the glia that make neurons work.</span></div>
+    <article class="atlas">
+      <h3>Nervous tissue</h3>
+      <p>Nervous tissue (from <i>neuro-</i>, “nerve”) is found in the brain, the spinal cord, and the nerves that branch from them. Like muscle tissue, its cells are excitable — but instead of contracting, they generate electrical signals and pass them to other cells. Nervous tissue is what allows you to sense, think, decide, and move. It is built from two cell types.</p>
+      <h4>Neurons</h4>
+      <p><b>Neurons</b><button type="button" class="say" data-say="neuron" aria-label="Hear it: neurons" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are the signaling cells. Each neuron has three structural parts. The <b>cell body</b> (soma) contains the nucleus and most organelles. The <b>dendrites</b><button type="button" class="say" data-say="dendrite" aria-label="Hear it: dendrites" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are short branched extensions that receive signals from other neurons. The <b>axon</b><button type="button" class="say" data-say="axon" aria-label="Hear it: axon" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a single long extension that carries the signal away from the cell body and toward the next cell — another neuron, or a muscle, or a gland. A motor neuron in the spinal cord can have an axon a meter long, running all the way down to the muscles of the foot. Neurons are extremely specialized for signal transmission and largely do not divide once mature, which is why nervous-tissue injuries heal so poorly. You will study neurons in detail in Module 5.</p>
+      <figure class="plate"><img data-img="g10603" alt="Diagram of a neuron and micrograph of neuron cells"><figcaption>A neuron: the cell body (containing the nucleus), the dendrites, and the axon, with microfibrils and microtubules visible inside.</figcaption></figure>
+      <h4>Glia</h4>
+      <p><b>Glia</b><button type="button" class="say" data-say="glia" aria-label="Hear it: glia" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (sometimes called “neuroglia,” from <i>glia-</i>, “glue”) are the support cells of nervous tissue. They are not signaling cells, but neurons cannot work without them. There are several types — you will meet four in Module 5, but two are worth introducing now. <b>Astrocytes</b><button type="button" class="say" data-say="astrocyte" aria-label="Hear it: astrocytes" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> wrap around neurons and blood vessels in the brain, regulating the chemical environment and helping form what is called the blood-brain barrier. <b>Oligodendrocytes</b><button type="button" class="say" data-say="oligodendrocyte" aria-label="Hear it: oligodendrocytes" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> wrap themselves around the axons of neurons in the brain and spinal cord, forming a fatty insulating layer called <b>myelin</b><button type="button" class="say" data-say="myelin" aria-label="Hear it: myelin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> that dramatically speeds up signal transmission. (In peripheral nerves, a different cell type called the <b>Schwann cell</b><button type="button" class="say" data-say="schwann" aria-label="Hear it: schwann cell" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> does the same job.) Glia outnumber neurons in the brain by a substantial margin.</p>
+      <figure class="plate"><img data-img="g10604" alt="Diagram of neuroglia (astrocytes, microglial cells, oligodendrocytes) and a micrograph of neural tissue"><figcaption>Neuroglia: astrocytes, microglial cells, and oligodendrocytes (which form the myelin sheath around axons), alongside neurons.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Label the Neuron</h2></div>
+    <p class="hint">Tap a name, then tap the letter it belongs to.</p>
+    <div class="w2n-grid"><div class="w2n-fig card"><svg viewBox="0 0 700 300" role="img" aria-label="A neuron with four parts marked A to D"><circle cx="150" cy="150" r="40" fill="#D8E6F4" stroke="#1E5AA0" stroke-width="3"/><circle cx="150" cy="150" r="13" fill="#1E5AA0"/>
+  <g stroke="#1E5AA0" stroke-width="4" fill="none" stroke-linecap="round"><path d="M118 126 l-40 -40 m18 18 l-24 4 m30 -14 l-4 -24"/><path d="M116 172 l-44 36 m20 -16 l-6 24"/><path d="M150 110 l-6 -54 m3 26 l-20 -14"/><path d="M180 176 l20 40"/></g><path d="M190 150 H640" stroke="#1E5AA0" stroke-width="5"/><g fill="#F6E7B8" stroke="#C9A66B" stroke-width="2"><rect x="240" y="139" width="64" height="22" rx="11"/><rect x="320" y="139" width="64" height="22" rx="11"/><rect x="400" y="139" width="64" height="22" rx="11"/><rect x="480" y="139" width="64" height="22" rx="11"/><rect x="560" y="139" width="64" height="22" rx="11"/></g>
+      <g class="w2n-lab"><g transform="translate(150 240)"><circle r="15"/><text y="5">A</text></g><g transform="translate(60 62)"><circle r="15"/><text y="5">B</text></g><g transform="translate(520 110)"><circle r="15"/><text y="5">C</text></g><g transform="translate(352 196)"><circle r="15"/><text y="5">D</text></g></g></svg></div>
+      <div class="place card" id="w2lab">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="A" data-fb="Cell body (soma): the nucleus and most organelles." data-miss="The part that holds the nucleus.">cell body</button>
+        <button class="chip" data-k="b" data-ans="B" data-fb="Dendrites: short, branched, receive signals." data-miss="Short and branched; signals come in here.">dendrites</button>
+        <button class="chip" data-k="c" data-ans="C" data-fb="Axon: one long extension, carries the signal away." data-miss="The single long extension.">axon</button>
+        <button class="chip" data-k="d" data-ans="D" data-fb="Myelin: a fatty insulating layer that speeds the signal." data-miss="The wrapped segments along the axon.">myelin</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="A"><h4>A</h4><div class="drop"></div></div><div class="bin" data-bin="B"><h4>B</h4><div class="drop"></div></div><div class="bin" data-bin="C"><h4>C</h4><div class="drop"></div></div><div class="bin" data-bin="D"><h4>D</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Glia at Work</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w2q3"><p class="q">Which glial cell forms myelin around axons in the brain and spinal cord?</p>
+        <button class="opt" data-fb="Astrocytes regulate the chemical environment and help form the blood-brain barrier.">Astrocyte</button>
+        <button class="opt" data-ok="1" data-fb="Right. Oligodendrocytes wrap axons in the brain and spinal cord.">Oligodendrocyte</button>
+        <button class="opt" data-fb="Schwann cells do the same job, but in peripheral nerves.">Schwann cell</button></div>
+      <div class="mcq card" data-qid="w2q4"><p class="q">Why do injuries to nervous tissue heal so poorly?</p>
+        <button class="opt" data-fb="Glia outnumber neurons, but that is not the reason.">Glia block the repair</button>
+        <button class="opt" data-ok="1" data-fb="Right. Mature neurons largely do not divide.">Mature neurons largely do not divide</button>
+        <button class="opt" data-fb="Nervous tissue is not avascular; that was epithelium.">Nervous tissue has no blood supply</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">A motor neuron&rsquo;s axon can run a meter from the spinal cord to the foot. In two or three sentences, explain why myelin matters for an axon that long.</p>
+      <textarea class="jbox" id="w2y4" data-label="Your turn: why myelin matters on a long axon" data-min="30"></textarea></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="muscle" type="button">&larr; Three Kinds of Muscle</button><button class="btn" data-go="excite" type="button">Next: Excitability &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 EXCITABILITY ═════════ -->
+<section class="panel" id="tab-excite" role="tabpanel">
+  <div class="vo" data-clip="w2_excite">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Charge on the Move</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A membrane with ion channels; ions cross and a pulse travels along an axon">
+  <g data-step="0" class="nohalo"><rect x="20" y="90" width="640" height="40" fill="#F6E7B8" stroke="#C9A66B"/><text x="30" y="80" class="m2-ts">outside</text><text x="30" y="152" class="m2-ts">inside</text><text x="650" y="80" text-anchor="end" class="m2-ts">a voltage across the membrane</text>
+    <g class="m2-ts" style="fill:#C22F4A;font-size:18px"><text x="60" y="70">+</text><text x="130" y="70">+</text><text x="200" y="70">+</text><text x="270" y="70">+</text><text x="340" y="70">+</text><text x="410" y="70">+</text><text x="480" y="70">+</text><text x="550" y="70">+</text><text x="620" y="70">+</text></g><g class="m2-ts" style="fill:#1E5AA0;font-size:18px"><text x="60" y="170">&#8722;</text><text x="130" y="170">&#8722;</text><text x="200" y="170">&#8722;</text><text x="270" y="170">&#8722;</text><text x="340" y="170">&#8722;</text><text x="410" y="170">&#8722;</text><text x="480" y="170">&#8722;</text><text x="550" y="170">&#8722;</text><text x="620" y="170">&#8722;</text></g></g>
+  <g data-step="2,3" class="nohalo"><rect x="150" y="86" width="26" height="48" rx="6" fill="#fff" stroke="#2F6B4F" stroke-width="3"/><circle cx="163" cy="60" r="9" fill="#C22F4A"/><path d="M163 72 v52" stroke="#C22F4A" stroke-width="2.5" marker-end="url(#m2arr)"/><rect x="310" y="86" width="26" height="48" rx="6" fill="#fff" stroke="#2F6B4F" stroke-width="3"/><circle cx="323" cy="60" r="9" fill="#C22F4A"/><path d="M323 72 v52" stroke="#C22F4A" stroke-width="2.5" marker-end="url(#m2arr)"/><rect x="470" y="86" width="26" height="48" rx="6" fill="#fff" stroke="#2F6B4F" stroke-width="3"/><circle cx="483" cy="60" r="9" fill="#C22F4A"/><path d="M483 72 v52" stroke="#C22F4A" stroke-width="2.5" marker-end="url(#m2arr)"/><text x="340" y="210" text-anchor="middle" class="m2-ts" style="fill:#2F6B4F">ion channels: doorways that open and close</text></g>
+  <g data-step="1,4" class="nohalo"><path d="M20 250 H660" stroke="#1E5AA0" stroke-width="5"/><path d="M200 250 q20 -40 40 0" stroke="#C22F4A" stroke-width="4" fill="none"/><text x="220" y="282" text-anchor="middle" class="m2-ts" style="fill:#C22F4A">action potential &#8594;</text><text x="660" y="282" text-anchor="end" class="m2-ts">next cell, or contraction</text></g>
+</svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Muscle cells and neurons hold an electrical voltage across their membranes.", "When they are stimulated, they can change that voltage quickly. That brief, traveling pulse is called an action potential.", "Underneath it is one simple event: charged particles, called ions, move across the membrane.", "They pass through ion channels, doorways that open and close in a precise sequence, and some doors let only certain ions through.", "In a neuron, the moving signal heads to the next cell. In a muscle cell, it is the trigger that makes the cell contract.", "You will learn the electrical details later in the year. For now, hold on to the picture: ions moving through channels are the basis of every electrical signal in the body."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The one event underneath every nerve signal and every contraction.</span></div>
+    <article class="atlas">
+      <h3>Excitability: the trait muscle and nervous tissue share</h3>
+      <p>Both muscle and nervous tissue are <b>excitable</b><button type="button" class="say" data-say="excitable" aria-label="Hear it: excitable" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — their cells maintain an electrical voltage across the membrane (the resting membrane potential), and they can rapidly change that voltage in response to a stimulus. The change is called an <b>action potential</b><button type="button" class="say" data-say="action-potential" aria-label="Hear it: action potential" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>: a brief, traveling pulse of electrical activity. Underneath both a muscle contraction and a nerve signal is the same basic event: charged particles (ions) move across the cell membrane through specific ion channels, doorways that open and close in a precisely timed sequence. In a neuron, the moving signal is heading to the next cell. In a muscle cell, it is the trigger that causes contraction. You do not need the electrical details yet — those arrive in Module 5 (nervous) and Module 4 (skeletal muscle), and again in Module 7 (cardiac). For now, hold onto the picture: ions moving down their concentration gradients through membrane channels is the basis of electrical signaling everywhere in the body.</p>
+      <p>This is the architecture of the body, in tissue terms: epithelium covers and lines, connective tissue scaffolds and connects, muscle contracts, and nervous tissue signals. Every organ in the eleven systems you study this year is some combination of these four. As you walk through the modules, ask of every organ: <i>which tissues, and in what proportions?</i></p>
+      <details class="selfcheck"><summary>Self-check: name the three muscle types and the three structural parts of a neuron before clicking</summary><p><b>Three muscle types:</b> skeletal (voluntary, striated, multi-nucleated, attached to bones), cardiac (involuntary, striated, single-nucleated, heart only), smooth (involuntary, non-striated, single-nucleated, walls of hollow organs).</p><p><b>Three structural parts of a neuron:</b> cell body, dendrites, axon.</p><p>If you missed either, scroll back up. Both will return repeatedly through the year.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Open the Gates</h2></div>
+    <p class="hint">A simple picture, not the full electrical story: that arrives in Module 5.</p>
+    <div class="bench" id="w2gate">
+      <div class="bh"><b>Axon &middot; ions and channels</b><span class="readout w2g-st">at rest</span></div>
+      <svg class="w2g-svg" viewBox="0 0 640 170" aria-label="An axon membrane with ion channels"></svg>
+      <div class="w2g-ctl"><button type="button" class="btn small w2g-go">&#9889; Stimulate</button><span class="hint">Watch the channels open in sequence as the pulse travels.</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Watch It Move</h2></div>
+    <div class="card extlink"><div style="flex:1;min-width:220px"><b>PhET Neuron simulation</b><p class="hint" style="margin:4px 0 0">Watch an action potential travel down an axon at least twice. Turn on the charges and the channels.</p></div><a class="btn" href="https://phet.colorado.edu/en/simulations/neuron" target="_blank" rel="noopener">Open PhET Neuron &#8599;</a></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Narrate It</h2></div>
+    <div class="card">
+      <p class="q" style="font-weight:600;margin-top:0">For 60 to 90 seconds, summarize what you watched, the simple way: charged particles (ions) move in and out of the cell through doorways (ion channels) in the membrane, some doors letting through only certain ions, and this movement of charge is the basis of electrical signaling in both muscle and nervous tissue.</p>
+      <div class="narrate" data-words="150"></div>
+      <p class="hint">You do not need the words &ldquo;resting membrane potential&rdquo; yet. Play it back: was it simple and honest?</p>
+      <div class="field" style="margin-bottom:0"><p class="q">One or two corrections to your summary:</p><textarea class="jbox" id="w2nar2" data-label="Narrate It: corrections to my ion-movement summary" data-min="15"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 15 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; a muscle fiber and a neuron</span>
+      <p>Today you draw representative cells, not an organ. On a clean page (paper highly recommended), draw two representative cells at exaggerated scale. Draw first from memory of the reading, then check the reading&rsquo;s figures and correct your drawing in a second color.</p>
+      <p><b>(1) A skeletal muscle fiber.</b> A long thin cylinder. Mark several nuclei along its length (skeletal muscle is multi-nucleated). Show striations as repeating bands across the length of the fiber. <b>(2) A neuron.</b> A roughly spherical cell body with a single nucleus. Multiple short branched dendrites coming off the cell body. One long axon extending away. (Optional: wrap segments of the axon in &ldquo;myelin&rdquo; pieces, with small gaps between.)</p>
+      <ul class="checks"><li data-ck="w2e1">Muscle fiber: long cylinder, several nuclei, striations.</li><li data-ck="w2e2">Neuron: cell body with nucleus, dendrites, one long axon.</li><li data-ck="w2e3">Corrected in a second color against the reading&rsquo;s figures.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep the page: it goes into your Module 2 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="nerve" type="button">&larr; Neurons and Glia</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Excitability: How Muscles and Neurons Work</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>What makes muscle and nervous tissue distinct from epithelial and connective tissue &mdash; and what makes a muscle cell distinct from a neuron?</p></div>
+        <p>Muscle tissue contracts. Nervous tissue signals. Different jobs, different cells &mdash; but they share one trait: excitability. Both maintain a voltage across their cell membranes, and both can rapidly change that voltage to do their work. In this assignment you will compare a muscle cell and a neuron, identifying what makes each one specialized and what they have in common. Keep your explanation of excitability at the level of today&rsquo;s reading and animation &mdash; ion movement through membrane channels &mdash; rather than inventing electrical detail you have not yet studied; the full picture arrives in Module 5.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Choose One Muscle Type</h2></div>
+    <p class="hint">Choose one muscle type (skeletal, cardiac, or smooth) to focus on, alongside the neuron.</p>
+    <div class="pickset" data-targets="w2rM"><button data-v="skeletal muscle">Skeletal</button><button data-v="cardiac muscle">Cardiac</button><button data-v="smooth muscle">Smooth</button></div>
+      <input class="jfield m2-in" id="w2rM" data-label="1. Muscle type I chose" placeholder="Tap one above">
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Describe the Two Cells</h2></div>
+    <div class="card loccard"><h4>Your muscle cell (4&ndash;5 sentences)</h4><p class="sub">Shape, size, striations or not, number of nuclei, voluntary or involuntary, and one body location where it works.</p>
+        <div class="ttrack" data-field="w2rC"><span class="tt" data-t="shape|cylind|spindle|long|short">shape</span><span class="tt" data-t="size|long|short|large|small|meter|length">size</span><span class="tt" data-t="striat|stripe|band">striations</span><span class="tt" data-t="nucle">nuclei</span><span class="tt" data-t="voluntary|involuntary">control</span><span class="tt" data-t="heart|bone|vessel|gut|bladder|stomach|intestin|airway|uterus|located|found">location</span></div>
+        <textarea class="jbox" id="w2rC" data-label="2. My muscle cell" data-min="60"></textarea></div>
+      <div class="card loccard"><h4>A neuron (4&ndash;5 sentences)</h4><p class="sub">Name and describe the cell body, dendrites, and axon. Mention myelin and what it does.</p>
+        <div class="ttrack" data-field="w2rN"><span class="tt" data-t="cell body|soma">cell body</span><span class="tt" data-t="dendrite">dendrites</span><span class="tt" data-t="axon">axon</span><span class="tt" data-t="myelin">myelin</span></div>
+        <textarea class="jbox" id="w2rN" data-label="3. A neuron" data-min="60"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Explain Excitability</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;4 sentences, explain what excitability is, and how both your muscle cell and the neuron use it. Use the words <b>action potential</b> and <b>ion channels</b>, and describe in plain terms how ions moving across the membrane creates the signal.</p>
+        <div class="ttrack" data-field="w2rE"><span class="tt" data-t="action potential">action potential</span><span class="tt" data-t="ion channel">ion channels</span><span class="tt" data-t="membrane">membrane</span></div>
+        <textarea class="jbox" id="w2rE" data-label="4. Excitability" data-min="45" data-mark="action potentials?|ion channels?|ions?"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Answer the Focus Question</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In a final 3&ndash;5 sentence paragraph, engage the focus question. What makes muscle and nervous tissue different from epithelial and connective tissue, and what makes your muscle cell different from a neuron despite their shared excitability? Do not restate the question.</p>
+        <textarea class="jbox" id="w2rF2" data-label="5. Final paragraph" data-min="50"></textarea></div>
+        <div class="wmeter" data-fields="w2rC,w2rN,w2rE,w2rF2" data-min="350" data-max="450"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">F</span><h2>Before You Download</h2></div>
+    <ul class="checks">
+        <li data-ck="w2c5">Describes the chosen muscle cell with all five named features.</li>
+        <li data-ck="w2c6">Describes a neuron&rsquo;s three structural parts and the role of myelin.</li>
+        <li data-ck="w2c7">Explains excitability in terms of ion movement, using the required vocabulary accurately.</li>
+        <li data-ck="w2c8">Final paragraph engages the focus question with original synthesis.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 2.02 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="excite" type="button">&larr; Excitability</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>excitability<button type="button" class="say" data-say="excitability" aria-label="Hear it: excitability" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The ability of a cell to change its electrical state and respond to that change. Shared by muscle and nervous tissue.</dd>
+  <dt>contractile<button type="button" class="say" data-say="contractile" aria-label="Hear it: contractile" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Able to shorten: proteins slide past each other when the cell is triggered.</dd>
+  <dt>skeletal muscle</dt><dd>Long, striated, multinucleated fibers that move bones. Voluntary.</dd>
+  <dt>cardiac muscle</dt><dd>Short, striated, single-nucleated cells joined by intercalated discs. Heart only. Involuntary.</dd>
+  <dt>smooth muscle</dt><dd>Spindle-shaped, non-striated, single-nucleated cells in tubes and hollow organs. Involuntary.</dd>
+  <dt>striated<button type="button" class="say" data-say="striated" aria-label="Hear it: striated" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Banded under a microscope: the contractile proteins are arranged in repeating bands.</dd>
+  <dt>intercalated disc<button type="button" class="say" data-say="intercalated" aria-label="Hear it: intercalated disc" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A junction between cardiac cells that passes electrical signals directly from cell to cell.</dd>
+  <dt>voluntary / involuntary</dt><dd>Under conscious control / working without conscious thought.</dd>
+  <dt>nervous tissue <small>neuro- &ldquo;nerve&rdquo;</small></dt><dd>The tissue of the brain, spinal cord, and nerves: cells that generate and pass on electrical signals.</dd>
+  <dt>neuron<button type="button" class="say" data-say="neuron" aria-label="Hear it: neuron" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The signaling cell: cell body (soma), dendrites, and one axon.</dd>
+  <dt>dendrite<button type="button" class="say" data-say="dendrite" aria-label="Hear it: dendrite" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A short branched extension that receives signals from other cells.</dd>
+  <dt>axon<button type="button" class="say" data-say="axon" aria-label="Hear it: axon" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A single long extension that carries the signal away from the cell body.</dd>
+  <dt>glia<button type="button" class="say" data-say="glia" aria-label="Hear it: glia" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>glia- &ldquo;glue&rdquo;</small></dt><dd>The support cells of nervous tissue; also called neuroglia. They outnumber neurons in the brain.</dd>
+  <dt>astrocyte<button type="button" class="say" data-say="astrocyte" aria-label="Hear it: astrocyte" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A glial cell that wraps neurons and blood vessels, regulating the chemical environment; helps form the blood-brain barrier.</dd>
+  <dt>oligodendrocyte<button type="button" class="say" data-say="oligodendrocyte" aria-label="Hear it: oligodendrocyte" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A glial cell that wraps axons in the brain and spinal cord in myelin.</dd>
+  <dt>myelin<button type="button" class="say" data-say="myelin" aria-label="Hear it: myelin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A fatty insulating layer around axons that dramatically speeds up signal transmission.</dd>
+  <dt>Schwann cell<button type="button" class="say" data-say="schwann" aria-label="Hear it: schwann cell" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The cell that forms myelin in peripheral nerves.</dd>
+  <dt>action potential<button type="button" class="say" data-say="action-potential" aria-label="Hear it: action potential" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A brief, traveling pulse of electrical activity along a cell membrane.</dd>
+  <dt>ion channel<button type="button" class="say" data-say="ion-channel" aria-label="Hear it: ion channel" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A doorway in the membrane that opens and closes, letting certain ions through.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w2-l2", "title": "Muscle and Nervous Tissues", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 2 · Muscle and Nervous Tissues", "pdfTag": "AP_W2_L2"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"g10601":{"src":"img/w2-1.06-01-blood-blood-fluid-connective-tis.webp","alt":""},"g10602":{"src":"img/w2-1.06-02-figure.webp","alt":""},"g10603":{"src":"img/w2-1.06-03-muscle-tissue-skeletal-muscle-sm.webp","alt":""},"g10604":{"src":"img/w2-1.06-04-neuron-cell-body-neuron-also-cal.webp","alt":""}},"w2_muscle":{"audio":"audio/ap-w2-l2-muscle.mp3","words":[[0,0.4,"Muscle"],[0.48,0.56,"and"],[0.64,1.04,"nervous"],[1.04,1.36,"tissue"],[1.44,1.68,"share"],[1.84,2.08,"one"],[2.08,2.48,"property"],[2.56,2.72,"the"],[2.84,2.96,"other"],[3.04,3.12,"two"],[3.2,3.52,"tissues"],[3.6,4.4,"lack:"],[4.56,5.84,"excitability."],[5.92,6.08,"Their"],[6.16,6.48,"cells"],[6.56,6.72,"can"],[6.8,7.12,"change"],[7.2,7.28,"their"],[7.4,7.68,"electrical"],[7.84,8.8,"state."],[8.88,9.04,"All"],[9.12,9.36,"muscle"],[9.44,9.76,"cells"],[9.84,9.92,"are"],[10.16,11.04,"contractile."],[11.12,11.2,"When"],[11.24,11.28,"they"],[11.36,11.44,"are"],[11.56,12.133,"triggered,"],[12.187,12.24,"their"],[12.32,12.8,"proteins"],[12.88,13.2,"slide"],[13.36,13.52,"past"],[13.6,13.68,"each"],[13.84,14,"other"],[14.04,14.08,"and"],[14.16,14.24,"the"],[14.32,14.56,"cell"],[14.64,15.68,"shortens."],[15.76,16.16,"Skeletal"],[16.24,16.56,"muscle"],[16.64,16.8,"moves"],[16.88,17.04,"your"],[17.28,17.84,"bones."],[17.96,18.08,"Its"],[18.16,18.4,"fibers"],[18.48,18.56,"are"],[18.64,19.2,"long,"],[19.36,19.88,"striated,"],[19.92,20.16,"and"],[20.24,20.32,"full"],[20.36,20.4,"of"],[20.48,21.28,"nuclei,"],[21.44,21.6,"and"],[21.68,21.72,"it"],[21.76,21.92,"is"],[22,23.28,"voluntary."],[23.36,23.76,"Cardiac"],[23.84,24.08,"muscle"],[24.16,24.24,"is"],[24.32,24.64,"found"],[24.8,24.96,"only"],[25,25.04,"in"],[25.12,25.2,"the"],[25.36,25.92,"heart."],[26.04,26.16,"Its"],[26.28,26.4,"cells"],[26.48,26.56,"are"],[26.68,27.12,"striated"],[27.24,27.68,"too,"],[27.76,27.84,"but"],[27.92,28.4,"short,"],[28.52,28.64,"with"],[28.72,28.8,"one"],[28.88,29.36,"nucleus"],[29.48,29.92,"each,"],[30,30.24,"joined"],[30.32,30.4,"by"],[30.56,31.12,"intercalated"],[31.2,31.6,"discs"],[31.68,31.84,"so"],[31.92,32,"the"],[32.12,32.24,"whole"],[32.32,32.56,"heart"],[32.8,33.04,"contracts"],[33.12,33.96,"together."],[34.4,34.72,"Smooth"],[34.8,35.04,"muscle"],[35.12,35.44,"lines"],[35.52,35.56,"the"],[35.6,36,"body's"],[36.04,36.4,"tubes"],[36.48,36.56,"and"],[36.6,36.88,"hollow"],[36.96,37.76,"organs."],[37.88,38,"Its"],[38.08,38.72,"spindle-shaped"],[38.8,39.04,"cells"],[39.16,39.28,"have"],[39.36,39.44,"no"],[39.52,39.84,"visible"],[39.92,40.4,"stripes"],[40.48,40.56,"and"],[40.72,40.8,"one"],[40.88,41.28,"nucleus"],[41.36,42.16,"each."],[42.28,42.72,"Cardiac"],[42.76,42.8,"and"],[42.96,43.2,"smooth"],[43.28,43.6,"muscle"],[43.72,43.84,"are"],[43.96,44.08,"both"],[44.16,45.36,"involuntary."],[45.52,45.68,"Smooth"],[45.76,45.92,"muscle"],[46,46.48,"contracts"],[46.64,47.04,"slowly"],[47.12,47.2,"and"],[47.28,47.36,"can"],[47.44,47.6,"stay"],[47.8,48.16,"contracted"],[48.2,48.24,"for"],[48.32,48.4,"a"],[48.48,48.72,"long"],[48.8,49.04,"time"],[49.2,49.36,"without"],[49.4,50.278,"tiring."]]},"w2_neuron":{"audio":"audio/ap-w2-l2-neuron.mp3","words":[[0.522,0.842,"Nervous"],[0.922,1.242,"tissue"],[1.322,1.402,"is"],[1.482,1.642,"found"],[1.682,1.722,"in"],[1.802,1.882,"the"],[2.082,2.442,"brain,"],[2.482,2.522,"the"],[2.602,2.922,"spinal"],[3.002,3.402,"cord,"],[3.442,3.482,"and"],[3.522,3.562,"the"],[3.642,4.522,"nerves."],[4.602,4.682,"Its"],[4.762,5.002,"cells"],[5.042,5.082,"are"],[5.242,5.962,"excitable,"],[6.042,6.122,"but"],[6.202,6.442,"instead"],[6.482,6.522,"of"],[6.762,7.322,"contracting,"],[7.402,7.482,"they"],[7.602,7.722,"send"],[7.802,8.922,"signals."],[8.962,9.002,"The"],[9.082,9.562,"neuron"],[9.602,9.642,"is"],[9.722,9.802,"the"],[9.882,10.282,"signaling"],[10.362,11.082,"cell."],[11.202,11.322,"Its"],[11.402,11.482,"cell"],[11.642,11.882,"body"],[11.962,12.202,"holds"],[12.282,12.322,"the"],[12.362,12.842,"nucleus"],[12.962,13.082,"and"],[13.202,13.322,"most"],[13.362,13.402,"of"],[13.442,13.482,"the"],[13.562,14.682,"organelles."],[14.762,15.162,"Short,"],[15.242,15.642,"branched"],[15.682,16.202,"dendrites"],[16.282,16.682,"receive"],[16.882,17.082,"signals"],[17.162,17.242,"from"],[17.322,17.402,"other"],[17.482,18.282,"cells."],[18.362,18.522,"A"],[18.722,18.922,"single"],[19.002,19.322,"long"],[19.402,19.882,"axon"],[19.962,20.202,"carries"],[20.282,20.362,"the"],[20.522,20.682,"signal"],[21.002,21.362,"away,"],[21.402,21.482,"toward"],[21.562,21.642,"the"],[21.762,21.882,"next"],[21.922,22.442,"neuron,"],[22.522,22.602,"a"],[22.682,23.109,"muscle,"],[23.135,23.162,"or"],[23.242,23.322,"a"],[23.362,24.282,"gland."],[24.322,24.362,"In"],[24.402,24.442,"the"],[24.522,24.842,"spinal"],[24.962,25.322,"cord,"],[25.482,25.642,"one"],[25.722,26.122,"axon"],[26.202,26.282,"can"],[26.362,26.442,"be"],[26.522,26.682,"a"],[26.882,27.082,"meter"],[27.562,28.122,"long."],[28.162,28.602,"Glia"],[28.642,28.682,"are"],[28.762,28.842,"the"],[29.042,29.242,"support"],[29.322,30.122,"cells."],[30.202,30.842,"Astrocytes"],[30.962,31.082,"help"],[31.162,31.482,"regulate"],[31.522,31.562,"the"],[31.642,31.962,"chemical"],[32.202,32.442,"environment"],[32.482,32.522,"of"],[32.602,32.682,"the"],[33.002,33.362,"brain,"],[33.402,33.562,"and"],[33.602,34.602,"oligodendrocytes"],[34.682,34.922,"wrap"],[35.002,35.402,"axons"],[35.482,35.562,"in"],[35.642,36.202,"myelin,"],[36.282,36.362,"which"],[36.442,36.722,"speeds"],[36.762,36.842,"the"],[37.322,37.902,"signal."],[38.002,38.202,"Mature"],[38.242,38.682,"neurons"],[38.802,39.082,"largely"],[39.162,39.322,"do"],[39.442,39.562,"not"],[39.922,40.309,"divide,"],[40.335,40.362,"which"],[40.442,40.522,"is"],[40.602,40.682,"why"],[40.762,41.082,"injuries"],[41.162,41.242,"to"],[41.282,41.562,"nervous"],[41.642,41.962,"tissue"],[42.042,42.282,"heal"],[42.362,42.522,"so"],[42.602,43.349,"poorly."]]},"w2_excite":{"audio":"audio/ap-w2-l2-excite.mp3","words":[[0.453,0.773,"Muscle"],[0.933,1.093,"cells"],[1.173,1.253,"and"],[1.293,1.733,"neurons"],[1.813,1.973,"hold"],[2.053,2.133,"an"],[2.293,2.693,"electrical"],[2.773,3.093,"voltage"],[3.173,3.493,"across"],[3.573,3.653,"their"],[3.733,4.573,"membranes."],[4.613,4.693,"When"],[4.733,4.773,"they"],[4.853,4.933,"are"],[5.013,5.76,"stimulated,"],[5.786,5.813,"they"],[5.893,6.053,"can"],[6.213,6.373,"change"],[6.453,6.533,"that"],[6.613,6.933,"voltage"],[7.013,7.893,"quickly."],[7.973,8.213,"That"],[8.413,8.693,"brief,"],[8.853,9.253,"traveling"],[9.413,9.573,"pulse"],[9.653,9.733,"is"],[9.813,10.053,"called"],[10.133,10.293,"an"],[10.373,10.613,"action"],[10.693,11.693,"potential."],[11.733,12.053,"Underneath"],[12.133,12.293,"it"],[12.413,12.533,"is"],[12.613,12.853,"one"],[12.933,13.173,"simple"],[13.253,14.106,"event:"],[14.24,14.373,"charged"],[14.453,15.053,"particles,"],[15.093,15.333,"called"],[15.413,16.186,"ions,"],[16.24,16.293,"move"],[16.373,16.693,"across"],[16.733,16.773,"the"],[16.853,17.773,"membrane."],[17.813,17.893,"They"],[17.973,18.213,"pass"],[18.293,18.533,"through"],[18.613,18.933,"ion"],[19.253,19.613,"channels,"],[19.653,20.133,"doorways"],[20.213,20.293,"that"],[20.373,20.613,"open"],[20.693,20.773,"and"],[20.853,21.093,"close"],[21.173,21.253,"in"],[21.333,21.44,"a"],[21.546,21.813,"precise"],[21.893,22.666,"sequence,"],[22.72,22.773,"and"],[22.853,23.013,"some"],[23.173,23.333,"doors"],[23.413,23.493,"let"],[23.573,23.813,"only"],[23.893,24.133,"certain"],[24.213,24.613,"ions"],[25.053,25.573,"through."],[25.613,25.653,"In"],[25.693,25.733,"a"],[25.813,26.413,"neuron,"],[26.453,26.533,"the"],[26.733,26.933,"moving"],[27.093,27.253,"signal"],[27.333,27.573,"heads"],[27.613,27.653,"to"],[27.733,27.813,"the"],[27.933,28.053,"next"],[28.133,28.813,"cell."],[28.853,28.893,"In"],[28.933,29.013,"a"],[29.093,29.333,"muscle"],[29.573,29.84,"cell,"],[29.866,29.893,"it"],[29.933,29.973,"is"],[30.053,30.213,"the"],[30.293,30.613,"trigger"],[30.693,30.773,"that"],[30.893,31.013,"makes"],[31.053,31.093,"the"],[31.173,31.333,"cell"],[31.893,32.533,"contract."],[32.573,32.613,"You"],[32.693,32.773,"will"],[32.853,32.933,"learn"],[32.973,33.013,"the"],[33.093,33.573,"electrical"],[33.813,34.053,"details"],[34.133,34.293,"later"],[34.373,34.453,"in"],[34.493,34.533,"the"],[34.613,35.213,"year."],[35.253,35.333,"For"],[35.413,35.933,"now,"],[35.973,36.133,"hold"],[36.213,36.293,"on"],[36.333,36.373,"to"],[36.453,36.533,"the"],[36.933,37.413,"picture:"],[37.493,37.893,"ions"],[37.973,38.213,"moving"],[38.293,38.453,"through"],[38.693,38.933,"channels"],[38.973,39.013,"are"],[39.093,39.253,"the"],[39.453,39.653,"basis"],[39.773,39.893,"of"],[39.973,40.213,"every"],[40.293,40.773,"electrical"],[40.853,41.093,"signal"],[41.173,41.253,"in"],[41.293,41.333,"the"],[41.493,41.922,"body."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'muscle and nervous tissue, the three muscle types, neurons and glia, and excitability',
+  quick: ['How do the three muscle types differ?', 'What are the parts of a neuron?', 'What is an action potential?'],
+  practice: /(write|answer|do) (my|the) (notebook|lab report|paragraph|final paragraph|focus question)|which muscle (type )?should i (pick|choose)/i,
+  guide: 'That part is yours to write, so here are my questions instead. What does your muscle cell look like, and where does it work? How do ions moving through channels make a signal? Say it out loud first, then write it in the box.',
+  notes: [
+    { k: ['excitability','excitable','electrical','other two'], w: 1.3, a: 'Muscle and nervous tissue share excitability: their cells keep an electrical voltage across the membrane and can change it rapidly in response to a stimulus. Epithelial and connective tissue do not.' },
+    { k: ['three','muscle types','skeletal','cardiac','smooth','muscle'], w: 1.2, a: 'Skeletal muscle: long, striated, multinucleated fibers, voluntary, moves bones. Cardiac: short, striated, one nucleus, intercalated discs, heart only, involuntary. Smooth: spindle-shaped, no striations, one nucleus, walls of tubes and hollow organs, involuntary, slow and tireless.' },
+    { k: ['striated','striations','stripes','bands'], a: 'Striated means banded: the contractile proteins sit in repeating bands. Skeletal and cardiac muscle are striated; smooth muscle is not, hence its name.' },
+    { k: ['intercalated','discs','heart'], a: 'Intercalated discs are junctions between cardiac cells that let electrical signals pass directly from cell to cell, so the whole heart contracts as a coordinated unit.' },
+    { k: ['neuron','cell body','soma','dendrite','dendrites','axon'], w: 1.2, a: 'A neuron has a cell body (soma) with the nucleus and most organelles, short branched dendrites that receive signals, and one long axon that carries the signal away to another neuron, a muscle, or a gland.' },
+    { k: ['glia','glial','astrocyte','oligodendrocyte','schwann','support'], a: 'Glia support neurons. Astrocytes regulate the chemical environment and help form the blood-brain barrier. Oligodendrocytes wrap axons in the brain and spinal cord in myelin; Schwann cells do it in peripheral nerves.' },
+    { k: ['myelin','insulat','fast','speed'], a: 'Myelin is a fatty insulating layer around an axon. It dramatically speeds up signal transmission.' },
+    { k: ['heal','injury','divide','regenerate'], a: 'Mature neurons largely do not divide, which is why nervous-tissue injuries heal so poorly.' },
+    { k: ['action potential','ion','ions','channel','channels','voltage','membrane','signal'], w: 1.3, a: 'An action potential is a brief, traveling pulse of electrical activity. Underneath it, ions move across the membrane through ion channels, doorways that open and close in a precise sequence. In a neuron the signal heads to the next cell; in a muscle cell it triggers contraction. The electrical details come in Module 5.' },
+    { k: ['phet','simulation','animation','video'], a: 'Open the PhET Neuron simulation from the Excitability tab and watch an action potential travel down an axon at least twice, then record a 60 to 90 second summary in plain terms.' },
+    { k: ['notebook','lab report','submit','pdf','words','length'], w: 1.2, a: 'The 2.02 Notebook: choose one muscle type, describe it (4 to 5 sentences), describe a neuron (4 to 5), explain excitability using action potential and ion channels (3 to 4), then a final paragraph on the focus question. 350 to 450 words. Download the PDF and upload it.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+/* ---- Lesson 2.02: the gate animation ---- */
+(function(){
+  var g = document.getElementById('w2gate'); if (!g) return;
+  var sv = $('.w2g-svg', g), st = $('.w2g-st', g), N = 8, timer = null;
+  function draw(front){
+    var s = '<rect x="10" y="60" width="620" height="44" fill="#F6E7B8" stroke="#C9A66B"/><text x="16" y="50" class="m2-ts">outside</text><text x="16" y="126" class="m2-ts">inside the axon</text>';
+    for (var i = 0; i < N; i++) {
+      var x = 40 + i * 76, open = front !== null && i <= front && i > front - 2, past = front !== null && i <= front - 2;
+      s += '<rect x="' + (x - 13) + '" y="56" width="26" height="52" rx="6" fill="' + (open ? '#EAF3EE' : '#fff') + '" stroke="' + (open ? '#2F6B4F' : '#8C99A8') + '" stroke-width="3"/>';
+      if (open) s += '<circle cx="' + x + '" cy="' + 90 + '" r="8" fill="#C22F4A"/><text x="' + x + '" y="94" text-anchor="middle" style="font:700 12px sans-serif;fill:#fff">+</text>';
+      else if (!past) s += '<circle cx="' + x + '" cy="38" r="8" fill="#C22F4A"/><text x="' + x + '" y="42" text-anchor="middle" style="font:700 12px sans-serif;fill:#fff">+</text>';
+    }
+    if (front !== null) s += '<path d="M' + (30 + front * 76) + ' 150 q16 -26 32 0" stroke="#C22F4A" stroke-width="4" fill="none"/><text x="' + (46 + front * 76) + '" y="166" text-anchor="middle" class="m2-ts" style="fill:#C22F4A">pulse</text>';
+    sv.innerHTML = s;
+  }
+  $('.w2g-go', g).addEventListener('click', function(){
+    clearInterval(timer); var f = 0; st.textContent = 'channels opening'; draw(0);
+    timer = setInterval(function(){ f++; if (f > N + 1) { clearInterval(timer); draw(null); st.textContent = 'at rest again'; STORE.set('w2gate', '1'); return; } draw(f); st.textContent = 'action potential travelling'; }, 420);
+  });
+  draw(null);
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>
