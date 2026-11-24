@@ -548,6 +548,12 @@ main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:v
 main .oao-3d p{margin:0}
 main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
 main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
 </style>
 
 </head>
@@ -649,8 +655,8 @@ main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
     <p class="marg"><b>Wonder.</b> The body is ordered, beautiful, and not yet fully understood. Carry that posture into every reading.</p>
     <article class="atlas">
       <h3>Anatomy and physiology</h3>
-      <p><b>Anatomy</b> is the study of the body&rsquo;s structures: what each part is, where it sits, and how it relates spatially to everything around it. The word comes from the Greek <i>anatom&#275;</i> &mdash; &ldquo;a cutting up.&rdquo; For most of medical history, anatomy was learned by careful dissection of cadavers, drawing what was seen and tracing where each part led. Today we still dissect, but we also have CT and MRI scans, ultrasound, microscopy, and three-dimensional imaging tools to study the same structures without ever cutting tissue.</p>
-      <p><b>Physiology</b> is the study of what those structures do. It asks: how does this part work? What process does it carry out? What signals does it respond to, and what does it produce? &ldquo;Physiology&rdquo; comes from the Greek <i>physis</i>, meaning &ldquo;nature,&rdquo; and -ology, meaning &ldquo;the study of.&rdquo; Physiology is the natural functioning of the body&rsquo;s parts.</p>
+      <p><b>Anatomy</b><button type="button" class="say" data-say="anatomy" aria-label="Hear it: anatomy" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the study of the body&rsquo;s structures: what each part is, where it sits, and how it relates spatially to everything around it. The word comes from the Greek <i>anatom&#275;</i> &mdash; &ldquo;a cutting up.&rdquo; For most of medical history, anatomy was learned by careful dissection of cadavers, drawing what was seen and tracing where each part led. Today we still dissect, but we also have CT and MRI scans, ultrasound, microscopy, and three-dimensional imaging tools to study the same structures without ever cutting tissue.</p>
+      <p><b>Physiology</b><button type="button" class="say" data-say="physiology" aria-label="Hear it: physiology" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the study of what those structures do. It asks: how does this part work? What process does it carry out? What signals does it respond to, and what does it produce? &ldquo;Physiology&rdquo; comes from the Greek <i>physis</i>, meaning &ldquo;nature,&rdquo; and -ology, meaning &ldquo;the study of.&rdquo; Physiology is the natural functioning of the body&rsquo;s parts.</p>
       <p>The two cannot be separated. You cannot understand how a heart pumps blood without first knowing the shape of its four chambers and the angle of its valves. You cannot understand how a kidney filters waste without knowing the architecture of its tubules. You cannot explain why a tendon can resist tearing while a muscle cannot, without knowing how their cells and fibers are arranged.</p>
       <p>The phrase that captures this &mdash; and that you will hear in every module of this course &mdash; is <b>form follows function</b>. The body does not have arbitrary shapes. Each shape is, biologically speaking, the answer to a question about what that part of the body needs to do. A long, narrow bone is built for leverage. A flat bone is built to protect what is underneath. A tube with a folded inner lining is built to maximize the surface area where absorption happens. Whenever you encounter a new structure this year, your first habit should be to ask: what is this shape good at?</p>
     </article>
@@ -749,14 +755,14 @@ main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
       <h4>Chemical level</h4>
       <p>Atoms (carbon, oxygen, hydrogen, nitrogen, phosphorus, sulfur, and trace others) bond into molecules. Some molecules are small (water, glucose, the amino acid glycine). Some are very large &mdash; proteins fold into shapes thousands of atoms across, and the DNA in a single human cell, if stretched out, would span roughly six feet. All life-supporting chemistry begins here. The molecules of life &mdash; proteins, nucleic acids, carbohydrates, and lipids &mdash; make up the cellular machinery.</p>
       <h4>Cellular level</h4>
-      <p>Molecules organize into cells, the smallest units of life. Knowing that Cyt-, which is Greek for &ldquo;cell,&rdquo; helps us understand that <b>cytology</b> is the study of cells. Your body has roughly 30 to 40 trillion cells of about 200 different types. A few are large enough to see with the unaided eye (an unfertilized human egg cell is just visible). Most are not &mdash; a typical red blood cell is about 7 micrometers across, and you would need to lay roughly 3,500 of them end-to-end to span an inch. Every cell carries the same DNA, but each one expresses only a fraction of it. The choices about which genes to use are what make a muscle cell different from a neuron, even though their genetic instruction sets are identical.</p>
+      <p>Molecules organize into cells, the smallest units of life. Knowing that Cyt-, which is Greek for &ldquo;cell,&rdquo; helps us understand that <b>cytology</b><button type="button" class="say" data-say="cytology" aria-label="Hear it: cytology" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the study of cells. Your body has roughly 30 to 40 trillion cells of about 200 different types. A few are large enough to see with the unaided eye (an unfertilized human egg cell is just visible). Most are not &mdash; a typical red blood cell is about 7 micrometers across, and you would need to lay roughly 3,500 of them end-to-end to span an inch. Every cell carries the same DNA, but each one expresses only a fraction of it. The choices about which genes to use are what make a muscle cell different from a neuron, even though their genetic instruction sets are identical.</p>
       <div class="inset">
         <div class="ilabel">THE FIRST PERSON TO SEE THE CELLULAR LEVEL</div>
         <p>Antonie van Leeuwenhoek (1632&ndash;1723) was a Dutch fabric merchant who taught himself to grind glass into lenses powerful enough to magnify objects nearly 270 times. He used his hand-built microscopes to examine pond water, blood, plaque scraped from his own teeth, and semen &mdash; and was the first human being to see what we now call the cellular level of organization. He called the moving creatures he found &ldquo;animalcules.&rdquo; Modern biology calls them bacteria, protozoa, and human sperm cells.</p>
         <p>Over fifty years he sent more than 190 letters describing his observations to the Royal Society in London. Most of his contemporaries had no instruments capable of seeing what he claimed to see, and for years some assumed he was inventing it. He never let anyone else use his most powerful lenses, and his specific grinding technique was lost when he died. The cell theory we take for granted &mdash; that all living things are built from cells &mdash; was not formally proposed until more than a century after Leeuwenhoek first looked through his lens.</p>
       </div>
       <h4>Tissue level</h4>
-      <p>Cells of similar type and function group into tissues. Histos is a Greek word meaning &ldquo;web&rdquo; or &ldquo;tissue,&rdquo; which helps us understand that <b>histology</b> is the study of tissues. Despite the body&rsquo;s variety, there are exactly four tissue types: epithelial, connective, muscle, and nervous. Their proportions and arrangements are what give every organ its character. A liver is mostly connective tissue carrying a vast bed of epithelial cells. A biceps is mostly muscle tissue with connective sheaths. A nerve is nervous tissue wrapped in connective tissue.</p>
+      <p>Cells of similar type and function group into tissues. Histos is a Greek word meaning &ldquo;web&rdquo; or &ldquo;tissue,&rdquo; which helps us understand that <b>histology</b><button type="button" class="say" data-say="histology" aria-label="Hear it: histology" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the study of tissues. Despite the body&rsquo;s variety, there are exactly four tissue types: epithelial, connective, muscle, and nervous. Their proportions and arrangements are what give every organ its character. A liver is mostly connective tissue carrying a vast bed of epithelial cells. A biceps is mostly muscle tissue with connective sheaths. A nerve is nervous tissue wrapped in connective tissue.</p>
       <h4>Organ level</h4>
       <p>Two or more tissue types combine into a structure that performs a specific function &mdash; an organ. Your stomach is an organ. So is your skin (the largest organ in the body, by area and by mass). So is each kidney, each lung, each eye, the heart, and the bladder. Every organ has a job, and every organ uses multiple tissue types to do it.</p>
       <h4>Organ system level</h4>
@@ -1016,17 +1022,17 @@ main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
 </main>
 
 <template id="fg"><dl class="fg">
-  <dt>anatomy <small>Greek anatom&#275;, &ldquo;a cutting up&rdquo;</small></dt><dd>The study of the body&rsquo;s structures: what each part is, where it sits, and how it relates spatially to everything around it.</dd>
-  <dt>physiology <small>Greek physis, &ldquo;nature&rdquo; + -ology</small></dt><dd>The study of what those structures do: the natural functioning of the body&rsquo;s parts.</dd>
-  <dt>-ology</dt><dd>&ldquo;The study of.&rdquo;</dd>
+  <dt>anatomy<button type="button" class="say" data-say="anatomy" aria-label="Hear it: anatomy" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek anatom&#275;, &ldquo;a cutting up&rdquo;</small></dt><dd>The study of the body&rsquo;s structures: what each part is, where it sits, and how it relates spatially to everything around it.</dd>
+  <dt>physiology<button type="button" class="say" data-say="physiology" aria-label="Hear it: physiology" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek physis, &ldquo;nature&rdquo; + -ology</small></dt><dd>The study of what those structures do: the natural functioning of the body&rsquo;s parts.</dd>
+  <dt>-ology<button type="button" class="say" data-say="ology" aria-label="Hear it: -ology" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>&ldquo;The study of.&rdquo;</dd>
   <dt>form follows function</dt><dd>Each shape in the body is the answer to a question about what that part needs to do.</dd>
   <dt>chemical level</dt><dd>Atoms bond into molecules, small (water, glucose) and very large (proteins, DNA).</dd>
   <dt>cell <small>Greek cyt-, &ldquo;cell&rdquo;</small></dt><dd>The smallest unit of life. Cytology is the study of cells.</dd>
-  <dt>tissue <small>Greek histos, &ldquo;web&rdquo; or &ldquo;tissue&rdquo;</small></dt><dd>Cells of similar type and function grouped together. Exactly four types: epithelial, connective, muscle, nervous. Histology is the study of tissues.</dd>
+  <dt>tissue<button type="button" class="say" data-say="tissue" aria-label="Hear it: tissue" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek histos, &ldquo;web&rdquo; or &ldquo;tissue&rdquo;</small></dt><dd>Cells of similar type and function grouped together. Exactly four types: epithelial, connective, muscle, nervous. Histology is the study of tissues.</dd>
   <dt>organ</dt><dd>Two or more tissue types combined into a structure that performs a specific function.</dd>
   <dt>organ system</dt><dd>Organs working together toward a shared task. The body has eleven.</dd>
-  <dt>organism</dt><dd>All eleven systems together: you, a single living organism.</dd>
-  <dt>Antonie van Leeuwenhoek</dt><dd>Dutch fabric merchant (1632&ndash;1723) whose hand-ground lenses made him the first person to see the cellular level.</dd>
+  <dt>organism<button type="button" class="say" data-say="organism" aria-label="Hear it: organism" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>All eleven systems together: you, a single living organism.</dd>
+  <dt>Antonie van Leeuwenhoek<button type="button" class="say" data-say="leeuwenhoek" aria-label="Hear it: antonie van leeuwenhoek" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Dutch fabric merchant (1632&ndash;1723) whose hand-ground lenses made him the first person to see the cellular level.</dd>
 </dl></template>
 
 <footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology · Week 1</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
@@ -1773,6 +1779,22 @@ $$('.narrate').forEach(function(box){
       changed();
     }, 30);
   });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
 })();
 </script>
 </body>

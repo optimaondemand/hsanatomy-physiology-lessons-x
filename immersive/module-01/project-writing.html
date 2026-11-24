@@ -596,6 +596,12 @@ main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:v
 main .oao-3d p{margin:0}
 main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
 main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
 </style>
 
 </head>
@@ -984,9 +990,9 @@ main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
   <dt>set point</dt><dd>The value or narrow range a variable is held to.</dd>
   <dt>sensor <small>also called a receptor</small></dt><dd>Detects when the variable drifts from its set point.</dd>
   <dt>integrating center <small>also called a control center</small></dt><dd>Compares the sensor&rsquo;s signal to the set point and decides on a response. Often a region of the brain.</dd>
-  <dt>effector</dt><dd>Carries out the response, pushing the variable back toward its set point.</dd>
-  <dt>homeostasis</dt><dd>The maintenance of stable internal conditions in the face of external change.</dd>
-  <dt>macromolecule</dt><dd>One of four classes of large biological molecule: carbohydrate, lipid, protein, nucleic acid.</dd>
+  <dt>effector<button type="button" class="say" data-say="effector" aria-label="Hear it: effector" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Carries out the response, pushing the variable back toward its set point.</dd>
+  <dt>homeostasis<button type="button" class="say" data-say="homeostasis" aria-label="Hear it: homeostasis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The maintenance of stable internal conditions in the face of external change.</dd>
+  <dt>macromolecule<button type="button" class="say" data-say="macromolecule" aria-label="Hear it: macromolecule" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>One of four classes of large biological molecule: carbohydrate, lipid, protein, nucleic acid.</dd>
   <dt>six levels</dt><dd>Chemical, cellular, tissue, organ, organ system, organismal. Each is built from the level below.</dd>
 </dl></template>
 
@@ -1759,6 +1765,22 @@ $$('.narrate').forEach(function(box){
       changed();
     }, 30);
   });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
 })();
 </script>
 </body>

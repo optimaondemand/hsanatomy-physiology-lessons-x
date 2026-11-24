@@ -508,6 +508,12 @@ main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:v
 main .oao-3d p{margin:0}
 main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
 main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
 </style>
 
 </head>
@@ -892,19 +898,19 @@ main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
 </main>
 
 <template id="fg"><dl class="fg">
-  <dt>anatomical position</dt><dd>Standing upright, facing forward, feet parallel, arms at the sides, palms forward. Every directional term assumes it.</dd>
-  <dt>superior / inferior</dt><dd>Toward the head / toward the feet.</dd>
-  <dt>anterior / posterior</dt><dd>Toward the front / toward the back. In humans, ventral and dorsal mean roughly the same.</dd>
-  <dt>medial / lateral</dt><dd>Toward the body&rsquo;s midline / away from the midline.</dd>
-  <dt>proximal / distal</dt><dd>Closer to the trunk / farther from the trunk. Used for limbs.</dd>
-  <dt>superficial / deep</dt><dd>Closer to the body&rsquo;s surface / farther from it.</dd>
-  <dt>sagittal plane</dt><dd>A vertical plane dividing the body into left and right portions. On the midline it is the midsagittal (median) plane; off center, parasagittal.</dd>
-  <dt>frontal plane <small>also called coronal</small></dt><dd>A vertical plane dividing the body into anterior and posterior portions.</dd>
-  <dt>transverse plane <small>also called horizontal</small></dt><dd>A horizontal plane dividing the body into superior and inferior portions.</dd>
-  <dt>cranial cavity</dt><dd>The space inside the skull; holds the brain.</dd>
-  <dt>thoracic cavity</dt><dd>The chest cavity, above the diaphragm; holds the heart and lungs.</dd>
-  <dt>abdominal cavity</dt><dd>Between the diaphragm and the pelvis; holds most digestive organs.</dd>
-  <dt>pelvic cavity</dt><dd>The lowest cavity, inside the hip bones; holds the urinary bladder and the rectum.</dd>
+  <dt>anatomical position<button type="button" class="say" data-say="anatomical-position" aria-label="Hear it: anatomical position" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Standing upright, facing forward, feet parallel, arms at the sides, palms forward. Every directional term assumes it.</dd>
+  <dt>superior<button type="button" class="say" data-say="superior" aria-label="Hear it: superior" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / inferior<button type="button" class="say" data-say="inferior" aria-label="Hear it: inferior" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Toward the head / toward the feet.</dd>
+  <dt>anterior<button type="button" class="say" data-say="anterior" aria-label="Hear it: anterior" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / posterior<button type="button" class="say" data-say="posterior" aria-label="Hear it: posterior" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Toward the front / toward the back. In humans, ventral and dorsal mean roughly the same.</dd>
+  <dt>medial<button type="button" class="say" data-say="medial" aria-label="Hear it: medial" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / lateral<button type="button" class="say" data-say="lateral" aria-label="Hear it: lateral" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Toward the body&rsquo;s midline / away from the midline.</dd>
+  <dt>proximal<button type="button" class="say" data-say="proximal" aria-label="Hear it: proximal" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / distal<button type="button" class="say" data-say="distal" aria-label="Hear it: distal" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Closer to the trunk / farther from the trunk. Used for limbs.</dd>
+  <dt>superficial<button type="button" class="say" data-say="superficial" aria-label="Hear it: superficial" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / deep</dt><dd>Closer to the body&rsquo;s surface / farther from it.</dd>
+  <dt>sagittal plane<button type="button" class="say" data-say="sagittal" aria-label="Hear it: sagittal plane" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A vertical plane dividing the body into left and right portions. On the midline it is the midsagittal (median) plane; off center, parasagittal.</dd>
+  <dt>frontal plane<button type="button" class="say" data-say="frontal" aria-label="Hear it: frontal plane" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>also called coronal</small></dt><dd>A vertical plane dividing the body into anterior and posterior portions.</dd>
+  <dt>transverse plane<button type="button" class="say" data-say="transverse" aria-label="Hear it: transverse plane" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>also called horizontal</small></dt><dd>A horizontal plane dividing the body into superior and inferior portions.</dd>
+  <dt>cranial cavity<button type="button" class="say" data-say="cranial" aria-label="Hear it: cranial cavity" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The space inside the skull; holds the brain.</dd>
+  <dt>thoracic cavity<button type="button" class="say" data-say="thoracic" aria-label="Hear it: thoracic cavity" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The chest cavity, above the diaphragm; holds the heart and lungs.</dd>
+  <dt>abdominal cavity<button type="button" class="say" data-say="abdominal" aria-label="Hear it: abdominal cavity" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Between the diaphragm and the pelvis; holds most digestive organs.</dd>
+  <dt>pelvic cavity<button type="button" class="say" data-say="pelvic" aria-label="Hear it: pelvic cavity" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The lowest cavity, inside the hip bones; holds the urinary bladder and the rectum.</dd>
   <dt>organ system</dt><dd>A group of organs working together on a shared task. This course is built around eleven.</dd>
 </dl></template>
 
@@ -1633,6 +1639,22 @@ $$('.narrate').forEach(function(box){
       changed();
     }, 30);
   });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
 })();
 </script>
 </body>
