@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Bone Biology: Tissue, Shapes, and Markings · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+@media (max-width:640px){.idrow,.idhead{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A human femur cut across its shaft, showing a thick wall of compact bone around the hollow medullary cavity" style="background-image:url(img/lesson-3-01-hero.jpg);background-position:center 55%"><span class="hlab">Femur · cross-section of the diaphysis</span><span class="hcred">Image: MAKY.OREL, CC0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 3.01 &middot; Module 3: Skeletal System</div>
+      <h1>Bone Biology: Tissue, Shapes, and Markings</h1>
+      <div class="focusq"><div class="label">Focus</div><p>If bones were not shaped the way they are, what could you no longer do?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to describe bone as living tissue and name the five major functions of the skeletal system.</li><li>I will be able to compare compact and spongy bone tissue and explain where each is found in a typical long bone.</li><li>I will be able to classify a bone as long, short, flat, or irregular and give a functional reason for the shape.</li><li>I will be able to identify bone markings (projection, depression, opening) on a sample bone and explain what each one is for.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">One bone, two tissues</div>
+      <svg class="m2-fig" viewBox="0 0 360 230" role="img" aria-label="A long bone with spongy ends, a compact shaft and a hollow medullary cavity">
+  <rect x="10" y="10" width="340" height="210" rx="14" fill="#F4F7FB"/><g><ellipse cx="75.0" cy="105.0" rx="45.0" ry="45.0" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2.5"/><ellipse cx="285.0" cy="105.0" rx="45.0" ry="45.0" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2.5"/><rect x="84.0" y="79.8" width="192.0" height="50.400000000000006" fill="#E9D3A8" stroke="#9C7A3C" stroke-width="2.5"/><rect x="88.0" y="95.1" width="184.0" height="19.800000000000004" fill="#F3C9A7"/><circle cx="80.0" cy="105.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="289.9" cy="105.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="81.2" cy="112.8" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="291.2" cy="112.8" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="71.6" cy="119.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="281.6" cy="119.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="57.1" cy="113.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="267.1" cy="113.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="52.8" cy="94.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="262.8" cy="94.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="74.0" cy="100.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="284.0" cy="100.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="81.3" cy="97.3" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="291.3" cy="97.3" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="89.8" cy="105.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="299.8" cy="105.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="87.0" cy="120.7" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="297.0" cy="120.7" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="69.0" cy="129.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="279.0" cy="129.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="70.5" cy="107.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="280.5" cy="107.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="66.2" cy="100.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="276.2" cy="100.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="72.1" cy="90.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="282.1" cy="90.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="87.8" cy="89.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="297.8" cy="89.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="99.7" cy="105.8" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="309.7" cy="105.8" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="77.9" cy="109.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="287.9" cy="109.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="72.4" cy="114.6" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="282.4" cy="114.6" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="61.4" cy="110.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="271.4" cy="110.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/></g><text x="40" y="48" class="m2-ts">epiphysis: spongy bone</text><text x="130" y="185" class="m2-ts">diaphysis: compact bone wall</text><text x="130" y="203" class="m2-ts">medullary cavity: marrow</text>
+  <path d="M75 52 l10 28" stroke="#C22F4A" stroke-width="1.6"/><path d="M180 172 l0 -30" stroke="#C22F4A" stroke-width="1.6"/></svg>
+      <div class="cap">A long bone: dense compact bone in the shaft, porous spongy bone in the ends, marrow in the middle.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="living" role="tab"><span class="n">01</span>Living Bone</button>
+  <button class="tab" data-tab="tissue" role="tab"><span class="n">02</span>Compact, Spongy, Cells</button>
+  <button class="tab" data-tab="shapes" role="tab"><span class="n">03</span>Shapes and Markings</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 LIVING BONE ═════════ -->
+<section class="panel" id="tab-living" role="tabpanel">
+  <div class="vo" data-clip="w3_living">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Bone Is Alive</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A long bone, then the five jobs of the skeleton"><g data-step="0" class="nohalo"><g><ellipse cx="135.0" cy="115.0" rx="75.0" ry="75.0" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2.5"/><ellipse cx="545.0" cy="115.0" rx="75.0" ry="75.0" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2.5"/><rect x="150.0" y="73.0" width="380.0" height="84.00000000000001" fill="#E9D3A8" stroke="#9C7A3C" stroke-width="2.5"/><rect x="154.0" y="98.5" width="372.0" height="33.00000000000001" fill="#F3C9A7"/><circle cx="143.2" cy="115.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="553.2" cy="115.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="145.3" cy="127.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="555.3" cy="127.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="129.4" cy="139.1" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="539.4" cy="139.1" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="105.2" cy="129.1" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="515.2" cy="129.1" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="98.0" cy="96.7" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="508.0" cy="96.7" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="133.3" cy="106.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="543.3" cy="106.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="145.5" cy="102.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="555.5" cy="102.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="159.7" cy="115.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="569.7" cy="115.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="155.1" cy="141.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="565.1" cy="141.2" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="125.0" cy="155.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="535.0" cy="155.0" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="127.5" cy="118.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="537.5" cy="118.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="120.3" cy="107.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="530.3" cy="107.5" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="130.2" cy="90.7" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="540.2" cy="90.7" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="156.4" cy="89.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="566.4" cy="89.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="176.2" cy="116.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="586.2" cy="116.4" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="139.9" cy="121.6" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="549.9" cy="121.6" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="130.7" cy="130.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="540.7" cy="130.9" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="112.3" cy="124.8" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/><circle cx="522.3" cy="124.8" r="4" fill="none" stroke="#C9A66B" stroke-width="1.5"/></g><text x="340" y="230" class="m2-t" text-anchor="middle">living tissue: blood vessels, nerves, cells</text></g><g data-step="1" class="nohalo"><text x="340" y="270" class="m2-t" text-anchor="middle" style="fill:#C22F4A">206 bones, and every one is an organ</text></g><g data-step="2" class="nohalo"><rect x="20" y="10" width="120" height="26" rx="13" fill="#E8F0FA" stroke="#1E5AA0"/><text x="80" y="28" class="m2-ts" text-anchor="middle">support</text><rect x="152" y="10" width="120" height="26" rx="13" fill="#E8F0FA" stroke="#1E5AA0"/><text x="212" y="28" class="m2-ts" text-anchor="middle">protection</text></g><g data-step="3" class="nohalo"><rect x="284" y="10" width="120" height="26" rx="13" fill="#E8F0FA" stroke="#1E5AA0"/><text x="344" y="28" class="m2-ts" text-anchor="middle">movement</text><rect x="416" y="10" width="120" height="26" rx="13" fill="#E8F0FA" stroke="#1E5AA0"/><text x="476" y="28" class="m2-ts" text-anchor="middle">storage</text></g><g data-step="4" class="nohalo"><rect x="548" y="10" width="120" height="26" rx="13" fill="#FBEBE7" stroke="#C22F4A"/><text x="608" y="28" class="m2-ts" text-anchor="middle">blood cells</text><circle cx="560" cy="118" r="10" fill="#C22F4A"/><circle cx="582" cy="104" r="8" fill="#C22F4A"/><circle cx="574" cy="130" r="7" fill="#7A4FA0"/></g><g data-step="5" class="nohalo"><text x="340" y="292" class="m2-ts" text-anchor="middle">about 10% of the skeleton is replaced every year</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Bone is not dry and finished. It is living connective tissue, fed by blood, threaded with nerves, and rebuilding itself all the time.", "An adult has two hundred six bones, and each one is an organ: bone tissue, plus periosteum, cartilage, nerves, and blood vessels.", "The skeleton has five jobs. Support: it is the body's frame. Protection: the skull, the vertebrae, the ribs, and the pelvis guard what lies inside.", "Movement: muscles pull, and bones act as levers. Mineral storage: more than ninety-nine percent of your calcium is banked in bone.", "And hematopoiesis: red marrow inside certain bones makes nearly all of your red cells, white cells, and platelets.", "Keep the word remodeling in mind. About ten percent of your skeleton is replaced every year, by cells you will meet in the next tab."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Why bone counts as living tissue and as an organ, and the five jobs of the skeleton.</span></div>
+    <p class="marg"><b>Perseverance.</b> The skeleton is what endures. Every load you have ever borne was managed by a frame that quietly rebuilds itself under stress.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="3.01-reading" data-title="The adult skeleton: all 206 bones" data-src="../../assets/models/03-01-skeleton.glb" data-poster="../../assets/models/03-01-skeleton.webp" data-alt="3D model: Skeleton" data-orbit="0deg 80deg auto"></div>
+      <h3>Bone is living tissue</h3>
+      <p>If you have ever seen a skeleton in a biology classroom, you may have come away thinking of bones as inert — dry, rigid, finished objects that simply hold the body up. They are not. The bones in your body right now are <b>active connective tissue</b>: full of living cells, fed by blood vessels, threaded with nerves, and constantly remodeling themselves in response to the loads you place on them. The skeleton you have today is not the skeleton you had ten years ago. The atoms have been replaced, the architecture has shifted, and the bones you walk on tomorrow morning will be slightly different from the bones you walked on this morning.</p>
+      <figure class="plate"><img data-img="f30101" alt="The axial skeleton (tan) and appendicular skeleton (green), anterior and posterior views"><figcaption>Figure — The axial skeleton (tan) and appendicular skeleton (green), anterior and posterior views.</figcaption></figure>
+      <p>An adult human skeleton has <b>206 bones</b>. Each one is a separate organ — remember that an organ is two or more tissue types working together for a specific function. Bones contain bone tissue, of course, but also connective tissue (the periosteum that wraps each bone), cartilage (at the joint surfaces and inside developing bone), nervous tissue (sensory and pain fibers), and vascular tissue (the blood vessels feeding the cells). The femur in your thigh is an organ. So is the smallest bone of your inner ear. Every one of them is alive.</p>
+      <figure class="plate"><img data-img="f30102" alt="Macroscopic anatomy of a long bone, showing the diaphysis, epiphyses, medullary cavity, and periosteum"><figcaption>Figure — Macroscopic anatomy of a long bone: diaphysis, epiphyses, medullary cavity, and periosteum.</figcaption></figure>
+      <p>The skeletal system as a whole has five major jobs. <b>Support</b>: it gives the body its frame, the way the studs and beams of a house give the house its frame. <b>Protection</b>: the skull surrounds the brain, the vertebrae surround the spinal cord, the rib cage shields the heart and lungs, and the pelvis cradles the bladder and reproductive organs. <b>Movement</b>: muscles pull on bones, and bones lever the body through space. <b>Mineral storage</b>: more than 99% of the body’s calcium is stored in bone, along with most of its phosphorus — both released into the bloodstream as needed. <b>Hematopoiesis</b><button type="button" class="say" data-say="hematopoiesis" aria-label="Hear it: hematopoiesis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (<i>hemo-</i> = blood, <i>-poiesis</i> = formation, making): red bone marrow inside certain bones produces nearly all of the body’s red blood cells, white blood cells, and platelets. This last function is the cross-connection to the cardiovascular system that you will meet again in Module 7.</p>
+      <figure class="plate"><img data-img="f30103" alt="Hematopoiesis: hematopoietic stem cells in red bone marrow give rise to red blood cells, white blood cells, and platelets"><figcaption>Figure — Hematopoiesis: red bone marrow’s hematopoietic stem cells give rise to red blood cells, white blood cells, and platelets.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Five Jobs</h2></div>
+    <p class="hint">Tap a job, then tap the function it belongs to.</p>
+    <div class="place card" id="w3fj">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="pro" data-fb="Protection: a bony case." data-miss="What would happen to the brain without it?">the skull around the brain</button>
+        <button class="chip" data-k="b" data-ans="mov" data-fb="Movement: muscles pull, the bone is the lever." data-miss="Muscles pull on it to move you.">the femur levering you up a stair</button>
+        <button class="chip" data-k="c" data-ans="sto" data-fb="Mineral storage: bone is the calcium bank." data-miss="Where is 99 percent of your calcium kept?">calcium released when blood levels drop</button>
+        <button class="chip" data-k="d" data-ans="bld" data-fb="Hematopoiesis: blood-cell formation." data-miss="hemo- = blood, -poiesis = making.">red marrow making platelets</button>
+        <button class="chip" data-k="e" data-ans="sup" data-fb="Support: the studs and beams of the house." data-miss="The frame everything hangs on.">the frame that holds your shape</button>
+        <button class="chip" data-k="f" data-ans="pro" data-fb="Protection again: the rib cage is a shield." data-miss="What lies behind the ribs?">ribs around the heart and lungs</button>
+        <button class="chip" data-k="g" data-ans="sto" data-fb="Mineral storage: phosphorus too." data-miss="A mineral kept in bone.">phosphorus banked in the matrix</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="sup"><h4>Support</h4><div class="drop"></div></div><div class="bin" data-bin="pro"><h4>Protection</h4><div class="drop"></div></div><div class="bin" data-bin="mov"><h4>Movement</h4><div class="drop"></div></div><div class="bin" data-bin="sto"><h4>Storage</h4><div class="drop"></div></div><div class="bin" data-bin="bld"><h4>Blood cells</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">The reading calls each bone an organ. In two or three sentences, explain why, naming at least three tissue types found in a bone such as the femur.</p><textarea class="jbox" id="w3t1" data-label="Your Turn: why a bone is an organ" data-min="25"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="tissue" type="button">Next: Compact, Spongy, Cells &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 COMPACT, SPONGY, CELLS ═════════ -->
+<section class="panel" id="tab-tissue" role="tabpanel">
+  <div class="vo" data-clip="w3_tissue">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Two Tissues, Three Cells</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Compact bone osteons, spongy bone trabeculae, and the three bone cells"><g data-step="0" class="nohalo"><rect x="20" y="40" width="300" height="200" rx="12" fill="#E9D3A8" stroke="#9C7A3C" stroke-width="2"/><text x="170" y="30" class="m2-t" text-anchor="middle">compact bone</text></g><g data-step="1" class="nohalo"><g transform="translate(80,95)"><circle r="34" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="26" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="18" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="10" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="5" fill="#C22F4A"/></g><g transform="translate(170,95)"><circle r="34" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="26" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="18" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="10" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="5" fill="#C22F4A"/></g><g transform="translate(260,95)"><circle r="34" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="26" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="18" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="10" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="5" fill="#C22F4A"/></g><g transform="translate(80,185)"><circle r="34" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="26" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="18" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="10" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="5" fill="#C22F4A"/></g><g transform="translate(170,185)"><circle r="34" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="26" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="18" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="10" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="5" fill="#C22F4A"/></g><g transform="translate(260,185)"><circle r="34" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="26" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="18" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="10" fill="none" stroke="#9C7A3C" stroke-width="2"/><circle r="5" fill="#C22F4A"/></g><text x="170" y="262" class="m2-ts" text-anchor="middle">osteons: lamellae around a central canal</text></g><g data-step="2" class="nohalo"><rect x="360" y="40" width="300" height="200" rx="12" fill="#FBEFF0" stroke="#9C7A3C" stroke-width="2"/><path d="M380 60 L400 220" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M408 72 L426 206" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M436 84 L452 192" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M464 60 L478 178" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M492 72 L504 220" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M520 84 L530 206" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M548 60 L556 192" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M576 72 L582 178" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M604 84 L608 220" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><path d="M632 60 L634 206" stroke="#C9A66B" stroke-width="6" stroke-linecap="round"/><text x="510" y="30" class="m2-t" text-anchor="middle">spongy bone</text><text x="510" y="262" class="m2-ts" text-anchor="middle">trabeculae follow the lines of force</text></g><g data-step="3" class="nohalo"><text x="20" y="290" class="m2-ts" style="fill:#2F6B4F">osteoblast: builds</text><text x="250" y="290" class="m2-ts" style="fill:#C22F4A">osteoclast: dissolves</text></g><g data-step="4" class="nohalo"><text x="480" y="290" class="m2-ts" style="fill:#1E5AA0">osteocyte: senses strain</text></g><g data-step="5" class="nohalo"><rect x="230" y="120" width="220" height="40" rx="20" fill="#0B1B33"/><text x="340" y="146" class="m2-tw" text-anchor="middle">build · break down · sense</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Every bone is built from two kinds of bone tissue. Compact bone is dense and solid. It forms the outer shell, and the shaft of a long bone.", "Its unit is the osteon: rings of mineralized matrix, called lamellae, around a central canal that carries a blood vessel and a nerve.", "Spongy bone fills the ends. Its thin struts, the trabeculae, line up along the forces the bone must carry, and the spaces between them hold marrow.", "Three cells run the place. Osteoblasts build new matrix. Osteoclasts dissolve it and release calcium and phosphorus to the blood.", "Osteocytes are osteoblasts that walled themselves in. Sitting in their lacunae, they sense strain and signal when the bone needs reinforcing.", "Build, break down, sense. That partnership is why a bone grows stronger exactly where you load it."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Compact and spongy bone, where each sits in a long bone, and the cells that build and remodel it.</span></div>
+    <article class="atlas">
+      <h3>Two kinds of bone tissue</h3>
+      <p>At the tissue level, every bone is built from two kinds of bone tissue, arranged differently in different locations.</p>
+      <h4>Compact (cortical) bone</h4>
+      <p><b>Compact bone</b> (<i>ost-, osteo-</i> = bone) is dense and solid. It forms the outer shell of every bone in the body, and the long shaft of the bones in your arms and legs. Under a microscope, compact bone is organized into <i>osteons</i> — concentric rings of mineralized matrix, called <i>lamellae</i>, wrapped around a central canal that carries a blood vessel and a nerve. Trapped between the lamellae are tiny spaces called <i>lacunae</i>, each holding one bone cell, connected to its neighbors by a microscopic web of channels called <i>canaliculi</i> — the routes nutrients and waste travel through solid bone. Each osteon is a tiny structural unit. Many osteons packed side by side give compact bone its remarkable resistance to compression. Compact bone is what an architect would call <i>load-bearing material</i>.</p>
+      <figure class="plate"><img data-img="f30104" alt="Compact bone tissue, showing osteons, concentric lamellae, and a central canal, with a micrograph of a single osteon"><figcaption>Figure — (a) Compact bone tissue, with osteons, concentric lamellae, and a central canal; (b) a single osteon under the microscope.</figcaption></figure>
+      <p>Zoom back out to the whole bone, and a typical long bone has a matching large-scale architecture. The shaft — the <i>diaphysis</i> (<i>-physis</i> = to grow) — is almost entirely compact bone wrapped around a hollow <i>medullary cavity</i>. At each end, the shaft widens through a transition zone called the <i>metaphysis</i> into the <i>epiphysis</i>, the rounded end built mostly of spongy bone that articulates with the neighboring bone at a joint. Two connective-tissue membranes complete the picture: the <i>periosteum</i> (<i>peri-</i> = around, surrounding) is a tough sheath wrapping the entire outer surface of the bone, anchoring muscle tendons and carrying the blood vessels and nerves that keep the bone alive; the <i>endosteum</i> is a thinner membrane lining the inside of the medullary cavity and the surfaces of spongy bone, where most of the cellular activity of bone remodeling actually happens.</p>
+      <figure class="plate"><img data-img="f30105" alt="Compact and spongy bone, showing where each type sits within a long bone"><figcaption>Figure — Compact and spongy bone within a long bone: dense compact bone forms the shaft, porous spongy bone fills the ends.</figcaption></figure>
+      <h4>Spongy (trabecular) bone</h4>
+      <p><b>Spongy bone</b> is found inside the ends of long bones, inside flat bones (like the bones of the skull), and inside vertebral bodies. It looks porous — like a frozen sea sponge — but the porosity is deceptive. The thin struts of bone tissue inside spongy bone, called <i>trabeculae</i>, are arranged precisely along the lines of force that the bone has to handle. Spongy bone is light, strong, and uses far less material than compact bone would. It also leaves spaces — spaces that are filled with bone marrow.</p>
+      <figure class="plate"><img data-img="f30106" alt="Spongy bone in cross-section, showing trabeculae, canaliculi, lacunae, and osteocytes"><figcaption>Figure — Spongy bone in cross-section: trabeculae, canaliculi, lacunae, and the osteocytes and osteoblasts lining them.</figcaption></figure>
+      <h4>The cells of bone</h4>
+      <p>Three cell types make and maintain bone. <b>Osteoblasts</b><button type="button" class="say" data-say="osteoblast" aria-label="Hear it: osteoblasts" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (<i>-blast</i> = embryonic, formative cell, stem cell) build new bone, laying down the collagen-and-mineral matrix. <b>Osteoclasts</b><button type="button" class="say" data-say="osteoclast" aria-label="Hear it: osteoclasts" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (<i>-clast</i> = break, destroy) tear it down, dissolving the matrix and releasing the calcium and phosphorus back into the bloodstream. <b>Osteocytes</b><button type="button" class="say" data-say="osteocyte" aria-label="Hear it: osteocytes" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (<i>-cyt</i> = cell) are mature, settled cells — former osteoblasts that have been trapped inside the matrix they built. Osteocytes act as mechanical sensors: they detect strain in the bone around them and signal when the architecture needs to be reinforced or pruned. Together, these three cells run a continuous demolition-and-construction project inside every bone of your body. About 10% of your skeleton is replaced each year.</p>
+      <figure class="plate"><img data-img="f30107" alt="The four cell types of bone tissue: osteocyte, osteoblast, osteogenic cell, and osteoclast"><figcaption>Figure — The four cell types of bone tissue: osteocyte (maintains), osteoblast (forms matrix), osteogenic cell (stem cell), and osteoclast (resorbs).</figcaption></figure>
+      <div class="inset"><div class="ilabel">THE MAN WHO LOOKED INSIDE</div><p>For about thirteen hundred years, European medical schools taught anatomy from the writings of a Greek physician named Galen, who lived in the second century. Galen was a careful observer for his time, but Roman law forbade him from dissecting human bodies, so most of what he wrote about the human skeleton was inferred from dissecting Barbary macaques. His errors were repeated by every textbook that followed him.</p><p>In 1543, a 28-year-old Flemish anatomist named <b>Andreas Vesalius</b><button type="button" class="say" data-say="vesalius" aria-label="Hear it: andreas vesalius" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> published a book called <i>De humani corporis fabrica</i> — “On the Fabric of the Human Body.” Vesalius did something simple and radical: he dissected real human cadavers and drew what he actually saw. He hired the finest engravers in Italy to render his findings in detail, and the resulting illustrations corrected hundreds of Galenic errors — including specific errors about the structure of the human sternum, jaw, and femur. The <i>Fabrica</i> is sometimes called the first modern science book. It established the simple principle every working anatomist still follows: look at the body itself, not at what was written about it long ago. Without Vesalius, the rest of this course — and the skeleton you are about to study — would not be possible.</p></div>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Compact or Spongy?</h2></div>
+    <p class="hint">Sort each feature to the tissue it belongs to.</p>
+    <div class="place card" id="w3cs">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="co" data-fb="Compact: osteons are its structural unit." data-miss="Rings around a central canal.">osteons</button>
+        <button class="chip" data-k="b" data-ans="sp" data-fb="Spongy: thin struts along lines of force." data-miss="The struts of the sea sponge.">trabeculae</button>
+        <button class="chip" data-k="c" data-ans="co" data-fb="Compact: the diaphysis is a compact tube." data-miss="The shaft must resist bending.">the shaft of the femur</button>
+        <button class="chip" data-k="d" data-ans="sp" data-fb="Spongy: light and strong, full of marrow." data-miss="Light, porous, full of spaces.">the inside of a vertebral body</button>
+        <button class="chip" data-k="e" data-ans="sp" data-fb="Spongy: the spaces between trabeculae hold marrow." data-miss="Where is there room for marrow?">spaces filled with red marrow</button>
+        <button class="chip" data-k="f" data-ans="co" data-fb="Compact: every bone is wrapped in it." data-miss="Dense and solid.">the outer shell of every bone</button>
+        <button class="chip" data-k="g" data-ans="sp" data-fb="Spongy: the epiphyses are mostly spongy bone." data-miss="The rounded ends.">the ends (epiphyses) of a long bone</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="co"><h4>Compact bone</h4><div class="drop"></div></div><div class="bin" data-bin="sp"><h4>Spongy bone</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Who Does What?</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w3q1"><p class="q">A runner&rsquo;s tibia thickens where it takes the most strain. Which cell first detects that strain?</p>
+        <button class="opt" data-fb="Osteoblasts build, but they are told where to build.">Osteoblast</button>
+        <button class="opt" data-ok="1" data-fb="Right. Osteocytes sit in the matrix and act as strain sensors.">Osteocyte</button>
+        <button class="opt" data-fb="Osteoclasts dissolve bone; they do not sense load.">Osteoclast</button></div>
+      <div class="mcq card" data-qid="w3q2"><p class="q">Blood calcium drops. Which cell frees calcium from bone?</p>
+        <button class="opt" data-ok="1" data-fb="Right. Osteoclasts dissolve matrix and release calcium and phosphorus.">Osteoclast</button>
+        <button class="opt" data-fb="Osteocytes sense; they do not demolish.">Osteocyte</button>
+        <button class="opt" data-fb="Osteoblasts lock calcium into new matrix.">Osteoblast</button></div>
+      <div class="mcq card" data-qid="w3q3"><p class="q">Which membrane lines the medullary cavity, where most remodeling happens?</p>
+        <button class="opt" data-fb="The periosteum wraps the outside of the bone.">Periosteum</button>
+        <button class="opt" data-ok="1" data-fb="Right. The endosteum lines the cavity and the spongy-bone surfaces.">Endosteum</button>
+        <button class="opt" data-fb="That caps the joint surfaces.">Articular cartilage</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Vesalius corrected thirteen centuries of errors. In two or three sentences, name the principle he established and explain how you will use it this module.</p><textarea class="jbox" id="w3t2" data-label="Your Turn: Vesalius and looking for myself" data-min="25"></textarea></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="living" type="button">&larr; Living Bone</button><button class="btn" data-go="shapes" type="button">Next: Shapes and Markings &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 SHAPES AND MARKINGS ═════════ -->
+<section class="panel" id="tab-shapes" role="tabpanel">
+  <div class="vo" data-clip="w3_shapes">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Four Shapes, Many Marks</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The four bone shapes, then bone markings"><g data-step="0" class="nohalo"><text x="340" y="28" class="m2-t" text-anchor="middle">four shapes, four kinds of job</text></g><g data-step="1" class="nohalo"><rect x="80" y="70" width="26" height="120" rx="8" fill="#E9D3A8" stroke="#9C7A3C" stroke-width="2"/><ellipse cx="93" cy="70" rx="24" ry="18" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><ellipse cx="93" cy="190" rx="24" ry="18" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><text x="95" y="230" class="m2-t" text-anchor="middle">long: a lever</text></g><g data-step="2" class="nohalo"><rect x="223" y="90" width="34" height="34" rx="7" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><rect x="263" y="90" width="34" height="34" rx="7" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><rect x="223" y="130" width="34" height="34" rx="7" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><rect x="263" y="130" width="34" height="34" rx="7" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><text x="260" y="230" class="m2-t" text-anchor="middle">short: many small moves</text></g><g data-step="3" class="nohalo"><path d="M380 150 Q435 70 490 150 L480 162 Q435 92 390 162z" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><text x="425" y="230" class="m2-t" text-anchor="middle">flat: shield + surface</text></g><g data-step="4" class="nohalo"><ellipse cx="600" cy="110" rx="34" ry="22" fill="#F4E6C8" stroke="#9C7A3C" stroke-width="2"/><circle cx="600" cy="148" r="12" fill="#fff" stroke="#9C7A3C" stroke-width="2"/><path d="M600 160 v36 M588 150 l-36 10 M612 150 l36 10" stroke="#9C7A3C" stroke-width="7" stroke-linecap="round"/><text x="600" y="230" class="m2-t" text-anchor="middle">irregular: one job</text></g><g data-step="5" class="nohalo"><text x="340" y="270" class="m2-t" text-anchor="middle" style="fill:#C22F4A">projection · depression · opening</text><text x="340" y="292" class="m2-ts" text-anchor="middle">every marking: what uses that?</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Anatomists sort bones into four shapes. Shape says little about size, but a great deal about the job.", "Long bones, like the femur and the phalanges, are levers: a narrow shaft with expanded ends that meet their neighbors at joints.", "Short bones, like the carpals and tarsals, are blocks about as wide as they are long. Many small bones allow many small movements.", "Flat bones, like the cranial bones, sternum, ribs, and scapulae, protect what lies beneath and give muscles broad surfaces.", "Irregular bones, like the vertebrae and most of the face, fit no category, because each is shaped for one specific job.", "Every bump, groove, and hole is a marking. Projections anchor muscles, depressions guide tendons and vessels, and openings let them pass. Always ask: what uses that?"]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The four bone shapes with examples, and the three kinds of bone marking.</span></div>
+    <article class="atlas">
+      <h3>Four bone shapes</h3>
+      <p>Anatomists classify bones into four major shapes. The shape tells you almost nothing about the bone’s size — long bones can be enormous (the femur) or tiny (the phalanges of your little finger) — but it tells you a great deal about what the bone is for.</p>
+      <figure class="plate"><img data-img="f30108" alt="The five classifications of bone by shape: long, short, flat, irregular, and sesamoid"><figcaption>Figure — Bone classified by shape: long (femur), flat (sternum), irregular (vertebra), short (cuneiforms), and sesamoid (patella).</figcaption></figure>
+      <figure class="plate"><img data-img="f30109" alt="Table of bone classifications by shape, with their features, functions, and examples"><figcaption>Table — Bone classifications by shape, with distinguishing features, functions, and examples of each.</figcaption></figure>
+      <h4>Long bones</h4>
+      <p><b>Long bones</b> are dog-bone shaped: narrow in the middle, expanded at each end. The <b>femur</b><button type="button" class="say" data-say="femur" aria-label="Hear it: femur" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> in your thigh, the <b>humerus</b><button type="button" class="say" data-say="humerus" aria-label="Hear it: humerus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> in your upper arm, the <b>tibia</b><button type="button" class="say" data-say="tibia" aria-label="Hear it: tibia" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> in your lower leg, and all the small finger and toe bones are long bones. The narrow middle (the <i>diaphysis</i>) is built for leverage and compression. The expanded ends (the <i>epiphyses</i>) are built to articulate with neighboring bones at joints. Long bones contain a hollow medullary cavity inside their shafts — a cavity that holds bone marrow. The fact that you can lift things at all is mostly because long bones exist.</p>
+      <h4>Short bones</h4>
+      <p><b>Short bones</b> are roughly cube-shaped — about as long as they are wide. The eight <b>carpal bones</b><button type="button" class="say" data-say="carpal" aria-label="Hear it: carpal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> in each of your wrists and the seven <b>tarsal bones</b><button type="button" class="say" data-say="tarsal" aria-label="Hear it: tarsal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> in each of your ankles are short bones. They allow many small movements in many directions at once: think of how a wrist can twist, tilt, and rotate, in part because it is built out of eight independently-moving blocks rather than one solid bone.</p>
+      <h4>Flat bones</h4>
+      <p><b>Flat bones</b> are thin and broad, often curved. The bones of the <b>cranium</b><button type="button" class="say" data-say="cranium" aria-label="Hear it: cranium" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> that surround your brain are flat. So are your <b>sternum</b><button type="button" class="say" data-say="sternum" aria-label="Hear it: sternum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (breastbone), your <b>ribs</b>, and the <b>scapulae</b><button type="button" class="say" data-say="scapulae" aria-label="Hear it: scapulae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (shoulder blades) on your back. Flat bones are built to <i>protect</i> what is underneath them and to provide broad surfaces for muscle attachment. They are typically a sandwich: a layer of spongy bone (rich with red marrow) between two thin layers of compact bone.</p>
+      <h4>Irregular bones</h4>
+      <p><b>Irregular bones</b> are everything else — bones whose shape does not fit any of the categories above because their job is too specific. Your <b>vertebrae</b><button type="button" class="say" data-say="vertebrae" aria-label="Hear it: vertebrae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are irregular bones, each with a thick weight-bearing body, a hole through the middle for the spinal cord, and multiple bony projections sticking out. The bones of the <b>face</b> are mostly irregular. The shape is dictated entirely by the function: a vertebra is shaped exactly the way it has to be shaped to do what a vertebra has to do.</p>
+      <h3>Bone markings — the surface features</h3>
+      <p>If you run a finger along the surface of any bone — or examine one closely — you will notice it is not smooth. Every bone is covered in <b>markings</b>: bumps, ridges, hollows, and holes. These are not decorations. Each one exists because something <i>uses</i> it.</p>
+      <p>Bony markings come in three broad categories. <b>Projections</b> stick out from the surface — bumps, ridges, spines, and tubercles. Most projections are <i>muscle attachment sites</i>, where a tendon anchors muscle to bone. A few projections are designed to form joints: the <i>head</i> of the humerus, for example, is a smooth, rounded projection that fits into a matching socket in the shoulder blade. <b>Depressions</b> are dents and grooves on the bone’s surface. They allow tendons, nerves, or blood vessels to pass along the bone without being damaged. The <i>intertubercular groove</i> of the humerus, near the shoulder, is a slot that holds a tendon of the biceps muscle in place. <b>Openings</b> are holes that pass straight through bone, like the <i>foramen magnum</i> at the base of the skull through which the spinal cord exits the brain. Every opening exists because some vessel or nerve needs to get through.</p>
+      <p>When you study a new bone this year, your first habit should be to find at least one marking and ask: <i>what uses that?</i> The answer will almost always be a muscle, a tendon, a ligament, a nerve, or a blood vessel. The marking is the bone’s record of a working relationship with another structure.</p>
+      <figure class="plate"><img data-img="f30110" alt="Examples of bone markings and features: processes, elevations, depressions, and openings"><figcaption>Figure — Example bone markings and features: processes (tubercle, tuberosity, crest), depressions (fossa), and openings (foramen, fissure, canal, sinus).</figcaption></figure>
+      <div class="inset"><div class="ilabel">CURRENT RESEARCH — CAN WE PRINT BONE?</div><p>When a person loses a large piece of bone — to cancer surgery, trauma, or birth defect — the standard treatment has been to take bone from elsewhere in the body (an <i>autograft</i>) or from a donor (an <i>allograft</i>). Both work, but both have limits: harvesting bone from a patient hurts, and donor bone can fail to integrate or carry infection.</p><p>Scientists are currently exploring a different approach: <b>bioprinting bone scaffolds</b>. The idea is to use a 3D printer to lay down a porous scaffold in the exact shape of the missing bone — usually from biodegradable polymers, sometimes seeded with the patient’s own stem cells. The scaffold provides a temporary architecture, the cells colonize it and lay down real bone matrix, and over time the scaffold dissolves while the new bone grows in. Recent research has shown the basic principle works in animal models and in a small number of early human cases, particularly for jaw and skull reconstruction. Whether bioprinted scaffolds will become routine is still an open question — healing rates vary, and recreating the precise architecture of spongy bone’s load-aligned trabeculae remains hard. But the underlying biology — that bone responds to a scaffold and rebuilds itself around it — is exactly the same principle that has kept your skeleton alive and remodeling for as long as you have had one.</p></div>
+      <details class="selfcheck"><summary>Self-check: name the four bone shapes and give one example of each before clicking</summary><p><b>Long</b>: femur, humerus, tibia, phalanges. <b>Short</b>: carpals (wrist), tarsals (ankle). <b>Flat</b>: sternum, ribs, scapulae, cranial bones. <b>Irregular</b>: vertebrae, most facial bones.</p><p>If you got all four with at least one example each, you are ready for the lesson. If you missed a shape, re-read the “Four bone shapes” section before moving on.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Sort the Bones</h2></div>
+    <p class="hint">Shape tells you the job. Tap a bone, then its shape.</p>
+    <div class="place card" id="w3sb">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="lo" data-fb="Long: the classic lever." data-miss="Shaft plus two expanded ends.">femur</button>
+        <button class="chip" data-k="b" data-ans="lo" data-fb="Long: shape, not size. Tiny, but long-bone shaped." data-miss="Long bones can be small.">a finger phalanx</button>
+        <button class="chip" data-k="c" data-ans="sh" data-fb="Short: a cube-shaped wrist block." data-miss="About as wide as it is long.">capitate (a carpal)</button>
+        <button class="chip" data-k="d" data-ans="sh" data-fb="Short: another block." data-miss="Ankle bones are like the wrist&rsquo;s.">a tarsal of the ankle</button>
+        <button class="chip" data-k="e" data-ans="fl" data-fb="Flat: thin and broad, guarding the heart." data-miss="Thin, broad, protective.">sternum</button>
+        <button class="chip" data-k="f" data-ans="fl" data-fb="Flat: a curved plate of the cranium." data-miss="A plate of the skull.">parietal bone</button>
+        <button class="chip" data-k="g" data-ans="ir" data-fb="Irregular: body, foramen, many processes." data-miss="It fits no simple shape.">L1 vertebra</button>
+        <button class="chip" data-k="h" data-ans="fl" data-fb="Flat: a broad surface for shoulder muscles." data-miss="The shoulder blade.">scapula</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="lo"><h4>Long</h4><div class="drop"></div></div><div class="bin" data-bin="sh"><h4>Short</h4><div class="drop"></div></div><div class="bin" data-bin="fl"><h4>Flat</h4><div class="drop"></div></div><div class="bin" data-bin="ir"><h4>Irregular</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Name the Marking</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w3q4"><p class="q">The medial epicondyle of the humerus is a bump on the inside of the elbow. What kind of marking is it, and what uses it?</p>
+        <button class="opt" data-fb="It sticks out, so it is not a depression.">A depression for a tendon</button>
+        <button class="opt" data-ok="1" data-fb="Right. A projection, and a muscle attachment site.">A projection where forearm muscles attach</button>
+        <button class="opt" data-fb="It is solid bone, not a hole.">An opening for a nerve</button></div>
+      <div class="mcq card" data-qid="w3q5"><p class="q">The intertubercular groove holds a tendon of the biceps. It is a&hellip;</p>
+        <button class="opt" data-fb="A groove is a dent, not a bump.">Projection</button>
+        <button class="opt" data-ok="1" data-fb="Right. Depressions let tendons, nerves, and vessels run along bone safely.">Depression</button>
+        <button class="opt" data-fb="It does not pass through the bone.">Opening</button></div>
+      <div class="mcq card" data-qid="w3q6"><p class="q">The foramen magnum lets the spinal cord leave the skull. It is a&hellip;</p>
+        <button class="opt" data-ok="1" data-fb="Right. Foramen means hole; magnum means large.">Opening</button>
+        <button class="opt" data-fb="Nothing sticks out here.">Projection</button>
+        <button class="opt" data-fb="It goes all the way through.">Depression</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Narrate It</h2></div>
+    <div class="card">
+      <p class="q" style="font-weight:600;margin-top:0">Close the Atlas. For 90 to 120 seconds, narrate what you read today in your own words. Include at least one sentence about Vesalius and at least one about the difference between compact and spongy bone.</p>
+      <div class="narrate" data-words="200"></div>
+      <p class="hint">Play it back. What did you leave out?</p>
+      <div class="field" style="margin-bottom:0"><p class="q">One or two corrections after you re-open the Atlas:</p><textarea class="jbox" id="w3n1" data-label="Narration: my corrections" data-min="12"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 35 minutes, including the field notes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Skeleton Atlas, page 1: four bone shapes</span>
+      <p>This is your first drawing session of the course, and Page 1 of your <b>Skeleton Atlas</b>: one page per region, drawn and labeled by you, reassembled into a whole skeleton in Week 5. Title a fresh page &ldquo;Skeleton Atlas &mdash; Page 1: Four Bone Shapes.&rdquo; Paper is highly recommended.</p><p>Draw one of each shape, large enough to label, in this order: the <b>femur</b> (long), one <b>carpal</b> such as the capitate (short), the <b>sternum</b> (flat), and <b>L1</b> (irregular). Label each with its shape.</p><p>Then sketch the lower end of the <b>humerus</b> and mark the <b>medial epicondyle</b>. On the femur, mark one projection and one depression with a note saying what each is for.</p>
+      <ul class="checks"><li data-ck="w3d1">Femur, carpal, sternum, and L1 drawn and labeled with their shapes.</li><li data-ck="w3d2">Medial epicondyle marked on the humerus sketch.</li><li data-ck="w3d3">One projection and one depression on the femur, each with what uses it.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Skeleton Atlas page: they become your Module 3 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="tissue" type="button">&larr; Compact, Spongy, Cells</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Bone Shapes and Markings Field Notes</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>If bones were not shaped the way they are, what could you no longer do?</p></div>
+        <p>In the Atlas you learned that bone is living tissue, that the skeleton&rsquo;s bones fall into four shapes, and that every marking exists because something uses it. These field notes come from your first drawing session: a four-shape table, an analysis of one marking, and a short reflection on why form follows function in the skeleton. Be concrete: &ldquo;the femur is long and narrow with expanded ends, which lets it act as a long lever for walking&rdquo; beats &ldquo;it helps the body.&rdquo;</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Bone Shapes Table</h2></div>
+    <p class="hint">For each shape: the example you drew, its shape in one line, and one specific job the shape makes possible.</p>
+    <div class="card loccard"><h4>Long</h4><input class="jfield m2-in" id="w3rle" data-label="Table, Long: example I drew" placeholder="Example I drew"><input class="jfield m2-in" style="margin-top:8px" id="w3rld" data-label="Table, Long: shape" placeholder="One-line description of the shape"><input class="jfield m2-in" style="margin-top:8px" id="w3rlf" data-label="Table, Long: function it makes possible" placeholder="One specific function the shape makes possible"></div><div class="card loccard"><h4>Short</h4><input class="jfield m2-in" id="w3rse" data-label="Table, Short: example I drew" placeholder="Example I drew"><input class="jfield m2-in" style="margin-top:8px" id="w3rsd" data-label="Table, Short: shape" placeholder="One-line description of the shape"><input class="jfield m2-in" style="margin-top:8px" id="w3rsf" data-label="Table, Short: function it makes possible" placeholder="One specific function the shape makes possible"></div><div class="card loccard"><h4>Flat</h4><input class="jfield m2-in" id="w3rfe" data-label="Table, Flat: example I drew" placeholder="Example I drew"><input class="jfield m2-in" style="margin-top:8px" id="w3rfd" data-label="Table, Flat: shape" placeholder="One-line description of the shape"><input class="jfield m2-in" style="margin-top:8px" id="w3rff" data-label="Table, Flat: function it makes possible" placeholder="One specific function the shape makes possible"></div><div class="card loccard"><h4>Irregular</h4><input class="jfield m2-in" id="w3rie" data-label="Table, Irregular: example I drew" placeholder="Example I drew"><input class="jfield m2-in" style="margin-top:8px" id="w3rid" data-label="Table, Irregular: shape" placeholder="One-line description of the shape"><input class="jfield m2-in" style="margin-top:8px" id="w3rif" data-label="Table, Irregular: function it makes possible" placeholder="One specific function the shape makes possible"></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Bone Marking Analysis</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;5 sentences: classify the medial epicondyle of the humerus (projection, depression, or opening), describe where it is, and name what uses it.</p><div class="ttrack" data-field="w3rM"><span class="tt" data-t="projection">projection</span><span class="tt" data-t="elbow|humerus|medial|inside">location</span><span class="tt" data-t="muscle|tendon|forearm|flexor|attach">what uses it</span></div><textarea class="jbox" id="w3rM" data-label="Marking analysis: the medial epicondyle" data-min="45"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Final Reflection</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;5 sentences, answer the focus question. Pick one everyday action (walking, gripping a pen, turning your head, breathing in) and trace it to a specific bone shape or marking.</p><textarea class="jbox" id="w3rF" data-label="Final reflection: the focus question" data-min="45"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w3rle,w3rld,w3rlf,w3rse,w3rsd,w3rsf,w3rfe,w3rfd,w3rff,w3rie,w3rid,w3rif,w3rM,w3rF" data-min="250" data-max="400"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w3c1">All four shapes named, each with the example I drew.</li><li data-ck="w3c2">Each shape paired with a specific function, not a generic statement.</li><li data-ck="w3c3">The medial epicondyle classified as a projection and a muscle attachment site.</li><li data-ck="w3c4">My reflection traces one everyday action to a specific bone feature.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 3.01 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="shapes" type="button">&larr; Shapes and Markings</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>bone (organ)</dt><dd>A separate organ built from bone tissue plus periosteum, cartilage, nerves, and blood vessels. An adult has 206.</dd>
+  <dt>hematopoiesis<button type="button" class="say" data-say="hematopoiesis" aria-label="Hear it: hematopoiesis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>hemo- &ldquo;blood&rdquo; + -poiesis &ldquo;making&rdquo;</small></dt><dd>Blood-cell formation in red bone marrow.</dd>
+  <dt>compact bone <small>cortical bone</small></dt><dd>Dense, solid bone tissue forming the outer shell and the shaft of long bones; built of osteons.</dd>
+  <dt>osteon<button type="button" class="say" data-say="osteon" aria-label="Hear it: osteon" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>ost-, osteo- &ldquo;bone&rdquo;</small></dt><dd>The unit of compact bone: concentric lamellae around a central canal.</dd>
+  <dt>lamellae<button type="button" class="say" data-say="lamellae" aria-label="Hear it: lamellae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Concentric rings of mineralized matrix in an osteon.</dd>
+  <dt>lacunae<button type="button" class="say" data-say="lacunae" aria-label="Hear it: lacunae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Small spaces in the matrix, each holding one osteocyte.</dd>
+  <dt>canaliculi<button type="button" class="say" data-say="canaliculi" aria-label="Hear it: canaliculi" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Tiny channels linking lacunae; routes for nutrients and waste.</dd>
+  <dt>spongy bone <small>trabecular bone</small></dt><dd>Porous bone tissue of thin struts (trabeculae) aligned with the lines of force; holds marrow.</dd>
+  <dt>trabeculae<button type="button" class="say" data-say="trabeculae" aria-label="Hear it: trabeculae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The thin struts of spongy bone.</dd>
+  <dt>diaphysis<button type="button" class="say" data-say="diaphysis" aria-label="Hear it: diaphysis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>-physis &ldquo;to grow&rdquo;</small></dt><dd>The shaft of a long bone: compact bone around the medullary cavity.</dd>
+  <dt>epiphysis<button type="button" class="say" data-say="epiphysis" aria-label="Hear it: epiphysis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The rounded end of a long bone, mostly spongy bone, which meets the neighboring bone at a joint.</dd>
+  <dt>metaphysis<button type="button" class="say" data-say="metaphysis" aria-label="Hear it: metaphysis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The transition zone between the shaft and the end of a long bone.</dd>
+  <dt>medullary cavity<button type="button" class="say" data-say="medullary" aria-label="Hear it: medullary cavity" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The hollow inside the shaft of a long bone; holds marrow.</dd>
+  <dt>periosteum<button type="button" class="say" data-say="periosteum" aria-label="Hear it: periosteum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>peri- &ldquo;around&rdquo;</small></dt><dd>The tough sheath around a bone; anchors tendons and carries vessels and nerves.</dd>
+  <dt>endosteum<button type="button" class="say" data-say="endosteum" aria-label="Hear it: endosteum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The thin membrane lining the medullary cavity and spongy-bone surfaces.</dd>
+  <dt>osteoblast<button type="button" class="say" data-say="osteoblast" aria-label="Hear it: osteoblast" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>-blast &ldquo;builder&rdquo;</small></dt><dd>A cell that builds new bone matrix.</dd>
+  <dt>osteoclast<button type="button" class="say" data-say="osteoclast" aria-label="Hear it: osteoclast" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>-clast &ldquo;break&rdquo;</small></dt><dd>A cell that dissolves bone matrix, releasing calcium and phosphorus.</dd>
+  <dt>osteocyte<button type="button" class="say" data-say="osteocyte" aria-label="Hear it: osteocyte" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>-cyte &ldquo;cell&rdquo;</small></dt><dd>A mature bone cell walled into the matrix; senses strain.</dd>
+  <dt>long / short / flat / irregular</dt><dd>The four bone shapes: lever, block, plate, special purpose.</dd>
+  <dt>projection / depression / opening</dt><dd>The three kinds of bone marking: bumps that anchor, dents that guide, holes that let things through.</dd>
+  <dt>foramen<button type="button" class="say" data-say="foramen" aria-label="Hear it: foramen" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>An opening through a bone, such as the foramen magnum.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w3-l1", "title": "Bone Biology: Tissue, Shapes, and Markings", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 3 · Bone Biology", "pdfTag": "AP_W3_L1"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f30101":{"src":"img/w3-3.01-01-bone-biology-tissue-shapes-marki.webp","alt":""},"f30102":{"src":"img/w3-3.01-02-axial-appendicular-skeleton-bone.webp","alt":""},"f30103":{"src":"img/w3-3.01-03-macroscopic-bone-place-bone-livi.webp","alt":""},"f30104":{"src":"img/w3-3.01-04-hematopoiesis-place-where-functi.webp","alt":""},"f30105":{"src":"img/w3-3.01-05-compact-bone-tissue.webp","alt":""},"f30106":{"src":"img/w3-3.01-06-compact-spongy-bone-place-compac.webp","alt":""},"f30107":{"src":"img/w3-3.01-07-spongy-bone-place-about-spongy-b.webp","alt":""},"f30108":{"src":"img/w3-3.01-08-four-types-cells-found-within-bo.webp","alt":""},"f30109":{"src":"img/w3-3.01-09-classifications-bones-bones-clas.webp","alt":""},"f30110":{"src":"img/w3-3.01-10-figure.webp","alt":""}},"w3_living":{"audio":"audio/ap-w3-l1-living.mp3","words":[[0,0.28,"Bone"],[0.32,0.48,"is"],[0.56,0.8,"not"],[0.88,1.2,"dry"],[1.28,1.36,"and"],[1.44,2.16,"finished."],[2.2,2.24,"It"],[2.32,2.4,"is"],[2.56,2.88,"living"],[3.08,3.44,"connective"],[3.48,4.08,"tissue,"],[4.16,4.24,"fed"],[4.32,4.48,"by"],[4.68,5.12,"blood,"],[5.24,5.52,"threaded"],[5.6,5.68,"with"],[5.76,6.24,"nerves,"],[6.32,6.4,"and"],[6.52,6.96,"rebuilding"],[7.04,7.52,"itself"],[7.6,7.76,"all"],[7.84,7.92,"the"],[8.12,8.8,"time."],[8.84,8.88,"An"],[9.08,9.28,"adult"],[9.4,9.52,"has"],[9.6,9.76,"two"],[9.84,10,"hundred"],[10.24,10.4,"six"],[10.56,11.12,"bones,"],[11.24,11.36,"and"],[11.48,11.6,"each"],[11.68,11.92,"one"],[12,12.08,"is"],[12.16,12.24,"an"],[12.32,13.04,"organ:"],[13.12,13.28,"bone"],[13.36,13.92,"tissue,"],[14,14.08,"plus"],[14.16,15.12,"periosteum,"],[15.24,15.92,"cartilage,"],[16.08,16.453,"nerves,"],[16.507,16.56,"and"],[16.68,16.8,"blood"],[16.84,17.76,"vessels."],[17.8,17.84,"The"],[17.92,18.4,"skeleton"],[18.52,18.64,"has"],[18.72,18.96,"five"],[19.12,20,"jobs."],[20.24,20.88,"Support:"],[20.92,20.96,"it"],[21.04,21.12,"is"],[21.16,21.2,"the"],[21.32,21.6,"body's"],[21.8,22.48,"frame."],[22.8,23.44,"Protection:"],[23.48,23.52,"the"],[23.6,24.16,"skull,"],[24.24,24.28,"the"],[24.32,25.04,"vertebrae,"],[25.08,25.12,"the"],[25.2,25.627,"ribs,"],[25.653,25.68,"and"],[25.76,25.84,"the"],[25.92,26.32,"pelvis"],[26.48,26.72,"guard"],[26.8,26.96,"what"],[27.08,27.2,"lies"],[27.28,28.32,"inside."],[28.56,29.2,"Movement:"],[29.28,29.6,"muscles"],[29.76,30.16,"pull,"],[30.24,30.32,"and"],[30.4,30.72,"bones"],[30.8,31.04,"act"],[31.08,31.12,"as"],[31.2,31.96,"levers."],[32.24,32.56,"Mineral"],[32.64,33.44,"storage:"],[33.52,33.6,"more"],[33.72,33.84,"than"],[33.92,34.4,"ninety-nine"],[34.48,34.8,"percent"],[34.88,34.92,"of"],[34.96,35.04,"your"],[35.12,35.6,"calcium"],[35.68,35.84,"is"],[35.96,36.16,"banked"],[36.24,36.32,"in"],[36.4,37.04,"bone."],[37.28,37.52,"And"],[37.6,39.04,"hematopoiesis:"],[39.16,39.28,"red"],[39.36,39.68,"marrow"],[39.76,40.08,"inside"],[40.24,40.48,"certain"],[40.56,40.88,"bones"],[40.96,41.12,"makes"],[41.2,41.6,"nearly"],[41.68,41.76,"all"],[41.84,41.92,"of"],[42,42.08,"your"],[42.16,42.32,"red"],[42.4,42.88,"cells,"],[42.96,43.12,"white"],[43.2,43.6,"cells,"],[43.64,43.68,"and"],[43.76,44.6,"platelets."],[44.88,45.04,"Keep"],[45.12,45.16,"the"],[45.2,45.44,"word"],[45.6,46.32,"remodeling"],[46.4,46.48,"in"],[46.56,46.96,"mind."],[47.28,47.6,"About"],[47.68,47.76,"ten"],[47.84,48.16,"percent"],[48.2,48.24,"of"],[48.28,48.32,"your"],[48.4,48.88,"skeleton"],[48.92,48.96,"is"],[49.04,49.52,"replaced"],[49.68,49.92,"every"],[50.08,50.56,"year,"],[50.64,50.72,"by"],[50.8,51.04,"cells"],[51.12,51.16,"you"],[51.2,51.28,"will"],[51.36,51.6,"meet"],[51.64,51.68,"in"],[51.76,51.8,"the"],[51.84,52.08,"next"],[52.28,52.762,"tab."]]},"w3_tissue":{"audio":"audio/ap-w3-l1-tissue.mp3","words":[[0.358,0.518,"Every"],[0.598,0.838,"bone"],[0.918,1.078,"is"],[1.158,1.238,"built"],[1.318,1.558,"from"],[1.638,1.718,"two"],[1.878,2.118,"kinds"],[2.198,2.238,"of"],[2.278,2.518,"bone"],[2.598,2.998,"tissue."],[3.478,3.878,"Compact"],[3.958,4.278,"bone"],[4.358,4.518,"is"],[4.598,4.918,"dense"],[4.998,5.078,"and"],[5.238,5.878,"solid."],[5.958,6.038,"It"],[6.118,6.358,"forms"],[6.438,6.518,"the"],[6.638,6.758,"outer"],[6.918,7.265,"shell,"],[7.291,7.318,"and"],[7.398,7.478,"the"],[7.558,7.878,"shaft"],[7.918,7.958,"of"],[7.998,8.038,"a"],[8.118,8.278,"long"],[8.358,8.998,"bone."],[9.118,9.238,"Its"],[9.318,9.638,"unit"],[9.678,9.718,"is"],[9.798,9.958,"the"],[10.038,10.998,"osteon:"],[11.038,11.318,"rings"],[11.398,11.558,"of"],[11.598,12.118,"mineralized"],[12.198,12.758,"matrix,"],[12.878,12.998,"called"],[13.118,13.718,"lamellae,"],[13.838,13.958,"around"],[14.038,14.118,"a"],[14.278,14.438,"central"],[14.558,14.918,"canal"],[14.998,15.078,"that"],[15.158,15.318,"carries"],[15.398,15.478,"a"],[15.598,15.718,"blood"],[15.758,16.118,"vessel"],[16.158,16.198,"and"],[16.278,16.318,"a"],[16.358,17.238,"nerve."],[17.318,17.718,"Spongy"],[17.878,18.038,"bone"],[18.118,18.358,"fills"],[18.438,18.518,"the"],[18.598,19.238,"ends."],[19.318,19.558,"Its"],[19.638,19.718,"thin"],[19.878,20.518,"struts,"],[20.558,20.598,"the"],[20.638,21.558,"trabeculae,"],[21.638,21.798,"line"],[21.878,21.958,"up"],[22.038,22.278,"along"],[22.358,22.438,"the"],[22.638,22.838,"forces"],[22.918,22.998,"the"],[23.078,23.158,"bone"],[23.238,23.478,"must"],[23.638,24.038,"carry,"],[24.078,24.118,"and"],[24.198,24.278,"the"],[24.478,24.678,"spaces"],[24.878,25.078,"between"],[25.198,25.318,"them"],[25.398,25.558,"hold"],[25.638,26.518,"marrow."],[26.638,26.758,"Three"],[26.918,27.238,"cells"],[27.318,27.398,"run"],[27.478,27.558,"the"],[27.758,28.358,"place."],[28.438,29.398,"Osteoblasts"],[29.518,29.638,"build"],[29.718,29.878,"new"],[30.158,30.758,"matrix."],[30.838,31.878,"Osteoclasts"],[31.958,32.358,"dissolve"],[32.438,32.598,"it"],[32.638,32.678,"and"],[32.878,33.078,"release"],[33.238,33.558,"calcium"],[33.638,33.718,"and"],[33.798,34.278,"phosphorus"],[34.318,34.358,"to"],[34.438,34.518,"the"],[34.678,35.238,"blood."],[35.318,36.198,"Osteocytes"],[36.278,36.358,"are"],[36.438,37.238,"osteoblasts"],[37.318,37.478,"that"],[37.558,37.718,"walled"],[37.758,38.198,"themselves"],[38.278,38.918,"in."],[38.958,39.158,"Sitting"],[39.198,39.238,"in"],[39.318,39.398,"their"],[39.518,40.118,"lacunae,"],[40.198,40.358,"they"],[40.478,40.598,"sense"],[40.678,41.158,"strain"],[41.278,41.398,"and"],[41.558,41.718,"signal"],[41.798,41.878,"when"],[41.958,42.038,"the"],[42.118,42.198,"bone"],[42.278,42.518,"needs"],[42.598,43.638,"reinforcing."],[43.718,44.358,"Build,"],[44.478,44.598,"break"],[44.678,45.318,"down,"],[45.398,46.118,"sense."],[46.198,46.358,"That"],[46.438,46.918,"partnership"],[46.998,47.078,"is"],[47.158,47.238,"why"],[47.318,47.358,"a"],[47.398,47.638,"bone"],[47.718,47.958,"grows"],[48.158,48.518,"stronger"],[48.678,49.158,"exactly"],[49.238,49.318,"where"],[49.398,49.478,"you"],[49.598,49.718,"load"],[49.798,50.128,"it."]]},"w3_shapes":{"audio":"audio/ap-w3-l1-shapes.mp3","words":[[0.31,0.95,"Anatomists"],[1.03,1.27,"sort"],[1.47,1.67,"bones"],[1.75,1.99,"into"],[2.11,2.23,"four"],[2.31,3.19,"shapes."],[3.31,3.43,"Shape"],[3.51,3.67,"says"],[3.75,3.91,"little"],[3.99,4.15,"about"],[4.31,4.87,"size,"],[4.91,4.95,"but"],[5.03,5.11,"a"],[5.19,5.43,"great"],[5.51,5.67,"deal"],[5.75,5.91,"about"],[5.99,6.07,"the"],[6.15,6.95,"job."],[7.07,7.19,"Long"],[7.27,7.75,"bones,"],[7.83,7.91,"like"],[7.99,8.07,"the"],[8.15,8.47,"femur"],[8.55,8.59,"and"],[8.63,8.71,"the"],[8.75,9.47,"phalanges,"],[9.51,9.67,"are"],[9.75,10.39,"levers:"],[10.47,10.55,"a"],[10.63,10.95,"narrow"],[11.11,11.27,"shaft"],[11.35,11.43,"with"],[11.51,12.07,"expanded"],[12.15,12.47,"ends"],[12.55,12.63,"that"],[12.71,12.79,"meet"],[12.87,12.95,"their"],[13.03,13.35,"neighbors"],[13.43,13.51,"at"],[13.59,14.47,"joints."],[14.59,14.71,"Short"],[14.79,15.23,"bones,"],[15.27,15.35,"like"],[15.43,15.51,"the"],[15.59,15.99,"carpals"],[16.07,16.15,"and"],[16.19,16.843,"tarsals,"],[16.897,16.95,"are"],[17.19,17.43,"blocks"],[17.51,17.75,"about"],[17.83,17.91,"as"],[17.99,18.15,"wide"],[18.23,18.31,"as"],[18.35,18.39,"they"],[18.47,18.63,"are"],[18.71,19.39,"long."],[19.43,19.67,"Many"],[19.75,19.99,"small"],[20.19,20.39,"bones"],[20.47,20.79,"allow"],[20.87,21.11,"many"],[21.27,21.43,"small"],[21.51,22.39,"movements."],[22.47,22.71,"Flat"],[22.79,23.23,"bones,"],[23.27,23.35,"like"],[23.43,23.51,"the"],[23.63,23.91,"cranial"],[23.99,24.55,"bones,"],[24.63,25.23,"sternum,"],[25.27,25.55,"ribs,"],[25.59,25.67,"and"],[25.75,26.683,"scapulae,"],[26.817,26.95,"protect"],[27.03,27.11,"what"],[27.23,27.35,"lies"],[27.43,27.91,"beneath"],[27.99,28.07,"and"],[28.15,28.31,"give"],[28.39,28.79,"muscles"],[28.83,29.11,"broad"],[29.19,30.11,"surfaces."],[30.15,30.71,"Irregular"],[30.95,31.23,"bones,"],[31.27,31.35,"like"],[31.43,31.51,"the"],[31.63,32.07,"vertebrae"],[32.15,32.23,"and"],[32.31,32.39,"most"],[32.47,32.51,"of"],[32.55,32.71,"the"],[32.99,33.35,"face,"],[33.43,33.51,"fit"],[33.59,33.75,"no"],[34.11,34.577,"category,"],[34.683,34.79,"because"],[34.87,35.03,"each"],[35.11,35.19,"is"],[35.27,35.51,"shaped"],[35.59,35.83,"for"],[35.91,36.07,"one"],[36.15,36.71,"specific"],[36.79,37.55,"job."],[37.59,37.99,"Every"],[38.03,38.51,"bump,"],[38.55,38.91,"groove,"],[38.95,39.19,"and"],[39.35,39.51,"hole"],[39.59,39.67,"is"],[39.83,39.91,"a"],[39.99,40.59,"marking."],[40.63,41.27,"Projections"],[41.35,41.59,"anchor"],[41.67,42.363,"muscles,"],[42.417,42.95,"depressions"],[43.03,43.27,"guide"],[43.35,43.67,"tendons"],[43.75,43.83,"and"],[43.87,44.523,"vessels,"],[44.577,44.63,"and"],[44.71,45.11,"openings"],[45.19,45.27,"let"],[45.35,45.43,"them"],[45.51,46.35,"pass."],[46.39,46.71,"Always"],[46.87,47.483,"ask:"],[47.537,47.59,"what"],[47.75,48.07,"uses"],[48.15,48.516,"that?"]]}}</script>
+<script>
+window.ASK = {
+  scope: 'bone as living tissue, the five functions of the skeleton, compact and spongy bone, bone cells, the four bone shapes, and bone markings',
+  quick: ['What are the five jobs of the skeleton?', 'How is compact bone different from spongy bone?', 'What is a bone marking?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|table|reflection|focus question|field notes)|what (should|do) i (write|put) for/i,
+  guide: 'That part is yours to write, so here are my questions instead. What does the shape let the bone do? Which muscle, tendon, nerve, or vessel uses that marking? Say it out loud first, then write it.',
+  notes: [
+    { k: ['living','alive','tissue','organ','206'], w: 1.3, a: 'Bone is living connective tissue: full of cells, fed by blood vessels, threaded with nerves, and constantly remodeling. Each of the 206 bones is an organ, with bone tissue plus periosteum, cartilage, nerve fibers, and blood vessels.' },
+    { k: ['five','functions','jobs','support','protection','movement','storage','calcium'], w: 1.3, a: 'Support (the frame), protection (skull, vertebrae, ribs, pelvis), movement (bones are levers for muscles), mineral storage (over 99 percent of the body’s calcium, and most of its phosphorus), and hematopoiesis (red marrow makes blood cells).' },
+    { k: ['hematopoiesis','marrow','blood cells','platelets'], a: 'Hematopoiesis is blood-cell formation: red marrow inside certain bones makes nearly all red blood cells, white blood cells, and platelets. You will meet it again in Module 7.' },
+    { k: ['compact','cortical','osteon','lamellae','central canal'], w: 1.2, a: 'Compact bone is dense and solid. It forms the outer shell of every bone and the shaft of long bones. Its unit is the osteon: concentric lamellae around a central canal carrying a vessel and a nerve.' },
+    { k: ['spongy','trabecular','trabeculae'], w: 1.2, a: 'Spongy bone fills the ends of long bones, flat bones, and vertebral bodies. Its struts (trabeculae) line up along the lines of force, so it is light and strong, and its spaces hold marrow.' },
+    { k: ['lacunae','canaliculi'], a: 'Lacunae are small spaces each holding one osteocyte. Canaliculi are microscopic channels connecting them; nutrients and wastes travel through them.' },
+    { k: ['osteoblast','osteoclast','osteocyte','cells','remodel','remodeling'], w: 1.3, a: 'Osteoblasts build matrix. Osteoclasts dissolve it, releasing calcium and phosphorus. Osteocytes are former osteoblasts trapped in the matrix that sense strain. About 10 percent of the skeleton is replaced each year.' },
+    { k: ['diaphysis','epiphysis','metaphysis','medullary','periosteum','endosteum'], a: 'A long bone has a compact shaft (diaphysis) around a medullary cavity, a transition zone (metaphysis), and spongy ends (epiphyses). The periosteum wraps the outside; the endosteum lines the cavity.' },
+    { k: ['vesalius','galen','fabrica'], a: 'In 1543 Andreas Vesalius published De humani corporis fabrica. He dissected human bodies and drew what he saw, correcting errors repeated since Galen, who had dissected macaques. His principle: look at the body itself.' },
+    { k: ['shape','shapes','long','short','flat','irregular'], w: 1.2, a: 'Long bones are levers (femur, humerus, tibia, phalanges). Short bones are blocks (carpals, tarsals). Flat bones protect and give muscle surfaces (cranial bones, sternum, ribs, scapulae). Irregular bones fit no category (vertebrae, most facial bones).' },
+    { k: ['marking','markings','projection','depression','opening','epicondyle','groove','foramen'], w: 1.2, a: 'Projections stick out and mostly anchor muscles (the medial epicondyle). Depressions guide tendons, nerves, and vessels (the intertubercular groove). Openings let them through (the foramen magnum). Ask of every marking: what uses that?' },
+    { k: ['print','bioprint','scaffold','graft'], a: 'Researchers are 3D-printing porous scaffolds in the shape of missing bone, sometimes seeded with the patient’s stem cells. Cells colonize the scaffold and lay down real bone as it dissolves. It works in animals and some early human cases, especially jaw and skull.' },
+    { k: ['notebook','lab report','submit','pdf','words','length'], w: 1.2, a: 'The 3.01 Notebook: a four-shape table, a 3 to 5 sentence analysis of the medial epicondyle, and a 3 to 5 sentence reflection on the focus question. 250 to 400 words. Download the PDF and upload it to the 3.01 Notebook assignment.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>

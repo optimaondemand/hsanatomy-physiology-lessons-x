@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>The Skull: Cranial Bones · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+@media (max-width:640px){.idrow,.idhead{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><clipPath id="m3cr"><ellipse cx="225" cy="128" rx="172" ry="112"/></clipPath></defs></svg>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A human cranium seen from the left side, with the sutures between its bones visible" style="background-image:url(img/lesson-3-02-hero.jpg);background-position:center 45%"><span class="hlab">Cranium · lateral view</span><span class="hcred">Image: MAKY.OREL, CC0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 3.02 &middot; Module 3: Skeletal System</div>
+      <h1>The Skull: Cranial Bones</h1>
+      <div class="focusq"><div class="label">Focus</div><p>Why is the skull built from eight separate bones held together by sutures, rather than being a single solid dome?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to distinguish the axial from the appendicular skeleton and state the bone count of each.</li><li>I will be able to name all eight cranial bones and locate each one on a 3D figure or sketch.</li><li>I will be able to describe the role of cranial sutures and the foramen magnum in the structure and function of the skull.</li><li>I will be able to explain why air-filled paranasal sinuses are useful given how heavy a solid skull would be.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Eight bones, one vault</div>
+      <svg class="m2-fig" viewBox="0 0 440 310" role="img" aria-label="A schematic skull from the left side with the frontal, parietal, temporal, occipital and sphenoid bones in different colors"><g transform="translate(0,4)"><ellipse cx="225" cy="128" rx="172" ry="112" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M60 150 Q48 210 70 262 L150 282 Q186 276 196 236" fill="#EFE6D6" stroke="#7A6A55" stroke-width="2.5"/><path d="M70 262 Q110 300 170 284" fill="none" stroke="#7A6A55" stroke-width="2.5"/></g><g transform="translate(0,4)"><polygon points="40,0 192,0 172,152 40,182" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="192,0 336,0 322,118 172,152" fill="#FFFFFF" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="336,0 420,0 420,270 300,226 322,118" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="172,152 322,118 300,226 196,236" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="138,166 176,152 196,236 152,230" fill="#E07BB0" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)" clip-path="url(#m3cr)"><polyline points="192,0 188,30 196,52 184,78 192,100 180,126 172,152" fill="none" stroke="#5B4A33" stroke-width="2"/><polyline points="336,0 332,30 340,60 328,90 322,118" fill="none" stroke="#5B4A33" stroke-width="2"/></g><g transform="translate(0,4)"><circle cx="104" cy="168" r="26" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g><g transform="translate(0,4)"><ellipse cx="128" cy="176" rx="16" ry="20" fill="#F6E27A" fill-opacity=".6" stroke="#B59A1E" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
+      <div class="cap">The cranial bones from the left side; the ethmoid (dashed) sits deep, between the eyes.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="halves" role="tab"><span class="n">01</span>Axial and Appendicular</button>
+  <button class="tab" data-tab="cranial" role="tab"><span class="n">02</span>The Eight Cranial Bones</button>
+  <button class="tab" data-tab="design" role="tab"><span class="n">03</span>Sinuses and Sutures</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 AXIAL AND APPENDICULAR ═════════ -->
+<section class="panel" id="tab-halves" role="tabpanel">
+  <div class="vo" data-clip="w3_halves">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Two Halves, Two Verbs</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Axial skeleton in red, appendicular in blue, then the skull split into cranial and facial bones"><g data-step="0" class="nohalo"><text x="340" y="24" class="m2-t" text-anchor="middle">206 bones, two halves</text></g><g data-step="1" class="nohalo"><g transform="translate(60,20)"><circle cx="60" cy="24" r="20" fill="none" stroke="#C22F4A" stroke-width="5"/><path d="M60 46 V150" stroke="#C22F4A" stroke-width="6"/><path d="M40 70 h40 M38 86 h44 M40 102 h40" stroke="#C22F4A" stroke-width="4"/><path d="M28 58 h64 M60 58 l-46 20 l-8 70 M60 58 l46 20 l8 70" stroke="#B9C4CF" stroke-width="5" fill="none"/><path d="M38 150 h44 M44 152 l-6 100 M76 152 l6 100" stroke="#B9C4CF" stroke-width="6" fill="none"/></g><text x="120" y="290" class="m2-t" text-anchor="middle" style="fill:#C22F4A">axial: 80</text></g><g data-step="2" class="nohalo"><g transform="translate(230,20)"><circle cx="60" cy="24" r="20" fill="none" stroke="#B9C4CF" stroke-width="5"/><path d="M60 46 V150" stroke="#B9C4CF" stroke-width="6"/><path d="M40 70 h40 M38 86 h44 M40 102 h40" stroke="#B9C4CF" stroke-width="4"/><path d="M28 58 h64 M60 58 l-46 20 l-8 70 M60 58 l46 20 l8 70" stroke="#1E5AA0" stroke-width="5" fill="none"/><path d="M38 150 h44 M44 152 l-6 100 M76 152 l6 100" stroke="#1E5AA0" stroke-width="6" fill="none"/></g><text x="290" y="290" class="m2-t" text-anchor="middle" style="fill:#1E5AA0">appendicular: 126</text></g><g data-step="3" class="nohalo"><text x="500" y="60" class="m2-ts">axial protects:</text><text x="500" y="80" class="m2-ts">brain, cord, heart, lungs</text><text x="500" y="110" class="m2-ts">appendicular moves:</text><text x="500" y="130" class="m2-ts">reach, walk, lift, run</text></g><g data-step="4" class="nohalo"><text x="500" y="180" class="m2-t" style="fill:#0B1B33">skull: 22 bones</text><text x="500" y="200" class="m2-ts">locked by sutures</text></g><g data-step="5" class="nohalo"><text x="500" y="236" class="m2-ts" style="fill:#C22F4A">8 cranial: the vault</text><text x="500" y="256" class="m2-ts" style="fill:#1E5AA0">14 facial: the face</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Before we study any single bone, we need a way to organize all two hundred six of them.", "The axial skeleton is the central column: eighty bones from the top of the skull to the tip of the tailbone. Skull, spine, rib cage, and sternum.", "The appendicular skeleton is everything that hangs off it: one hundred twenty-six bones in the arms, the legs, and the shoulder and pelvic girdles.", "One verb for each half. The axial skeleton protects the brain, the spinal cord, the heart, and the lungs. The appendicular skeleton moves.", "We start at the top, with the skull: twenty-two bones fitted like the stones of an arch and locked by jagged seams called sutures.", "Eight cranial bones build the vault around the brain. Fourteen facial bones build the face. Today, the eight."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>How the 206 bones divide into axial and appendicular, and how the 22 skull bones divide into cranial and facial.</span></div>
+    <p class="marg"><b>Perseverance.</b> The skeleton is what endures. Every load you have ever borne was managed by a frame that quietly rebuilds itself under stress.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="3.02-reading" data-title="The skull: cranial bones" data-src="../../assets/models/skull.glb" data-poster="../../assets/models/skull--d36f2c.webp" data-alt="3D model: Skull" data-orbit="-90deg 85deg auto"></div>
+      <h3>Axial and appendicular — the two halves of the skeleton</h3>
+      <p>Before we look at any single bone, we need a way to organize all 206 of them. Anatomists divide the skeleton into two regions:</p>
+      <figure class="plate"><img data-img="f30201" alt="The axial skeleton (tan) and appendicular skeleton (green), anterior and posterior views"><figcaption>Figure — The axial skeleton (tan) and appendicular skeleton (green).</figcaption></figure>
+      <p>The <b>axial skeleton</b><button type="button" class="say" data-say="axial-skeleton" aria-label="Hear it: axial skeleton" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the central column of the body — 80 bones arranged along the long axis from the top of the skull to the tip of the tailbone. It includes the skull, the vertebral column (spine), the rib cage, and the sternum. The axial skeleton is the body’s <i>protective core</i>: it surrounds the brain, the spinal cord, the heart, and the lungs. Almost everything the axial skeleton does is a variation on the verb <i>protect</i>.</p>
+      <p>The <b>appendicular skeleton</b><button type="button" class="say" data-say="appendicular-skeleton" aria-label="Hear it: appendicular skeleton" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is everything else — 126 bones that hang off the axial skeleton in your arms, legs, and the bony girdles (shoulder and pelvis) that attach them. The appendicular skeleton is the body’s <i>moving frame</i>: it is what lets you reach, walk, lift, and run. Almost everything the appendicular skeleton does is a variation on the verb <i>move</i>.</p>
+      <p>80 + 126 = 206. We will spend Week 1 and the first half of Week 2 in the axial skeleton, then move to the appendicular skeleton through the rest of the module. We begin where most anatomy textbooks begin: at the top.</p>
+      <h3>The skull — cranial and facial</h3>
+      <p>The skull is the most architecturally complex region of the human skeleton. Twenty-two bones fit together with the precision of a stone arch, locked into place by jagged seams called <b>sutures</b><button type="button" class="say" data-say="suture" aria-label="Hear it: sutures" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the zig-zag lines you can see running across any skull you look at closely. Once you reach adulthood, every suture in your skull is fused, with one exception: the joints around the lower jaw, which stay mobile for chewing and speaking.</p>
+      <figure class="plate"><img data-img="f30202" alt="Skull sutures: sagittal, coronal, squamous, and lambdoid, top and side views"><figcaption>Figure — The skull’s major sutures: sagittal, coronal, squamous, and lambdoid.</figcaption></figure>
+      <p>The 22 skull bones split into two groups by function. <b>Cranial bones</b> (<i>crani/o-</i> = skull; the 8 you will trace this week) form the rounded vault that surrounds and protects the brain. <b>Facial bones</b> (the 14 you will meet in Reading 3.03) build the face, hold the teeth, and frame the eyes, nose, and mouth. This reading covers the eight cranial bones. The facial bones come next.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Half?</h2></div>
+    <p class="hint">Girdles count with the limbs they attach.</p>
+    <div class="place card" id="w3wh">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ax" data-fb="Axial: it sits on the body&rsquo;s long axis." data-miss="Top of the central column.">skull</button>
+        <button class="chip" data-k="b" data-ans="ax" data-fb="Axial: part of the rib cage." data-miss="The breastbone, front and center.">sternum</button>
+        <button class="chip" data-k="c" data-ans="ap" data-fb="Appendicular: a limb bone." data-miss="It is in the leg.">femur</button>
+        <button class="chip" data-k="d" data-ans="ap" data-fb="Appendicular: the shoulder girdle attaches the arm." data-miss="Girdles belong with the limbs they attach.">scapula</button>
+        <button class="chip" data-k="e" data-ans="ax" data-fb="Axial: the spine is the column itself." data-miss="The central column.">a thoracic vertebra</button>
+        <button class="chip" data-k="f" data-ans="ap" data-fb="Appendicular: shoulder girdle again." data-miss="It links the arm to the trunk.">clavicle</button>
+        <button class="chip" data-k="g" data-ans="ax" data-fb="Axial: the rib cage protects the heart and lungs." data-miss="Protect is the axial verb.">a rib</button>
+        <button class="chip" data-k="h" data-ans="ap" data-fb="Appendicular: limb bones." data-miss="Move is the appendicular verb.">phalanges of the toes</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="ax"><h4>Axial · 80</h4><div class="drop"></div></div><div class="bin" data-bin="ap"><h4>Appendicular · 126</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Check the Numbers</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w3q7"><p class="q">How many bones does the skull contain, and how do they divide?</p>
+        <button class="opt" data-ok="1" data-fb="Right. 8 build the vault; 14 build the face.">22: 8 cranial and 14 facial</button>
+        <button class="opt" data-fb="8 is only the vault.">8: all cranial</button>
+        <button class="opt" data-fb="The ear ossicles are counted separately in the reading.">28: 8 cranial, 14 facial, 6 ear bones</button></div>
+      <div class="mcq card" data-qid="w3q8"><p class="q">Which verb sums up the appendicular skeleton?</p>
+        <button class="opt" data-fb="That is the axial verb.">Protect</button>
+        <button class="opt" data-ok="1" data-fb="Right. Reach, walk, lift, run.">Move</button>
+        <button class="opt" data-fb="Every bone stores minerals; that does not tell the halves apart.">Store</button></div>
+    </div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="cranial" type="button">Next: The Eight Cranial Bones &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 THE EIGHT CRANIAL BONES ═════════ -->
+<section class="panel" id="tab-cranial" role="tabpanel">
+  <div class="vo" data-clip="w3_cranial">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Eight Bones Around the Brain</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The cranial bones appear one at a time on a schematic skull"><g data-step="0" class="nohalo"><g transform="translate(240,6) scale(.9)"><g transform="translate(0,0)"><ellipse cx="225" cy="128" rx="172" ry="112" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M60 150 Q48 210 70 262 L150 282 Q186 276 196 236" fill="#EFE6D6" stroke="#7A6A55" stroke-width="2.5"/><path d="M70 262 Q110 300 170 284" fill="none" stroke="#7A6A55" stroke-width="2.5"/></g><g transform="translate(0,0)"><circle cx="104" cy="168" r="26" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g></g><text x="20" y="24" class="m2-t">eight flat bones around the brain</text></g><g data-step="1" class="nohalo"><g transform="translate(240,6) scale(.9)"><g transform="translate(0,0)"><polygon points="40,0 192,0 172,152 40,182" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)"><circle cx="104" cy="168" r="26" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g></g><text x="20" y="60" class="m2-ts" style="fill:#1E5AA0">frontal: forehead, orbit roofs</text></g><g data-step="2" class="nohalo"><g transform="translate(240,6) scale(.9)"><g transform="translate(0,0)"><polygon points="192,0 336,0 322,118 172,152" fill="#FFFFFF" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g></g><text x="20" y="84" class="m2-ts">parietal ×2: sides and roof</text></g><g data-step="3" class="nohalo"><g transform="translate(240,6) scale(.9)"><g transform="translate(0,0)"><polygon points="172,152 322,118 300,226 196,236" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)"><circle cx="262" cy="196" r="9" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M282 214 q12 14 6 30 q-14 -6 -14 -24z" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><path d="M246 214 l-10 44" stroke="#7A6A55" stroke-width="3" stroke-linecap="round"/></g></g><text x="20" y="108" class="m2-ts" style="fill:#B0306E">temporal ×2: ears, mastoid</text></g><g data-step="4" class="nohalo"><g transform="translate(240,6) scale(.9)"><g transform="translate(0,0)"><polygon points="336,0 420,0 420,270 300,226 322,118" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g></g><text x="20" y="132" class="m2-ts" style="fill:#2F6B4F">occipital: back, foramen magnum</text></g><g data-step="5" class="nohalo"><g transform="translate(240,6) scale(.9)"><g transform="translate(0,0)"><polygon points="138,166 176,152 196,236 152,230" fill="#E07BB0" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)"><ellipse cx="128" cy="176" rx="16" ry="20" fill="#F6E27A" fill-opacity=".6" stroke="#B59A1E" stroke-width="2" stroke-dasharray="5 4"/></g><g transform="translate(0,0)" clip-path="url(#m3cr)"><polyline points="192,0 188,30 196,52 184,78 192,100 180,126 172,152" fill="none" stroke="#5B4A33" stroke-width="2"/><polyline points="336,0 332,30 340,60 328,90 322,118" fill="none" stroke="#5B4A33" stroke-width="2"/></g></g><text x="20" y="156" class="m2-ts" style="fill:#C22F4A">deep: sphenoid + ethmoid</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The cranial bones are flat bones. Together they form the cranial cavity, the dome that houses the brain. Six are visible from outside. Two are buried deep.", "The frontal bone is your forehead. It also forms the roof of each eye socket.", "Two parietal bones form the sides and roof. They meet each other at the sagittal suture, and the frontal bone at the coronal suture.", "Two temporal bones sit around and behind the ears. They house the inner ear, and the mastoid process you can feel behind each ear anchors neck muscles.", "The occipital bone forms the back and base of the skull. The spinal cord leaves through its foramen magnum, and the occipital condyles beside it rest on the first vertebra.", "Two bones sit deep. The sphenoid, shaped like a butterfly, touches every other cranial bone. The fragile ethmoid sits between the eyes, its holes letting the nerves for smell reach the brain."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Each of the eight cranial bones: where it sits and one landmark on it.</span></div>
+    <article class="atlas">
+      <h3>The eight cranial bones</h3>
+      <p>The cranial bones are flat bones (remember — thin sandwich of compact bone around spongy bone in the middle). All eight together form the <i>cranial cavity</i>, the dome that houses the brain. Six of them are visible from the outside of the skull. Two are buried deep inside.</p>
+      <figure class="plate"><img data-img="f30204" alt="Skull, right lateral view, with cranial and facial bones and sutures labeled"><figcaption>Figure — The skull, right lateral view, with the cranial bones, sutures, and major landmarks labeled.</figcaption></figure>
+      <h4>Frontal bone (1)</h4>
+      <p>The <b>frontal bone</b><button type="button" class="say" data-say="frontal-bone" aria-label="Hear it: frontal bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> forms your forehead and the upper part of each eye socket. Run your fingers across your forehead — that whole curved plate is one bone. The frontal bone also extends backward to form the roof of the orbits (the bony sockets that hold your eyes) and the front portion of the floor of the cranial cavity, where the front of the brain rests.</p>
+      <h4>Parietal bones (2)</h4>
+      <p>The two <b>parietal bones</b><button type="button" class="say" data-say="parietal" aria-label="Hear it: parietal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — one on each side, left and right — form the upper sides and roof of the cranium. If you rest your hand flat on top of your head, you are touching both parietal bones. They meet each other along a suture that runs front-to-back along the midline of the skull (the <i>sagittal suture</i>), and they meet the frontal bone along the suture across your hairline (the <i>coronal suture</i>).</p>
+      <h4>Temporal bones (2)</h4>
+      <p>The two <b>temporal bones</b><button type="button" class="say" data-say="temporal-bone" aria-label="Hear it: temporal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — one on each side — form the lower sides of the cranium, the area around and behind your ears. The temporal bones are denser and more complex than the other cranial bones, because they house the inner ear (the hearing and balance organs you will meet in Module 5). The bony bump you can feel behind each ear — the <i>mastoid process</i> — is a projection of the temporal bone that anchors several muscles of the neck. Two more temporal bone landmarks matter for what comes next. The <b>zygomatic process</b><button type="button" class="say" data-say="zygomatic-process" aria-label="Hear it: zygomatic process" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a slender bridge of bone that projects forward from the temporal bone toward the cheek, where it forms a joint with the zygomatic bone (the cheekbone) — the two together form the <i>zygomatic arch</i> you can feel along the side of your face. The <b>styloid process</b><button type="button" class="say" data-say="styloid" aria-label="Hear it: styloid process" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a thin, pointed spike of bone projecting downward from the underside of the temporal bone, just in front of the mastoid process; several muscles and ligaments of the tongue and neck anchor to it.</p>
+      <figure class="plate"><img data-img="f30205" alt="Temporal bone, showing the mastoid process, styloid process, zygomatic process, and mandibular fossa"><figcaption>Figure — The temporal bone, showing the mastoid process, styloid process, zygomatic process, and mandibular fossa.</figcaption></figure>
+      <h4>Occipital bone (1)</h4>
+      <p>The <b>occipital bone</b><button type="button" class="say" data-say="occipital" aria-label="Hear it: occipital bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> forms the back of the skull and most of its base. The largest opening in the entire skeleton runs through the occipital bone — the <b>foramen magnum</b><button type="button" class="say" data-say="foramen-magnum" aria-label="Hear it: foramen magnum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, the “great opening,” through which the spinal cord descends from the brain. On either side of the foramen magnum, two rounded knobs (the <i>occipital condyles</i>) form the joint between the skull and the first vertebra of the neck. Without this joint you could not nod “yes.”</p>
+      <figure class="plate"><img data-img="f30206" alt="Skull, posterior view, showing the occipital bone, foramen magnum, and occipital condyles"><figcaption>Figure — The skull, posterior view, showing the occipital bone, foramen magnum, and occipital condyles.</figcaption></figure>
+      <h4>Sphenoid bone (1, deep)</h4>
+      <p>The <b>sphenoid bone</b><button type="button" class="say" data-say="sphenoid" aria-label="Hear it: sphenoid bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> sits deep inside the skull, behind the eyes, spanning across the cranial floor from one side to the other. From the side, it is shaped like a butterfly with wings spread — or, in older anatomy texts, like a bat. The sphenoid bone touches every other cranial bone, which has earned it the nickname “keystone of the cranial floor.” Sitting on top of the sphenoid is a small bony pocket called the <i>sella turcica</i> (“Turkish saddle”) that cradles the pituitary gland — the master gland you will meet in Module 6.</p>
+      <figure class="plate"><img data-img="f30208" alt="Sphenoid bone, superior and posterior views"><figcaption>Figure — The sphenoid bone, superior and posterior views, showing its wing-shaped structure.</figcaption></figure>
+      <h4>Ethmoid bone (1, deep)</h4>
+      <p>The <b>ethmoid bone</b><button type="button" class="say" data-say="ethmoid" aria-label="Hear it: ethmoid bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the most fragile bone in the skull. It sits in front of the sphenoid, between the two orbits (eye sockets), and forms much of the roof of the nasal cavity. The ethmoid is honeycombed with tiny air-filled spaces (the <i>ethmoidal sinuses</i>), and its upper surface is perforated with dozens of small holes through which the nerve fibers responsible for smell pass from the nose into the brain. Because the ethmoid is so thin and so close to the brain, head injuries that fracture this bone can be serious.</p>
+      <figure class="plate"><img data-img="f30209" alt="Ethmoid bone, showing the crista galli, cribriform plate, and nasal conchae"><figcaption>Figure — The ethmoid bone, showing the crista galli, cribriform plate, and superior/middle nasal conchae.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Label the Skull</h2></div>
+    <p class="hint">The ethmoid is deep, so it is not marked. Where would it be?</p>
+    <div class="w2n-grid"><div class="m3-fig card"><svg viewBox="0 0 440 310" role="img" aria-label="A schematic skull from the left side with five bones marked A to E"><g transform="translate(0,4)"><ellipse cx="225" cy="128" rx="172" ry="112" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M60 150 Q48 210 70 262 L150 282 Q186 276 196 236" fill="#EFE6D6" stroke="#7A6A55" stroke-width="2.5"/><path d="M70 262 Q110 300 170 284" fill="none" stroke="#7A6A55" stroke-width="2.5"/></g><g transform="translate(0,4)"><polygon points="40,0 192,0 172,152 40,182" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="192,0 336,0 322,118 172,152" fill="#FFFFFF" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="336,0 420,0 420,270 300,226 322,118" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="172,152 322,118 300,226 196,236" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)"><polygon points="138,166 176,152 196,236 152,230" fill="#E07BB0" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,4)" clip-path="url(#m3cr)"><polyline points="192,0 188,30 196,52 184,78 192,100 180,126 172,152" fill="none" stroke="#5B4A33" stroke-width="2"/><polyline points="336,0 332,30 340,60 328,90 322,118" fill="none" stroke="#5B4A33" stroke-width="2"/></g><g transform="translate(0,4)"><circle cx="104" cy="168" r="26" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g><g transform="translate(0,4)"><ellipse cx="128" cy="176" rx="16" ry="20" fill="#F6E27A" fill-opacity=".6" stroke="#B59A1E" stroke-width="2" stroke-dasharray="5 4"/></g><g class="m3-mk"><circle cx="110" cy="70" r="14"/><text x="110" y="75">A</text></g><g class="m3-mk"><circle cx="258" cy="52" r="14"/><text x="258" y="57">B</text></g><g class="m3-mk"><circle cx="248" cy="170" r="14"/><text x="248" y="175">C</text></g><g class="m3-mk"><circle cx="376" cy="150" r="14"/><text x="376" y="155">D</text></g><g class="m3-mk"><circle cx="166" cy="206" r="14"/><text x="166" y="211">E</text></g></svg></div><div class="card idtable" id="w3lab" style="padding:16px 20px"><div class="idhead c1"><span></span><span>Bone</span><span></span></div><div class="idrow c1"><span class="loc">Marker A</span><select data-ans="frontal"><option value="">choose</option><option>frontal</option><option>parietal</option><option>temporal</option><option>occipital</option><option>sphenoid</option><option>ethmoid</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Marker B</span><select data-ans="parietal"><option value="">choose</option><option>frontal</option><option>parietal</option><option>temporal</option><option>occipital</option><option>sphenoid</option><option>ethmoid</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Marker C</span><select data-ans="temporal"><option value="">choose</option><option>frontal</option><option>parietal</option><option>temporal</option><option>occipital</option><option>sphenoid</option><option>ethmoid</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Marker D</span><select data-ans="occipital"><option value="">choose</option><option>frontal</option><option>parietal</option><option>temporal</option><option>occipital</option><option>sphenoid</option><option>ethmoid</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Marker E</span><select data-ans="sphenoid"><option value="">choose</option><option>frontal</option><option>parietal</option><option>temporal</option><option>occipital</option><option>sphenoid</option><option>ethmoid</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Name each marked bone, then check.</span></div></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Recite the Eight</h2></div>
+    <p class="hint">Copywork, the quick way. Then cover the screen and recite.</p>
+    <div class="order card" id="w3ord" data-order="fr,lp,rp,lt,rt,oc,sp,et" data-done="All eight: six superficial, then two deep. Now say them aloud in under fifteen seconds." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the eight in the reading&rsquo;s order: front to back, then the two deep bones.</p><div class="opool"><button data-k="fr">frontal</button><button data-k="rp">right parietal</button><button data-k="sp">sphenoid</button><button data-k="oc">occipital</button><button data-k="et">ethmoid</button><button data-k="rt">right temporal</button><button data-k="lp">left parietal</button><button data-k="lt">left temporal</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Find the Landmark</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w3q9"><p class="q">The spinal cord leaves the skull through the foramen magnum. Which bone is it in?</p>
+        <button class="opt" data-ok="1" data-fb="Right. The back and base of the skull.">Occipital</button>
+        <button class="opt" data-fb="The temporal bone holds the ear.">Temporal</button>
+        <button class="opt" data-fb="The sphenoid is deep, behind the eyes.">Sphenoid</button></div>
+      <div class="mcq card" data-qid="w3q10"><p class="q">Which bone touches every other cranial bone, the keystone of the cranial floor?</p>
+        <button class="opt" data-fb="The ethmoid is deep too, but small and fragile.">Ethmoid</button>
+        <button class="opt" data-ok="1" data-fb="Right. The butterfly-shaped keystone.">Sphenoid</button>
+        <button class="opt" data-fb="The parietals meet only their neighbors.">Parietal</button></div>
+      <div class="mcq card" data-qid="w3q11"><p class="q">You press the bump just behind your ear. Which bone, and which marking?</p>
+        <button class="opt" data-fb="The condyles are under the skull, beside the foramen magnum.">Occipital, occipital condyle</button>
+        <button class="opt" data-ok="1" data-fb="Right. A projection that anchors neck muscles.">Temporal, mastoid process</button>
+        <button class="opt" data-fb="That runs along the top midline.">Parietal, sagittal suture</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 25 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Skeleton Atlas: the cranial bones</span>
+      <p>Title the next page of your Skeleton Atlas &ldquo;The Cranial Bones.&rdquo; Use the Atlas figures as your reference and draw each bone large enough to label.</p><p>Draw the six superficial bones one at a time, in color: <b>frontal</b> (blue), left and right <b>parietal</b> (white), left and right <b>temporal</b> (pink), <b>occipital</b> (green). Label each as you finish it.</p><p>With dashed outlines, to show they sit behind the surface bones, draw the <b>sphenoid</b> (pink) and the <b>ethmoid</b> (yellow). Then locate, without drawing, the foramen magnum on the underside of the occipital bone.</p>
+      <ul class="checks"><li data-ck="w3d21">Six superficial cranial bones drawn in color and labeled.</li><li data-ck="w3d22">Sphenoid and ethmoid drawn with dashed outlines.</li><li data-ck="w3d23">Foramen magnum located on the occipital bone.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Skeleton Atlas page: they become your Module 3 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">F</span><h2>Sketch and Label</h2></div>
+    <p class="hint">About 15 minutes. This sketch is the diagram you photograph for the Notebook.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In your notebook, sketch a side view of the skull with the frontal, parietal, temporal and occipital bones labeled, the sphenoid and ethmoid dashed, and arrows to the styloid and mastoid processes. Then write here: which marking was hardest to place, and why?</p><textarea class="jbox" id="w3t3" data-label="Sketch and label: the hardest marking" data-min="12"></textarea></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="halves" type="button">&larr; Axial and Appendicular</button><button class="btn" data-go="design" type="button">Next: Sinuses and Sutures &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 SINUSES AND SUTURES ═════════ -->
+<section class="panel" id="tab-design" role="tabpanel">
+  <div class="vo" data-clip="w3_design">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">An Efficient Design</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Sinuses lighten the skull, sutures lock it, foramina let things through"><g data-step="0" class="nohalo"><g transform="translate(250,10) scale(.8)"><g transform="translate(0,0)"><ellipse cx="225" cy="128" rx="172" ry="112" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M60 150 Q48 210 70 262 L150 282 Q186 276 196 236" fill="#EFE6D6" stroke="#7A6A55" stroke-width="2.5"/><path d="M70 262 Q110 300 170 284" fill="none" stroke="#7A6A55" stroke-width="2.5"/></g><g transform="translate(0,0)"><polygon points="40,0 192,0 172,152 40,182" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)"><polygon points="192,0 336,0 322,118 172,152" fill="#FFFFFF" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)"><polygon points="336,0 420,0 420,270 300,226 322,118" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)"><polygon points="172,152 322,118 300,226 196,236" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)"><polygon points="138,166 176,152 196,236 152,230" fill="#E07BB0" stroke="#7A6A55" stroke-width="2" clip-path="url(#m3cr)"/></g><g transform="translate(0,0)" clip-path="url(#m3cr)"><polyline points="192,0 188,30 196,52 184,78 192,100 180,126 172,152" fill="none" stroke="#5B4A33" stroke-width="2"/><polyline points="336,0 332,30 340,60 328,90 322,118" fill="none" stroke="#5B4A33" stroke-width="2"/></g><g transform="translate(0,0)"><circle cx="104" cy="168" r="26" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g></g></g><g data-step="1" class="nohalo"><g transform="translate(150,0) scale(.9)"><ellipse cx="96" cy="120" rx="16" ry="12" fill="#BFE3F5" stroke="#1E5AA0" stroke-width="2"/><ellipse cx="150" cy="190" rx="14" ry="12" fill="#BFE3F5" stroke="#1E5AA0" stroke-width="2"/></g><text x="20" y="40" class="m2-ts" style="fill:#1E5AA0">air-filled sinuses: lighter</text></g><g data-step="2" class="nohalo"><g transform="translate(250,10) scale(.8)"><g transform="translate(0,0)" clip-path="url(#m3cr)"><polyline points="192,0 188,30 196,52 184,78 192,100 180,126 172,152" fill="none" stroke="#5B4A33" stroke-width="2"/><polyline points="336,0 332,30 340,60 328,90 322,118" fill="none" stroke="#5B4A33" stroke-width="2"/></g></g><text x="20" y="64" class="m2-ts">sutures: zig-zag seams</text></g><g data-step="3" class="nohalo"><text x="20" y="88" class="m2-ts">newborn: fontanelles</text><g transform="translate(615,200)"><ellipse cx="0" cy="0" rx="54" ry="44" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2"/><path d="M0 -40 l14 14 l-14 14 l-14 -14z" fill="#fff" stroke="#C22F4A" stroke-width="2"/></g></g><g data-step="4" class="nohalo"><text x="20" y="112" class="m2-ts">adult: fused, joints only at the jaw</text></g><g data-step="5" class="nohalo"><text x="20" y="270" class="m2-t" style="fill:#C22F4A">foramina: every hole lets something through</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["A skull made of solid bone would be heavy. Look at how the design saves weight without losing strength.", "Several cranial and facial bones hold paranasal sinuses: frontal, ethmoidal, sphenoidal, and maxillary. Air-filled spaces lighten the skull and warm and moisten the air you breathe.", "Sutures, the jagged seams between the bones, lock the vault together like the stones of an arch.", "In a newborn, the sutures are still open gaps called fontanelles. The skull can compress slightly during birth and grow fast in the first two years.", "By adulthood the sutures have fused. The only skull joints that stay mobile are the ones around the lower jaw.", "And every cranial bone is perforated by foramina, holes for vessels and cranial nerves. Each one exists because something has to get through."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Paranasal sinuses, sutures and fontanelles, and foramina: how the skull is light, strong, and passable.</span></div>
+    <article class="atlas">
+      <h3>Sinuses, sutures, and openings — the marks of an efficient design</h3>
+      <p>Several of the cranial bones (and several facial bones) contain hollow, air-filled spaces called <b>paranasal sinuses</b><button type="button" class="say" data-say="paranasal" aria-label="Hear it: paranasal sinuses" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (<i>para-</i> = beside, near — the sinuses sit beside the nasal cavity). The named sinuses follow the bone they sit in — <i>frontal</i> sinuses (above the eyes), <i>ethmoidal</i> sinuses (between the eyes), <i>sphenoidal</i> sinuses (behind the eyes), and <i>maxillary</i> sinuses (in the cheekbones, which are facial bones). Air-filled sinuses make the skull lighter while still preserving its strength. They also warm and humidify the air you breathe and resonate when you speak — which is why your voice sounds different when you have a head cold.</p>
+      <p>Sutures hold the cranial bones together. In a newborn, the sutures are still wide-open membranous gaps called <i>fontanelles</i> (“little fountains”), which is why a baby’s skull can compress slightly during birth and why it grows rapidly during the first two years of life. By around age two, the fontanelles have closed and the bones are fitted edge-to-edge. By adulthood the sutures themselves are fused. Adult human skulls do not flex.</p>
+      <p>Finally, every cranial bone is perforated with <b>foramina</b><button type="button" class="say" data-say="foramina" aria-label="Hear it: foramina" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — small holes through which blood vessels and cranial nerves pass into and out of the brain. The foramen magnum, mentioned above, is the largest, but there are dozens of smaller ones. Each foramen exists because something has to get through.</p>
+      <figure class="plate"><img data-img="f30207" alt="Cranial base, inferior and superior views, showing the foramen magnum, sella turcica, and other cranial floor landmarks"><figcaption>Figure — The cranial base, viewed from below and above, showing how the eight cranial bones and their foramina fit together.</figcaption></figure>
+      <details class="selfcheck"><summary>Self-check: name all eight cranial bones before clicking</summary><p>Frontal · left parietal · right parietal · left temporal · right temporal · occipital · sphenoid · ethmoid · = 8.</p><p>Now group them: 6 superficial (frontal, both parietals, both temporals, occipital), 2 deep (sphenoid, ethmoid). If you missed any, re-read the relevant section before moving on.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Sinus, Which Bone?</h2></div>
+    <p class="hint">Each sinus is named for the bone it sits in.</p>
+    <div class="card idtable" id="w3sin" style="padding:16px 20px"><div class="idhead c2"><span></span><span>Sits in</span><span>Where</span><span></span></div><div class="idrow c2"><span class="loc">frontal sinus</span><select data-ans="frontal bone"><option value="">choose</option><option>frontal bone</option><option>ethmoid</option><option>sphenoid</option><option>maxilla</option></select><select data-ans="above the eyes"><option value="">choose</option><option>above the eyes</option><option>between the eyes</option><option>behind the eyes</option><option>in the cheeks</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">ethmoidal sinuses</span><select data-ans="ethmoid"><option value="">choose</option><option>frontal bone</option><option>ethmoid</option><option>sphenoid</option><option>maxilla</option></select><select data-ans="between the eyes"><option value="">choose</option><option>above the eyes</option><option>between the eyes</option><option>behind the eyes</option><option>in the cheeks</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">sphenoidal sinus</span><select data-ans="sphenoid"><option value="">choose</option><option>frontal bone</option><option>ethmoid</option><option>sphenoid</option><option>maxilla</option></select><select data-ans="behind the eyes"><option value="">choose</option><option>above the eyes</option><option>between the eyes</option><option>behind the eyes</option><option>in the cheeks</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">maxillary sinus</span><select data-ans="maxilla"><option value="">choose</option><option>frontal bone</option><option>ethmoid</option><option>sphenoid</option><option>maxilla</option></select><select data-ans="in the cheeks"><option value="">choose</option><option>above the eyes</option><option>between the eyes</option><option>behind the eyes</option><option>in the cheeks</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill every cell without looking back. Then check.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Why Not One Solid Dome?</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w3q12"><p class="q">Why can a newborn&rsquo;s skull compress slightly during birth?</p>
+        <button class="opt" data-fb="The cranial bones are bone; the gaps between them are open.">Its bones are still cartilage</button>
+        <button class="opt" data-ok="1" data-fb="Right. Membranous gaps let the plates shift, and let the skull grow fast.">Its sutures are open fontanelles</button>
+        <button class="opt" data-fb="The foramen magnum is there from the start.">It has no foramen magnum yet</button></div>
+      <div class="mcq card" data-qid="w3q13"><p class="q">A crack spreading through one cranial bone tends to stop at a suture. What does that suggest about eight bones versus one?</p>
+        <button class="opt" data-fb="Think about where the crack stops.">Sutures waste strength</button>
+        <button class="opt" data-ok="1" data-fb="Right. One reason a jointed vault can beat a single shell.">Separate plates can limit how far damage spreads</button>
+        <button class="opt" data-fb="They lock the adult vault as well.">Sutures only matter in babies</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Pick one paranasal sinus. In two or three sentences, name the bone it occupies and give one reason it helps that this bone is hollow rather than solid.</p><textarea class="jbox" id="w3t4" data-label="Your Turn: one sinus and why hollow helps" data-min="25"></textarea></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="cranial" type="button">&larr; The Eight Cranial Bones</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Label the Cranial Vault</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>Why is the skull built from eight separate bones held together by sutures, rather than being a single solid dome?</p></div>
+        <p>You can now name the eight cranial bones and explain how sutures, foramina, and sinuses make the vault well suited to its job. This Notebook asks you to show both: a labeled diagram, then two short written answers. You should finish able to name each bone by sight and explain why the skull is built from eight pieces rather than one.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Labeled Diagram</h2></div>
+    <p class="hint">The diagram itself goes to Canvas as a photo or scan, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Sketch a side view of the skull (your notebook sketch from the Sketch and Label step works). Label all eight cranial bones, mark the sphenoid and ethmoid as deep (dashed or a different color), and mark the styloid process and at least one named suture. Photograph or scan it to upload with this PDF. Here, list what your diagram labels.</p><textarea class="jbox" id="w3rD" data-label="Diagram: what my labeled sketch shows" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>One Sinus</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;5 sentences: pick one paranasal sinus (frontal, ethmoidal, sphenoidal, or maxillary), name the bone it occupies, and explain one functional reason it is useful that this bone is hollow rather than solid.</p><div class="ttrack" data-field="w3rS"><span class="tt" data-t="sinus">sinus</span><span class="tt" data-t="frontal|ethmoid|sphenoid|maxill">bone</span><span class="tt" data-t="light|weight|warm|moist|humidif|resonan|voice|strength">reason</span></div><textarea class="jbox" id="w3rS" data-label="Short answer: one paranasal sinus" data-min="40"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Answer the Focus Question</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;5 sentences: why is the cranial vault made of eight separate bones? Give at least two reasons from the Atlas. Consider development (fontanelles), fracture mechanics, and the role of sutures.</p><div class="ttrack" data-field="w3rF"><span class="tt" data-t="fontanel|birth|grow|infant|newborn|baby">development</span><span class="tt" data-t="fracture|crack|break|damage">fracture</span><span class="tt" data-t="suture">sutures</span></div><textarea class="jbox" id="w3rF" data-label="Focus question: why eight bones" data-min="45"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w3rD,w3rS,w3rF" data-min="200" data-max="350"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w3c21">My diagram labels all eight cranial bones, with the sphenoid and ethmoid marked as deep.</li><li data-ck="w3c22">The styloid process and at least one named suture are marked.</li><li data-ck="w3c23">My sinus answer pairs a specific sinus with its bone and a clear functional reason.</li><li data-ck="w3c24">My focus answer gives at least two reasons from the Atlas.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 3.02 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="design" type="button">&larr; Sinuses and Sutures</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>axial skeleton<button type="button" class="say" data-say="axial-skeleton" aria-label="Hear it: axial skeleton" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>axis</small></dt><dd>The 80 bones of the central column: skull, vertebral column, rib cage, and sternum.</dd>
+  <dt>appendicular skeleton<button type="button" class="say" data-say="appendicular-skeleton" aria-label="Hear it: appendicular skeleton" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>appendage</small></dt><dd>The 126 bones of the limbs and the shoulder and pelvic girdles.</dd>
+  <dt>cranial bones <small>crani/o- &ldquo;skull&rdquo;</small></dt><dd>The eight bones of the vault around the brain.</dd>
+  <dt>facial bones</dt><dd>The fourteen bones of the face (Lesson 3.03).</dd>
+  <dt>suture<button type="button" class="say" data-say="suture" aria-label="Hear it: suture" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A jagged, interlocking seam between skull bones; fused in adults.</dd>
+  <dt>frontal bone<button type="button" class="say" data-say="frontal-bone" aria-label="Hear it: frontal bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The forehead and the roofs of the orbits.</dd>
+  <dt>parietal bones<button type="button" class="say" data-say="parietal" aria-label="Hear it: parietal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The two plates forming the sides and roof of the cranium.</dd>
+  <dt>sagittal suture<button type="button" class="say" data-say="sagittal-suture" aria-label="Hear it: sagittal suture" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The midline suture between the two parietal bones.</dd>
+  <dt>coronal suture<button type="button" class="say" data-say="coronal-suture" aria-label="Hear it: coronal suture" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The suture between the frontal and parietal bones, across the hairline.</dd>
+  <dt>temporal bones<button type="button" class="say" data-say="temporal-bone" aria-label="Hear it: temporal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The two bones around and behind the ears; they house the inner ear.</dd>
+  <dt>mastoid process<button type="button" class="say" data-say="mastoid" aria-label="Hear it: mastoid process" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A projection of the temporal bone behind the ear; anchors neck muscles.</dd>
+  <dt>styloid process<button type="button" class="say" data-say="styloid" aria-label="Hear it: styloid process" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A thin spike of the temporal bone below the ear; anchors muscles and ligaments.</dd>
+  <dt>occipital bone<button type="button" class="say" data-say="occipital" aria-label="Hear it: occipital bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The back and most of the base of the skull.</dd>
+  <dt>foramen magnum<button type="button" class="say" data-say="foramen-magnum" aria-label="Hear it: foramen magnum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>&ldquo;great opening&rdquo;</small></dt><dd>The largest opening in the skeleton; the spinal cord passes through it.</dd>
+  <dt>occipital condyles<button type="button" class="say" data-say="occipital-condyles" aria-label="Hear it: occipital condyles" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Two knobs beside the foramen magnum that rest on the first vertebra.</dd>
+  <dt>sphenoid bone<button type="button" class="say" data-say="sphenoid" aria-label="Hear it: sphenoid bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A deep, butterfly-shaped bone behind the eyes that touches every other cranial bone.</dd>
+  <dt>sella turcica<button type="button" class="say" data-say="sella-turcica" aria-label="Hear it: sella turcica" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>&ldquo;Turkish saddle&rdquo;</small></dt><dd>A pocket on top of the sphenoid that holds the pituitary gland.</dd>
+  <dt>ethmoid bone<button type="button" class="say" data-say="ethmoid" aria-label="Hear it: ethmoid bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A deep, fragile bone between the orbits; its perforated plate passes the nerves for smell.</dd>
+  <dt>paranasal sinuses<button type="button" class="say" data-say="paranasal" aria-label="Hear it: paranasal sinuses" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>para- &ldquo;beside&rdquo;</small></dt><dd>Air-filled spaces in skull bones beside the nasal cavity: frontal, ethmoidal, sphenoidal, maxillary.</dd>
+  <dt>fontanelle<button type="button" class="say" data-say="fontanelle" aria-label="Hear it: fontanelle" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>&ldquo;little fountain&rdquo;</small></dt><dd>An open membranous gap between a newborn&rsquo;s skull bones; closed by about age two.</dd>
+  <dt>foramina<button type="button" class="say" data-say="foramina" aria-label="Hear it: foramina" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>singular foramen</small></dt><dd>Holes through bone for vessels and nerves.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w3-l2", "title": "The Skull: Cranial Bones", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 3 · The Skull: Cranial Bones", "pdfTag": "AP_W3_L2"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f30201":{"src":"img/w3-3.02-01-example-bone-markings-features-r.webp","alt":""},"f30202":{"src":"img/w3-3.02-02-axial-appendicular-skeleton-axia.webp","alt":""},"f30204":{"src":"img/w3-3.02-04-figure.webp","alt":""},"f30205":{"src":"img/w3-3.02-05-eight-cranial-bones-place-eight-.webp","alt":""},"f30206":{"src":"img/w3-3.02-06-temporal-bone-bone-markings-plac.webp","alt":""},"f30208":{"src":"img/w3-3.02-08-occipital-bone-occipital-bone.webp","alt":""},"f30209":{"src":"img/w3-3.02-09-sphenoid-bone-sphenoid-bone.webp","alt":""},"f30207":{"src":"img/w3-3.02-07-figure.webp","alt":""}},"w3_halves":{"audio":"audio/ap-w3-l2-halves.mp3","words":[[0,0.32,"Before"],[0.4,0.48,"we"],[0.56,0.88,"study"],[1,1.12,"any"],[1.28,1.6,"single"],[1.68,2.32,"bone,"],[2.36,2.4,"we"],[2.48,2.56,"need"],[2.6,2.64,"a"],[2.68,2.72,"way"],[2.8,2.88,"to"],[2.96,3.44,"organize"],[3.52,3.68,"all"],[3.84,3.92,"two"],[4,4.24,"hundred"],[4.4,4.56,"six"],[4.64,4.72,"of"],[4.84,5.2,"them."],[5.44,5.52,"The"],[5.6,6,"axial"],[6.08,6.56,"skeleton"],[6.64,6.72,"is"],[6.76,6.8,"the"],[6.96,7.28,"central"],[7.36,8.16,"column:"],[8.24,8.44,"eighty"],[8.48,8.88,"bones"],[8.96,9.04,"from"],[9.08,9.12,"the"],[9.2,9.36,"top"],[9.44,9.48,"of"],[9.52,9.56,"the"],[9.6,10,"skull"],[10.08,10.16,"to"],[10.24,10.32,"the"],[10.4,10.56,"tip"],[10.6,10.64,"of"],[10.68,10.72,"the"],[10.8,11.36,"tailbone."],[11.76,12.4,"Skull,"],[12.52,13.2,"spine,"],[13.28,13.36,"rib"],[13.44,13.92,"cage,"],[13.96,14,"and"],[14.08,14.56,"sternum."],[15.04,15.08,"The"],[15.12,15.76,"appendicular"],[15.84,16.32,"skeleton"],[16.4,16.56,"is"],[16.72,16.88,"everything"],[16.96,17.04,"that"],[17.12,17.36,"hangs"],[17.52,17.68,"off"],[17.76,18.24,"it:"],[18.32,18.4,"one"],[18.48,18.64,"hundred"],[18.72,19.2,"twenty-six"],[19.28,19.6,"bones"],[19.64,19.68,"in"],[19.72,19.76,"the"],[19.92,20.48,"arms,"],[20.52,20.56,"the"],[20.64,21.12,"legs,"],[21.16,21.2,"and"],[21.28,21.32,"the"],[21.36,21.76,"shoulder"],[21.8,21.84,"and"],[22,22.24,"pelvic"],[22.32,22.8,"girdles."],[23.2,23.36,"One"],[23.44,23.68,"verb"],[23.76,23.84,"for"],[23.92,24.08,"each"],[24.28,24.72,"half."],[24.96,25.04,"The"],[25.12,25.52,"axial"],[25.6,26,"skeleton"],[26.08,26.48,"protects"],[26.52,26.56,"the"],[26.64,27.2,"brain,"],[27.24,27.28,"the"],[27.36,27.68,"spinal"],[27.76,28.24,"cord,"],[28.28,28.32,"the"],[28.4,28.8,"heart,"],[28.84,28.88,"and"],[28.96,29,"the"],[29.04,29.52,"lungs."],[29.92,30,"The"],[30.16,30.64,"appendicular"],[30.72,31.2,"skeleton"],[31.44,32,"moves."],[32.4,32.48,"We"],[32.56,32.72,"start"],[32.76,32.8,"at"],[32.84,32.88,"the"],[32.96,33.44,"top,"],[33.52,33.6,"with"],[33.64,33.68,"the"],[33.76,34.64,"skull:"],[34.72,35.12,"twenty-two"],[35.2,35.52,"bones"],[35.68,35.92,"fitted"],[36,36.08,"like"],[36.16,36.2,"the"],[36.24,36.64,"stones"],[36.68,36.72,"of"],[36.8,36.88,"an"],[36.96,37.28,"arch"],[37.36,37.52,"and"],[37.6,37.92,"locked"],[38,38.08,"by"],[38.24,38.56,"jagged"],[38.64,39.04,"seams"],[39.16,39.28,"called"],[39.36,40.12,"sutures."],[40.32,40.48,"Eight"],[40.64,40.96,"cranial"],[41.04,41.36,"bones"],[41.52,41.68,"build"],[41.72,41.76,"the"],[41.92,42.16,"vault"],[42.24,42.48,"around"],[42.52,42.56,"the"],[42.64,43.36,"brain."],[43.48,43.68,"Fourteen"],[43.84,44.16,"facial"],[44.24,44.56,"bones"],[44.64,44.8,"build"],[44.88,44.96,"the"],[45.16,45.68,"face."],[45.76,46.4,"Today,"],[46.44,46.48,"the"],[46.56,47.097,"eight."]]},"w3_cranial":{"audio":"audio/ap-w3-l2-cranial.mp3","words":[[0.263,0.343,"The"],[0.463,0.743,"cranial"],[0.823,1.143,"bones"],[1.223,1.303,"are"],[1.383,1.623,"flat"],[1.703,2.423,"bones."],[2.663,2.903,"Together"],[2.983,3.063,"they"],[3.143,3.303,"form"],[3.383,3.463,"the"],[3.543,3.943,"cranial"],[3.983,4.663,"cavity,"],[4.743,4.823,"the"],[4.863,5.143,"dome"],[5.223,5.303,"that"],[5.383,5.703,"houses"],[5.743,5.783,"the"],[5.983,6.663,"brain."],[6.743,6.983,"Six"],[7.063,7.143,"are"],[7.303,7.463,"visible"],[7.543,7.703,"from"],[7.983,8.663,"outside."],[8.863,9.063,"Two"],[9.143,9.223,"are"],[9.303,9.543,"buried"],[9.623,10.263,"deep."],[10.343,10.423,"The"],[10.543,10.743,"frontal"],[10.823,11.063,"bone"],[11.143,11.223,"is"],[11.303,11.383,"your"],[11.463,12.263,"forehead."],[12.303,12.343,"It"],[12.503,12.663,"also"],[12.743,12.983,"forms"],[13.063,13.223,"the"],[13.343,13.463,"roof"],[13.543,13.623,"of"],[13.703,13.863,"each"],[13.943,14.023,"eye"],[14.103,14.903,"socket."],[14.983,15.063,"Two"],[15.143,15.703,"parietal"],[15.863,16.023,"bones"],[16.103,16.343,"form"],[16.423,16.503,"the"],[16.543,16.903,"sides"],[16.983,17.063,"and"],[17.143,17.863,"roof."],[17.943,18.023,"They"],[18.103,18.183,"meet"],[18.263,18.343,"each"],[18.423,18.583,"other"],[18.663,18.743,"at"],[18.823,18.903,"the"],[18.943,19.303,"sagittal"],[19.383,19.943,"suture,"],[19.983,20.023,"and"],[20.103,20.143,"the"],[20.183,20.463,"frontal"],[20.503,20.823,"bone"],[20.903,20.983,"at"],[21.036,21.09,"the"],[21.143,21.543,"coronal"],[21.623,22.343,"suture."],[22.423,22.503,"Two"],[22.583,22.983,"temporal"],[23.063,23.383,"bones"],[23.463,23.543,"sit"],[23.623,24.023,"around"],[24.103,24.183,"and"],[24.303,24.583,"behind"],[24.623,24.663,"the"],[24.743,25.463,"ears."],[25.543,25.623,"They"],[25.703,25.943,"house"],[26.023,26.103,"the"],[26.183,26.343,"inner"],[26.423,26.903,"ear,"],[26.943,26.983,"and"],[27.023,27.063,"the"],[27.143,27.543,"mastoid"],[27.623,28.103,"process"],[28.143,28.183,"you"],[28.263,28.423,"can"],[28.543,28.663,"feel"],[28.743,28.983,"behind"],[29.063,29.223,"each"],[29.303,29.543,"ear"],[29.623,30.023,"anchors"],[30.103,30.263,"neck"],[30.343,31.063,"muscles."],[31.103,31.143,"The"],[31.223,31.703,"occipital"],[31.783,32.023,"bone"],[32.183,32.423,"forms"],[32.503,32.583,"the"],[32.663,32.903,"back"],[32.983,33.063,"and"],[33.143,33.383,"base"],[33.463,33.503,"of"],[33.543,33.623,"the"],[33.703,34.423,"skull."],[34.463,34.503,"The"],[34.583,34.823,"spinal"],[34.903,35.143,"cord"],[35.223,35.463,"leaves"],[35.543,35.623,"through"],[35.703,35.783,"its"],[35.863,36.343,"foramen"],[36.423,37.063,"magnum,"],[37.103,37.143,"and"],[37.183,37.223,"the"],[37.303,37.703,"occipital"],[37.783,38.343,"condyles"],[38.463,38.743,"beside"],[38.823,38.903,"it"],[38.983,39.223,"rest"],[39.303,39.343,"on"],[39.383,39.463,"the"],[39.543,39.783,"first"],[39.903,40.463,"vertebra."],[40.663,40.823,"Two"],[40.903,41.223,"bones"],[41.303,41.543,"sit"],[41.623,42.103,"deep."],[42.263,42.343,"The"],[42.423,43.223,"sphenoid,"],[43.263,43.463,"shaped"],[43.503,43.543,"like"],[43.623,43.663,"a"],[43.703,44.423,"butterfly,"],[44.663,44.903,"touches"],[44.983,45.223,"every"],[45.303,45.463,"other"],[45.623,45.943,"cranial"],[46.023,46.343,"bone."],[46.663,46.743,"The"],[46.823,47.143,"fragile"],[47.223,47.783,"ethmoid"],[47.863,48.023,"sits"],[48.103,48.423,"between"],[48.463,48.503,"the"],[48.583,49.223,"eyes,"],[49.303,49.383,"its"],[49.463,49.783,"holes"],[49.863,50.023,"letting"],[50.103,50.143,"the"],[50.183,50.503,"nerves"],[50.583,50.663,"for"],[50.743,51.143,"smell"],[51.223,51.463,"reach"],[51.503,51.543,"the"],[51.623,52.023,"brain."]]},"w3_design":{"audio":"audio/ap-w3-l2-design.mp3","words":[[0.154,0.234,"A"],[0.314,0.554,"skull"],[0.634,0.714,"made"],[0.794,0.874,"of"],[1.034,1.354,"solid"],[1.434,1.674,"bone"],[1.754,1.834,"would"],[1.874,1.914,"be"],[2.074,2.474,"heavy."],[2.874,2.954,"Look"],[2.994,3.034,"at"],[3.114,3.194,"how"],[3.234,3.274,"the"],[3.474,3.674,"design"],[3.834,4.154,"saves"],[4.234,4.474,"weight"],[4.554,4.794,"without"],[4.874,5.114,"losing"],[5.194,5.674,"strength."],[6.074,6.394,"Several"],[6.474,6.874,"cranial"],[6.954,7.034,"and"],[7.114,7.434,"facial"],[7.514,7.754,"bones"],[7.834,8.074,"hold"],[8.154,8.794,"paranasal"],[8.874,9.834,"sinuses:"],[9.954,10.474,"frontal,"],[10.594,11.274,"ethmoidal,"],[11.314,11.994,"sphenoidal,"],[12.034,12.074,"and"],[12.154,12.794,"maxillary."],[13.194,13.594,"Air-filled"],[13.674,14.154,"spaces"],[14.234,14.474,"lighten"],[14.514,14.554,"the"],[14.634,15.034,"skull"],[15.114,15.194,"and"],[15.354,15.674,"warm"],[15.754,15.834,"and"],[15.914,16.234,"moisten"],[16.314,16.394,"the"],[16.474,16.634,"air"],[16.714,16.794,"you"],[16.834,17.434,"breathe."],[17.674,18.394,"Sutures,"],[18.434,18.474,"the"],[18.554,18.874,"jagged"],[18.954,19.274,"seams"],[19.434,19.594,"between"],[19.674,19.714,"the"],[19.754,20.394,"bones,"],[20.514,20.634,"lock"],[20.714,20.794,"the"],[20.914,21.034,"vault"],[21.114,21.434,"together"],[21.514,21.674,"like"],[21.714,21.754,"the"],[21.834,22.154,"stones"],[22.234,22.314,"of"],[22.354,22.394,"an"],[22.474,22.874,"arch."],[23.194,23.274,"In"],[23.314,23.354,"a"],[23.434,23.994,"newborn,"],[24.034,24.074,"the"],[24.154,24.474,"sutures"],[24.554,24.714,"are"],[24.834,24.954,"still"],[25.114,25.354,"open"],[25.434,25.834,"gaps"],[25.954,26.074,"called"],[26.154,26.954,"fontanelles."],[27.274,27.354,"The"],[27.434,27.674,"skull"],[27.754,27.834,"can"],[28.074,28.314,"compress"],[28.354,28.714,"slightly"],[28.834,28.954,"during"],[29.034,29.354,"birth"],[29.434,29.514,"and"],[29.594,29.834,"grow"],[29.914,30.234,"fast"],[30.314,30.354,"in"],[30.394,30.474,"the"],[30.594,30.714,"first"],[30.794,30.874,"two"],[30.954,31.434,"years."],[31.754,31.834,"By"],[31.914,32.394,"adulthood"],[32.554,32.634,"the"],[32.714,33.034,"sutures"],[33.114,33.274,"have"],[33.314,34.074,"fused."],[34.154,34.234,"The"],[34.354,34.474,"only"],[34.554,34.794,"skull"],[34.874,35.114,"joints"],[35.194,35.274,"that"],[35.354,35.594,"stay"],[35.674,36.074,"mobile"],[36.154,36.234,"are"],[36.314,36.394,"the"],[36.514,36.634,"ones"],[36.754,36.874,"around"],[36.954,37.034,"the"],[37.114,37.274,"lower"],[37.434,38.074,"jaw."],[38.154,38.234,"And"],[38.314,38.634,"every"],[38.714,39.114,"cranial"],[39.234,39.354,"bone"],[39.434,39.594,"is"],[39.674,40.154,"perforated"],[40.234,40.314,"by"],[40.394,41.274,"foramina,"],[41.474,41.674,"holes"],[41.754,41.834,"for"],[41.914,42.314,"vessels"],[42.394,42.474,"and"],[42.554,42.874,"cranial"],[42.954,43.754,"nerves."],[43.834,43.914,"Each"],[43.994,44.074,"one"],[44.154,44.634,"exists"],[44.714,45.034,"because"],[45.234,45.434,"something"],[45.514,45.674,"has"],[45.754,45.794,"to"],[45.834,45.994,"get"],[46.154,46.504,"through."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the axial and appendicular skeleton, the skull, the eight cranial bones and their landmarks, sutures, sinuses, and foramina',
+  quick: ['What are the eight cranial bones?', 'What is the difference between axial and appendicular?', 'Why does the skull have sinuses?'],
+  practice: /(write|answer|do) (my|the) (notebook|lab report|short answer|focus question)|which sinus should i (pick|choose)/i,
+  guide: 'That part is yours to write, so here are my questions instead. What would a single solid dome lose at birth, and when it cracks? What does air in a bone save? Say it out loud first, then write it.',
+  notes: [
+    { k: ['axial','appendicular','80','126','halves'], w: 1.3, a: 'Axial: 80 bones along the body\u2019s axis (skull, vertebral column, rib cage, sternum); its verb is protect. Appendicular: 126 bones of the limbs and the shoulder and pelvic girdles; its verb is move. 80 + 126 = 206.' },
+    { k: ['skull','22','cranial','facial'], w: 1.1, a: 'The skull has 22 bones: 8 cranial bones form the vault around the brain, and 14 facial bones build the face (Lesson 3.03).' },
+    { k: ['eight','name','list','cranial bones'], w: 1.4, a: 'Frontal, left and right parietal, left and right temporal, occipital, sphenoid, and ethmoid. Six are superficial; the sphenoid and ethmoid are deep.' },
+    { k: ['frontal','forehead'], a: 'The frontal bone forms the forehead, the roofs of the orbits, and the front of the cranial floor.' },
+    { k: ['parietal','sagittal','coronal'], a: 'The two parietal bones form the sides and roof. They meet each other at the sagittal suture and the frontal bone at the coronal suture.' },
+    { k: ['temporal','ear','mastoid','styloid'], a: 'The temporal bones sit around the ears and house the inner ear. The mastoid process behind the ear anchors neck muscles; the styloid process is a thin spike below the ear.' },
+    { k: ['occipital','foramen magnum','condyle','condyles'], a: 'The occipital bone forms the back and base of the skull. The spinal cord leaves through its foramen magnum, and the occipital condyles beside it rest on the first vertebra, the atlas.' },
+    { k: ['sphenoid','butterfly','keystone','sella','pituitary'], a: 'The sphenoid sits deep behind the eyes, shaped like a butterfly, and touches every other cranial bone. The sella turcica on top holds the pituitary gland.' },
+    { k: ['ethmoid','smell','cribriform','fragile'], a: 'The ethmoid is the most fragile skull bone. It sits between the orbits, forms much of the roof of the nasal cavity, and its perforated plate passes the nerve fibers for smell.' },
+    { k: ['sinus','sinuses','paranasal','hollow','light'], w: 1.3, a: 'Paranasal sinuses are air-filled spaces named for their bones: frontal, ethmoidal, sphenoidal, and maxillary. They lighten the skull and warm and moisten inhaled air.' },
+    { k: ['suture','sutures','fontanelle','fontanelles','baby','newborn','fused'], w: 1.3, a: 'Sutures are jagged seams between skull bones. In newborns they are open fontanelles, so the skull can compress during birth and grow fast; they close by about age two and fuse in adulthood.' },
+    { k: ['foramen','foramina','hole','holes'], a: 'Foramina are holes for blood vessels and cranial nerves. The foramen magnum is the largest; each exists because something has to get through.' },
+    { k: ['notebook','lab report','submit','pdf','diagram','words'], w: 1.2, a: 'The 3.02 Notebook: a labeled side-view skull diagram (photo or scan), a 3 to 5 sentence answer on one sinus, and a 3 to 5 sentence answer to the focus question. 200 to 350 words. Upload the diagram and this PDF.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>

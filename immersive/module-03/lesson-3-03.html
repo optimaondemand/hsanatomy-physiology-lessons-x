@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Facial Bones, the Hyoid, and Dentition · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+@media (max-width:640px){.idrow,.idhead{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A white 3D-printed human skull seen from the front, showing the facial bones, the orbits and the teeth" style="background-image:url(img/lesson-3-03-hero.jpg);background-position:center 38%"><span class="hlab">3D-printed skull · anterior view</span><span class="hcred">Image: Nevit Dilmen, CC BY-SA 3.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 3.03 &middot; Module 3: Skeletal System</div>
+      <h1>Facial Bones, the Hyoid, and Dentition</h1>
+      <div class="focusq"><div class="label">Focus</div><p>What can the hyoid bone do, despite never touching another bone, that no other bone in the body can do?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to name the four major facial bones (mandible, maxilla, zygomatic, nasal) and locate each on a diagram or 3D figure.</li><li>I will be able to explain what is unique about the hyoid bone and why it matters.</li><li>I will be able to identify the four tooth types and pair each with the function its shape enables.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">The face, front view</div>
+      <svg class="m2-fig" viewBox="0 0 400 380" role="img" aria-label="A schematic skull from the front with the four major facial bones in color and the hyoid below the jaw"><g transform="translate(0,0)"><ellipse cx="200" cy="112" rx="122" ry="104" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M126 186 Q200 168 274 186 L262 246 Q200 262 138 246z" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M200 168 q-22 34 -14 58 q14 8 28 0 q8 -24 -14 -58z" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M98 166 l30 -6 l8 34 l-34 10z" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2.5"/><path d="M302 166 l-30 -6 l-8 34 l34 10z" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2.5"/><circle cx="152" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/><circle cx="248" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M190 128 L210 128 L216 170 L184 170z" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><path d="M122 230 Q126 312 200 318 Q274 312 278 230 L262 236 Q258 292 200 298 Q142 292 138 236z" fill="#F6E27A" stroke="#7A6A55" stroke-width="2.5"/><path d="M160 346 Q200 372 240 346" fill="none" stroke="#C22F4A" stroke-width="7" stroke-linecap="round"/></g></svg>
+      <div class="cap">Mandible (yellow), maxillae (blue), zygomatic (green) and nasal (pink) bones, with the hyoid hanging free below.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="face" role="tab"><span class="n">01</span>Four Facial Bones</button>
+  <button class="tab" data-tab="hyoid" role="tab"><span class="n">02</span>Seven More and the Hyoid</button>
+  <button class="tab" data-tab="teeth" role="tab"><span class="n">03</span>Dentition</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 FOUR FACIAL BONES ═════════ -->
+<section class="panel" id="tab-face" role="tabpanel">
+  <div class="vo" data-clip="w3_face">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Face at Work</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The four major facial bones appear on a front view of the skull"><g data-step="0" class="nohalo"><g transform="translate(20,0) scale(.82)"><g transform="translate(0,0)"><ellipse cx="200" cy="112" rx="122" ry="104" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><circle cx="152" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/><circle cx="248" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g></g><text x="380" y="40" class="m2-t">14 facial bones: eat, speak, breathe, see</text></g><g data-step="1" class="nohalo"><g transform="translate(20,0) scale(.82)"><g transform="translate(0,0)"><path d="M122 230 Q126 312 200 318 Q274 312 278 230 L262 236 Q258 292 200 298 Q142 292 138 236z" fill="#F6E27A" stroke="#7A6A55" stroke-width="2.5"/></g></g><text x="380" y="90" class="m2-ts">mandible: the only skull bone</text><text x="380" y="108" class="m2-ts">that moves freely; TMJ hinge</text></g><g data-step="2" class="nohalo"><g transform="translate(20,0) scale(.82)"><g transform="translate(0,0)"><path d="M126 186 Q200 168 274 186 L262 246 Q200 262 138 246z" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M200 168 q-22 34 -14 58 q14 8 28 0 q8 -24 -14 -58z" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g></g><text x="380" y="140" class="m2-ts">maxillae: upper jaw, hard palate,</text><text x="380" y="158" class="m2-ts">largest sinuses</text></g><g data-step="3" class="nohalo"><g transform="translate(20,0) scale(.82)"><g transform="translate(0,0)"><ellipse cx="200" cy="112" rx="122" ry="104" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M98 166 l30 -6 l8 34 l-34 10z" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2.5"/><path d="M302 166 l-30 -6 l-8 34 l34 10z" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2.5"/><circle cx="152" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/><circle cx="248" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/></g></g><text x="380" y="190" class="m2-ts">zygomatic: cheekbones, zygomatic arch</text></g><g data-step="4" class="nohalo"><g transform="translate(20,0) scale(.82)"><g transform="translate(0,0)"><path d="M190 128 L210 128 L216 170 L184 170z" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/></g></g><text x="380" y="222" class="m2-ts">nasal: the bridge; the rest is cartilage</text></g><g data-step="5" class="nohalo"><text x="380" y="270" class="m2-t" style="fill:#C22F4A">4 major + 7 more = 14</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["If the cranial bones are the vault, the fourteen facial bones are the working architecture: they hold the teeth, frame the eyes, channel air, and hinge the jaw.", "The mandible is the lower jaw, the only skull bone that moves freely. Its condyle hinges in the mandibular fossa of the temporal bone at the temporomandibular joint.", "The two maxillae form the upper jaw. They hold the upper teeth, hold the largest sinuses, and build most of the hard palate between your mouth and your nose.", "The two zygomatic bones are your cheekbones. They form the outer wall of each orbit, and the zygomatic arch running back toward your ear.", "The two nasal bones meet at the midline to form the bridge of the nose. Below them, the nose is cartilage, which is why it can bend without breaking.", "Four major bones, seven of them counting both sides. Seven smaller ones bring the face to fourteen."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The mandible, maxillae, zygomatic and nasal bones: where each sits and what it does.</span></div>
+    <p class="marg"><b>Perseverance.</b> The skeleton is what endures. Every load you have ever borne was managed by a frame that quietly rebuilds itself under stress.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="3.03-reading" data-title="Facial bones and the hyoid" data-src="../../assets/models/skull.glb" data-poster="../../assets/models/skull--1fbab7.webp" data-alt="3D model: Skull" data-orbit="0deg 85deg auto"></div>
+      <h3>Fourteen facial bones</h3>
+      <p>If the eight cranial bones are the vault that protects the brain, the fourteen facial bones are the architecture of who you look like and how you eat, speak, and breathe. The face is where the skull does most of its non-protective work: holding the teeth, framing the eyes, channeling air through the nose, hinging the jaw, and giving the skin a structure to drape over. The set of fourteen includes some single bones on the midline and several mirrored pairs.</p>
+      <figure class="plate"><img data-img="f30302" alt="Skull, anterior view, with the facial bones labeled"><figcaption>Figure — The skull, anterior view, with the fourteen facial bones and their surrounding cranial bones labeled.</figcaption></figure>
+      <figure class="plate"><img data-img="f30210" alt="Paranasal sinuses: frontal, ethmoid, sphenoid, and maxillary sinuses"><figcaption>Figure — The paranasal sinuses: frontal, ethmoid, sphenoid, and maxillary.</figcaption></figure>
+      <h4>Mandible (1)</h4>
+      <p>The <b>mandible</b><button type="button" class="say" data-say="mandible" aria-label="Hear it: mandible" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the lower jaw — the only bone of the skull that can move freely on its neighbors. It holds the lower teeth, anchors the muscles of chewing, and hinges on the temporal bone at a joint called the <i>temporomandibular joint</i> (TMJ), one on each side. That joint has a specific anatomical address: the rounded knob at the top of each side of the mandible, called the <b>mandibular condyle</b><button type="button" class="say" data-say="mandibular-condyle" aria-label="Hear it: mandibular condyle" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (or condylar process), fits into a matching hollow on the temporal bone called the <i>mandibular fossa</i>. This is the exact location where your lower jaw meets the rest of your skull — every time you chew, speak, or yawn, the mandibular condyle is sliding and rotating inside the mandibular fossa. The mandible is the largest and strongest bone in the face. It is also the only one most people regularly fracture, because it sticks out.</p>
+      <figure class="plate"><img data-img="f30301" alt="Mandible, right lateral view, showing the condylar process, coronoid process, and mandibular foramen"><figcaption>Figure — The mandible, right lateral view, with the condylar process, coronoid process, ramus, and mandibular foramen labeled.</figcaption></figure>
+      <h4>Maxilla (2)</h4>
+      <p>The two <b>maxillae</b><button type="button" class="say" data-say="maxillae" aria-label="Hear it: maxillae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (singular: maxilla, but the left and right halves fuse so completely that the result is often described as one bone) form the upper jaw. They hold the upper teeth, contain the maxillary sinuses (the largest of the paranasal sinuses), and form most of the hard palate that separates your mouth from your nasal cavity. The maxillae also contribute to the floor of each orbit and the side of each nasal opening. They are doing five jobs at once, which is why this is the most complex pair of facial bones.</p>
+      <figure class="plate"><img data-img="f30303" alt="Maxilla, right lateral view, showing the floor of the orbit, zygomatic process, and alveolar process"><figcaption>Figure — The maxilla, right lateral view, showing the floor of the orbit, infraorbital foramen, and alveolar process.</figcaption></figure>
+      <figure class="plate"><img data-img="f30304" alt="Skull, inferior view, with the maxillae&#x27;s palatine processes forming the hard palate highlighted"><figcaption>Figure — Inferior view of the skull, showing the maxillae’s palatine processes forming the front of the hard palate.</figcaption></figure>
+      <h4>Zygomatic bones (2)</h4>
+      <p>The two <b>zygomatic bones</b><button type="button" class="say" data-say="zygomatic-bone" aria-label="Hear it: zygomatic bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are your cheekbones — one on each side, prominent under each eye. They form the lateral wall and floor of the orbit and the bony arch you can feel running back to your ear (the <i>zygomatic arch</i>) — formed where the zygomatic bone meets the zygomatic <i>process</i> of the temporal bone. It is a small but useful pattern in skeletal anatomy: when two bones share a joint, they often share a name. Beyond shaping the face visually, the zygomatic bones are structural — the bony bridge they form helps transfer force from a blow to the side of the face away from the eye.</p>
+      <figure class="plate"><img data-img="f30305" alt="Zygomatic bone, anterior and posterior views"><figcaption>Figure — The zygomatic bone, anterior and posterior views.</figcaption></figure>
+      <h4>Nasal bones (2)</h4>
+      <p>The two small <b>nasal bones</b> meet at the midline of the face to form the bridge of the nose — the hard part you can feel near the top. Below the nasal bones, the rest of your nose is cartilage. This is why nasal-bone fractures are common in sports and why the lower nose can bend without breaking.</p>
+      <figure class="plate"><img data-img="f30306" alt="Nasal bone, anterior and lateral views"><figcaption>Figure — The nasal bones, anterior and lateral views.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Find Them on Your Own Face</h2></div>
+    <p class="hint">About 10 minutes.</p>
+    <div class="card" style="padding:16px 20px"><p class="q" style="margin-top:0">Use a mirror. Tick each bone as you find it.</p><ul class="checks">
+     <li data-ck="w3p1"><b>Mandible:</b> open and close your jaw and feel it move.</li>
+     <li data-ck="w3p2"><b>Zygomatic:</b> press gently on a cheekbone, then follow the arch back toward your ear.</li>
+     <li data-ck="w3p3"><b>Nasal:</b> pinch the hard bridge of your nose; below it, the nose is cartilage.</li>
+     <li data-ck="w3p4"><b>Maxilla:</b> feel the upper jaw just under your nose.</li>
+     <li data-ck="w3p5"><b>TMJ:</b> a fingertip just in front of each ear; open slowly and feel the condyle rotate and slide.</li></ul>
+     <div class="field" style="margin-bottom:0"><p class="q">What surprised you about the TMJ?</p><textarea class="jbox" id="w3pal" data-label="Self-palpation: what surprised me about the TMJ" data-min="10"></textarea></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Which Facial Bone?</h2></div>
+    <p class="hint">Tap a clue, then the bone.</p>
+    <div class="place card" id="w3wf">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="man" data-fb="Mandible." data-miss="The lower jaw.">holds the lower teeth</button>
+        <button class="chip" data-k="b" data-ans="max" data-fb="Maxillae: the roof of the mouth." data-miss="The upper jaw.">forms most of the hard palate</button>
+        <button class="chip" data-k="c" data-ans="zyg" data-fb="Zygomatic." data-miss="Cheek.">the cheekbone under each eye</button>
+        <button class="chip" data-k="d" data-ans="nas" data-fb="Nasal bones." data-miss="Top of the nose.">the hard bridge of the nose</button>
+        <button class="chip" data-k="e" data-ans="man" data-fb="Mandible: the condyle meets the temporal bone." data-miss="It hinges at the ear.">its condyle forms the TMJ</button>
+        <button class="chip" data-k="f" data-ans="max" data-fb="Maxillae: the maxillary sinuses." data-miss="In the upper jaw, beside the nose.">holds the largest paranasal sinuses</button>
+        <button class="chip" data-k="g" data-ans="zyg" data-fb="Zygomatic." data-miss="The cheekbone reaches up to the eye socket.">forms the outer wall of the orbit</button>
+        <button class="chip" data-k="h" data-ans="nas" data-fb="Nasal: small and exposed." data-miss="The bridge takes the hit.">commonly broken in sports</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="man"><h4>Mandible</h4><div class="drop"></div></div><div class="bin" data-bin="max"><h4>Maxilla</h4><div class="drop"></div></div><div class="bin" data-bin="zyg"><h4>Zygomatic</h4><div class="drop"></div></div><div class="bin" data-bin="nas"><h4>Nasal</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Turn</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">The mandible is the only skull bone that moves freely. In two or three sentences, name the joint it forms and two things you could not do if it were fused like the cranial bones.</p><textarea class="jbox" id="w3t5" data-label="Your Turn: the moving jaw" data-min="25"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="hyoid" type="button">Next: Seven More and the Hyoid &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 SEVEN MORE AND THE HYOID ═════════ -->
+<section class="panel" id="tab-hyoid" role="tabpanel">
+  <div class="vo" data-clip="w3_hyoid">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Bone That Floats</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The seven remaining facial bones, then the hyoid floating in the neck"><g data-step="0" class="nohalo"><text x="20" y="30" class="m2-t">seven more facial bones</text></g><g data-step="1" class="nohalo"><text x="40" y="70" class="m2-ts">lacrimal ×2: tear channel, inner eye corner</text></g><g data-step="2" class="nohalo"><text x="40" y="100" class="m2-ts">palatine ×2: back of the hard palate</text><text x="40" y="130" class="m2-ts">inferior nasal conchae ×2: scrolls in the nose</text><text x="40" y="160" class="m2-ts">vomer: lower nasal septum</text></g><g data-step="3" class="nohalo"><g transform="translate(380,10) scale(.62)"><g transform="translate(0,0)"><ellipse cx="200" cy="112" rx="122" ry="104" fill="#F7F1E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M126 186 Q200 168 274 186 L262 246 Q200 262 138 246z" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2.5"/><path d="M200 168 q-22 34 -14 58 q14 8 28 0 q8 -24 -14 -58z" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M98 166 l30 -6 l8 34 l-34 10z" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2.5"/><path d="M302 166 l-30 -6 l-8 34 l34 10z" fill="#A8D8A8" stroke="#7A6A55" stroke-width="2.5"/><circle cx="152" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/><circle cx="248" cy="138" r="28" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M190 128 L210 128 L216 170 L184 170z" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><path d="M122 230 Q126 312 200 318 Q274 312 278 230 L262 236 Q258 292 200 298 Q142 292 138 236z" fill="#F6E27A" stroke="#7A6A55" stroke-width="2.5"/><path d="M160 346 Q200 372 240 346" fill="none" stroke="#C22F4A" stroke-width="7" stroke-linecap="round"/></g></g><text x="520" y="286" class="m2-ts" text-anchor="middle" style="fill:#C22F4A">hyoid: touches no bone</text></g><g data-step="4" class="nohalo"><text x="40" y="210" class="m2-ts">held by ligaments and muscles</text></g><g data-step="5" class="nohalo"><text x="40" y="250" class="m2-t">anchor for tongue and throat muscles:</text><text x="40" y="272" class="m2-t" style="fill:#C22F4A">swallowing and speech</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Seven more facial bones complete the face. You should know them by name, even if you will not draw them all.", "The two lacrimal bones sit at the inner corner of each eye socket, with a channel that drains tears into the nose. That is why crying makes your nose run.", "The two palatine bones form the back of the hard palate. The two inferior nasal conchae are scrolls of bone inside the nasal cavity, and the vomer forms the lower nasal septum.", "And then the hyoid. It sits high in the front of the neck, between the jaw and the larynx, and it is the only bone in the body that forms no joint with another bone.", "Shaped like a slim horseshoe, it is held in place by ligaments and by the muscles that attach to it.", "That freedom is its job. It gives the muscles of the tongue and throat something to pull against. Without it, you could not swallow well or speak as precisely."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The seven remaining facial bones, and the hyoid: where it is and why its floating position matters.</span></div>
+    <article class="atlas">
+      <h4>The remaining facial bones (7)</h4>
+      <p>There are seven additional facial bones you should know by name even if you will not be drawing them all. The two <b>lacrimal bones</b><button type="button" class="say" data-say="lacrimal" aria-label="Hear it: lacrimal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> sit at the medial corner of each eye socket and contain a small channel for tears to drain into the nasal cavity (which is why crying makes your nose run). The two <b>palatine bones</b><button type="button" class="say" data-say="palatine" aria-label="Hear it: palatine bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> sit behind the maxillae and form the back of the hard palate. The <b>vomer</b><button type="button" class="say" data-say="vomer" aria-label="Hear it: vomer" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a single bone forming the lower part of the nasal septum (the dividing wall between your nostrils). And the two <b>inferior nasal conchae</b><button type="button" class="say" data-say="conchae" aria-label="Hear it: inferior nasal conchae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are scroll-shaped bones inside the nasal cavity that increase its surface area for warming and humidifying the air you breathe in. Together, that is 1 + 2 + 2 + 2 + 2 + 2 + 1 + 2 = 14 facial bones.</p>
+      <figure class="plate"><img data-img="f30307" alt="Lacrimal bone, front and side views"><figcaption>Figure — The lacrimal bone, at the medial corner of the eye socket.</figcaption></figure>
+      <figure class="plate"><img data-img="f30308" alt="Palatine bone location, inferior view of the skull"><figcaption>Figure — The palatine bone, forming the back of the hard palate.</figcaption></figure>
+      <figure class="plate"><img data-img="f30309" alt="Vomer bone anatomy, superior and lateral views"><figcaption>Figure — The vomer, forming the lower part of the nasal septum.</figcaption></figure>
+      <figure class="plate"><img data-img="f30310" alt="Inferior nasal concha, anterior view and sagittal section of the skull"><figcaption>Figure — The inferior nasal concha, a scroll-shaped bone inside the nasal cavity.</figcaption></figure>
+      <h3>The hyoid — the one bone that touches no other</h3>
+      <p>The <b>hyoid bone</b><button type="button" class="say" data-say="hyoid" aria-label="Hear it: hyoid bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is unique in the human skeleton. It is the only bone that does not form a joint with another bone — it floats. Shaped like a slim horseshoe, the hyoid sits high in the front of the neck, between the lower jaw and the larynx, suspended in place by ligaments and the muscles that anchor to it. You can find your own hyoid: tilt your head back, then gently feel just below the angle of your jaw on the side of your neck. The small mobile bone that shifts when you swallow is the hyoid.</p>
+      <figure class="plate"><img data-img="f30311" alt="Hyoid bone, in the neck and in isolation, showing the greater and lesser horns"><figcaption>Figure — The hyoid bone, shown in place in the neck and in isolation, with its greater and lesser horns.</figcaption></figure>
+      <p>Because it touches no other bone, the hyoid is sometimes counted as part of the axial skeleton and sometimes counted on its own. Its role is to give the muscles of the tongue, the throat, and the floor of the mouth an anchor to pull against. Without the hyoid, you could not swallow effectively. You could not speak with the precision your language demands. The hyoid is small, it is hard to see, and it is essential.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Other Seven</h2></div>
+    <p class="hint">2 + 2 + 2 + 1 = 7.</p>
+    <div class="card idtable" id="w3o7" style="padding:16px 20px"><div class="idhead c1"><span></span><span>Job</span><span></span></div><div class="idrow c1"><span class="loc">lacrimal bones (2)</span><select data-ans="drain tears"><option value="">choose</option><option>drain tears</option><option>back of the hard palate</option><option>scrolls inside the nose</option><option>lower nasal septum</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">palatine bones (2)</span><select data-ans="back of the hard palate"><option value="">choose</option><option>drain tears</option><option>back of the hard palate</option><option>scrolls inside the nose</option><option>lower nasal septum</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">inferior nasal conchae (2)</span><select data-ans="scrolls inside the nose"><option value="">choose</option><option>drain tears</option><option>back of the hard palate</option><option>scrolls inside the nose</option><option>lower nasal septum</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">vomer (1)</span><select data-ans="lower nasal septum"><option value="">choose</option><option>drain tears</option><option>back of the hard palate</option><option>scrolls inside the nose</option><option>lower nasal septum</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill every cell without looking back. Then check.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>The Hyoid</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w3q14"><p class="q">What makes the hyoid unique in the skeleton?</p>
+        <button class="opt" data-fb="The smallest bones are in the ear.">It is the smallest bone</button>
+        <button class="opt" data-ok="1" data-fb="Right. It is suspended by ligaments and muscles.">It forms no joint with another bone</button>
+        <button class="opt" data-fb="It is bone, shaped like a horseshoe.">It is made of cartilage</button></div>
+      <div class="mcq card" data-qid="w3q15"><p class="q">Which everyday action depends most on the hyoid?</p>
+        <button class="opt" data-ok="1" data-fb="Right. Tongue and throat muscles pull against it.">Swallowing</button>
+        <button class="opt" data-fb="That is the joint between skull and atlas.">Nodding yes</button>
+        <button class="opt" data-fb="Eyelid muscles do not anchor to the hyoid.">Blinking</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Find Your Hyoid</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Tilt your head back, place a thumb and forefinger gently on either side of the front of your neck just below the jaw, and swallow. In one or two sentences: what does it feel like to find a bone that is suspended rather than attached?</p><textarea class="jbox" id="w3t6" data-label="Find your hyoid: what it felt like" data-min="12"></textarea></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="face" type="button">&larr; Four Facial Bones</button><button class="btn" data-go="teeth" type="button">Next: Dentition &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 DENTITION ═════════ -->
+<section class="panel" id="tab-teeth" role="tabpanel">
+  <div class="vo" data-clip="w3_teeth">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Teeth Follow Their Jobs</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="One quadrant of eight teeth, front to back, with what each shape does"><g data-step="0" class="nohalo"><text x="20" y="30" class="m2-t">teeth: not bone, but they sit in bone</text></g><g data-step="1" class="nohalo"><g transform="translate(40,-40) scale(1.6)"><rect x="80" y="110" width="20" height="34" rx="4" fill="#fff" stroke="#7A6A55" stroke-width="2"/><rect x="106" y="110" width="20" height="34" rx="4" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M134 144 L144 110 L156 144z" fill="#fff" stroke="#7A6A55" stroke-width="2"/><rect x="166" y="110" width="26" height="30" rx="8" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M179 114 v22" stroke="#C9A66B"/><rect x="198" y="110" width="26" height="30" rx="8" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M211 114 v22" stroke="#C9A66B"/><rect x="232" y="110" width="36" height="32" rx="9" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M250 114 v24 M236 126 h28" stroke="#C9A66B"/><rect x="274" y="110" width="36" height="32" rx="9" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M292 114 v24 M278 126 h28" stroke="#C9A66B"/><rect x="316" y="110" width="36" height="32" rx="9" fill="#fff" stroke="#7A6A55" stroke-width="2"/><path d="M334 114 v24 M320 126 h28" stroke="#C9A66B"/></g><text x="385" y="118" class="m2-ts" text-anchor="middle">one quadrant = 8 teeth, front to back</text></g><g data-step="2" class="nohalo"><text x="200" y="222" class="m2-t" text-anchor="middle" style="fill:#1E5AA0">incisors: cut</text></g><g data-step="3" class="nohalo"><text x="262" y="248" class="m2-t" text-anchor="middle" style="fill:#C22F4A">canine: pierce</text></g><g data-step="4" class="nohalo"><text x="350" y="222" class="m2-t" text-anchor="middle" style="fill:#2F6B4F">premolars: crush</text><text x="510" y="248" class="m2-t" text-anchor="middle" style="fill:#2F6B4F">molars: grind</text></g><g data-step="5" class="nohalo"><text x="340" y="284" class="m2-t" text-anchor="middle">32 adult teeth: 4 quadrants × 8</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Teeth look like bones and sit in bones, but they are not bones. They are a different mineralized tissue, with very little ability to repair.", "Each quadrant of an adult mouth holds eight teeth. Front to back: two incisors, one canine, two premolars, and three molars.", "Incisors are blades. They cut.", "Canines are pointed. They pierce and tear.", "Premolars and molars are broad and flat, with raised cusps. They crush and grind.", "Four quadrants of eight make thirty-two permanent teeth. The change in shape from front to back is form following function, one tooth at a time."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Why teeth are not bone, the adult pattern of 32, and how each tooth shape matches its job.</span></div>
+    <article class="atlas">
+      <h3>Dentition — teeth are not technically bone</h3>
+      <p>Your teeth look like bones and sit in bones, but anatomists do not classify them as bones. Teeth are a different kind of mineralized tissue, with different cells, a different developmental origin, and a different repair capacity (very little, compared to bone’s extensive remodeling). Formally, teeth are accessory structures of the <i>digestive system</i>, which you will meet in detail in Module 10. We cover them here because they are seated in the maxilla and mandible and travel with the skeleton in nearly every diagram and illustration.</p>
+      <p>An adult human has <b>32 permanent teeth</b>: 16 in the upper jaw, 16 in the lower jaw. Each quadrant of the mouth (upper left, upper right, lower left, lower right) holds 8 teeth: 2 incisors, 1 canine, 2 premolars, and 3 molars (the last molar is the “wisdom tooth,” which some adults never grow or have surgically removed). Children begin with 20 deciduous (“baby”) teeth, which are shed and replaced over roughly the first twelve years of life.</p>
+      <figure class="plate"><img data-img="f30312" alt="Chart of the 32 permanent teeth, upper and lower jaws, with each tooth numbered"><figcaption>Figure — The 32 permanent teeth, upper (maxillary) and lower (mandibular), numbered by quadrant.</figcaption></figure>
+      <p>The shape of each tooth follows its job. <b>Incisors</b><button type="button" class="say" data-say="incisor" aria-label="Hear it: incisors" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are blade-shaped — they cut. <b>Canines</b><button type="button" class="say" data-say="canine" aria-label="Hear it: canines" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are pointed — they pierce and tear. <b>Premolars</b><button type="button" class="say" data-say="premolar" aria-label="Hear it: premolars" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> and <b>molars</b><button type="button" class="say" data-say="molar" aria-label="Hear it: molars" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are broad and flat-topped with raised cusps — they crush and grind. The change in tooth shape from the front to the back of your mouth is a textbook example of form following function: every bite of food is processed by the right tool for the job, in sequence.</p>
+      <details class="selfcheck"><summary>Self-check: name the four major facial bones and the one unique non-articulating bone before clicking</summary><p>Four major facial bones (with pairs): <b>mandible</b> (1), <b>maxilla</b><button type="button" class="say" data-say="maxilla" aria-label="Hear it: maxilla" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (2), <b>zygomatic</b> (2), <b>nasal</b> (2). The unique non-articulating bone is the <b>hyoid</b> — the only bone in the body that does not form a joint with another bone.</p><p>If you got all five, you are ready for the drawing session. The other seven facial bones (lacrimal, palatine, vomer, inferior nasal conchae) are listed in the reading; you do not need to draw them this week.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Build One Quadrant</h2></div>
+    <div class="order card" id="w3q" data-order="i1,i2,c,p1,p2,m1,m2,m3" data-done="Eight teeth, front to back. Four quadrants make 32." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the teeth of one quadrant from the front of the mouth to the back.</p><div class="opool"><button data-k="i1">central incisor</button><button data-k="p2">second premolar</button><button data-k="m2">second molar</button><button data-k="i2">lateral incisor</button><button data-k="m1">first molar</button><button data-k="p1">first premolar</button><button data-k="c">canine</button><button data-k="m3">third molar (wisdom)</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Shape and Job</h2></div>
+    <div class="card idtable" id="w3tj" style="padding:16px 20px"><div class="idhead c2"><span></span><span>Shape</span><span>Job</span><span></span></div><div class="idrow c2"><span class="loc">incisor</span><select data-ans="blade"><option value="">choose</option><option>blade</option><option>pointed</option><option>broad with cusps</option></select><select data-ans="cut"><option value="">choose</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">canine</span><select data-ans="pointed"><option value="">choose</option><option>blade</option><option>pointed</option><option>broad with cusps</option></select><select data-ans="pierce"><option value="">choose</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">premolar</span><select data-ans="broad with cusps"><option value="">choose</option><option>blade</option><option>pointed</option><option>broad with cusps</option></select><select data-ans="crush"><option value="">choose</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">molar</span><select data-ans="broad with cusps"><option value="">choose</option><option>blade</option><option>pointed</option><option>broad with cusps</option></select><select data-ans="grind"><option value="">choose</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill every cell without looking back. Then check.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 25 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Skeleton Atlas: the face and the hyoid</span>
+      <p>Title the next page of your Skeleton Atlas &ldquo;The Face and the Hyoid.&rdquo; Use the Atlas figures as your reference.</p><p>Draw the <b>mandible</b> (yellow) and find its condyle where it meets the temporal bone; the <b>maxilla</b> (blue); the left and right <b>nasal</b> bones (pink); the left and right <b>zygomatic</b> bones (green), noting the zygomatic arch. Label each.</p><p>Draw the <b>hyoid</b> (pink) high in the front of the neck, and label it &ldquo;hyoid &mdash; no joint.&rdquo; Bonus: a side sketch of one incisor, one canine, one premolar and one molar.</p>
+      <ul class="checks"><li data-ck="w3d31">Mandible, maxilla, nasal and zygomatic bones drawn in color and labeled.</li><li data-ck="w3d32">The hyoid drawn below the jaw and labeled &ldquo;no joint.&rdquo;</li><li data-ck="w3d33">Bonus: one tooth of each type.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Skeleton Atlas page: they become your Module 3 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Dentition Diagram</h2></div>
+    <p class="hint">About 15 minutes.</p>
+    <div class="card" style="padding:16px 20px"><p class="q" style="margin-top:0">In your notebook, draw the 16 teeth of an upper jaw from above, as if looking down from the dentist&rsquo;s chair. Label one quadrant and write each type&rsquo;s job beside it.</p><ul class="checks">
+     <li data-ck="w3dd1">16 teeth drawn in a horseshoe.</li><li data-ck="w3dd2">One quadrant labeled: 2 incisors, 1 canine, 2 premolars, 3 molars.</li><li data-ck="w3dd3">Each type paired with cut, pierce, crush, or grind.</li></ul>
+     <p class="hint" style="margin-bottom:0">Photograph this page for the Notebook.</p></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="hyoid" type="button">&larr; Seven More and the Hyoid</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Face, Hyoid &amp; Dentition Quick-Check</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>What can the hyoid bone do, despite never touching another bone, that no other bone in the body can do?</p></div>
+        <p>A short quick-check to lock in the facial bones, the hyoid, and the adult dentition pattern: two written responses and your dentition table.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>One Facial Bone</h2></div>
+    <p class="hint">Choose the mandible or the maxilla.</p>
+    <div class="pickset" data-targets="w3rB"><button data-v="mandible">Mandible</button><button data-v="maxilla">Maxilla</button></div><input class="jfield m2-in" id="w3rB" data-label="1. The facial bone I chose" placeholder="Tap one above"><div class="card loccard"><p class="sub">In 3&ndash;5 sentences: (a) where it sits, (b) two specific jobs it performs, and (c) one consequence if it were missing or broken.</p><div class="ttrack" data-field="w3rFB"><span class="tt" data-t="jaw|upper|lower|face|below|under|temporal|palate">where</span><span class="tt" data-t="teeth|chew|speak|palate|sinus|muscle">two jobs</span><span class="tt" data-t="without|missing|broken|fracture|could not|would not|unable">consequence</span></div><textarea class="jbox" id="w3rFB" data-label="1. My facial bone" data-min="40"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>The Hyoid and the Focus Question</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;5 sentences, answer the focus question: what does the hyoid&rsquo;s suspended position let it do? Name at least one function that depends on it not being locked to a neighboring bone.</p><div class="ttrack" data-field="w3rH"><span class="tt" data-t="suspend|float|no joint|not attached|ligament">suspended</span><span class="tt" data-t="swallow|speech|speak|tongue|throat|larynx">function</span></div><textarea class="jbox" id="w3rH" data-label="2. The hyoid: focus question" data-min="40"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Dentition Table</h2></div>
+    <p class="hint">From your notebook diagram.</p>
+    <div class="card" style="padding:14px 18px"><div class="idrow c2"><span class="loc">incisors</span><select class="jfield" id="w3rTin" data-label="Dentition, incisors: per quadrant"><option value="">how many per quadrant</option><option>1</option><option>2</option><option>3</option></select><select class="jfield" id="w3rTij" data-label="Dentition, incisors: job"><option value="">job</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span></span></div><div class="idrow c2"><span class="loc">canine</span><select class="jfield" id="w3rTcn" data-label="Dentition, canine: per quadrant"><option value="">how many per quadrant</option><option>1</option><option>2</option><option>3</option></select><select class="jfield" id="w3rTcj" data-label="Dentition, canine: job"><option value="">job</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span></span></div><div class="idrow c2"><span class="loc">premolars</span><select class="jfield" id="w3rTpn" data-label="Dentition, premolars: per quadrant"><option value="">how many per quadrant</option><option>1</option><option>2</option><option>3</option></select><select class="jfield" id="w3rTpj" data-label="Dentition, premolars: job"><option value="">job</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span></span></div><div class="idrow c2"><span class="loc">molars</span><select class="jfield" id="w3rTmn" data-label="Dentition, molars: per quadrant"><option value="">how many per quadrant</option><option>1</option><option>2</option><option>3</option></select><select class="jfield" id="w3rTmj" data-label="Dentition, molars: job"><option value="">job</option><option>cut</option><option>pierce</option><option>crush</option><option>grind</option></select><span></span></div></div><div class="card loccard"><p class="sub">Upload the photo of your upper-jaw dentition diagram with this PDF. Here, note what it shows.</p><textarea class="jbox" id="w3rP" data-label="Dentition: my photographed diagram" data-min="8"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w3rFB,w3rH,w3rP" data-min="150" data-max="300"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w3c31">My facial bone answer names its location, two jobs, and a consequence.</li><li data-ck="w3c32">My hyoid answer names a function that depends on its suspended position.</li><li data-ck="w3c33">My dentition diagram shows 8 teeth in one labeled quadrant.</li><li data-ck="w3c34">Each tooth type is paired with cut, pierce, crush, or grind.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 3.03 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="teeth" type="button">&larr; Dentition</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>facial bones</dt><dd>The 14 bones of the face: mandible, 2 maxillae, 2 zygomatic, 2 nasal, 2 lacrimal, 2 palatine, 2 inferior nasal conchae, and the vomer.</dd>
+  <dt>mandible<button type="button" class="say" data-say="mandible" aria-label="Hear it: mandible" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The lower jaw; the only skull bone that moves freely.</dd>
+  <dt>mandibular condyle<button type="button" class="say" data-say="mandibular-condyle" aria-label="Hear it: mandibular condyle" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The rounded knob at the top of the mandible that sits in the temporal bone&rsquo;s mandibular fossa.</dd>
+  <dt>mandibular fossa<button type="button" class="say" data-say="mandibular-fossa" aria-label="Hear it: mandibular fossa" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>fossa &ldquo;ditch&rdquo;</small></dt><dd>The depression in the temporal bone that receives the mandibular condyle.</dd>
+  <dt>temporomandibular joint (TMJ)<button type="button" class="say" data-say="tmj" aria-label="Hear it: temporomandibular joint (tmj)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The jaw joint between the mandible and the temporal bone, one on each side.</dd>
+  <dt>maxilla<button type="button" class="say" data-say="maxilla" aria-label="Hear it: maxilla" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>plural maxillae</small></dt><dd>The upper jaw; holds the upper teeth and the maxillary sinuses and forms most of the hard palate.</dd>
+  <dt>hard palate</dt><dd>The bony roof of the mouth, separating it from the nasal cavity.</dd>
+  <dt>zygomatic bone<button type="button" class="say" data-say="zygomatic-bone" aria-label="Hear it: zygomatic bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The cheekbone; forms the outer wall of the orbit.</dd>
+  <dt>zygomatic arch<button type="button" class="say" data-say="zygomatic-arch" aria-label="Hear it: zygomatic arch" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The bony arch from the cheekbone back toward the ear.</dd>
+  <dt>nasal bones</dt><dd>The two small bones forming the bridge of the nose.</dd>
+  <dt>lacrimal bones<button type="button" class="say" data-say="lacrimal" aria-label="Hear it: lacrimal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>lacrima &ldquo;tear&rdquo;</small></dt><dd>Small bones at the inner corner of each orbit with a channel draining tears into the nose.</dd>
+  <dt>palatine bones<button type="button" class="say" data-say="palatine" aria-label="Hear it: palatine bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The bones forming the back of the hard palate.</dd>
+  <dt>inferior nasal conchae<button type="button" class="say" data-say="conchae" aria-label="Hear it: inferior nasal conchae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>concha &ldquo;shell&rdquo;</small></dt><dd>Scroll-shaped bones on the walls of the nasal cavity.</dd>
+  <dt>vomer<button type="button" class="say" data-say="vomer" aria-label="Hear it: vomer" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>&ldquo;plowshare&rdquo;</small></dt><dd>The bone forming the lower part of the nasal septum.</dd>
+  <dt>hyoid bone<button type="button" class="say" data-say="hyoid" aria-label="Hear it: hyoid bone" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A horseshoe-shaped bone in the neck that forms no joint with any other bone.</dd>
+  <dt>dentition<button type="button" class="say" data-say="dentition" aria-label="Hear it: dentition" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The arrangement of the teeth: 32 permanent teeth in four quadrants of 8.</dd>
+  <dt>incisor<button type="button" class="say" data-say="incisor" aria-label="Hear it: incisor" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / canine<button type="button" class="say" data-say="canine" aria-label="Hear it: canine" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / premolar<button type="button" class="say" data-say="premolar" aria-label="Hear it: premolar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> / molar<button type="button" class="say" data-say="molar" aria-label="Hear it: molar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cut / pierce and tear / crush / grind.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w3-l3", "title": "Facial Bones, the Hyoid, and Dentition", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 3 · Facial Bones, the Hyoid, and Dentition", "pdfTag": "AP_W3_L3"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f30302":{"src":"img/w3-3.03-02-mandible-place-mandible.webp","alt":""},"f30210":{"src":"img/w3-3.02-10-ethmoid-bone-ethmoid-bone.webp","alt":""},"f30301":{"src":"img/w3-3.03-01-sinuses-skull-facial-bones-hyoid.webp","alt":""},"f30303":{"src":"img/w3-3.03-03-figure.webp","alt":""},"f30304":{"src":"img/w3-3.03-04-maxillae-place-maxillae.webp","alt":""},"f30305":{"src":"img/w3-3.03-05-maxilla-place-maxillae.webp","alt":""},"f30306":{"src":"img/w3-3.03-06-zygomatic-bones-place-zygomatic-.webp","alt":""},"f30307":{"src":"img/w3-3.03-07-nasal-bones-place-zygomatic-bone.webp","alt":""},"f30308":{"src":"img/w3-3.03-08-figure.webp","alt":""},"f30309":{"src":"img/w3-3.03-09-figure.webp","alt":""},"f30310":{"src":"img/w3-3.03-10-figure.webp","alt":""},"f30311":{"src":"img/w3-3.03-11-remaining-facial-bones-place-pla.webp","alt":""},"f30312":{"src":"img/w3-3.03-12-hyoid-bone-place-hyoid-bone.webp","alt":""}},"w3_face":{"audio":"audio/ap-w3-l3-face.mp3","words":[[0,0.16,"If"],[0.2,0.24,"the"],[0.32,0.64,"cranial"],[0.72,1.04,"bones"],[1.08,1.12,"are"],[1.2,1.28,"the"],[1.36,2.08,"vault,"],[2.16,2.24,"the"],[2.36,2.64,"fourteen"],[2.8,3.12,"facial"],[3.2,3.52,"bones"],[3.56,3.6,"are"],[3.68,3.76,"the"],[3.84,4.16,"working"],[4.24,5.36,"architecture:"],[5.44,5.52,"they"],[5.6,5.68,"hold"],[5.76,5.84,"the"],[5.92,6.48,"teeth,"],[6.6,6.72,"frame"],[6.8,6.88,"the"],[6.96,7.6,"eyes,"],[7.76,7.92,"channel"],[8,8.48,"air,"],[8.52,8.56,"and"],[8.64,8.96,"hinge"],[9,9.04,"the"],[9.12,10.08,"jaw."],[10.16,10.24,"The"],[10.36,10.72,"mandible"],[10.8,10.88,"is"],[10.96,11.04,"the"],[11.16,11.28,"lower"],[11.36,12,"jaw,"],[12.08,12.16,"the"],[12.28,12.4,"only"],[12.48,12.72,"skull"],[12.8,12.96,"bone"],[13.04,13.12,"that"],[13.2,13.44,"moves"],[13.52,14.4,"freely."],[14.48,14.64,"Its"],[14.72,15.2,"condyle"],[15.28,15.6,"hinges"],[15.68,15.72,"in"],[15.76,15.84,"the"],[15.96,16.4,"mandibular"],[16.48,16.88,"fossa"],[16.92,16.96,"of"],[17.04,17.12,"the"],[17.24,17.52,"temporal"],[17.6,17.92,"bone"],[17.96,18,"at"],[18.08,18.16,"the"],[18.28,19.12,"temporomandibular"],[19.2,20.16,"joint."],[20.2,20.24,"The"],[20.32,20.4,"two"],[20.48,21.12,"maxillae"],[21.24,21.36,"form"],[21.44,21.52,"the"],[21.64,21.76,"upper"],[21.84,22.56,"jaw."],[22.6,22.64,"They"],[22.72,22.8,"hold"],[22.88,22.96,"the"],[23.08,23.2,"upper"],[23.28,23.84,"teeth,"],[23.92,24.08,"hold"],[24.16,24.24,"the"],[24.36,24.64,"largest"],[24.76,25.44,"sinuses,"],[25.52,25.6,"and"],[25.72,25.84,"build"],[25.92,26.08,"most"],[26.16,26.2,"of"],[26.24,26.32,"the"],[26.4,26.64,"hard"],[26.76,27.04,"palate"],[27.2,27.36,"between"],[27.44,27.52,"your"],[27.68,27.84,"mouth"],[27.88,27.92,"and"],[28,28.08,"your"],[28.16,29.04,"nose."],[29.12,29.2,"The"],[29.28,29.36,"two"],[29.44,30,"zygomatic"],[30.08,30.32,"bones"],[30.4,30.48,"are"],[30.56,30.64,"your"],[30.68,31.68,"cheekbones."],[31.76,31.84,"They"],[31.92,32,"form"],[32.08,32.16,"the"],[32.24,32.48,"outer"],[32.56,32.72,"wall"],[32.8,32.88,"of"],[32.96,33.12,"each"],[33.2,33.68,"orbit,"],[33.72,33.76,"and"],[33.8,33.84,"the"],[33.92,34.4,"zygomatic"],[34.48,34.8,"arch"],[34.96,35.12,"running"],[35.24,35.36,"back"],[35.413,35.52,"toward"],[35.6,35.76,"your"],[35.88,36.56,"ear."],[36.64,36.72,"The"],[36.8,36.88,"two"],[36.96,37.28,"nasal"],[37.36,37.68,"bones"],[37.76,37.92,"meet"],[37.96,38,"at"],[38.08,38.16,"the"],[38.28,38.64,"midline"],[38.72,38.8,"to"],[38.88,38.96,"form"],[39.04,39.12,"the"],[39.28,39.44,"bridge"],[39.48,39.52,"of"],[39.6,39.64,"the"],[39.68,40.56,"nose."],[40.68,40.8,"Below"],[40.88,41.2,"them,"],[41.24,41.28,"the"],[41.36,41.6,"nose"],[41.68,41.76,"is"],[41.88,42.48,"cartilage,"],[42.56,42.64,"which"],[42.68,42.72,"is"],[42.8,42.88,"why"],[42.96,43.04,"it"],[43.12,43.2,"can"],[43.28,43.52,"bend"],[43.6,43.84,"without"],[43.92,44.6,"breaking."],[44.88,45.12,"Four"],[45.2,45.44,"major"],[45.52,46.24,"bones,"],[46.32,46.56,"seven"],[46.6,46.64,"of"],[46.72,46.88,"them"],[46.96,47.2,"counting"],[47.28,47.44,"both"],[47.52,48,"sides."],[48.48,48.72,"Seven"],[48.8,49.12,"smaller"],[49.2,49.44,"ones"],[49.52,49.6,"bring"],[49.68,49.76,"the"],[49.84,50.08,"face"],[50.12,50.16,"to"],[50.24,51.043,"fourteen."]]},"w3_hyoid":{"audio":"audio/ap-w3-l3-hyoid.mp3","words":[[0.317,0.557,"Seven"],[0.637,0.797,"more"],[0.877,1.197,"facial"],[1.277,1.517,"bones"],[1.597,1.917,"complete"],[1.997,2.077,"the"],[2.277,2.557,"face."],[2.957,3.037,"You"],[3.117,3.197,"should"],[3.237,3.277,"know"],[3.357,3.437,"them"],[3.517,3.597,"by"],[3.757,4.237,"name,"],[4.317,4.397,"even"],[4.477,4.557,"if"],[4.597,4.637,"you"],[4.677,4.717,"will"],[4.797,4.957,"not"],[5.037,5.197,"draw"],[5.277,5.357,"them"],[5.437,5.677,"all."],[6.077,6.157,"The"],[6.237,6.397,"two"],[6.477,6.877,"lacrimal"],[6.957,7.277,"bones"],[7.357,7.517,"sit"],[7.557,7.597,"at"],[7.677,7.757,"the"],[7.837,7.997,"inner"],[8.077,8.397,"corner"],[8.477,8.557,"of"],[8.637,8.797,"each"],[8.877,8.957,"eye"],[9.117,9.597,"socket,"],[9.637,9.677,"with"],[9.757,9.837,"a"],[9.917,10.237,"channel"],[10.317,10.397,"that"],[10.437,10.717,"drains"],[10.797,11.117,"tears"],[11.197,11.357,"into"],[11.397,11.437,"the"],[11.517,12.237,"nose."],[12.357,12.477,"That"],[12.557,12.637,"is"],[12.717,12.797,"why"],[12.877,13.277,"crying"],[13.357,13.517,"makes"],[13.557,13.597,"your"],[13.677,13.917,"nose"],[14.037,14.637,"run."],[14.717,14.797,"The"],[14.877,14.957,"two"],[15.037,15.597,"palatine"],[15.757,15.917,"bones"],[15.997,16.157,"form"],[16.237,16.317,"the"],[16.437,16.557,"back"],[16.637,16.677,"of"],[16.717,16.797,"the"],[16.917,17.037,"hard"],[17.117,17.997,"palate."],[18.037,18.077,"The"],[18.157,18.317,"two"],[18.397,18.877,"inferior"],[18.957,19.197,"nasal"],[19.277,19.837,"conchae"],[19.957,20.077,"are"],[20.237,20.477,"scrolls"],[20.557,20.637,"of"],[20.797,20.957,"bone"],[21.037,21.437,"inside"],[21.517,21.597,"the"],[21.677,21.917,"nasal"],[21.957,22.637,"cavity,"],[22.677,22.717,"and"],[22.797,22.877,"the"],[22.957,23.437,"vomer"],[23.557,23.677,"forms"],[23.757,23.837,"the"],[23.917,24.077,"lower"],[24.157,24.397,"nasal"],[24.557,25.437,"septum."],[25.517,25.597,"And"],[25.797,25.997,"then"],[26.077,26.157,"the"],[26.277,27.117,"hyoid."],[27.197,27.277,"It"],[27.357,27.517,"sits"],[27.597,27.837,"high"],[27.877,27.917,"in"],[27.997,28.077,"the"],[28.157,28.237,"front"],[28.317,28.397,"of"],[28.437,28.477,"the"],[28.557,28.957,"neck,"],[29.117,29.277,"between"],[29.317,29.357,"the"],[29.437,29.677,"jaw"],[29.757,29.837,"and"],[29.89,29.944,"the"],[29.997,30.717,"larynx,"],[30.757,30.797,"and"],[30.877,30.917,"it"],[30.957,31.037,"is"],[31.117,31.197,"the"],[31.277,31.517,"only"],[31.597,31.757,"bone"],[31.837,31.877,"in"],[31.917,31.997,"the"],[32.157,32.317,"body"],[32.397,32.477,"that"],[32.557,32.877,"forms"],[32.957,33.117,"no"],[33.277,33.517,"joint"],[33.597,33.677,"with"],[33.837,33.997,"another"],[34.157,34.877,"bone."],[34.957,35.117,"Shaped"],[35.197,35.277,"like"],[35.357,35.437,"a"],[35.517,35.757,"slim"],[35.837,36.584,"horseshoe,"],[36.61,36.637,"it"],[36.717,36.797,"is"],[36.877,36.957,"held"],[37.037,37.117,"in"],[37.197,37.437,"place"],[37.517,37.597,"by"],[37.677,38.157,"ligaments"],[38.237,38.317,"and"],[38.357,38.397,"by"],[38.477,38.557,"the"],[38.637,38.877,"muscles"],[38.957,39.037,"that"],[39.237,39.437,"attach"],[39.517,39.597,"to"],[39.637,40.157,"it."],[40.277,40.397,"That"],[40.477,40.957,"freedom"],[40.997,41.037,"is"],[41.197,41.357,"its"],[41.557,42.157,"job."],[42.237,42.317,"It"],[42.37,42.477,"gives"],[42.557,42.637,"the"],[42.717,42.877,"muscles"],[42.957,43.037,"of"],[43.117,43.197,"the"],[43.237,43.517,"tongue"],[43.597,43.677,"and"],[43.757,44.077,"throat"],[44.197,44.317,"something"],[44.397,44.477,"to"],[44.557,44.637,"pull"],[44.717,45.517,"against."],[45.677,45.837,"Without"],[45.877,46.157,"it,"],[46.197,46.237,"you"],[46.317,46.397,"could"],[46.477,46.557,"not"],[46.637,46.957,"swallow"],[47.037,47.437,"well"],[47.517,47.597,"or"],[47.757,47.997,"speak"],[48.077,48.157,"as"],[48.277,48.985,"precisely."]]},"w3_teeth":{"audio":"audio/ap-w3-l3-teeth.mp3","words":[[0.371,0.691,"Teeth"],[0.771,0.931,"look"],[1.011,1.251,"like"],[1.451,1.651,"bones"],[1.771,1.891,"and"],[2.011,2.131,"sit"],[2.211,2.291,"in"],[2.491,2.931,"bones,"],[2.971,3.011,"but"],[3.091,3.131,"they"],[3.171,3.331,"are"],[3.451,3.571,"not"],[3.651,4.371,"bones."],[4.411,4.451,"They"],[4.531,4.571,"are"],[4.611,4.771,"a"],[4.971,5.171,"different"],[5.251,5.811,"mineralized"],[5.891,6.371,"tissue,"],[6.491,6.611,"with"],[6.691,6.931,"very"],[7.011,7.091,"little"],[7.331,7.571,"ability"],[7.611,7.651,"to"],[7.891,8.611,"repair."],[8.691,8.851,"Each"],[8.931,9.331,"quadrant"],[9.371,9.411,"of"],[9.451,9.491,"an"],[9.571,9.811,"adult"],[9.891,10.211,"mouth"],[10.371,10.531,"holds"],[10.611,10.771,"eight"],[10.851,11.571,"teeth."],[11.691,11.811,"Front"],[11.851,11.891,"to"],[11.971,12.611,"back:"],[12.691,12.771,"two"],[12.891,13.731,"incisors,"],[13.811,13.891,"one"],[13.971,14.771,"canine,"],[14.851,14.931,"two"],[15.011,15.731,"premolars,"],[15.811,15.891,"and"],[15.971,16.131,"three"],[16.291,17.171,"molars."],[17.331,17.811,"Incisors"],[17.891,18.051,"are"],[18.131,18.851,"blades."],[18.931,19.011,"They"],[19.091,19.811,"cut."],[19.931,20.291,"Canines"],[20.371,20.531,"are"],[20.651,21.171,"pointed."],[21.251,21.411,"They"],[21.491,21.811,"pierce"],[21.891,21.971,"and"],[22.051,22.958,"tear."],[23.064,23.411,"Premolars"],[23.491,23.571,"and"],[23.611,23.971,"molars"],[24.051,24.211,"are"],[24.251,24.531,"broad"],[24.611,24.851,"and"],[25.011,25.211,"flat,"],[25.251,25.411,"with"],[25.611,25.811,"raised"],[25.891,26.651,"cusps."],[26.691,26.851,"They"],[26.931,27.251,"crush"],[27.331,27.491,"and"],[27.571,28.451,"grind."],[28.571,28.691,"Four"],[28.771,29.171,"quadrants"],[29.251,29.331,"of"],[29.491,29.651,"eight"],[29.731,29.971,"make"],[30.051,30.611,"thirty-two"],[30.851,31.091,"permanent"],[31.171,31.851,"teeth."],[31.891,31.971,"The"],[32.051,32.211,"change"],[32.291,32.451,"in"],[32.611,32.771,"shape"],[32.891,33.011,"from"],[33.091,33.171,"front"],[33.251,33.331,"to"],[33.411,33.731,"back"],[33.811,33.971,"is"],[34.051,34.371,"form"],[34.451,34.851,"following"],[35.211,35.651,"function,"],[35.731,35.891,"one"],[35.971,36.211,"tooth"],[36.251,36.291,"at"],[36.331,36.371,"a"],[36.451,36.958,"time."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the fourteen facial bones, the TMJ, the hyoid bone, and the teeth',
+  quick: ['What are the four major facial bones?', 'Why is the hyoid unique?', 'What does each tooth type do?'],
+  practice: /(write|answer|do) (my|the) (notebook|lab report|short answer|focus question)|(mandible|maxilla) or (the )?(mandible|maxilla)/i,
+  guide: 'That part is yours to write, so here are my questions instead. What would you lose if the hyoid were locked to the jaw? Which muscles need something to pull against? Say it out loud first, then write it.',
+  notes: [
+    { k: ['fourteen','14','facial bones','face'], w: 1.2, a: 'Fourteen facial bones: the mandible, two maxillae, two zygomatic, two nasal, two lacrimal, two palatine, two inferior nasal conchae, and the vomer.' },
+    { k: ['mandible','lower jaw','jaw'], w: 1.2, a: 'The mandible is the lower jaw, the only skull bone that moves freely. It holds the lower teeth, anchors the chewing muscles, and hinges on the temporal bone at the TMJ.' },
+    { k: ['tmj','temporomandibular','condyle','fossa'], w: 1.3, a: 'The temporomandibular joint is where the mandibular condyle sits in the mandibular fossa of the temporal bone, one on each side. Put a fingertip in front of your ear and open slowly to feel it rotate and slide.' },
+    { k: ['maxilla','maxillae','upper jaw','palate'], a: 'The two maxillae form the upper jaw. They hold the upper teeth, contain the maxillary sinuses (the largest paranasal sinuses), and form most of the hard palate.' },
+    { k: ['zygomatic','cheek','cheekbone','arch'], a: 'The zygomatic bones are the cheekbones. They form the outer wall of the orbit and, with the temporal bone, the zygomatic arch.' },
+    { k: ['nasal','nose','bridge','cartilage'], a: 'The two nasal bones form the bridge of the nose. Below them the nose is cartilage, which is why the lower nose can bend without breaking.' },
+    { k: ['lacrimal','tear','tears','palatine','concha','conchae','vomer','septum'], a: 'Lacrimal bones drain tears into the nose; palatine bones form the back of the hard palate; the inferior nasal conchae are scrolls in the nasal cavity; the vomer forms the lower nasal septum.' },
+    { k: ['hyoid','float','floats','suspended','no joint'], w: 1.5, a: 'The hyoid sits high in the front of the neck between the jaw and larynx. It is the only bone that forms no joint with another bone; ligaments and muscles hold it. It anchors the muscles of the tongue and throat, so it is essential for swallowing and precise speech.' },
+    { k: ['teeth','tooth','dentition','32','quadrant'], w: 1.2, a: 'Adults have 32 permanent teeth, 8 per quadrant: 2 incisors, 1 canine, 2 premolars, 3 molars. Teeth are not bone: different tissue, different origin, very little repair.' },
+    { k: ['incisor','canine','premolar','molar','cut','pierce','grind','crush'], w: 1.3, a: 'Incisors are blades that cut. Canines are pointed and pierce and tear. Premolars and molars are broad with cusps that crush and grind.' },
+    { k: ['notebook','lab report','submit','pdf','words','photo'], w: 1.2, a: 'The 3.03 Notebook: a 3 to 5 sentence answer on the mandible or maxilla, a 3 to 5 sentence answer on the hyoid, and your dentition table and photo. 150 to 300 words. Upload the photo and this PDF.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>
