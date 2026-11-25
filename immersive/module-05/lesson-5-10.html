@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>The Eye and Vision · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A close-up photograph of a human eye showing the gray-green iris around a dark pupil" style="background-image:url(img/lesson-5-10-hero.jpg);background-position:center"><span class="hlab">The human iris · photograph</span><span class="hcred">Image: Petr Novák, Wikipedia, CC BY-SA 2.5, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 5.10 &middot; Module 5: Nervous System</div>
+      <h1>The Eye and Vision</h1>
+      <div class="focusq"><div class="label">Focus</div><p>Every part of the eye exists for a reason &mdash; pick one structure and explain how its form follows its function.</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to name the three tunics of the eye and the structures in each.</li><li>I will be able to trace the path of light from the world to the retina and the path of the nerve signal from the retina to the visual cortex.</li><li>I will be able to distinguish rods from cones by function and explain why night vision is colorless.</li><li>I will be able to explain accommodation, presbyopia and the basics of glaucoma.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Three tunics</div>
+      <svg class="m2-fig" viewBox="0 0 360 300" role="img" aria-label="A horizontal cross-section of the eye"><rect x="6" y="6" width="348" height="288" rx="14" fill="#F4F7FB"/><circle cx="180" cy="150" r="106" fill="#F4F8FB"/><circle cx="190" cy="150" r="96" fill="#EEF6E8" opacity=".9"/><path d="M90 90 Q48 150 90 210 L104 196 L104 104 Z" fill="#DCEFFB"/><path d="M89.9 86.9 A110 110 0 1 1 89.9 213.1" stroke="#E9E4DA" stroke-width="10" fill="none" opacity="1"/><path d="M89.9 86.9 A110 110 0 1 1 89.9 213.1" stroke="#B9AE98" stroke-width="1.5" fill="none" opacity="1"/><path d="M101.1 83.8 A103 103 0 1 1 101.1 216.2" stroke="#5A3A2A" stroke-width="5" fill="none" opacity="1"/><path d="M107.2 84.4 A98 98 0 1 1 107.2 215.6" stroke="#E07A9A" stroke-width="4" fill="none" opacity="1"/><path d="M90 86 Q40 150 90 214" stroke="#7FB8E6" stroke-width="5" fill="none"/><path d="M100 96 L118 104 L108 116 Z" fill="#B85C00"/><path d="M100 204 L118 196 L108 184 Z" fill="#B85C00"/><rect x="98" y="112" width="7" height="26" rx="3" fill="#4F8F6B"/><rect x="98" y="162" width="7" height="26" rx="3" fill="#4F8F6B"/><path d="M112 110 L118 118 M112 190 L118 182" stroke="#8E9AA8" stroke-width="1.5"/><ellipse cx="122" cy="150" rx="12" ry="34" fill="#FFFFFF" stroke="#8E9AA8" stroke-width="2"/><circle cx="278" cy="146" r="4" fill="#F2C230" stroke="#A07800"/><circle cx="270" cy="184" r="6" fill="#3A2A2A"/><path d="M272 188 L346 214" stroke="#F2C230" stroke-width="14" stroke-linecap="round"/><text x="40" y="90" class="m2-ts" text-anchor="middle" style="fill:#1E5AA0">cornea</text><text x="140" y="112" class="m2-ts" style="fill:#56606B">lens</text><text x="200" y="150" class="m2-ts" text-anchor="middle" style="fill:#2F6B4F">vitreous</text><text x="300" y="140" class="m2-ts" style="fill:#A07800">fovea</text><text x="300" y="236" class="m2-ts" style="fill:#A07800">optic nerve</text><text x="220" y="28" class="m2-ts" text-anchor="middle" style="fill:#8A6A4A">sclera</text></svg>
+      <div class="cap">Fibrous (sclera, cornea), vascular (choroid, ciliary body, iris) and neural (retina) layers, with the lens, the two humors, the fovea and the optic disc.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="tunics" role="tab"><span class="n">01</span>Three Tunics</button>
+  <button class="tab" data-tab="lens" role="tab"><span class="n">02</span>Lens and Focus</button>
+  <button class="tab" data-tab="retina" role="tab"><span class="n">03</span>Retina to Cortex</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 THREE TUNICS ═════════ -->
+<section class="panel" id="tab-tunics" role="tabpanel">
+  <div class="vo" data-clip="w11_tun">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A Camera Made of Living Tissue</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A horizontal cross-section of the eye, built layer by layer: fibrous, vascular and neural tunics"><g data-step="0" class="nohalo"><circle cx="180" cy="150" r="106" fill="#F4F8FB"/><path d="M89.9 86.9 A110 110 0 1 1 89.9 213.1" stroke="#B9AE98" stroke-width="2" fill="none" opacity="1"/><text x="380" y="30" class="m2-t">a camera made of living tissue</text><text x="380" y="48" class="m2-ts">set in the bony orbit</text></g><g data-step="1" class="nohalo"><rect x="150" y="30" width="80" height="10" rx="5" fill="#C98A8A"/><rect x="150" y="260" width="80" height="10" rx="5" fill="#C98A8A"/><text x="380" y="80" class="m2-ts" style="fill:#8A3B47">eyelids, tears (lacrimal gland) and six</text><text x="380" y="96" class="m2-ts" style="fill:#8A3B47">extraocular muscles: LR6, SO4, the rest III</text></g><g data-step="2" class="nohalo"><path d="M89.9 86.9 A110 110 0 1 1 89.9 213.1" stroke="#E9E4DA" stroke-width="10" fill="none" opacity="1"/><path d="M89.9 86.9 A110 110 0 1 1 89.9 213.1" stroke="#B9AE98" stroke-width="1.5" fill="none" opacity="1"/><path d="M90 86 Q40 150 90 214" stroke="#7FB8E6" stroke-width="5" fill="none"/><text x="380" y="128" class="m2-ts" style="fill:#56606B">fibrous tunic: white sclera, clear cornea</text><text x="380" y="144" class="m2-ts" style="fill:#1E5AA0">the cornea does two-thirds of the focusing</text></g><g data-step="3" class="nohalo"><path d="M101.1 83.8 A103 103 0 1 1 101.1 216.2" stroke="#5A3A2A" stroke-width="5" fill="none" opacity="1"/><path d="M100 96 L118 104 L108 116 Z" fill="#B85C00"/><path d="M100 204 L118 196 L108 184 Z" fill="#B85C00"/><rect x="98" y="112" width="7" height="26" rx="3" fill="#4F8F6B"/><rect x="98" y="162" width="7" height="26" rx="3" fill="#4F8F6B"/><text x="380" y="176" class="m2-ts" style="fill:#5A3A2A">vascular tunic (uvea): choroid, ciliary body,</text><text x="380" y="192" class="m2-ts" style="fill:#2F6B4F">iris around the pupil</text></g><g data-step="4" class="nohalo"><path d="M107.2 84.4 A98 98 0 1 1 107.2 215.6" stroke="#E07A9A" stroke-width="4" fill="none" opacity="1"/><circle cx="278" cy="146" r="4" fill="#F2C230" stroke="#A07800"/><text x="380" y="224" class="m2-ts" style="fill:#B0306E">neural tunic: the retina; fovea in the center</text></g><g data-step="5" class="nohalo"><circle cx="270" cy="184" r="6" fill="#3A2A2A"/><path d="M272 188 L346 214" stroke="#F2C230" stroke-width="14" stroke-linecap="round"/><text x="380" y="256" class="m2-ts" style="fill:#A07800">optic nerve (CN II) leaves at the optic disc,</text><text x="380" y="272" class="m2-ts" style="fill:#A07800">the blind spot</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The eye is a living camera: a clear window in front, an adjustable lens, and a curved sheet of photoreceptors at the back that turns light into nerve signals. It sits in the orbit, a bony socket you drew in Module 3.", "Eyelids and lashes protect it; the lacrimal gland bathes it in tears that drain into the nose. Six extraocular muscles move it, run by three cranial nerves: six for the lateral rectus, four for the superior oblique, three for the rest.", "The eyeball has three layers, or tunics. The outer, fibrous tunic is the white sclera and, in front, the clear cornea, which does about two-thirds of the eye's focusing without ever changing shape.", "The middle, vascular tunic, the uvea, has three parts: the dark choroid that absorbs stray light and feeds the retina, the ciliary body that shapes the lens, and the iris, whose muscle sizes the pupil.", "The inner, neural tunic is the retina, where light becomes nerve signal. At its center is the fovea, where vision is sharpest.", "The signal leaves at the optic disc as the optic nerve, cranial nerve two. The disc has no photoreceptors: your blind spot, which the brain quietly fills in."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The accessory structures and the three tunics of the eye.</span></div>
+    <p class="marg"><b>Courage.</b> The eye is a window the body opens onto the world. Every other system in the body is calibrated against what it sees.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="5.10-reading" data-title="The eye and its muscles" data-src="../../assets/models/eye-orbit.glb" data-poster="../../assets/models/eye-orbit.webp" data-alt="3D model: Right eye" data-orbit="-30deg 75deg auto"></div>
+      <h3>A camera made of living tissue</h3>
+      <p>Up to now we have focused on the nervous system itself — cells, brain, cord, autonomic wiring. The last three lessons of this module turn outward to the <b>sensory organs</b>, the specialized structures that gather information from the world and feed it into the nervous system. This lesson covers the eye. Next lesson, the ear and the chemical senses. The lesson after that ties everything together.</p>
+      <p>The eye is a biological camera. Light from the world passes through a transparent front window, gets focused by an adjustable lens onto a curved sheet of photoreceptors at the back, and is converted into a stream of nerve impulses that the brain reconstructs as vision. Each step in that chain is built from specific anatomical structures you can draw by name.</p>
+      <figure class="plate"><img data-img="f50901" alt="Cross-section of the human eye labeled with cornea, aqueous humor, iris, pupil, lens, vitreous humor, retina, rod and cone cells, and optic nerve"><figcaption>Figure — The human eye: light enters through the cornea and pupil, is focused by the lens onto the retina, and rod and cone photoreceptors convert it into nerve signals carried by the optic nerve.</figcaption></figure>
+      <h3>External anatomy — the accessory structures</h3>
+      <p>Each eyeball sits inside a bony socket called the <i>orbit</i>, formed by seven cranial and facial bones (you drew them in Module 3). Several accessory structures protect and move the eye.</p>
+      <p>▶ <b>Eyelids and eyelashes.</b> Mechanical protection. The blink reflex sweeps a layer of fluid across the cornea every few seconds.</p>
+      <p>▶ <b>Lacrimal gland (tear gland).</b><button type="button" class="say" data-say="lacrimal-gland" aria-label="Hear it: lacrimal gland (tear gland)." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Sits above the lateral corner of each eye. Produces tears that bathe the eye, drain across the cornea, and flow into the nasal cavity through the nasolacrimal duct — which is why crying gives you a runny nose.</p>
+      <p>▶ <b>Six extraocular muscles.</b><button type="button" class="say" data-say="extraocular-muscles" aria-label="Hear it: six extraocular muscles." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Skeletal muscles that move the eyeball: the four <i>rectus</i> muscles (superior, inferior, medial, lateral) and the two <i>oblique</i> muscles (superior, inferior). They are controlled by three cranial nerves: III (most of them), IV (superior oblique only), and VI (lateral rectus only). When you read that mnemonic <i>LR6 SO4 R3</i> in a neurology text, this is what it means.</p>
+      <h3>The three layers of the eyeball</h3>
+      <p>The eyeball itself is built from three concentric layers, called <i>tunics</i>.</p>
+      <p>▶ <b>Fibrous tunic (outer).</b> The tough, protective outer layer. Mostly the white <i>sclera</i> (the “whites of the eyes”), with the transparent <i>cornea</i> covering the front. The cornea is the eye’s first lens — it does about two-thirds of the eye’s total focusing, and it does it without changing shape.</p>
+      <p>▶ <b>Vascular tunic (middle), also called the uvea.</b> Has three parts. The <i>choroid</i> is a heavily pigmented, vascular layer that lines most of the back of the eye, absorbs stray light, and supplies blood to the retina. The <i>ciliary body</i> contains smooth muscle that changes the shape of the lens (accommodation) and produces the fluid that fills the front of the eye. The <i>iris</i> is the colored disc at the front, with a hole in the middle (the <i>pupil</i>). It contains smooth muscle that constricts and dilates the pupil to control how much light enters.</p>
+      <p>▶ <b>Neural tunic (inner), also called the retina.</b> The thin innermost layer that lines the back of the eyeball. This is where light is converted to nerve signals. See below.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Tunic?</h2></div>
+    <p class="hint">Tap a structure, then its tunic.</p>
+    <div class="place card" id="w11tu">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="f" data-fb="Fibrous tunic: the white wall." data-miss="Outer, tough layer.">sclera</button>
+        <button class="chip" data-k="b" data-ans="f" data-fb="Fibrous tunic: the clear front." data-miss="Outer, tough layer.">cornea</button>
+        <button class="chip" data-k="c" data-ans="v" data-fb="Vascular tunic: pigmented and full of vessels." data-miss="Middle layer.">choroid</button>
+        <button class="chip" data-k="d" data-ans="v" data-fb="Vascular tunic: muscle for the lens." data-miss="Middle layer.">ciliary body</button>
+        <button class="chip" data-k="e" data-ans="v" data-fb="Vascular tunic: muscle around the pupil." data-miss="Middle layer.">iris</button>
+        <button class="chip" data-k="f" data-ans="n" data-fb="Neural tunic." data-miss="Inner layer.">retina with rods and cones</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="f"><h4>Fibrous</h4><div class="drop"></div></div><div class="bin" data-bin="v"><h4>Vascular</h4><div class="drop"></div></div><div class="bin" data-bin="n"><h4>Neural</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w11m4"><p class="q">A patient cannot turn the left eye outward. Which nerve and muscle are involved?</p>
+        <button class="opt" data-ok="1" data-fb="Right: LR6.">CN VI, the abducens, and the lateral rectus</button>
+        <button class="opt" data-fb="SO4 does not turn the eye outward.">CN IV, the trochlear, and the superior oblique</button>
+        <button class="opt" data-fb="The optic nerve carries vision, not movement.">CN II, the optic nerve</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Labeled Eye Cross-Section</h2></div>
+    <p class="hint">About 15 minutes.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In your notebook, draw a horizontal cross-section of the right eye seen from above. Label cornea, sclera, iris, pupil, ciliary body, lens, choroid, retina, fovea, optic disc, optic nerve, aqueous humor and vitreous humor. Here, say which three structures make up the vascular tunic.</p><textarea class="jbox" id="w11t2" data-label="Eye sketch: the vascular tunic" data-min="10"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="lens" type="button">Next: Lens and Focus &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 LENS AND FOCUS ═════════ -->
+<section class="panel" id="tab-lens" role="tabpanel">
+  <div class="vo" data-clip="w11_lens">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Focusing Near and Far</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The lens and the two chambers of the eye, with light focused on the retina for far and near objects"><g data-step="0" class="nohalo"><circle cx="180" cy="150" r="106" fill="#F4F8FB"/><circle cx="190" cy="150" r="96" fill="#EEF6E8" opacity=".9"/><path d="M90 90 Q48 150 90 210 L104 196 L104 104 Z" fill="#DCEFFB"/><path d="M89.9 86.9 A110 110 0 1 1 89.9 213.1" stroke="#E9E4DA" stroke-width="10" fill="none" opacity="1"/><path d="M89.9 86.9 A110 110 0 1 1 89.9 213.1" stroke="#B9AE98" stroke-width="1.5" fill="none" opacity="1"/><path d="M101.1 83.8 A103 103 0 1 1 101.1 216.2" stroke="#5A3A2A" stroke-width="5" fill="none" opacity="1"/><path d="M107.2 84.4 A98 98 0 1 1 107.2 215.6" stroke="#E07A9A" stroke-width="4" fill="none" opacity="1"/><path d="M90 86 Q40 150 90 214" stroke="#7FB8E6" stroke-width="5" fill="none"/><path d="M100 96 L118 104 L108 116 Z" fill="#B85C00"/><path d="M100 204 L118 196 L108 184 Z" fill="#B85C00"/><rect x="98" y="112" width="7" height="26" rx="3" fill="#4F8F6B"/><rect x="98" y="162" width="7" height="26" rx="3" fill="#4F8F6B"/><path d="M112 110 L118 118 M112 190 L118 182" stroke="#8E9AA8" stroke-width="1.5"/><ellipse cx="122" cy="150" rx="12" ry="34" fill="#FFFFFF" stroke="#8E9AA8" stroke-width="2"/><circle cx="278" cy="146" r="4" fill="#F2C230" stroke="#A07800"/><circle cx="270" cy="184" r="6" fill="#3A2A2A"/><path d="M272 188 L346 214" stroke="#F2C230" stroke-width="14" stroke-linecap="round"/><text x="380" y="30" class="m2-t">the lens: clear, flexible, biconvex,</text><text x="380" y="48" class="m2-ts">hung from the ciliary body</text></g><g data-step="1" class="nohalo"><text x="64" y="240" class="m2-ts" text-anchor="middle" style="fill:#1E5AA0">aqueous humor</text><text x="200" y="110" class="m2-ts" text-anchor="middle" style="fill:#2F6B4F">vitreous humor</text><text x="380" y="80" class="m2-ts" style="fill:#1E5AA0">front: watery aqueous humor</text><text x="380" y="96" class="m2-ts" style="fill:#2F6B4F">behind the lens: gel-like vitreous humor</text></g><g data-step="2" class="nohalo"><path d="M0 128 H104 L278 146" stroke="#F28C28" stroke-width="1.5" fill="none" opacity=".8"/><path d="M0 150 H104 L278 146" stroke="#F28C28" stroke-width="1.5" fill="none" opacity=".8"/><path d="M0 172 H104 L278 146" stroke="#F28C28" stroke-width="1.5" fill="none" opacity=".8"/><text x="380" y="128" class="m2-ts" style="fill:#B85C00">far: ciliary muscle relaxes, lens flattens</text></g><g data-step="3" class="nohalo"><ellipse cx="122" cy="150" rx="18" ry="30" fill="#FFF4D6" stroke="#B85C00" stroke-width="2"/><path d="M20 150 L104 126 L278 146" stroke="#C22F4A" stroke-width="1.5" fill="none" opacity=".8"/><path d="M20 150 L104 174 L278 146" stroke="#C22F4A" stroke-width="1.5" fill="none" opacity=".8"/><text x="380" y="160" class="m2-ts" style="fill:#C22F4A">near: ciliary muscle contracts, lens rounds:</text><text x="380" y="176" class="m2-ts" style="fill:#C22F4A">accommodation</text></g><g data-step="4" class="nohalo"><text x="380" y="208" class="m2-ts" style="fill:#56606B">presbyopia: the lens stiffens with age,</text><text x="380" y="224" class="m2-ts" style="fill:#56606B">so reading glasses in the forties</text></g><g data-step="5" class="nohalo"><path d="M80 150 l0 -24" stroke="#C22F4A" stroke-width="3"/><path d="M75 132 l5 -6 l5 6" stroke="#C22F4A" stroke-width="3" fill="none"/><path d="M80 150 l0 24" stroke="#C22F4A" stroke-width="3"/><path d="M75 168 l5 6 l5 -6" stroke="#C22F4A" stroke-width="3" fill="none"/><text x="380" y="256" class="m2-ts" style="fill:#8A3B47">glaucoma: aqueous drains poorly,</text><text x="380" y="272" class="m2-ts" style="fill:#8A3B47">pressure rises, vision is lost</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Behind the iris hangs the lens: transparent, flexible and biconvex, held by suspensory ligaments from the ciliary body. It does the eye's fine focusing.", "In front of it, the small chambers are filled with watery aqueous humor. Behind it, most of the eyeball is filled with gel-like vitreous humor. Both are clear so light can pass.", "For distant objects, the ciliary muscle relaxes, the ligaments pull the lens flat, and light lands focused on the retina.", "For near objects, the ciliary muscle contracts, the ligaments slacken, and the lens rounds up to bend light more. That adjustment is accommodation.", "With age the lens stiffens and cannot round up as well. That is presbyopia, and it is why most people need reading glasses in their forties or fifties.", "Aqueous humor is constantly made and drained. If drainage fails, pressure inside the eye rises and damages the optic nerve: glaucoma, a leading cause of blindness."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The lens, the humors, accommodation, presbyopia and glaucoma.</span></div>
+    <article class="atlas">
+      <h3>The lens and the chambers</h3>
+      <p>Behind the iris sits the <b>lens</b><button type="button" class="say" data-say="lens" aria-label="Hear it: lens" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, a transparent, flexible biconvex structure held in place by suspensory ligaments attached to the ciliary body. The lens does the eye’s fine focusing — <i>accommodation</i>. When the ciliary muscle contracts, the lens becomes more rounded and focuses light from nearby objects. When the ciliary muscle relaxes, the lens flattens and focuses light from distant objects. As we age, the lens becomes less flexible (the condition called <i>presbyopia</i>), which is why most people need reading glasses in their forties or fifties.</p>
+      <p>The interior of the eye is divided into two compartments. In front of the lens are the small <i>anterior</i> and <i>posterior chambers</i>, filled with watery <b>aqueous humor</b><button type="button" class="say" data-say="aqueous-humor" aria-label="Hear it: aqueous humor" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. Behind the lens, filling most of the eyeball, is a much larger cavity filled with gel-like <b>vitreous humor</b><button type="button" class="say" data-say="vitreous-humor" aria-label="Hear it: vitreous humor" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. Both substances are transparent so light can pass through them on its way to the retina. Aqueous humor is constantly produced and drained; if drainage is impaired, pressure inside the eye rises — the condition called <i>glaucoma</i>, a leading cause of blindness worldwide.</p>
+      <figure class="plate"><img data-img="f50904" alt="The relaxed eye during distant vision, with ciliary muscles relaxed and the lens flattened, compared to the eye during near vision, with ciliary muscles contracted and the lens thickened"><figcaption>Figure — Accommodation: for distant vision the ciliary muscles relax and the lens flattens; for near vision the ciliary muscles contract, the suspensory ligaments relax, and the lens rounds and thickens.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w11m5"><p class="q">You look up from your phone to a distant hill. What does your ciliary muscle do?</p>
+        <button class="opt" data-ok="1" data-fb="Right: far focus.">It relaxes, and the lens flattens.</button>
+        <button class="opt" data-fb="That is near focus.">It contracts, and the lens rounds.</button>
+        <button class="opt" data-fb="The iris sizes the pupil; the ciliary body shapes the lens.">It closes the pupil completely.</button></div>
+      <div class="mcq card" data-qid="w11m6"><p class="q">In glaucoma, what goes wrong first?</p>
+        <button class="opt" data-ok="1" data-fb="Yes: and the pressure damages the optic nerve.">Aqueous humor drains poorly, so pressure rises.</button>
+        <button class="opt" data-fb="That is presbyopia.">The lens stiffens.</button>
+        <button class="opt" data-fb="That describes some inherited retinal diseases.">The rods die.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="tunics" type="button">&larr; Three Tunics</button><button class="btn" data-go="retina" type="button">Next: Retina to Cortex &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 RETINA TO CORTEX ═════════ -->
+<section class="panel" id="tab-retina" role="tabpanel">
+  <div class="vo" data-clip="w11_ret">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">From Photon to Perception</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="From rods and cones in the retina through the optic nerve, chiasm and thalamus to the visual cortex"><g data-step="0" class="nohalo"><ellipse cx="300" cy="150" rx="150" ry="110" fill="#F7E3E6" stroke="#C98A96" stroke-width="2"/><circle cx="50" cy="92" r="24" fill="#fff" stroke="#8A6A4A" stroke-width="2"/><circle cx="30" cy="92" r="7" fill="#4F8F6B"/><path d="M74 84 A24 24 0 0 1 74 100" stroke="#E07A9A" stroke-width="4" fill="none"/><circle cx="50" cy="208" r="24" fill="#fff" stroke="#8A6A4A" stroke-width="2"/><circle cx="30" cy="208" r="7" fill="#4F8F6B"/><path d="M74 200 A24 24 0 0 1 74 216" stroke="#E07A9A" stroke-width="4" fill="none"/><text x="468" y="30" class="m2-t">the retina turns light</text><text x="468" y="48" class="m2-t">into nerve signals</text></g><g data-step="1" class="nohalo"><rect x="26" y="248" width="8" height="36" rx="4" fill="#7F8EA0"/><text x="30" y="298" class="m2-ts" text-anchor="middle" style="fill:#56606B">rod</text><text x="468" y="82" class="m2-ts" style="fill:#56606B">rods: ~90 million, very</text><text x="468" y="98" class="m2-ts" style="fill:#56606B">sensitive, no color: night</text></g><g data-step="2" class="nohalo"><path d="M66 248 L74 284 L58 284 Z" fill="#C22F4A"/><path d="M84 248 L92 284 L76 284 Z" fill="#2F8F6B"/><path d="M102 248 L110 284 L94 284 Z" fill="#2E6FB7"/><text x="84" y="298" class="m2-ts" text-anchor="middle" style="fill:#56606B">cones</text><text x="468" y="130" class="m2-ts" style="fill:#C22F4A">cones: ~6 million, three</text><text x="468" y="146" class="m2-ts" style="fill:#C22F4A">colors, packed in the fovea</text></g><g data-step="3" class="nohalo"><path d="M74 92 L168 146 M74 208 L168 154" stroke="#F2C230" stroke-width="7" stroke-linecap="round"/><circle cx="172" cy="150" r="9" fill="#A07800"/><text x="132" y="100" class="m2-ts" text-anchor="middle" style="fill:#A07800">optic nerve</text><text x="468" y="178" class="m2-ts" style="fill:#A07800">bipolar &rarr; ganglion cells</text><text x="468" y="194" class="m2-ts" style="fill:#A07800">&rarr; optic nerve (CN II)</text></g><g data-step="4" class="nohalo"><path d="M176 146 L262 108 M176 154 L262 192" stroke="#F2C230" stroke-width="6"/><path d="M176 146 L262 192 M176 154 L262 108" stroke="#E0A020" stroke-width="3" stroke-dasharray="5 4"/><ellipse cx="270" cy="108" rx="12" ry="9" fill="#F28C28"/><ellipse cx="270" cy="192" rx="12" ry="9" fill="#F28C28"/><text x="172" y="180" class="m2-ts" text-anchor="middle" style="fill:#A07800">chiasm</text><text x="270" y="84" class="m2-ts" text-anchor="middle" style="fill:#B85C00">thalamus (LGN)</text><text x="468" y="226" class="m2-ts" style="fill:#B85C00">partial crossing at the chiasm,</text><text x="468" y="242" class="m2-ts" style="fill:#B85C00">relay in the thalamus</text></g><g data-step="5" class="nohalo"><path d="M282 108 C340 100 380 110 420 124 M282 192 C340 200 380 190 420 176" stroke="#2F8F6B" stroke-width="4" fill="none"/><path d="M412 104 C440 120 440 180 412 196" stroke="#2F8F6B" stroke-width="12" fill="none" opacity=".6"/><text x="392" y="150" class="m2-ts" text-anchor="end" style="fill:#2F6B4F">visual cortex</text><text x="468" y="274" class="m2-ts" style="fill:#2F6B4F">occipital lobe: you see</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The retina is where light becomes a nerve signal, and it has two kinds of photoreceptor.", "Rods, about ninety million per retina, are extremely sensitive to light but see no color. They give you night vision and motion at the edges.", "Cones, about six million, need more light but see color and detail. Three types respond to red, green and blue wavelengths, and they are packed most densely at the fovea.", "Light changes the photoreceptor's membrane potential. The signal passes to bipolar cells, then ganglion cells, whose axons gather into the optic nerve.", "At the optic chiasm the two optic nerves partly cross. The signal relays in the lateral geniculate nucleus of the thalamus.", "And it ends in the primary visual cortex of the occipital lobe, where you finally see. Retinal implants and gene therapy are now beginning to restore some vision when photoreceptors fail."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Rods and cones, the visual pathway, restoring vision, and the pupillary reflex revisited.</span></div>
+    <article class="atlas">
+      <h3>The retina and how light becomes nerve signal</h3>
+      <p>The <b>retina</b><button type="button" class="say" data-say="retina" aria-label="Hear it: retina" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the eye’s photoreceptive surface. It contains two types of photoreceptor cells.</p>
+      <p>▶ <b>Rods</b> are extremely light-sensitive but do not detect color. They are responsible for night vision and for detecting motion in your peripheral vision. There are roughly 90 million rods per retina.</p>
+      <p>▶ <b>Cones</b> are less light-sensitive but detect color and produce sharp vision. There are three types — sensitive to long (red), medium (green), and short (blue) wavelengths — and the combination of their signals lets you see the millions of colors a human eye can discriminate. There are about 6 million cones per retina, packed densely at one central spot called the <i>fovea</i>.</p>
+      <figure class="plate"><img data-img="f50903" alt="Table comparing rods and cones: night vision vs daylight vision, no color vs color vision, light sensitivity, retinal location, and visual acuity"><figcaption>Figure — Rods vs. cones: night vision, no color, very light-sensitive, peripheral retina, low acuity vs. daylight vision, color vision, less light-sensitive, concentrated at the fovea, high acuity.</figcaption></figure>
+      <p>When light strikes a rod or cone, it triggers a biochemical cascade that changes the cell’s membrane potential. (The mechanism — involving a pigment called rhodopsin in rods and three opsins in cones — is one of the most thoroughly studied signaling cascades in biology, but you do not need to memorize the chemistry for this course.) The photoreceptor passes its signal to a chain of cells in the retina (<i>bipolar</i> cells, then <i>ganglion</i> cells), and the axons of the ganglion cells gather into a bundle that exits the back of the eyeball as the <b>optic nerve</b><button type="button" class="say" data-say="optic-nerve" aria-label="Hear it: optic nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (cranial nerve II). The point where the optic nerve leaves the retina has no photoreceptors — this is the <i>blind spot</i> in each eye. You don’t notice it because the brain fills in the missing region from context and from the other eye.</p>
+      <p>From the optic nerve, signals travel back through the optic chiasm (where the nerves from the two eyes partially cross) to the <i>lateral geniculate nucleus</i> of the thalamus, and from there to the <i>primary visual cortex</i> in the occipital lobe — the destination you learned about in Week 2.</p>
+      <figure class="plate"><img data-img="f50902" alt="The path of light through the eye and the conversion of light into nerve signals sent to the brain"><figcaption>Figure — The path of light: cornea → aqueous humor → pupil → lens → vitreous humor → retina, where rods and cones convert it to nerve signals carried by the optic nerve to the brain.</figcaption></figure>
+      <div class="inset"><div class="ilabel">CONTEMPORARY RESEARCH — RESTORING VISION</div><p>In certain forms of inherited blindness — <i>retinitis pigmentosa</i> and <i>age-related macular degeneration</i> — the photoreceptors die or stop functioning, while the rest of the retina (bipolar and ganglion cells) and the optic nerve often remain intact. Researchers have been exploring two strategies for restoring vision in these patients.</p><p><b>Retinal prosthetics</b> are implanted electrode arrays placed on or near the retina that stimulate the surviving ganglion cells directly with electrical pulses, bypassing the dead photoreceptors. Some such implants have received regulatory approval and have been used in patients, with results that are presently modest — patients can perceive light, motion, and large shapes, but not the detail required to read or recognize faces. Newer, higher-resolution implants are in active development.</p><p><b>Gene therapy</b> has had more recent clinical impact. A gene therapy called <i>voretigene neparvovec</i> (Luxturna) was approved in the United States for a specific form of inherited retinal dystrophy caused by mutations in the <i>RPE65</i> gene. It uses a viral vector to deliver a working copy of the gene to retinal cells. Recent research suggests that for some patients with this specific mutation, the therapy meaningfully improves low-light vision. Scientists are currently exploring gene therapies for other inherited retinal diseases, and the field is changing rapidly — the answers will look different by the time today’s high schoolers are practicing medicine.</p></div>
+      <h3>The pupillary light reflex revisited</h3>
+      <p>Recall the pupillary light reflex from Week 1. You can now see its full anatomical path: light hits the retina, ganglion cells send the signal up the optic nerve to a structure in the midbrain (not all the way to the cortex), which signals back via the oculomotor nerve (CN III, parasympathetic outflow) to the iris constrictor muscle, and the pupil constricts. Because the signal connects to both eyes’ midbrain structures, the response is consensual: light in one eye constricts both pupils.</p>
+      <figure class="plate"><img data-img="f50405" alt="The pupillary light reflex pathway: afferent path from the retina through the optic nerve to the pretectal nucleus, and efferent path through the oculomotor nerve and ciliary ganglion to both eyes"><figcaption>Figure — The pupillary light reflex pathway: the afferent pathway carries the signal from the retina via the optic nerve to the pretectal nucleus; the efferent pathway carries it back via the oculomotor nerve's parasympathetic fibers and the ciliary ganglion to both eyes' iris constrictor muscles.</figcaption></figure>
+      <details class="selfcheck"><summary>Self-check: name the three tunics of the eyeball, the two types of photoreceptor, and the cranial nerve that carries vision out</summary><p><b>Tunics:</b> fibrous (sclera + cornea), vascular / uvea (choroid + ciliary body + iris), neural (retina). <b>Photoreceptors:</b> rods (light-sensitive, no color) and cones (less sensitive, three color types). <b>Vision out:</b> optic nerve, cranial nerve II.</p><p>Got it? On to the ear.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Rods or Cones?</h2></div>
+    <p class="hint">Tap a clue, then the photoreceptor.</p>
+    <div class="place card" id="w11rc">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="r" data-fb="Rods." data-miss="Which is far more numerous?">~90 million per retina</button>
+        <button class="chip" data-k="b" data-ans="r" data-fb="Rods." data-miss="Which works in dim light?">night vision, no color</button>
+        <button class="chip" data-k="c" data-ans="r" data-fb="Rods." data-miss="Outside the fovea.">motion in the periphery</button>
+        <button class="chip" data-k="d" data-ans="c" data-fb="Cones." data-miss="Which sees color?">three types: red, green, blue</button>
+        <button class="chip" data-k="e" data-ans="c" data-fb="Cones." data-miss="Where is vision sharpest?">packed densely at the fovea</button>
+        <button class="chip" data-k="f" data-ans="c" data-fb="Cones." data-miss="Which needs bright light?">sharp, detailed daylight vision</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="r"><h4>Rods</h4><div class="drop"></div></div><div class="bin" data-bin="c"><h4>Cones</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Trace the Light and the Signal</h2></div>
+    <p class="hint">Then write the numbered sequence in your notebook.</p>
+    <div class="order card" id="w11lp" data-order="c,a,p,l,v,r,b,g,o,x,t,k" data-done="Cornea, aqueous, pupil, lens, vitreous, retina, bipolar, ganglion, optic nerve, chiasm, thalamus, cortex." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the structures in order, from the outside world to the visual cortex.</p><div class="opool"><button data-k="g">ganglion cells</button><button data-k="b">bipolar cells</button><button data-k="a">aqueous humor</button><button data-k="c">cornea</button><button data-k="o">optic nerve (CN II)</button><button data-k="t">lateral geniculate nucleus (thalamus)</button><button data-k="r">rods and cones (retina)</button><button data-k="l">lens</button><button data-k="v">vitreous humor</button><button data-k="p">pupil</button><button data-k="x">optic chiasm</button><button data-k="k">primary visual cortex</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 30 minutes. The eye is a required detail page in your Assembled Figure.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Detail page: the eye</span>
+      <p>Draw a large cut-away circle for the eyeball, front to one side. <b>Fibrous tunic:</b> the <b>sclera</b> over the back two-thirds and the clear, bulging <b>cornea</b> in front. <b>Vascular tunic:</b> a dark <b>choroid</b> lining the back, a <b>ciliary body</b> ring behind the edge of the cornea, and the <b>iris</b> as a colored ring around the <b>pupil</b>.</p><p>Add the <b>lens</b> as a clear biconvex disk behind the pupil, hung by thin suspensory ligaments from the ciliary body. <b>Neural tunic:</b> coat the inside of the back with the <b>retina</b> in a third color; mark the bright <b>fovea</b> and the dark <b>optic disc</b>.</p><p>Draw the thick <b>optic nerve</b> leaving at the optic disc and label it CN II. Label all parts. Keep the page.</p>
+      <ul class="checks"><li data-ck="w11d21">Sclera, cornea, choroid, ciliary body, iris and pupil.</li><li data-ck="w11d22">Lens, retina, fovea and optic disc.</li><li data-ck="w11d23">Optic nerve labeled CN II; all labels.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Nervous System Map page and detail page: they become your Module 5 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w11m7"><p class="q">Why do you see in shades of gray on a moonless night?</p>
+        <button class="opt" data-ok="1" data-fb="Right: cones need more light.">Only rods are sensitive enough to work, and rods do not detect color.</button>
+        <button class="opt" data-fb="The lens does not filter color.">The lens filters out color at night.</button>
+        <button class="opt" data-fb="In the dark the pupil dilates.">The pupil closes too far.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="lens" type="button">&larr; Lens and Focus</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Eye: Labels, Light Path, Form and Function</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>Every part of the eye exists for a reason &mdash; pick one structure and explain how its form follows its function.</p></div>
+        <p>You have drawn the eye and followed light all the way to the cortex. This Notebook asks for your labeled eye, a numbered trace and one short paragraph. Diagram plus trace plus 75&ndash;150 words.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Labeled Eye</h2></div>
+    <p class="hint">Photo or scan to Canvas, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit a photo of your eye drawing labeling cornea, sclera, iris, pupil, ciliary body, lens, choroid, retina, fovea, optic disc, optic nerve, aqueous humor and vitreous humor. Here, list your labels.</p><textarea class="jbox" id="w11rE" data-label="Labeled eye: thirteen labels" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>The Light-and-Signal Trace</h2></div>
+    <div class="card loccard"><p class="sub">Write a numbered sequence from light in the world to the primary visual cortex, naming every structure the light or signal passes through. At least 10 steps.</p><div class="ttrack" data-field="w11rL"><span class="tt" data-t="aqueous|vitreous">humors</span><span class="tt" data-t="rod|cone|retina">retina</span><span class="tt" data-t="chiasm">chiasm</span><span class="tt" data-t="thalamus|geniculate">thalamus</span><span class="tt" data-t="occipital|visual cortex">cortex</span></div><textarea class="jbox" id="w11rL" data-label="Numbered trace" data-min="30"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Answer the Focus Question</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;5 sentences, pick one structure (the lens, iris, fovea or another) and explain how its specific shape or composition fits its specific job.</p><div class="ttrack" data-field="w11rF"><span class="tt" data-t="lens|iris|fovea|cornea|retina|choroid|pupil|sclera|rod|cone">structure</span></div><textarea class="jbox" id="w11rF" data-label="Form follows function" data-min="30"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w11rF" data-min="75" data-max="150"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w11c21">All 13 eye labels are correctly placed.</li><li data-ck="w11c22">My trace has at least 10 steps in order, including the thalamus and cortex.</li><li data-ck="w11c23">My paragraph names one structure and a specific shape-to-function connection.</li><li data-ck="w11c24">I use cornea, lens, retina, fovea, rods, cones and optic nerve precisely.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 5.10 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="retina" type="button">&larr; Retina to Cortex</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>orbit</dt><dd>The bony socket that holds the eyeball.</dd>
+  <dt>lacrimal gland<button type="button" class="say" data-say="lacrimal-gland" aria-label="Hear it: lacrimal gland" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>lacrima</i> &ldquo;tear&rdquo;</small></dt><dd>The gland that makes tears.</dd>
+  <dt>extraocular muscles<button type="button" class="say" data-say="extraocular-muscles" aria-label="Hear it: extraocular muscles" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The six skeletal muscles that move the eyeball.</dd>
+  <dt>tunic <small>Latin <i>tunica</i> &ldquo;coat&rdquo;</small></dt><dd>One of the three layers of the eyeball.</dd>
+  <dt>sclera<button type="button" class="say" data-say="sclera" aria-label="Hear it: sclera" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>skleros</i> &ldquo;hard&rdquo;</small></dt><dd>The white outer wall of the eye.</dd>
+  <dt>cornea<button type="button" class="say" data-say="cornea" aria-label="Hear it: cornea" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>corneus</i> &ldquo;horny&rdquo;</small></dt><dd>The clear front of the fibrous tunic; most of the focusing.</dd>
+  <dt>uvea<button type="button" class="say" data-say="uvea" aria-label="Hear it: uvea" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;grape&rdquo;</small></dt><dd>The vascular tunic: choroid, ciliary body and iris.</dd>
+  <dt>choroid<button type="button" class="say" data-say="choroid" aria-label="Hear it: choroid" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The pigmented, vascular layer lining the back of the eye.</dd>
+  <dt>ciliary body<button type="button" class="say" data-say="ciliary-body" aria-label="Hear it: ciliary body" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The ring of smooth muscle that shapes the lens and makes aqueous humor.</dd>
+  <dt>iris<button type="button" class="say" data-say="iris" aria-label="Hear it: iris" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek &ldquo;rainbow&rdquo;</small></dt><dd>The colored ring of muscle around the pupil.</dd>
+  <dt>pupil</dt><dd>The opening in the iris that lets light in.</dd>
+  <dt>lens<button type="button" class="say" data-say="lens" aria-label="Hear it: lens" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The flexible biconvex structure that fine-focuses light.</dd>
+  <dt>accommodation</dt><dd>Rounding or flattening the lens to focus near or far.</dd>
+  <dt>presbyopia<button type="button" class="say" data-say="presbyopia" aria-label="Hear it: presbyopia" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek &ldquo;old eye&rdquo;</small></dt><dd>Age-related stiffening of the lens.</dd>
+  <dt>aqueous humor<button type="button" class="say" data-say="aqueous-humor" aria-label="Hear it: aqueous humor" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;watery fluid&rdquo;</small></dt><dd>The watery fluid in front of the lens.</dd>
+  <dt>vitreous humor<button type="button" class="say" data-say="vitreous-humor" aria-label="Hear it: vitreous humor" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;glassy fluid&rdquo;</small></dt><dd>The gel filling the eyeball behind the lens.</dd>
+  <dt>glaucoma<button type="button" class="say" data-say="glaucoma" aria-label="Hear it: glaucoma" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Damage from raised pressure inside the eye when aqueous humor drains poorly.</dd>
+  <dt>retina<button type="button" class="say" data-say="retina" aria-label="Hear it: retina" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The neural tunic, where light becomes nerve signals.</dd>
+  <dt>rod</dt><dd>A photoreceptor for dim light, without color.</dd>
+  <dt>cone</dt><dd>A photoreceptor for color and sharp vision.</dd>
+  <dt>fovea<button type="button" class="say" data-say="fovea" aria-label="Hear it: fovea" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;small pit&rdquo;</small></dt><dd>The central spot of the retina, packed with cones.</dd>
+  <dt>optic disc<button type="button" class="say" data-say="optic-disc" aria-label="Hear it: optic disc" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Where the optic nerve leaves the retina; the blind spot.</dd>
+  <dt>optic chiasm<button type="button" class="say" data-say="optic-chiasm" aria-label="Hear it: optic chiasm" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>chiasma</i> &ldquo;crossing&rdquo;</small></dt><dd>Where the optic nerves partly cross.</dd>
+  <dt>lateral geniculate nucleus<button type="button" class="say" data-say="lateral-geniculate" aria-label="Hear it: lateral geniculate nucleus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The thalamic relay for vision.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w11-l2", "title": "The Eye and Vision", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 11 · The Eye and Vision", "pdfTag": "AP_W11_L2"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f50901":{"src":"img/m5-5.09-01-sympathetic-vs-parasympathetic-a.webp","alt":""},"f50904":{"src":"img/m5-5.09-04-accommodation-one-panel-distance.webp","alt":""},"f50903":{"src":"img/m5-5.09-03-rods-vs-cones-comparison-table.webp","alt":""},"f50902":{"src":"img/m5-5.09-02-path-light-vision-essentials-lig.webp","alt":""},"f50405":{"src":"img/m5-5.04-05-pupillary-light-reflex-critical-.webp","alt":""}},"w11_tun":{"audio":"audio/ap-w11-l2-tun.mp3","words":[[0,0.16,"The"],[0.24,0.56,"eye"],[0.64,0.72,"is"],[0.76,0.8,"a"],[0.88,1.2,"living"],[1.28,2.16,"camera:"],[2.2,2.24,"a"],[2.32,2.56,"clear"],[2.72,2.88,"window"],[2.92,2.96,"in"],[3.04,3.6,"front,"],[3.64,3.68,"an"],[3.76,4.24,"adjustable"],[4.32,4.88,"lens,"],[4.92,4.96,"and"],[5.04,5.12,"a"],[5.2,5.52,"curved"],[5.6,5.84,"sheet"],[5.92,6,"of"],[6.12,6.8,"photoreceptors"],[6.84,6.88,"at"],[6.96,7.04,"the"],[7.12,7.36,"back"],[7.52,7.6,"that"],[7.68,7.92,"turns"],[8,8.24,"light"],[8.32,8.56,"into"],[8.64,8.8,"nerve"],[8.88,9.84,"signals."],[9.92,10,"It"],[10.04,10.24,"sits"],[10.28,10.32,"in"],[10.4,10.48,"the"],[10.64,11.04,"orbit,"],[11.12,11.2,"a"],[11.24,11.52,"bony"],[11.72,11.92,"socket"],[11.96,12,"you"],[12.08,12.24,"drew"],[12.28,12.32,"in"],[12.4,12.64,"Module"],[12.8,13.6,"3."],[13.68,14.08,"Eyelids"],[14.12,14.16,"and"],[14.24,14.64,"lashes"],[14.72,15.04,"protect"],[15.12,15.52,"it;"],[15.6,15.68,"the"],[15.76,16.08,"lacrimal"],[16.16,16.48,"gland"],[16.56,16.88,"bathes"],[16.92,16.96,"it"],[17.04,17.2,"in"],[17.28,17.6,"tears"],[17.68,17.84,"that"],[17.88,18.16,"drain"],[18.24,18.4,"into"],[18.48,18.56,"the"],[18.6,19.52,"nose."],[19.6,19.92,"Six"],[20.12,20.56,"extraocular"],[20.72,21.04,"muscles"],[21.12,21.28,"move"],[21.36,21.68,"it,"],[21.76,21.92,"run"],[22.04,22.16,"by"],[22.32,22.48,"three"],[22.56,22.88,"cranial"],[22.96,23.76,"nerves:"],[23.88,24,"six"],[24.04,24.08,"for"],[24.16,24.24,"the"],[24.347,24.56,"lateral"],[24.64,25.28,"rectus,"],[25.36,25.6,"four"],[25.68,25.76,"for"],[25.787,25.813,"the"],[25.84,26.32,"superior"],[26.4,27.12,"oblique,"],[27.28,27.44,"three"],[27.52,27.6,"for"],[27.627,27.653,"the"],[27.68,28.64,"rest."],[28.68,28.72,"The"],[28.8,29.12,"eyeball"],[29.28,29.44,"has"],[29.56,29.68,"three"],[29.76,30.32,"layers,"],[30.4,30.48,"or"],[30.64,31.52,"tunics."],[31.56,31.6,"The"],[31.68,32.16,"outer,"],[32.28,32.56,"fibrous"],[32.64,32.96,"tunic"],[33.04,33.12,"is"],[33.2,33.24,"the"],[33.28,33.52,"white"],[33.6,34.08,"sclera"],[34.24,34.56,"and,"],[34.6,34.64,"in"],[34.8,35.2,"front,"],[35.24,35.28,"the"],[35.36,35.6,"clear"],[35.68,36.32,"cornea,"],[36.4,36.48,"which"],[36.56,36.64,"does"],[36.72,36.96,"about"],[37.08,37.52,"two-thirds"],[37.56,37.6,"of"],[37.68,37.72,"the"],[37.76,38,"eye's"],[38.04,38.56,"focusing"],[38.76,38.96,"without"],[39.04,39.2,"ever"],[39.28,39.6,"changing"],[39.68,40.48,"shape."],[40.52,40.56,"The"],[40.72,41.12,"middle,"],[41.2,41.68,"vascular"],[41.76,42.24,"tunic,"],[42.28,42.32,"the"],[42.4,43.12,"uvea,"],[43.2,43.28,"has"],[43.44,43.6,"three"],[43.68,44.4,"parts:"],[44.48,44.52,"the"],[44.56,44.88,"dark"],[45,45.36,"choroid"],[45.44,45.52,"that"],[45.6,46,"absorbs"],[46.08,46.32,"stray"],[46.4,46.64,"light"],[46.68,46.72,"and"],[46.8,47.04,"feeds"],[47.08,47.12,"the"],[47.2,47.92,"retina,"],[48,48.08,"the"],[48.12,48.48,"ciliary"],[48.56,48.88,"body"],[48.96,49.04,"that"],[49.12,49.36,"shapes"],[49.44,49.48,"the"],[49.52,50.16,"lens,"],[50.24,50.32,"and"],[50.36,50.4,"the"],[50.48,51.04,"iris,"],[51.12,51.28,"whose"],[51.36,51.68,"muscle"],[51.76,52.08,"sizes"],[52.16,52.24,"the"],[52.28,52.72,"pupil."],[53.2,53.28,"The"],[53.36,53.84,"inner,"],[53.92,54.16,"neural"],[54.24,54.56,"tunic"],[54.64,54.8,"is"],[54.84,54.88,"the"],[54.96,55.52,"retina,"],[55.6,55.68,"where"],[55.76,56,"light"],[56.08,56.4,"becomes"],[56.48,56.72,"nerve"],[56.8,57.2,"signal."],[57.6,57.68,"At"],[57.76,57.84,"its"],[57.92,58.24,"center"],[58.32,58.4,"is"],[58.44,58.48,"the"],[58.56,59.2,"fovea,"],[59.28,59.36,"where"],[59.44,59.68,"vision"],[59.76,59.92,"is"],[60,60.56,"sharpest."],[60.96,61.04,"The"],[61.12,61.36,"signal"],[61.44,61.76,"leaves"],[61.8,61.84,"at"],[61.88,61.92,"the"],[62,62.32,"optic"],[62.4,62.72,"disc"],[62.8,62.88,"as"],[62.92,62.96,"the"],[63.12,63.36,"optic"],[63.52,64.08,"nerve,"],[64.2,64.48,"cranial"],[64.56,64.72,"nerve"],[64.88,65.2,"two."],[65.68,65.76,"The"],[65.84,66.08,"disc"],[66.16,66.32,"has"],[66.48,66.56,"no"],[66.72,67.84,"photoreceptors:"],[67.88,67.92,"your"],[68,68.24,"blind"],[68.32,68.8,"spot,"],[68.88,68.96,"which"],[69.04,69.12,"the"],[69.28,69.44,"brain"],[69.52,69.92,"quietly"],[70,70.24,"fills"],[70.32,70.793,"in."]]},"w11_lens":{"audio":"audio/ap-w11-l2-lens.mp3","words":[[0.407,0.567,"Behind"],[0.647,0.727,"the"],[0.807,1.127,"iris"],[1.247,1.447,"hangs"],[1.487,1.527,"the"],[1.687,2.407,"lens:"],[2.727,3.287,"transparent,"],[3.407,3.847,"flexible"],[3.967,4.087,"and"],[4.247,5.207,"biconvex,"],[5.327,5.447,"held"],[5.527,5.607,"by"],[5.647,6.247,"suspensory"],[6.327,6.647,"ligaments"],[6.727,6.807,"from"],[6.887,6.967,"the"],[7.1,7.367,"ciliary"],[7.447,8.167,"body."],[8.247,8.327,"It"],[8.407,8.567,"does"],[8.607,8.647,"the"],[8.727,9.047,"eye's"],[9.127,9.367,"fine"],[9.447,10.407,"focusing."],[10.487,10.567,"In"],[10.647,10.727,"front"],[10.767,10.807,"of"],[10.887,11.127,"it,"],[11.207,11.247,"the"],[11.287,11.527,"small"],[11.607,11.927,"chambers"],[12.007,12.167,"are"],[12.287,12.407,"filled"],[12.527,12.647,"with"],[12.727,13.127,"watery"],[13.207,13.607,"aqueous"],[13.687,14.407,"humor."],[14.607,14.807,"Behind"],[14.967,15.167,"it,"],[15.207,15.367,"most"],[15.447,15.487,"of"],[15.527,15.607,"the"],[15.647,16.007,"eyeball"],[16.047,16.087,"is"],[16.247,16.407,"filled"],[16.487,16.727,"with"],[16.847,17.207,"gel-like"],[17.447,17.847,"vitreous"],[17.927,18.727,"humor."],[18.807,18.887,"Both"],[18.967,19.047,"are"],[19.127,19.527,"clear"],[19.607,19.767,"so"],[19.887,20.007,"light"],[20.087,20.167,"can"],[20.247,21.047,"pass."],[21.167,21.287,"For"],[21.394,21.607,"distant"],[21.687,22.247,"objects,"],[22.327,22.407,"the"],[22.447,22.807,"ciliary"],[22.887,23.127,"muscle"],[23.207,24.087,"relaxes,"],[24.127,24.167,"the"],[24.247,24.647,"ligaments"],[24.727,24.887,"pull"],[24.967,25.047,"the"],[25.127,25.287,"lens"],[25.367,25.927,"flat,"],[25.967,26.007,"and"],[26.087,26.327,"light"],[26.407,26.727,"lands"],[26.807,27.207,"focused"],[27.247,27.287,"on"],[27.367,27.407,"the"],[27.447,28.247,"retina."],[28.327,28.407,"For"],[28.487,28.567,"near"],[28.727,29.287,"objects,"],[29.367,29.447,"the"],[29.58,29.847,"ciliary"],[29.927,30.167,"muscle"],[30.247,31.047,"contracts,"],[31.127,31.207,"the"],[31.287,31.607,"ligaments"],[31.687,32.327,"slacken,"],[32.407,32.487,"and"],[32.527,32.567,"the"],[32.647,32.887,"lens"],[32.967,33.407,"rounds"],[33.447,33.607,"up"],[33.647,33.687,"to"],[33.847,34.007,"bend"],[34.087,34.327,"light"],[34.407,35.127,"more."],[35.207,35.287,"That"],[35.367,35.847,"adjustment"],[36.007,36.087,"is"],[36.247,37.207,"accommodation."],[37.447,37.607,"With"],[37.807,38.007,"age"],[38.087,38.167,"the"],[38.207,38.487,"lens"],[38.567,39.047,"stiffens"],[39.127,39.207,"and"],[39.367,39.527,"cannot"],[39.607,39.767,"round"],[39.847,39.927,"up"],[40.007,40.087,"as"],[40.167,40.607,"well."],[40.807,41.047,"That"],[41.087,41.127,"is"],[41.287,42.247,"presbyopia,"],[42.287,42.327,"and"],[42.367,42.407,"it"],[42.487,42.567,"is"],[42.647,42.727,"why"],[42.807,42.967,"most"],[43.047,43.287,"people"],[43.367,43.447,"need"],[43.527,43.767,"reading"],[43.847,44.247,"glasses"],[44.287,44.327,"in"],[44.447,44.567,"their"],[44.647,44.887,"forties"],[44.967,45.047,"or"],[45.127,45.527,"fifties."],[46.007,46.407,"Aqueous"],[46.487,46.807,"humor"],[46.927,47.047,"is"],[47.127,47.607,"constantly"],[47.767,48.007,"made"],[48.087,48.167,"and"],[48.247,48.727,"drained."],[49.047,49.127,"If"],[49.207,49.527,"drainage"],[49.607,50.167,"fails,"],[50.367,50.567,"pressure"],[50.647,50.967,"inside"],[51.047,51.127,"the"],[51.207,51.367,"eye"],[51.447,51.927,"rises"],[52.007,52.167,"and"],[52.247,52.647,"damages"],[52.727,52.767,"the"],[52.807,53.127,"optic"],[53.207,53.847,"nerve:"],[53.887,54.727,"glaucoma,"],[54.767,54.807,"a"],[54.887,55.127,"leading"],[55.207,55.447,"cause"],[55.527,55.607,"of"],[55.767,56.44,"blindness."]]},"w11_ret":{"audio":"audio/ap-w11-l2-ret.mp3","words":[[0.287,0.327,"The"],[0.367,0.767,"retina"],[0.847,0.927,"is"],[1.007,1.087,"where"],[1.247,1.407,"light"],[1.487,1.807,"becomes"],[1.887,1.927,"a"],[1.967,2.207,"nerve"],[2.287,2.767,"signal,"],[2.807,2.847,"and"],[2.927,2.967,"it"],[3.007,3.247,"has"],[3.327,3.487,"two"],[3.567,3.807,"kinds"],[3.887,3.967,"of"],[4.047,5.167,"photoreceptor."],[5.247,5.887,"Rods,"],[6.047,6.207,"about"],[6.287,6.447,"ninety"],[6.607,6.927,"million"],[7.007,7.087,"per"],[7.207,7.727,"retina,"],[7.807,7.887,"are"],[8.047,8.527,"extremely"],[8.607,9.007,"sensitive"],[9.087,9.167,"to"],[9.327,9.487,"light"],[9.567,9.727,"but"],[9.807,9.967,"see"],[10.087,10.207,"no"],[10.367,10.927,"color."],[10.967,11.007,"They"],[11.087,11.167,"give"],[11.247,11.327,"you"],[11.407,11.567,"night"],[11.647,12.047,"vision"],[12.127,12.207,"and"],[12.367,12.527,"motion"],[12.567,12.607,"at"],[12.687,12.767,"the"],[12.847,13.647,"edges."],[13.807,14.287,"Cones,"],[14.447,14.607,"about"],[14.687,14.847,"six"],[14.927,15.487,"million,"],[15.567,15.727,"need"],[15.807,15.967,"more"],[16.047,16.287,"light"],[16.447,16.607,"but"],[16.727,16.847,"see"],[17.007,17.167,"color"],[17.247,17.407,"and"],[17.847,18.367,"detail."],[18.447,18.527,"Three"],[18.607,18.847,"types"],[18.927,19.327,"respond"],[19.447,19.567,"to"],[19.687,20.047,"red,"],[20.207,20.367,"green"],[20.447,20.607,"and"],[20.727,20.847,"blue"],[20.927,21.647,"wavelengths,"],[21.687,21.727,"and"],[21.807,21.847,"they"],[21.887,21.967,"are"],[22.047,22.367,"packed"],[22.527,22.687,"most"],[22.807,23.087,"densely"],[23.167,23.247,"at"],[23.327,23.407,"the"],[23.487,23.967,"fovea."],[24.047,24.367,"Light"],[24.447,24.767,"changes"],[24.847,24.887,"the"],[24.927,25.807,"photoreceptor's"],[25.887,26.207,"membrane"],[26.287,27.247,"potential."],[27.287,27.327,"The"],[27.527,27.727,"signal"],[27.927,28.127,"passes"],[28.207,28.287,"to"],[28.327,28.847,"bipolar"],[28.927,29.487,"cells,"],[29.607,29.727,"then"],[29.807,30.287,"ganglion"],[30.367,30.927,"cells,"],[31.047,31.167,"whose"],[31.327,31.727,"axons"],[31.807,32.047,"gather"],[32.127,32.287,"into"],[32.327,32.367,"the"],[32.447,32.767,"optic"],[32.847,33.567,"nerve."],[33.607,33.647,"At"],[33.727,33.767,"the"],[33.807,34.127,"optic"],[34.207,34.767,"chiasm"],[34.847,35.007,"the"],[35.087,35.167,"two"],[35.247,35.567,"optic"],[35.647,35.967,"nerves"],[36.047,36.367,"partly"],[36.447,37.247,"cross."],[37.327,37.407,"The"],[37.567,37.727,"signal"],[37.807,38.207,"relays"],[38.287,38.367,"in"],[38.447,38.527,"the"],[38.634,38.847,"lateral"],[38.927,39.487,"geniculate"],[39.567,39.967,"nucleus"],[40.047,40.127,"of"],[40.18,40.234,"the"],[40.287,41.194,"thalamus."],[41.22,41.247,"And"],[41.327,41.487,"it"],[41.567,41.807,"ends"],[41.887,41.927,"in"],[41.967,42.047,"the"],[42.127,42.527,"primary"],[42.607,43.007,"visual"],[43.167,43.487,"cortex"],[43.527,43.567,"of"],[43.647,43.727,"the"],[43.847,44.287,"occipital"],[44.447,44.767,"lobe,"],[44.847,44.927,"where"],[45.047,45.167,"you"],[45.407,45.647,"finally"],[45.727,46.447,"see."],[46.527,46.847,"Retinal"],[47.007,47.407,"implants"],[47.487,47.567,"and"],[47.647,47.807,"gene"],[47.967,48.367,"therapy"],[48.487,48.607,"are"],[48.687,48.767,"now"],[48.847,49.167,"beginning"],[49.207,49.247,"to"],[49.327,49.807,"restore"],[49.927,50.047,"some"],[50.127,50.447,"vision"],[50.527,50.687,"when"],[50.767,51.487,"photoreceptors"],[51.567,51.993,"fail."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the eye: accessory structures, extraocular muscles, the three tunics, the lens and humors, accommodation, presbyopia and glaucoma, rods and cones, the fovea and blind spot, the visual pathway to the occipital cortex, restoring vision, and the pupillary light reflex',
+  quick: ['What are the three tunics of the eye?', 'How do rods and cones differ?', 'What is accommodation?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|paragraph|trace|focus question)/i,
+  guide: 'That paragraph is yours to write, so here are my questions instead. Why is the lens flexible instead of rigid? Why is the fovea packed with cones? Why is the cornea clear while the sclera is white? Pick one, then explain how its shape fits its job.',
+  notes: [
+    { k: ['tunic','tunics','layers','sclera','cornea','choroid','uvea'], w: 1.3, a: 'Fibrous tunic: sclera and cornea. Vascular tunic (uvea): choroid, ciliary body, iris. Neural tunic: the retina.' },
+    { k: ['muscle','muscles','extraocular','lr6','so4','rectus','oblique'], a: 'Six extraocular muscles move the eye: four rectus and two oblique. CN VI runs the lateral rectus, CN IV the superior oblique, CN III the rest (LR6 SO4 R3).' },
+    { k: ['lens','accommodation','ciliary','near','far','presbyopia'], w: 1.3, a: 'For near objects the ciliary muscle contracts and the lens rounds; for far objects it relaxes and the lens flattens: accommodation. Presbyopia is age-related stiffening of the lens.' },
+    { k: ['aqueous','vitreous','glaucoma','pressure'], a: 'Aqueous humor fills the front chambers and vitreous humor the back. If aqueous drainage fails, pressure rises: glaucoma.' },
+    { k: ['rods','cones','rod','cone','color','night','fovea'], w: 1.4, a: 'Rods (about 90 million) are very sensitive but colorless: night and peripheral vision. Cones (about 6 million, three types) see color and detail and are packed at the fovea. In dim light only rods work, so night vision is gray.' },
+    { k: ['path','pathway','trace','chiasm','thalamus','geniculate','cortex'], w: 1.3, a: 'Light: cornea, aqueous humor, pupil, lens, vitreous humor, retina. Signal: rods and cones, bipolar cells, ganglion cells, optic nerve, optic chiasm, lateral geniculate nucleus of the thalamus, primary visual cortex in the occipital lobe.' },
+    { k: ['blind spot','optic disc'], a: 'The optic disc, where the optic nerve leaves, has no photoreceptors: the blind spot. The brain fills it in.' },
+    { k: ['prosthetic','implant','gene','luxturna'], a: 'Retinal implants stimulate surviving ganglion cells; gene therapy (Luxturna, for RPE65 mutations) can improve low-light vision in some patients.' },
+    { k: ['notebook','lab report','submit','words'], w: 1.2, a: 'The 5.10 Notebook: a photo of your labeled eye (13 labels), a numbered light-and-signal trace of at least 10 steps, and a 3 to 5 sentence form-follows-function paragraph (75 to 150 words).' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>

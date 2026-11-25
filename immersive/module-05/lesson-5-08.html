@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Cranial and Spinal Nerves: The Wiring Diagram · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A seventeenth-century engraving of the floor of the skull with the base of the brain and the cranial nerves" style="background-image:url(img/lesson-5-08-hero.jpg);background-position:center"><span class="hlab">The base of the brain · Thomas Willis, Cerebri anatome, 1664</span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 5.08 &middot; Module 5: Nervous System</div>
+      <h1>Cranial and Spinal Nerves: The Wiring Diagram</h1>
+      <div class="focusq"><div class="label">Focus</div><p>Given a patient&rsquo;s symptom, how can a clinician reason backward to the specific nerve that has been damaged?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to name all 12 cranial nerves in order, with their primary function and whether they are sensory, motor or mixed.</li><li>I will be able to state how many spinal nerve pairs there are and how many in each region.</li><li>I will be able to name the four major spinal plexuses, what region of the body each serves, and one major nerve from each.</li><li>I will be able to explain what a dermatome is and use one to localize a spinal nerve.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Twelve pairs</div>
+      <svg class="m2-fig" viewBox="0 0 380 300" role="img" aria-label="The underside of the brain with the twelve cranial nerves"><rect x="6" y="6" width="368" height="288" rx="14" fill="#F4F7FB"/><ellipse cx="190" cy="120" rx="130" ry="104" fill="#F7E3E6" stroke="#C98A96" stroke-width="2"/><path d="M190 16 V100" stroke="#C98A96" stroke-width="2"/><rect x="172" y="110" width="36" height="180" rx="14" fill="#9CC9E8" stroke="#1E5AA0" stroke-width="2"/><path d="M176 30 L120 26" stroke="#2E6FB7" stroke-width="5" stroke-linecap="round"/><path d="M204 30 L260 26" stroke="#2E6FB7" stroke-width="5" stroke-linecap="round"/><text x="114" y="30" class="m2-ts" text-anchor="end" style="fill:#2E6FB7">I</text><path d="M178 64 L100 64" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><path d="M202 64 L280 64" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><text x="94" y="68" class="m2-ts" text-anchor="end" style="fill:#2E6FB7"></text><text x="76" y="68" class="m2-ts" text-anchor="end" style="fill:#2E6FB7">II</text><circle cx="88" cy="64" r="9" fill="#fff" stroke="#2E6FB7" stroke-width="2"/><circle cx="292" cy="64" r="9" fill="#fff" stroke="#2E6FB7" stroke-width="2"/><path d="M174 118 L96 108" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M206 118 L284 108" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="90" y="112" class="m2-ts" text-anchor="end" style="fill:#C22F4A">III</text><path d="M172 134 L96 132" stroke="#C22F4A" stroke-width="2" stroke-linecap="round"/><path d="M208 134 L284 132" stroke="#C22F4A" stroke-width="2" stroke-linecap="round"/><text x="90" y="136" class="m2-ts" text-anchor="end" style="fill:#C22F4A">IV</text><path d="M176 176 L96 180" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M204 176 L284 180" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="90" y="184" class="m2-ts" text-anchor="end" style="fill:#C22F4A">VI</text><path d="M172 152 L84 154" stroke="#8E5BC0" stroke-width="6" stroke-linecap="round"/><path d="M208 152 L296 154" stroke="#8E5BC0" stroke-width="6" stroke-linecap="round"/><text x="78" y="158" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">V</text><path d="M174 196 L90 204" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><path d="M206 196 L290 204" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><text x="84" y="208" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">VII</text><path d="M174 212 L96 224" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><path d="M206 212 L284 224" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><text x="90" y="228" class="m2-ts" text-anchor="end" style="fill:#2E6FB7">VIII</text><path d="M176 230 L100 244" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><path d="M204 230 L280 244" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><text x="94" y="248" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">IX</text><path d="M178 246 L100 298" stroke="#8E5BC0" stroke-width="4" stroke-linecap="round"/><path d="M202 246 L280 298" stroke="#8E5BC0" stroke-width="4" stroke-linecap="round"/><text x="94" y="302" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">X</text><path d="M180 262 L110 272" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M200 262 L270 272" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="104" y="276" class="m2-ts" text-anchor="end" style="fill:#C22F4A">XI</text><path d="M182 276 L146 292" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M198 276 L234 292" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="140" y="296" class="m2-ts" text-anchor="end" style="fill:#C22F4A">XII</text></svg>
+      <div class="cap">Cranial nerves I&ndash;XII leave the brain front to back: sensory (blue), motor (red) and mixed (purple). The vagus (X) runs on down into the chest and abdomen.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="cranial" role="tab"><span class="n">01</span>Twelve Cranial Nerves</button>
+  <button class="tab" data-tab="spinal" role="tab"><span class="n">02</span>Spinal Nerves and Plexuses</button>
+  <button class="tab" data-tab="derm" role="tab"><span class="n">03</span>Dermatomes</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 TWELVE CRANIAL NERVES ═════════ -->
+<section class="panel" id="tab-cranial" role="tabpanel">
+  <div class="vo" data-clip="w10_cn">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Twelve from the Brain</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The underside of the brain with the twelve cranial nerves leaving the brainstem, colored sensory, motor or mixed"><g data-step="0" class="nohalo"><ellipse cx="190" cy="120" rx="130" ry="104" fill="#F7E3E6" stroke="#C98A96" stroke-width="2"/><path d="M190 16 V100" stroke="#C98A96" stroke-width="2"/><rect x="172" y="110" width="36" height="180" rx="14" fill="#9CC9E8" stroke="#1E5AA0" stroke-width="2"/><text x="360" y="30" class="m2-t">12 pairs, numbered I&ndash;XII front to back</text><text x="360" y="48" class="m2-ts" style="fill:#2E6FB7">sensory</text><text x="420" y="48" class="m2-ts" style="fill:#C22F4A">motor</text><text x="468" y="48" class="m2-ts" style="fill:#8E5BC0">mixed</text></g><g data-step="1" class="nohalo"><path d="M176 30 L120 26" stroke="#2E6FB7" stroke-width="5" stroke-linecap="round"/><path d="M204 30 L260 26" stroke="#2E6FB7" stroke-width="5" stroke-linecap="round"/><text x="114" y="30" class="m2-ts" text-anchor="end" style="fill:#2E6FB7">I</text><path d="M178 64 L100 64" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><path d="M202 64 L280 64" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><text x="94" y="68" class="m2-ts" text-anchor="end" style="fill:#2E6FB7"></text><text x="76" y="68" class="m2-ts" text-anchor="end" style="fill:#2E6FB7">II</text><circle cx="88" cy="64" r="9" fill="#fff" stroke="#2E6FB7" stroke-width="2"/><circle cx="292" cy="64" r="9" fill="#fff" stroke="#2E6FB7" stroke-width="2"/><text x="360" y="84" class="m2-ts" style="fill:#2E6FB7">I olfactory: smell &middot; II optic: vision</text></g><g data-step="2" class="nohalo"><path d="M174 118 L96 108" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M206 118 L284 108" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="90" y="112" class="m2-ts" text-anchor="end" style="fill:#C22F4A">III</text><path d="M172 134 L96 132" stroke="#C22F4A" stroke-width="2" stroke-linecap="round"/><path d="M208 134 L284 132" stroke="#C22F4A" stroke-width="2" stroke-linecap="round"/><text x="90" y="136" class="m2-ts" text-anchor="end" style="fill:#C22F4A">IV</text><path d="M176 176 L96 180" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M204 176 L284 180" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="90" y="184" class="m2-ts" text-anchor="end" style="fill:#C22F4A">VI</text><text x="360" y="116" class="m2-ts" style="fill:#C22F4A">III oculomotor, IV trochlear, VI abducens:</text><text x="360" y="132" class="m2-ts" style="fill:#C22F4A">the eye muscles</text></g><g data-step="3" class="nohalo"><path d="M172 152 L84 154" stroke="#8E5BC0" stroke-width="6" stroke-linecap="round"/><path d="M208 152 L296 154" stroke="#8E5BC0" stroke-width="6" stroke-linecap="round"/><text x="78" y="158" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">V</text><path d="M174 196 L90 204" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><path d="M206 196 L290 204" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><text x="84" y="208" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">VII</text><text x="360" y="164" class="m2-ts" style="fill:#8E5BC0">V trigeminal: face sensation, chewing</text><text x="360" y="180" class="m2-ts" style="fill:#8E5BC0">VII facial: expression, taste (Bell&rsquo;s palsy)</text></g><g data-step="4" class="nohalo"><path d="M174 212 L96 224" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><path d="M206 212 L284 224" stroke="#2E6FB7" stroke-width="3" stroke-linecap="round"/><text x="90" y="228" class="m2-ts" text-anchor="end" style="fill:#2E6FB7">VIII</text><path d="M176 230 L100 244" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><path d="M204 230 L280 244" stroke="#8E5BC0" stroke-width="3" stroke-linecap="round"/><text x="94" y="248" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">IX</text><text x="360" y="212" class="m2-ts" style="fill:#2E6FB7">VIII vestibulocochlear: hearing, balance</text><text x="360" y="228" class="m2-ts" style="fill:#8E5BC0">IX glossopharyngeal: taste, swallowing</text></g><g data-step="5" class="nohalo"><path d="M178 246 L100 298" stroke="#8E5BC0" stroke-width="4" stroke-linecap="round"/><path d="M202 246 L280 298" stroke="#8E5BC0" stroke-width="4" stroke-linecap="round"/><text x="94" y="302" class="m2-ts" text-anchor="end" style="fill:#8E5BC0">X</text><path d="M180 262 L110 272" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M200 262 L270 272" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="104" y="276" class="m2-ts" text-anchor="end" style="fill:#C22F4A">XI</text><path d="M182 276 L146 292" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><path d="M198 276 L234 292" stroke="#C22F4A" stroke-width="3" stroke-linecap="round"/><text x="140" y="296" class="m2-ts" text-anchor="end" style="fill:#C22F4A">XII</text><text x="360" y="260" class="m2-ts" style="fill:#8E5BC0">X vagus: heart, lungs, gut</text><text x="360" y="276" class="m2-ts" style="fill:#C22F4A">XI accessory: neck &middot; XII hypoglossal: tongue</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The peripheral nervous system is built from two kinds of nerves, told apart only by where they emerge. Twelve pairs of cranial nerves leave the brain, mostly the brainstem, numbered one through twelve from front to back.", "One, the olfactory nerve, carries smell. Two, the optic nerve, carries vision. Both are purely sensory, and the optic nerve is really an outgrowth of the brain itself.", "Three of them move the eye. Three, the oculomotor, runs most eye muscles and narrows the pupil; four, the trochlear, and six, the abducens, each run one eye muscle. All are motor.", "Five, the trigeminal, is mixed: sensation across the face and the chewing muscles. Seven, the facial, runs facial expression and some taste. An inflamed facial nerve causes the one-sided droop of Bell's palsy.", "Eight, the vestibulocochlear, carries hearing and balance. Nine, the glossopharyngeal, carries taste from the back of the tongue and helps you swallow.", "Ten, the vagus, wanders down to the heart, lungs and gut. Eleven, the accessory, moves the neck and shoulders; twelve, the hypoglossal, moves the tongue. On Old Olympus' Towering Tops, A Finn And German Viewed Some Hops."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The twelve cranial nerves, their numbers, functions and types.</span></div>
+    <p class="marg"><b>Courage.</b> Twelve nerves leave the brain and thirty-one pairs leave the cord. Every signal that reaches the heart, the diaphragm, the hand &mdash; every sensation that arrives in the cortex from below the head &mdash; passes through one of them.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="5.08-reading" data-title="The twelve cranial nerves (view from below)" data-src="../../assets/models/cranial-nerves.glb" data-poster="../../assets/models/cranial-nerves.webp" data-alt="3D model: Cranial nerves" data-orbit="0deg 160deg auto"></div>
+      <h3>Twelve from the brain, thirty-one from the cord</h3>
+      <p>The peripheral nervous system in your body is built from two kinds of nerves, distinguished only by where they emerge.</p>
+      <p>▶ <b>Cranial nerves</b> emerge from the brain itself, mostly from the brainstem. There are <b>12 pairs</b>, numbered with Roman numerals I through XII from front to back. Most cranial nerves serve structures in the head and neck. A few have functions deeper in the body — the vagus nerve (CN X) reaches the heart, lungs, and most of the gastrointestinal tract.</p>
+      <p>▶ <b>Spinal nerves</b> emerge from the spinal cord, one pair at every vertebral level. There are <b>31 pairs</b> total: 8 cervical, 12 thoracic, 5 lumbar, 5 sacral, and 1 coccygeal. Spinal nerves are always <i>mixed</i> — carrying both sensory and motor fibers — because the dorsal and ventral roots merge before the nerve exits the vertebral column.</p>
+      <figure class="plate"><img data-img="f50701" alt="Overview of the peripheral nervous system, showing the 12 pairs of cranial nerves and 31 pairs of spinal nerves connecting to the central nervous system"><figcaption>Figure — Overview of the peripheral nervous system: 12 pairs of cranial nerves arise from the brain and brainstem, and 31 pairs of spinal nerves arise from the spinal cord.</figcaption></figure>
+      <h3>The twelve cranial nerves</h3>
+      <p>Memorize the list. Each cranial nerve has a Roman numeral, a name, and a primary function. The classic mnemonic for the names is <i>“On Old Olympus’ Towering Tops, A Finn And German Viewed Some Hops”</i> — one word per nerve, in order.</p>
+      <p><table style="width: 100%; border-collapse: collapse; min-width: 580px;"> <thead><tr style="background: #0E1C42;"> <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">#</th> <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">Name</th> <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">Primary function</th> </tr></thead> <tbody> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">I</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Olfactory</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Smell (sensory)</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">II</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Optic</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Vision (sensory)</td></tr> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">III</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Oculomotor</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Most eye-muscle movement; pupillary constriction (motor)</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">IV</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Trochlear</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Superior oblique eye muscle (motor)</td></tr> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">V</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Trigeminal</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Facial sensation; muscles of mastication (mixed)</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">VI</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Abducens</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Lateral rectus eye muscle (motor)</td></tr> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">VII</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Facial</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Muscles of facial expression; taste anterior 2/3 of tongue (mixed)</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">VIII</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Vestibulocochlear</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Hearing &amp; balance (sensory)</td></tr> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">IX</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Glossopharyngeal</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Taste posterior 1/3 of tongue; swallowing; carotid baroreceptor input (mixed)</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">X</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Vagus</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Parasympathetic to heart, lungs, GI tract; pharynx and larynx (mixed)</td></tr> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">XI</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Accessory (spinal accessory)</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Sternocleidomastoid &amp; trapezius (motor)</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;">XII</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Hypoglossal</td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Tongue movement (motor)</td></tr> </tbody> </table></p>
+      <p>Three of these deserve special note. <b>The vagus (CN X)</b><button type="button" class="say" data-say="vagus-nerve" aria-label="Hear it: the vagus (cn x)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is by far the most peripherally distributed cranial nerve — you will meet it again in Modules 6, 7, 9, and 10 as it serves the parasympathetic nervous system. <b>The optic nerve (CN II)</b><button type="button" class="say" data-say="optic-nerve" aria-label="Hear it: the optic nerve (cn ii)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is, strictly speaking, not a true peripheral nerve at all — it is an outgrowth of the brain itself and is wrapped in CNS meninges. <b>The facial nerve (CN VII)</b><button type="button" class="say" data-say="facial-nerve" aria-label="Hear it: the facial nerve (cn vii)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the one that goes wrong in Bell’s palsy, in which an inflamed CN VII produces sudden one-sided facial drooping.</p>
+      <figure class="plate"><img data-img="f50702" alt="The branches of the twelve cranial nerves, their sensory and motor functions, and the structures they innervate"><figcaption>Figure — The branches of the twelve cranial nerves, color-coded sensory (blue) and motor (red), and the structures they innervate.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Cranial Nerve Table</h2></div>
+    <p class="hint">Name and type for I through XII.</p>
+    <div class="card idtable" id="w10cn" style="padding:16px 20px"><div class="idhead c2"><span></span><span>Name</span><span>Type</span><span></span></div><div class="idrow c2"><span class="loc">I</span><select class="jfield" id="w10cnr0c0" data-label="Cranial nerves: I, Name" data-ans="Olfactory"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr0c1" data-label="Cranial nerves: I, Type" data-ans="sensory"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">II</span><select class="jfield" id="w10cnr1c0" data-label="Cranial nerves: II, Name" data-ans="Optic"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr1c1" data-label="Cranial nerves: II, Type" data-ans="sensory"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">III</span><select class="jfield" id="w10cnr2c0" data-label="Cranial nerves: III, Name" data-ans="Oculomotor"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr2c1" data-label="Cranial nerves: III, Type" data-ans="motor"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">IV</span><select class="jfield" id="w10cnr3c0" data-label="Cranial nerves: IV, Name" data-ans="Trochlear"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr3c1" data-label="Cranial nerves: IV, Type" data-ans="motor"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">V</span><select class="jfield" id="w10cnr4c0" data-label="Cranial nerves: V, Name" data-ans="Trigeminal"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr4c1" data-label="Cranial nerves: V, Type" data-ans="mixed"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">VI</span><select class="jfield" id="w10cnr5c0" data-label="Cranial nerves: VI, Name" data-ans="Abducens"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr5c1" data-label="Cranial nerves: VI, Type" data-ans="motor"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">VII</span><select class="jfield" id="w10cnr6c0" data-label="Cranial nerves: VII, Name" data-ans="Facial"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr6c1" data-label="Cranial nerves: VII, Type" data-ans="mixed"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">VIII</span><select class="jfield" id="w10cnr7c0" data-label="Cranial nerves: VIII, Name" data-ans="Vestibulocochlear"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr7c1" data-label="Cranial nerves: VIII, Type" data-ans="sensory"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">IX</span><select class="jfield" id="w10cnr8c0" data-label="Cranial nerves: IX, Name" data-ans="Glossopharyngeal"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr8c1" data-label="Cranial nerves: IX, Type" data-ans="mixed"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">X</span><select class="jfield" id="w10cnr9c0" data-label="Cranial nerves: X, Name" data-ans="Vagus"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr9c1" data-label="Cranial nerves: X, Type" data-ans="mixed"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">XI</span><select class="jfield" id="w10cnr10c0" data-label="Cranial nerves: XI, Name" data-ans="Accessory"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr10c1" data-label="Cranial nerves: XI, Type" data-ans="motor"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">XII</span><select class="jfield" id="w10cnr11c0" data-label="Cranial nerves: XII, Name" data-ans="Hypoglossal"><option value="">choose</option><option>Abducens</option><option>Accessory</option><option>Facial</option><option>Glossopharyngeal</option><option>Hypoglossal</option><option>Oculomotor</option><option>Olfactory</option><option>Optic</option><option>Trigeminal</option><option>Trochlear</option><option>Vagus</option><option>Vestibulocochlear</option></select><select class="jfield" id="w10cnr11c1" data-label="Cranial nerves: XII, Type" data-ans="motor"><option value="">choose</option><option>sensory</option><option>motor</option><option>mixed</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill all 24 cells from memory, then check.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Infographic and Mnemonic</h2></div>
+    <p class="hint">About 15 minutes. The infographic is the first part of your Notebook.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In your notebook, sketch a one-page infographic for the 12 cranial nerves. Highlight 2 purely sensory (from I, II, VIII), 2 purely motor (from III, IV, VI, XI, XII) and 2 mixed (from V, VII, IX, X), each with Roman numeral, name and function. Here, write your own mnemonic sentence for all 12 in order (not the Olympus one).</p><textarea class="jbox" id="w10t5" data-label="My cranial-nerve mnemonic" data-min="10"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="spinal" type="button">Next: Spinal Nerves and Plexuses &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 SPINAL NERVES AND PLEXUSES ═════════ -->
+<section class="panel" id="tab-spinal" role="tabpanel">
+  <div class="vo" data-clip="w10_plex">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Thirty-One from the Cord</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The spinal cord with 31 pairs of spinal nerves and the four plexuses"><g data-step="0" class="nohalo"><rect x="120" y="18" width="20" height="260" rx="8" fill="#E89AB0" stroke="#B0306E" stroke-width="2"/><rect x="96" y="24" width="18" height="64" rx="3" fill="#E8D9B5"/><text x="90" y="60.8" class="m2-ts" text-anchor="end" style="fill:#8A6A4A">C</text><rect x="96" y="90" width="18" height="96" rx="3" fill="#DCCB9E"/><text x="90" y="142.8" class="m2-ts" text-anchor="end" style="fill:#8A6A4A">T</text><rect x="96" y="188" width="18" height="39" rx="3" fill="#CDBB8A"/><text x="90" y="212.5" class="m2-ts" text-anchor="end" style="fill:#8A6A4A">L</text><rect x="96" y="229" width="18" height="39" rx="3" fill="#BFAE80"/><text x="90" y="253.5" class="m2-ts" text-anchor="end" style="fill:#8A6A4A">S</text><rect x="96" y="270" width="18" height="6" rx="3" fill="#B0A070"/><text x="90" y="278.1" class="m2-ts" text-anchor="end" style="fill:#8A6A4A">Co</text><text x="420" y="36" class="m2-t">31 pairs of spinal nerves</text><text x="420" y="54" class="m2-ts">8 C, 12 T, 5 L, 5 S, 1 Co; all mixed</text></g><g data-step="1" class="nohalo"><path d="M140 102 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 110 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 118 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 126 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 135 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 143 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 151 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 159 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 167 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 176 H200" stroke="#F2C230" stroke-width="2"/><path d="M140 184 H200" stroke="#F2C230" stroke-width="2"/><text x="206" y="146.9" class="m2-ts" style="fill:#A07800">intercostal</text><text x="420" y="88" class="m2-ts" style="fill:#A07800">thoracic: straight out between the ribs</text></g><g data-step="2" class="nohalo"><path d="M140 28 C170 28 190 40 220 46.4" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 36 C170 36 190 43 220 46.4" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 44 C170 44 190 46 220 46.4" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 53 C170 53 190 49 220 46.4" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 28 C170 36 200 46 220 46.4" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 36 C170 44 200 44 220 46.4" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 44 C170 52 200 42 220 46.4" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 53 C170 61 200 40 220 46.4" stroke="#F2C230" stroke-width="1.5" fill="none"/><circle cx="220" cy="46.4" r="5" fill="#A07800"/><path d="M220 46.4 H242" stroke="#A07800" stroke-width="5"/><text x="248" y="50.4" class="m2-ts" style="fill:#A07800">phrenic</text><text x="420" y="120" class="m2-ts" style="fill:#1E2B3A">cervical plexus (C1&ndash;C4): neck;</text><text x="420" y="136" class="m2-ts" style="fill:#1E2B3A">phrenic nerve to the diaphragm</text></g><g data-step="3" class="nohalo"><path d="M140 61 C170 61 210 72 240 79.19999999999999" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 69 C170 69 210 75 240 79.19999999999999" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 77 C170 77 210 78 240 79.19999999999999" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 85 C170 85 210 81 240 79.19999999999999" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 94 C170 94 210 84 240 79.19999999999999" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 61 C170 69 220 79 240 79.19999999999999" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 69 C170 77 220 77 240 79.19999999999999" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 77 C170 85 220 75 240 79.19999999999999" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 85 C170 93 220 73 240 79.19999999999999" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 94 C170 102 220 71 240 79.19999999999999" stroke="#F2C230" stroke-width="1.5" fill="none"/><circle cx="240" cy="79.19999999999999" r="5" fill="#A07800"/><path d="M240 79.19999999999999 H262" stroke="#A07800" stroke-width="5"/><text x="268" y="83.19999999999999" class="m2-ts" style="fill:#A07800">median, ulnar, radial</text><text x="420" y="168" class="m2-ts" style="fill:#1E2B3A">brachial plexus (C5&ndash;T1): the arm</text></g><g data-step="4" class="nohalo"><path d="M140 192 C170 192 206 198 236 204.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 200 C170 200 206 201 236 204.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 208 C170 208 206 204 236 204.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 217 C170 217 206 207 236 204.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 192 C170 200 216 204 236 204.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 200 C170 208 216 202 236 204.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 208 C170 216 216 200 236 204.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 217 C170 225 216 198 236 204.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><circle cx="236" cy="204.39999999999998" r="5" fill="#A07800"/><path d="M236 204.39999999999998 H258" stroke="#A07800" stroke-width="5"/><text x="264" y="208.39999999999998" class="m2-ts" style="fill:#A07800">femoral</text><text x="420" y="200" class="m2-ts" style="fill:#1E2B3A">lumbar plexus (L1&ndash;L4): front of thigh</text></g><g data-step="5" class="nohalo"><path d="M140 217 C170 217 220 242 250 251.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 225 C170 225 220 245 250 251.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 233 C170 233 220 248 250 251.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 241 C170 241 220 251 250 251.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 249 C170 249 220 254 250 251.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 258 C170 258 220 257 250 251.39999999999998" stroke="#A07800" stroke-width="2" fill="none"/><path d="M140 217 C170 225 230 251 250 251.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 225 C170 233 230 249 250 251.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 233 C170 241 230 247 250 251.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 241 C170 249 230 245 250 251.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 249 C170 257 230 243 250 251.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><path d="M140 258 C170 266 230 241 250 251.39999999999998" stroke="#F2C230" stroke-width="1.5" fill="none"/><circle cx="250" cy="251.39999999999998" r="5" fill="#A07800"/><path d="M250 251.39999999999998 H272" stroke="#A07800" stroke-width="5"/><text x="278" y="255.39999999999998" class="m2-ts" style="fill:#A07800">sciatic</text><text x="420" y="232" class="m2-ts" style="fill:#1E2B3A">sacral plexus (L4&ndash;S4): back of leg;</text><text x="420" y="248" class="m2-ts" style="fill:#1E2B3A">the sciatic, thickest nerve in the body</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Spinal nerves leave the cord one pair at every level through the intervertebral foramina: thirty-one pairs, eight cervical, twelve thoracic, five lumbar, five sacral and one coccygeal. Every one is mixed.", "In the thoracic region they run straight out between the ribs as the intercostal nerves.", "Elsewhere they braid into plexuses, where fibers from several levels split and recombine. The cervical plexus, C one to C four, serves the neck and gives off the phrenic nerve to the diaphragm.", "The brachial plexus, C five to T one, serves the arm: the median, ulnar, radial, axillary and musculocutaneous nerves drive every arm motion.", "The lumbar plexus, L one to L four, serves the front of the thigh through the femoral nerve, the nerve of your patellar reflex, and the obturator.", "The sacral plexus, L four to S four, gives rise to the sciatic nerve, the thickest and longest in the body, running down the back of the leg. Sciatica is irritation of it, often from a herniated disc."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Spinal nerves by region, and the four plexuses.</span></div>
+    <article class="atlas">
+      <h3>Spinal nerves and their plexuses</h3>
+      <p>Spinal nerves are numbered by the spinal cord segment they emerge from: <b>C1–C8</b> (cervical — eight pairs even though there are only seven cervical vertebrae), <b>T1–T12</b> (thoracic), <b>L1–L5</b> (lumbar), <b>S1–S5</b> (sacral), and <b>Co1</b> (coccygeal). Each spinal nerve exits through an opening between two adjacent vertebrae — the <i>intervertebral foramen</i>, which you can see on the vertebrae you drew in Module 3.</p>
+      <figure class="plate"><img data-img="f50703" alt="The spinal nerve regions: C1-C8 cervical, T1-T12 thoracic, L1-L5 lumbar, S1-S5 sacral, and the coccygeal nerve"><figcaption>Figure — The spinal nerve regions: cervical (C1–C8), thoracic (T1–T12), lumbar (L1–L5), sacral (S1–S5), and coccygeal.</figcaption></figure>
+      <figure class="plate"><img data-img="f50105" alt="A mixed spinal nerve formed from dorsal and ventral rootlets, showing the dorsal root ganglion and the mixed dorsal and ventral primary rami reaching skin and muscle"><figcaption>Figure — A spinal nerve is mixed the moment it forms: dorsal (sensory) and ventral (motor) rootlets join, and the dorsal and ventral primary rami that branch off both carry sensory and motor fibers to skin and muscle.</figcaption></figure>
+      <p>In the thoracic region, spinal nerves run straight outward and become the intercostal nerves between the ribs — the wiring for your intercostal muscles (Module 4) and your trunk skin sensation.</p>
+      <p>In the cervical, lumbar, and sacral regions, however, spinal nerves do not run straight out to their targets. They form complicated braided networks called <b>plexuses</b><button type="button" class="say" data-say="plexus" aria-label="Hear it: plexuses" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, in which fibers from multiple spinal levels split, swap, and recombine before emerging as named peripheral nerves. Four major plexuses matter for this course.</p>
+      <p>▶ <b>Cervical plexus (C1–C4).</b> Skin and muscles of the neck. Most importantly: it gives rise to the <i>phrenic nerve</i>, which carries the entire motor signal to the diaphragm. (“C3, 4, 5 keeps the diaphragm alive.”)</p>
+      <p>▶ <b>Brachial plexus (C5–T1).</b><button type="button" class="say" data-say="brachial-plexus" aria-label="Hear it: brachial plexus (c5–t1)." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> The upper limb. Gives rise to the <i>median, ulnar, radial, axillary,</i> and <i>musculocutaneous</i> nerves — the nerves that drive every motion in your arms. Injuries to the brachial plexus (sometimes during difficult births) can produce arm paralysis.</p>
+      <p>▶ <b>Lumbar plexus (L1–L4).</b> The front of the thigh. Gives rise to the <i>femoral nerve</i> (the quadriceps, the patellar reflex you learned in Week 1) and the <i>obturator nerve</i>.</p>
+      <p>▶ <b>Sacral plexus (L4–S4).</b> The back of the thigh and the lower leg. Gives rise to the <i>sciatic nerve</i> — the thickest and longest nerve in the human body, running down the back of the leg, branching into the tibial and common fibular nerves at the knee. Sciatica is irritation of this nerve, usually from a herniated lumbar disc compressing one of its roots.</p>
+      <figure class="plate"><img data-img="f50704" alt="The cervical, brachial, lumbar, and sacral plexuses, with a table of their ventral rami and the body area each serves"><figcaption>Figure — The four major nerve plexuses: cervical (C1–C5, head and neck), brachial (C5–T1, upper limb), lumbar (L1–L4, abdomen and lower limb), and sacral (L4–S4, pelvis and lower limb). No plexus forms at T1–T12.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Plexus?</h2></div>
+    <p class="hint">Tap a nerve, then the plexus it comes from.</p>
+    <div class="place card" id="w10px">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="cer" data-fb="Cervical plexus (C3&ndash;C5)." data-miss="Which nerve reaches the diaphragm?">phrenic nerve</button>
+        <button class="chip" data-k="b" data-ans="bra" data-fb="Brachial plexus." data-miss="Arm nerves.">radial nerve</button>
+        <button class="chip" data-k="c" data-ans="bra" data-fb="Brachial plexus." data-miss="Arm nerves.">median nerve</button>
+        <button class="chip" data-k="d" data-ans="bra" data-fb="Brachial plexus." data-miss="Arm nerves.">ulnar nerve</button>
+        <button class="chip" data-k="e" data-ans="lum" data-fb="Lumbar plexus." data-miss="Front of the thigh: the quadriceps.">femoral nerve</button>
+        <button class="chip" data-k="f" data-ans="lum" data-fb="Lumbar plexus." data-miss="Front and inner thigh.">obturator nerve</button>
+        <button class="chip" data-k="g" data-ans="sac" data-fb="Sacral plexus." data-miss="The back of the leg.">sciatic nerve</button>
+        <button class="chip" data-k="h" data-ans="none" data-fb="No plexus: thoracic nerves run straight out." data-miss="The ribs.">intercostal nerves</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="cer"><h4>Cervical</h4><div class="drop"></div></div><div class="bin" data-bin="bra"><h4>Brachial</h4><div class="drop"></div></div><div class="bin" data-bin="lum"><h4>Lumbar</h4><div class="drop"></div></div><div class="bin" data-bin="sac"><h4>Sacral</h4><div class="drop"></div></div><div class="bin" data-bin="none"><h4>No plexus</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Why Bother with a Plexus?</h2></div>
+    <p class="hint">About 10 minutes. Write it in your notebook too.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">A plexus splits and recombines fibers from several spinal levels before they become named nerves. Why not send each level straight out in one bundle? Speculate one benefit, and compare what an injury at a single spinal level would do to a limb under each design.</p><textarea class="jbox" id="w10t6" data-label="Why a plexus" data-min="30"></textarea></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 35 minutes. The cranial-nerve page is the second part of your Notebook.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Cranial nerves and spinal nerves</span>
+      <p><b>Cranial nerves.</b> On a fresh page, draw the underside of the brain using Reading 5.08. Draw and label all 12 pairs at their brainstem origin. Show the <b>optic nerve (II)</b> leaving the eye, the <b>vagus (X)</b> heading down the neck into the thorax, and the <b>trigeminal (V)</b> spreading across the face.</p><p><b>Spinal nerves.</b> On your Nervous System Map, draw paired spinal nerves leaving the intervertebral foramina, at least one in each region (cervical, thoracic, lumbar, sacral).</p><p>Highlight and label the <b>phrenic nerve</b> from the cervical plexus toward the diaphragm, the <b>femoral nerve</b> from the lumbar plexus and the <b>sciatic nerve</b> from the sacral plexus. Keep the pages: CNS plus PNS is most of your Assembled Figure.</p>
+      <ul class="checks"><li data-ck="w10d41">Underside of the brain with the 12 pairs labeled.</li><li data-ck="w10d42">Spinal nerves in all four regions.</li><li data-ck="w10d43">Phrenic, femoral and sciatic highlighted.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Nervous System Map page and detail page: they become your Module 5 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="cranial" type="button">&larr; Twelve Cranial Nerves</button><button class="btn" data-go="derm" type="button">Next: Dermatomes &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 DERMATOMES ═════════ -->
+<section class="panel" id="tab-derm" role="tabpanel">
+  <div class="vo" data-clip="w10_derm">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A Map in Spinal Segments</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A body with dermatome landmarks: C7 middle finger, T4 nipple line, T10 navel, L4 front of the knee, S1 sole and lateral foot"><g data-step="0" class="nohalo"><circle cx="130" cy="34" r="20" fill="#F7EFE6" stroke="#C9A66B" stroke-width="2"/><path d="M98 60 H162 L158 170 H102 Z" fill="#F7EFE6" stroke="#C9A66B" stroke-width="2"/><path d="M100 70 L74 176" stroke="#C9A66B" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M100 70 L74 176" stroke="#F7EFE6" stroke-width="16" stroke-linecap="round" fill="none"/><path d="M160 70 L186 176" stroke="#C9A66B" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M160 70 L186 176" stroke="#F7EFE6" stroke-width="16" stroke-linecap="round" fill="none"/><path d="M114 176 L110 276" stroke="#C9A66B" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M114 176 L110 276" stroke="#F7EFE6" stroke-width="16" stroke-linecap="round" fill="none"/><path d="M146 176 L150 276" stroke="#C9A66B" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M146 176 L150 276" stroke="#F7EFE6" stroke-width="16" stroke-linecap="round" fill="none"/><text x="260" y="36" class="m2-t">each spinal nerve senses one patch of skin:</text><text x="260" y="54" class="m2-t">the dermatome map</text></g><g data-step="1" class="nohalo"><circle cx="74" cy="186" r="7" fill="#2E6FB7" opacity=".85"/><circle cx="186" cy="186" r="7" fill="#2E6FB7" opacity=".85"/><text x="260" y="90" class="m2-ts" style="fill:#2E6FB7">C7: the middle finger</text></g><g data-step="2" class="nohalo"><rect x="100" y="86" width="60" height="8" fill="#C22F4A" opacity=".55"/><rect x="100" y="132" width="60" height="8" fill="#F28C28" opacity=".55"/><text x="260" y="122" class="m2-ts" style="fill:#B85C00">T4: the nipple line &middot; T10: the navel</text></g><g data-step="3" class="nohalo"><circle cx="111" cy="236" r="7" fill="#2F8F6B" opacity=".85"/><circle cx="149" cy="236" r="7" fill="#2F8F6B" opacity=".85"/><circle cx="104" cy="280" r="7" fill="#8E5BC0" opacity=".85"/><circle cx="156" cy="280" r="7" fill="#8E5BC0" opacity=".85"/><text x="260" y="154" class="m2-ts" style="fill:#2F6B4F">L4: front of the knee &middot; S1: sole, outer foot</text></g><g data-step="4" class="nohalo"><text x="260" y="196" class="m2-t" style="fill:#1E2B3A">a numb patch points back to one spinal level</text></g><g data-step="5" class="nohalo"><text x="260" y="236" class="m2-ts" style="fill:#6B4AA0">myotome: the muscles one spinal nerve drives</text><text x="260" y="252" class="m2-ts" style="fill:#6B4AA0">skin map + muscle map = the level of damage</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Every spinal nerve carries sensation from a particular patch of skin. The map of those patches is the dermatome map.", "C seven covers most of the middle finger.", "T four covers the skin at the nipple line, and T ten covers the navel.", "L four covers the front of the knee, and S one covers the sole and the outer edge of the foot.", "So clinicians read it backward: a numb patch of skin points to one spinal level. In real bodies neighboring dermatomes overlap, but the map holds well enough to guide an exam.", "The companion map is the myotome, the set of muscles each spinal nerve drives. With both, a clinician can tell from what is lost which level is involved."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Dermatomes and myotomes.</span></div>
+    <article class="atlas">
+      <h3>Dermatomes — a map of the body in spinal segments</h3>
+      <p>Every spinal nerve carries sensory information from a specific patch of skin. The map of these patches across the body is called the <b>dermatome map</b><button type="button" class="say" data-say="dermatome" aria-label="Hear it: dermatome map" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. For example, C7 covers most of the middle finger, T4 covers the skin over the nipples, T10 covers the navel, L4 covers the front of the knee, S1 covers the bottom of the foot. Clinicians use dermatomes to localize spinal nerve damage: a patient with numbness on the lateral foot has likely lost S1 sensation, pointing to a problem in the lower sacral region.</p>
+      <p>A related concept is the <i>myotome</i> — the group of muscles innervated by a given spinal nerve. Both maps together let a clinician examine a patient and read which spinal level is involved by which functions are lost.</p>
+      <figure class="plate"><img data-img="f50705" alt="Dermatome map of the body, front and back, showing the skin segment supplied by each spinal nerve level"><figcaption>Figure — The dermatome map: the skin segments supplied by each spinal nerve level, front and back. Adjacent dermatomes overlap considerably in reality.</figcaption></figure>
+      <details class="selfcheck"><summary>Self-check: how many cranial nerve pairs, how many spinal nerve pairs in each region, and which plexus contains the phrenic nerve?</summary><p><b>Cranial:</b> 12 pairs. <b>Spinal:</b> 8 cervical + 12 thoracic + 5 lumbar + 5 sacral + 1 coccygeal = 31 pairs. <b>Phrenic nerve:</b> cervical plexus (C3–C5).</p><p>Got it? You are ready for this week’s reading quiz.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w10m11"><p class="q">A patient has a painful rash in a band around the waist at the level of the navel. Which spinal nerve&rsquo;s dermatome is it?</p>
+        <button class="opt" data-ok="1" data-fb="Right: T10 covers the navel.">T10</button>
+        <button class="opt" data-fb="C7 is the middle finger.">C7</button>
+        <button class="opt" data-fb="L4 is the front of the knee.">L4</button></div>
+      <div class="mcq card" data-qid="w10m12"><p class="q">A patient cannot feel the middle finger of one hand. Which level do you suspect?</p>
+        <button class="opt" data-ok="1" data-fb="Yes: the middle-finger dermatome.">C7</button>
+        <button class="opt" data-fb="T4 is the nipple line.">T4</button>
+        <button class="opt" data-fb="S1 is the foot.">S1</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Then the Reading Quiz</h2></div>
+    <div class="card"><p style="margin:0">After you submit the 5.08 Notebook, take the <b>Week 10 Reading Quiz</b> in Canvas. It covers Readings 5.05 through 5.08.</p></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="spinal" type="button">&larr; Spinal Nerves and Plexuses</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Map the 12 Cranial Nerves</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>Given a patient&rsquo;s symptom, how can a clinician reason backward to the specific nerve that has been damaged?</p></div>
+        <p>You have learned the twelve cranial nerves, the plexuses and the dermatome map. This Notebook asks for your infographic, your cranial-nerve drawing and three localizations. Two images plus 200&ndash;300 words.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Cranial-Nerve Infographic</h2></div>
+    <p class="hint">Photo or scan to Canvas, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit a photo of your infographic highlighting 2 purely sensory, 2 purely motor and 2 mixed cranial nerves (Roman numeral, name, function), plus your own mnemonic for all 12. Here, list your six nerves and write your mnemonic.</p><textarea class="jbox" id="w10rG" data-label="Infographic: 2 sensory, 2 motor, 2 mixed, plus mnemonic" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Cranial-Nerve Drawing</h2></div>
+    <p class="hint">Photo or scan to Canvas, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit a photo of your drawing of the underside of the brain with at least 8 of the 12 cranial nerves labeled at their brainstem origins. Here, list the nerves you labeled.</p><textarea class="jbox" id="w10rH" data-label="Drawing: cranial nerves at the brainstem" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>The Localization Paragraph</h2></div>
+    <div class="card loccard"><p class="sub">Choose three: (a) loss of smell after a head injury; (b) right-sided facial drooping with intact sensation; (c) inability to abduct the left eye (it will not turn outward); (d) numbness on the lateral foot; (e) hoarseness and difficulty swallowing after thyroid surgery. In 6&ndash;8 sentences, name the most likely damaged nerve for each with a one-sentence justification, and answer the focus question in your final sentence.</p><div class="ttrack" data-field="w10rL"><span class="tt" data-t="olfactory|facial|abducens|s1|vagus|laryngeal|cn [ivx]+|cranial nerve">nerve named</span><span class="tt" data-t="because|since|controls|carries|serves|innervat">justified</span></div><textarea class="jbox" id="w10rL" data-label="Reason backward to the nerve" data-min="60"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w10rG,w10rH,w10rL" data-min="200" data-max="300"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w10c41">My infographic sorts 2 sensory, 2 motor and 2 mixed nerves correctly, with my own mnemonic for all 12.</li><li data-ck="w10c42">My drawing labels at least 8 cranial nerves at their brainstem origins.</li><li data-ck="w10c43">Each of my three symptoms points to the correct nerve, with a specific reason.</li><li data-ck="w10c44">My final sentence answers how a clinician reasons backward.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 5.08 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="derm" type="button">&larr; Dermatomes</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>cranial nerve</dt><dd>One of 12 pairs of nerves that leave the brain.</dd>
+  <dt>olfactory nerve<button type="button" class="say" data-say="olfactory-nerve" aria-label="Hear it: olfactory nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve I: smell.</dd>
+  <dt>optic nerve<button type="button" class="say" data-say="optic-nerve" aria-label="Hear it: optic nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve II: vision.</dd>
+  <dt>oculomotor nerve<button type="button" class="say" data-say="oculomotor-nerve" aria-label="Hear it: oculomotor nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve III: most eye movement and pupil constriction.</dd>
+  <dt>trochlear nerve<button type="button" class="say" data-say="trochlear-nerve" aria-label="Hear it: trochlear nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>trochlea</i> &ldquo;pulley&rdquo;</small></dt><dd>Cranial nerve IV: the superior oblique eye muscle.</dd>
+  <dt>trigeminal nerve<button type="button" class="say" data-say="trigeminal-nerve" aria-label="Hear it: trigeminal nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;threefold&rdquo;</small></dt><dd>Cranial nerve V: facial sensation and chewing.</dd>
+  <dt>abducens nerve<button type="button" class="say" data-say="abducens-nerve" aria-label="Hear it: abducens nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve VI: the lateral rectus, which turns the eye outward.</dd>
+  <dt>facial nerve<button type="button" class="say" data-say="facial-nerve" aria-label="Hear it: facial nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve VII: facial expression and taste.</dd>
+  <dt>vestibulocochlear nerve<button type="button" class="say" data-say="vestibulocochlear-nerve" aria-label="Hear it: vestibulocochlear nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve VIII: hearing and balance.</dd>
+  <dt>glossopharyngeal nerve<button type="button" class="say" data-say="glossopharyngeal-nerve" aria-label="Hear it: glossopharyngeal nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve IX: taste, swallowing, carotid input.</dd>
+  <dt>vagus nerve<button type="button" class="say" data-say="vagus-nerve" aria-label="Hear it: vagus nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>vagus</i> &ldquo;wandering&rdquo;</small></dt><dd>Cranial nerve X: parasympathetic to heart, lungs and gut; larynx.</dd>
+  <dt>accessory nerve<button type="button" class="say" data-say="accessory-nerve" aria-label="Hear it: accessory nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Cranial nerve XI: sternocleidomastoid and trapezius.</dd>
+  <dt>hypoglossal nerve<button type="button" class="say" data-say="hypoglossal-nerve" aria-label="Hear it: hypoglossal nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek &ldquo;under the tongue&rdquo;</small></dt><dd>Cranial nerve XII: tongue movement.</dd>
+  <dt>Bell&rsquo;s palsy<button type="button" class="say" data-say="bells-palsy" aria-label="Hear it: bell’s palsy" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Sudden one-sided facial drooping from an inflamed facial nerve.</dd>
+  <dt>intervertebral foramen</dt><dd>The opening between two vertebrae where a spinal nerve exits.</dd>
+  <dt>plexus<button type="button" class="say" data-say="plexus" aria-label="Hear it: plexus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;braid&rdquo;</small></dt><dd>A network where spinal nerve fibers split and recombine.</dd>
+  <dt>phrenic nerve<button type="button" class="say" data-say="phrenic-nerve" aria-label="Hear it: phrenic nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>phren</i> &ldquo;diaphragm&rdquo;</small></dt><dd>The nerve from C3&ndash;C5 that drives the diaphragm.</dd>
+  <dt>brachial plexus<button type="button" class="say" data-say="brachial-plexus" aria-label="Hear it: brachial plexus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>brachium</i> &ldquo;arm&rdquo;</small></dt><dd>The C5&ndash;T1 plexus serving the arm.</dd>
+  <dt>femoral nerve<button type="button" class="say" data-say="femoral-nerve" aria-label="Hear it: femoral nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The lumbar-plexus nerve to the quadriceps.</dd>
+  <dt>sciatic nerve<button type="button" class="say" data-say="sciatic-nerve" aria-label="Hear it: sciatic nerve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The sacral-plexus nerve down the back of the leg; the body&rsquo;s largest.</dd>
+  <dt>dermatome<button type="button" class="say" data-say="dermatome" aria-label="Hear it: dermatome" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek &ldquo;skin slice&rdquo;</small></dt><dd>The patch of skin served by one spinal nerve.</dd>
+  <dt>myotome<button type="button" class="say" data-say="myotome" aria-label="Hear it: myotome" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The group of muscles served by one spinal nerve.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w10-l4", "title": "Cranial and Spinal Nerves: The Wiring Diagram", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 10 · Cranial and Spinal Nerves", "pdfTag": "AP_W10_L4"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f50701":{"src":"img/m5-5.07-01-guided-tour-through-spinal-cord-.webp","alt":""},"f50702":{"src":"img/m5-5.07-02-twelve-cranial-nerves-base-brain.webp","alt":""},"f50703":{"src":"img/m5-5.07-03-spinal-nerve-regions.webp","alt":""},"f50105":{"src":"img/m5-5.01-05-example-mixed-spinal-nerve-so-st.webp","alt":""},"f50704":{"src":"img/m5-5.07-04-formation-mixed-spinal-nerve-if-.webp","alt":""},"f50705":{"src":"img/m5-5.07-05-dermatomes.webp","alt":""}},"w10_cn":{"audio":"audio/ap-w10-l4-cn.mp3","words":[[0,0.08,"The"],[0.16,0.64,"peripheral"],[0.72,0.96,"nervous"],[1.04,1.44,"system"],[1.52,1.68,"is"],[1.8,1.92,"built"],[2.04,2.16,"from"],[2.24,2.32,"two"],[2.4,2.64,"kinds"],[2.72,2.8,"of"],[2.88,3.52,"nerves,"],[3.56,3.68,"told"],[3.76,4.16,"apart"],[4.32,4.48,"only"],[4.56,4.64,"by"],[4.72,4.88,"where"],[4.92,4.96,"they"],[5.04,5.88,"emerge."],[6.16,6.4,"Twelve"],[6.48,6.8,"pairs"],[6.88,6.96,"of"],[7.08,7.36,"cranial"],[7.44,7.76,"nerves"],[7.84,8,"leave"],[8.04,8.08,"the"],[8.16,8.72,"brain,"],[8.88,9.04,"mostly"],[9.08,9.12,"the"],[9.28,10.08,"brainstem,"],[10.2,10.48,"numbered"],[10.56,10.64,"one"],[10.72,10.96,"through"],[11.04,11.36,"twelve"],[11.52,11.6,"from"],[11.76,12,"front"],[12.04,12.08,"to"],[12.16,12.8,"back."],[13.12,13.68,"One,"],[13.72,13.76,"the"],[13.84,14.4,"olfactory"],[14.48,14.88,"nerve,"],[14.96,15.2,"carries"],[15.28,16.16,"smell."],[16.32,16.8,"Two,"],[16.84,16.88,"the"],[16.96,17.28,"optic"],[17.36,17.76,"nerve,"],[17.84,18.08,"carries"],[18.16,19.04,"vision."],[19.16,19.28,"Both"],[19.36,19.52,"are"],[19.68,19.92,"purely"],[20.08,20.72,"sensory,"],[20.76,20.8,"and"],[20.84,20.88,"the"],[20.96,21.28,"optic"],[21.36,21.52,"nerve"],[21.6,21.68,"is"],[21.8,21.92,"really"],[22,22.08,"an"],[22.2,22.56,"outgrowth"],[22.6,22.64,"of"],[22.72,22.8,"the"],[22.92,23.04,"brain"],[23.12,24.16,"itself."],[24.24,24.32,"Three"],[24.4,24.48,"of"],[24.56,24.72,"them"],[24.84,24.96,"move"],[25.04,25.12,"the"],[25.28,26.08,"eye."],[26.24,26.72,"Three,"],[26.76,26.8,"the"],[26.88,27.76,"oculomotor,"],[27.92,28.08,"runs"],[28.2,28.32,"most"],[28.4,28.56,"eye"],[28.64,28.96,"muscles"],[29.08,29.2,"and"],[29.28,29.52,"narrows"],[29.6,29.68,"the"],[29.72,30.64,"pupil;"],[30.8,31.2,"four,"],[31.24,31.28,"the"],[31.36,32.08,"trochlear,"],[32.16,32.24,"and"],[32.4,32.8,"six,"],[32.84,32.88,"the"],[32.96,33.76,"abducens,"],[33.88,34,"each"],[34.08,34.32,"run"],[34.4,34.64,"one"],[34.72,34.88,"eye"],[34.96,35.6,"muscle."],[35.68,35.92,"All"],[36,36.08,"are"],[36.16,37.2,"motor."],[37.4,37.76,"Five,"],[37.8,37.84,"the"],[37.92,38.64,"trigeminal,"],[38.72,38.8,"is"],[38.96,39.6,"mixed:"],[39.64,40.16,"sensation"],[40.24,40.48,"across"],[40.52,40.56,"the"],[40.64,41.04,"face"],[41.12,41.28,"and"],[41.36,41.4,"the"],[41.44,41.76,"chewing"],[41.84,42.8,"muscles."],[43,43.36,"Seven,"],[43.4,43.44,"the"],[43.52,44.16,"facial,"],[44.28,44.4,"runs"],[44.48,44.72,"facial"],[44.8,45.28,"expression"],[45.36,45.44,"and"],[45.52,45.68,"some"],[45.84,46.64,"taste."],[46.68,46.72,"An"],[46.8,47.2,"inflamed"],[47.28,47.6,"facial"],[47.68,47.92,"nerve"],[48,48.32,"causes"],[48.4,48.48,"the"],[48.56,49.12,"one-sided"],[49.2,49.52,"droop"],[49.6,49.68,"of"],[49.76,50.08,"Bell's"],[50.12,51.2,"palsy."],[51.36,51.76,"Eight,"],[51.8,51.84,"the"],[51.96,53.12,"vestibulocochlear,"],[53.2,53.44,"carries"],[53.52,53.92,"hearing"],[54,54.08,"and"],[54.16,55.2,"balance."],[55.28,55.76,"Nine,"],[55.84,55.88,"the"],[55.92,57.04,"glossopharyngeal,"],[57.12,57.36,"carries"],[57.44,57.76,"taste"],[57.84,57.92,"from"],[57.96,58,"the"],[58.08,58.24,"back"],[58.32,58.36,"of"],[58.4,58.48,"the"],[58.56,58.8,"tongue"],[58.88,58.96,"and"],[59.04,59.2,"helps"],[59.24,59.28,"you"],[59.36,60.4,"swallow."],[60.56,60.96,"Ten,"],[61,61.04,"the"],[61.12,61.76,"vagus,"],[61.88,62.16,"wanders"],[62.24,62.4,"down"],[62.48,62.56,"to"],[62.6,62.64,"the"],[62.72,63.12,"heart,"],[63.2,63.52,"lungs"],[63.6,63.68,"and"],[63.76,64.16,"gut."],[64.64,65.28,"Eleven,"],[65.32,65.36,"the"],[65.44,66.24,"accessory,"],[66.36,66.48,"moves"],[66.56,66.6,"the"],[66.64,66.88,"neck"],[66.96,67.04,"and"],[67.12,68.08,"shoulders;"],[68.16,68.72,"twelve,"],[68.8,68.84,"the"],[68.88,69.84,"hypoglossal,"],[69.92,70.16,"moves"],[70.2,70.24,"the"],[70.32,70.72,"tongue."],[71.2,71.28,"On"],[71.44,71.6,"Old"],[71.68,72.24,"Olympus'"],[72.32,72.8,"Towering"],[72.88,73.52,"Tops,"],[73.6,73.68,"A"],[73.76,74.08,"Finn"],[74.16,74.24,"And"],[74.32,74.72,"German"],[74.8,75.12,"Viewed"],[75.2,75.28,"Some"],[75.36,75.84,"Hops."]]},"w10_plex":{"audio":"audio/ap-w10-l4-plex.mp3","words":[[0.369,0.689,"Spinal"],[0.769,1.089,"nerves"],[1.169,1.249,"leave"],[1.329,1.409,"the"],[1.609,1.809,"cord"],[1.889,2.049,"one"],[2.209,2.449,"pair"],[2.529,2.609,"at"],[2.689,2.929,"every"],[3.009,3.249,"level"],[3.329,3.489,"through"],[3.529,3.569,"the"],[3.649,4.369,"intervertebral"],[4.449,5.409,"foramina:"],[5.449,5.809,"thirty-one"],[5.969,6.689,"pairs,"],[6.769,6.849,"eight"],[6.929,7.649,"cervical,"],[7.729,7.889,"twelve"],[7.969,8.769,"thoracic,"],[8.889,9.009,"five"],[9.089,9.809,"lumbar,"],[9.929,10.049,"five"],[10.129,10.529,"sacral"],[10.609,10.689,"and"],[10.849,11.009,"one"],[11.089,12.009,"coccygeal."],[12.209,12.449,"Every"],[12.529,12.769,"one"],[12.849,12.929,"is"],[13.089,13.489,"mixed."],[14.049,14.129,"In"],[14.169,14.209,"the"],[14.249,14.689,"thoracic"],[14.769,15.009,"region"],[15.089,15.169,"they"],[15.289,15.409,"run"],[15.569,15.729,"straight"],[15.809,15.889,"out"],[15.969,16.209,"between"],[16.289,16.369,"the"],[16.449,16.769,"ribs"],[16.849,16.929,"as"],[16.969,17.009,"the"],[17.089,17.649,"intercostal"],[17.729,18.129,"nerves."],[18.529,19.009,"Elsewhere"],[19.089,19.169,"they"],[19.249,19.569,"braid"],[19.689,19.809,"into"],[19.969,20.609,"plexuses,"],[20.689,20.769,"where"],[20.849,21.169,"fibers"],[21.249,21.409,"from"],[21.489,21.809,"several"],[22.009,22.209,"levels"],[22.289,22.689,"split"],[22.729,22.769,"and"],[22.849,24.049,"recombine."],[24.089,24.129,"The"],[24.209,24.609,"cervical"],[24.769,25.329,"plexus,"],[25.449,25.569,"C"],[25.649,25.729,"one"],[25.889,25.969,"to"],[26.049,26.209,"C"],[26.289,26.849,"four,"],[26.929,27.169,"serves"],[27.249,27.329,"the"],[27.409,27.649,"neck"],[27.729,27.889,"and"],[27.942,28.049,"gives"],[28.129,28.289,"off"],[28.329,28.369,"the"],[28.529,28.849,"phrenic"],[28.929,29.089,"nerve"],[29.169,29.249,"to"],[29.276,29.302,"the"],[29.329,30.369,"diaphragm."],[30.409,30.449,"The"],[30.529,30.929,"brachial"],[31.009,31.649,"plexus,"],[31.729,31.969,"C"],[32.089,32.209,"five"],[32.289,32.449,"to"],[32.569,32.689,"T"],[32.769,33.169,"one,"],[33.209,33.409,"serves"],[33.489,33.569,"the"],[33.649,34.289,"arm:"],[34.369,34.449,"the"],[34.529,35.089,"median,"],[35.169,35.729,"ulnar,"],[35.849,36.369,"radial,"],[36.489,37.009,"axillary"],[37.089,37.169,"and"],[37.249,38.289,"musculocutaneous"],[38.369,38.689,"nerves"],[38.769,39.089,"drive"],[39.169,39.409,"every"],[39.489,39.729,"arm"],[39.809,40.449,"motion."],[40.689,40.769,"The"],[40.849,41.169,"lumbar"],[41.249,41.889,"plexus,"],[41.969,42.129,"L"],[42.209,42.289,"one"],[42.449,42.529,"to"],[42.609,42.689,"L"],[42.849,43.409,"four,"],[43.449,43.649,"serves"],[43.729,43.809,"the"],[43.889,44.049,"front"],[44.089,44.129,"of"],[44.209,44.289,"the"],[44.369,44.609,"thigh"],[44.689,44.769,"through"],[44.849,44.929,"the"],[45.009,45.329,"femoral"],[45.409,45.889,"nerve,"],[45.969,46.009,"the"],[46.049,46.289,"nerve"],[46.329,46.369,"of"],[46.449,46.489,"your"],[46.529,46.929,"patellar"],[47.009,47.569,"reflex,"],[47.689,47.809,"and"],[47.849,47.889,"the"],[47.969,48.609,"obturator."],[49.089,49.169,"The"],[49.249,49.569,"sacral"],[49.729,50.289,"plexus,"],[50.409,50.529,"L"],[50.649,50.769,"four"],[50.849,50.929,"to"],[51.009,51.169,"S"],[51.289,51.729,"four,"],[51.769,51.969,"gives"],[52.049,52.289,"rise"],[52.369,52.409,"to"],[52.449,52.529,"the"],[52.609,53.089,"sciatic"],[53.169,53.569,"nerve,"],[53.649,53.809,"the"],[53.849,54.209,"thickest"],[54.289,54.369,"and"],[54.449,54.849,"longest"],[54.929,54.969,"in"],[55.009,55.049,"the"],[55.089,55.569,"body,"],[55.689,55.809,"running"],[55.889,56.049,"down"],[56.129,56.209,"the"],[56.289,56.369,"back"],[56.449,56.529,"of"],[56.569,56.609,"the"],[56.689,57.009,"leg."],[57.409,58.049,"Sciatica"],[58.129,58.209,"is"],[58.289,58.769,"irritation"],[58.849,58.929,"of"],[59.009,59.249,"it,"],[59.329,59.569,"often"],[59.649,59.729,"from"],[59.769,59.809,"a"],[59.849,60.289,"herniated"],[60.369,60.769,"disc."]]},"w10_derm":{"audio":"audio/ap-w10-l4-derm.mp3","words":[[0.373,0.533,"Every"],[0.613,0.933,"spinal"],[1.013,1.253,"nerve"],[1.333,1.573,"carries"],[1.653,2.213,"sensation"],[2.293,2.373,"from"],[2.413,2.453,"a"],[2.573,3.013,"particular"],[3.093,3.333,"patch"],[3.373,3.413,"of"],[3.573,3.973,"skin."],[4.373,4.453,"The"],[4.533,4.773,"map"],[4.813,4.853,"of"],[4.933,5.093,"those"],[5.173,5.573,"patches"],[5.653,5.733,"is"],[5.773,5.813,"the"],[5.893,6.453,"dermatome"],[6.533,6.853,"map."],[7.333,7.493,"C"],[7.573,7.893,"seven"],[7.973,8.213,"covers"],[8.373,8.533,"most"],[8.613,8.693,"of"],[8.733,8.773,"the"],[8.853,9.013,"middle"],[9.093,9.493,"finger."],[9.813,10.053,"T"],[10.133,10.373,"four"],[10.453,10.693,"covers"],[10.773,10.853,"the"],[10.933,11.173,"skin"],[11.213,11.253,"at"],[11.333,11.373,"the"],[11.413,11.653,"nipple"],[11.733,12.213,"line,"],[12.253,12.293,"and"],[12.373,12.533,"T"],[12.693,12.933,"ten"],[13.013,13.333,"covers"],[13.373,13.413,"the"],[13.493,14.373,"navel."],[14.453,14.533,"L"],[14.693,14.933,"four"],[15.013,15.253,"covers"],[15.333,15.413,"the"],[15.493,15.573,"front"],[15.613,15.653,"of"],[15.733,15.773,"the"],[15.813,16.293,"knee,"],[16.373,16.453,"and"],[16.533,16.773,"S"],[16.853,17.093,"one"],[17.173,17.413,"covers"],[17.493,17.573,"the"],[17.653,18.053,"sole"],[18.093,18.133,"and"],[18.213,18.293,"the"],[18.413,18.533,"outer"],[18.613,18.773,"edge"],[18.813,18.853,"of"],[18.933,19.013,"the"],[19.133,19.493,"foot."],[19.573,19.813,"So"],[19.973,20.453,"clinicians"],[20.533,20.613,"read"],[20.693,20.773,"it"],[21.013,21.653,"backward:"],[21.733,21.813,"a"],[21.893,22.133,"numb"],[22.253,22.373,"patch"],[22.453,22.533,"of"],[22.613,22.933,"skin"],[23.093,23.333,"points"],[23.413,23.573,"to"],[23.653,23.813,"one"],[23.893,24.293,"spinal"],[24.453,25.093,"level."],[25.173,25.253,"In"],[25.373,25.493,"real"],[25.573,25.973,"bodies"],[26.053,26.453,"neighboring"],[26.533,27.093,"dermatomes"],[27.373,27.973,"overlap,"],[28.053,28.133,"but"],[28.173,28.213,"the"],[28.293,28.453,"map"],[28.533,28.773,"holds"],[28.853,28.933,"well"],[29.013,29.253,"enough"],[29.333,29.413,"to"],[29.533,29.653,"guide"],[29.693,29.733,"an"],[29.973,30.693,"exam."],[30.733,30.773,"The"],[30.893,31.253,"companion"],[31.413,31.653,"map"],[31.733,31.813,"is"],[31.866,31.92,"the"],[31.973,32.853,"myotome,"],[32.893,32.933,"the"],[33.013,33.093,"set"],[33.173,33.253,"of"],[33.333,33.733,"muscles"],[33.813,33.973,"each"],[34.053,34.293,"spinal"],[34.373,34.613,"nerve"],[34.693,35.573,"drives."],[35.693,35.813,"With"],[35.973,36.373,"both,"],[36.453,36.493,"a"],[36.533,36.933,"clinician"],[37.013,37.093,"can"],[37.173,37.333,"tell"],[37.413,37.573,"from"],[37.613,37.653,"what"],[37.733,37.813,"is"],[37.893,38.373,"lost"],[38.613,38.773,"which"],[38.853,39.093,"level"],[39.173,39.253,"is"],[39.373,39.937,"involved."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the twelve cranial nerves and their types, spinal nerves by region, the cervical, brachial, lumbar and sacral plexuses and their named nerves, dermatomes and myotomes',
+  quick: ['What are the twelve cranial nerves?', 'Which plexus makes the sciatic nerve?', 'What is a dermatome?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|paragraph|localization|mnemonic|focus question)/i,
+  guide: 'Those localizations are yours to make, so here are my questions instead. Which nerve carries smell? Which one moves the face but not its sensation? Which eye muscle turns the eye outward, and which nerve runs it? Find the function lost, then find the nerve that carries it.',
+  notes: [
+    { k: ['cranial','twelve','12','list','names','olympus'], w: 1.4, a: 'I olfactory, II optic, III oculomotor, IV trochlear, V trigeminal, VI abducens, VII facial, VIII vestibulocochlear, IX glossopharyngeal, X vagus, XI accessory, XII hypoglossal. On Old Olympus\' Towering Tops, A Finn And German Viewed Some Hops.' },
+    { k: ['sensory','motor','mixed','type'], w: 1.2, a: 'Sensory: I, II, VIII. Motor: III, IV, VI, XI, XII. Mixed: V, VII, IX, X.' },
+    { k: ['vagus','bell','facial','optic'], a: 'The vagus (X) reaches the heart, lungs and gut. The optic nerve (II) is really an outgrowth of the brain. An inflamed facial nerve (VII) causes Bell\'s palsy, one-sided facial drooping.' },
+    { k: ['spinal','31','pairs','regions'], w: 1.2, a: '31 pairs of spinal nerves: 8 cervical, 12 thoracic, 5 lumbar, 5 sacral, 1 coccygeal. All are mixed, and each exits through an intervertebral foramen.' },
+    { k: ['plexus','plexuses','phrenic','brachial','femoral','sciatic','median','radial','ulnar'], w: 1.3, a: 'Cervical (C1 to C4): neck; phrenic nerve to the diaphragm. Brachial (C5 to T1): arm; median, ulnar, radial, axillary, musculocutaneous. Lumbar (L1 to L4): femoral and obturator. Sacral (L4 to S4): sciatic. Thoracic nerves form no plexus: they are the intercostals.' },
+    { k: ['dermatome','dermatomes','myotome','numb','skin'], w: 1.2, a: 'A dermatome is the skin patch one spinal nerve serves: C7 middle finger, T4 nipple line, T10 navel, L4 front of the knee, S1 sole and outer foot. A myotome is the set of muscles one spinal nerve drives.' },
+    { k: ['notebook','lab report','submit','words','quiz'], w: 1.2, a: 'The 5.08 Notebook: a photo of your cranial-nerve infographic with your own mnemonic, a photo of your cranial-nerve drawing (at least 8 labeled), and a 6 to 8 sentence localization of three symptoms. 200 to 300 words. Then take the Week 10 Reading Quiz.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>
