@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Synthesis: The Chemistry of Coordination · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A seventeenth-century plate of the abdominal organs, the liver, spleen and pancreas and a branching tree of vessels" style="background-image:url(img/lesson-6-08-hero.jpg);background-position:center"><span class="hlab">The abdominal organs and their vessels · Johann Vesling, 1653</span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 6.08 &middot; Module 6: Endocrine System</div>
+      <h1>Synthesis: The Chemistry of Coordination</h1>
+      <div class="focusq"><div class="label">Focus</div><p>If a clinician knows the pattern of which hormones are too high and which are too low, can they always tell which structural part of the system is broken? Where does this logic work, and where does it break down?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to recall the three themes that organize the endocrine system: chemistry predicts behavior, negative feedback is the rule, the system defends the <i>milieu int&eacute;rieur</i>.</li><li>I will be able to predict the clinical picture from a named endocrine disorder (Cushing&rsquo;s, Addison&rsquo;s, hypothyroidism, hyperthyroidism, type 1 and type 2 diabetes).</li><li>I will have a complete drawn map of the endocrine system as it sits in the body.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">The whole system, in one view</div>
+      <svg class="m2-fig" viewBox="0 0 410 300" role="img" aria-label="A body outline carrying every endocrine gland and secondary endocrine organ from the module, labeled"><rect x="6" y="6" width="398" height="288" rx="14" fill="#F4F7FB"/><g transform="translate(110,0) scale(0.9)"><path d="M100 0 C80 0 72 18 74 34 C76 52 86 62 92 66 L92 78 C70 82 52 90 46 108 L30 200 L40 204 L62 120 L66 210 L60 330 L80 332 L96 220 L104 220 L120 332 L140 330 L134 210 L138 120 L160 204 L170 200 L154 108 C148 90 130 82 108 78 L108 66 C114 62 124 52 126 34 C128 18 120 0 100 0z" fill="#F7EFE6" stroke="#B7A48F" stroke-width="2"/></g><g transform="translate(110,0) scale(0.9)"><ellipse cx="100" cy="27" rx="6" ry="4" fill="#8E5BC0" opacity=".85"/><path d="M100 31 V36" stroke="#5E3A8A" stroke-width="1.6"/><circle cx="100" cy="38" r="3" fill="#D9822B" stroke="#A8561A"/><path d="M93 70 C89 71 89 80 94 81 C97 81 98 77 100 76 C102 77 103 81 106 81 C111 80 111 71 107 70 C104 70 103 73 100 74 C97 73 96 70 93 70z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><circle cx="93" cy="72" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="107" cy="72" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="93" cy="79" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="107" cy="79" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><path d="M106 112 C100 106 92 112 98 122 L106 130 L114 122 C120 112 112 106 106 112z" fill="#E89AA8" stroke="#C22F4A" stroke-width="1.2"/><ellipse cx="86" cy="162" rx="7" ry="11" fill="#C98A7A" stroke="#8A4A3A" stroke-width="1.2"/><ellipse cx="114" cy="162" rx="7" ry="11" fill="#C98A7A" stroke="#8A4A3A" stroke-width="1.2"/><path d="M80 152 L86 143 L92 152z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><path d="M108 152 L114 143 L120 152z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><path d="M92 154 C92 148 100 148 104 149 C112 150 122 146 126 148 C128 150 124 153 118 154 C110 155 104 156 98 158 C94 159 92 157 92 154z" fill="#E3B23C" stroke="#9A7414" stroke-width="1"/><path d="M104 128 C116 124 126 130 124 142 C122 150 112 150 108 144 C104 140 100 136 104 128z" fill="#F2C9A0" stroke="#B07A4A" stroke-width="1"/><path d="M72 126 C84 120 100 122 104 128 C100 136 90 142 76 140 C70 138 68 130 72 126z" fill="#B8665A" stroke="#7A3A30" stroke-width="1"/><path d="M84 172 C92 166 108 166 116 172 C120 180 112 186 100 184 C90 184 82 180 84 172z" fill="#F2B8A8" stroke="#B07A6A" stroke-width="1"/><ellipse cx="90" cy="200" rx="4" ry="3" fill="#2E6FB7" stroke="#1E4F8A" stroke-width="1"/><ellipse cx="110" cy="200" rx="4" ry="3" fill="#2E6FB7" stroke="#1E4F8A" stroke-width="1"/></g><path d="M196 24 H124" stroke="#999" stroke-width=".8"/><text x="120" y="28.3" class="m2-ts" text-anchor="end" style="fill:#5E3A8A">hypothalamus</text><path d="M204 34 H296" stroke="#999" stroke-width=".8"/><text x="300" y="38.2" class="m2-ts" style="fill:#A8561A">pituitary</text><path d="M196 68 H124" stroke="#999" stroke-width=".8"/><text x="120" y="71.5" class="m2-ts" text-anchor="end" style="fill:#A8561A">thyroid</text><path d="M210 71 H296" stroke="#999" stroke-width=".8"/><text x="300" y="75.10000000000001" class="m2-ts" style="fill:#A8561A">parathyroids</text><path d="M209 106 H296" stroke="#999" stroke-width=".8"/><text x="300" y="110.2" class="m2-ts" style="fill:#C22F4A">heart</text><path d="M174 119 H124" stroke="#999" stroke-width=".8"/><text x="120" y="122.8" class="m2-ts" text-anchor="end" style="fill:#8A3B30">liver</text><path d="M183 133 H124" stroke="#999" stroke-width=".8"/><text x="120" y="137.20000000000002" class="m2-ts" text-anchor="end" style="fill:#A8561A">adrenals</text><path d="M178 153 H124" stroke="#999" stroke-width=".8"/><text x="120" y="157.0" class="m2-ts" text-anchor="end" style="fill:#8A4A3A">kidneys</text><path d="M224 137 H296" stroke="#999" stroke-width=".8"/><text x="300" y="140.8" class="m2-ts" style="fill:#9A7414">pancreas</text><path d="M204 160 H296" stroke="#999" stroke-width=".8"/><text x="300" y="164.20000000000002" class="m2-ts" style="fill:#B07A6A">intestine</text><path d="M187 180 H124" stroke="#999" stroke-width=".8"/><text x="120" y="184.0" class="m2-ts" text-anchor="end" style="fill:#1E4F8A">gonads</text></svg>
+      <div class="cap">Every gland from the two weeks in its place: hypothalamus, pituitary, thyroid and parathyroids, adrenals, pancreas, and the organs that signal on the side.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="themes" role="tab"><span class="n">01</span>Three Themes</button>
+  <button class="tab" data-tab="disorders" role="tab"><span class="n">02</span>Breaking the System</button>
+  <button class="tab" data-tab="forward" role="tab"><span class="n">03</span>Reassembly</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 THREE THEMES ═════════ -->
+<section class="panel" id="tab-themes" role="tabpanel">
+  <div class="vo" data-clip="w13_thm">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">What Holds It Together</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The whole endocrine map beside three themes that organize everything in the module"><g data-step="0" class="nohalo"><g transform="translate(20,6) scale(0.86)"><path d="M100 0 C80 0 72 18 74 34 C76 52 86 62 92 66 L92 78 C70 82 52 90 46 108 L30 200 L40 204 L62 120 L66 210 L60 330 L80 332 L96 220 L104 220 L120 332 L140 330 L134 210 L138 120 L160 204 L170 200 L154 108 C148 90 130 82 108 78 L108 66 C114 62 124 52 126 34 C128 18 120 0 100 0z" fill="#F7EFE6" stroke="#B7A48F" stroke-width="2"/></g><g transform="translate(20,6) scale(0.86)"><ellipse cx="100" cy="27" rx="6" ry="4" fill="#8E5BC0" opacity=".85"/><path d="M100 31 V36" stroke="#5E3A8A" stroke-width="1.6"/><circle cx="100" cy="38" r="3" fill="#D9822B" stroke="#A8561A"/><path d="M93 70 C89 71 89 80 94 81 C97 81 98 77 100 76 C102 77 103 81 106 81 C111 80 111 71 107 70 C104 70 103 73 100 74 C97 73 96 70 93 70z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><circle cx="93" cy="72" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="107" cy="72" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="93" cy="79" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="107" cy="79" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><path d="M106 112 C100 106 92 112 98 122 L106 130 L114 122 C120 112 112 106 106 112z" fill="#E89AA8" stroke="#C22F4A" stroke-width="1.2"/><ellipse cx="86" cy="162" rx="7" ry="11" fill="#C98A7A" stroke="#8A4A3A" stroke-width="1.2"/><ellipse cx="114" cy="162" rx="7" ry="11" fill="#C98A7A" stroke="#8A4A3A" stroke-width="1.2"/><path d="M80 152 L86 143 L92 152z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><path d="M108 152 L114 143 L120 152z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><path d="M92 154 C92 148 100 148 104 149 C112 150 122 146 126 148 C128 150 124 153 118 154 C110 155 104 156 98 158 C94 159 92 157 92 154z" fill="#E3B23C" stroke="#9A7414" stroke-width="1"/><path d="M104 128 C116 124 126 130 124 142 C122 150 112 150 108 144 C104 140 100 136 104 128z" fill="#F2C9A0" stroke="#B07A4A" stroke-width="1"/><path d="M72 126 C84 120 100 122 104 128 C100 136 90 142 76 140 C70 138 68 130 72 126z" fill="#B8665A" stroke="#7A3A30" stroke-width="1"/><path d="M84 172 C92 166 108 166 116 172 C120 180 112 186 100 184 C90 184 82 180 84 172z" fill="#F2B8A8" stroke="#B07A6A" stroke-width="1"/><ellipse cx="90" cy="200" rx="4" ry="3" fill="#2E6FB7" stroke="#1E4F8A" stroke-width="1"/><ellipse cx="110" cy="200" rx="4" ry="3" fill="#2E6FB7" stroke="#1E4F8A" stroke-width="1"/></g><text x="260" y="30" class="m2-t">two weeks, one system, one job</text></g><g data-step="1" class="nohalo"><text x="260" y="64" class="m2-t" style="fill:#1E4F8A">1. Chemistry predicts behavior</text><text x="260" y="82" class="m2-ts" style="fill:#1E4F8A">water-soluble: surface receptor, fast, brief;</text><text x="260" y="98" class="m2-ts" style="fill:#1E4F8A">fat-soluble: receptor inside, slow, sustained</text></g><g data-step="2" class="nohalo"><text x="260" y="138" class="m2-ts" style="fill:#56606B">insulin, epinephrine | cortisol, thyroid hormone</text></g><g data-step="3" class="nohalo"><text x="260" y="170" class="m2-t" style="fill:#A8561A">2. Negative feedback is the rule</text><text x="260" y="188" class="m2-ts" style="fill:#A8561A">positive feedback is rare: labor, ovulation</text></g><g data-step="4" class="nohalo"><text x="260" y="226" class="m2-t" style="fill:#2F6B4F">3. Defend the milieu int&eacute;rieur</text><text x="260" y="244" class="m2-ts" style="fill:#2F6B4F">glucose, calcium, pressure, metabolic rate, stress</text></g><g data-step="5" class="nohalo"><text x="260" y="290" class="m2-t" style="fill:#C22F4A">the body is a process, not a fixed structure</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["In two weeks you walked the body's slow communication system from the hypothalamus down: the pituitary's two halves, three axes, the thyroid and parathyroids, the adrenals, the islets, and organs that signal on the side. Here is the picture all together, and three themes that run through every part of it.", "Theme one: chemistry predicts behavior. A water-soluble hormone binds a surface receptor and acts fast and briefly. A fat-soluble hormone crosses the membrane, binds a receptor inside, and acts slowly and for a long time.", "Insulin and epinephrine are on the fast side. Cortisol and thyroid hormone, which acts like a steroid even though it is an amine, are on the slow side. The chemistry was settled long before the glands evolved, and the body inherited the consequences.", "Theme two: negative feedback is the rule. A hormone's effect, or its own level, tells the gland to slow down. Positive feedback, as in labor or the surge before ovulation, is rare, reserved for processes that must escalate to a clear end.", "Theme three: defend the milieu intérieur. Every pathway guards a variable: blood glucose, blood calcium, blood pressure and volume, metabolic rate, the response to stress.", "Claude Bernard's frame from the first reading turns out to be the whole story. The body is not a fixed structure. It is a process, holding its inside steady against an unsteady world."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The three themes that organize the endocrine system.</span></div>
+    <p class="marg"><b>Courtesy.</b> Two weeks of glands, hormones, axes and feedback loops, all in service of one quiet job: keeping the body steady. The system you have studied is the body&rsquo;s manners. It does its work without being noticed until something breaks.</p>
+    <article class="atlas">
+      <h3>What you have learned, in one paragraph</h3>
+      <p>In two weeks you have walked the body’s slow communication system from the hypothalamus down. You have met the pituitary’s two halves and the six anterior hormones that drive most other endocrine glands. You have followed feedback loops in three hypothalamic-pituitary-target axes. You have seen how the thyroid sets the body’s metabolic rate and how four tiny parathyroid glands defend blood calcium. You have studied the adrenal cortex’s three zones and the adrenal medulla’s hybrid neural-endocrine biology. You have traced the pancreatic islets’ see-saw of insulin and glucagon. And you have seen that organs you previously thought of as “just” the heart, the kidneys, the gut, or the gonads are also part of this conversation. This reading is the synthesis — the picture that emerges when you put it all together.</p>
+      <figure class="plate"><img data-img="f60601" alt="A whole-body chart of the endocrine system, showing every gland you studied this module in position: pituitary and hypothalamus, thyroid and parathyroid, adrenal glands, pancreas, plus the secondary endocrine organs (heart, stomach, kidney, ovary, testes)"><figcaption>Figure — The entire endocrine system, in one view — every gland from these two weeks, in its anatomical position. (Anatomical Chart Company / Lippincott Williams & Wilkins.)</figcaption></figure>
+      <h3>Three themes that run through everything</h3>
+      <h4>Theme 1: chemistry predicts behavior</h4>
+      <p>Every hormone you studied this module belongs to one of three chemical families: peptide, steroid, or amine. The family determines whether the hormone is water-soluble or lipid-soluble, where its receptor sits, how fast its effect appears, and how long that effect lasts. Insulin is a peptide — surface receptor, fast, brief. Cortisol is a steroid — intracellular receptor, slow, sustained. Epinephrine is a catecholamine (amine) — surface receptor, fast, brief. Thyroid hormone is also an amine but behaves like a steroid — intracellular receptor, slow, sustained. The chemistry was decided long before evolution invented endocrine glands, and the body inherited the consequences.</p>
+      <h4>Theme 2: negative feedback is the rule</h4>
+      <p>Almost every hormone in the body is regulated by negative feedback: the hormone’s effect, or the hormone’s level itself, signals back to the gland to slow down production. This is what keeps blood glucose, blood calcium, thyroid hormone, cortisol, and blood pressure within their narrow normal ranges across every minute of every day. Positive feedback exists (oxytocin and labor; LH and ovulation) but it is rare and reserved for processes that need to escalate to a defined endpoint and then stop.</p>
+      <h4>Theme 3: defending the milieu intérieur</h4>
+      <p>Claude Bernard’s phrase from the first reading of this module — the <i>milieu intérieur</i>, the body’s internal environment — is the right frame for everything you have learned. Each major endocrine pathway exists to defend some specific variable: blood glucose (insulin and glucagon, with cortisol and epinephrine as backup), blood calcium (PTH, calcitriol, calcitonin), blood pressure and volume (aldosterone, ADH, ANP, the RAAS), metabolic rate (T<sub>3</sub> and T<sub>4</sub>), the stress response (the medulla and the cortex working together). The body is not a fixed structure — it is a process, continuously holding its own internal conditions steady against an unsteady external world.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Three-Theme Reflection</h2></div>
+    <p class="hint">In your notebook: one paragraph per theme. Draw a specific connection, not a restated definition.</p>
+    <div class="card loccard"><p class="sub">Choose one disorder <b>not</b> detailed in this reading (not diabetes, hypothyroidism or Addison&rsquo;s): for example Graves&rsquo; disease, primary hyperparathyroidism, Cushing&rsquo;s from an adrenal tumor, acromegaly or SIADH. In one sentence, which hormone is affected and how?</p><textarea class="jbox" id="w13tD" data-label="My disorder" data-min="8"></textarea></div><div class="card loccard"><p class="sub">What does the affected hormone&rsquo;s chemical family predict about how the disorder behaves?</p><textarea class="jbox" id="w13t1" data-label="Theme 1: chemistry" data-min="15"></textarea></div><div class="card loccard"><p class="sub">What breaks down in its feedback loop? What happens to the hormones upstream?</p><textarea class="jbox" id="w13t2" data-label="Theme 2: feedback" data-min="15"></textarea></div><div class="card loccard"><p class="sub">Which variable of the internal environment does it fail to defend?</p><textarea class="jbox" id="w13t3" data-label="Theme 3: the milieu int&eacute;rieur" data-min="15"></textarea></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="disorders" type="button">Next: Breaking the System &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 BREAKING THE SYSTEM ═════════ -->
+<section class="panel" id="tab-disorders" role="tabpanel">
+  <div class="vo" data-clip="w13_brk">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">What Breaking It Reveals</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Three disorder cards fill in: diabetes, hypothyroidism and Addison&rsquo;s disease, then continuous glucose monitoring"><g data-step="0" class="nohalo"><rect x="10" y="14" width="210" height="164" rx="12" fill="#fff" stroke="#9A7414" stroke-width="2"/><text x="115" y="40" class="m2-t" text-anchor="middle" style="fill:#9A7414">Diabetes</text><text x="22" y="68" class="m2-ts" style="fill:#9A7414">no insulin action: glucose</text><text x="22" y="84" class="m2-ts" style="fill:#9A7414">stays in the blood; cells starve</text><text x="22" y="100" class="m2-ts" style="fill:#9A7414">burn fat &rarr; ketones &rarr; DKA</text></g><g data-step="1" class="nohalo"><text x="22" y="128" class="m2-ts" style="fill:#9A7414">years: retina, kidney, nerves,</text><text x="22" y="144" class="m2-ts" style="fill:#9A7414">arteries</text></g><g data-step="2" class="nohalo"><rect x="235" y="14" width="210" height="164" rx="12" fill="#fff" stroke="#1E4F8A" stroke-width="2"/><text x="340" y="40" class="m2-t" text-anchor="middle" style="fill:#1E4F8A">Hypothyroidism</text><text x="247" y="68" class="m2-ts" style="fill:#1E4F8A">Hashimoto&rsquo;s: T4, T3 &darr;</text><text x="247" y="84" class="m2-ts" style="fill:#1E4F8A">cold, slow, tired, weight up</text><text x="247" y="100" class="m2-ts" style="fill:#1E4F8A">TSH &uarr;; may swell to a goiter</text></g><g data-step="3" class="nohalo"><text x="247" y="128" class="m2-ts" style="fill:#1E4F8A">one pill a day: levothyroxine</text></g><g data-step="4" class="nohalo"><rect x="460" y="14" width="210" height="164" rx="12" fill="#fff" stroke="#C22F4A" stroke-width="2"/><text x="565" y="40" class="m2-t" text-anchor="middle" style="fill:#C22F4A">Addison&rsquo;s</text><text x="472" y="68" class="m2-ts" style="fill:#C22F4A">cortisol, aldosterone &darr;</text><text x="472" y="84" class="m2-ts" style="fill:#C22F4A">low sugar, pressure, sodium</text><text x="472" y="100" class="m2-ts" style="fill:#C22F4A">ACTH &uarr; &rarr; darker skin</text><text x="472" y="128" class="m2-ts" style="fill:#C22F4A">crisis under stress: give IV</text><text x="472" y="144" class="m2-ts" style="fill:#C22F4A">cortisol fast</text></g><g data-step="5" class="nohalo"><rect x="10" y="190" width="660" height="2" fill="#D0D9E8"/><text x="340" y="222" class="m2-ts" text-anchor="middle" style="fill:#2F6B4F">CGM: a sensor under the skin reports glucose every five minutes</text><text x="340" y="242" class="m2-ts" text-anchor="middle" style="fill:#2F6B4F">closed loop: the pump doses insulin from the sensor&rsquo;s readings</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["You often learn the most about a system when it fails. Diabetes shows what insulin does every minute. Without insulin's action, glucose stays in the blood instead of entering cells, and tissues starve in the middle of plenty. They burn fat instead, making ketones; in severe type 1 diabetes that can become diabetic ketoacidosis.", "Over years, high glucose damages the retina, the kidneys, the peripheral nerves and the large arteries. The pattern tells you which tissues are most vulnerable, and how slowly the damage builds.", "Hypothyroidism shows what T3 and T4 do. In Hashimoto's thyroiditis the immune system slowly destroys the gland, and the body slows: cold, tired, gaining weight, thinking slowly. TSH rises as the pituitary pushes harder, sometimes swelling the thyroid into a goiter.", "The treatment is one pill of T4, levothyroxine, once a day for life. Replace the one steady signal, and the system works again.", "Addison's disease shows what the adrenal cortex does. Cortisol and aldosterone fall: low blood sugar between meals, low pressure, low sodium, high potassium. ACTH rises, and because its precursor also stimulates pigment cells, the skin can darken. A major stress can trigger an adrenal crisis that needs intravenous cortisol within hours.", "Technology is now rebuilding one feedback loop by hand. A continuous glucose monitor reports glucose every five minutes, and closed-loop systems let an insulin pump dose from those readings: an engineered version of the beta cell's own sensing."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Diabetes, hypothyroidism and Addison&rsquo;s disease, and closed-loop insulin delivery.</span></div>
+    <article class="atlas">
+      <h3>Three disorders that reveal the system by breaking it</h3>
+      <p>Sometimes you learn the most about a system when it fails. Three endocrine disorders are worth knowing not just because they are common, but because each of them reveals what one piece of the system is doing under normal conditions.</p>
+      <h4>Diabetes mellitus — what insulin actually does</h4>
+      <p>You have already met type 1 (autoimmune destruction of beta cells, no insulin) and type 2 (tissue resistance to insulin, eventual beta-cell exhaustion). Both produce high blood glucose, and both demonstrate, in slow motion, what insulin normally accomplishes minute by minute. Without insulin, glucose stays in the blood instead of going into cells. The brain still gets glucose — it does not need insulin — but other tissues are effectively starving in the middle of plenty. The body responds by burning fat and protein for fuel, producing ketones in the process. In severe type 1 diabetes this leads to <i>diabetic ketoacidosis</i>, a life-threatening drop in blood pH that was a common cause of death in young people before insulin therapy existed.</p>
+      <p>Over years, chronically high blood glucose damages small blood vessels and peripheral nerves. The pattern of complications — retinopathy, nephropathy, neuropathy, accelerated cardiovascular disease — tells you which tissues are most vulnerable to glucose toxicity and how slowly that damage accumulates.</p>
+      <h4>Hypothyroidism — what T<sub>3</sub>/T<sub>4</sub> actually do</h4>
+      <p>Hypothyroidism is most often caused by <i>Hashimoto’s thyroiditis</i> — an autoimmune attack on the thyroid gland that gradually destroys it over years. As T<sub>4</sub> and T<sub>3</sub> fall, the body slows down: cold intolerance, slowed heart rate, fatigue, weight gain despite reduced appetite, dry skin, constipation, slowed thinking, sometimes a hoarse voice as the thyroid swells. TSH from the pituitary rises in compensation (the HPT axis you diagrammed in Week 1) and can sometimes drive the thyroid to swell into a visible goiter.</p>
+      <p>Treatment is daily oral T<sub>4</sub> (levothyroxine), one of the most-prescribed medications in the world. Once dosed correctly, patients return to normal function and live without significant restriction. The simplicity of the treatment — a single pill, once a day, for life — reflects the fact that the thyroid’s job is to supply one steady chemical signal. Replace the signal and the system works again.</p>
+      <h4>Addison’s disease — what the adrenal cortex actually does</h4>
+      <p>You met Addison’s in Reading 6.05: chronic insufficiency of the adrenal cortex, usually autoimmune. Cortisol and aldosterone both fall. Without cortisol, blood sugar drops between meals, the body cannot mobilize fuel for sustained stress, and even small infections become disproportionately serious. Without aldosterone, the kidney cannot keep enough sodium, blood pressure drops, and potassium accumulates. The patient lives in chronic fatigue, weak, sometimes hyperpigmented (a side effect of the pituitary trying to compensate by pumping out more ACTH, a precursor of which also stimulates melanocytes).</p>
+      <p>In a severe physical stressor, an Addisonian patient can crash into an <i>adrenal crisis</i>: blood pressure collapses, blood sugar plummets, electrolytes derange dangerously. Without rapid intravenous cortisol, the patient may die within hours. Treatment in the long term, like hypothyroidism, is simple in principle: replace what is missing. The mortality of Addison’s in the era before steroid replacement is a reminder of how essential cortisol is for the body’s daily work, even when nothing in particular is happening.</p>
+      <div class="inset"><div class="ilabel">CONTEMPORARY RESEARCH: CGM AND CLOSED-LOOP INSULIN DELIVERY</div><p>Before about 2000, a type 1 diabetic measured blood glucose by pricking a finger and reading a test strip. They might check four to ten times a day. Between checks, they were guessing at where their glucose was — and dosing insulin from a syringe or pen based on rough estimates of carbohydrate counts.</p><p>Over the last two decades, two technologies have changed this. <b>Continuous glucose monitors (CGMs)</b><button type="button" class="say" data-say="cgm" aria-label="Hear it: continuous glucose monitors (cgms)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are small wearable sensors with a thin filament that sits just under the skin and reports glucose every five minutes via Bluetooth to a phone or watch. The user has a near-continuous trace of their glucose at any moment, plus trend arrows telling them whether it is rising, falling, or stable.</p><p>The next step is <b>closed-loop insulin delivery</b><button type="button" class="say" data-say="closed-loop" aria-label="Hear it: closed-loop insulin delivery" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — sometimes called “artificial pancreas” systems. An insulin pump (an external device with a small subcutaneous catheter) is paired with a CGM and an algorithm that calculates how much insulin to deliver minute by minute. The patient still tells the system about meals, but the algorithm handles the rest, including overnight, including during exercise, including when blood glucose is rising or falling unexpectedly. These systems are not perfect — they cannot yet match a healthy pancreas’s precision, and they require careful patient training — but they have produced dramatic improvements in long-term blood-sugar control and dramatically reduced episodes of dangerous low blood sugar. Researchers continue to refine the algorithms, to add other hormones (some systems now include glucagon delivery for severe lows), and to integrate the technology into pediatric care. The whole field is one of the clearest examples of biology, electronics, and software working together to replace a failing endocrine gland.</p></div>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Predict From the Name</h2></div>
+    <p class="hint">The self-check predictions from the end of the Atlas.</p>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w13m4"><p class="q">Graves&rsquo; disease (hyperthyroidism): what happens to TSH?</p>
+        <button class="opt" data-ok="1" data-fb="Right: feedback runs the other way.">It is suppressed, because high T4 shuts down the HPT axis.</button>
+        <button class="opt" data-fb="TSH falls when thyroid hormone is high.">It rises, because the thyroid is overactive.</button>
+        <button class="opt" data-fb="The axis responds to the high T4.">It does not change.</button></div>
+      <div class="mcq card" data-qid="w13m5"><p class="q">Primary hyperparathyroidism (a PTH-secreting tumor): what happens to blood calcium and phosphate?</p>
+        <button class="opt" data-ok="1" data-fb="Yes: PTH mines bone and makes the kidney dump phosphate.">Calcium up, phosphate down.</button>
+        <button class="opt" data-fb="PTH makes the kidney excrete phosphate.">Both up.</button>
+        <button class="opt" data-fb="That is the picture of too little PTH.">Calcium down, phosphate up.</button></div>
+      <div class="mcq card" data-qid="w13m6"><p class="q">Pheochromocytoma: blood pressure, heart rate and glucose?</p>
+        <button class="opt" data-ok="1" data-fb="Yes: surges of epinephrine.">All episodically high.</button>
+        <button class="opt" data-fb="The tumor releases catecholamines.">All low.</button>
+        <button class="opt" data-fb="Catecholamines act on the heart and vessels too.">Only glucose changes.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="themes" type="button">&larr; Three Themes</button><button class="btn" data-go="forward" type="button">Next: Reassembly &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 REASSEMBLY ═════════ -->
+<section class="panel" id="tab-forward" role="tabpanel">
+  <div class="vo" data-clip="w13_fwd">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Looking Forward</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Where hormones return in later modules, then the full Endocrine Map ready for reassembly"><g data-step="0" class="nohalo"><rect x="250" y="22" width="62" height="26" rx="13" fill="#C22F4A"/><text x="281" y="40" class="m2-ts" text-anchor="middle" style="fill:#fff">M7</text><text x="322" y="40" class="m2-ts" style="fill:#C22F4A">heart and vessels: RAAS, ANP</text></g><g data-step="1" class="nohalo"><rect x="250" y="62" width="62" height="26" rx="13" fill="#2F6B4F"/><text x="281" y="80" class="m2-ts" text-anchor="middle" style="fill:#fff">M8</text><text x="322" y="80" class="m2-ts" style="fill:#2F6B4F">immunity: cortisol damps inflammation</text></g><g data-step="2" class="nohalo"><rect x="250" y="102" width="62" height="26" rx="13" fill="#B07A4A"/><text x="281" y="120" class="m2-ts" text-anchor="middle" style="fill:#fff">M10</text><text x="322" y="120" class="m2-ts" style="fill:#B07A4A">digestion: gastrin, secretin, CCK, GLP-1</text></g><g data-step="3" class="nohalo"><rect x="250" y="142" width="62" height="26" rx="13" fill="#1E4F8A"/><text x="281" y="160" class="m2-ts" text-anchor="middle" style="fill:#fff">M11</text><text x="322" y="160" class="m2-ts" style="fill:#1E4F8A">kidney: ADH, aldosterone, ANP, PTH; EPO, renin</text></g><g data-step="4" class="nohalo"><rect x="250" y="182" width="62" height="26" rx="13" fill="#5E3A8A"/><text x="281" y="200" class="m2-ts" text-anchor="middle" style="fill:#fff">M12</text><text x="322" y="200" class="m2-ts" style="fill:#5E3A8A">reproduction: the HPG axis</text></g><g data-step="5" class="nohalo"><g transform="translate(20,6) scale(0.86)"><path d="M100 0 C80 0 72 18 74 34 C76 52 86 62 92 66 L92 78 C70 82 52 90 46 108 L30 200 L40 204 L62 120 L66 210 L60 330 L80 332 L96 220 L104 220 L120 332 L140 330 L134 210 L138 120 L160 204 L170 200 L154 108 C148 90 130 82 108 78 L108 66 C114 62 124 52 126 34 C128 18 120 0 100 0z" fill="#F7EFE6" stroke="#B7A48F" stroke-width="2"/></g><g transform="translate(20,6) scale(0.86)"><ellipse cx="100" cy="27" rx="6" ry="4" fill="#8E5BC0" opacity=".85"/><path d="M100 31 V36" stroke="#5E3A8A" stroke-width="1.6"/><circle cx="100" cy="38" r="3" fill="#D9822B" stroke="#A8561A"/><path d="M93 70 C89 71 89 80 94 81 C97 81 98 77 100 76 C102 77 103 81 106 81 C111 80 111 71 107 70 C104 70 103 73 100 74 C97 73 96 70 93 70z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><circle cx="93" cy="72" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="107" cy="72" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="93" cy="79" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><circle cx="107" cy="79" r="1.6" fill="#fff" stroke="#A8561A" stroke-dasharray="1.5 1"/><path d="M106 112 C100 106 92 112 98 122 L106 130 L114 122 C120 112 112 106 106 112z" fill="#E89AA8" stroke="#C22F4A" stroke-width="1.2"/><ellipse cx="86" cy="162" rx="7" ry="11" fill="#C98A7A" stroke="#8A4A3A" stroke-width="1.2"/><ellipse cx="114" cy="162" rx="7" ry="11" fill="#C98A7A" stroke="#8A4A3A" stroke-width="1.2"/><path d="M80 152 L86 143 L92 152z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><path d="M108 152 L114 143 L120 152z" fill="#D9822B" stroke="#A8561A" stroke-width="1"/><path d="M92 154 C92 148 100 148 104 149 C112 150 122 146 126 148 C128 150 124 153 118 154 C110 155 104 156 98 158 C94 159 92 157 92 154z" fill="#E3B23C" stroke="#9A7414" stroke-width="1"/><path d="M104 128 C116 124 126 130 124 142 C122 150 112 150 108 144 C104 140 100 136 104 128z" fill="#F2C9A0" stroke="#B07A4A" stroke-width="1"/><path d="M72 126 C84 120 100 122 104 128 C100 136 90 142 76 140 C70 138 68 130 72 126z" fill="#B8665A" stroke="#7A3A30" stroke-width="1"/><path d="M84 172 C92 166 108 166 116 172 C120 180 112 186 100 184 C90 184 82 180 84 172z" fill="#F2B8A8" stroke="#B07A6A" stroke-width="1"/><ellipse cx="90" cy="200" rx="4" ry="3" fill="#2E6FB7" stroke="#1E4F8A" stroke-width="1"/><ellipse cx="110" cy="200" rx="4" ry="3" fill="#2E6FB7" stroke="#1E4F8A" stroke-width="1"/></g><text x="250" y="256" class="m2-t" style="fill:#A8561A">reassemble your map; photograph it</text><text x="250" y="276" class="m2-ts" style="fill:#A8561A">hormones in every module still to come</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["You will not see another module about endocrine anatomy, but you will see hormones in every one. In Module 7, the heart and vessels, the renin-angiotensin-aldosterone system and ANP return as central players.", "In Module 8, immunity, immune cells respond to cortisol's anti-inflammatory effects.", "In Module 10, digestion, gastrin, secretin, CCK and GLP-1 coordinate every meal.", "In Module 11, the urinary system, the kidneys answer to ADH, aldosterone, ANP and PTH, and release EPO, renin and calcitriol themselves.", "In Module 12, reproduction, the hypothalamic-pituitary-gonadal axis drives development, fertility and pregnancy.", "So finish this module by putting your map together: the outline, every gland, the detail pages, the secondary organs. Lay it all out, check it against the list, and photograph it. The endocrine system is the body talking to itself."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Where endocrine signaling reappears, and the Greek and Latin roots of the module.</span></div>
+    <article class="atlas">
+      <h3>Looking forward</h3>
+      <p>The endocrine system threads through every module remaining in this course. In <b>Module 7</b>, when you study the heart and vessels, the renin-angiotensin-aldosterone system and atrial natriuretic peptide return as central players. In <b>Module 8</b>, immune cells respond to cortisol’s anti-inflammatory effects. In <b>Module 10</b>, gastrin, secretin, CCK, and GLP-1 coordinate every meal. In <b>Module 11</b>, the kidneys respond to ADH, aldosterone, ANP, and PTH (and themselves release EPO, renin, and calcitriol) to defend body fluid composition. In <b>Module 12</b>, the hypothalamic-pituitary-gonadal axis drives sexual development, reproduction, and pregnancy.</p>
+      <p>You will not see another module dedicated to endocrine anatomy after this one. But you will see hormones again in every module to come, woven into the function of every other system. That is the point. The endocrine system is not a separate compartment of the body; it is the body talking to itself.</p>
+      <div class="inset"><div class="ilabel">MODULE 6 GREEK &amp; LATIN ROOTS</div><p>A running list of the word roots introduced across this module’s readings — useful to review before your quiz.</p><p> <b>Endo-</b><button type="button" class="say" data-say="endo" aria-label="Hear it: endo-" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — “within” (Reading 6.01; <i>endo</i>crine)</p><p> <b>Exo-</b><button type="button" class="say" data-say="exo" aria-label="Hear it: exo-" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — “outside” (Reading 6.01; <i>exo</i>crine)</p><p> <b>Hormon</b> (Greek <i>horman</i>) — “to set in motion, to urge on” (Reading 6.01; <i>hormone</i>)</p><p> <b>Tropic</b><button type="button" class="say" data-say="tropic-hormone" aria-label="Hear it: tropic" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — “turn on” (Reading 6.03; a <i>tropic</i> hormone drives a downstream gland)</p><p> <b>Pro-</b> — “for” (Reading 6.03; <i>pro</i>lactin, <i>pro</i>hormone)</p><p> <b>Ad- / renal</b> — “upon” + “kidney” (Reading 6.05; <i>ad</i>renal gland)</p><p> <b>Insula</b><button type="button" class="say" data-say="insula" aria-label="Hear it: insula" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (Latin) — “island” (Reading 6.06; islets of Langerhans → <i>insulin</i>)</p><p> <b>Lact-</b> — “milk” (Reading 6.03/6.07; prolactin, <i>lact</i>ation)</p><p> <b>Mel-</b> — “honey” (diabetes <i>mel</i>litus; the sweet-tasting urine that gave the disease its name)</p><p> <b>Diabetes</b><button type="button" class="say" data-say="diabetes-mellitus" aria-label="Hear it: diabetes" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (Greek) — “siphon” (Reading 6.06/6.08; the frequent urination that first gave the disease its name)</p></div>
+      <details class="selfcheck"><summary>Self-check: predict from the disorder name before clicking</summary><p><b>A patient with hyperthyroidism (Graves’ disease) walks into the clinic.</b> What do you predict about: heart rate? body temperature? weight? TSH level? — Heart rate up. Body temperature slightly up. Weight trending down despite normal eating. TSH suppressed (because the elevated T<sub>4</sub> is suppressing the HPT axis).</p><p><b>A patient with primary hyperparathyroidism (a parathyroid tumor pumping out PTH).</b> What do you predict about blood calcium? Blood phosphate? Bone density over time? — Calcium up (PTH dissolves bone, recovers calcium from urine). Phosphate down (PTH causes the kidney to excrete it). Bone density falls over years as PTH continuously mines the skeleton.</p><p><b>A patient with a pheochromocytoma (medulla tumor).</b> What do you predict about blood pressure? Heart rate? Sugar? — All three episodically high. The tumor is a medulla on overdrive.</p><p>If you can do this kind of reasoning — predict the picture from knowing the broken part — you have the conceptual control over this module that this course expected. Well done.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 40 minutes. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    <div class="draw"><span class="label">Drawing session &middot; Reassembly for the Assembled Figure</span>
+      <p>Gather your Endocrine Map and every detail page from the past two weeks and lay them out together on a table or the floor (or on one slide, if you work digitally).</p><p>Check every item in the list below: present and labeled. The body outline gives each gland its spatial reference.</p><p>Photograph (or export) the whole figure in good light, a wide shot plus one or two close-ups. Make sure the labels are legible: this is the file you submit for the Module 6 Assembled Figure.</p>
+      <ul class="checks"><li data-ck="w13d41"><b>Primary glands (Lessons 6.03&ndash;6.05):</b> hypothalamus, infundibulum, anterior and posterior pituitary, thyroid, all four parathyroids, both adrenals (one in cross-section with three cortical zones and the medulla).</li><li data-ck="w13d42"><b>Dual organ (Lesson 6.06):</b> the pancreas in position behind the stomach; the islet detail page with alpha and beta cells.</li><li data-ck="w13d43"><b>Secondary markers (Lesson 6.07):</b> heart, kidneys, stomach, small intestine, liver and gonads, each with at least one hormone label.</li><li data-ck="w13d44"><b>Body outline:</b> the Endocrine Map&rsquo;s outline, so every gland has its spatial reference.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Endocrine Map page and detail page: they become your Module 6 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Before the Module Ends</h2></div>
+    <div class="card"><p style="margin-top:0">After the 6.08 Notebook, take the <b>Week 13 Reading Quiz</b> in Canvas (Readings 6.05&ndash;6.08).</p><p style="margin-bottom:0">Also submit the two module projects: the <a href="project-writing.html" target="_blank">Module 6 Writing</a> (two speeds of stress) and the <a href="project-figure.html" target="_blank">Module 6 Assembled Figure</a> with its caption. Keep your Endocrine Map: Module 7 (Cardiovascular System) starts next week.</p></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="disorders" type="button">&larr; Breaking the System</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Disorder-to-Mechanism Map</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>If a clinician knows the pattern of which hormones are too high and which are too low, can they always tell which structural part of the system is broken? Where does this logic work, and where does it break down?</p></div>
+        <p>You can now read a disorder backward to its broken part. This Notebook asks for a four-row table and one focused paragraph.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Four Disorders</h2></div>
+    <p class="hint">Cushing&rsquo;s, Hashimoto&rsquo;s, type 1 diabetes, Addison&rsquo;s.</p>
+    <div class="card idtable" id="w13rT" style="padding:16px 20px"><div class="idhead c4"><span></span><span>Broken structure</span><span>Too high</span><span>Too low</span><span>Two key signs</span><span></span></div><div class="idrow c4"><span class="loc">Cushing&rsquo;s (pituitary adenoma)</span><select class="jfield" id="w13rTr0c0" data-label="Disorder map: Cushing&rsquo;s (pituitary adenoma), Broken structure" data-ans="anterior pituitary"><option value="">choose</option><option>anterior pituitary</option><option>thyroid gland</option><option>pancreatic beta cells</option><option>adrenal cortex</option></select><select class="jfield" id="w13rTr0c1" data-label="Disorder map: Cushing&rsquo;s (pituitary adenoma), Too high" data-ans="ACTH and cortisol"><option value="">choose</option><option>ACTH and cortisol</option><option>TSH</option><option>blood glucose (no axis above it)</option><option>ACTH</option></select><select class="jfield" id="w13rTr0c2" data-label="Disorder map: Cushing&rsquo;s (pituitary adenoma), Too low" data-ans="CRH"><option value="">choose</option><option>CRH</option><option>T3 and T4</option><option>insulin</option><option>cortisol and aldosterone</option></select><select class="jfield" id="w13rTr0c3" data-label="Disorder map: Cushing&rsquo;s (pituitary adenoma), Two key signs" data-ans="trunk weight gain; weak muscle and skin"><option value="">choose</option><option>trunk weight gain; weak muscle and skin</option><option>cold intolerance; fatigue, weight gain</option><option>thirst, frequent urination; weight loss</option><option>fatigue, low blood pressure; darker skin</option></select><span class="mk"></span></div><div class="idrow c4"><span class="loc">Primary hypothyroidism (Hashimoto&rsquo;s)</span><select class="jfield" id="w13rTr1c0" data-label="Disorder map: Primary hypothyroidism (Hashimoto&rsquo;s), Broken structure" data-ans="thyroid gland"><option value="">choose</option><option>anterior pituitary</option><option>thyroid gland</option><option>pancreatic beta cells</option><option>adrenal cortex</option></select><select class="jfield" id="w13rTr1c1" data-label="Disorder map: Primary hypothyroidism (Hashimoto&rsquo;s), Too high" data-ans="TSH"><option value="">choose</option><option>ACTH and cortisol</option><option>TSH</option><option>blood glucose (no axis above it)</option><option>ACTH</option></select><select class="jfield" id="w13rTr1c2" data-label="Disorder map: Primary hypothyroidism (Hashimoto&rsquo;s), Too low" data-ans="T3 and T4"><option value="">choose</option><option>CRH</option><option>T3 and T4</option><option>insulin</option><option>cortisol and aldosterone</option></select><select class="jfield" id="w13rTr1c3" data-label="Disorder map: Primary hypothyroidism (Hashimoto&rsquo;s), Two key signs" data-ans="cold intolerance; fatigue, weight gain"><option value="">choose</option><option>trunk weight gain; weak muscle and skin</option><option>cold intolerance; fatigue, weight gain</option><option>thirst, frequent urination; weight loss</option><option>fatigue, low blood pressure; darker skin</option></select><span class="mk"></span></div><div class="idrow c4"><span class="loc">Type 1 diabetes</span><select class="jfield" id="w13rTr2c0" data-label="Disorder map: Type 1 diabetes, Broken structure" data-ans="pancreatic beta cells"><option value="">choose</option><option>anterior pituitary</option><option>thyroid gland</option><option>pancreatic beta cells</option><option>adrenal cortex</option></select><select class="jfield" id="w13rTr2c1" data-label="Disorder map: Type 1 diabetes, Too high" data-ans="blood glucose (no axis above it)"><option value="">choose</option><option>ACTH and cortisol</option><option>TSH</option><option>blood glucose (no axis above it)</option><option>ACTH</option></select><select class="jfield" id="w13rTr2c2" data-label="Disorder map: Type 1 diabetes, Too low" data-ans="insulin"><option value="">choose</option><option>CRH</option><option>T3 and T4</option><option>insulin</option><option>cortisol and aldosterone</option></select><select class="jfield" id="w13rTr2c3" data-label="Disorder map: Type 1 diabetes, Two key signs" data-ans="thirst, frequent urination; weight loss"><option value="">choose</option><option>trunk weight gain; weak muscle and skin</option><option>cold intolerance; fatigue, weight gain</option><option>thirst, frequent urination; weight loss</option><option>fatigue, low blood pressure; darker skin</option></select><span class="mk"></span></div><div class="idrow c4"><span class="loc">Addison&rsquo;s (primary adrenal)</span><select class="jfield" id="w13rTr3c0" data-label="Disorder map: Addison&rsquo;s (primary adrenal), Broken structure" data-ans="adrenal cortex"><option value="">choose</option><option>anterior pituitary</option><option>thyroid gland</option><option>pancreatic beta cells</option><option>adrenal cortex</option></select><select class="jfield" id="w13rTr3c1" data-label="Disorder map: Addison&rsquo;s (primary adrenal), Too high" data-ans="ACTH"><option value="">choose</option><option>ACTH and cortisol</option><option>TSH</option><option>blood glucose (no axis above it)</option><option>ACTH</option></select><select class="jfield" id="w13rTr3c2" data-label="Disorder map: Addison&rsquo;s (primary adrenal), Too low" data-ans="cortisol and aldosterone"><option value="">choose</option><option>CRH</option><option>T3 and T4</option><option>insulin</option><option>cortisol and aldosterone</option></select><select class="jfield" id="w13rTr3c3" data-label="Disorder map: Addison&rsquo;s (primary adrenal), Two key signs" data-ans="fatigue, low blood pressure; darker skin"><option value="">choose</option><option>trunk weight gain; weak muscle and skin</option><option>cold intolerance; fatigue, weight gain</option><option>thirst, frequent urination; weight loss</option><option>fatigue, low blood pressure; darker skin</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Choose every cell, then check. Your choices print in the PDF.</span></div></div><div class="card loccard"><p class="sub">For each row, one phrase on why the upstream hormone moves the way it does (for example: <i>Hashimoto&rsquo;s: no T4 brake, so TSH climbs</i>).</p><div class="ttrack" data-field="w13rN"><span class="tt" data-t="feedback|brake|suppress|no.*brake">feedback</span><span class="tt" data-t="TSH|ACTH|CRH|TRH">upstream</span></div><textarea class="jbox" id="w13rN" data-label="Feedback notes" data-min="20"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Answer the Focus Question</h2></div>
+    <div class="card loccard"><p class="sub">In 4&ndash;6 sentences: can a doctor always pinpoint the broken structure from blood tests alone? Name one case where it works cleanly (for example, Cushing&rsquo;s disease versus an adrenal tumor: the upstream ACTH tells them apart) and one where it breaks down (for example, type 2 diabetes: insulin levels are not always definitive).</p><div class="ttrack" data-field="w13rF"><span class="tt" data-t="Cushing|ACTH|adrenal tumor|TSH|Hashimoto">clean case</span><span class="tt" data-t="type 2|insulin|resist|ambig">ambiguous case</span><span class="tt" data-t="upstream|pituitary|feedback">upstream</span></div><textarea class="jbox" id="w13rF" data-label="Focus paragraph" data-min="45"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w13c41">All four disorders are mapped to the correct broken structure.</li><li data-ck="w13c42">My high and low predictions follow feedback, including the upstream hormones.</li><li data-ck="w13c43">Two clinical signs are named for each disorder.</li><li data-ck="w13c44">My paragraph names one clean case and one ambiguous case, with reasons.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 6.08 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="forward" type="button">&larr; Reassembly</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>milieu int&eacute;rieur<button type="button" class="say" data-say="milieu-interieur" aria-label="Hear it: milieu intérieur" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>French &ldquo;interior environment&rdquo;</small></dt><dd>The internal conditions the endocrine system defends.</dd>
+  <dt>negative feedback<button type="button" class="say" data-say="negative-feedback" aria-label="Hear it: negative feedback" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The rule: a hormone&rsquo;s effect turns its own release down.</dd>
+  <dt>positive feedback<button type="button" class="say" data-say="positive-feedback" aria-label="Hear it: positive feedback" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The exception: the effect accelerates the cause, as in labor.</dd>
+  <dt>diabetic ketoacidosis<button type="button" class="say" data-say="diabetic-ketoacidosis" aria-label="Hear it: diabetic ketoacidosis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A dangerous fall in blood pH from ketones when insulin is missing.</dd>
+  <dt>Hashimoto&rsquo;s thyroiditis<button type="button" class="say" data-say="hashimotos-thyroiditis" aria-label="Hear it: hashimoto’s thyroiditis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Autoimmune destruction of the thyroid; the usual cause of hypothyroidism.</dd>
+  <dt>levothyroxine<button type="button" class="say" data-say="levothyroxine" aria-label="Hear it: levothyroxine" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Synthetic T4, taken once a day to treat hypothyroidism.</dd>
+  <dt>Addison&rsquo;s disease<button type="button" class="say" data-say="addisons-disease" aria-label="Hear it: addison’s disease" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Failure of the adrenal cortex: cortisol and aldosterone fall.</dd>
+  <dt>adrenal crisis<button type="button" class="say" data-say="adrenal-crisis" aria-label="Hear it: adrenal crisis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A life-threatening collapse in Addison&rsquo;s disease under severe stress.</dd>
+  <dt>CGM<button type="button" class="say" data-say="cgm" aria-label="Hear it: cgm" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>continuous glucose monitor</small></dt><dd>A wearable sensor that reports glucose every few minutes.</dd>
+  <dt>closed-loop insulin delivery<button type="button" class="say" data-say="closed-loop" aria-label="Hear it: closed-loop insulin delivery" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A pump that doses insulin automatically from CGM readings.</dd>
+  <dt>Endocrine Map</dt><dd>Your body outline carrying every gland and secondary organ from the module.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w13-l4", "title": "Synthesis: The Chemistry of Coordination", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 13 · Synthesis", "pdfTag": "AP_W13_L4"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f60601":{"src":"img/m6-6.06-01-animated-insulin-vs-glucagon-reg.webp","alt":""}},"w13_thm":{"audio":"audio/ap-w13-l4-thm.mp3","words":[[0,0.16,"In"],[0.24,0.4,"two"],[0.48,0.8,"weeks"],[0.88,0.96,"you"],[1.08,1.28,"walked"],[1.32,1.36,"the"],[1.52,1.76,"body's"],[1.84,2.08,"slow"],[2.16,2.8,"communication"],[2.88,3.2,"system"],[3.28,3.44,"from"],[3.48,3.52,"the"],[3.6,4.32,"hypothalamus"],[4.4,5.28,"down:"],[5.32,5.36,"the"],[5.48,6.08,"pituitary's"],[6.16,6.24,"two"],[6.32,6.96,"halves,"],[7.04,7.2,"three"],[7.28,8.16,"axes,"],[8.2,8.24,"the"],[8.32,8.88,"thyroid"],[8.92,8.96,"and"],[9.04,10.16,"parathyroids,"],[10.2,10.24,"the"],[10.32,11.04,"adrenals,"],[11.08,11.12,"the"],[11.2,11.84,"islets,"],[11.88,11.92,"and"],[12,12.32,"organs"],[12.4,12.48,"that"],[12.56,12.88,"signal"],[12.92,12.96,"on"],[13.04,13.08,"the"],[13.12,13.6,"side."],[14.16,14.4,"Here"],[14.48,14.56,"is"],[14.6,14.64,"the"],[14.72,15.04,"picture"],[15.12,15.28,"all"],[15.36,16,"together,"],[16.08,16.16,"and"],[16.24,16.48,"three"],[16.56,16.96,"themes"],[17,17.04,"that"],[17.12,17.28,"run"],[17.36,17.6,"through"],[17.72,17.84,"every"],[17.92,18.08,"part"],[18.12,18.16,"of"],[18.24,18.4,"it."],[18.96,19.2,"Theme"],[19.28,20,"one:"],[20.28,20.56,"chemistry"],[20.64,21.12,"predicts"],[21.2,21.84,"behavior."],[22.4,22.48,"A"],[22.56,23.2,"water-soluble"],[23.28,23.76,"hormone"],[23.84,24.12,"binds"],[24.16,24.24,"a"],[24.4,24.56,"surface"],[24.64,25.12,"receptor"],[25.2,25.28,"and"],[25.44,25.6,"acts"],[25.68,26.08,"fast"],[26.16,26.24,"and"],[26.32,26.88,"briefly."],[27.36,27.44,"A"],[27.52,28.16,"fat-soluble"],[28.24,28.64,"hormone"],[28.72,29.12,"crosses"],[29.16,29.2,"the"],[29.28,29.92,"membrane,"],[30.04,30.2,"binds"],[30.24,30.28,"a"],[30.32,30.72,"receptor"],[31.04,31.6,"inside,"],[31.68,31.76,"and"],[31.92,32.08,"acts"],[32.24,32.64,"slowly"],[32.72,32.8,"and"],[32.88,32.96,"for"],[33,33.04,"a"],[33.2,33.36,"long"],[33.52,34.48,"time."],[34.6,34.96,"Insulin"],[35,35.04,"and"],[35.12,35.76,"epinephrine"],[35.84,35.92,"are"],[35.96,36,"on"],[36.08,36.16,"the"],[36.32,36.48,"fast"],[36.56,37.28,"side."],[37.36,37.92,"Cortisol"],[37.96,38,"and"],[38.08,38.48,"thyroid"],[38.56,39.12,"hormone,"],[39.24,39.36,"which"],[39.44,39.6,"acts"],[39.64,39.68,"like"],[39.76,39.84,"a"],[40,40.4,"steroid"],[40.52,40.64,"even"],[40.68,40.72,"though"],[40.8,40.84,"it"],[40.88,40.96,"is"],[41,41.04,"an"],[41.24,41.76,"amine,"],[41.84,41.92,"are"],[41.96,42,"on"],[42.08,42.16,"the"],[42.24,42.4,"slow"],[42.48,43.36,"side."],[43.44,43.52,"The"],[43.76,44,"chemistry"],[44.08,44.16,"was"],[44.24,44.64,"settled"],[44.76,44.88,"long"],[44.96,45.2,"before"],[45.24,45.28,"the"],[45.36,45.68,"glands"],[45.8,46.427,"evolved,"],[46.453,46.48,"and"],[46.56,46.64,"the"],[46.8,46.96,"body"],[47.04,47.52,"inherited"],[47.56,47.6,"the"],[47.68,49.04,"consequences."],[49.12,49.28,"Theme"],[49.44,50.16,"two:"],[50.32,50.64,"negative"],[50.72,51.2,"feedback"],[51.28,51.44,"is"],[51.48,51.52,"the"],[51.6,52.48,"rule."],[52.52,52.56,"A"],[52.64,53,"hormone's"],[53.04,53.68,"effect,"],[53.76,53.84,"or"],[53.92,54,"its"],[54.08,54.16,"own"],[54.24,54.8,"level,"],[54.88,55.12,"tells"],[55.16,55.2,"the"],[55.28,55.6,"gland"],[55.68,55.76,"to"],[55.84,56.08,"slow"],[56.16,56.96,"down."],[57.2,57.44,"Positive"],[57.68,58.08,"feedback,"],[58.16,58.24,"as"],[58.32,58.4,"in"],[58.48,58.88,"labor"],[58.96,59.04,"or"],[59.12,59.2,"the"],[59.28,59.52,"surge"],[59.6,59.84,"before"],[59.92,60.72,"ovulation,"],[60.8,60.88,"is"],[60.96,61.6,"rare,"],[61.84,62.08,"reserved"],[62.16,62.24,"for"],[62.44,62.8,"processes"],[62.88,62.96,"that"],[63.08,63.2,"must"],[63.28,63.76,"escalate"],[63.8,63.84,"to"],[63.92,64,"a"],[64.08,64.4,"clear"],[64.48,65.36,"end."],[65.48,65.6,"Theme"],[65.76,66.48,"three:"],[66.6,66.96,"defend"],[67.04,67.12,"the"],[67.2,67.6,"milieu"],[67.68,68.4,"intérieur."],[68.88,69.12,"Every"],[69.2,69.68,"pathway"],[69.76,70.08,"guards"],[70.12,70.16,"a"],[70.24,71.04,"variable:"],[71.16,71.28,"blood"],[71.36,72,"glucose,"],[72.08,72.24,"blood"],[72.32,73.12,"calcium,"],[73.2,73.28,"blood"],[73.36,73.68,"pressure"],[73.76,73.84,"and"],[73.92,74.56,"volume,"],[74.64,75.12,"metabolic"],[75.2,75.68,"rate,"],[75.72,75.76,"the"],[76,76.24,"response"],[76.32,76.4,"to"],[76.48,76.96,"stress."],[77.52,77.68,"Claude"],[77.76,78.24,"Bernard's"],[78.4,78.56,"frame"],[78.64,78.72,"from"],[78.76,78.8,"the"],[78.88,79.12,"first"],[79.28,79.44,"reading"],[79.52,79.76,"turns"],[79.84,79.92,"out"],[79.96,80,"to"],[80.08,80.16,"be"],[80.2,80.24,"the"],[80.32,80.56,"whole"],[80.64,81.12,"story."],[81.6,81.68,"The"],[81.84,82,"body"],[82.08,82.16,"is"],[82.24,82.48,"not"],[82.56,82.64,"a"],[82.72,82.96,"fixed"],[83.04,83.6,"structure."],[83.84,83.88,"It"],[83.92,84,"is"],[84.04,84.08,"a"],[84.16,85.04,"process,"],[85.2,85.36,"holding"],[85.44,85.52,"its"],[85.6,86,"inside"],[86.16,86.56,"steady"],[86.64,86.88,"against"],[86.96,87.04,"an"],[87.12,87.6,"unsteady"],[87.68,88.16,"world."]]},"w13_brk":{"audio":"audio/ap-w13-l4-brk.mp3","words":[[0.284,0.364,"You"],[0.444,0.604,"often"],[0.684,0.844,"learn"],[0.884,0.924,"the"],[1.004,1.244,"most"],[1.324,1.404,"about"],[1.484,1.524,"a"],[1.564,1.884,"system"],[1.964,2.044,"when"],[2.084,2.124,"it"],[2.284,2.764,"fails."],[3.324,3.964,"Diabetes"],[4.124,4.284,"shows"],[4.364,4.444,"what"],[4.524,4.924,"insulin"],[5.044,5.164,"does"],[5.324,5.564,"every"],[5.644,6.364,"minute."],[6.524,6.684,"Without"],[6.764,7.164,"insulin's"],[7.244,7.804,"action,"],[7.844,8.284,"glucose"],[8.324,8.604,"stays"],[8.644,8.684,"in"],[8.724,8.764,"the"],[8.844,9.084,"blood"],[9.164,9.484,"instead"],[9.524,9.564,"of"],[9.644,10.044,"entering"],[10.244,10.684,"cells,"],[10.764,10.844,"and"],[10.924,11.324,"tissues"],[11.484,11.804,"starve"],[11.844,11.884,"in"],[11.964,12.044,"the"],[12.164,12.284,"middle"],[12.364,12.444,"of"],[12.524,13.404,"plenty."],[13.484,13.564,"They"],[13.724,13.884,"burn"],[14.004,14.124,"fat"],[14.204,14.844,"instead,"],[14.964,15.084,"making"],[15.164,16.044,"ketones;"],[16.124,16.204,"in"],[16.284,16.604,"severe"],[16.724,16.844,"type"],[16.924,17.004,"1"],[17.084,17.644,"diabetes"],[17.724,17.804,"that"],[17.844,17.884,"can"],[17.964,18.284,"become"],[18.364,18.844,"diabetic"],[18.884,20.444,"ketoacidosis."],[20.604,20.764,"Over"],[20.844,21.404,"years,"],[21.484,21.644,"high"],[21.724,22.204,"glucose"],[22.284,22.684,"damages"],[22.764,22.844,"the"],[22.924,23.404,"retina,"],[23.484,23.564,"the"],[23.644,24.164,"kidneys,"],[24.204,24.284,"the"],[24.364,24.764,"peripheral"],[24.844,25.164,"nerves"],[25.244,25.324,"and"],[25.364,25.404,"the"],[25.484,25.724,"large"],[25.804,26.764,"arteries."],[26.844,26.924,"The"],[27.004,27.324,"pattern"],[27.364,27.564,"tells"],[27.644,27.724,"you"],[27.804,27.884,"which"],[27.964,28.284,"tissues"],[28.364,28.444,"are"],[28.524,28.684,"most"],[28.764,29.404,"vulnerable,"],[29.444,29.484,"and"],[29.564,29.724,"how"],[29.804,30.204,"slowly"],[30.284,30.364,"the"],[30.524,30.684,"damage"],[30.764,31.644,"builds."],[31.684,32.684,"Hypothyroidism"],[32.764,33.004,"shows"],[33.124,33.244,"what"],[33.364,33.804,"T3"],[33.884,33.964,"and"],[34.044,34.524,"T4"],[34.604,35.324,"do."],[35.364,35.404,"In"],[35.484,36.044,"Hashimoto's"],[36.124,36.844,"thyroiditis"],[36.924,37.004,"the"],[37.164,37.324,"immune"],[37.404,37.724,"system"],[37.804,38.284,"slowly"],[38.404,38.764,"destroys"],[38.844,38.884,"the"],[38.924,39.484,"gland,"],[39.524,39.564,"and"],[39.644,39.684,"the"],[39.724,40.044,"body"],[40.124,41.004,"slows:"],[41.244,41.724,"cold,"],[41.764,42.524,"tired,"],[42.564,42.844,"gaining"],[42.924,43.484,"weight,"],[43.644,43.804,"thinking"],[43.884,44.924,"slowly."],[45.044,45.724,"TSH"],[45.804,46.284,"rises"],[46.364,46.444,"as"],[46.484,46.524,"the"],[46.604,47.164,"pituitary"],[47.244,47.564,"pushes"],[47.644,48.284,"harder,"],[48.524,48.764,"sometimes"],[48.844,49.164,"swelling"],[49.204,49.244,"the"],[49.324,49.724,"thyroid"],[49.804,49.884,"into"],[49.964,50.044,"a"],[50.124,50.524,"goiter."],[51.004,51.084,"The"],[51.164,51.564,"treatment"],[51.644,51.804,"is"],[51.884,52.044,"one"],[52.124,52.364,"pill"],[52.444,52.524,"of"],[52.604,53.404,"T4,"],[53.484,54.604,"levothyroxine,"],[54.684,54.844,"once"],[54.884,54.924,"a"],[55.004,55.244,"day"],[55.404,55.484,"for"],[55.644,56.044,"life."],[56.524,56.844,"Replace"],[56.924,57.004,"the"],[57.084,57.324,"one"],[57.404,57.644,"steady"],[57.724,58.284,"signal,"],[58.324,58.364,"and"],[58.404,58.444,"the"],[58.524,58.764,"system"],[58.844,59.084,"works"],[59.204,59.404,"again."],[59.884,60.364,"Addison's"],[60.444,60.844,"disease"],[60.964,61.084,"shows"],[61.164,61.244,"what"],[61.324,61.364,"the"],[61.404,61.724,"adrenal"],[61.804,62.284,"cortex"],[62.364,62.764,"does."],[63.164,63.724,"Cortisol"],[63.764,63.804,"and"],[63.924,64.604,"aldosterone"],[64.684,65.484,"fall:"],[65.564,65.644,"low"],[65.724,65.964,"blood"],[66.044,66.204,"sugar"],[66.284,66.604,"between"],[66.684,67.244,"meals,"],[67.324,67.404,"low"],[67.484,68.124,"pressure,"],[68.204,68.284,"low"],[68.444,69.084,"sodium,"],[69.164,69.244,"high"],[69.324,70.044,"potassium."],[70.124,70.924,"ACTH"],[71.084,71.804,"rises,"],[71.884,71.964,"and"],[72.084,72.204,"because"],[72.324,72.444,"its"],[72.564,73.084,"precursor"],[73.164,73.404,"also"],[73.484,73.964,"stimulates"],[74.044,74.364,"pigment"],[74.444,74.924,"cells,"],[74.964,75.004,"the"],[75.084,75.404,"skin"],[75.484,75.644,"can"],[75.764,76.604,"darken."],[76.684,76.764,"A"],[76.924,77.084,"major"],[77.244,77.644,"stress"],[77.724,77.804,"can"],[77.884,78.124,"trigger"],[78.164,78.204,"an"],[78.284,78.764,"adrenal"],[78.844,79.244,"crisis"],[79.324,79.404,"that"],[79.524,79.644,"needs"],[79.764,80.204,"intravenous"],[80.284,80.764,"cortisol"],[80.924,81.084,"within"],[81.364,82.124,"hours."],[82.444,82.764,"Technology"],[82.844,82.924,"is"],[83.004,83.244,"now"],[83.324,83.884,"rebuilding"],[83.964,84.124,"one"],[84.204,84.684,"feedback"],[84.804,84.924,"loop"],[85.044,85.164,"by"],[85.364,85.964,"hand."],[86.004,86.044,"A"],[86.124,86.604,"continuous"],[86.684,87.084,"glucose"],[87.164,87.484,"monitor"],[87.724,87.964,"reports"],[88.004,88.444,"glucose"],[88.524,88.844,"every"],[88.924,89.164,"five"],[89.244,89.804,"minutes,"],[89.884,89.964,"and"],[90.124,90.524,"closed-loop"],[90.604,91.004,"systems"],[91.084,91.164,"let"],[91.244,91.324,"an"],[91.404,91.804,"insulin"],[91.844,92.124,"pump"],[92.164,92.444,"dose"],[92.524,92.604,"from"],[92.684,92.764,"those"],[92.844,93.564,"readings:"],[93.644,93.724,"an"],[93.804,94.284,"engineered"],[94.484,94.684,"version"],[94.764,94.844,"of"],[94.884,94.924,"the"],[95.004,95.164,"beta"],[95.324,95.644,"cell's"],[95.764,95.884,"own"],[95.964,96.535,"sensing."]]},"w13_fwd":{"audio":"audio/ap-w13-l4-fwd.mp3","words":[[0.31,0.39,"You"],[0.47,0.55,"will"],[0.63,0.87,"not"],[0.95,1.11,"see"],[1.31,1.51,"another"],[1.71,1.91,"module"],[2.03,2.15,"about"],[2.23,2.55,"endocrine"],[2.59,3.27,"anatomy,"],[3.35,3.43,"but"],[3.55,3.67,"you"],[3.79,3.91,"will"],[3.99,4.07,"see"],[4.15,4.63,"hormones"],[4.71,4.87,"in"],[4.95,5.19,"every"],[5.27,5.91,"one."],[5.99,6.07,"In"],[6.23,6.39,"Module"],[6.55,7.03,"7,"],[7.07,7.11,"the"],[7.23,7.35,"heart"],[7.43,7.51,"and"],[7.55,8.31,"vessels,"],[8.35,8.39,"the"],[8.47,10.31,"renin-angiotensin-aldosterone"],[10.39,10.79,"system"],[10.87,11.03,"and"],[11.11,11.67,"ANP"],[11.75,12.15,"return"],[12.23,12.31,"as"],[12.39,12.71,"central"],[12.95,13.59,"players."],[13.63,13.67,"In"],[13.75,14.07,"Module"],[14.15,14.55,"8,"],[14.63,15.43,"immunity,"],[15.59,15.75,"immune"],[15.91,16.15,"cells"],[16.23,16.63,"respond"],[16.71,16.79,"to"],[16.83,17.43,"cortisol's"],[17.55,18.39,"anti-inflammatory"],[18.63,19.07,"effects."],[19.27,19.35,"In"],[19.43,19.67,"Module"],[19.83,20.31,"10,"],[20.55,21.27,"digestion,"],[21.35,21.99,"gastrin,"],[22.19,22.79,"secretin,"],[22.87,23.43,"CCK"],[23.51,23.59,"and"],[23.67,24.95,"GLP-1"],[25.03,25.51,"coordinate"],[25.59,25.83,"every"],[25.91,26.31,"meal."],[26.63,26.71,"In"],[26.87,27.03,"Module"],[27.11,27.67,"11,"],[27.75,27.79,"the"],[27.83,28.23,"urinary"],[28.31,28.95,"system,"],[28.99,29.03,"the"],[29.11,29.59,"kidneys"],[29.75,29.91,"answer"],[29.99,30.07,"to"],[30.15,30.79,"ADH,"],[30.87,31.83,"aldosterone,"],[31.91,32.47,"ANP"],[32.55,32.63,"and"],[32.79,33.67,"PTH,"],[33.71,33.75,"and"],[33.83,34.15,"release"],[34.23,35.03,"EPO,"],[35.11,35.43,"renin"],[35.51,35.59,"and"],[35.67,36.39,"calcitriol"],[36.47,37.27,"themselves."],[37.43,37.51,"In"],[37.59,37.83,"Module"],[37.99,38.55,"12,"],[38.63,39.51,"reproduction,"],[39.55,39.59,"the"],[39.67,41.59,"hypothalamic-pituitary-gonadal"],[41.67,42.07,"axis"],[42.15,42.39,"drives"],[42.47,43.19,"development,"],[43.23,43.75,"fertility"],[43.91,43.99,"and"],[44.07,44.63,"pregnancy."],[45.11,45.19,"So"],[45.27,45.59,"finish"],[45.67,45.75,"this"],[45.83,46.15,"module"],[46.23,46.39,"by"],[46.47,46.63,"putting"],[46.71,46.79,"your"],[46.87,47.03,"map"],[47.11,47.83,"together:"],[47.87,47.91,"the"],[47.99,48.71,"outline,"],[48.83,48.95,"every"],[49.03,49.67,"gland,"],[49.71,49.75,"the"],[49.83,50.15,"detail"],[50.23,50.79,"pages,"],[50.83,50.87,"the"],[50.95,51.43,"secondary"],[51.51,51.99,"organs."],[52.39,52.47,"Lay"],[52.55,52.63,"it"],[52.71,52.79,"all"],[52.87,53.27,"out,"],[53.35,53.51,"check"],[53.55,53.59,"it"],[53.75,53.91,"against"],[53.95,53.99,"the"],[54.07,54.47,"list,"],[54.51,54.55,"and"],[54.71,55.19,"photograph"],[55.27,55.55,"it."],[55.75,55.83,"The"],[55.91,56.23,"endocrine"],[56.31,56.71,"system"],[56.79,56.87,"is"],[56.95,57.03,"the"],[57.11,57.43,"body"],[57.51,57.83,"talking"],[57.91,57.99,"to"],[58.07,58.675,"itself."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the three themes of the endocrine system (chemistry predicts behavior, negative feedback, the milieu interieur), diabetes, hypothyroidism and Addison\'s disease as windows on normal function, Graves\', hyperparathyroidism and pheochromocytoma predictions, CGM and closed-loop insulin, where hormones return in later modules, and the reassembly of the Endocrine Map',
+  quick: ['What are the three themes?', 'Why is ACTH high in Addison\'s?', 'What must my reassembled figure include?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|paragraph|table|focus question)/i,
+  guide: 'That part is yours to write, so here is a question instead. When a gland at the bottom of an axis fails, which way do the hormones above it move? Now think of a disorder with no axis above it, or one where the hormone is present but ignored. Can blood tests alone tell you where it broke? Then write it.',
+  notes: [
+    { k: ['theme','themes','chemistry','behavior','feedback','milieu'], w: 1.4, a: 'Three themes: (1) chemistry predicts behavior: water-soluble hormones use surface receptors, fast and brief; fat-soluble ones act inside, slow and sustained; (2) negative feedback is the rule, positive feedback rare; (3) every pathway defends part of the milieu interieur: glucose, calcium, pressure and volume, metabolic rate, stress.' },
+    { k: ['diabetes','ketone','ketoacidosis','dka','complication'], w: 1.2, a: 'Without insulin action, glucose stays in the blood and tissues burn fat, making ketones; severe type 1 can become diabetic ketoacidosis. Over years: retinopathy, nephropathy, neuropathy, arterial disease.' },
+    { k: ['hypothyroid','hashimoto','tsh','levothyroxine','goiter'], w: 1.2, a: 'Hashimoto\'s destroys the thyroid; T4 and T3 fall, the body slows, TSH rises and may cause a goiter. Daily levothyroxine (T4) restores function.' },
+    { k: ['addison','acth','pigment','darker','crisis'], w: 1.3, a: 'In Addison\'s the cortex fails: cortisol and aldosterone fall (low sugar, pressure, sodium; high potassium). ACTH rises and its precursor darkens the skin. A severe stress can cause an adrenal crisis needing IV cortisol.' },
+    { k: ['graves','hyperparathyroid','pheochromocytoma','predict'], w: 1.1, a: 'Graves\': heart rate and temperature up, weight down, TSH suppressed. Primary hyperparathyroidism: calcium up, phosphate down, bone density falls. Pheochromocytoma: episodic high pressure, heart rate and glucose.' },
+    { k: ['cgm','closed','loop','pump','artificial pancreas'], a: 'A CGM reports glucose every five minutes; a closed-loop system lets an insulin pump dose from those readings.' },
+    { k: ['reassemble','figure','map','photo','checklist','assembled'], w: 1.3, a: 'Reassembly: hypothalamus, infundibulum, both pituitary lobes, thyroid, four parathyroids, both adrenals with one cross-section, the pancreas with an islet page, and markers for heart, kidneys, stomach, small intestine, liver and gonads, all on the body outline. Photograph it with legible labels.' },
+    { k: ['notebook','lab report','table','submit','quiz'], w: 1.2, a: 'The 6.08 Notebook: a four-row table (Cushing\'s from a pituitary adenoma, Hashimoto\'s, type 1 diabetes, Addison\'s) with broken structure, hormones too high and too low, and two signs, plus a 4 to 6 sentence paragraph with one clean and one ambiguous case. Then the Week 13 Reading Quiz and the two module projects.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>
