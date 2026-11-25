@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>The Forearm, Wrist, and Hand · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+@media (max-width:640px){.idrow,.idhead{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="An early X-ray of two hands, showing the carpals, metacarpals, and phalanges" style="background-image:url(img/lesson-3-08-hero.jpg);background-position:center 30%"><span class="hlab">Two hands · early radiograph</span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 3.08 &middot; Module 3: Skeletal System</div>
+      <h1>The Forearm, Wrist, and Hand</h1>
+      <div class="focusq"><div class="label">Focus</div><p>Pick one specific hand action you do every day. Which bones, joints, and movements make it possible?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to distinguish the radius from the ulna and explain how they enable pronation and supination.</li><li>I will be able to name the 8 carpal bones in their proximal and distal rows.</li><li>I will be able to count the bones in the hand correctly (5 metacarpals + 14 phalanges) and describe the saddle joint at the base of the thumb.</li><li>I will be able to describe the structure of the carpal tunnel and explain how carpal tunnel syndrome develops.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Twenty-seven bones for a grip</div>
+      <svg class="m2-fig" viewBox="0 0 360 340" role="img" aria-label="The right forearm, wrist and hand: radius, ulna, two rows of carpals, metacarpals and phalanges"><rect x="6" y="6" width="348" height="328" rx="14" fill="#F4F7FB"/><g transform="translate(110,200) scale(0.6)"><path d="M0 10 Q-14 0 4 -8 L24 -8 L24 20 L16 190 L6 196 L0 186z" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2.2"/><path d="M44 0 L58 0 L62 184 L72 196 L40 196 L46 184z" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2.2"/></g><g transform="translate(82,170) scale(0.55)"><rect x="0" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="46" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="92" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="138" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="0" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><rect x="46" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><rect x="92" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><rect x="138" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/></g><g transform="translate(90,168) scale(0.95)"><g transform="translate(4,40) rotate(-38)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-106" width="14" height="32" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-132" width="14" height="24" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(30,0) rotate(-6)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-112" width="14" height="38" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-138" width="14" height="24" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-160" width="14" height="20" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(56,0) rotate(-1)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-116" width="14" height="42" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-144" width="14" height="26" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-166" width="14" height="20" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(82,0) rotate(4)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-112" width="14" height="38" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-138" width="14" height="24" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-158" width="14" height="18" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(108,0) rotate(9)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-102" width="14" height="28" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-126" width="14" height="22" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g></g><text x="20" y="320" class="m2-ts">radius + ulna</text><text x="236" y="190" class="m2-ts">8 carpals</text><text x="236" y="120" class="m2-ts">5 metacarpals</text><text x="236" y="40" class="m2-ts">14 phalanges</text></svg>
+      <div class="cap">Radius (blue) and ulna (pink), eight carpals in two rows, five metacarpals, and fourteen phalanges.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="forearm" role="tab"><span class="n">01</span>Radius and Ulna</button>
+  <button class="tab" data-tab="wrist" role="tab"><span class="n">02</span>The Wrist</button>
+  <button class="tab" data-tab="hand" role="tab"><span class="n">03</span>The Hand</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 RADIUS AND ULNA ═════════ -->
+<section class="panel" id="tab-forearm" role="tabpanel">
+  <div class="vo" data-clip="w4_forearm">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Two Bones, Two Motions</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The ulna anchors the elbow, the radius anchors the wrist, and the radius sweeps around the ulna"><g data-step="0" class="nohalo"><g transform="translate(120,60) scale(1.1)"><path d="M0 10 Q-14 0 4 -8 L24 -8 L24 20 L16 190 L6 196 L0 186z" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2.2"/><path d="M44 0 L58 0 L62 184 L72 196 L40 196 L46 184z" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2.2"/></g><text x="320" y="40" class="m2-t">forearm: radius (thumb side) + ulna</text></g><g data-step="1" class="nohalo"><path d="M124 62 L312 80" stroke="#C22F4A" stroke-width="1.6"/><circle cx="124" cy="62" r="3" fill="#C22F4A"/><text x="320" y="84" class="m2-ts" style="fill:#B0306E">ulna: the hinge at the elbow</text><text x="320" y="102" class="m2-ts">olecranon: the point of your elbow</text></g><g data-step="2" class="nohalo"><path d="M180 70 L312 130" stroke="#C22F4A" stroke-width="1.6"/><circle cx="180" cy="70" r="3" fill="#C22F4A"/><text x="320" y="134" class="m2-ts" style="fill:#1E5AA0">radius head: spins in place</text></g><g data-step="3" class="nohalo"><path d="M186 272 L312 172" stroke="#C22F4A" stroke-width="1.6"/><circle cx="186" cy="272" r="3" fill="#C22F4A"/><text x="320" y="176" class="m2-ts" style="fill:#1E5AA0">radius: meets most of the wrist</text><text x="320" y="194" class="m2-ts">each ends in a styloid process</text></g><g data-step="4" class="nohalo"><g transform="translate(600,60) scale(1.0)"><path d="M0 10 Q-14 0 4 -8 L24 -8 L24 20 L16 190 L6 196 L0 186z" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2.2"/><path d="M44 0 L58 0 L18 196 L-10 196 L-6 184z" fill="#9CC3E6" stroke="#7A6A55" stroke-width="2.2" opacity=".92"/></g><text x="320" y="236" class="m2-t" style="fill:#C22F4A">palm down: pronation</text></g><g data-step="5" class="nohalo"><text x="320" y="264" class="m2-ts">palm up: supination; the ulna stays put</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The forearm runs from elbow to wrist, with two long bones side by side: the radius on the thumb side, and the ulna on the little-finger side.", "The ulna is the main bone of the elbow. Its hook-shaped trochlear notch wraps around the humerus to make a hinge, and its tip is the olecranon, the point of your elbow.", "The radius has a disc-shaped head that can spin in place against the humerus.", "At the wrist the roles reverse: the radius meets most of the carpal bones. And each bone ends in its own styloid process, one on each side of your wrist.", "Turn your palm down. That is pronation: the radius sweeps across the ulna.", "Turn it back up. That is supination. The ulna stays roughly still the whole time. Every doorknob you have ever turned depends on it."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>How the radius and ulna differ at each end, and how pronation and supination work.</span></div>
+    <p class="marg"><b>Perseverance.</b> The skeleton is what endures. Every load you have ever borne was managed by a frame that quietly rebuilds itself under stress.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="3.08-reading" data-title="Forearm, wrist and hand" data-src="../../assets/models/hand.glb" data-poster="../../assets/models/hand.webp" data-alt="3D model: Right forearm and hand" data-orbit="0deg 85deg auto"></div>
+      <h3>The forearm — two bones, two motions</h3>
+      <p>Anatomically, the “arm” is just the upper portion — from shoulder to elbow — and the segment from elbow to wrist is called the <b>forearm</b>. The forearm has two parallel long bones running side by side: the <b>radius</b><button type="button" class="say" data-say="radius" aria-label="Hear it: radius" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> on the lateral (thumb) side, and the <b>ulna</b><button type="button" class="say" data-say="ulna" aria-label="Hear it: ulna" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> on the medial (little-finger) side. Each bone is shaped slightly differently and serves a slightly different purpose.</p>
+      <figure class="plate"><img data-img="f30801" alt="The right forearm, anterior and posterior views, with the radius, ulna, olecranon process, and styloid processes labeled"><figcaption>Figure — The forearm: radius and ulna, anterior and posterior views, with the olecranon and both styloid processes labeled.</figcaption></figure>
+      <p>The <b>ulna</b> is the larger of the two at the elbow end and the smaller at the wrist end. It is the main bone of the elbow joint: a deep, hook-shaped notch at its proximal end (the <i>trochlear notch</i>) wraps around the trochlea of the humerus, forming a hinge. The bony bump you can feel at the back of your elbow — the <i>olecranon</i> — is the proximal tip of the ulna. The ulna is what makes the elbow stable. At its distal (wrist) end, the ulna narrows to a small bony point called the <b>styloid process</b><button type="button" class="say" data-say="styloid" aria-label="Hear it: styloid process" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — you can feel it as the bump on the little-finger side of your wrist.</p>
+      <p>The <b>radius</b> is the smaller of the two at the elbow and the larger at the wrist. Its disc-shaped head articulates with the capitulum of the humerus — and, crucially, the head of the radius can <i>rotate in place</i> as the forearm pronates and supinates (turns palm-down or palm-up). At the wrist end, the radius is the bone that actually meets most of the carpal bones to form the wrist joint, and it too ends in its own <b>styloid process</b> — the bump you can feel on the thumb side of your wrist. So the ulna anchors the elbow; the radius anchors the wrist. They turn around each other in between, and each one signs off at the wrist with a styloid process of its own.</p>
+      <p>When you turn a doorknob, you are pronating and supinating your forearm. The radius is sweeping around the ulna while the ulna stays roughly still. This is one of the most distinctive movements in the human body and one reason humans are so versatile at tool use.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Radius or Ulna?</h2></div>
+    <p class="hint">Tap a feature, then its bone.</p>
+    <div class="place card" id="w4ru">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ul" data-fb="Ulna." data-miss="The elbow&rsquo;s hinge bone.">the olecranon, the point of the elbow</button>
+        <button class="chip" data-k="b" data-ans="ra" data-fb="Radius." data-miss="Lateral.">on the thumb side</button>
+        <button class="chip" data-k="c" data-ans="ul" data-fb="Ulna: that is the hinge." data-miss="The elbow.">the trochlear notch wraps around the humerus</button>
+        <button class="chip" data-k="d" data-ans="ra" data-fb="Radius." data-miss="The bone that turns.">its head spins in place during pronation</button>
+        <button class="chip" data-k="e" data-ans="ra" data-fb="Radius: it anchors the wrist." data-miss="The wrist end.">meets most of the carpal bones</button>
+        <button class="chip" data-k="f" data-ans="ul" data-fb="Ulna." data-miss="The stable bone.">stays roughly still as the palm turns</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="ra"><h4>Radius</h4><div class="drop"></div></div><div class="bin" data-bin="ul"><h4>Ulna</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Pronation and Supination Experiment</h2></div>
+    <p class="hint">About 5 minutes.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Hold your right arm out, palm up. With your left hand, put one finger on the head of the radius (just below the elbow crease, thumb side) and one on the olecranon. Slowly turn your palm down, then up. In one sentence: which bone rotates, and which stays put?</p><textarea class="jbox" id="w4t7" data-label="Experiment: which bone rotates" data-min="10"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="wrist" type="button">Next: The Wrist &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 THE WRIST ═════════ -->
+<section class="panel" id="tab-wrist" role="tabpanel">
+  <div class="vo" data-clip="w4_wrist">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Eight Short Bones</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Eight carpals in two rows of four, then the carpal tunnel"><g data-step="0" class="nohalo"><g transform="translate(40,70) scale(1.4)"><rect x="0" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="46" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="92" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="138" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><rect x="0" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><rect x="46" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><rect x="92" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><rect x="138" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/></g><text x="380" y="40" class="m2-t">wrist: 8 carpals, 2 rows of 4</text></g><g data-step="1" class="nohalo"><g transform="translate(40,70) scale(1.4)"><rect x="0" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="21" y="21" class="m2-ts" text-anchor="middle">trap</text><rect x="46" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="67" y="21" class="m2-ts" text-anchor="middle">trap</text><rect x="92" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="113" y="21" class="m2-ts" text-anchor="middle">capi</text><rect x="138" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="159" y="21" class="m2-ts" text-anchor="middle">hama</text><rect x="0" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="21" y="61" class="m2-ts" text-anchor="middle">scap</text><rect x="46" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="67" y="61" class="m2-ts" text-anchor="middle">luna</text><rect x="92" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="113" y="61" class="m2-ts" text-anchor="middle">triq</text><rect x="138" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="159" y="61" class="m2-ts" text-anchor="middle">pisi</text></g><text x="380" y="80" class="m2-ts">proximal row, thumb side first:</text><text x="380" y="100" class="m2-ts" style="fill:#B0306E">scaphoid, lunate, triquetrum, pisiform</text></g><g data-step="2" class="nohalo"><g transform="translate(40,70) scale(1.4)"><rect x="0" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="21" y="21" class="m2-ts" text-anchor="middle">trap</text><rect x="46" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="67" y="21" class="m2-ts" text-anchor="middle">trap</text><rect x="92" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="113" y="21" class="m2-ts" text-anchor="middle">capi</text><rect x="138" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="159" y="21" class="m2-ts" text-anchor="middle">hama</text><rect x="0" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="21" y="61" class="m2-ts" text-anchor="middle">scap</text><rect x="46" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="67" y="61" class="m2-ts" text-anchor="middle">luna</text><rect x="92" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="113" y="61" class="m2-ts" text-anchor="middle">triq</text><rect x="138" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2" opacity=".3"/><text x="159" y="61" class="m2-ts" text-anchor="middle">pisi</text></g><text x="380" y="130" class="m2-ts">distal row:</text><text x="380" y="150" class="m2-ts" style="fill:#B0306E">trapezium, trapezoid, capitate, hamate</text></g><g data-step="3" class="nohalo"><g transform="translate(40,70) scale(1.4)"><rect x="0" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="21" y="21" class="m2-ts" text-anchor="middle">trap</text><rect x="46" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="67" y="21" class="m2-ts" text-anchor="middle">trap</text><rect x="92" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="113" y="21" class="m2-ts" text-anchor="middle">capi</text><rect x="138" y="0" width="42" height="34" rx="12" fill="#F2A7C8" stroke="#7A6A55" stroke-width="2"/><text x="159" y="21" class="m2-ts" text-anchor="middle">hama</text><rect x="0" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="21" y="61" class="m2-ts" text-anchor="middle">scap</text><rect x="46" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="67" y="61" class="m2-ts" text-anchor="middle">luna</text><rect x="92" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="113" y="61" class="m2-ts" text-anchor="middle">triq</text><rect x="138" y="40" width="42" height="34" rx="12" fill="#F7C9DA" stroke="#7A6A55" stroke-width="2"/><text x="159" y="61" class="m2-ts" text-anchor="middle">pisi</text></g><text x="380" y="184" class="m2-ts" style="fill:#C22F4A">scaphoid: the most fractured carpal</text></g><g data-step="4" class="nohalo"><path d="M40 210 Q170 250 300 210" fill="none" stroke="#2F6B4F" stroke-width="6"/><circle cx="170" cy="190" r="11" fill="#F6E27A" stroke="#7A6A55" stroke-width="2"/><text x="380" y="220" class="m2-ts">carpal tunnel: bones on three sides,</text><text x="380" y="238" class="m2-ts" style="fill:#2F6B4F">a ligament across the front</text></g><g data-step="5" class="nohalo"><text x="380" y="272" class="m2-ts" style="fill:#C22F4A">swelling squeezes the median nerve</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The wrist holds eight carpal bones in two rows of four. Learn them by row, the way they sit.", "The proximal row, from the thumb side: scaphoid, lunate, triquetrum, pisiform.", "The distal row, from the thumb side: trapezium, trapezoid, capitate, hamate.", "Each moves only a little, but together they let the wrist tilt, twist, and roll. The scaphoid, at the base of the thumb, is the carpal most often broken in a fall on an outstretched hand.", "Across the front of the wrist, the carpals form three walls of a tunnel, and a tough ligament, the flexor retinaculum, closes the fourth. The finger-flexing tendons and the median nerve pass through it.", "When the tissue in that tunnel swells, the median nerve is squeezed: tingling, weakness, and pain. That is carpal tunnel syndrome."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The eight carpals by row, and how the carpal tunnel is built.</span></div>
+    <article class="atlas">
+      <h3>The wrist — eight short bones</h3>
+      <p>The wrist contains <b>eight carpal bones</b> arranged in two rows of four. The <i>proximal</i> row (closer to the forearm), from lateral to medial, is scaphoid, lunate, triquetrum, and pisiform. The <i>distal</i> row (closer to the fingers), from lateral to medial, is trapezium, trapezoid, capitate, and hamate. The easiest way to hold these in memory is by row, not as one long list: learn the four proximal bones as a set (scaphoid, lunate, triquetrum, pisiform), then the four distal bones as a second set (trapezium, trapezoid, capitate, hamate). Naming them lateral-to-medial, row by row, mirrors how they actually sit in the wrist — the copywork-and-recitation activity in this lesson uses exactly this grouping.</p>
+      <figure class="plate"><img data-img="f30802" alt="The hand, anterior and posterior views, with the eight carpal bones, metacarpals, and phalanges labeled"><figcaption>Figure — The hand, anterior and posterior views, with all eight carpal bones named in their proximal and distal rows.</figcaption></figure>
+      <p>These eight short bones do not move much individually, but the small movements between them add up: together they let the wrist tilt, twist, and roll in directions that no single joint could. The scaphoid is the most commonly fractured carpal bone — it sits at the base of the thumb and takes the impact when you fall forward onto an outstretched hand.</p>
+      <p>Through the front of the wrist runs a narrow tunnel called the <b>carpal tunnel</b>, formed by an arch of carpal bones on three sides and a tough ligament (the <i>flexor retinaculum</i>) closing the fourth. Tendons that flex the fingers pass through this tunnel, along with the <i>median nerve</i>. When the soft tissue around these tendons swells — from repetitive motion, pregnancy, arthritis, or other causes — the median nerve gets squeezed. The result is the familiar tingling, weakness, and pain of <i>carpal tunnel syndrome</i>.</p>
+      <figure class="plate"><img data-img="f30803" alt="Carpal tunnel syndrome, showing the median nerve compressed within the carpal tunnel and the resulting area of numbness"><figcaption>Figure — Carpal tunnel syndrome: the median nerve compressed within the carpal tunnel, and the resulting area of numbness.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Build the Proximal Row</h2></div>
+    <div class="order card" id="w4cp" data-order="s,l,t,p" data-done="Scaphoid, lunate, triquetrum, pisiform." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the proximal row from the thumb side.</p><div class="opool"><button data-k="s">scaphoid</button><button data-k="p">pisiform</button><button data-k="t">triquetrum</button><button data-k="l">lunate</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Build the Distal Row</h2></div>
+    <div class="order card" id="w4cd" data-order="tm,td,c,h" data-done="Trapezium, trapezoid, capitate, hamate." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the distal row from the thumb side.</p><div class="opool"><button data-k="td">trapezoid</button><button data-k="tm">trapezium</button><button data-k="c">capitate</button><button data-k="h">hamate</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w4m6"><p class="q">Which structure is squeezed in carpal tunnel syndrome?</p>
+        <button class="opt" data-fb="It does not run through the carpal tunnel.">the ulnar artery</button>
+        <button class="opt" data-ok="1" data-fb="Right, along with the finger-flexing tendons that share the tunnel.">the median nerve</button>
+        <button class="opt" data-fb="The scaphoid helps form the tunnel&rsquo;s wall.">the scaphoid</button></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="forearm" type="button">&larr; Radius and Ulna</button><button class="btn" data-go="hand" type="button">Next: The Hand &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 THE HAND ═════════ -->
+<section class="panel" id="tab-hand" role="tabpanel">
+  <div class="vo" data-clip="w4_hand">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Twenty-Seven Bones</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Metacarpals, then phalanges, then the saddle joint of the thumb"><g data-step="0" class="nohalo"><g transform="translate(120,250) scale(1.5)"><g transform="translate(4,40) rotate(-38)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/></g><g transform="translate(30,0) rotate(-6)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/></g><g transform="translate(56,0) rotate(-1)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/></g><g transform="translate(82,0) rotate(4)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/></g><g transform="translate(108,0) rotate(9)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/></g></g><text x="380" y="40" class="m2-t">palm: 5 metacarpals</text><text x="380" y="60" class="m2-ts">their heads are your knuckles</text></g><g data-step="1" class="nohalo"><g transform="translate(120,250) scale(1.5)"><g transform="translate(4,40) rotate(-38)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-106" width="14" height="32" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-132" width="14" height="24" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(30,0) rotate(-6)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-112" width="14" height="38" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-138" width="14" height="24" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-160" width="14" height="20" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(56,0) rotate(-1)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-116" width="14" height="42" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-144" width="14" height="26" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-166" width="14" height="20" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(82,0) rotate(4)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-112" width="14" height="38" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-138" width="14" height="24" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-158" width="14" height="18" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g><g transform="translate(108,0) rotate(9)"><rect x="-8" y="-70" width="16" height="70" rx="8" fill="#F2A7C8" stroke="#7A6A55" stroke-width="1.8"/><rect x="-7" y="-102" width="14" height="28" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/><rect x="-7" y="-126" width="14" height="22" rx="7" fill="#F6E27A" stroke="#7A6A55" stroke-width="1.6"/></g></g><text x="380" y="100" class="m2-ts" style="fill:#A0620A">fingers 2&ndash;5: 3 phalanges each</text><text x="380" y="118" class="m2-ts" style="fill:#A0620A">thumb: 2</text></g><g data-step="2" class="nohalo"><text x="380" y="148" class="m2-t">3+3+3+3+2 = 14 phalanges</text></g><g data-step="3" class="nohalo"><text x="380" y="184" class="m2-ts">1+1+1+8+5+14 = 30 per upper limb</text><text x="380" y="202" class="m2-ts">27 in the wrist and hand</text></g><g data-step="4" class="nohalo"><circle cx="118" cy="190" r="16" fill="none" stroke="#C22F4A" stroke-width="3"/><text x="380" y="238" class="m2-ts" style="fill:#C22F4A">saddle joint: trapezium + 1st metacarpal</text></g><g data-step="5" class="nohalo"><text x="380" y="268" class="m2-t">two planes: the opposable thumb</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The palm holds five metacarpals, numbered one to five from thumb to little finger. Make a fist: the knuckles are their heads.", "Each finger is built from phalanges. Fingers two through five have three each: proximal, middle, and distal. The thumb has two.", "Three, three, three, three, two: fourteen phalanges per hand.", "Count a whole upper limb: humerus, radius, ulna, eight carpals, five metacarpals, fourteen phalanges. Thirty bones, and twenty-seven of them are in the wrist and hand.", "The thumb's metacarpal meets the trapezium at a saddle joint, two curved surfaces fitted together.", "That shape lets the thumb move in two planes, swinging across the palm to touch each fingertip. That is what makes it opposable, and it is behind every pen, cup, and tool you hold."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The metacarpals and phalanges, the bone count, and the thumb&rsquo;s saddle joint.</span></div>
+    <article class="atlas">
+      <h3>The hand — 5 metacarpals + 14 phalanges</h3>
+      <p>The palm of the hand contains <b>five metacarpal bones</b><button type="button" class="say" data-say="metacarpals" aria-label="Hear it: five metacarpal bones" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, numbered 1 through 5 from thumb to little finger. They are long bones, each running from a wrist (carpal) bone at one end to a finger joint at the other. The lumps you can feel as your knuckles are the heads of the metacarpals.</p>
+      <figure class="plate"><img data-img="f30804" alt="The hand, anterior and posterior views, with the metacarpals and phalanges of each finger labeled"><figcaption>Figure — The metacarpals (numbered 1–5) and the proximal, middle, and distal phalanges of each finger.</figcaption></figure>
+      <p>Each finger contains <b>phalanges</b><button type="button" class="say" data-say="phalanges" aria-label="Hear it: phalanges" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. Fingers 2 through 5 (index through little) each have three phalanges: <i>proximal, middle, and distal</i>. The thumb has only two: proximal and distal. That gives a total of 14 phalanges per hand (3+3+3+3+2).</p>
+      <p>Counting all the way through: humerus (1) + radius (1) + ulna (1) + carpals (8) + metacarpals (5) + phalanges (14) = <b>30 bones per upper limb</b>. Each hand and wrist contains 27 of them. Two hands and two wrists = 54 bones — just over a quarter of the entire human skeleton. The level of detail in our hands is the bony foundation of every tool, every instrument, and every art form humans have ever invented.</p>
+      <h3>A note on the thumb — the opposable digit</h3>
+      <p>The first metacarpal (the thumb’s metacarpal) meets its carpal (the trapezium) at a special joint called a <i>saddle joint</i>. The saddle shape lets the thumb move in two perpendicular planes — not just back and forth, but also across the palm to touch the tips of the other fingers. This is what makes the human thumb <i>opposable</i>. Most other primates have some thumb opposition, but the human range is unusually wide. The pen you write with, the cup you hold, and the tools you operate all depend on a saddle joint at the base of the thumb.</p>
+      <div class="inset"><div class="ilabel">CURRENT RESEARCH — HIGH-RESOLUTION ULTRASOUND AND 3D-PRINTED SPLINTS</div><p>Carpal tunnel syndrome was historically diagnosed by symptoms plus nerve-conduction studies (which can be painful and not always conclusive). Treatment relied on off-the-shelf wrist splints that fit poorly and were often abandoned by the patient before they could do much good.</p><p>Two recent shifts in technology are changing both ends of this. On the diagnostic side, scientists and clinicians are exploring <b>high-resolution ultrasound</b> imaging of the median nerve, which can directly visualize nerve compression and swelling inside the carpal tunnel — sometimes faster, cheaper, and more comfortably than nerve-conduction testing. On the treatment side, several research groups are exploring <b>3D-printed custom splints</b> made from scans of the patient’s own wrist. Early reports suggest these splints fit better and are worn more consistently, but whether they outperform standard splints in the long term is still being studied. Both technologies are examples of a broader trend: making anatomical care more specific to the individual rather than averaged across a population.</p></div>
+      <details class="selfcheck"><summary>Self-check: count the bones in one upper limb before clicking</summary><p>1 (humerus) + 1 (radius) + 1 (ulna) + 8 (carpals) + 5 (metacarpals) + 14 (phalanges) = <b>30 bones per upper limb</b>. 27 of those 30 are in the wrist and hand alone.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Hand-Trace Diagram</h2></div>
+    <p class="hint">About 15 minutes. This diagram goes into your Notebook.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">Trace your left hand flat on a notebook page. Inside the outline, draw and label: the radius and ulna at the wrist edge (with their styloid processes), the 8 carpals as two labeled rows of 4, the 5 metacarpals, the 14 phalanges, and the carpal tunnel. Here, list anything you were unsure about while labeling.</p><textarea class="jbox" id="w4t8" data-label="Hand trace: what I was unsure about" data-min="8"></textarea></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 30 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Skeleton Atlas: forearm, wrist, and hand</span>
+      <p>Title the next page of your Skeleton Atlas &ldquo;Forearm, Wrist, and Hand.&rdquo; This is the most detailed session yet: 27 bones in the wrist and hand alone. Work patiently.</p><p>Draw the right <b>radius</b> (blue) and <b>ulna</b> (pink). Label the olecranon, the head of the radius, and each styloid process.</p><p>Draw the 8 <b>carpals</b> as two rows of 4, in two close colors, naming each as you draw.</p><p>Draw the 5 <b>metacarpals</b> (pink) and 14 <b>phalanges</b> (yellow), and label the carpal tunnel: &ldquo;median nerve passes here.&rdquo;</p>
+      <ul class="checks"><li data-ck="w4d41">Radius and ulna, with olecranon, radial head and both styloid processes.</li><li data-ck="w4d42">8 carpals in two named rows.</li><li data-ck="w4d43">5 metacarpals, 14 phalanges, and the carpal tunnel label.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Skeleton Atlas page: they become your Module 3 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>This Week&rsquo;s Quiz</h2></div>
+    <div class="card" style="padding:14px 18px"><p style="margin:0">After the Notebook, take the <b>Week 4 Reading Quiz (3.05&ndash;3.08)</b> in Canvas: 10 questions on the Atlas readings of this week&rsquo;s four lessons. It feeds the Semester 1 Final Exam question bank.</p></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="wrist" type="button">&larr; The Wrist</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Hand at Work</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>Pick one specific hand action you do every day. Which bones, joints, and movements make it possible?</p></div>
+        <p>You can now name every bone from elbow to fingertip and feel which one turns. This Notebook asks for your hand-trace diagram, a short account of pronation and supination, and a close look at one action of your own.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Hand-Trace Diagram</h2></div>
+    <p class="hint">The diagram itself goes to Canvas as a photo or scan, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit a photo or scan of your hand-trace diagram. Required labels: radius and ulna with their styloid processes, 8 carpals grouped by row, 5 metacarpals, 14 phalanges, the carpal tunnel. Here, list what your diagram labels.</p><textarea class="jbox" id="w4rD" data-label="Diagram: what my hand trace labels" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Pronation and Supination</h2></div>
+    <div class="card loccard"><p class="sub">In 3 sentences: describe what happens to the radius and the ulna when you turn your palm from facing up to facing down.</p><div class="ttrack" data-field="w4rP"><span class="tt" data-t="radius">radius moves</span><span class="tt" data-t="ulna">ulna stays</span><span class="tt" data-t="pronat">pronation</span></div><textarea class="jbox" id="w4rP" data-label="Pronation and supination" data-min="30"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Answer the Focus Question</h2></div>
+    <div class="card loccard"><p class="sub">In 5&ndash;7 sentences: pick one specific hand action you do every day (typing, holding a pencil, throwing, playing an instrument, brushing your teeth). Name at least three specific bones and two specific joints it uses, and explain how each contributes.</p><div class="ttrack" data-field="w4rF"><span class="tt" data-t="typ|pencil|pen|throw|instrument|brush|write|grip|hold">an action</span><span class="tt" data-t="carpal|metacarpal|phalan|radius|ulna|scaphoid|trapezium|capitate|hamate|lunate">3 bones</span><span class="tt" data-t="joint|saddle|knuckle|radiocarpal|wrist|interphalangeal">2 joints</span></div><textarea class="jbox" id="w4rF" data-label="Focus question: one hand action" data-min="60"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w4rD,w4rP,w4rF" data-min="300" data-max="450"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w4c41">My diagram includes every required label.</li><li data-ck="w4c42">My pronation answer identifies the radius as the bone that moves and the ulna as the stable one.</li><li data-ck="w4c43">My reflection names a specific action, three specific bones and two specific joints.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 3.08 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="hand" type="button">&larr; The Hand</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>forearm</dt><dd>The segment from elbow to wrist: the radius and ulna.</dd>
+  <dt>radius<button type="button" class="say" data-say="radius" aria-label="Hear it: radius" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The forearm bone on the thumb side; its head spins at the elbow and it anchors the wrist.</dd>
+  <dt>ulna<button type="button" class="say" data-say="ulna" aria-label="Hear it: ulna" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The forearm bone on the little-finger side; the hinge of the elbow.</dd>
+  <dt>olecranon<button type="button" class="say" data-say="olecranon" aria-label="Hear it: olecranon" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>olecranon &ldquo;elbow head&rdquo;</small></dt><dd>The tip of the ulna: the point of your elbow.</dd>
+  <dt>styloid process<button type="button" class="say" data-say="styloid" aria-label="Hear it: styloid process" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>styl- &ldquo;pillar, stake&rdquo;</small></dt><dd>A pointed projection; the radius and ulna each end in one at the wrist.</dd>
+  <dt>pronation<button type="button" class="say" data-say="pronation" aria-label="Hear it: pronation" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>pron- &ldquo;face down&rdquo;</small></dt><dd>Turning the palm down: the radius sweeps across the ulna.</dd>
+  <dt>supination<button type="button" class="say" data-say="supination" aria-label="Hear it: supination" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>supin- &ldquo;face up&rdquo;</small></dt><dd>Turning the palm up.</dd>
+  <dt>carpals<button type="button" class="say" data-say="carpal" aria-label="Hear it: carpals" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>carp- &ldquo;wrist&rdquo;</small></dt><dd>The 8 wrist bones in two rows of 4.</dd>
+  <dt>scaphoid<button type="button" class="say" data-say="scaphoid" aria-label="Hear it: scaphoid" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>skaphe &ldquo;boat&rdquo;</small></dt><dd>The proximal-row carpal at the base of the thumb; the most often fractured carpal.</dd>
+  <dt>carpal tunnel</dt><dd>The passage formed by the carpals and the flexor retinaculum; holds flexor tendons and the median nerve.</dd>
+  <dt>flexor retinaculum<button type="button" class="say" data-say="retinaculum" aria-label="Hear it: flexor retinaculum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>retinaculum &ldquo;band&rdquo;</small></dt><dd>The tough ligament across the front of the carpal tunnel.</dd>
+  <dt>median nerve</dt><dd>The nerve squeezed in carpal tunnel syndrome.</dd>
+  <dt>metacarpals<button type="button" class="say" data-say="metacarpals" aria-label="Hear it: metacarpals" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>meta- &ldquo;beyond&rdquo;</small></dt><dd>The 5 bones of the palm; their heads are the knuckles.</dd>
+  <dt>phalanges<button type="button" class="say" data-say="phalanges" aria-label="Hear it: phalanges" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>phalanx &ldquo;battle line&rdquo;</small></dt><dd>The finger bones: 3 per finger, 2 in the thumb, 14 per hand.</dd>
+  <dt>saddle joint</dt><dd>Two saddle-shaped surfaces; at the base of the thumb it allows opposition.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w4-l4", "title": "The Forearm, Wrist, and Hand", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 4 · Forearm, Wrist, and Hand", "pdfTag": "AP_W4_L4"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f30801":{"src":"img/w3-3.08-01-humerus-place-humerus-forearm-wr.webp","alt":""},"f30802":{"src":"img/w3-3.08-02-forearm-place-ulna.webp","alt":""},"f30803":{"src":"img/w3-3.08-03-carpal-bones-place-wrist-carpal-.webp","alt":""},"f30804":{"src":"img/w3-3.08-04-carpal-tunnel-syndrome-place-han.webp","alt":""}},"w4_forearm":{"audio":"audio/ap-w4-l4-forearm.mp3","words":[[0,0.16,"The"],[0.24,0.72,"forearm"],[0.84,0.96,"runs"],[1.08,1.2,"from"],[1.28,1.52,"elbow"],[1.6,1.68,"to"],[1.84,2.32,"wrist,"],[2.44,2.56,"with"],[2.64,2.8,"two"],[2.96,3.2,"long"],[3.4,3.6,"bones"],[3.72,3.84,"side"],[3.96,4.08,"by"],[4.24,4.8,"side:"],[4.88,4.96,"the"],[5.2,5.44,"radius"],[5.48,5.52,"on"],[5.6,5.68,"the"],[5.76,5.92,"thumb"],[6,6.56,"side,"],[6.6,6.64,"and"],[6.68,6.72,"the"],[6.88,7.28,"ulna"],[7.32,7.36,"on"],[7.44,7.52,"the"],[7.6,8,"little-finger"],[8.08,8.88,"side."],[8.96,9.04,"The"],[9.12,9.44,"ulna"],[9.48,9.52,"is"],[9.6,9.76,"the"],[9.88,10,"main"],[10.08,10.24,"bone"],[10.28,10.32,"of"],[10.4,10.48,"the"],[10.56,11.28,"elbow."],[11.36,11.44,"Its"],[11.52,12.08,"hook-shaped"],[12.16,12.56,"trochlear"],[12.64,13.04,"notch"],[13.08,13.36,"wraps"],[13.48,13.6,"around"],[13.64,13.68,"the"],[13.76,14.16,"humerus"],[14.24,14.32,"to"],[14.36,14.4,"make"],[14.48,14.56,"a"],[14.6,15.2,"hinge,"],[15.24,15.28,"and"],[15.36,15.52,"its"],[15.6,15.84,"tip"],[15.92,16,"is"],[16.04,16.08,"the"],[16.16,16.96,"olecranon,"],[17,17.04,"the"],[17.12,17.36,"point"],[17.4,17.44,"of"],[17.52,17.6,"your"],[17.68,18.4,"elbow."],[18.48,18.56,"The"],[18.8,19.04,"radius"],[19.12,19.2,"has"],[19.28,19.36,"a"],[19.52,20,"disc-shaped"],[20.08,20.32,"head"],[20.4,20.48,"that"],[20.56,20.64,"can"],[20.72,20.96,"spin"],[21.04,21.12,"in"],[21.2,21.52,"place"],[21.68,21.84,"against"],[21.88,21.92,"the"],[21.96,22.88,"humerus."],[22.96,23.04,"At"],[23.08,23.12,"the"],[23.2,23.52,"wrist"],[23.6,23.68,"the"],[23.8,23.92,"roles"],[24.2,24.8,"reverse:"],[24.84,24.88,"the"],[24.96,25.44,"radius"],[25.48,25.68,"meets"],[25.8,25.92,"most"],[25.96,26,"of"],[26.04,26.08,"the"],[26.16,26.48,"carpal"],[26.68,27.28,"bones."],[27.36,27.44,"And"],[27.52,27.6,"each"],[27.68,28,"bone"],[28.08,28.32,"ends"],[28.36,28.4,"in"],[28.48,28.56,"its"],[28.64,28.8,"own"],[28.96,29.52,"styloid"],[29.8,30.4,"process,"],[30.48,30.64,"one"],[30.72,30.88,"on"],[31,31.12,"each"],[31.2,31.28,"side"],[31.36,31.44,"of"],[31.48,31.52,"your"],[31.6,32.48,"wrist."],[32.56,32.64,"Turn"],[32.72,32.8,"your"],[32.88,33.12,"palm"],[33.2,34,"down."],[34.08,34.32,"That"],[34.4,34.56,"is"],[34.68,35.52,"pronation:"],[35.56,35.6,"the"],[35.84,36.08,"radius"],[36.16,36.48,"sweeps"],[36.56,36.8,"across"],[36.88,36.96,"the"],[37.04,37.76,"ulna."],[37.84,37.92,"Turn"],[38,38.08,"it"],[38.16,38.24,"back"],[38.32,38.88,"up."],[38.96,39.2,"That"],[39.28,39.44,"is"],[39.56,40.48,"supination."],[40.52,40.56,"The"],[40.64,40.88,"ulna"],[40.96,41.28,"stays"],[41.36,41.6,"roughly"],[41.76,42.08,"still"],[42.16,42.24,"the"],[42.32,42.56,"whole"],[42.72,43.36,"time."],[43.44,43.68,"Every"],[43.76,44.16,"doorknob"],[44.24,44.32,"you"],[44.44,44.56,"have"],[44.64,44.88,"ever"],[45.12,45.36,"turned"],[45.56,45.76,"depends"],[45.84,45.92,"on"],[46,46.364,"it."]]},"w4_wrist":{"audio":"audio/ap-w4-l4-wrist.mp3","words":[[0.316,0.356,"The"],[0.436,0.676,"wrist"],[0.876,1.076,"holds"],[1.156,1.236,"eight"],[1.316,1.636,"carpal"],[1.716,2.036,"bones"],[2.116,2.196,"in"],[2.276,2.436,"two"],[2.516,2.756,"rows"],[2.836,2.916,"of"],[2.996,3.716,"four."],[3.796,3.876,"Learn"],[3.956,4.036,"them"],[4.156,4.276,"by"],[4.396,4.676,"row,"],[4.716,4.756,"the"],[4.836,4.916,"way"],[5.036,5.156,"they"],[5.276,5.876,"sit."],[5.916,5.956,"The"],[6.036,6.436,"proximal"],[6.516,6.916,"row,"],[6.956,6.996,"from"],[7.076,7.156,"the"],[7.236,7.316,"thumb"],[7.396,8.116,"side:"],[8.196,8.996,"scaphoid,"],[9.076,9.716,"lunate,"],[9.756,10.596,"triquetrum,"],[10.716,11.716,"pisiform."],[11.756,11.796,"The"],[11.876,12.196,"distal"],[12.276,12.596,"row,"],[12.636,12.676,"from"],[12.756,12.836,"the"],[12.916,12.996,"thumb"],[13.076,13.796,"side:"],[13.836,14.676,"trapezium,"],[14.716,15.556,"trapezoid,"],[15.676,16.356,"capitate,"],[16.476,17.316,"hamate."],[17.396,17.556,"Each"],[17.636,17.876,"moves"],[17.956,18.196,"only"],[18.236,18.276,"a"],[18.356,18.889,"little,"],[18.943,18.996,"but"],[19.076,19.476,"together"],[19.556,19.636,"they"],[19.716,19.796,"let"],[19.836,19.876,"the"],[19.916,20.276,"wrist"],[20.356,20.876,"tilt,"],[20.916,21.476,"twist,"],[21.556,21.636,"and"],[21.996,22.409,"roll."],[22.463,22.516,"The"],[22.596,23.183,"scaphoid,"],[23.209,23.236,"at"],[23.316,23.396,"the"],[23.476,23.556,"base"],[23.636,23.716,"of"],[23.756,23.796,"the"],[23.876,24.396,"thumb,"],[24.436,24.516,"is"],[24.556,24.596,"the"],[24.676,24.996,"carpal"],[25.076,25.316,"most"],[25.476,25.636,"often"],[25.716,26.036,"broken"],[26.076,26.116,"in"],[26.276,26.316,"a"],[26.356,26.596,"fall"],[26.676,26.756,"on"],[26.796,26.836,"an"],[26.916,27.396,"outstretched"],[27.876,28.463,"hand."],[28.569,28.676,"Across"],[28.756,28.836,"the"],[28.916,29.076,"front"],[29.116,29.156,"of"],[29.196,29.236,"the"],[29.316,29.676,"wrist,"],[29.716,29.796,"the"],[29.876,30.196,"carpals"],[30.276,30.596,"form"],[30.756,30.916,"three"],[30.996,31.236,"walls"],[31.276,31.316,"of"],[31.476,31.516,"a"],[31.556,32.063,"tunnel,"],[32.089,32.116,"and"],[32.276,32.303,"a"],[32.329,32.516,"tough"],[32.596,33.116,"ligament,"],[33.156,33.236,"the"],[33.356,33.556,"flexor"],[33.636,34.463,"retinaculum,"],[34.489,34.836,"closes"],[34.916,34.996,"the"],[35.076,35.756,"fourth."],[35.796,35.876,"The"],[36.036,36.596,"finger-flexing"],[36.676,37.076,"tendons"],[37.116,37.156,"and"],[37.236,37.316,"the"],[37.516,37.716,"median"],[37.796,38.036,"nerve"],[38.116,38.356,"pass"],[38.436,38.596,"through"],[38.876,39.183,"it."],[39.209,39.236,"When"],[39.316,39.396,"the"],[39.436,39.716,"tissue"],[39.756,39.796,"in"],[39.876,39.956,"that"],[40.036,40.356,"tunnel"],[40.436,41.036,"swells,"],[41.076,41.156,"the"],[41.236,41.556,"median"],[41.636,41.796,"nerve"],[41.876,42.036,"is"],[42.116,42.956,"squeezed:"],[42.996,43.676,"tingling,"],[43.716,44.236,"weakness,"],[44.276,44.436,"and"],[44.796,45.236,"pain."],[45.316,45.556,"That"],[45.636,45.716,"is"],[45.836,46.116,"carpal"],[46.156,46.356,"tunnel"],[46.436,47.107,"syndrome."]]},"w4_hand":{"audio":"audio/ap-w4-l4-hand.mp3","words":[[0.289,0.369,"The"],[0.449,0.769,"palm"],[0.849,1.169,"holds"],[1.249,1.489,"five"],[1.569,2.422,"metacarpals,"],[2.476,2.689,"numbered"],[2.769,2.929,"one"],[3.009,3.089,"to"],[3.169,3.409,"five"],[3.489,3.729,"from"],[3.809,4.049,"thumb"],[4.129,4.209,"to"],[4.329,4.449,"little"],[4.809,5.209,"finger."],[5.249,5.329,"Make"],[5.489,5.529,"a"],[5.569,6.182,"fist:"],[6.236,6.289,"the"],[6.329,6.689,"knuckles"],[6.729,6.769,"are"],[6.849,6.929,"their"],[7.009,7.849,"heads."],[7.889,8.049,"Each"],[8.129,8.369,"finger"],[8.449,8.609,"is"],[8.729,8.849,"built"],[8.929,9.009,"from"],[9.049,10.076,"phalanges."],[10.102,10.369,"Fingers"],[10.449,10.609,"two"],[10.689,10.929,"through"],[11.089,11.249,"five"],[11.329,11.569,"have"],[11.729,11.889,"three"],[11.969,12.569,"each:"],[12.609,13.382,"proximal,"],[13.516,13.702,"middle,"],[13.756,13.809,"and"],[13.929,14.569,"distal."],[14.609,14.689,"The"],[14.849,15.009,"thumb"],[15.129,15.249,"has"],[15.329,16.009,"two."],[16.049,16.822,"Three,"],[17.036,17.462,"three,"],[17.676,18.102,"three,"],[18.316,18.742,"three,"],[18.956,19.209,"two:"],[19.249,19.729,"fourteen"],[19.809,20.289,"phalanges"],[20.369,20.449,"per"],[20.529,21.302,"hand."],[21.356,21.409,"Count"],[21.489,21.569,"a"],[21.649,21.889,"whole"],[22.009,22.129,"upper"],[22.209,22.809,"limb:"],[22.849,23.529,"humerus,"],[23.569,24.169,"radius,"],[24.209,24.902,"ulna,"],[24.956,25.009,"eight"],[25.089,25.769,"carpals,"],[25.809,26.049,"five"],[26.129,26.889,"metacarpals,"],[26.929,27.409,"fourteen"],[27.489,28.449,"phalanges."],[28.529,28.769,"Thirty"],[28.849,29.382,"bones,"],[29.436,29.489,"and"],[29.569,30.209,"twenty-seven"],[30.289,30.369,"of"],[30.449,30.529,"them"],[30.609,30.689,"are"],[30.729,30.769,"in"],[30.849,30.929,"the"],[30.969,31.169,"wrist"],[31.249,31.329,"and"],[31.409,32.262,"hand."],[32.316,32.369,"The"],[32.489,32.689,"thumb's"],[32.769,33.329,"metacarpal"],[33.369,33.569,"meets"],[33.609,33.649,"the"],[33.729,34.289,"trapezium"],[34.369,34.489,"at"],[34.609,34.636,"a"],[34.662,34.929,"saddle"],[35.009,35.529,"joint,"],[35.569,35.809,"two"],[35.889,36.209,"curved"],[36.289,36.769,"surfaces"],[36.809,37.009,"fitted"],[37.089,37.849,"together."],[37.889,38.129,"That"],[38.249,38.369,"shape"],[38.449,38.609,"lets"],[38.689,38.769,"the"],[38.889,39.009,"thumb"],[39.089,39.249,"move"],[39.369,39.489,"in"],[39.609,39.729,"two"],[39.809,40.489,"planes,"],[40.529,40.849,"swinging"],[40.929,41.169,"across"],[41.249,41.329,"the"],[41.409,41.649,"palm"],[41.729,41.809,"to"],[41.889,42.129,"touch"],[42.209,42.369,"each"],[42.409,43.369,"fingertip."],[43.409,43.649,"That"],[43.729,43.809,"is"],[43.849,43.889,"what"],[43.969,44.129,"makes"],[44.169,44.209,"it"],[44.289,45.116,"opposable,"],[45.142,45.169,"and"],[45.209,45.249,"it"],[45.329,45.409,"is"],[45.489,45.809,"behind"],[45.889,46.209,"every"],[46.289,46.809,"pen,"],[46.849,47.169,"cup,"],[47.249,47.329,"and"],[47.409,47.649,"tool"],[47.729,47.809,"you"],[47.889,48.479,"hold."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the radius and ulna, pronation and supination, the eight carpal bones, the carpal tunnel, the metacarpals and phalanges, and the saddle joint of the thumb',
+  quick: ['How do I tell the radius from the ulna?', 'What are the 8 carpals?', 'What is carpal tunnel syndrome?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|focus question|reflection)/i,
+  guide: 'That part is yours to write, so here are my questions instead. Do the action slowly. Which joint bends first? Which bones move, and which hold still? Name them, then write it.',
+  notes: [
+    { k: ['radius','ulna','tell','difference','thumb side'], w: 1.3, a: 'The radius is on the thumb side, the ulna on the little-finger side. The ulna anchors the elbow (its trochlear notch is the hinge, its tip the olecranon); the radius anchors the wrist. Each ends at the wrist in a styloid process.' },
+    { k: ['pronation','supination','palm','doorknob','rotate','turn'], w: 1.3, a: 'Pronation turns the palm down; supination turns it up. The radius head spins in place and the radius sweeps across the ulna, while the ulna stays roughly still.' },
+    { k: ['carpals','carpal','eight','wrist bones','rows','scaphoid','lunate','triquetrum','pisiform','trapezium','trapezoid','capitate','hamate'], w: 1.3, a: 'Eight carpals in two rows. Proximal row, thumb side first: scaphoid, lunate, triquetrum, pisiform. Distal row: trapezium, trapezoid, capitate, hamate. The scaphoid is the most often fractured.' },
+    { k: ['tunnel','carpal tunnel','median','numb','tingling'], w: 1.3, a: 'The carpal tunnel has carpal bones on three sides and the flexor retinaculum across the front. Finger-flexing tendons and the median nerve run through it; when the tissue swells, the median nerve is squeezed, causing tingling, weakness and pain.' },
+    { k: ['metacarpal','metacarpals','knuckle','palm'], a: 'Five metacarpals form the palm, numbered 1 to 5 from the thumb. Their heads are the knuckles.' },
+    { k: ['phalanges','phalanx','fingers','14'], a: 'Fingers 2 to 5 each have three phalanges (proximal, middle, distal); the thumb has two. 14 per hand.' },
+    { k: ['count','how many','30','27'], a: 'One upper limb: humerus 1, radius 1, ulna 1, carpals 8, metacarpals 5, phalanges 14 = 30 bones. 27 are in the wrist and hand.' },
+    { k: ['saddle','thumb','opposable','opposition'], w: 1.2, a: 'The thumb metacarpal meets the trapezium at a saddle joint, which moves in two planes, letting the thumb swing across the palm to touch each fingertip: opposition.' },
+    { k: ['quiz','reading quiz','week 4'], a: 'After the Notebook, take the Week 4 Reading Quiz (3.05 to 3.08) in Canvas: 10 questions on this week\u2019s Atlas readings.' },
+    { k: ['notebook','lab report','submit','pdf','words','diagram'], w: 1.2, a: 'The 3.08 Notebook: a photo of your labeled hand-trace diagram, a 3 sentence pronation and supination answer, and a 5 to 7 sentence reflection on one hand action. 300 to 450 words.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>
