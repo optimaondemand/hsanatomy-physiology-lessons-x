@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>What Is Blood? Plasma and the Formed Elements · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="An eighteenth-century coloured engraving of the blood vessels of the whole body drawn as a red branching tree, standing in a domed glass case" style="background-image:url(img/lesson-7-01-hero.jpg);background-position:center 30%"><span class="hlab">The blood vessels of the human body, in a glass case · coloured engraving, 18th century</span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 7.01 &middot; Module 7: Cardiovascular System</div>
+      <h1>What Is Blood? Plasma and the Formed Elements</h1>
+      <div class="focusq"><div class="label">Focus</div><p>If you doubled a person&rsquo;s hematocrit, what would change about how blood does its job, both for the better and for the worse?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to describe blood as a connective tissue and explain why a liquid counts as a tissue.</li><li>I will be able to give the rough split of blood into plasma and formed elements, and name the three plasma-protein families and one job of each.</li><li>I will be able to name the three families of formed elements and say which is most abundant by count.</li><li>I will be able to explain what the hematocrit measures and draw a correctly proportioned centrifuge tube.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Blood, spun down</div>
+      <svg class="m2-fig" viewBox="0 0 360 300" role="img" aria-label="A centrifuge tube with plasma, buffy coat and packed red cells labeled"><rect x="6" y="6" width="348" height="288" rx="14" fill="#F4F7FB"/><path d="M110 30 V245.0 A35.0 35.0 0 0 0 180 245.0 V30" fill="#fff" stroke="#56606B" stroke-width="3"/><path d="M113 55.2 V165.0 H177 V55.2z" fill="#F2D27A" opacity=".9"/><path d="M113 171.0 V245.0 A32.0 32.0 0 0 0 177 245.0 V171.0z" fill="#C22F4A"/><rect x="113" y="165.0" width="64" height="6" fill="#F6F1E6"/><rect x="104" y="22" width="82" height="10" rx="3" fill="#56606B"/><text x="196" y="92" class="m2-t" style="fill:#8A6A10">plasma ~55%</text><text x="196" y="110" class="m2-ts" style="fill:#8A6A10">albumin, globulins,</text><text x="196" y="126" class="m2-ts" style="fill:#8A6A10">fibrinogen</text><text x="196" y="168" class="m2-ts" style="fill:#55606B">buffy coat &lt;1%</text><text x="196" y="184" class="m2-ts" style="fill:#55606B">white cells + platelets</text><text x="196" y="226" class="m2-t" style="fill:#8E1F35">red cells ~45%</text><text x="196" y="244" class="m2-ts" style="fill:#8E1F35">(hematocrit)</text><path d="M100 167 H192" stroke="#1E2B3A" stroke-width="1.2" stroke-dasharray="4 3"/></svg>
+      <div class="cap">Spin a blood sample and it separates by density: about 55% straw-colored plasma on top, a thin buffy coat of white cells and platelets, and about 45% packed red cells. That bottom fraction is the hematocrit.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="river" role="tab"><span class="n">01</span>A River That Visits Every Cell</button>
+  <button class="tab" data-tab="plasma" role="tab"><span class="n">02</span>Plasma</button>
+  <button class="tab" data-tab="formed" role="tab"><span class="n">03</span>The Formed Elements</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 A RIVER THAT VISITS EVERY CELL ═════════ -->
+<section class="panel" id="tab-river" role="tabpanel">
+  <div class="vo" data-clip="w14_riv">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A Liquid Tissue</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A body outline with its closed loop of blood vessels, three tissue swatches (bone, tendon, blood), the three jobs of blood, and Harvey&rsquo;s calculation"><g data-step="0" class="nohalo"><g transform="translate(14,2) scale(0.6)"><path d="M120 6 C104 6 96 18 96 32 C96 46 104 56 110 60 L110 70 C96 72 82 74 72 80 C62 86 60 96 58 108 L36 222 C34 230 30 240 28 252 C27 262 34 264 36 256 L42 236 C44 232 46 230 48 226 L72 128 L76 160 C76 190 78 210 80 226 L86 330 L92 408 C90 416 86 424 94 426 L108 426 C110 420 110 414 110 406 L114 300 L118 240 L122 240 L126 300 L130 406 C130 414 130 420 132 426 L146 426 C154 424 150 416 148 408 L154 330 L160 226 C162 210 164 190 164 160 L168 128 L192 226 C194 230 196 232 198 236 L204 256 C206 264 213 262 212 252 C210 240 206 230 204 222 L182 108 C180 96 178 86 168 80 C158 74 144 72 130 70 L130 60 C136 56 144 46 144 32 C144 18 136 6 120 6 Z" fill="#F7EFE6" stroke="#B7A48F" stroke-width="3.33"/><path d="M114 104 L115 122" stroke="#2E5FA8" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M117 136 L117 212" stroke="#2E5FA8" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M106 92 L105 62" stroke="#2E5FA8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M98 88 L100 58" stroke="#2E5FA8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M134 92 L135 62" stroke="#2E5FA8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 88 L140 58" stroke="#2E5FA8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M106 92 L114 104" stroke="#2E5FA8" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M138 94 L114 102" stroke="#2E5FA8" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M106 94 L84 95" stroke="#2E5FA8" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M84 95 L72 110" stroke="#2E5FA8" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M72 110 L56 172" stroke="#2E5FA8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M66 132 L49 170 L44 226" stroke="#2E5FA8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M74 92 L60 140 L50 176 L34 226" stroke="#2E5FA8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M49 174 L55 162" stroke="#2E5FA8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M138 94 L156 95" stroke="#2E5FA8" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M156 95 L168 110" stroke="#2E5FA8" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M168 110 L184 172" stroke="#2E5FA8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M174 132 L191 170 L196 226" stroke="#2E5FA8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M166 92 L180 140 L190 176 L206 226" stroke="#2E5FA8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M191 174 L185 162" stroke="#2E5FA8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M117 212 L106 233" stroke="#2E5FA8" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M106 233 L99 247" stroke="#2E5FA8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M99 247 L97 310" stroke="#2E5FA8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M97 310 L98 336" stroke="#2E5FA8" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 416 L113 380 L114 320 L113 270 L108 250 L101 248" stroke="#2E5FA8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M123 212 L134 233" stroke="#2E5FA8" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M134 233 L141 247" stroke="#2E5FA8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M141 247 L143 310" stroke="#2E5FA8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M143 310 L142 336" stroke="#2E5FA8" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M130 416 L127 380 L126 320 L127 270 L132 250 L139 248" stroke="#2E5FA8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M122 124 L118 110 L121 100 L129 101 L132 112 L126 124 L123 160 L122 196 L120 212" stroke="#C22F4A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 104 L110 90" stroke="#C22F4A" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M124 100 L128 66" stroke="#C22F4A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M130 103 L140 88" stroke="#C22F4A" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 90 L110 64" stroke="#C22F4A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 64 L106 40" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 64 L115 46" stroke="#C22F4A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M128 66 L132 40" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M128 66 L124 46" stroke="#C22F4A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 90 L84 90" stroke="#C22F4A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M84 90 L70 108" stroke="#C22F4A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 108 L53 172" stroke="#C22F4A" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M53 172 L37 226" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M53 172 L46 228" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M140 88 L156 90" stroke="#C22F4A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M156 90 L170 108" stroke="#C22F4A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M170 108 L187 172" stroke="#C22F4A" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M187 172 L203 226" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M187 172 L194 228" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M120 212 L108 232" stroke="#C22F4A" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M108 232 L103 246" stroke="#C22F4A" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M103 246 L100 310" stroke="#C22F4A" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 310 L101 334" stroke="#C22F4A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M102 336 L104 404 L106 418" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 338 L100 404" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M99 340 L95 396" stroke="#C22F4A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M120 212 L132 232" stroke="#C22F4A" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M132 232 L137 246" stroke="#C22F4A" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M137 246 L140 310" stroke="#C22F4A" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M140 310 L139 334" stroke="#C22F4A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M138 336 L136 404 L134 418" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M140 338 L140 404" stroke="#C22F4A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M141 340 L145 396" stroke="#C22F4A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(124,126) rotate(-28) scale(1)"><path d="M0 -14 C-6 -22 -18 -18 -16 -6 C-14 4 -4 12 2 18 C8 12 16 4 17 -6 C18 -18 6 -22 0 -14z" fill="#E89AA8" stroke="#B5475E" stroke-width="1.4"/></g></g><text x="86" y="276" class="m2-t" text-anchor="middle" style="fill:#C22F4A">about 5 liters,</text><text x="86" y="294" class="m2-ts" text-anchor="middle" style="fill:#C22F4A">one pump, one closed loop</text></g><g data-step="1" class="nohalo"><text x="200" y="22" class="m2-t">a tissue = cells in a matrix</text><rect x="200" y="34" width="110" height="76" rx="10" fill="#fff" stroke="#C9D2DC" stroke-width="2"/><rect x="204" y="38" width="102" height="68" rx="8" fill="#EFE6D2"/><circle cx="230" cy="72" r="8" fill="none" stroke="#B9A77E" stroke-width="2"/><circle cx="230" cy="72" r="15" fill="none" stroke="#B9A77E" stroke-width="2"/><circle cx="230" cy="72" r="22" fill="none" stroke="#B9A77E" stroke-width="2"/><circle cx="270" cy="72" r="8" fill="none" stroke="#B9A77E" stroke-width="2"/><circle cx="270" cy="72" r="15" fill="none" stroke="#B9A77E" stroke-width="2"/><circle cx="270" cy="72" r="22" fill="none" stroke="#B9A77E" stroke-width="2"/><circle cx="230" cy="72" r="3" fill="#7A6A4A"/><circle cx="270" cy="72" r="3" fill="#7A6A4A"/><rect x="320" y="34" width="110" height="76" rx="10" fill="#fff" stroke="#C9D2DC" stroke-width="2"/><rect x="324" y="38" width="102" height="68" rx="8" fill="#F6EDE4"/><path d="M328 48 q12 -4 24 0 t24 0 t24 0 t24 0" stroke="#C9A98A" stroke-width="2.4" fill="none"/><path d="M328 57 q12 -4 24 0 t24 0 t24 0 t24 0" stroke="#C9A98A" stroke-width="2.4" fill="none"/><path d="M328 66 q12 -4 24 0 t24 0 t24 0 t24 0" stroke="#C9A98A" stroke-width="2.4" fill="none"/><path d="M328 75 q12 -4 24 0 t24 0 t24 0 t24 0" stroke="#C9A98A" stroke-width="2.4" fill="none"/><path d="M328 84 q12 -4 24 0 t24 0 t24 0 t24 0" stroke="#C9A98A" stroke-width="2.4" fill="none"/><path d="M328 93 q12 -4 24 0 t24 0 t24 0 t24 0" stroke="#C9A98A" stroke-width="2.4" fill="none"/><path d="M328 102 q12 -4 24 0 t24 0 t24 0 t24 0" stroke="#C9A98A" stroke-width="2.4" fill="none"/><ellipse cx="340" cy="61" rx="7" ry="2.5" fill="#8A5A3A"/><ellipse cx="366" cy="79" rx="7" ry="2.5" fill="#8A5A3A"/><ellipse cx="392" cy="61" rx="7" ry="2.5" fill="#8A5A3A"/><ellipse cx="418" cy="79" rx="7" ry="2.5" fill="#8A5A3A"/><rect x="440" y="34" width="110" height="76" rx="10" fill="#fff" stroke="#C9D2DC" stroke-width="2"/><rect x="444" y="38" width="102" height="68" rx="8" fill="#F2D27A" opacity=".8"/><circle cx="456" cy="52" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="456" cy="52" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="475" cy="70" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="475" cy="70" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="494" cy="88" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="494" cy="88" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="513" cy="52" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="513" cy="52" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="532" cy="70" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="532" cy="70" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="464" cy="90" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="464" cy="90" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="483" cy="84" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="483" cy="84" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="502" cy="90" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="502" cy="90" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="521" cy="84" r="7" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="521" cy="84" r="3.1" fill="#E8697F" opacity=".75"/><circle cx="532" cy="80" r="8" fill="#F3E3EE" stroke="#9A86B8" stroke-width="1.2"/><circle cx="538.0" cy="80.0" r="0.3" fill="#C9A3C6"/><circle cx="535.7" cy="84.7" r="0.3" fill="#C9A3C6"/><circle cx="530.6" cy="85.8" r="0.3" fill="#C9A3C6"/><circle cx="526.6" cy="82.6" r="0.3" fill="#C9A3C6"/><circle cx="526.6" cy="77.3" r="0.3" fill="#C9A3C6"/><circle cx="530.7" cy="74.1" r="0.3" fill="#C9A3C6"/><circle cx="535.8" cy="75.4" r="0.3" fill="#C9A3C6"/><circle cx="528.2" cy="80.0" r="1.6" fill="#7A4FB0"/><circle cx="530.4" cy="78.6" r="1.6" fill="#7A4FB0"/><circle cx="533.6" cy="78.6" r="1.6" fill="#7A4FB0"/><circle cx="535.8" cy="80.0" r="1.6" fill="#7A4FB0"/><path d="M528.2 80.0 L530.4 78.6" stroke="#7A4FB0" stroke-width="0.6"/><path d="M530.4 78.6 L533.6 78.6" stroke="#7A4FB0" stroke-width="0.6"/><path d="M533.6 78.6 L535.8 80.0" stroke="#7A4FB0" stroke-width="0.6"/><text x="255" y="126" class="m2-ts" text-anchor="middle">hard</text><text x="375" y="126" class="m2-ts" text-anchor="middle">fibrous</text><text x="495" y="126" class="m2-ts" text-anchor="middle" style="fill:#C22F4A">liquid</text></g><g data-step="2" class="nohalo"><rect x="200" y="148" width="148" height="80" rx="12" fill="#fff" stroke="#C22F4A" stroke-width="2.5"/><text x="212" y="172" class="m2-t" style="fill:#C22F4A">Transport</text><text x="212" y="196" class="m2-ts">O&#8322;, CO&#8322;, nutrients,</text><text x="212" y="214" class="m2-ts">hormones, wastes</text></g><g data-step="3" class="nohalo"><rect x="358" y="148" width="148" height="80" rx="12" fill="#fff" stroke="#2F6B4F" stroke-width="2.5"/><text x="370" y="172" class="m2-t" style="fill:#2F6B4F">Regulation</text><text x="370" y="196" class="m2-ts">heat, pH 7.35&ndash;7.45,</text><text x="370" y="214" class="m2-ts">water balance</text></g><g data-step="4" class="nohalo"><rect x="516" y="148" width="148" height="80" rx="12" fill="#fff" stroke="#7A4FB0" stroke-width="2.5"/><text x="528" y="172" class="m2-t" style="fill:#7A4FB0">Protection</text><text x="528" y="196" class="m2-ts">white cells; platelets</text><text x="528" y="214" class="m2-ts">and clotting proteins</text></g><g data-step="5" class="nohalo"><text x="200" y="262" class="m2-t" style="fill:#8A5A2A">Harvey, 1628: the heart moves ~250 L an hour,</text><text x="200" y="282" class="m2-ts" style="fill:#8A5A2A">far more than any organ could make: the blood must loop</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["You are made of tens of trillions of cells, and almost none of them sit near the lungs or the gut. The body's answer is a river: about five liters of blood in one closed loop of vessels, driven by one pump.", "Blood is a tissue, even though it pours. A tissue is cells arranged in a matrix. In bone the matrix is hard; in tendon it is fibrous; in blood the matrix is liquid. Blood is a connective tissue.", "Its first job is transport: oxygen out from the lungs and carbon dioxide back, nutrients from the gut, hormones from the glands you drew last module, and wastes such as urea to the kidneys.", "Its second job is regulation. Blood carries heat from the core to the skin, buffers pH between seven point three five and seven point four five, and its proteins hold water inside the vessels.", "Its third job is protection. White blood cells patrol and fight; platelets and clotting proteins seal a damaged vessel within minutes.", "In sixteen twenty-eight William Harvey did the arithmetic: the heart moves about two hundred and fifty liters an hour, far more than the body could make. The same blood must go around a loop. Every lesson in this module rests on that."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Blood as a connective tissue, its three jobs, and William Harvey&rsquo;s discovery of the circulation.</span></div>
+    <p class="marg"><b>Service.</b> This module&rsquo;s thread is service. The heart gives without pause, and the blood visits every cell, carrying what each one needs and taking away what it cannot keep. Notice, as you go, how much of the system exists for the sake of the rest of the body.</p>
+    <article class="atlas">
+      <h3>A river that visits every cell</h3>
+      <p>You are made of roughly 30 to 40 trillion cells, and almost none of them live next to the surface where oxygen and food enter the body, or near the lungs and kidneys where waste leaves it. The body solves this problem with a river: about five liters of <b>blood</b> carried in a closed loop of vessels, driven by a single pump. Every cell in the body lives within a fraction of a millimeter of a capillary — the smallest blood vessel — so that the river can drop off what the cell needs and pick up what it makes.</p>
+      <p>Module 7 is the body’s transport system: the blood that does the carrying, the heart that does the pumping, and the vessels that route every drop where it needs to go. We begin where the system itself begins — with the fluid.</p>
+      <h3>Blood is a connective tissue</h3>
+      <p>When you first hear that blood is a tissue, it sounds wrong — blood pours. Tissues are supposed to hold their shape. But the formal definition of a tissue is “cells of a similar type and function arranged in an extracellular matrix.” In bone, the matrix is hard and crystalline. In tendon, the matrix is dense and fibrous. In blood, the matrix is liquid. The classification has nothing to do with how stiff the tissue feels — it has to do with the relationship between the cells and the substance they sit in.</p>
+      <p>An adult body holds about 4–6 liters of blood, scaling with body size and sex. That is roughly 7–8% of total body weight. About <b>55%</b> of that volume is liquid matrix — <b>plasma</b><button type="button" class="say" data-say="plasma" aria-label="Hear it: plasma" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — and about <b>45%</b> is the cells and cell fragments suspended in it — the <b>formed elements</b><button type="button" class="say" data-say="formed-elements" aria-label="Hear it: formed elements" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. The percentage of blood that is red cells is called the <b>hematocrit</b><button type="button" class="say" data-say="hematocrit" aria-label="Hear it: hematocrit" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, and it is one of the first numbers a physician orders on any blood test.</p>
+      <h3>What blood does</h3>
+      <p>Blood has three large jobs — transport, regulation, and protection — each of which decomposes into several specific tasks.</p>
+      <p><b>Transport.</b> Blood carries oxygen from the lungs to every tissue and carbon dioxide back. It carries glucose, amino acids, fats, and ions absorbed from the small intestine to the cells that use them. It carries hormones from the endocrine glands you drew last module to their distant targets. And it carries metabolic waste — urea, creatinine, ammonia — to the kidneys and liver for disposal.</p>
+      <p><b>Regulation.</b> Blood distributes heat. When your core is too warm, vessels in the skin dilate and the bloodstream becomes a radiator. Blood also buffers pH, holding the body within a narrow window (about 7.35 to 7.45). And blood maintains osmotic balance with the surrounding tissues: the proteins dissolved in plasma create a pressure that pulls water back into the vessels at every capillary.</p>
+      <p><b>Protection.</b> Blood defends the body. White blood cells patrol the tissues, swallow invaders, and produce antibodies. Platelets and clotting proteins seal a damaged vessel within minutes — without them, even a paper cut would not stop bleeding. We will spend the rest of this week on both of those functions.</p>
+      <div class="inset"><div class="ilabel">WILLIAM HARVEY AND THE CIRCULATION OF BLOOD</div><p>For more than fourteen centuries, every European physician was taught that blood was made fresh in the liver, traveled outward through the veins, and was consumed by the tissues like firewood. This view came from the second-century Greek physician Galen, and it was unquestioned. The heart, in Galen’s scheme, was a heating organ. The pulse you feel in your wrist was the artery wall’s own contraction, not a wave from the heart.</p><p>William Harvey (1578–1657), an English physician trained in Padua, suspected that the math did not work. He measured the volume the heart could hold and the rate at which it beat, and computed that the heart had to pump roughly 250 liters of blood per hour. The liver could not possibly make that much. The only explanation was that the same blood went around in a loop — out the arteries, through the tissues, back the veins. He showed it experimentally by tying ligatures on arms to interrupt either the arterial or the venous flow, by valving veins to demonstrate one-way return, and by tracing the heart in living animals.</p><p>Harvey published <i>De Motu Cordis</i> (“On the Motion of the Heart”) in 1628. He was ridiculed for years. He could not see the capillaries that closed the loop — the microscope had not yet been turned to anatomy — and his contemporaries demanded the connecting vessels. Marcello Malpighi finally saw them, in a frog’s lung, in 1661 — four years after Harvey’s death. By the end of the seventeenth century, every European medical school had thrown out Galen on this question. Harvey’s correction is the foundation of every cardiovascular fact you will learn in this module.</p></div>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Transport, Regulation or Protection?</h2></div>
+    <p class="hint">Sort each task, then check.</p>
+    <div class="place card" id="w14jb">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="trans" data-fb="Transport." data-miss="Which job?">carrying oxygen from the lungs to the tissues</button>
+        <button class="chip" data-k="b" data-ans="reg" data-fb="Regulation: blood is the radiator." data-miss="Is this moving cargo, or holding a condition steady?">spreading heat from the core to the skin</button>
+        <button class="chip" data-k="c" data-ans="prot" data-fb="Protection." data-miss="Is this defense?">white cells swallowing invading bacteria</button>
+        <button class="chip" data-k="d" data-ans="trans" data-fb="Transport: hormones ride the blood." data-miss="Which job?">carrying insulin from the pancreas to muscle</button>
+        <button class="chip" data-k="e" data-ans="reg" data-fb="Regulation: buffering." data-miss="Is this holding a condition steady?">holding pH between 7.35 and 7.45</button>
+        <button class="chip" data-k="f" data-ans="prot" data-fb="Protection: clotting." data-miss="Is this defense?">platelets sealing a cut vessel</button>
+        <button class="chip" data-k="g" data-ans="trans" data-fb="Transport: wastes ride the blood." data-miss="Which job?">carrying urea to the kidneys</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="trans"><h4>Transport</h4><div class="drop"></div></div><div class="bin" data-bin="reg"><h4>Regulation</h4><div class="drop"></div></div><div class="bin" data-bin="prot"><h4>Protection</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>The Self-Check</h2></div>
+    <p class="hint">Answer before you open the self-check at the end of the Atlas.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">A friend says blood cannot be a tissue because it is a liquid. In two or three sentences, explain why blood still counts as a connective tissue.</p><textarea class="jbox" id="w14t1" data-label="Why blood is a tissue" data-min="20"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="plasma" type="button">Next: Plasma &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 PLASMA ═════════ -->
+<section class="panel" id="tab-plasma" role="tabpanel">
+  <div class="vo" data-clip="w14_pla">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Liquid Matrix</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A spun tube with the plasma layer highlighted, then bars showing plasma as 92 percent water and its proteins as albumin, globulins and fibrinogen, with what each protein does"><g data-step="0" class="nohalo"><path d="M60 40 V243.0 A33.0 33.0 0 0 0 126 243.0 V40" fill="#fff" stroke="#56606B" stroke-width="3"/><path d="M63 64.08 V167.3 H123 V64.08z" fill="#F2D27A" opacity=".9"/><path d="M63 173.3 V243.0 A30.0 30.0 0 0 0 123 243.0 V173.3z" fill="#C22F4A"/><rect x="63" y="167.3" width="60" height="6" fill="#F6F1E6"/><rect x="54" y="32" width="78" height="10" rx="3" fill="#56606B"/><text x="140" y="96" class="m2-t" style="fill:#8A6A10">plasma</text><text x="140" y="114" class="m2-ts" style="fill:#8A6A10">about 55%</text><path d="M132 104 H126" stroke="#8A6A10"/></g><g data-step="1" class="nohalo"><text x="210" y="30" class="m2-t">plasma</text><rect x="210.0" y="40" width="404.8" height="26" fill="#BFD7EE" stroke="#fff" stroke-width="1.5"/><text x="412.4" y="58.0" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">water 92%</text><rect x="614.8" y="40" width="35.2" height="26" fill="#F2D27A" stroke="#fff" stroke-width="1.5"/><text x="624" y="92" class="m2-ts" text-anchor="end">8%: gases, ions, nutrients,</text><text x="624" y="108" class="m2-ts" text-anchor="end">hormones, wastes, proteins</text></g><g data-step="2" class="nohalo"><text x="210" y="140" class="m2-t">plasma proteins</text><rect x="210.0" y="150" width="255.2" height="26" fill="#F3C77A" stroke="#fff" stroke-width="1.5"/><text x="337.6" y="168.0" class="m2-ts" text-anchor="middle" style="fill:#7A5200">albumin ~58%</text><rect x="465.2" y="150" width="167.2" height="26" fill="#B9A6DD" stroke="#fff" stroke-width="1.5"/><text x="548.8" y="168.0" class="m2-ts" text-anchor="middle" style="fill:#4A3380">globulins ~38%</text><rect x="632.4" y="150" width="17.6" height="26" fill="#E37A68" stroke="#fff" stroke-width="1.5"/><text x="214" y="204" class="m2-ts" style="fill:#7A5200">albumin (liver): holds water in the vessels</text><text x="214" y="220" class="m2-ts" style="fill:#7A5200">by osmotic pull; too little &rarr; edema</text></g><g data-step="3" class="nohalo"><text x="214" y="244" class="m2-ts" style="fill:#4A3380">globulins: transport proteins + antibodies</text><path d="M482 244 v8 M482 244 l-5 -6 M482 244 l5 -6" stroke="#4A3380" stroke-width="2.4" fill="none"/><path d="M498 244 v8 M498 244 l-5 -6 M498 244 l5 -6" stroke="#4A3380" stroke-width="2.4" fill="none"/><path d="M514 244 v8 M514 244 l-5 -6 M514 244 l5 -6" stroke="#4A3380" stroke-width="2.4" fill="none"/></g><g data-step="4" class="nohalo"><text x="654" y="190" class="m2-ts" text-anchor="end" style="fill:#A8402E">fibrinogen ~4%</text><text x="654" y="270" class="m2-ts" text-anchor="end" style="fill:#A8402E">dissolved &rarr; fibrin threads</text><circle cx="596" cy="238" r="3" fill="#E37A68"/><circle cx="605" cy="244" r="3" fill="#E37A68"/><circle cx="614" cy="238" r="3" fill="#E37A68"/><circle cx="623" cy="244" r="3" fill="#E37A68"/><path d="M630 232 l20 18 M628 252 l24 -16 M636 228 l6 26" stroke="#A8402E" stroke-width="2"/></g><g data-step="5" class="nohalo"><text x="210" y="294" class="m2-t" style="fill:#1E2B3A">92% water, but the 8% does the work</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Spin a tube of blood and the top layer is plasma, a pale straw-colored fluid. It is about fifty-five percent of the volume.", "Plasma is about ninety-two percent water. The other eight percent is cargo: dissolved gases, ions, glucose and amino acids, hormones, wastes, and the plasma proteins.", "Albumin is the most abundant plasma protein, about fifty-eight percent of the total, made in the liver. It holds water inside the vessels by osmotic pull. Without enough albumin, water leaks out and the tissues swell: edema.", "The globulins are about a third. Some carry iron, lipids or hormones; others are antibodies, the immunoglobulins made by white blood cells. You will meet them again in Module eight.", "Fibrinogen is the smallest fraction, about four percent, but essential. It circulates dissolved until a vessel is damaged; then it is converted into fibrin, the threads of a clot. You will trace that in Lesson seven oh four.", "So plasma is mostly water, but its small share of dissolved cargo and protein does most of the work."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Plasma: what it is made of, and the three plasma-protein families.</span></div>
+    <article class="atlas">
+      <h3>Plasma — the liquid matrix</h3>
+      <p>Plasma is a pale yellow fluid. About 92% of it is water. The remaining 8% is a remarkable cargo: dissolved gases, ions, nutrients, hormones, wastes, and three families of plasma proteins.</p>
+      <h4>The plasma proteins</h4>
+      <p><b>Albumin</b><button type="button" class="say" data-say="albumin" aria-label="Hear it: albumin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the most abundant plasma protein, accounting for about 58% of total plasma protein. It is made in the liver. Its main job is to hold water inside the bloodstream by osmotic pull, called <i>colloid osmotic pressure</i>. Without enough albumin, water leaks out of the capillaries and pools in the tissues — the swelling we call edema.</p>
+      <p><b>Globulins</b><button type="button" class="say" data-say="globulins" aria-label="Hear it: globulins" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are a family of about a third of the plasma proteins. Some are transport proteins (carrying iron, copper, lipids, or hormones), and some are antibodies — the immunoglobulins — produced by white blood cells. We will return to immunoglobulins in Module 8.</p>
+      <p><b>Fibrinogen</b><button type="button" class="say" data-say="fibrinogen" aria-label="Hear it: fibrinogen" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the smallest plasma-protein fraction by mass (about 4%), but it is essential. Fibrinogen circulates dissolved in plasma until vessel damage occurs, and then it is enzymatically converted to <b>fibrin</b><button type="button" class="say" data-say="fibrin" aria-label="Hear it: fibrin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the protein threads that build a blood clot. You will trace this conversion in Lesson 7.04.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Plasma-Protein Table</h2></div>
+    <p class="hint">Your notebook table, checked.</p>
+    <div class="card idtable" id="w14pt" style="padding:16px 20px"><div class="idhead c3"><span></span><span>Share of protein</span><span>Made by</span><span>Main job</span><span></span></div><div class="idrow c3"><span class="loc">Albumin</span><select class="jfield" id="w14ptr0c0" data-label="Plasma proteins: Albumin, Share of protein" data-ans="~58% (most)"><option value="">choose</option><option>~58% (most)</option><option>~38%</option><option>~4% (least)</option></select><select class="jfield" id="w14ptr0c1" data-label="Plasma proteins: Albumin, Made by" data-ans="liver"><option value="">choose</option><option>liver</option><option>white blood cells (some)</option></select><select class="jfield" id="w14ptr0c2" data-label="Plasma proteins: Albumin, Main job" data-ans="holds water in the vessels"><option value="">choose</option><option>holds water in the vessels</option><option>transport and antibodies</option><option>becomes fibrin in a clot</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Globulins</span><select class="jfield" id="w14ptr1c0" data-label="Plasma proteins: Globulins, Share of protein" data-ans="~38%"><option value="">choose</option><option>~58% (most)</option><option>~38%</option><option>~4% (least)</option></select><select class="jfield" id="w14ptr1c1" data-label="Plasma proteins: Globulins, Made by" data-ans="white blood cells (some)"><option value="">choose</option><option>liver</option><option>white blood cells (some)</option></select><select class="jfield" id="w14ptr1c2" data-label="Plasma proteins: Globulins, Main job" data-ans="transport and antibodies"><option value="">choose</option><option>holds water in the vessels</option><option>transport and antibodies</option><option>becomes fibrin in a clot</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Fibrinogen</span><select class="jfield" id="w14ptr2c0" data-label="Plasma proteins: Fibrinogen, Share of protein" data-ans="~4% (least)"><option value="">choose</option><option>~58% (most)</option><option>~38%</option><option>~4% (least)</option></select><select class="jfield" id="w14ptr2c1" data-label="Plasma proteins: Fibrinogen, Made by" data-ans="liver"><option value="">choose</option><option>liver</option><option>white blood cells (some)</option></select><select class="jfield" id="w14ptr2c2" data-label="Plasma proteins: Fibrinogen, Main job" data-ans="becomes fibrin in a clot"><option value="">choose</option><option>holds water in the vessels</option><option>transport and antibodies</option><option>becomes fibrin in a clot</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill all nine cells, then check. These are the annotations for your centrifuge tube.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w14m1"><p class="q">A patient with liver failure develops swollen ankles. Which missing plasma protein best explains it?</p>
+        <button class="opt" data-ok="1" data-fb="Right: albumin holds water in the vessels.">Albumin: less osmotic pull, so water leaks into the tissues.</button>
+        <button class="opt" data-fb="That would cause bleeding, not swelling.">Fibrinogen: the blood can no longer clot.</button>
+        <button class="opt" data-fb="Swelling here is about water, not defense.">Globulins: the immune system fails.</button></div>
+      <div class="mcq card" data-qid="w14m2"><p class="q">Which plasma protein becomes the threads of a clot?</p>
+        <button class="opt" data-ok="1" data-fb="Yes: soluble fibrinogen becomes insoluble fibrin.">Fibrinogen, converted to fibrin.</button>
+        <button class="opt" data-fb="Albumin holds water; it does not form threads.">Albumin, which thickens when it dries.</button>
+        <button class="opt" data-fb="Antibodies bind antigens, not platelets.">Immunoglobulin, which binds platelets.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="river" type="button">&larr; A River That Visits Every Cell</button><button class="btn" data-go="formed" type="button">Next: The Formed Elements &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 THE FORMED ELEMENTS ═════════ -->
+<section class="panel" id="tab-formed" role="tabpanel">
+  <div class="vo" data-clip="w14_frm">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Spun Down</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A spun tube labeled plasma, buffy coat and packed red cells, then the formed elements: red cells, the five white cells, platelets from a megakaryocyte, and where and how fast they are made"><g data-step="0" class="nohalo"><path d="M60 40 V243.0 A33.0 33.0 0 0 0 126 243.0 V40" fill="#fff" stroke="#56606B" stroke-width="3"/><path d="M63 64.08 V167.3 H123 V64.08z" fill="#F2D27A" opacity=".9"/><path d="M63 173.3 V243.0 A30.0 30.0 0 0 0 123 243.0 V173.3z" fill="#C22F4A"/><rect x="63" y="167.3" width="60" height="6" fill="#F6F1E6"/><rect x="54" y="32" width="78" height="10" rx="3" fill="#56606B"/><text x="140" y="96" class="m2-ts" style="fill:#8A6A10">plasma ~55%</text><text x="140" y="168" class="m2-ts" style="fill:#6B6B6B">buffy coat &lt;1%</text><text x="140" y="222" class="m2-ts" style="fill:#8E1F35">packed red cells ~45%</text><text x="140" y="238" class="m2-ts" style="fill:#8E1F35">= the hematocrit</text><path d="M50 161 H138" stroke="#1E2B3A" stroke-width="1.5" stroke-dasharray="4 3"/></g><g data-step="1" class="nohalo"><circle cx="320" cy="40" r="14" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="320" cy="40" r="6.3" fill="#E8697F" opacity=".75"/><circle cx="354" cy="50" r="14" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="354" cy="50" r="6.3" fill="#E8697F" opacity=".75"/><circle cx="388" cy="40" r="14" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="388" cy="40" r="6.3" fill="#E8697F" opacity=".75"/><circle cx="422" cy="50" r="14" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="422" cy="50" r="6.3" fill="#E8697F" opacity=".75"/><circle cx="456" cy="40" r="14" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="456" cy="40" r="6.3" fill="#E8697F" opacity=".75"/><circle cx="490" cy="50" r="14" fill="#C22F4A" stroke="#8E1F35" stroke-width="1.2"/><circle cx="490" cy="50" r="6.3" fill="#E8697F" opacity=".75"/><text x="300" y="82" class="m2-t" style="fill:#C22F4A">red cells: &gt;99% of the count</text><text x="300" y="100" class="m2-ts" style="fill:#C22F4A">about 5 million per microliter</text></g><g data-step="2" class="nohalo"><circle cx="300" cy="140" r="14" fill="#F3E3EE" stroke="#9A86B8" stroke-width="1.2"/><circle cx="310.5" cy="140.0" r="0.6" fill="#C9A3C6"/><circle cx="306.5" cy="148.2" r="0.6" fill="#C9A3C6"/><circle cx="297.6" cy="150.2" r="0.6" fill="#C9A3C6"/><circle cx="290.5" cy="144.5" r="0.6" fill="#C9A3C6"/><circle cx="290.6" cy="135.4" r="0.6" fill="#C9A3C6"/><circle cx="297.8" cy="129.7" r="0.6" fill="#C9A3C6"/><circle cx="306.7" cy="131.9" r="0.6" fill="#C9A3C6"/><circle cx="293.4" cy="140.0" r="2.8" fill="#7A4FB0"/><circle cx="297.2" cy="137.5" r="2.8" fill="#7A4FB0"/><circle cx="302.8" cy="137.5" r="2.8" fill="#7A4FB0"/><circle cx="306.6" cy="140.0" r="2.8" fill="#7A4FB0"/><path d="M293.4 140.0 L297.2 137.5" stroke="#7A4FB0" stroke-width="1.1"/><path d="M297.2 137.5 L302.8 137.5" stroke="#7A4FB0" stroke-width="1.1"/><path d="M302.8 137.5 L306.6 140.0" stroke="#7A4FB0" stroke-width="1.1"/><circle cx="340" cy="140" r="11.2" fill="#DCE6F7" stroke="#9A86B8" stroke-width="1.2"/><circle cx="339.3" cy="140.0" r="9.0" fill="#563485"/><circle cx="382" cy="140" r="16.1" fill="#E6E1F2" stroke="#9A86B8" stroke-width="1.2"/><path d="M373.3 138.3 C373.3 131.3 390.7 131.3 390.7 138.7 C390.7 145.2 383.7 146.1 382.0 142.2 C379.8 146.1 373.3 145.2 373.3 138.3z" fill="#8466B4"/><circle cx="426" cy="140" r="14" fill="#F9E0D8" stroke="#9A86B8" stroke-width="1.2"/><circle cx="432.6" cy="144.0" r="1.0" fill="#E0644A"/><circle cx="429.5" cy="146.9" r="1.0" fill="#E0644A"/><circle cx="425.4" cy="147.7" r="1.0" fill="#E0644A"/><circle cx="421.5" cy="146.2" r="1.0" fill="#E0644A"/><circle cx="418.9" cy="142.9" r="1.0" fill="#E0644A"/><circle cx="418.4" cy="138.8" r="1.0" fill="#E0644A"/><circle cx="420.2" cy="135.0" r="1.0" fill="#E0644A"/><circle cx="423.6" cy="132.7" r="1.0" fill="#E0644A"/><circle cx="427.8" cy="132.5" r="1.0" fill="#E0644A"/><circle cx="431.5" cy="134.6" r="1.0" fill="#E0644A"/><circle cx="433.5" cy="138.2" r="1.0" fill="#E0644A"/><circle cx="433.3" cy="142.4" r="1.0" fill="#E0644A"/><circle cx="433.8" cy="147.7" r="1.0" fill="#E0644A"/><circle cx="428.6" cy="150.6" r="1.0" fill="#E0644A"/><circle cx="422.7" cy="150.4" r="1.0" fill="#E0644A"/><circle cx="417.7" cy="147.1" r="1.0" fill="#E0644A"/><circle cx="415.2" cy="141.8" r="1.0" fill="#E0644A"/><circle cx="415.9" cy="135.9" r="1.0" fill="#E0644A"/><circle cx="419.5" cy="131.2" r="1.0" fill="#E0644A"/><circle cx="425.1" cy="129.1" r="1.0" fill="#E0644A"/><circle cx="430.9" cy="130.3" r="1.0" fill="#E0644A"/><circle cx="435.3" cy="134.3" r="1.0" fill="#E0644A"/><circle cx="436.9" cy="140.0" r="1.0" fill="#E0644A"/><circle cx="435.3" cy="145.7" r="1.0" fill="#E0644A"/><circle cx="421.8" cy="139.3" r="3.6" fill="#7A4FB0"/><circle cx="430.2" cy="139.3" r="3.6" fill="#7A4FB0"/><path d="M424.6 140.0 H427.4" stroke="#7A4FB0" stroke-width="1.1"/><circle cx="468" cy="140" r="12.6" fill="#E7DDF0" stroke="#9A86B8" stroke-width="1.2"/><path d="M463.0 140.0 C463.0 133.7 473.0 133.7 473.0 140.0 C473.0 145.0 463.0 145.0 463.0 140.0z" fill="#7A6AA8" opacity=".7"/><circle cx="470.3" cy="142.1" r="1.2" fill="#2B1F66"/><circle cx="467.5" cy="143.1" r="1.2" fill="#2B1F66"/><circle cx="465.2" cy="141.3" r="1.2" fill="#2B1F66"/><circle cx="465.3" cy="138.4" r="1.2" fill="#2B1F66"/><circle cx="467.8" cy="136.9" r="1.2" fill="#2B1F66"/><circle cx="470.5" cy="138.1" r="1.2" fill="#2B1F66"/><circle cx="471.0" cy="141.0" r="1.2" fill="#2B1F66"/><circle cx="468.9" cy="143.0" r="1.2" fill="#2B1F66"/><circle cx="468.4" cy="146.3" r="1.2" fill="#2B1F66"/><circle cx="463.6" cy="144.5" r="1.2" fill="#2B1F66"/><circle cx="461.7" cy="139.6" r="1.2" fill="#2B1F66"/><circle cx="464.1" cy="135.0" r="1.2" fill="#2B1F66"/><circle cx="469.2" cy="133.8" r="1.2" fill="#2B1F66"/><circle cx="473.4" cy="136.8" r="1.2" fill="#2B1F66"/><circle cx="474.0" cy="142.0" r="1.2" fill="#2B1F66"/><circle cx="470.5" cy="145.8" r="1.2" fill="#2B1F66"/><circle cx="465.3" cy="145.7" r="1.2" fill="#2B1F66"/><circle cx="461.9" cy="141.7" r="1.2" fill="#2B1F66"/><circle cx="462.7" cy="136.6" r="1.2" fill="#2B1F66"/><circle cx="462.4" cy="147.4" r="1.2" fill="#2B1F66"/><circle cx="458.8" cy="141.8" r="1.2" fill="#2B1F66"/><circle cx="460.0" cy="135.2" r="1.2" fill="#2B1F66"/><circle cx="465.2" cy="131.1" r="1.2" fill="#2B1F66"/><circle cx="471.9" cy="131.5" r="1.2" fill="#2B1F66"/><circle cx="476.5" cy="136.3" r="1.2" fill="#2B1F66"/><circle cx="476.9" cy="142.9" r="1.2" fill="#2B1F66"/><circle cx="472.7" cy="148.1" r="1.2" fill="#2B1F66"/><circle cx="466.1" cy="149.1" r="1.2" fill="#2B1F66"/><circle cx="460.5" cy="145.5" r="1.2" fill="#2B1F66"/><circle cx="458.7" cy="139.1" r="1.2" fill="#2B1F66"/><circle cx="461.7" cy="133.1" r="1.2" fill="#2B1F66"/><circle cx="467.9" cy="130.7" r="1.2" fill="#2B1F66"/><text x="300" y="176" class="m2-t" style="fill:#563485">white cells: &lt;1%, five kinds</text></g><g data-step="3" class="nohalo"><circle cx="610" cy="140" r="30" fill="#E7DDF0" stroke="#8A6BB0" stroke-width="2"/><path d="M596 132 C604 120 620 124 622 136 C624 150 606 154 600 146z" fill="#8466B4"/><ellipse cx="574" cy="186" rx="5" ry="3.0" fill="#D9C7E8" stroke="#8A6BB0" stroke-width="1.2"/><circle cx="574" cy="186" r="1.1" fill="#8A6BB0"/><ellipse cx="586" cy="192" rx="5" ry="3.0" fill="#D9C7E8" stroke="#8A6BB0" stroke-width="1.2"/><circle cx="586" cy="192" r="1.1" fill="#8A6BB0"/><ellipse cx="598" cy="186" rx="5" ry="3.0" fill="#D9C7E8" stroke="#8A6BB0" stroke-width="1.2"/><circle cx="598" cy="186" r="1.1" fill="#8A6BB0"/><ellipse cx="610" cy="192" rx="5" ry="3.0" fill="#D9C7E8" stroke="#8A6BB0" stroke-width="1.2"/><circle cx="610" cy="192" r="1.1" fill="#8A6BB0"/><ellipse cx="622" cy="186" rx="5" ry="3.0" fill="#D9C7E8" stroke="#8A6BB0" stroke-width="1.2"/><circle cx="622" cy="186" r="1.1" fill="#8A6BB0"/><text x="660" y="214" class="m2-ts" text-anchor="end" style="fill:#6A4F99">platelets: fragments</text><text x="660" y="230" class="m2-ts" text-anchor="end" style="fill:#6A4F99">of megakaryocytes</text></g><g data-step="4" class="nohalo"><text x="300" y="236" class="m2-ts" style="fill:#1E2B3A">made in red marrow: sternum, ribs,</text><text x="300" y="252" class="m2-ts" style="fill:#1E2B3A">vertebrae, pelvis, ends of femur and humerus</text></g><g data-step="5" class="nohalo"><text x="300" y="280" class="m2-t" style="fill:#8E1F35">~2 million new cells a second; a red cell lives ~120 days</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Spun in a centrifuge, blood settles by density into three bands: plasma on top, about fifty-five percent; a thin pale buffy coat, less than one percent; and packed red cells at the bottom, about forty-five percent. That red fraction is the hematocrit.", "The red blood cells, the erythrocytes, are more than ninety-nine percent of all the formed elements by count: about five million in every microliter, a drop the size of a pinhead. They carry oxygen.", "The white blood cells, the leukocytes, are less than one percent of the count, yet they are the whole immune patrol. There are five named kinds; you will draw them in Lesson seven oh three.", "Platelets are not whole cells. They are fragments shed from giant bone-marrow cells called megakaryocytes, about one hundred fifty to four hundred thousand per microliter. They are the first responders at a cut.", "All of them are made in red bone marrow, in the sternum, ribs, vertebrae, pelvis, and the upper ends of the femur and humerus: the marrow you met in the skeletal module. The process is hematopoiesis.", "They live short lives, so production never stops: about two million new cells every second. A red cell lasts about a hundred and twenty days; platelets about ten."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The formed elements, where blood cells are made, and blood&rsquo;s measurable properties.</span></div>
+    <article class="atlas">
+      <h3>The formed elements — an introduction</h3>
+      <p>The cells and cell fragments suspended in plasma are called the <b>formed elements</b>. There are three families, and the proportions are striking.</p>
+      <p><b>Erythrocytes</b><button type="button" class="say" data-say="erythrocyte" aria-label="Hear it: erythrocytes" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — red blood cells — account for more than 99% of the formed-element count. A single drop of blood holds about 5 million of them per microliter (the volume of a pinhead). They carry oxygen, and they are the next lesson in this module.</p>
+      <p><b>Leukocytes</b><button type="button" class="say" data-say="leukocyte" aria-label="Hear it: leukocytes" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — white blood cells — are less than 1% of the formed-element count but are the entire reason your immune system can function. There are five named types: neutrophils, lymphocytes, monocytes, eosinophils, and basophils. We meet them in Lesson 7.03.</p>
+      <p><b>Platelets</b><button type="button" class="say" data-say="platelet" aria-label="Hear it: platelets" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> are not whole cells. They are fragments shed from much larger bone-marrow cells called megakaryocytes. About 150,000 to 400,000 of them sit in every microliter of blood. When a vessel is damaged, platelets are the first responders — we will see how in Lesson 7.04.</p>
+      <figure class="plate"><img data-img="f70101" alt="Composition of whole blood: a centrifuged tube separating plasma (55%) from the formed elements (45%), with plasma&#x27;s protein and solute breakdown and the five leukocyte types by percentage"><figcaption>Figure — Composition of whole blood: plasma vs. the formed elements, with the plasma-protein and leukocyte breakdowns shown at right. (Patton KT, Thibodeau GA: <i>Anatomy &amp; Physiology</i>, ed 7, Mosby.)</figcaption></figure>
+      <h3>Where blood comes from</h3>
+      <p>Blood cells live short lives. A red blood cell lasts about 120 days; most white cells live days to weeks; platelets last roughly ten days. To keep the river stocked, the body makes new blood cells continuously — about <i>two million per second</i>. The process is called <b>hematopoiesis</b><button type="button" class="say" data-say="hematopoiesis" aria-label="Hear it: hematopoiesis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, and it happens almost entirely in the <i>red bone marrow</i> of certain bones: the sternum, the ribs, the vertebrae, the pelvis, the proximal femur, and the proximal humerus. You met red bone marrow back in the skeletal module; this is what it does. Every formed element in your bloodstream began as a stem cell in one of those bones, divided through several intermediate types, and was released into the circulation when it was finally ready to work.</p>
+      <figure class="plate"><img data-img="f70102" alt="Distribution of red and yellow marrow in the infant and adult skeleton, with a femur cross-section showing red marrow, yellow marrow, and compact bone"><figcaption>Figure — Red marrow (blood-cell-producing) and yellow marrow (fatty) distribution across the skeleton, and their arrangement within a single long bone. (Open Library.)</figcaption></figure>
+      <h3>A few measurable properties</h3>
+      <p>Blood is denser than water and noticeably more viscous — about five times as thick. It feels heavier in the test tube than its volume suggests. Its color depends on its oxygen state: bright red when oxygenated (in the arteries that leave the left heart), darker red when deoxygenated (in the veins returning to the right heart). The blue-purple color of veins on the back of your hand is an optical effect of the skin filtering certain wavelengths; the blood inside is still red, just a darker shade.</p>
+      <figure class="plate"><img data-img="f70103" alt="Two drops of blood side by side: oxygenated blood (left) is noticeably brighter red than deoxygenated blood (right)"><figcaption>Figure — The difference between oxygenated blood (left) and deoxygenated blood (right) is surprisingly minor — no blue blood here. (WikiMedia Commons.)</figcaption></figure>
+      <p>Blood pH sits between 7.35 and 7.45 — slightly alkaline. A small shift outside this window is medically serious. We will see why when we discuss the bicarbonate buffer in Module 9 (Respiratory).</p>
+      <details class="selfcheck"><summary>Self-check: what is the rough proportion of plasma to formed elements, and what fraction of formed elements are red cells?</summary><p>By volume, blood is about <b>55% plasma</b> and <b>45% formed elements</b>. Of the formed elements, more than <b>99% are red blood cells</b> — the white cells and platelets are a tiny minority by count, even though they are essential by function.</p><p>If you also remembered that plasma proteins are mostly albumin, with globulins and fibrinogen the other two big classes, you have the major architecture of this reading.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Spun Tube</h2></div>
+    <div class="card idtable" id="w14tb" style="padding:16px 20px"><div class="idhead c3"><span></span><span>Layer</span><span>Share of volume</span><span>Contains</span><span></span></div><div class="idrow c3"><span class="loc">Top layer</span><select class="jfield" id="w14tbr0c0" data-label="Centrifuge tube: Top layer, Layer" data-ans="plasma"><option value="">choose</option><option>plasma</option><option>buffy coat</option><option>packed red cells</option></select><select class="jfield" id="w14tbr0c1" data-label="Centrifuge tube: Top layer, Share of volume" data-ans="about 55%"><option value="">choose</option><option>about 55%</option><option>less than 1%</option><option>about 45%</option></select><select class="jfield" id="w14tbr0c2" data-label="Centrifuge tube: Top layer, Contains" data-ans="water, ions, nutrients, proteins"><option value="">choose</option><option>water, ions, nutrients, proteins</option><option>white cells + platelets</option><option>erythrocytes (the hematocrit)</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Thin middle band</span><select class="jfield" id="w14tbr1c0" data-label="Centrifuge tube: Thin middle band, Layer" data-ans="buffy coat"><option value="">choose</option><option>plasma</option><option>buffy coat</option><option>packed red cells</option></select><select class="jfield" id="w14tbr1c1" data-label="Centrifuge tube: Thin middle band, Share of volume" data-ans="less than 1%"><option value="">choose</option><option>about 55%</option><option>less than 1%</option><option>about 45%</option></select><select class="jfield" id="w14tbr1c2" data-label="Centrifuge tube: Thin middle band, Contains" data-ans="white cells + platelets"><option value="">choose</option><option>water, ions, nutrients, proteins</option><option>white cells + platelets</option><option>erythrocytes (the hematocrit)</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Bottom layer</span><select class="jfield" id="w14tbr2c0" data-label="Centrifuge tube: Bottom layer, Layer" data-ans="packed red cells"><option value="">choose</option><option>plasma</option><option>buffy coat</option><option>packed red cells</option></select><select class="jfield" id="w14tbr2c1" data-label="Centrifuge tube: Bottom layer, Share of volume" data-ans="about 45%"><option value="">choose</option><option>about 55%</option><option>less than 1%</option><option>about 45%</option></select><select class="jfield" id="w14tbr2c2" data-label="Centrifuge tube: Bottom layer, Contains" data-ans="erythrocytes (the hematocrit)"><option value="">choose</option><option>water, ions, nutrients, proteins</option><option>white cells + platelets</option><option>erythrocytes (the hematocrit)</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill all nine cells, then check. These become the labels on your tube.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Recorded Narration</h2></div>
+    <p class="hint">About 15 minutes. Listen back, then reopen the Atlas.</p>
+    <div class="card">
+      <p class="q" style="font-weight:600;margin-top:0">Close the Atlas. Jot four or five bullet points from memory, then record yourself explaining what blood is and what is in it, in 60 to 90 seconds. Speak from the bullets; do not read a script.</p>
+      <div class="narrate" data-words="150"></div>
+      <p class="hint">Play it back. What did you leave out?</p>
+      <div class="field" style="margin-bottom:0"><p class="q">One or two corrections after you re-open the Atlas:</p><textarea class="jbox" id="w14nr" data-label="Narration: my corrections" data-min="12"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Centrifuge Tube</h2></div>
+    <p class="hint">About 15 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; The centrifuge tube</span>
+      <p>On a clean page, draw a tall, narrow test tube. Imagine it has just been spun: the heaviest elements have dropped to the bottom and the lightest stay on top.</p><p>Divide it into three bands at the true proportions: about <b>55% plasma</b> on top (label the three plasma-protein families beside it), a thin <b>buffy coat</b> in the middle (white cells + platelets, less than 1%), and about <b>45% packed red cells</b> at the bottom (about 5 million per microliter). Draw and label the <b>hematocrit line</b>.</p><p>Beside the tube, write one sentence on what each layer does to keep you alive.</p>
+      <ul class="checks"><li data-ck="w14d11">Tube drawn with the three bands at about 55%, under 1% and 45%.</li><li data-ck="w14d12">Plasma labeled with albumin, globulins and fibrinogen, one job each.</li><li data-ck="w14d13">Buffy coat and red-cell layer labeled; hematocrit line marked.</li></ul>
+      <p class="hint" style="margin-bottom:0">This tube is the figure for your 7.01 Notebook. Photograph it for Canvas. Your Circulatory Map begins in Lesson 7.02 with the red blood cell.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>See It to Scale</h2></div>
+    <p class="hint">About 15 minutes.</p>
+    <div class="draw web"><span class="label">Web interactive &middot; Blood composition</span>
+      <p>The parts of blood are microscopic, and a screen can show them to scale in a way a reading cannot. Open either free tool below and explore plasma, red cells, white cells and platelets for about 15 minutes. No login is needed for the free parts; if a tool asks for a paid account, switch to the other.</p><p class="weblinks"><a class="btn small ghost" href="https://www.visiblebody.com/learn/circulatory/circulatory-functions-of-the-blood" target="_blank" rel="noopener">Visible Body: functions of the blood &#8599;</a> <a class="btn small ghost" href="https://www.khanacademy.org/test-prep/mcat/organ-systems/hematologic-system" target="_blank" rel="noopener">Khan Academy: the hematologic system &#8599;</a></p><div class="field" style="margin-bottom:0"><p class="q">One thing the interactive showed you that the reading could only describe in words:</p><textarea class="jbox" id="w14wb" data-label="Web interactive: what it showed me" data-min="12"></textarea></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="plasma" type="button">&larr; Plasma</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Centrifuge Tube</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>If you doubled a person&rsquo;s hematocrit, what would change about how blood does its job, both for the better and for the worse?</p></div>
+        <p>You can now picture blood the way a lab sees it: a spun tube in three bands. This Notebook asks for a carefully proportioned, labeled diagram and a 200&ndash;300 word commentary on what each layer carries.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Diagram</h2></div>
+    <p class="hint">The diagram goes to Canvas with this PDF. Rubric: diagram accuracy, 4 pts.</p>
+    <div class="card loccard"><p class="sub">Submit a photo, scan or digital drawing of your tube: about 55% plasma, a thin buffy coat (under 1%) and about 45% packed red cells, with the hematocrit line marked. Here, list the labels on your diagram.</p><textarea class="jbox" id="w14rD" data-label="Centrifuge tube: proportions and labels" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>The Plasma Proteins</h2></div>
+    <p class="hint">Rubric: plasma-protein detail, 4 pts.</p>
+    <div class="card loccard"><p class="sub">Name the three plasma-protein families and give one specific job for each, as you annotated them on your tube.</p><div class="ttrack" data-field="w14rP"><span class="tt" data-t="albumin">albumin</span><span class="tt" data-t="globulin|antibod|immunoglobulin">globulins</span><span class="tt" data-t="fibrinogen|fibrin">fibrinogen</span><span class="tt" data-t="osmotic|water|edema">osmotic / water</span><span class="tt" data-t="clot">clot</span></div><textarea class="jbox" id="w14rP" data-label="Plasma proteins and their jobs" data-min="20"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Commentary</h2></div>
+    <p class="hint">Rubric: focus-question reasoning, 4 pts.</p>
+    <div class="card loccard"><p class="sub">In 200&ndash;300 words, explain what each layer carries and why the proportions are what they are. In a final paragraph, answer the focus question: name a specific <b>gain</b> and a specific <b>loss</b> if the hematocrit doubled.</p><div class="ttrack" data-field="w14rC"><span class="tt" data-t="plasma">each layer</span><span class="tt" data-t="hematocrit">hematocrit</span><span class="tt" data-t="oxygen|O2|O₂">gain: oxygen</span><span class="tt" data-t="viscos|thick">loss: viscosity</span><span class="tt" data-t="clot|thromb|stroke">loss: clots</span></div><textarea class="jbox" id="w14rC" data-label="Commentary on the three layers and the focus question" data-min="150"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w14c11">My diagram is proportioned: plasma about 55%, red cells about 45%, the buffy coat a thin line.</li><li data-ck="w14c12">All three plasma proteins are named, each tied to a specific job.</li><li data-ck="w14c13">The buffy coat and red-cell layer are labeled with the right cell populations.</li><li data-ck="w14c14">My final paragraph names a specific gain and a specific loss if the hematocrit doubled.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 7.01 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="formed" type="button">&larr; The Formed Elements</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>formed elements<button type="button" class="say" data-say="formed-elements" aria-label="Hear it: formed elements" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The cells and cell fragments in blood: red cells, white cells and platelets.</dd>
+  <dt>plasma<button type="button" class="say" data-say="plasma" aria-label="Hear it: plasma" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>plasma</i> &ldquo;something molded&rdquo;</small></dt><dd>The liquid matrix of blood, about 92% water.</dd>
+  <dt>hematocrit<button type="button" class="say" data-say="hematocrit" aria-label="Hear it: hematocrit" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>haima</i> &ldquo;blood&rdquo; + <i>krites</i> &ldquo;judge&rdquo;</small></dt><dd>The percentage of blood volume that is red cells, about 45%.</dd>
+  <dt>albumin<button type="button" class="say" data-say="albumin" aria-label="Hear it: albumin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>albus</i> &ldquo;white&rdquo;</small></dt><dd>The most abundant plasma protein; holds water in the vessels.</dd>
+  <dt>globulins<button type="button" class="say" data-say="globulins" aria-label="Hear it: globulins" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Plasma proteins that transport substances or act as antibodies.</dd>
+  <dt>fibrinogen<button type="button" class="say" data-say="fibrinogen" aria-label="Hear it: fibrinogen" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>fibra</i> &ldquo;fiber&rdquo;</small></dt><dd>The plasma protein converted to fibrin in a clot.</dd>
+  <dt>colloid osmotic pressure<button type="button" class="say" data-say="colloid-osmotic-pressure" aria-label="Hear it: colloid osmotic pressure" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The pull of plasma proteins that holds water inside the capillaries.</dd>
+  <dt>edema<button type="button" class="say" data-say="edema" aria-label="Hear it: edema" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>oidema</i> &ldquo;swelling&rdquo;</small></dt><dd>Swelling from fluid that has leaked into the tissues.</dd>
+  <dt>erythrocyte<button type="button" class="say" data-say="erythrocyte" aria-label="Hear it: erythrocyte" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>erythros</i> &ldquo;red&rdquo; + <i>kytos</i> &ldquo;cell&rdquo;</small></dt><dd>A red blood cell.</dd>
+  <dt>leukocyte<button type="button" class="say" data-say="leukocyte" aria-label="Hear it: leukocyte" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>leukos</i> &ldquo;white&rdquo;</small></dt><dd>A white blood cell.</dd>
+  <dt>platelet<button type="button" class="say" data-say="platelet" aria-label="Hear it: platelet" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A cell fragment from a megakaryocyte that helps seal a damaged vessel.</dd>
+  <dt>megakaryocyte<button type="button" class="say" data-say="megakaryocyte" aria-label="Hear it: megakaryocyte" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>mega</i> &ldquo;great&rdquo; + <i>karyon</i> &ldquo;kernel&rdquo;</small></dt><dd>A giant marrow cell that sheds platelets.</dd>
+  <dt>hematopoiesis<button type="button" class="say" data-say="hematopoiesis" aria-label="Hear it: hematopoiesis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>haima</i> + <i>poiesis</i> &ldquo;making&rdquo;</small></dt><dd>The making of blood cells in red bone marrow.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w14-l1", "title": "What Is Blood? Plasma and the Formed Elements", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 14 · What Is Blood?", "pdfTag": "AP_W14_L1"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f70101":{"src":"img/m7-7.01-01-cardiovascular-system-there-were.webp","alt":""},"f70102":{"src":"img/m7-7.01-02-where-blood-comes-open-library.webp","alt":""},"f70103":{"src":"img/m7-7.01-03-few-measurable-properties-differ.webp","alt":""}},"w14_riv":{"audio":"audio/ap-w14-l1-riv.mp3","words":[[0,0.16,"You"],[0.24,0.32,"are"],[0.4,0.48,"made"],[0.56,0.72,"of"],[0.8,1.2,"tens"],[1.28,1.36,"of"],[1.44,2.08,"trillions"],[2.12,2.16,"of"],[2.24,2.88,"cells,"],[2.96,3.04,"and"],[3.2,3.36,"almost"],[3.52,3.68,"none"],[3.76,3.84,"of"],[3.92,4,"them"],[4.08,4.24,"sit"],[4.32,4.48,"near"],[4.52,4.56,"the"],[4.64,5.04,"lungs"],[5.12,5.2,"or"],[5.24,5.28,"the"],[5.36,5.96,"gut."],[6.24,6.32,"The"],[6.44,6.64,"body's"],[6.72,7.12,"answer"],[7.2,7.28,"is"],[7.36,7.44,"a"],[7.52,8.16,"river:"],[8.32,8.48,"about"],[8.56,8.8,"five"],[8.88,9.12,"liters"],[9.2,9.28,"of"],[9.44,9.6,"blood"],[9.68,9.84,"in"],[9.92,10.08,"one"],[10.24,10.56,"closed"],[10.64,10.8,"loop"],[10.88,10.96,"of"],[11,11.6,"vessels,"],[11.64,11.92,"driven"],[12.04,12.16,"by"],[12.24,12.4,"one"],[12.48,13.36,"pump."],[13.56,13.76,"Blood"],[13.8,13.84,"is"],[13.92,14,"a"],[14.08,14.72,"tissue,"],[14.84,14.96,"even"],[15,15.04,"though"],[15.12,15.2,"it"],[15.28,16.16,"pours."],[16.24,16.32,"A"],[16.36,16.8,"tissue"],[16.88,16.96,"is"],[17.04,17.36,"cells"],[17.48,17.84,"arranged"],[17.88,17.92,"in"],[18,18.08,"a"],[18.36,18.96,"matrix."],[19.04,19.2,"In"],[19.4,19.6,"bone"],[19.64,19.68,"the"],[19.76,20.08,"matrix"],[20.16,20.24,"is"],[20.56,20.933,"hard;"],[20.987,21.04,"in"],[21.12,21.52,"tendon"],[21.56,21.6,"it"],[21.68,21.76,"is"],[21.84,22.64,"fibrous;"],[22.72,22.88,"in"],[23.12,23.36,"blood"],[23.44,23.52,"the"],[23.72,23.92,"matrix"],[24,24.08,"is"],[24.16,25.04,"liquid."],[25.24,25.44,"Blood"],[25.52,25.6,"is"],[25.64,25.68,"a"],[25.76,26.24,"connective"],[26.32,27.04,"tissue."],[27.16,27.28,"Its"],[27.4,27.52,"first"],[27.6,27.84,"job"],[27.92,28.08,"is"],[28.36,29.04,"transport:"],[29.12,29.52,"oxygen"],[29.6,29.68,"out"],[29.76,29.84,"from"],[29.92,30,"the"],[30.04,30.4,"lungs"],[30.48,30.56,"and"],[30.64,30.88,"carbon"],[30.92,31.44,"dioxide"],[31.52,32.16,"back,"],[32.24,32.64,"nutrients"],[32.72,32.8,"from"],[32.88,32.96,"the"],[33,33.52,"gut,"],[33.56,34,"hormones"],[34.08,34.16,"from"],[34.2,34.24,"the"],[34.32,34.64,"glands"],[34.68,34.72,"you"],[34.8,34.96,"drew"],[35.04,35.28,"last"],[35.36,35.92,"module,"],[36,36.08,"and"],[36.16,36.64,"wastes"],[36.72,36.88,"such"],[36.92,36.96,"as"],[37.04,37.52,"urea"],[37.56,37.6,"to"],[37.68,37.76,"the"],[37.84,38.72,"kidneys."],[38.8,38.88,"Its"],[38.96,39.2,"second"],[39.28,39.6,"job"],[39.68,39.76,"is"],[39.88,40.88,"regulation."],[41.04,41.2,"Blood"],[41.28,41.6,"carries"],[41.76,41.92,"heat"],[42,42.08,"from"],[42.12,42.16,"the"],[42.24,42.48,"core"],[42.56,42.64,"to"],[42.68,42.72,"the"],[42.8,43.44,"skin,"],[43.52,43.92,"buffers"],[44,44.4,"pH"],[44.48,44.72,"between"],[44.8,44.96,"seven"],[45.12,45.28,"point"],[45.36,45.44,"three"],[45.6,45.84,"five"],[45.92,46.08,"and"],[46.16,46.24,"seven"],[46.4,46.64,"point"],[46.76,46.88,"four"],[47,47.44,"five,"],[47.48,47.52,"and"],[47.64,47.76,"its"],[47.88,48.32,"proteins"],[48.44,48.56,"hold"],[48.64,48.96,"water"],[49.04,49.36,"inside"],[49.44,49.48,"the"],[49.52,50.4,"vessels."],[50.52,50.64,"Its"],[50.72,50.88,"third"],[51.04,51.28,"job"],[51.36,51.44,"is"],[51.56,52.48,"protection."],[52.6,52.72,"White"],[52.8,52.96,"blood"],[53.04,53.28,"cells"],[53.36,53.84,"patrol"],[53.92,54,"and"],[54.16,54.88,"fight;"],[55,55.28,"platelets"],[55.36,55.44,"and"],[55.48,55.76,"clotting"],[55.84,56.32,"proteins"],[56.48,56.72,"seal"],[56.8,56.84,"a"],[56.88,57.2,"damaged"],[57.28,57.6,"vessel"],[57.76,57.92,"within"],[58,58.68,"minutes."],[58.96,59.04,"In"],[59.12,59.36,"sixteen"],[59.52,60,"twenty-eight"],[60.16,60.48,"William"],[60.56,60.88,"Harvey"],[60.96,61.04,"did"],[61.12,61.16,"the"],[61.2,62.16,"arithmetic:"],[62.2,62.24,"the"],[62.36,62.48,"heart"],[62.56,62.8,"moves"],[62.92,63.04,"about"],[63.12,63.28,"two"],[63.36,63.52,"hundred"],[63.6,63.68,"and"],[63.76,64,"fifty"],[64.08,64.4,"liters"],[64.48,64.56,"an"],[64.64,65.2,"hour,"],[65.28,65.52,"far"],[65.6,65.76,"more"],[65.84,65.92,"than"],[65.96,66,"the"],[66.12,66.24,"body"],[66.32,66.4,"could"],[66.48,66.8,"make."],[67.12,67.2,"The"],[67.28,67.52,"same"],[67.6,67.92,"blood"],[68.08,68.32,"must"],[68.4,68.48,"go"],[68.56,68.88,"around"],[68.96,69.04,"a"],[69.12,69.44,"loop."],[69.84,70.08,"Every"],[70.16,70.4,"lesson"],[70.48,70.52,"in"],[70.56,70.64,"this"],[70.8,71.12,"module"],[71.28,71.6,"rests"],[71.68,71.76,"on"],[71.88,72.08,"that."]]},"w14_pla":{"audio":"audio/ap-w14-l1-pla.mp3","words":[[0.355,0.595,"Spin"],[0.635,0.675,"a"],[0.755,0.915,"tube"],[0.995,1.075,"of"],[1.155,1.475,"blood"],[1.555,1.635,"and"],[1.675,1.715,"the"],[1.795,2.035,"top"],[2.115,2.355,"layer"],[2.435,2.515,"is"],[2.595,3.315,"plasma,"],[3.395,3.475,"a"],[3.555,3.875,"pale"],[4.035,4.675,"straw-colored"],[4.755,5.155,"fluid."],[5.475,5.515,"It"],[5.555,5.635,"is"],[5.755,5.875,"about"],[6.035,6.515,"fifty-five"],[6.675,6.995,"percent"],[7.075,7.115,"of"],[7.155,7.235,"the"],[7.435,7.715,"volume."],[8.115,8.515,"Plasma"],[8.595,8.675,"is"],[8.795,8.915,"about"],[9.075,9.475,"ninety-two"],[9.635,9.955,"percent"],[10.035,10.435,"water."],[10.755,10.835,"The"],[10.955,11.075,"other"],[11.115,11.155,"eight"],[11.315,11.635,"percent"],[11.715,11.795,"is"],[11.875,12.755,"cargo:"],[12.808,13.155,"dissolved"],[13.235,13.955,"gases,"],[14.035,14.755,"ions,"],[14.835,15.235,"glucose"],[15.275,15.315,"and"],[15.395,15.715,"amino"],[15.795,16.435,"acids,"],[16.475,17.235,"hormones,"],[17.395,17.875,"wastes,"],[17.915,17.955,"and"],[17.995,18.035,"the"],[18.115,18.435,"plasma"],[18.515,19.315,"proteins."],[19.555,20.035,"Albumin"],[20.115,20.195,"is"],[20.235,20.275,"the"],[20.355,20.515,"most"],[20.635,20.995,"abundant"],[21.075,21.395,"plasma"],[21.475,22.115,"protein,"],[22.275,22.435,"about"],[22.475,22.835,"fifty-eight"],[22.995,23.235,"percent"],[23.315,23.355,"of"],[23.395,23.475,"the"],[23.555,24.035,"total,"],[24.115,24.275,"made"],[24.315,24.355,"in"],[24.395,24.435,"the"],[24.515,25.155,"liver."],[25.235,25.315,"It"],[25.395,25.635,"holds"],[25.795,25.955,"water"],[26.035,26.435,"inside"],[26.475,26.515,"the"],[26.555,26.915,"vessels"],[26.995,27.075,"by"],[27.155,27.635,"osmotic"],[27.795,28.515,"pull."],[28.635,28.755,"Without"],[28.835,28.995,"enough"],[29.075,29.715,"albumin,"],[29.795,30.035,"water"],[30.115,30.355,"leaks"],[30.435,30.675,"out"],[30.755,30.835,"and"],[30.915,30.995,"the"],[31.155,31.475,"tissues"],[31.555,32.275,"swell:"],[32.395,33.315,"edema."],[33.355,33.395,"The"],[33.555,34.035,"globulins"],[34.075,34.115,"are"],[34.195,34.355,"about"],[34.435,34.515,"a"],[34.595,35.315,"third."],[35.435,35.555,"Some"],[35.635,35.955,"carry"],[36.155,36.515,"iron,"],[36.595,36.995,"lipids"],[37.035,37.075,"or"],[37.155,37.955,"hormones;"],[38.035,38.355,"others"],[38.435,38.515,"are"],[38.595,39.395,"antibodies,"],[39.435,39.475,"the"],[39.555,40.515,"immunoglobulins"],[40.595,40.675,"made"],[40.755,40.835,"by"],[40.915,41.075,"white"],[41.155,41.395,"blood"],[41.475,42.115,"cells."],[42.155,42.195,"You"],[42.275,42.355,"will"],[42.435,42.515,"meet"],[42.555,42.595,"them"],[42.675,43.075,"again"],[43.155,43.235,"in"],[43.395,43.555,"Module"],[43.715,44.435,"eight."],[44.475,45.075,"Fibrinogen"],[45.155,45.235,"is"],[45.315,45.395,"the"],[45.475,45.875,"smallest"],[45.955,46.515,"fraction,"],[46.675,46.835,"about"],[46.915,46.995,"four"],[47.075,47.715,"percent,"],[47.755,47.795,"but"],[47.875,48.835,"essential."],[48.915,48.995,"It"],[49.075,49.555,"circulates"],[49.595,50.115,"dissolved"],[50.195,50.435,"until"],[50.475,50.515,"a"],[50.555,50.835,"vessel"],[50.915,50.995,"is"],[51.075,51.795,"damaged;"],[51.875,52.115,"then"],[52.195,52.235,"it"],[52.275,52.355,"is"],[52.435,52.835,"converted"],[52.955,53.075,"into"],[53.155,53.875,"fibrin,"],[53.915,53.955,"the"],[54.035,54.435,"threads"],[54.475,54.515,"of"],[54.595,54.635,"a"],[54.675,55.235,"clot."],[55.395,55.475,"You"],[55.555,55.635,"will"],[55.715,55.955,"trace"],[56.035,56.275,"that"],[56.355,56.435,"in"],[56.555,56.675,"Lesson"],[56.835,56.995,"seven"],[57.075,57.235,"oh"],[57.355,58.035,"four."],[58.155,58.275,"So"],[58.515,58.915,"plasma"],[58.995,59.155,"is"],[59.355,59.555,"mostly"],[59.635,60.195,"water,"],[60.235,60.275,"but"],[60.355,60.435,"its"],[60.595,60.755,"small"],[60.835,61.075,"share"],[61.155,61.195,"of"],[61.235,61.635,"dissolved"],[61.715,62.115,"cargo"],[62.155,62.195,"and"],[62.275,62.755,"protein"],[62.835,62.995,"does"],[63.155,63.315,"most"],[63.395,63.475,"of"],[63.515,63.555,"the"],[63.635,63.955,"work."]]},"w14_frm":{"audio":"audio/ap-w14-l1-frm.mp3","words":[[0.325,0.565,"Spun"],[0.645,0.725,"in"],[0.765,0.805,"a"],[0.925,1.685,"centrifuge,"],[1.845,2.005,"blood"],[2.085,2.325,"settles"],[2.405,2.485,"by"],[2.645,3.045,"density"],[3.165,3.285,"into"],[3.365,3.605,"three"],[3.685,4.485,"bands:"],[4.565,4.965,"plasma"],[5.045,5.125,"on"],[5.205,5.685,"top,"],[5.805,5.925,"about"],[6.005,6.405,"fifty-five"],[6.485,7.205,"percent;"],[7.285,7.365,"a"],[7.445,7.765,"thin"],[7.925,8.245,"pale"],[8.405,8.725,"buffy"],[8.885,9.205,"coat,"],[9.285,9.445,"less"],[9.525,9.605,"than"],[9.685,9.765,"one"],[9.845,10.565,"percent;"],[10.605,10.645,"and"],[10.805,11.125,"packed"],[11.205,11.365,"red"],[11.445,11.685,"cells"],[11.765,11.805,"at"],[11.845,11.925,"the"],[12.005,12.485,"bottom,"],[12.605,12.725,"about"],[12.805,13.285,"forty-five"],[13.365,14.165,"percent."],[14.245,14.405,"That"],[14.485,14.645,"red"],[14.725,15.205,"fraction"],[15.285,15.365,"is"],[15.445,15.485,"the"],[15.525,16.405,"hematocrit."],[16.485,16.645,"The"],[16.765,16.885,"red"],[16.965,17.125,"blood"],[17.205,17.765,"cells,"],[17.845,17.925,"the"],[18.005,18.965,"erythrocytes,"],[19.045,19.125,"are"],[19.205,19.285,"more"],[19.405,19.525,"than"],[19.605,20.085,"ninety-nine"],[20.165,20.565,"percent"],[20.645,20.805,"of"],[20.885,21.045,"all"],[21.125,21.205,"the"],[21.365,21.525,"formed"],[21.725,21.925,"elements"],[22.005,22.085,"by"],[22.165,22.885,"count:"],[23.045,23.205,"about"],[23.285,23.445,"five"],[23.685,24.085,"million"],[24.165,24.245,"in"],[24.325,24.565,"every"],[24.645,25.445,"microliter,"],[25.525,25.605,"a"],[25.765,25.925,"drop"],[26.005,26.085,"the"],[26.205,26.325,"size"],[26.405,26.445,"of"],[26.485,26.565,"a"],[26.685,27.525,"pinhead."],[27.605,27.685,"They"],[27.765,28.005,"carry"],[28.085,29.045,"oxygen."],[29.085,29.125,"The"],[29.205,29.365,"white"],[29.445,29.605,"blood"],[29.685,30.245,"cells,"],[30.285,30.325,"the"],[30.365,31.125,"leukocytes,"],[31.205,31.285,"are"],[31.365,31.525,"less"],[31.645,31.765,"than"],[31.845,31.925,"one"],[32.085,32.405,"percent"],[32.445,32.485,"of"],[32.565,32.645,"the"],[32.805,33.205,"count,"],[33.325,33.445,"yet"],[33.565,33.685,"they"],[33.765,33.845,"are"],[33.925,34.005,"the"],[34.085,34.325,"whole"],[34.405,34.725,"immune"],[34.805,35.605,"patrol."],[35.645,35.685,"There"],[35.805,35.925,"are"],[36.085,36.245,"five"],[36.325,36.645,"named"],[36.685,37.365,"kinds;"],[37.405,37.445,"you"],[37.525,37.605,"will"],[37.725,37.845,"draw"],[37.925,38.005,"them"],[38.085,38.165,"in"],[38.285,38.405,"Lesson"],[38.565,38.725,"seven"],[38.805,38.965,"oh"],[39.085,39.685,"three."],[39.845,40.245,"Platelets"],[40.325,40.405,"are"],[40.485,40.725,"not"],[40.845,40.965,"whole"],[41.045,41.765,"cells."],[41.805,41.845,"They"],[41.925,42.005,"are"],[42.165,42.645,"fragments"],[42.725,42.965,"shed"],[43.085,43.205,"from"],[43.285,43.605,"giant"],[43.685,44.165,"bone-marrow"],[44.245,44.565,"cells"],[44.645,44.885,"called"],[44.965,46.245,"megakaryocytes,"],[46.405,46.565,"about"],[46.605,46.645,"one"],[46.725,46.965,"hundred"],[47.045,47.365,"fifty"],[47.445,47.685,"to"],[47.765,47.845,"four"],[47.925,48.085,"hundred"],[48.325,48.645,"thousand"],[48.725,48.885,"per"],[48.965,49.925,"microliter."],[50.045,50.165,"They"],[50.245,50.325,"are"],[50.405,50.485,"the"],[50.565,50.725,"first"],[50.805,51.365,"responders"],[51.405,51.445,"at"],[51.525,51.605,"a"],[51.765,52.325,"cut."],[52.405,52.485,"All"],[52.525,52.565,"of"],[52.645,52.805,"them"],[52.885,52.965,"are"],[53.085,53.205,"made"],[53.285,53.365,"in"],[53.445,53.605,"red"],[53.685,53.925,"bone"],[54.005,54.485,"marrow,"],[54.525,54.565,"in"],[54.645,54.725,"the"],[54.805,55.445,"sternum,"],[55.525,56.085,"ribs,"],[56.205,56.805,"vertebrae,"],[56.925,57.525,"pelvis,"],[57.565,57.605,"and"],[57.645,57.685,"the"],[57.765,58.005,"upper"],[58.085,58.245,"ends"],[58.325,58.365,"of"],[58.405,58.485,"the"],[58.565,58.885,"femur"],[58.965,59.045,"and"],[59.125,59.925,"humerus:"],[60.005,60.085,"the"],[60.165,60.405,"marrow"],[60.485,60.565,"you"],[60.645,60.725,"met"],[60.765,60.805,"in"],[60.885,60.925,"the"],[60.965,61.365,"skeletal"],[61.565,62.165,"module."],[62.205,62.245,"The"],[62.325,62.805,"process"],[62.885,62.965,"is"],[63.045,64.485,"hematopoiesis."],[64.565,64.645,"They"],[64.765,64.885,"live"],[65.005,65.125,"short"],[65.205,65.685,"lives,"],[65.765,65.925,"so"],[66.165,66.405,"production"],[66.565,66.725,"never"],[66.885,67.525,"stops:"],[67.685,67.845,"about"],[67.925,68.005,"two"],[68.245,68.565,"million"],[68.645,68.805,"new"],[68.885,69.205,"cells"],[69.365,69.685,"every"],[69.845,70.565,"second."],[70.605,70.645,"A"],[70.725,70.885,"red"],[70.965,71.125,"cell"],[71.205,71.525,"lasts"],[71.605,71.685,"about"],[71.765,71.845,"a"],[71.925,72.085,"hundred"],[72.165,72.245,"and"],[72.325,72.405,"twenty"],[72.565,73.205,"days;"],[73.325,73.765,"platelets"],[73.845,74.085,"about"],[74.165,74.596,"ten."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'blood as a connective tissue, its jobs (transport, regulation, protection), William Harvey and the circulation, plasma and the plasma proteins (albumin, globulins, fibrinogen), the formed elements, the hematocrit and the centrifuge tube, and hematopoiesis in red marrow',
+  quick: ['Why is blood a tissue?', 'What does albumin do?', 'What is the hematocrit?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|commentary|paragraph|focus question)/i,
+  guide: 'That part is yours to write, so here is a question instead. If there were twice as many red cells in the same volume, what would each liter carry more of? And what happens to how easily a thicker fluid flows, and how readily it clots? Name one gain and one loss, then write it.',
+  notes: [
+    { k: ['tissue','connective','matrix','liquid'], w: 1.3, a: 'A tissue is cells of similar type and function in an extracellular matrix. In blood the matrix is liquid plasma, so blood is a connective tissue even though it pours.' },
+    { k: ['job','function','transport','regulation','protection','does'], w: 1.1, a: 'Blood transports (oxygen, carbon dioxide, nutrients, hormones, wastes), regulates (heat, pH 7.35 to 7.45, water balance) and protects (white cells, platelets and clotting proteins).' },
+    { k: ['harvey','galen','circulation','loop','1628'], w: 1.2, a: 'William Harvey (De Motu Cordis, 1628) calculated that the heart pumps about 250 liters an hour, far more than the liver could make, so the same blood must circulate in a loop. Malpighi saw the capillaries that close the loop in 1661.' },
+    { k: ['plasma','water','straw','yellow'], w: 1.2, a: 'Plasma is about 55% of blood volume and about 92% water. The other 8% is gases, ions, nutrients, hormones, wastes and the plasma proteins.' },
+    { k: ['albumin','osmotic','edema','swelling','liver'], w: 1.3, a: 'Albumin, made in the liver, is about 58% of plasma protein. Its osmotic pull (colloid osmotic pressure) holds water in the vessels; too little causes edema.' },
+    { k: ['globulin','antibod','immunoglobulin'], a: 'Globulins are about a third of plasma protein: some transport iron, lipids or hormones; others are antibodies (immunoglobulins) made by white cells.' },
+    { k: ['fibrinogen','fibrin','clot'], a: 'Fibrinogen (about 4%) circulates dissolved and is converted to fibrin threads when a vessel is damaged. Lesson 7.04 traces this.' },
+    { k: ['hematocrit','centrifuge','buffy','layer','tube','percent'], w: 1.3, a: 'Spun blood separates into plasma (about 55%), a thin buffy coat of white cells and platelets (under 1%) and packed red cells (about 45%). The red-cell fraction is the hematocrit.' },
+    { k: ['red','erythrocyte','count','million','white','leukocyte','platelet'], a: 'Red cells are over 99% of the formed elements, about 5 million per microliter. White cells are under 1% (five kinds). Platelets are fragments of megakaryocytes, 150,000 to 400,000 per microliter.' },
+    { k: ['marrow','made','hematopoiesis','lifespan','120'], a: 'Blood cells are made in red marrow (sternum, ribs, vertebrae, pelvis, upper femur and humerus), about 2 million a second. Red cells live about 120 days, platelets about 10.' },
+    { k: ['notebook','lab report','submit','commentary','double'], w: 1.2, a: 'The 7.01 Notebook: a proportioned, labeled centrifuge-tube diagram plus a 200 to 300 word commentary. The final paragraph names a specific gain (more oxygen carried) and a specific loss (thicker blood, clot risk) if the hematocrit doubled.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>
