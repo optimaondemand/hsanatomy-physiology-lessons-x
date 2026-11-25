@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Inside the Heart: Chambers and Valves · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A nineteenth-century coloured plate of the heart opened in several views to show its cavities and valves" style="background-image:url(img/lesson-7-06-hero.jpg);background-position:center 20%"><span class="hlab">The heart, its cavities and valves · coloured plate, 19th century</span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 7.06 &middot; Module 7: Cardiovascular System</div>
+      <h1>Inside the Heart: Chambers and Valves</h1>
+      <div class="focusq"><div class="label">Focus</div><p>Why is the left ventricle&rsquo;s myocardium three to five times thicker than the right ventricle&rsquo;s? Argue from pressure, distance and resistance, not just &ldquo;it has to work harder.&rdquo;</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to name the three layers of the heart wall and explain why the left ventricular myocardium is so much thicker than the right.</li><li>I will be able to name all four valves in the order a drop of blood meets them, and say which ones use chordae tendineae.</li><li>I will be able to trace a full circuit from toe to brain, marking oxygenated or deoxygenated at every structure.</li><li>I will be able to tell valve stenosis from valve insufficiency and give an example of each.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Inside the pump</div>
+      <svg class="m2-fig" viewBox="0 0 360 300" role="img" aria-label="A frontal section of the heart with chambers, valves, septum and chordae labeled"><rect x="6" y="6" width="348" height="288" rx="14" fill="#F4F7FB"/><g transform="translate(60,30) scale(1.0)"><path d="M58 0 V72" stroke="#2E5FA8" stroke-width="22" stroke-linecap="butt"/><path d="M58 140 V200" stroke="#2E5FA8" stroke-width="22"/><path d="M112 70 C110 40 116 12 140 6 C162 2 176 14 178 34 L180 88" stroke="#C22F4A" stroke-width="20" fill="none"/><path d="M104 70 V34" stroke="#2E5FA8" stroke-width="16"/><path d="M104 36 C96 30 84 30 80 30 M104 36 C120 44 150 48 196 46" stroke="#2E5FA8" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M184 82 H214 M184 102 H214" stroke="#C22F4A" stroke-width="8" stroke-linecap="round"/><path d="M30 70 C24 96 26 140 40 172 C60 214 104 240 148 246 C170 248 186 234 192 210 C200 172 196 120 186 90 C180 72 168 60 150 58 L80 58 C60 58 36 54 30 70z" fill="#E89AA8" stroke="#B5475E" stroke-width="2.5"/><path d="M38 72 C34 92 34 116 40 132 L92 132 L96 70 C80 64 54 62 38 72z" fill="#D8E3F5" stroke="#B5475E" stroke-width="1.5"/><path d="M128 66 L132 116 L182 116 C186 100 184 82 176 72 C164 64 144 62 128 66z" fill="#F7D9DE" stroke="#B5475E" stroke-width="1.5"/><path d="M42 140 C48 168 70 196 100 214 C112 220 122 222 128 220 C118 196 110 160 108 140z" fill="#D8E3F5" stroke="#B5475E" stroke-width="1.5"/><path d="M118 132 C120 164 128 196 140 218 C150 226 162 226 170 214 C178 196 178 160 172 124z" fill="#F7D9DE" stroke="#B5475E" stroke-width="1.5"/><path d="M92 132 C94 110 96 90 100 70 L112 70 C110 96 108 118 106 140z" fill="#D8E3F5"/><path d="M118 132 C120 110 120 90 118 72 L130 72 C132 96 136 116 140 128z" fill="#F7D9DE"/><path d="M110 136 C112 168 120 196 132 222" stroke="#C2667A" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M112 66 L114 128" stroke="#C2667A" stroke-width="4" fill="none"/><path d="M44 136 C52 150 58 156 64 152 M64 136 C68 152 74 158 80 152 M82 136 C86 150 92 154 98 148" stroke="#1E3F78" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M140 120 C144 136 150 142 156 138 M170 120 C168 136 162 142 158 140" stroke="#8E1F35" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M98 70 Q102 78 106 70 Q110 78 113 70" stroke="#1E3F78" stroke-width="2.5" fill="#FFFFFF"/><path d="M117 74 Q121 82 125 74 Q129 82 132 74" stroke="#8E1F35" stroke-width="2.5" fill="#FFFFFF"/><path d="M56 152 L66 186 M72 154 L68 186 M86 150 L72 186" stroke="#F4F0E8" stroke-width="1.4"/><ellipse cx="68" cy="190" rx="8" ry="6" fill="#C2667A"/><path d="M150 140 L156 178 M160 140 L158 178" stroke="#F4F0E8" stroke-width="1.4"/><ellipse cx="157" cy="182" rx="8" ry="6" fill="#C2667A"/></g><text x="20" y="90" class="m2-t" style="fill:#1E3F78">RA</text><text x="20" y="200" class="m2-t" style="fill:#1E3F78">RV</text><path d="M42 196 L110 196" stroke="#9AA3AD" stroke-width="1"/><path d="M42 86 L100 120" stroke="#9AA3AD" stroke-width="1"/><text x="340" y="120" class="m2-t" text-anchor="end" style="fill:#8E1F35">LA</text><path d="M316 116 L240 110" stroke="#9AA3AD" stroke-width="1"/><text x="340" y="230" class="m2-t" text-anchor="end" style="fill:#8E1F35">LV</text><path d="M316 226 L226 214" stroke="#9AA3AD" stroke-width="1"/><text x="340" y="170" class="m2-ts" text-anchor="end" style="fill:#8E1F35">mitral</text><path d="M300 166 L222 160" stroke="#9AA3AD" stroke-width="1"/><text x="20" y="150" class="m2-ts" style="fill:#1E3F78">tricuspid</text><path d="M76 154 L130 176" stroke="#9AA3AD" stroke-width="1"/></svg>
+      <div class="cap">A frontal section: thin-walled atria above, ventricles below with the left wall about three times thicker than the right, the septum between them, the four valves, and the chordae tendineae anchoring the AV valves to papillary muscles.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="wall" role="tab"><span class="n">01</span>The Heart Wall</button>
+  <button class="tab" data-tab="rooms" role="tab"><span class="n">02</span>Four Chambers</button>
+  <button class="tab" data-tab="valves" role="tab"><span class="n">03</span>Four Valves</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 THE HEART WALL ═════════ -->
+<section class="panel" id="tab-wall" role="tabpanel">
+  <div class="vo" data-clip="w15_wl">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A House with Four Rooms</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A heart cut open from base to apex, then the three layers of its wall, cardiac muscle cells joined at intercalated discs, and the thick left and thin right ventricular walls, with the septum between them"><g data-step="0" class="nohalo"><g transform="translate(14,22) scale(1.05)"><path d="M30 70 C24 96 26 140 40 172 C60 214 104 240 148 246 C170 248 186 234 192 210 C200 172 196 120 186 90 C180 72 168 60 150 58 L80 58 C60 58 36 54 30 70z" fill="#E89AA8" stroke="#B5475E" stroke-width="2.5"/><path d="M38 72 C34 92 34 116 40 132 L92 132 L96 70 C80 64 54 62 38 72z" fill="#F3EFEA" stroke="#B5475E" stroke-width="1.5"/><path d="M128 66 L132 116 L182 116 C186 100 184 82 176 72 C164 64 144 62 128 66z" fill="#F3EFEA" stroke="#B5475E" stroke-width="1.5"/><path d="M42 140 C48 168 70 196 100 214 C112 220 122 222 128 220 C118 196 110 160 108 140z" fill="#F3EFEA" stroke="#B5475E" stroke-width="1.5"/><path d="M118 132 C120 164 128 196 140 218 C150 226 162 226 170 214 C178 196 178 160 172 124z" fill="#F3EFEA" stroke="#B5475E" stroke-width="1.5"/><path d="M92 132 C94 110 96 90 100 70 L112 70 C110 96 108 118 106 140z" fill="#F3EFEA"/><path d="M118 132 C120 110 120 90 118 72 L130 72 C132 96 136 116 140 128z" fill="#F3EFEA"/><path d="M110 136 C112 168 120 196 132 222" stroke="#C2667A" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M112 66 L114 128" stroke="#C2667A" stroke-width="4" fill="none"/></g><text x="130" y="292" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">four rooms, one wall down the middle</text></g><g data-step="1" class="nohalo"><rect x="360" y="30" width="290" height="12" fill="#F0C7B4"/><text x="656" y="40" class="m2-ts" text-anchor="end" style="fill:#8A4A3A">epicardium</text></g><g data-step="2" class="nohalo"><rect x="360" y="42" width="290" height="80" fill="#E7A2AE"/><rect x="380" y="60" width="44" height="22" rx="6" fill="#E89AA8" stroke="#B5475E" stroke-width="1.5"/><circle cx="402.0" cy="71.0" r="3.5" fill="#7A2A3A"/><path d="M388 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M395 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M402 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M409 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M416 63 v16" stroke="#D27A8C" stroke-width="1"/><rect x="426" y="60" width="44" height="22" rx="6" fill="#E89AA8" stroke="#B5475E" stroke-width="1.5"/><circle cx="448.0" cy="71.0" r="3.5" fill="#7A2A3A"/><path d="M434 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M441 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M448 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M455 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M462 63 v16" stroke="#D27A8C" stroke-width="1"/><rect x="472" y="60" width="44" height="22" rx="6" fill="#E89AA8" stroke="#B5475E" stroke-width="1.5"/><circle cx="494.0" cy="71.0" r="3.5" fill="#7A2A3A"/><path d="M480 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M487 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M494 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M501 63 v16" stroke="#D27A8C" stroke-width="1"/><path d="M508 63 v16" stroke="#D27A8C" stroke-width="1"/><rect x="402" y="88" width="44" height="22" rx="6" fill="#E89AA8" stroke="#B5475E" stroke-width="1.5"/><circle cx="424.0" cy="99.0" r="3.5" fill="#7A2A3A"/><path d="M410 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M417 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M424 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M431 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M438 91 v16" stroke="#D27A8C" stroke-width="1"/><rect x="448" y="88" width="44" height="22" rx="6" fill="#E89AA8" stroke="#B5475E" stroke-width="1.5"/><circle cx="470.0" cy="99.0" r="3.5" fill="#7A2A3A"/><path d="M456 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M463 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M470 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M477 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M484 91 v16" stroke="#D27A8C" stroke-width="1"/><rect x="494" y="88" width="44" height="22" rx="6" fill="#E89AA8" stroke="#B5475E" stroke-width="1.5"/><circle cx="516.0" cy="99.0" r="3.5" fill="#7A2A3A"/><path d="M502 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M509 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M516 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M523 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M530 91 v16" stroke="#D27A8C" stroke-width="1"/><path d="M424 60 v22" stroke="#4A1A2A" stroke-width="3"/><path d="M470 60 v22" stroke="#4A1A2A" stroke-width="3"/><text x="560" y="76" class="m2-ts" style="fill:#B5475E">myocardium: cardiac muscle</text><text x="560" y="92" class="m2-ts" style="fill:#B5475E">joined at intercalated discs</text></g><g data-step="3" class="nohalo"><rect x="360" y="122" width="290" height="8" fill="#F7F3EE" stroke="#D8C8B8"/><text x="360" y="148" class="m2-ts" style="fill:#8A6A4A">endocardium: smooth lining; valves are its folds</text></g><g data-step="4" class="nohalo"><path d="M199 200 L364 192" stroke="#9AA3AD" stroke-width="1"/><text x="360" y="196" class="m2-ts" style="fill:#8E1F35">left ventricle wall: 10&ndash;15 mm</text><path d="M62 190 L364 216" stroke="#9AA3AD" stroke-width="1"/><text x="360" y="220" class="m2-ts" style="fill:#1E3F78">right ventricle wall: 3&ndash;5 mm</text></g><g data-step="5" class="nohalo"><path d="M138 211 L364 248" stroke="#9AA3AD" stroke-width="1"/><text x="360" y="252" class="m2-ts" style="fill:#B5475E">interventricular septum (a hole: VSD)</text><text x="360" y="272" class="m2-ts" style="fill:#56606B">interatrial septum: the foramen ovale</text><text x="360" y="288" class="m2-ts" style="fill:#56606B">before birth (Lesson 7.12)</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Cut a heart from base to apex and you see four rooms with a continuous wall down the middle. The right side handles deoxygenated blood, the left side oxygenated, and valves keep the flow one way.", "The wall has three layers. The outermost is the epicardium, the visceral pericardium you met last lesson.", "The thick middle layer is the myocardium, cardiac muscle. Its cells are joined end to end at intercalated discs, which let the electrical signal spread from cell to cell across the whole chamber.", "The innermost layer is the endocardium, a smooth lining continuous with the lining of every blood vessel. The valves are folds of endocardium stiffened with connective tissue.", "The myocardium is not the same everywhere. The left ventricle's wall is about ten to fifteen millimeters thick; the right's only three to five.", "Between the ventricles is the interventricular septum. A hole in it, a ventricular septal defect, is the most common congenital heart defect. Between the atria, before birth, a flap called the foramen ovale lets blood skip the lungs; you will meet it again in Lesson seven twelve."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The three layers of the heart wall and the septa.</span></div>
+    <p class="marg"><b>Service.</b> The left ventricle does more work than any other chamber, and it is built thick for it. The heart puts its strength where the rest of the body needs it most.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="7.06-reading" data-title="Inside the heart" data-models='[{"label": "Outside: heart and great vessels", "src": "../../assets/models/07-05-heart-great-vessels.glb", "orbit": "0deg 80deg auto"}, {"label": "Inside: front walls removed", "src": "../../assets/models/heart-inside.glb", "orbit": "0deg 85deg auto"}]'></div>
+      <h3>A house with four rooms</h3>
+      <p>If you cut a heart open along a vertical plane from base to apex, you see four chambers separated by a continuous wall down the middle. The two right chambers handle deoxygenated blood. The two left chambers handle oxygenated blood. Between them, valves open and close to keep the flow strictly one-way. The whole structure is built so that on every beat, the blood goes through the same path in the same direction with as little leakage as possible.</p>
+      <h3>The three layers of the heart wall</h3>
+      <p>Before we go inside the chambers, look at the wall itself. From outside in:</p>
+      <p><b>Epicardium</b><button type="button" class="say" data-say="epicardium" aria-label="Hear it: epicardium" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the outermost layer, also called the visceral pericardium. The thin glistening surface you saw last lesson.</p>
+      <figure class="plate"><img data-img="f70601" alt="The three layers of the heart wall (epicardium, myocardium, endocardium) and their relationship to the surrounding pericardium"><figcaption>The heart wall’s three layers — epicardium, myocardium, and endocardium — and their continuity with the surrounding serous and fibrous pericardium.</figcaption></figure>
+      <p><b>Myocardium</b><button type="button" class="say" data-say="myocardium" aria-label="Hear it: myocardium" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the thick middle layer of <i>cardiac muscle</i>. This is the muscle that contracts. It is built of cardiac muscle cells (cardiomyocytes) joined end-to-end at <i>intercalated discs</i> — specialized junctions that allow electrical signals to spread rapidly cell-to-cell across the entire chamber. The myocardium is much thicker in the left ventricle than in the right (about 10–15 mm vs. 3–5 mm), reflecting the pressure each must generate.</p>
+      <figure class="plate"><img data-img="f70602" alt="Cardiac muscle fibers joined by intercalated discs, with a close-up showing the desmosomes and gap junctions inside a disc"><figcaption>Figure 10.22 — Cardiac Muscle. Intercalated discs are part of the cardiac muscle sarcolemma and they contain gap junctions and desmosomes.</figcaption></figure>
+      <p><b>Endocardium</b><button type="button" class="say" data-say="endocardium" aria-label="Hear it: endocardium" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the innermost layer, a smooth simple-squamous epithelium continuous with the lining of all the blood vessels. It exists for the same reason vessel endothelium does: a smooth lining minimizes turbulence and friction. The valves are folds of endocardium reinforced with connective tissue.</p>
+      <h3>The interventricular septum</h3>
+      <p>The wall between the right and left ventricles is the <b>interventricular septum</b><button type="button" class="say" data-say="interventricular-septum" aria-label="Hear it: interventricular septum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. It is built almost entirely of myocardium, with a small upper segment that is membranous. The septum keeps oxygenated and deoxygenated blood from mixing. A hole in the septum — a <i>ventricular septal defect</i>, the most common congenital heart defect — allows the higher-pressure left ventricle to push blood into the right ventricle, eventually overloading the lungs. Some VSDs close on their own; others require surgical repair.</p>
+      <p>There is also an <b>interatrial septum</b><button type="button" class="say" data-say="interatrial-septum" aria-label="Hear it: interatrial septum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> between the right and left atria. Before birth, this septum has a flap valve called the <b>foramen ovale</b><button type="button" class="say" data-say="foramen-ovale" aria-label="Hear it: foramen ovale" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> that allows blood to bypass the non-functional lungs. It normally closes at birth; we will return to this in Lesson 7.12 (fetal circulation).</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w15m2"><p class="q">What lets the electrical signal spread quickly across the myocardium?</p>
+        <button class="opt" data-ok="1" data-fb="Right: they contain gap junctions.">Intercalated discs joining the muscle cells end to end.</button>
+        <button class="opt" data-fb="That is the smooth inner lining.">The endocardium.</button>
+        <button class="opt" data-fb="That only reduces friction.">The pericardial fluid.</button></div>
+      <div class="mcq card" data-qid="w15m3"><p class="q">A baby has a ventricular septal defect. Which way does blood leak through it, and why?</p>
+        <button class="opt" data-ok="1" data-fb="Yes; over time this overloads the lungs.">Left to right, because the left ventricle&rsquo;s pressure is higher.</button>
+        <button class="opt" data-fb="Pressure, not size, decides.">Right to left, because the right ventricle is bigger.</button>
+        <button class="opt" data-fb="The septum is a wall.">It does not leak; the septum is a valve.</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 30 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Inside the heart</span>
+      <p>On a fresh page, draw a front-cut (coronal) cross-section of the heart, using your 7.05 external drawing as a guide to size and tilt. Draw the two thin-walled <b>atria</b> on top and the two <b>ventricles</b> below, the <b>left wall about three times thicker</b> than the right, and the <b>interventricular septum</b>.</p><p>Add the <b>four valves</b> with visible cusps: tricuspid, pulmonary semilunar, mitral, aortic semilunar. Add <b>chordae tendineae</b> from the AV cusps down to small <b>papillary muscles</b>. Draw flow arrows through each chamber and valve.</p><p>Then two small close-ups: one from inside the <b>right atrium looking at the tricuspid valve</b>, one from inside the <b>left ventricle looking up at the aortic valve</b>. You will submit these.</p>
+      <ul class="checks"><li data-ck="w15d21">Four chambers, septum, and a visibly thicker left ventricle wall.</li><li data-ck="w15d22">Four valves with cusps; chordae and papillary muscles on the AV valves; flow arrows.</li><li data-ck="w15d23">Both close-ups drawn from the requested viewpoints.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Circulatory Map page, heart drawing and detail page: they become your Module 7 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="rooms" type="button">Next: Four Chambers &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 FOUR CHAMBERS ═════════ -->
+<section class="panel" id="tab-rooms" role="tabpanel">
+  <div class="vo" data-clip="w15_rm">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Four Rooms from Inside</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The opened heart with each chamber labeled in turn, blood flowing through the right side and the left side, and the chordae tendineae and papillary muscles"><g data-step="0" class="nohalo"><g transform="translate(14,22) scale(1.05)"><path d="M58 0 V72" stroke="#2E5FA8" stroke-width="22" stroke-linecap="butt"/><path d="M58 140 V200" stroke="#2E5FA8" stroke-width="22"/><path d="M112 70 C110 40 116 12 140 6 C162 2 176 14 178 34 L180 88" stroke="#C22F4A" stroke-width="20" fill="none"/><path d="M104 70 V34" stroke="#2E5FA8" stroke-width="16"/><path d="M104 36 C96 30 84 30 80 30 M104 36 C120 44 150 48 196 46" stroke="#2E5FA8" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M184 82 H214 M184 102 H214" stroke="#C22F4A" stroke-width="8" stroke-linecap="round"/><path d="M30 70 C24 96 26 140 40 172 C60 214 104 240 148 246 C170 248 186 234 192 210 C200 172 196 120 186 90 C180 72 168 60 150 58 L80 58 C60 58 36 54 30 70z" fill="#E89AA8" stroke="#B5475E" stroke-width="2.5"/><path d="M38 72 C34 92 34 116 40 132 L92 132 L96 70 C80 64 54 62 38 72z" fill="#D8E3F5" stroke="#B5475E" stroke-width="1.5"/><path d="M128 66 L132 116 L182 116 C186 100 184 82 176 72 C164 64 144 62 128 66z" fill="#F7D9DE" stroke="#B5475E" stroke-width="1.5"/><path d="M42 140 C48 168 70 196 100 214 C112 220 122 222 128 220 C118 196 110 160 108 140z" fill="#D8E3F5" stroke="#B5475E" stroke-width="1.5"/><path d="M118 132 C120 164 128 196 140 218 C150 226 162 226 170 214 C178 196 178 160 172 124z" fill="#F7D9DE" stroke="#B5475E" stroke-width="1.5"/><path d="M92 132 C94 110 96 90 100 70 L112 70 C110 96 108 118 106 140z" fill="#D8E3F5"/><path d="M118 132 C120 110 120 90 118 72 L130 72 C132 96 136 116 140 128z" fill="#F7D9DE"/><path d="M110 136 C112 168 120 196 132 222" stroke="#C2667A" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M112 66 L114 128" stroke="#C2667A" stroke-width="4" fill="none"/><path d="M44 136 C52 150 58 156 64 152 M64 136 C68 152 74 158 80 152 M82 136 C86 150 92 154 98 148" stroke="#1E3F78" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M140 120 C144 136 150 142 156 138 M170 120 C168 136 162 142 158 140" stroke="#8E1F35" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M98 70 Q102 78 106 70 Q110 78 113 70" stroke="#1E3F78" stroke-width="2.5" fill="#FFFFFF"/><path d="M117 74 Q121 82 125 74 Q129 82 132 74" stroke="#8E1F35" stroke-width="2.5" fill="#FFFFFF"/><path d="M56 152 L66 186 M72 154 L68 186 M86 150 L72 186" stroke="#F4F0E8" stroke-width="1.4"/><ellipse cx="68" cy="190" rx="8" ry="6" fill="#C2667A"/><path d="M150 140 L156 178 M160 140 L158 178" stroke="#F4F0E8" stroke-width="1.4"/><ellipse cx="157" cy="182" rx="8" ry="6" fill="#C2667A"/></g><text x="276" y="30" class="m2-t" style="fill:#1E3F78">the right side: deoxygenated</text></g><g data-step="1" class="nohalo"><path d="M73 127 L274 60" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="64" class="m2-ts" style="fill:#1E3F78">right atrium: SVC, IVC, coronary sinus</text><text x="274" y="80" class="m2-ts" style="fill:#56606B">thin wall: just a push</text></g><g data-step="2" class="nohalo"><path d="M98 203 L274 108" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="112" class="m2-ts" style="fill:#1E3F78">right ventricle &rarr; pulmonary trunk</text><text x="274" y="128" class="m2-ts" style="fill:#56606B">trabeculae carneae: &ldquo;meaty ridges&rdquo;</text></g><g data-step="3" class="nohalo"><path d="M88 211 L274 156" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="160" class="m2-ts" style="fill:#B5475E">chordae tendineae &rarr; papillary muscles</text><text x="274" y="176" class="m2-ts" style="fill:#56606B">tether the AV valve cusps</text></g><g data-step="4" class="nohalo"><path d="M180 119 L274 210" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="214" class="m2-ts" style="fill:#8E1F35">left atrium: four pulmonary veins</text></g><g data-step="5" class="nohalo"><g transform="translate(14,22) scale(1.05)"><path d="M58 24 L58 60" stroke="#fff" stroke-width="3" fill="none"/><path d="M54.5 52.8 L58 60 L61.5 52.8" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M58 184 L58 150" stroke="#fff" stroke-width="3" fill="none"/><path d="M61.5 157.2 L58 150 L54.5 157.2" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M70 120 L70 160" stroke="#1E3F78" stroke-width="2.5" fill="none"/><path d="M66.5 152.8 L70 160 L73.5 152.8" stroke="#1E3F78" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M86 190 C96 170 100 120 104 80" stroke="#1E3F78" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M106.2 87.7 L104 80 L99.3 86.5" stroke="#1E3F78" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M212 92 L190 92" stroke="#fff" stroke-width="3" fill="none"/><path d="M197.2 88.5 L190 92 L197.2 95.5" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M156 100 L154 156" stroke="#8E1F35" stroke-width="2.5" fill="none"/><path d="M150.8 148.7 L154 156 L157.7 148.9" stroke="#8E1F35" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M150 196 C132 170 126 120 124 84" stroke="#8E1F35" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M128.1 90.9 L124 84 L121.2 91.5" stroke="#8E1F35" stroke-width="2.5" fill="none" stroke-linejoin="round"/></g><path d="M172 222 L274 242" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="246" class="m2-ts" style="fill:#8E1F35">left ventricle &rarr; aorta</text><text x="274" y="262" class="m2-ts" style="fill:#56606B">the workhorse: thickest wall</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Now walk through the rooms in the order blood does, starting on the right side.", "The right atrium receives the superior and inferior venae cavae and the coronary sinus, which drains the heart's own veins. Its wall is thin: it only has to push blood one step down.", "The right ventricle pumps into the pulmonary trunk. The lungs are next door and their vessels resist little, so its wall is moderate. Its inner surface is ridged with trabeculae carneae, meaty ridges.", "Cord-like chordae tendineae run from the cusps of the tricuspid valve down to papillary muscles on the ventricle wall. They tether the cusps.", "On the left, the left atrium receives the four pulmonary veins. It too has a thin wall.", "The left ventricle pumps into the aorta, at high pressure, to reach the whole body. It has the same ridges, chordae and papillary muscles, only more and bigger. It is the workhorse of the heart."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The four chambers from inside: what each receives, where it pumps, and its wall.</span></div>
+    <article class="atlas">
+      <h3>The four chambers from the inside</h3>
+      <p><b>Right atrium.</b><button type="button" class="say" data-say="right-atrium" aria-label="Hear it: right atrium." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Receives the SVC, IVC, and the <i>coronary sinus</i> (which drains the heart’s own veins). The wall is thin — just enough muscle to push blood across into the right ventricle.</p>
+      <p><b>Right ventricle.</b><button type="button" class="say" data-say="right-ventricle" aria-label="Hear it: right ventricle." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Pumps blood into the pulmonary trunk under modest pressure (the lungs are right next door, with low-resistance vessels). The wall is moderately thick. Its inner surface shows <i>trabeculae carneae</i> (literally “meaty ridges”) and rope-like structures called <i>chordae tendineae</i> that anchor the tricuspid valve to small muscle bumps called <i>papillary muscles</i>.</p>
+      <p><b>Left atrium.</b><button type="button" class="say" data-say="left-atrium" aria-label="Hear it: left atrium." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Receives the four pulmonary veins. Like the right atrium, it has a thin wall — just enough to deliver blood into the left ventricle.</p>
+      <p><b>Left ventricle.</b><button type="button" class="say" data-say="left-ventricle" aria-label="Hear it: left ventricle." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Pumps blood into the aorta under high pressure to reach the entire body. Its wall is dramatically thicker than the right’s, with the same trabeculae carneae, chordae tendineae, and papillary muscles — just more of them, and bigger. The left ventricle is the workhorse of the heart.</p>
+      <figure class="plate"><img data-img="f70603" alt="Photograph of a frontal heart section showing chordae tendineae, papillary muscles, and trabeculae carneae attached to the tricuspid and mitral valves"><figcaption>Figure 19.11 — Chordae Tendineae and Papillary Muscles. In this frontal section, you can see papillary muscles attached to the tricuspid valve on the right as well as the mitral valve on the left via chordae tendineae. (credit: modification of work by “PV KS”/flickr.com)</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Room?</h2></div>
+    <p class="hint">Sort each clue, then check.</p>
+    <div class="place card" id="w15wr">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ra" data-fb="Right atrium." data-miss="Where do the heart&rsquo;s own veins drain?">receives the coronary sinus</button>
+        <button class="chip" data-k="b" data-ans="rv" data-fb="Right ventricle." data-miss="Which side pumps to the lungs?">pumps into a short, low-resistance circuit</button>
+        <button class="chip" data-k="c" data-ans="la" data-fb="Left atrium." data-miss="Where does lung blood arrive?">receives four pulmonary veins</button>
+        <button class="chip" data-k="d" data-ans="lv" data-fb="Left ventricle." data-miss="Which chamber does the most work?">the thickest wall: 10&ndash;15 mm</button>
+        <button class="chip" data-k="e" data-ans="rv" data-fb="Right ventricle." data-miss="Where are the tricuspid chordae?">anchors the tricuspid valve with chordae</button>
+        <button class="chip" data-k="f" data-ans="lv" data-fb="Left ventricle." data-miss="Where are the mitral chordae?">anchors the mitral valve with chordae</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="ra"><h4>Right atrium</h4><div class="drop"></div></div><div class="bin" data-bin="rv"><h4>Right ventricle</h4><div class="drop"></div></div><div class="bin" data-bin="la"><h4>Left atrium</h4><div class="drop"></div></div><div class="bin" data-bin="lv"><h4>Left ventricle</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Trace One Drop, Toe to Brain</h2></div>
+    <p class="hint">Finish the trace you began in 7.05. Copy it into your notebook with O or D at each step.</p>
+    <div class="order card" id="w15tr" data-order="toe,leg,ivc,ra,tv,rv,pv,pt,lc,pvn,la,mv,lv,av,ao,cc,br" data-done="Two switches: oxygen is loaded in the lung capillaries and unloaded in the body&rsquo;s capillaries." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap every structure in the order one drop of blood meets it.</p><div class="opool"><button data-k="leg">leg veins: great saphenous / femoral (D)</button><button data-k="lc">lung capillaries: D &rarr; O</button><button data-k="lv">left ventricle (O)</button><button data-k="br">brain capillaries: O &rarr; D</button><button data-k="ivc">inferior vena cava (D)</button><button data-k="toe">toe capillaries (D)</button><button data-k="tv">tricuspid valve (D)</button><button data-k="cc">common carotid artery (O)</button><button data-k="pt">pulmonary trunk and arteries (D)</button><button data-k="ao">aorta (O)</button><button data-k="av">aortic semilunar valve (O)</button><button data-k="la">left atrium (O)</button><button data-k="ra">right atrium (D)</button><button data-k="rv">right ventricle (D)</button><button data-k="pv">pulmonary semilunar valve (D)</button><button data-k="pvn">pulmonary veins (O)</button><button data-k="mv">mitral valve (O)</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="wall" type="button">&larr; The Heart Wall</button><button class="btn" data-go="valves" type="button">Next: Four Valves &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 FOUR VALVES ═════════ -->
+<section class="panel" id="tab-valves" role="tabpanel">
+  <div class="vo" data-clip="w15_vl">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">One Way Only</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The four valves highlighted in the order blood meets them, a close-up of an atrioventricular valve held by chordae and a semilunar valve with three pockets, and the two ways a valve fails"><g data-step="0" class="nohalo"><g transform="translate(14,22) scale(1.05)"><path d="M58 0 V72" stroke="#2E5FA8" stroke-width="22" stroke-linecap="butt"/><path d="M58 140 V200" stroke="#2E5FA8" stroke-width="22"/><path d="M112 70 C110 40 116 12 140 6 C162 2 176 14 178 34 L180 88" stroke="#C22F4A" stroke-width="20" fill="none"/><path d="M104 70 V34" stroke="#2E5FA8" stroke-width="16"/><path d="M104 36 C96 30 84 30 80 30 M104 36 C120 44 150 48 196 46" stroke="#2E5FA8" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M184 82 H214 M184 102 H214" stroke="#C22F4A" stroke-width="8" stroke-linecap="round"/><path d="M30 70 C24 96 26 140 40 172 C60 214 104 240 148 246 C170 248 186 234 192 210 C200 172 196 120 186 90 C180 72 168 60 150 58 L80 58 C60 58 36 54 30 70z" fill="#E89AA8" stroke="#B5475E" stroke-width="2.5"/><path d="M38 72 C34 92 34 116 40 132 L92 132 L96 70 C80 64 54 62 38 72z" fill="#D8E3F5" stroke="#B5475E" stroke-width="1.5"/><path d="M128 66 L132 116 L182 116 C186 100 184 82 176 72 C164 64 144 62 128 66z" fill="#F7D9DE" stroke="#B5475E" stroke-width="1.5"/><path d="M42 140 C48 168 70 196 100 214 C112 220 122 222 128 220 C118 196 110 160 108 140z" fill="#D8E3F5" stroke="#B5475E" stroke-width="1.5"/><path d="M118 132 C120 164 128 196 140 218 C150 226 162 226 170 214 C178 196 178 160 172 124z" fill="#F7D9DE" stroke="#B5475E" stroke-width="1.5"/><path d="M92 132 C94 110 96 90 100 70 L112 70 C110 96 108 118 106 140z" fill="#D8E3F5"/><path d="M118 132 C120 110 120 90 118 72 L130 72 C132 96 136 116 140 128z" fill="#F7D9DE"/><path d="M110 136 C112 168 120 196 132 222" stroke="#C2667A" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M112 66 L114 128" stroke="#C2667A" stroke-width="4" fill="none"/><path d="M44 136 C52 150 58 156 64 152 M64 136 C68 152 74 158 80 152 M82 136 C86 150 92 154 98 148" stroke="#1E3F78" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M140 120 C144 136 150 142 156 138 M170 120 C168 136 162 142 158 140" stroke="#8E1F35" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M98 70 Q102 78 106 70 Q110 78 113 70" stroke="#1E3F78" stroke-width="2.5" fill="#FFFFFF"/><path d="M117 74 Q121 82 125 74 Q129 82 132 74" stroke="#8E1F35" stroke-width="2.5" fill="#FFFFFF"/><path d="M56 152 L66 186 M72 154 L68 186 M86 150 L72 186" stroke="#F4F0E8" stroke-width="1.4"/><ellipse cx="68" cy="190" rx="8" ry="6" fill="#C2667A"/><path d="M150 140 L156 178 M160 140 L158 178" stroke="#F4F0E8" stroke-width="1.4"/><ellipse cx="157" cy="182" rx="8" ry="6" fill="#C2667A"/></g><text x="270" y="30" class="m2-t" style="fill:#1E2B3A">two AV valves, two semilunar valves</text></g><g data-step="1" class="nohalo"><path d="M88 175 L274 58" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="62" class="m2-ts" style="fill:#1E3F78">1 tricuspid (right AV): 3 cusps</text></g><g data-step="2" class="nohalo"><path d="M124 98 L274 82" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="86" class="m2-ts" style="fill:#1E3F78">2 pulmonary semilunar</text></g><g data-step="3" class="nohalo"><path d="M177 158 L274 106" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="110" class="m2-ts" style="fill:#8E1F35">3 mitral (bicuspid, left AV): 2 cusps</text></g><g data-step="4" class="nohalo"><path d="M145 102 L274 130" stroke="#9AA3AD" stroke-width="1"/><text x="270" y="134" class="m2-ts" style="fill:#8E1F35">4 aortic semilunar</text><text x="270" y="160" class="m2-ts" style="fill:#56606B">mnemonic: &ldquo;Try Before You Buy&rdquo;</text><path d="M300 186 Q320 198 340 186 Q360 198 380 186" stroke="#1E3F78" stroke-width="3" fill="#D8E3F5"/><path d="M310 192 L330 242" stroke="#B9A88F" stroke-width="1.4"/><path d="M330 192 L330 242" stroke="#B9A88F" stroke-width="1.4"/><path d="M350 192 L330 242" stroke="#B9A88F" stroke-width="1.4"/><path d="M370 192 L330 242" stroke="#B9A88F" stroke-width="1.4"/><ellipse cx="330" cy="246" rx="10" ry="6" fill="#C2667A"/><text x="300" y="262" class="m2-ts" style="fill:#1E3F78">AV: chordae stop</text><text x="300" y="278" class="m2-ts" style="fill:#1E3F78">blow-back</text><path d="M420 196 Q433 218 446 196" stroke="#8E1F35" stroke-width="3" fill="#F7D9DE"/><path d="M446 196 Q459 218 472 196" stroke="#8E1F35" stroke-width="3" fill="#F7D9DE"/><path d="M472 196 Q485 218 498 196" stroke="#8E1F35" stroke-width="3" fill="#F7D9DE"/><text x="420" y="240" class="m2-ts" style="fill:#8E1F35">semilunar: pockets</text><text x="420" y="256" class="m2-ts" style="fill:#8E1F35">self-lock; no chordae</text></g><g data-step="5" class="nohalo"><text x="560" y="196" class="m2-t" style="fill:#8E1F35">stenosis:</text><text x="560" y="212" class="m2-ts" style="fill:#8E1F35">stiff, narrow</text><text x="560" y="240" class="m2-t" style="fill:#A86A00">regurgitation:</text><text x="560" y="256" class="m2-ts" style="fill:#A86A00">leaks backward</text><text x="560" y="282" class="m2-ts" style="fill:#56606B">both cause murmurs</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Four one-way valves keep the blood moving forward. Two sit between atria and ventricles: the atrioventricular, or AV, valves. Two sit where the ventricles meet the great arteries: the semilunar valves.", "First, the tricuspid valve, the right AV valve, with three cusps.", "Second, the pulmonary semilunar valve, at the base of the pulmonary trunk.", "Third, the mitral valve, the left AV valve, with two cusps, also called the bicuspid. Two cusps together look like a bishop's mitre.", "Fourth, the aortic semilunar valve. The AV valves need chordae tendineae: when the ventricle squeezes, the cords keep the cusps from blowing back into the atrium. The semilunar valves have three pocket-shaped cusps that fill with back-flowing blood and lock shut, with no cords at all.", "A valve can fail two ways. Stenosis: stiff and narrow, so forward flow is blocked; aortic stenosis is the most common adult valve disease. Regurgitation, or insufficiency: it fails to close and leaks backward, like mitral regurgitation. Both make murmurs."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The four valves, how each closes, and valve disease.</span></div>
+    <article class="atlas">
+      <h3>The four valves</h3>
+      <p>Four one-way valves keep blood flowing forward. Two are between the atria and the ventricles — the <b>atrioventricular (AV) valves</b><button type="button" class="say" data-say="av-valves" aria-label="Hear it: atrioventricular (av) valves" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. Two are between the ventricles and the great arteries — the <b>semilunar valves</b><button type="button" class="say" data-say="semilunar-valve" aria-label="Hear it: semilunar valves" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>.</p>
+      <h4>Tricuspid valve (right AV)</h4>
+      <p>Between the right atrium and right ventricle. Has <b>three</b> cusps (flaps), hence <i>tri</i>cuspid. Each cusp is anchored downward by chordae tendineae that attach to papillary muscles in the ventricle wall. When the ventricle contracts, the rising pressure slams the cusps shut; the chordae tendineae prevent the cusps from being blown backward into the atrium.</p>
+      <h4>Mitral valve (left AV)</h4>
+      <p>Between the left atrium and left ventricle. Has <b>two</b> cusps — that is why it is also called the <i>bicuspid</i> valve. (It is called “mitral” because the two cusps together resemble a Catholic bishop’s mitre hat.) Otherwise it works identically to the tricuspid: chordae tendineae tether it down so that the high pressure of left-ventricular contraction does not blow it open backward.</p>
+      <h4>Pulmonary semilunar valve</h4>
+      <p>At the base of the pulmonary trunk, where it leaves the right ventricle. Three pocket-shaped cusps. When the right ventricle relaxes, blood that would otherwise fall back fills the pockets and forces them shut. No chordae tendineae are needed because the pockets are self-locking under back-pressure.</p>
+      <h4>Aortic semilunar valve</h4>
+      <p>At the base of the aorta, where it leaves the left ventricle. Three pocket-shaped cusps, identical mechanism to the pulmonary valve. The aortic valve is the most often diseased valve in adult medicine because of the high pressures it endures across decades.</p>
+      <figure class="plate"><img data-img="f70604" alt="View of all four heart valves from above, with the atria and major vessels removed: tricuspid, bicuspid (mitral), aortic, and pulmonary"><figcaption>Figure 19.12 — Heart Valves. With the atria and major vessels removed, all four valves are clearly visible, although it is difficult to distinguish the three separate cusps of the tricuspid valve.</figcaption></figure>
+      <figure class="plate"><img data-img="f70605" alt="Anterior view of the internal structures of the heart: four chambers, major vessels, valves, chordae tendineae, papillary muscles, and the moderator band"><figcaption>Figure 19.9 — Internal Structures of the Heart. This anterior view of the heart shows the four chambers, the major vessels and their early branches, as well as the valves. The presence of the pulmonary trunk and aorta covers the interatrial septum, and the atrioventricular septum is cut away to show the atrioventricular valves.</figcaption></figure>
+      <figure class="plate"><img data-img="f70606" alt="Small animated diagram of the heart&#x27;s internal chambers and valves"><figcaption>An animated view of the heart’s internal chambers and valves. (Source not identified.)</figcaption></figure>
+      <h3>A mnemonic for valves</h3>
+      <p>“<i>Try Before You Buy</i>” works in many anatomy classes: Tricuspid (Right AV) → Pulmonary → Bicuspid/Mitral (Left AV) → Aortic. Or, in the order a drop of blood would encounter them traveling through the heart: tricuspid → pulmonary semilunar → mitral → aortic semilunar.</p>
+      <h3>Why this matters — valve disease</h3>
+      <p>A valve can fail in two ways. It can become <b>stenotic</b><button type="button" class="say" data-say="stenotic" aria-label="Hear it: stenotic" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (stiff and narrow, restricting forward flow) or <b>insufficient/regurgitant</b><button type="button" class="say" data-say="regurgitant" aria-label="Hear it: insufficient/regurgitant" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (failing to close fully, allowing backflow). Aortic stenosis is the most common adult valve disease — the cusps stiffen and calcify with age, and the left ventricle has to work much harder to push blood through a narrowed opening. Mitral regurgitation is the second most common — a damaged mitral valve allows blood to leak back into the left atrium during ventricular contraction. Both produce characteristic heart murmurs, which is what physicians listen for with a stethoscope (and what René Laennec was first to amplify systematically — we meet him next lesson).</p>
+      <details class="selfcheck"><summary>Self-check: name all four valves in the order a drop of blood encounters them, and which use chordae tendineae</summary><p>In order: <b>tricuspid</b><button type="button" class="say" data-say="tricuspid" aria-label="Hear it: tricuspid" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> → <b>pulmonary semilunar</b><button type="button" class="say" data-say="pulmonary-semilunar" aria-label="Hear it: pulmonary semilunar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> → <b>mitral</b><button type="button" class="say" data-say="mitral" aria-label="Hear it: mitral" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> → <b>aortic semilunar</b><button type="button" class="say" data-say="aortic-semilunar" aria-label="Hear it: aortic semilunar" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>.</p><p>Only the two AV valves (tricuspid and mitral) have chordae tendineae — they need them because the rising ventricular pressure would otherwise blow the cusps backward into the atria. The semilunar valves are self-locking pocket valves; they need no chordae.</p><p>Bonus: which valve is most often diseased in older adults? <i>Answer: the aortic valve — especially aortic stenosis from age-related calcification.</i></p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Valve Order</h2></div>
+    <div class="order card" id="w15vo" data-order="tri,pul,mit,aor" data-done="Tricuspid, pulmonary, mitral, aortic: the order one drop meets them." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the valves in the order blood meets them.</p><div class="opool"><button data-k="tri">tricuspid</button><button data-k="aor">aortic semilunar</button><button data-k="mit">mitral</button><button data-k="pul">pulmonary semilunar</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Stenosis or Regurgitation?</h2></div>
+    <p class="hint">Sort each description, then check.</p>
+    <div class="place card" id="w15sr">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="st" data-fb="Stenosis." data-miss="Is forward flow blocked, or is there backflow?">stiff, calcified cusps that will not open fully</button>
+        <button class="chip" data-k="b" data-ans="rg" data-fb="Regurgitation (insufficiency)." data-miss="Is forward flow blocked, or is there backflow?">a valve that leaks back into the atrium each beat</button>
+        <button class="chip" data-k="c" data-ans="st" data-fb="Aortic stenosis: the most common adult valve disease." data-miss="Blocked forward flow?">the left ventricle must push through a narrowed aortic opening</button>
+        <button class="chip" data-k="d" data-ans="rg" data-fb="Mitral regurgitation." data-miss="Backflow?">a damaged mitral valve lets blood flow back during ventricular contraction</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="st"><h4>Stenosis</h4><div class="drop"></div></div><div class="bin" data-bin="rg"><h4>Regurgitation</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="rooms" type="button">&larr; Four Chambers</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Inside the Pump</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>Why is the left ventricle&rsquo;s myocardium three to five times thicker than the right ventricle&rsquo;s? Argue from pressure, distance and resistance, not just &ldquo;it has to work harder.&rdquo;</p></div>
+        <p>The most striking fact inside the heart is the gap in wall thickness between the two ventricles, and that gap answers a pressure problem. This Notebook asks for your cross-section sketch, your full-circuit trace, your two valve close-ups and a written argument.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Cross-Section Sketch</h2></div>
+    <p class="hint">Rubric: cross-section sketch, 3 pts.</p>
+    <div class="card loccard"><p class="sub">Submit a photo of your labeled cross-section: four chambers, septum, all four valves with cusps, chordae and papillary muscles on the AV valves, flow arrows, and a left wall about three times the right. Here, list your labels.</p><textarea class="jbox" id="w15rX" data-label="Cross-section sketch: what it shows" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Full-Circuit Trace</h2></div>
+    <p class="hint">Rubric: blood trace, 3 pts.</p>
+    <div class="card idtable" id="w15rO" style="padding:16px 20px"><div class="idhead c1"><span></span><span>O or D</span><span></span></div><div class="idrow c1"><span class="loc">Inferior vena cava</span><select class="jfield" id="w15rOr0c0" data-label="Oxygenation: Inferior vena cava, O or D" data-ans="D"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Right atrium</span><select class="jfield" id="w15rOr1c0" data-label="Oxygenation: Right atrium, O or D" data-ans="D"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Right ventricle</span><select class="jfield" id="w15rOr2c0" data-label="Oxygenation: Right ventricle, O or D" data-ans="D"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Pulmonary trunk</span><select class="jfield" id="w15rOr3c0" data-label="Oxygenation: Pulmonary trunk, O or D" data-ans="D"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Pulmonary veins</span><select class="jfield" id="w15rOr4c0" data-label="Oxygenation: Pulmonary veins, O or D" data-ans="O"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Left atrium</span><select class="jfield" id="w15rOr5c0" data-label="Oxygenation: Left atrium, O or D" data-ans="O"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Left ventricle</span><select class="jfield" id="w15rOr6c0" data-label="Oxygenation: Left ventricle, O or D" data-ans="O"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Aorta</span><select class="jfield" id="w15rOr7c0" data-label="Oxygenation: Aorta, O or D" data-ans="O"><option value="">choose</option><option>O</option><option>D</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">A spot-check: label eight structures O or D, then check.</span></div></div><div class="card loccard"><p class="sub">Write your full trace, in order, with O or D after every structure: at least 16, including all six great vessels, all four chambers and all four valves. Mark the two places where the switch happens.</p><div class="ttrack" data-field="w15rT"><span class="tt" data-t="vena cava|IVC">vena cava</span><span class="tt" data-t="tricuspid">tricuspid</span><span class="tt" data-t="pulmonary semilunar|pulmonary valve">pulmonary valve</span><span class="tt" data-t="lung">lungs</span><span class="tt" data-t="mitral|bicuspid">mitral</span><span class="tt" data-t="aortic semilunar|aortic valve">aortic valve</span><span class="tt" data-t="aorta">aorta</span><span class="tt" data-t="brain|carotid">brain</span></div><textarea class="jbox" id="w15rT" data-label="Full-circuit blood trace, toe to brain" data-min="40"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Valve Close-Ups</h2></div>
+    <p class="hint">Rubric: valve close-ups, 2 pts.</p>
+    <div class="card loccard"><p class="sub">Submit photos of your two close-ups: from inside the right atrium looking at the tricuspid valve, and from inside the left ventricle looking at the aortic valve. Here, describe what each shows.</p><textarea class="jbox" id="w15rV" data-label="Valve close-ups: the two viewpoints" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Answer the Focus Question</h2></div>
+    <p class="hint">Rubric: focus-question reasoning, 4 pts.</p>
+    <div class="card loccard"><p class="sub">In 250&ndash;350 words, argue from all three frames with numbers: <b>pressure</b> (systemic about 120/80 mmHg against pulmonary about 25/8), <b>distance</b> (head to toe against heart to lungs) and <b>resistance</b> (long, branching systemic arteries against short, low-resistance pulmonary vessels).</p><div class="ttrack" data-field="w15rA"><span class="tt" data-t="pressure|mmHg|120">pressure</span><span class="tt" data-t="25">25/8</span><span class="tt" data-t="distance|toe|head|far">distance</span><span class="tt" data-t="resist">resistance</span><span class="tt" data-t="thick|mm">wall thickness</span></div><textarea class="jbox" id="w15rA" data-label="Focus response: why the left ventricle is thicker" data-min="170"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">F</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w15c21">My cross-section shows four chambers, four named valves and a visibly thicker left ventricle.</li><li data-ck="w15c22">My trace has 16 or more structures in order with correct O and D labels.</li><li data-ck="w15c23">My close-ups show the two requested viewpoints.</li><li data-ck="w15c24">My response uses pressure, distance and resistance, with numbers.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 7.06 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="valves" type="button">&larr; Four Valves</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>myocardium<button type="button" class="say" data-say="myocardium" aria-label="Hear it: myocardium" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>mys</i> &ldquo;muscle&rdquo; + <i>kardia</i></small></dt><dd>The thick muscular middle layer of the heart wall.</dd>
+  <dt>endocardium<button type="button" class="say" data-say="endocardium" aria-label="Hear it: endocardium" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>endon</i> &ldquo;within&rdquo;</small></dt><dd>The smooth inner lining of the heart; folds of it form the valves.</dd>
+  <dt>intercalated disc<button type="button" class="say" data-say="intercalated" aria-label="Hear it: intercalated disc" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>intercalare</i> &ldquo;to insert between&rdquo;</small></dt><dd>A junction joining cardiac muscle cells; lets signals spread.</dd>
+  <dt>interventricular septum<button type="button" class="say" data-say="interventricular-septum" aria-label="Hear it: interventricular septum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>saeptum</i> &ldquo;partition&rdquo;</small></dt><dd>The wall between the ventricles.</dd>
+  <dt>ventricular septal defect<button type="button" class="say" data-say="vsd" aria-label="Hear it: ventricular septal defect" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A hole in the interventricular septum; the most common congenital heart defect.</dd>
+  <dt>trabeculae carneae<button type="button" class="say" data-say="trabeculae-carneae" aria-label="Hear it: trabeculae carneae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;little beams of flesh&rdquo;</small></dt><dd>Muscular ridges on the inner ventricle walls.</dd>
+  <dt>chordae tendineae<button type="button" class="say" data-say="chordae-tendineae" aria-label="Hear it: chordae tendineae" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;tendinous cords&rdquo;</small></dt><dd>Cords tethering AV valve cusps to papillary muscles.</dd>
+  <dt>papillary muscle<button type="button" class="say" data-say="papillary-muscle" aria-label="Hear it: papillary muscle" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>papilla</i> &ldquo;nipple&rdquo;</small></dt><dd>A muscle bump on the ventricle wall that anchors the chordae.</dd>
+  <dt>tricuspid valve<button type="button" class="say" data-say="tricuspid" aria-label="Hear it: tricuspid valve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>tri-</i> + <i>cuspis</i> &ldquo;point&rdquo;</small></dt><dd>The right AV valve, with three cusps.</dd>
+  <dt>mitral valve<button type="button" class="say" data-say="mitral" aria-label="Hear it: mitral valve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>mitra</i> &ldquo;headband, mitre&rdquo;</small></dt><dd>The left AV valve, with two cusps (bicuspid).</dd>
+  <dt>semilunar valve<button type="button" class="say" data-say="semilunar-valve" aria-label="Hear it: semilunar valve" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;half-moon&rdquo;</small></dt><dd>A pocket valve at the base of the pulmonary trunk or aorta.</dd>
+  <dt>stenosis<button type="button" class="say" data-say="stenosis" aria-label="Hear it: stenosis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>stenos</i> &ldquo;narrow&rdquo;</small></dt><dd>A stiff, narrowed valve that restricts forward flow.</dd>
+  <dt>regurgitation<button type="button" class="say" data-say="regurgitation" aria-label="Hear it: regurgitation" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>re-</i> + <i>gurgitare</i> &ldquo;to flood&rdquo;</small></dt><dd>Backflow through a valve that fails to close.</dd>
+  <dt>murmur<button type="button" class="say" data-say="murmur" aria-label="Hear it: murmur" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>An abnormal heart sound from turbulent flow, often a faulty valve.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w15-l2", "title": "Inside the Heart: Chambers and Valves", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 15 · Inside the Heart", "pdfTag": "AP_W15_L2"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f70601":{"src":"img/m7-7.06-01-three-layers-heart-wall.webp","alt":""},"f70602":{"src":"img/m7-7.06-02-myocardium-2e.webp","alt":""},"f70603":{"src":"img/m7-7.06-03-four-chambers-inside-2e.webp","alt":""},"f70604":{"src":"img/m7-7.06-04-four-valves-2e.webp","alt":""},"f70605":{"src":"img/m7-7.06-05-four-valves-2e.webp","alt":""},"f70606":{"src":"img/m7-7.06-06-unable-find-gif-but-very-effecti.webp","alt":""}},"w15_wl":{"audio":"audio/ap-w15-l2-wl.mp3","words":[[0,0.16,"Cut"],[0.24,0.28,"a"],[0.32,0.56,"heart"],[0.64,0.72,"from"],[0.88,1.12,"base"],[1.2,1.28,"to"],[1.36,1.84,"apex"],[1.92,2.08,"and"],[2.12,2.16,"you"],[2.24,2.48,"see"],[2.6,2.72,"four"],[2.8,3.2,"rooms"],[3.24,3.28,"with"],[3.32,3.36,"a"],[3.44,4,"continuous"],[4.08,4.32,"wall"],[4.4,4.56,"down"],[4.6,4.64,"the"],[4.72,5.44,"middle."],[5.52,5.6,"The"],[5.72,5.84,"right"],[5.92,6.16,"side"],[6.24,6.56,"handles"],[6.72,7.36,"deoxygenated"],[7.44,8,"blood,"],[8.08,8.16,"the"],[8.28,8.4,"left"],[8.48,8.72,"side"],[8.8,9.76,"oxygenated,"],[9.84,9.92,"and"],[10,10.32,"valves"],[10.4,10.56,"keep"],[10.6,10.64,"the"],[10.72,11.04,"flow"],[11.12,11.28,"one"],[11.36,12.08,"way."],[12.16,12.24,"The"],[12.4,12.56,"wall"],[12.68,12.8,"has"],[12.88,13.04,"three"],[13.12,13.92,"layers."],[14,14.08,"The"],[14.24,14.64,"outermost"],[14.72,14.8,"is"],[14.84,14.88,"the"],[14.96,15.84,"epicardium,"],[15.88,15.92,"the"],[16,16.32,"visceral"],[16.4,17.04,"pericardium"],[17.08,17.12,"you"],[17.2,17.28,"met"],[17.36,17.6,"last"],[17.76,18.4,"lesson."],[18.52,18.64,"The"],[18.693,18.8,"thick"],[18.96,19.2,"middle"],[19.28,19.6,"layer"],[19.64,19.68,"is"],[19.76,19.84,"the"],[19.92,20.88,"myocardium,"],[20.96,21.28,"cardiac"],[21.36,22.16,"muscle."],[22.28,22.4,"Its"],[22.56,22.72,"cells"],[22.8,22.88,"are"],[22.96,23.28,"joined"],[23.36,23.44,"end"],[23.52,23.68,"to"],[23.76,23.92,"end"],[24,24.08,"at"],[24.24,24.8,"intercalated"],[24.88,25.44,"discs,"],[25.52,25.6,"which"],[25.68,25.76,"let"],[25.8,25.84,"the"],[26,26.32,"electrical"],[26.4,26.72,"signal"],[26.92,27.12,"spread"],[27.2,27.36,"from"],[27.44,27.6,"cell"],[27.68,27.84,"to"],[27.96,28.08,"cell"],[28.16,28.48,"across"],[28.56,28.64,"the"],[28.76,28.88,"whole"],[28.96,29.92,"chamber."],[30,30.08,"The"],[30.2,30.48,"innermost"],[30.56,30.88,"layer"],[30.92,30.96,"is"],[31.04,31.2,"the"],[31.28,32.16,"endocardium,"],[32.24,32.32,"a"],[32.4,32.72,"smooth"],[32.8,33.2,"lining"],[33.52,33.84,"continuous"],[33.92,34,"with"],[34.04,34.08,"the"],[34.16,34.4,"lining"],[34.48,34.56,"of"],[34.64,34.88,"every"],[35,35.12,"blood"],[35.2,36,"vessel."],[36.08,36.16,"The"],[36.24,36.64,"valves"],[36.72,36.88,"are"],[36.92,37.2,"folds"],[37.28,37.36,"of"],[37.44,38.08,"endocardium"],[38.16,38.56,"stiffened"],[38.64,38.72,"with"],[38.8,39.12,"connective"],[39.2,40.08,"tissue."],[40.12,40.16,"The"],[40.24,40.88,"myocardium"],[40.96,41.12,"is"],[41.24,41.36,"not"],[41.4,41.44,"the"],[41.52,41.76,"same"],[41.84,42.8,"everywhere."],[42.88,42.96,"The"],[43.04,43.12,"left"],[43.2,43.68,"ventricle's"],[43.84,44,"wall"],[44.04,44.08,"is"],[44.16,44.4,"about"],[44.48,44.56,"ten"],[44.64,44.8,"to"],[44.84,45.2,"fifteen"],[45.28,45.76,"millimeters"],[45.84,46.4,"thick;"],[46.48,46.56,"the"],[46.72,47.04,"right's"],[47.16,47.28,"only"],[47.36,47.44,"three"],[47.52,47.68,"to"],[47.88,48.36,"five."],[48.64,48.96,"Between"],[49,49.04,"the"],[49.12,49.6,"ventricles"],[49.68,49.76,"is"],[49.84,49.92,"the"],[50,50.72,"interventricular"],[50.8,51.28,"septum."],[51.68,51.76,"A"],[51.84,52,"hole"],[52.08,52.16,"in"],[52.24,52.56,"it,"],[52.587,52.613,"a"],[52.64,53.12,"ventricular"],[53.2,53.52,"septal"],[53.6,54.24,"defect,"],[54.28,54.32,"is"],[54.4,54.44,"the"],[54.48,54.72,"most"],[54.88,55.04,"common"],[55.12,55.6,"congenital"],[55.68,55.84,"heart"],[55.92,56.4,"defect."],[56.88,57.2,"Between"],[57.24,57.28,"the"],[57.36,58,"atria,"],[58.16,58.32,"before"],[58.4,58.96,"birth,"],[59.04,59.12,"a"],[59.2,59.52,"flap"],[59.6,59.76,"called"],[59.8,59.84,"the"],[59.92,60.32,"foramen"],[60.4,60.96,"ovale"],[61.04,61.2,"lets"],[61.28,61.52,"blood"],[61.6,61.84,"skip"],[61.92,62,"the"],[62.08,62.8,"lungs;"],[62.84,62.88,"you"],[62.96,63.04,"will"],[63.12,63.2,"meet"],[63.24,63.28,"it"],[63.48,63.68,"again"],[63.72,63.76,"in"],[63.84,64.08,"Lesson"],[64.16,64.4,"seven"],[64.48,65.198,"twelve."]]},"w15_rm":{"audio":"audio/ap-w15-l2-rm.mp3","words":[[0.442,0.562,"Now"],[0.722,0.882,"walk"],[0.962,1.122,"through"],[1.162,1.202,"the"],[1.282,1.602,"rooms"],[1.642,1.682,"in"],[1.722,1.762,"the"],[1.842,2.002,"order"],[2.162,2.402,"blood"],[2.482,2.962,"does,"],[3.042,3.362,"starting"],[3.442,3.522,"on"],[3.562,3.602,"the"],[3.682,3.842,"right"],[3.922,4.322,"side."],[4.802,4.882,"The"],[5.002,5.122,"right"],[5.202,5.602,"atrium"],[5.722,6.002,"receives"],[6.042,6.082,"the"],[6.162,6.722,"superior"],[6.802,6.882,"and"],[6.962,7.522,"inferior"],[7.602,7.842,"venae"],[7.922,8.402,"cavae"],[8.482,8.642,"and"],[8.722,8.762,"the"],[8.802,9.282,"coronary"],[9.362,9.922,"sinus,"],[10.002,10.082,"which"],[10.162,10.402,"drains"],[10.482,10.562,"the"],[10.682,10.882,"heart's"],[10.962,11.122,"own"],[11.202,11.682,"veins."],[12.002,12.162,"Its"],[12.242,12.482,"wall"],[12.562,12.642,"is"],[12.722,13.362,"thin:"],[13.402,13.442,"it"],[13.522,13.602,"only"],[13.682,13.762,"has"],[13.842,13.922,"to"],[14.002,14.082,"push"],[14.162,14.482,"blood"],[14.562,14.722,"one"],[14.802,15.042,"step"],[15.122,15.722,"down."],[16.002,16.082,"The"],[16.202,16.322,"right"],[16.402,16.802,"ventricle"],[16.882,17.202,"pumps"],[17.282,17.362,"into"],[17.442,17.522,"the"],[17.602,18.082,"pulmonary"],[18.162,18.562,"trunk."],[19.042,19.122,"The"],[19.202,19.442,"lungs"],[19.522,19.602,"are"],[19.722,19.842,"next"],[20.002,20.162,"door"],[20.322,20.402,"and"],[20.482,20.562,"their"],[20.642,20.962,"vessels"],[21.082,21.362,"resist"],[21.442,21.842,"little,"],[21.922,22.002,"so"],[22.082,22.162,"its"],[22.242,22.482,"wall"],[22.562,22.642,"is"],[22.722,23.602,"moderate."],[23.722,23.842,"Its"],[23.962,24.082,"inner"],[24.282,24.482,"surface"],[24.562,24.642,"is"],[24.722,25.122,"ridged"],[25.202,25.282,"with"],[25.322,26.002,"trabeculae"],[26.122,26.882,"carneae,"],[26.922,27.202,"meaty"],[27.282,28.162,"ridges."],[28.202,28.722,"Cord-like"],[28.802,29.202,"chordae"],[29.242,29.922,"tendineae"],[30.002,30.162,"run"],[30.242,30.322,"from"],[30.402,30.482,"the"],[30.562,30.882,"cusps"],[30.922,30.962,"of"],[31.042,31.082,"the"],[31.122,31.682,"tricuspid"],[31.762,32.162,"valve"],[32.282,32.402,"down"],[32.482,32.642,"to"],[32.722,33.122,"papillary"],[33.202,33.522,"muscles"],[33.562,33.602,"on"],[33.642,33.682,"the"],[33.762,34.162,"ventricle"],[34.242,34.882,"wall."],[35.002,35.122,"They"],[35.162,35.442,"tether"],[35.522,35.602,"the"],[35.722,36.642,"cusps."],[36.682,36.722,"On"],[36.802,36.882,"the"],[36.962,37.442,"left,"],[37.522,37.602,"the"],[37.722,37.842,"left"],[37.922,38.242,"atrium"],[38.322,38.722,"receives"],[38.802,38.882,"the"],[39.002,39.122,"four"],[39.202,39.682,"pulmonary"],[39.762,40.562,"veins."],[40.682,40.802,"It"],[40.962,41.122,"too"],[41.202,41.282,"has"],[41.322,41.362,"a"],[41.442,41.602,"thin"],[41.682,42.482,"wall."],[42.562,42.642,"The"],[42.762,42.882,"left"],[42.962,43.362,"ventricle"],[43.442,43.682,"pumps"],[43.762,43.922,"into"],[43.962,44.002,"the"],[44.082,44.722,"aorta,"],[44.802,44.882,"at"],[44.962,45.042,"high"],[45.122,45.682,"pressure,"],[45.722,45.762,"to"],[45.842,46.002,"reach"],[46.082,46.242,"the"],[46.362,46.482,"whole"],[46.562,47.362,"body."],[47.402,47.442,"It"],[47.522,47.602,"has"],[47.682,47.762,"the"],[47.842,48.082,"same"],[48.162,48.802,"ridges,"],[48.842,49.282,"chordae"],[49.322,49.362,"and"],[49.442,49.922,"papillary"],[50.002,50.482,"muscles,"],[50.562,50.802,"only"],[50.962,51.122,"more"],[51.282,51.442,"and"],[51.522,52.322,"bigger."],[52.362,52.402,"It"],[52.482,52.642,"is"],[52.682,52.722,"the"],[52.882,53.362,"workhorse"],[53.442,53.522,"of"],[53.562,53.602,"the"],[53.762,54.187,"heart."]]},"w15_vl":{"audio":"audio/ap-w15-l2-vl.mp3","words":[[0.374,0.614,"Four"],[0.774,1.174,"one-way"],[1.254,1.654,"valves"],[1.734,1.894,"keep"],[1.974,2.014,"the"],[2.054,2.294,"blood"],[2.374,2.694,"moving"],[2.774,3.574,"forward."],[3.734,3.894,"Two"],[3.974,4.134,"sit"],[4.334,4.534,"between"],[4.614,5.014,"atria"],[5.054,5.094,"and"],[5.174,6.054,"ventricles:"],[6.094,6.134,"the"],[6.214,7.414,"atrioventricular,"],[7.494,7.574,"or"],[7.814,8.374,"AV,"],[8.454,9.014,"valves."],[9.414,9.654,"Two"],[9.734,9.894,"sit"],[9.974,10.054,"where"],[10.094,10.134,"the"],[10.214,10.694,"ventricles"],[10.774,10.854,"meet"],[10.934,10.974,"the"],[11.014,11.254,"great"],[11.334,12.054,"arteries:"],[12.094,12.134,"the"],[12.214,12.774,"semilunar"],[12.894,13.334,"valves."],[13.814,14.294,"First,"],[14.334,14.374,"the"],[14.454,15.014,"tricuspid"],[15.094,15.574,"valve,"],[15.654,15.734,"the"],[15.814,15.974,"right"],[16.054,16.374,"AV"],[16.454,16.934,"valve,"],[17.014,17.094,"with"],[17.174,17.334,"three"],[17.494,17.974,"cusps."],[18.454,19.014,"Second,"],[19.054,19.094,"the"],[19.174,19.654,"pulmonary"],[19.734,20.214,"semilunar"],[20.294,20.774,"valve,"],[20.814,20.854,"at"],[20.934,21.014,"the"],[21.094,21.254,"base"],[21.334,21.374,"of"],[21.414,21.494,"the"],[21.574,21.974,"pulmonary"],[22.054,22.454,"trunk."],[22.934,23.414,"Third,"],[23.494,23.574,"the"],[23.654,23.974,"mitral"],[24.054,24.614,"valve,"],[24.654,24.694,"the"],[24.774,25.014,"left"],[25.094,25.414,"AV"],[25.494,25.974,"valve,"],[26.054,26.134,"with"],[26.214,26.374,"two"],[26.454,27.094,"cusps,"],[27.174,27.414,"also"],[27.494,27.734,"called"],[27.774,27.814,"the"],[27.894,29.014,"bicuspid."],[29.094,29.174,"Two"],[29.254,29.574,"cusps"],[29.654,30.134,"together"],[30.214,30.374,"look"],[30.414,30.454,"like"],[30.494,30.534,"a"],[30.614,31.014,"bishop's"],[31.134,31.574,"mitre."],[31.654,32.134,"Fourth,"],[32.374,32.507,"the"],[32.534,33.03,"aortic"],[33.094,33.614,"semilunar"],[33.654,34.134,"valve."],[34.374,34.667,"The"],[34.694,34.934,"AV"],[35.174,35.494,"valves"],[35.574,35.734,"need"],[35.814,36.134,"chordae"],[36.214,37.334,"tendineae:"],[37.374,37.414,"when"],[37.494,37.534,"the"],[37.574,37.974,"ventricle"],[38.054,38.854,"squeezes,"],[38.934,39.014,"the"],[39.054,39.414,"cords"],[39.494,39.654,"keep"],[39.694,39.734,"the"],[39.814,40.294,"cusps"],[40.374,40.454,"from"],[40.534,40.854,"blowing"],[40.934,41.174,"back"],[41.254,41.334,"into"],[41.414,41.454,"the"],[41.494,42.174,"atrium."],[42.374,42.454,"The"],[42.534,43.014,"semilunar"],[43.094,43.414,"valves"],[43.534,43.654,"have"],[43.734,43.974,"three"],[44.134,44.854,"pocket-shaped"],[44.934,45.334,"cusps"],[45.414,45.574,"that"],[45.734,45.894,"fill"],[45.974,46.054,"with"],[46.134,46.694,"back-flowing"],[46.774,47.094,"blood"],[47.174,47.254,"and"],[47.334,47.574,"lock"],[47.734,48.214,"shut,"],[48.294,48.374,"with"],[48.454,48.534,"no"],[48.614,48.854,"cords"],[48.934,49.014,"at"],[49.134,49.494,"all."],[49.734,49.814,"A"],[49.894,50.134,"valve"],[50.214,50.374,"can"],[50.494,50.614,"fail"],[50.774,50.934,"two"],[51.014,51.494,"ways."],[51.894,53.014,"Stenosis:"],[53.094,53.414,"stiff"],[53.494,53.654,"and"],[53.734,54.294,"narrow,"],[54.374,54.454,"so"],[54.534,54.854,"forward"],[54.934,55.094,"flow"],[55.174,55.254,"is"],[55.494,56.134,"blocked;"],[56.214,56.534,"aortic"],[56.614,57.094,"stenosis"],[57.174,57.254,"is"],[57.294,57.334,"the"],[57.414,57.654,"most"],[57.734,57.974,"common"],[58.054,58.374,"adult"],[58.454,58.694,"valve"],[58.774,59.414,"disease."],[59.654,60.614,"Regurgitation,"],[60.694,60.854,"or"],[60.934,62.134,"insufficiency:"],[62.254,62.374,"it"],[62.534,62.694,"fails"],[62.774,62.854,"to"],[63.094,63.334,"close"],[63.374,63.414,"and"],[63.494,63.814,"leaks"],[64.054,64.454,"backward,"],[64.534,64.614,"like"],[64.694,65.014,"mitral"],[65.094,66.214,"regurgitation."],[66.294,66.534,"Both"],[66.614,66.774,"make"],[66.854,67.442,"murmurs."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'inside the heart: the epicardium, myocardium (intercalated discs) and endocardium, wall thickness of the two ventricles, the septa and septal defects, the four chambers from inside, trabeculae carneae, chordae tendineae and papillary muscles, the four valves and how each closes, the order of a full circuit with oxygenation, and stenosis and regurgitation',
+  quick: ['What order does blood meet the valves?', 'Why do AV valves need chordae?', 'Stenosis or regurgitation?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|focus|response|trace|paragraph)/i,
+  guide: 'That part is yours to argue, so here are three questions instead. How high is the pressure each ventricle must make (compare 120/80 with 25/8)? How far does each push blood? And how much resistance lies in front of each? Answer all three with numbers, then connect them to the wall.',
+  notes: [
+    { k: ['layer','wall','epicardium','myocardium','endocardium','intercalated'], w: 1.2, a: 'The heart wall: epicardium (outer, the visceral pericardium), myocardium (cardiac muscle joined at intercalated discs, which spread the signal), endocardium (smooth inner lining; valves are its folds).' },
+    { k: ['thick','thickness','left ventricle','right ventricle','mm'], w: 1.3, a: 'The left ventricular wall is about 10 to 15 mm; the right is 3 to 5 mm. The left pumps the systemic circuit at about 120/80 mmHg over a long, high-resistance tree; the right pumps the short, low-resistance pulmonary circuit at about 25/8.' },
+    { k: ['septum','vsd','septal','foramen'], a: 'The interventricular septum separates the ventricles; a ventricular septal defect is the most common congenital defect (left-to-right leak). The interatrial septum has the foramen ovale before birth.' },
+    { k: ['chamber','atrium','ventricle','coronary sinus'], a: 'Right atrium: SVC, IVC, coronary sinus, thin wall. Right ventricle: to the pulmonary trunk, moderate wall. Left atrium: four pulmonary veins, thin wall. Left ventricle: to the aorta, the thickest wall.' },
+    { k: ['chordae','papillary','trabeculae','cord'], w: 1.2, a: 'Chordae tendineae tether the AV valve cusps to papillary muscles so ventricular pressure cannot blow them back into the atria. Trabeculae carneae are the muscular ridges inside the ventricles.' },
+    { k: ['valve','tricuspid','mitral','bicuspid','semilunar','pulmonary valve','aortic valve','order'], w: 1.3, a: 'In blood\'s order: tricuspid (right AV, 3 cusps) &rarr; pulmonary semilunar &rarr; mitral (left AV, 2 cusps) &rarr; aortic semilunar. Only the AV valves have chordae; semilunar valves are self-locking pockets.' },
+    { k: ['stenosis','regurgitation','insufficien','murmur','disease'], w: 1.2, a: 'Stenosis: a stiff, narrow valve blocks forward flow (aortic stenosis is the most common adult valve disease). Regurgitation or insufficiency: the valve leaks backward (mitral regurgitation). Both cause murmurs.' },
+    { k: ['trace','toe','brain','circuit','switch'], w: 1.2, a: 'Toe capillaries, leg veins, IVC, RA, tricuspid, RV, pulmonary valve, pulmonary trunk and arteries, lung capillaries (D to O), pulmonary veins, LA, mitral, LV, aortic valve, aorta, carotid, brain capillaries (O to D). Two switches, both in capillaries.' },
+    { k: ['notebook','lab report','submit','close-up','sketch'], w: 1.2, a: 'The 7.06 Notebook: a labeled cross-section, a full-circuit trace (16 or more structures with O and D), two valve close-ups (from the right atrium at the tricuspid; from the left ventricle at the aortic valve), and a 250 to 350 word argument from pressure, distance and resistance.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>

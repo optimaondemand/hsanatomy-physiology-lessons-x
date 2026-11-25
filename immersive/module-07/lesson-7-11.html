@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Blood Flow, Pressure and Hypertension · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+.plab .pl-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center}
+@media (max-width:640px){.plab .pl-grid{grid-template-columns:1fr}}
+.plab label{display:block;font:600 14px/1.3 var(--ui);margin:0 0 12px}.plab label b{float:right;font-weight:700;color:var(--blue)}
+.plab input[type=range]{width:100%;margin-top:6px}
+.pl-btns{display:flex;flex-wrap:wrap;gap:6px}
+.pl-out{display:flex;gap:14px;align-items:center}.pl-art{width:110px;flex:none}
+.pl-nums{display:grid;gap:8px;flex:1}.pl-nums div{background:#F7FAFC;border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+.pl-nums small{display:block;font:600 11px/1.2 var(--mono,monospace);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.pl-nums b{font:700 22px/1.2 var(--ui)}.pl-nums span{margin-left:6px;font:12px var(--ui);color:var(--muted)}
+.pl-eq{font:14px/1.5 var(--ui);color:var(--muted);margin:12px 0 8px}
+.pl-gauge{position:relative;display:grid;grid-template-columns:1fr 1.2fr 1fr 1fr;height:24px;border-radius:12px;overflow:hidden;font:600 11px/24px var(--ui);text-align:center;color:#fff}
+.pl-gauge span:nth-child(1){background:#5B8DC9}.pl-gauge span:nth-child(2){background:#2F8F6B}.pl-gauge span:nth-child(3){background:#D9822B}.pl-gauge span:nth-child(4){background:#C22F4A}
+.pl-gauge i{position:absolute;top:0;bottom:0;width:4px;background:#1E2B3A;left:40%;transition:left .3s}
+.pl-st{font:15px/1.5 var(--serif);margin:10px 0 14px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A nineteenth-century coloured lithograph of diseased arteries of the heart, opened to show thickened, damaged walls" style="background-image:url(img/lesson-7-11-hero.jpg);background-position:center"><span class="hlab">Diseased arteries of the heart · coloured lithograph by Batelli after Ferrari, c. 1843</span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 7.11 &middot; Module 7: Cardiovascular System</div>
+      <h1>Blood Flow, Pressure and Hypertension</h1>
+      <div class="focusq"><div class="label">Focus</div><p>A 54-year-old&rsquo;s blood pressure has been 145/95 for years. What is keeping his mean arterial pressure high, which organs are at risk and why, and how might a medicine bring it down?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to state Q = &Delta;P / R and R &prop; 1/r&#8308; in my own words and predict how flow changes when one variable changes.</li><li>I will be able to explain how large arteries, arterioles, capillaries and veins handle pressure differently.</li><li>I will be able to predict how cardiac output responds to exercise, valve failure or blood loss using CO = HR &times; SV.</li><li>I will be able to explain why hypertension damages the heart, the brain and the kidneys in particular.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Radius rules</div>
+      <svg class="m2-fig" viewBox="0 0 360 260" role="img" aria-label="Two vessels, one at half the radius of the other, and the pressure falling along the systemic circuit"><rect x="6" y="6" width="348" height="248" rx="14" fill="#F4F7FB"/><circle cx="90" cy="80" r="44" fill="#F7D9DE" stroke="#8E1F35" stroke-width="3"/><circle cx="220" cy="80" r="22" fill="#F7D9DE" stroke="#8E1F35" stroke-width="3"/><text x="90" y="144" class="m2-t" text-anchor="middle" style="fill:#8E1F35">R</text><text x="220" y="144" class="m2-t" text-anchor="middle" style="fill:#C22F4A">16 R</text><text x="300" y="86" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">R &prop; 1/r&#8308;</text><path d="M40 160 V230 H330" stroke="#56606B" stroke-width="2" fill="none"/><path d="M36 230 H40" stroke="#56606B" stroke-width="1.5"/><text x="32" y="234.0" class="m2-ts" text-anchor="end" style="fill:#56606B">0</text><path d="M36 208 H40" stroke="#56606B" stroke-width="1.5"/><text x="32" y="212.46153846153845" class="m2-ts" text-anchor="end" style="fill:#56606B">40</text><path d="M36 187 H40" stroke="#56606B" stroke-width="1.5"/><text x="32" y="190.9230769230769" class="m2-ts" text-anchor="end" style="fill:#56606B">80</text><path d="M36 165 H40" stroke="#56606B" stroke-width="1.5"/><text x="32" y="169.3846153846154" class="m2-ts" text-anchor="end" style="fill:#56606B">120</text><path d="M40.0 178.8 L42.5 172.3 L44.9 173.1 L47.4 180.2 L49.9 185.8 L52.3 184.0 L54.8 177.1 L57.3 172.8 L59.7 175.6 L62.2 182.4 L64.7 185.8 L67.1 182.3 L69.6 176.1 L72.0 173.9 L74.5 178.0 L77.0 183.9 L79.4 185.1 L81.9 180.8 L84.4 175.8 L86.8 175.6 L89.3 180.2 L91.8 184.6 L94.2 184.1 L96.7 179.6 L99.2 176.2 L101.6 177.5 L104.1 181.9 L106.6 184.7 L109.0 183.0 L111.5 179.0 L114.0 177.2 L116.4 179.4 L118.9 183.1 L121.3 184.3 L123.8 182.1 L126.3 179.0 L128.7 178.5 L131.2 180.9 L133.7 183.6 L136.1 183.7 L138.6 181.5 L190.8 211.2 L237.2 221.4 L272.0 224.6 L330.0 228.9" stroke="#C22F4A" stroke-width="3" fill="none" stroke-linejoin="round"/><text x="40" y="252" class="m2-ts" style="fill:#56606B">aorta</text><text x="330" y="252" class="m2-ts" text-anchor="end" style="fill:#56606B">veins</text></svg>
+      <div class="cap">Flow equals the pressure difference divided by resistance, and resistance rises with the fourth power of a shrinking radius: halve an arteriole&rsquo;s radius and its resistance rises sixteenfold. Most of the systemic pressure drop happens in the arterioles.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="flow" role="tab"><span class="n">01</span>Flow, Pressure, Resistance</button>
+  <button class="tab" data-tab="types" role="tab"><span class="n">02</span>Vessels and Cardiac Output</button>
+  <button class="tab" data-tab="bp" role="tab"><span class="n">03</span>Blood Pressure and Hypertension</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 FLOW, PRESSURE, RESISTANCE ═════════ -->
+<section class="panel" id="tab-flow" role="tabpanel">
+  <div class="vo" data-clip="w16_fl">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A Fluid in a Tube</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A tube with high pressure at one end and low at the other driving flow through it, the equation Q equals delta P over R, the three things that set resistance, and a vessel at half its radius with sixteen times the resistance"><g data-step="0" class="nohalo"><defs><linearGradient id="pg40" x1="0" x2="1"><stop offset="0" stop-color="#C22F4A"/><stop offset="1" stop-color="#E9A3B0"/></linearGradient></defs><rect x="40" y="40" width="400" height="60" rx="30" fill="url(#pg40)" stroke="#8E1F35" stroke-width="2"/><text x="40" y="26" class="m2-t" style="fill:#1E2B3A">a fluid in a tube</text><text x="46" y="120" class="m2-ts" style="fill:#8E1F35">high pressure</text><text x="434" y="120" class="m2-ts" text-anchor="end" style="fill:#B5475E">low pressure</text><path d="M180 70 L300 70" stroke="#fff" stroke-width="4" fill="none"/><path d="M291.0 74.3 L300 70 L291.0 65.7" stroke="#fff" stroke-width="4" fill="none" stroke-linejoin="round"/></g><g data-step="1" class="nohalo"><text x="480" y="62" class="m2-t" style="fill:#1E2B3A">Q = &Delta;P / R</text><text x="480" y="82" class="m2-ts" style="fill:#56606B">flow = pressure difference</text><text x="480" y="98" class="m2-ts" style="fill:#56606B">&divide; resistance</text></g><g data-step="2" class="nohalo"><text x="480" y="132" class="m2-ts" style="fill:#56606B">whole body: cardiac output =</text><text x="480" y="148" class="m2-ts" style="fill:#56606B">(aorta &minus; right atrium) &divide; TPR</text></g><g data-step="3" class="nohalo"><text x="40" y="170" class="m2-t" style="fill:#1E2B3A">resistance depends on:</text><text x="40" y="190" class="m2-ts" style="fill:#56606B">viscosity (set by the hematocrit): steady</text><text x="40" y="206" class="m2-ts" style="fill:#56606B">total vessel length: steady</text><text x="40" y="222" class="m2-ts" style="fill:#8E1F35">radius: the body&rsquo;s control knob</text></g><g data-step="4" class="nohalo"><circle cx="420" cy="230" r="44" fill="#F7D9DE" stroke="#8E1F35" stroke-width="3"/><circle cx="560" cy="230" r="22" fill="#F7D9DE" stroke="#8E1F35" stroke-width="3"/><text x="420" y="290" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">radius 1</text><text x="560" y="290" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">radius &frac12;</text><text x="620" y="186" class="m2-t" text-anchor="middle" style="fill:#1E2B3A">R &prop; 1/r&#8308;</text></g><g data-step="5" class="nohalo"><text x="620" y="234" class="m2-t" text-anchor="middle" style="fill:#C22F4A">16&times;</text><text x="620" y="252" class="m2-ts" text-anchor="middle" style="fill:#C22F4A">the resistance</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Blood is a fluid, and fluids in tubes obey a few simple rules. Flow goes from high pressure to low.", "The volume that flows each second depends on two things: the pressure difference pushing it, and the resistance opposing it. Q equals delta P over R.", "For the whole circulation, Q is the cardiac output, delta P is the drop from the aorta to the right atrium, and R is the total peripheral resistance of all the systemic vessels.", "Resistance has three sources. Viscosity, set mostly by the hematocrit, hardly changes from day to day. Total vessel length changes only slowly. Vessel radius is the body's control knob.", "Resistance is inversely proportional to the fourth power of the radius: R is proportional to one over r to the fourth.", "So halve a vessel's radius and its resistance rises sixteen times. A little narrowing makes a big difference, which is why arteriole tone sets blood pressure, and why even modest atherosclerosis matters."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The flow equation and what sets resistance.</span></div>
+    <p class="marg"><b>Service.</b> The arterioles decide, moment to moment, which tissues get the blood. Their small adjustments, multiplied by the fourth power, send the river where it is needed most.</p>
+    <article class="atlas">
+      <h3>A fluid in a tube</h3>
+      <p>Blood is a fluid, and the rules that govern fluids in tubes — pressure, resistance, viscosity, diameter — govern blood flow as well. The cardiovascular system is built from these few simple physical principles, and so are most of its diseases. This reading is the physics half of the cardiovascular module.</p>
+      <h3>The fundamental equation</h3>
+      <p>For any fluid flowing through any tube, the volume flowing per second depends on two things: <i>the pressure pushing the fluid forward</i> and <i>the resistance opposing it</i>. The equation that links them is the cleanest piece of physics in physiology:</p>
+      <div class="inset"><p><b>Q = ΔP / R</b></p></div>
+      <p>Where <b>Q</b> is flow rate (volume per unit time), <b>ΔP</b> is the pressure gradient (the difference between two points in the tube), and <b>R</b> is resistance. For the whole circulation, Q is <i>cardiac output</i>, ΔP is the difference between aortic pressure and right-atrial pressure, and R is <i>total peripheral resistance</i>. Every other cardiovascular fact in this lesson is a corollary of this one equation.</p>
+      <h3>What determines resistance?</h3>
+      <p>Resistance to flow has three main contributors. Two of them barely change. The third — vessel diameter — is the body’s main control knob.</p>
+      <p><b>Blood viscosity.</b><button type="button" class="say" data-say="viscosity" aria-label="Hear it: blood viscosity." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Blood is about five times more viscous than water. Viscosity is set mainly by hematocrit, and outside of disease (severe anemia or polycythemia) it does not change much from day to day.</p>
+      <p><b>Total blood vessel length.</b> Tends not to change in adults except slowly (e.g., growing new vessels through obesity adds vessel length).</p>
+      <p><b>Vessel radius.</b> The dominant factor by far. Resistance is inversely proportional to the <i>fourth power</i> of the radius. This is the most important consequence in all of cardiovascular physiology:</p>
+      <div class="inset"><p><b>R ∝ 1 / r⁴</b></p></div>
+      <p>Reduce a vessel’s radius by half, and resistance rises by a factor of 16. Reduce by a third, and resistance rises by a factor of about 5. This is why a small amount of arterial constriction can produce large changes in blood pressure, and why even modest atherosclerotic narrowing matters clinically.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w16m4"><p class="q">An arteriole narrows to half its radius. What happens to its resistance?</p>
+        <button class="opt" data-ok="1" data-fb="Right: R &prop; 1/r&#8308;.">It rises about sixteenfold (2 to the fourth power).</button>
+        <button class="opt" data-fb="That would be a straight-line rule; this is the fourth power.">It doubles.</button>
+        <button class="opt" data-fb="Narrower tubes resist more, not less.">It halves.</button></div>
+      <div class="mcq card" data-qid="w16m5"><p class="q">Pressure difference stays the same but resistance doubles. What happens to flow?</p>
+        <button class="opt" data-ok="1" data-fb="Q = &Delta;P / R.">Flow halves.</button>
+        <button class="opt" data-fb="Resistance is in the denominator.">Flow doubles.</button>
+        <button class="opt" data-fb="Flow depends on resistance.">Flow does not change.</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>In Your Own Words</h2></div>
+    <div class="card"><div class="field" style="margin:0"><p class="q">State Q = &Delta;P / R and R &prop; 1/r&#8308; in your own words, and say why a small change in arteriole radius changes blood pressure so much.</p><textarea class="jbox" id="w16t3" data-label="The two equations in my words" data-min="25"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="types" type="button">Next: Vessels and Cardiac Output &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 VESSELS AND CARDIAC OUTPUT ═════════ -->
+<section class="panel" id="tab-types" role="tabpanel">
+  <div class="vo" data-clip="w16_vt">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Where the Pressure Goes</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Systemic pressure falling from the aorta through the arteries, arterioles, capillaries and veins, with the biggest drop in the arterioles, then the cardiac output equation"><g data-step="0" class="nohalo"><path d="M70 40 V230 H510" stroke="#56606B" stroke-width="2" fill="none"/><path d="M66 230 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="234.0" class="m2-ts" text-anchor="end" style="fill:#56606B">0</text><path d="M66 172 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="175.53846153846155" class="m2-ts" text-anchor="end" style="fill:#56606B">40</text><path d="M66 113 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="117.07692307692308" class="m2-ts" text-anchor="end" style="fill:#56606B">80</text><path d="M66 55 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="58.61538461538461" class="m2-ts" text-anchor="end" style="fill:#56606B">120</text><text x="105.2" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">aorta</text><text x="180.0" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">arteries</text><path d="M140 40 V230" stroke="#E3E7EC" stroke-width="1"/><path d="M70.0 91.2 L73.7 73.4 L77.5 75.5 L81.2 94.8 L85.0 110.0 L88.7 105.3 L92.4 86.5 L96.2 74.6 L99.9 82.3 L103.7 100.7 L107.4 110.0 L111.1 100.6 L114.9 83.7 L118.6 77.8 L122.4 89.0 L126.1 104.7 L129.8 108.2 L133.6 96.4 L137.3 82.9 L141.1 82.3 L144.8 94.9 L148.5 106.8 L152.3 105.5 L156.0 93.3 L159.8 84.0 L163.5 87.5 L167.2 99.6 L171.0 107.0 L174.7 102.5 L178.5 91.6 L182.2 86.6 L185.9 92.5 L189.7 102.6 L193.4 106.0 L197.2 99.9 L200.9 91.6 L204.6 90.2 L208.4 96.8 L212.1 104.0 L215.9 104.4 L219.6 98.3" stroke="#C22F4A" stroke-width="3" fill="none" stroke-linejoin="round"/><text x="70" y="24" class="m2-t" style="fill:#1E2B3A">one drop, 120 mmHg &rarr; about 0</text></g><g data-step="1" class="nohalo"><text x="144.8" y="140" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">elastic arteries: smooth</text><text x="144.8" y="156" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">the pulse, lose little</text></g><g data-step="2" class="nohalo"><path d="M70 40 V230 H510" stroke="#56606B" stroke-width="2" fill="none"/><path d="M66 230 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="234.0" class="m2-ts" text-anchor="end" style="fill:#56606B">0</text><path d="M66 172 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="175.53846153846155" class="m2-ts" text-anchor="end" style="fill:#56606B">40</text><path d="M66 113 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="117.07692307692308" class="m2-ts" text-anchor="end" style="fill:#56606B">80</text><path d="M66 55 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="58.61538461538461" class="m2-ts" text-anchor="end" style="fill:#56606B">120</text><text x="105.2" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">aorta</text><text x="180.0" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">arteries</text><path d="M140 40 V230" stroke="#E3E7EC" stroke-width="1"/><text x="259.20000000000005" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">arterioles</text><path d="M220 40 V230" stroke="#E3E7EC" stroke-width="1"/><path d="M70.0 91.2 L73.7 73.4 L77.5 75.5 L81.2 94.8 L85.0 110.0 L88.7 105.3 L92.4 86.5 L96.2 74.6 L99.9 82.3 L103.7 100.7 L107.4 110.0 L111.1 100.6 L114.9 83.7 L118.6 77.8 L122.4 89.0 L126.1 104.7 L129.8 108.2 L133.6 96.4 L137.3 82.9 L141.1 82.3 L144.8 94.9 L148.5 106.8 L152.3 105.5 L156.0 93.3 L159.8 84.0 L163.5 87.5 L167.2 99.6 L171.0 107.0 L174.7 102.5 L178.5 91.6 L182.2 86.6 L185.9 92.5 L189.7 102.6 L193.4 106.0 L197.2 99.9 L200.9 91.6 L204.6 90.2 L208.4 96.8 L212.1 104.0 L215.9 104.4 L219.6 98.3 L298.8 178.8" stroke="#C22F4A" stroke-width="3" fill="none" stroke-linejoin="round"/><text x="316.40000000000003" y="90" class="m2-ts" style="fill:#8E1F35">arterioles: the big drop</text><text x="316.40000000000003" y="106" class="m2-ts" style="fill:#8E1F35">(the body&rsquo;s control valve)</text></g><g data-step="3" class="nohalo"><path d="M70 40 V230 H510" stroke="#56606B" stroke-width="2" fill="none"/><path d="M66 230 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="234.0" class="m2-ts" text-anchor="end" style="fill:#56606B">0</text><path d="M66 172 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="175.53846153846155" class="m2-ts" text-anchor="end" style="fill:#56606B">40</text><path d="M66 113 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="117.07692307692308" class="m2-ts" text-anchor="end" style="fill:#56606B">80</text><path d="M66 55 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="58.61538461538461" class="m2-ts" text-anchor="end" style="fill:#56606B">120</text><text x="105.2" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">aorta</text><text x="180.0" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">arteries</text><path d="M140 40 V230" stroke="#E3E7EC" stroke-width="1"/><text x="259.20000000000005" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">arterioles</text><path d="M220 40 V230" stroke="#E3E7EC" stroke-width="1"/><text x="334.00000000000006" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">capillaries</text><path d="M299 40 V230" stroke="#E3E7EC" stroke-width="1"/><path d="M70.0 91.2 L73.7 73.4 L77.5 75.5 L81.2 94.8 L85.0 110.0 L88.7 105.3 L92.4 86.5 L96.2 74.6 L99.9 82.3 L103.7 100.7 L107.4 110.0 L111.1 100.6 L114.9 83.7 L118.6 77.8 L122.4 89.0 L126.1 104.7 L129.8 108.2 L133.6 96.4 L137.3 82.9 L141.1 82.3 L144.8 94.9 L148.5 106.8 L152.3 105.5 L156.0 93.3 L159.8 84.0 L163.5 87.5 L167.2 99.6 L171.0 107.0 L174.7 102.5 L178.5 91.6 L182.2 86.6 L185.9 92.5 L189.7 102.6 L193.4 106.0 L197.2 99.9 L200.9 91.6 L204.6 90.2 L208.4 96.8 L212.1 104.0 L215.9 104.4 L219.6 98.3 L298.8 178.8 L369.2 206.6" stroke="#C22F4A" stroke-width="3" fill="none" stroke-linejoin="round"/><text x="316.40000000000003" y="150" class="m2-ts" style="fill:#8A4A6A">capillaries ~35 &rarr; 15</text></g><g data-step="4" class="nohalo"><path d="M70 40 V230 H510" stroke="#56606B" stroke-width="2" fill="none"/><path d="M66 230 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="234.0" class="m2-ts" text-anchor="end" style="fill:#56606B">0</text><path d="M66 172 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="175.53846153846155" class="m2-ts" text-anchor="end" style="fill:#56606B">40</text><path d="M66 113 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="117.07692307692308" class="m2-ts" text-anchor="end" style="fill:#56606B">80</text><path d="M66 55 H70" stroke="#56606B" stroke-width="1.5"/><text x="62" y="58.61538461538461" class="m2-ts" text-anchor="end" style="fill:#56606B">120</text><text x="105.2" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">aorta</text><text x="180.0" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">arteries</text><path d="M140 40 V230" stroke="#E3E7EC" stroke-width="1"/><text x="259.20000000000005" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">arterioles</text><path d="M220 40 V230" stroke="#E3E7EC" stroke-width="1"/><text x="334.00000000000006" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">capillaries</text><path d="M299 40 V230" stroke="#E3E7EC" stroke-width="1"/><text x="395.6" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">venules</text><path d="M369 40 V230" stroke="#E3E7EC" stroke-width="1"/><text x="466.0" y="248" class="m2-ts" text-anchor="middle" style="fill:#56606B">veins</text><path d="M422 40 V230" stroke="#E3E7EC" stroke-width="1"/><path d="M70.0 91.2 L73.7 73.4 L77.5 75.5 L81.2 94.8 L85.0 110.0 L88.7 105.3 L92.4 86.5 L96.2 74.6 L99.9 82.3 L103.7 100.7 L107.4 110.0 L111.1 100.6 L114.9 83.7 L118.6 77.8 L122.4 89.0 L126.1 104.7 L129.8 108.2 L133.6 96.4 L137.3 82.9 L141.1 82.3 L144.8 94.9 L148.5 106.8 L152.3 105.5 L156.0 93.3 L159.8 84.0 L163.5 87.5 L167.2 99.6 L171.0 107.0 L174.7 102.5 L178.5 91.6 L182.2 86.6 L185.9 92.5 L189.7 102.6 L193.4 106.0 L197.2 99.9 L200.9 91.6 L204.6 90.2 L208.4 96.8 L212.1 104.0 L215.9 104.4 L219.6 98.3 L298.8 178.8 L369.2 206.6 L422.0 215.4 L510.0 227.1" stroke="#C22F4A" stroke-width="3" fill="none" stroke-linejoin="round"/><text x="422.0" y="190" class="m2-ts" style="fill:#1E3F78">veins &lt;10</text></g><g data-step="5" class="nohalo"><rect x="526" y="40" width="148" height="70" rx="12" fill="#fff" stroke="#1E2B3A" stroke-width="2"/><text x="600" y="70" class="m2-t" text-anchor="middle" style="fill:#1E2B3A">CO = HR &times; SV</text><text x="600" y="92" class="m2-ts" text-anchor="middle" style="fill:#56606B">72 &times; 70 mL &asymp; 5 L/min</text><text x="600" y="130" class="m2-ts" text-anchor="middle" style="fill:#56606B">exercise: up to</text><text x="600" y="146" class="m2-ts" text-anchor="middle" style="fill:#56606B">~25 L/min</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["A drop of blood leaves the left ventricle at about one hundred twenty millimeters of mercury and reaches the right atrium near zero. The fall is not even.", "The large elastic arteries stretch in systole and recoil in diastole, smoothing the pulse into steady flow. They lose little pressure.", "The arterioles are the resistance vessels. Their thick smooth muscle narrows or widens to nerves, hormones and local chemicals, and most of the systemic pressure drop happens here. Tighten them and pressure rises everywhere upstream.", "In the capillaries, one cell thick, pressure falls from about thirty-five to fifteen. At the arterial end it pushes fluid out into the tissues; at the venous end, the plasma proteins pull most of it back.", "In the veins, pressure is under ten. Their walls are built to hold volume, not to resist pressure.", "How much blood moves is the cardiac output: heart rate times stroke volume. At rest, about seventy-two beats times seventy milliliters, roughly five liters a minute. In hard exercise both rise, and cardiac output can reach twenty-five liters a minute in an elite athlete."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>How each vessel type handles pressure, and cardiac output.</span></div>
+    <article class="atlas">
+      <h3>How the three vessel types handle pressure differently</h3>
+      <p>A drop of blood leaves the left ventricle at about 120 mmHg and arrives at the right atrium at near 0 mmHg. That entire pressure drop happens across the systemic circuit, but it does not happen evenly. Different vessels handle different portions of the pressure profile.</p>
+      <figure class="plate"><img data-img="f71102" alt="Diagram of filtration, no net movement, and reabsorption at the arterial end, midpoint, and venous end of a capillary, with the pressures driving each"><figcaption>Figure 20.16 — Capillary Exchange. Net filtration occurs near the arterial end of the capillary since capillary hydrostatic pressure (CHP) is greater than blood colloidal osmotic pressure (BCOP). There is no net movement of fluid near the midpoint since CHP = BCOP. Net reabsorption occurs near the venous end since BCOP is greater than CHP.</figcaption></figure>
+      <p><b>Large arteries (aorta and major branches).</b> Walls are stiff with elastin. They stretch during systole, recoil during diastole. The stretch-and-recoil smooths the pressure wave into a steady-but-still-pulsing flow. Pressure drops only modestly across them.</p>
+      <p><b>Arterioles.</b><button type="button" class="say" data-say="arteriole" aria-label="Hear it: arterioles." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> The body’s main resistance vessels. Their thick smooth-muscle walls dilate and constrict in response to nerve signals, hormones, and local metabolites. <i>Most of the pressure drop in the systemic circulation happens here.</i> Tighten the arterioles and you raise blood pressure throughout the body; relax them and you lower it.</p>
+      <p><b>Capillaries.</b> The actual exchange surface. Walls are one cell thick. Pressure has dropped to about 35 mmHg at the arterial end and 15 mmHg at the venous end. This pressure window is what drives water and small molecules out at the start of the capillary bed and pulls them back in at the end — the cycle that delivers oxygen and removes waste at every tissue.</p>
+      <figure class="plate"><img data-img="f71101" alt="Diagram and notes explaining that arterial-side blood pressure exceeds osmotic pressure, so plasma leaks out to form interstitial fluid, which bathes tissues before draining back into the capillary"><figcaption>At the arterial side of a capillary bed, blood pressure exceeds blood osmotic pressure, so plasma consistently leaks out through the capillary walls, forming the interstitial fluid that bathes tissues. Plasma proteins and blood cells are too large to leak out and stay in the capillary.</figcaption></figure>
+      <p><b>Venules and veins.</b> Pressure is very low (under 10 mmHg in most veins). Wall structure handles capacitance, not pressure.</p>
+      <h3>Cardiac output</h3>
+      <p><b>Cardiac output (CO)</b><button type="button" class="say" data-say="cardiac-output" aria-label="Hear it: cardiac output (co)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is the volume of blood pumped per minute by one ventricle. At rest, both ventricles pump about 5 L/min — nearly your entire blood volume every minute. Cardiac output is the product of two things:</p>
+      <h4><b>CO = HR × SV</b></h4>
+      <p>Where <b>HR</b> is heart rate (beats per minute) and <b>SV</b> is stroke volume (volume ejected per beat — about 70 mL at rest). During heavy exercise, both factors rise: heart rate can triple (to 180+ bpm) and stroke volume can roughly double (to 150 mL+), so cardiac output can climb fivefold or more — from 5 L/min at rest to 25 L/min or higher in elite athletes during peak effort.</p>
+      <figure class="plate"><img data-img="f71103" alt="Infographic comparing a normal heart&#x27;s cardiac output to a heart in congestive failure, with enlarged heart, fluid around the lungs, and swelling in the legs and feet"><figcaption>Congestive heart failure: a failing left ventricle pumps a reduced volume of oxygen-rich blood to the body, producing an enlarged heart, fluid buildup around the lungs, and swelling in the legs and feet.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Vessel?</h2></div>
+    <p class="hint">Sort each description, then check.</p>
+    <div class="place card" id="w16vt">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ea" data-fb="Large elastic arteries." data-miss="Which vessels hold elastin?">stretch and recoil, smoothing the pulse</button>
+        <button class="chip" data-k="b" data-ans="ar" data-fb="Arterioles." data-miss="Where does pressure fall most?">most of the pressure drop; the control valve</button>
+        <button class="chip" data-k="c" data-ans="ca" data-fb="Capillaries." data-miss="Where does exchange happen?">one cell thick; about 35 falling to 15 mmHg</button>
+        <button class="chip" data-k="d" data-ans="vn" data-fb="Veins." data-miss="Where is pressure lowest?">under 10 mmHg; hold most of the blood</button>
+        <button class="chip" data-k="e" data-ans="ar" data-fb="Arterioles." data-miss="Which vessel adjusts resistance?">thick smooth muscle that narrows or widens on signals</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="ea"><h4>Elastic arteries</h4><div class="drop"></div></div><div class="bin" data-bin="ar"><h4>Arterioles</h4><div class="drop"></div></div><div class="bin" data-bin="ca"><h4>Capillaries</h4><div class="drop"></div></div><div class="bin" data-bin="vn"><h4>Veins</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w16m6"><p class="q">Heart rate 80, stroke volume 70 mL. What is the cardiac output?</p>
+        <button class="opt" data-ok="1" data-fb="80 &times; 70 mL = 5,600 mL.">5.6 L/min.</button>
+        <button class="opt" data-fb="Multiply, do not add.">150 mL/min.</button>
+        <button class="opt" data-fb="Check the arithmetic: 80 &times; 70 = 5,600.">1.1 L/min.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="flow" type="button">&larr; Flow, Pressure, Resistance</button><button class="btn" data-go="bp" type="button">Next: Blood Pressure and Hypertension &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 BLOOD PRESSURE AND HYPERTENSION ═════════ -->
+<section class="panel" id="tab-bp" role="tabpanel">
+  <div class="vo" data-clip="w16_bp">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Silent Killer</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The equation mean arterial pressure equals cardiac output times total peripheral resistance, then three organs that chronic hypertension damages: the heart, the brain and the kidney"><g data-step="0" class="nohalo"><text x="340" y="32" class="m2-t" text-anchor="middle" style="fill:#1E2B3A">MAP = CO &times; TPR</text><text x="340" y="52" class="m2-ts" text-anchor="middle" style="fill:#56606B">raise heart rate or stroke volume, or tighten arterioles, and pressure rises</text></g><g data-step="1" class="nohalo"><text x="340" y="76" class="m2-ts" text-anchor="middle" style="fill:#2F6B4F">controlled fast by baroreceptors; slowly by the kidneys and hormones</text></g><g data-step="2" class="nohalo"><text x="20" y="292" class="m2-ts" style="fill:#8E1F35">hypertension: repeatedly 130/80 or above; ~90% no single cause; silent for years</text></g><g data-step="3" class="nohalo"><g transform="translate(30,90) scale(0.62)"><path d="M58 104 C48 128 50 170 70 198 C92 228 134 242 164 236 C182 232 190 214 190 194 C192 160 184 122 168 104 C152 90 132 94 118 100 C102 94 74 92 58 104z" fill="#E89AA8" stroke="#B5475E" stroke-width="2.5"/><path d="M52 96 C44 120 46 158 64 186 C68 160 70 128 82 104z" fill="#D98494" stroke="#B5475E" stroke-width="1.5"/><path d="M150 100 C168 118 176 160 172 196 C170 214 160 226 150 232 C158 210 160 170 150 100z" fill="#D47A8C" stroke="#B5475E" stroke-width="1.5"/><path d="M80 96 C70 82 58 84 56 94 C54 104 66 110 82 106z" fill="#E7A2AE" stroke="#B5475E" stroke-width="1.8"/><path d="M152 96 C162 82 178 84 180 94 C182 104 168 110 154 108z" fill="#E7A2AE" stroke="#B5475E" stroke-width="1.8"/></g><text x="110" y="262" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">heart: the LV thickens, then fails</text></g><g data-step="4" class="nohalo"><path d="M300 150 C290 110 330 92 360 100 C392 92 420 116 412 146 C424 170 400 196 372 190 C352 202 318 196 310 178 C292 176 290 160 300 150z" fill="#F2DCE0" stroke="#B9849A" stroke-width="2"/><text x="356" y="226" class="m2-ts" text-anchor="middle" style="fill:#8A4A6A">brain: damaged arterioles; stroke</text></g><g data-step="5" class="nohalo"><path d="M560 110 C536 110 528 140 534 166 C540 196 572 204 588 186 C576 172 576 140 588 124 C582 114 572 110 560 110z" fill="#C98A7A" stroke="#8A4A3A" stroke-width="2"/><text x="566" y="226" class="m2-ts" text-anchor="middle" style="fill:#8A4A3A">kidneys: glomeruli damaged</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Mean arterial pressure is roughly cardiac output times total peripheral resistance. To raise it, the body can speed the heart, increase stroke volume, or tighten its arterioles; to lower it, the reverse.", "Three systems control it. Baroreceptors in the carotid sinus and aortic arch sense pressure and trigger fast nerve responses. The kidneys adjust blood volume slowly. Hormones such as ADH, aldosterone and the renin-angiotensin system set the long-term level.", "Hypertension is pressure that stays high, usually repeated readings of one thirty over eighty or above. In about ninety percent of people there is no single cause, only a mix of genes, diet and lifestyle. It is silent: people feel fine for years.", "Meanwhile it does damage everywhere blood flows. The heart: the left ventricle thickens to push against the pressure, left ventricular hypertrophy, then stiffens and fails.", "The brain: high pressure damages small cerebral arteries, raising the risk of stroke, from a blocked vessel or a burst one.", "The kidneys: their glomerular capillaries are exquisitely sensitive to pressure, and years of it lead to chronic kidney disease. Now try the Pressure Lab below."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Mean arterial pressure, its regulation, and hypertension.</span></div>
+    <article class="atlas">
+      <h3>Blood pressure regulation</h3>
+      <p>Mean arterial pressure (MAP) — the average pressure across the cardiac cycle — can be approximated as:</p>
+      <h4><b>MAP = CO × TPR</b></h4>
+      <p>Where <b>TPR</b> is total peripheral resistance — the combined resistance of all the systemic vessels, dominated by the arterioles. To raise blood pressure, the body can raise heart rate, raise stroke volume, or constrict arterioles. To lower it, the opposite. Three regulatory systems work together: baroreceptors in the carotid sinus and aortic arch detect pressure and trigger fast nerve responses; the kidneys regulate blood volume more slowly (Module 11); and hormones like ADH, aldosterone, and the renin-angiotensin system fine-tune the long-term setpoint (Module 6 and Module 11).</p>
+      <h3>Hypertension — the silent killer</h3>
+      <p><b>Hypertension</b><button type="button" class="say" data-say="hypertension" aria-label="Hear it: hypertension" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is chronically elevated arterial pressure — usually defined as repeated readings above 130/80 mmHg in clinical practice. Most cases (about 90%) have no single identifiable cause; they emerge from a combination of genetic, dietary, and lifestyle factors. The other 10% are <i>secondary hypertension</i> caused by an identifiable problem (renal artery stenosis, an adrenal tumor secreting cortisol or aldosterone, certain medications).</p>
+      <p>Hypertension is dangerous because it is silent — patients feel fine for years — and because the damage accumulates everywhere blood is flowing. Three of the most important consequences:</p>
+      <p><b>Heart.</b> The left ventricle thickens to push against the elevated pressure (left ventricular hypertrophy). Over time it stiffens and stops filling properly — heart failure.</p>
+      <p><b>Brain.</b> Sustained high pressure damages cerebral arterioles, increasing the risk of stroke (both ischemic, from atherosclerotic narrowing, and hemorrhagic, from vessel rupture).</p>
+      <p><b>Kidneys.</b> Glomerular capillaries are exquisitely sensitive to pressure. Chronic hypertension damages them, leading to chronic kidney disease (Module 11).</p>
+      <figure class="plate"><img data-img="f71104" alt="Progression of atherosclerosis from normal artery function through endothelial dysfunction, plaque formation, and thrombosis, alongside a heart with plaque-laden coronary arteries"><figcaption>Atherosclerosis progresses from normal endothelial function through dysfunction, plaque formation, and thrombosis — the vessel damage that chronic hypertension accelerates throughout the body.</figcaption></figure>
+      <div class="inset"><div class="ilabel">CONTEMPORARY RESEARCH — WEARABLE CONTINUOUS BP MONITORING</div><p>For most of medical history, blood pressure was a snapshot — one or two readings at a doctor’s office, sometimes with a 24-hour ambulatory monitor for serious cases. Because pressure varies minute by minute and rises during stress, those snapshots can miss the average behavior of a person’s pressure across the day.</p><p>Several research teams are working on <b>cuffless continuous BP monitoring</b> using sensors that fit on the wrist, finger, or ear. The leading approaches use <i>pulse-wave analysis</i>: a small optical or pressure sensor measures the pulse’s waveform and time-of-arrival, and a calibrated algorithm infers blood pressure from those features. Some smartwatches already provide approximate readings; medical-grade devices have begun to receive regulatory clearance in several countries.</p><p>Whether these devices will be accurate enough to replace cuff measurements is still being worked out. Calibration drift is a major challenge — the algorithms typically require periodic recalibration with a real cuff measurement. But if the technology matures, hypertension could be identified earlier and treatment titrated more precisely against a continuous record of how the patient’s pressure actually behaves across a day, a workout, or a poor night’s sleep.</p></div>
+      <details class="selfcheck"><summary>Self-check: state the two flow equations and explain why a small change in vessel radius matters so much</summary><p><b>Q = ΔP / R</b> — flow rate equals pressure gradient divided by resistance.</p><p><b>R ∝ 1 / r⁴</b> — resistance is inversely proportional to the fourth power of vessel radius.</p><p>Because radius is raised to the fourth power, halving the radius produces a 16-fold increase in resistance. The body uses this leverage at the arterioles: small smooth-muscle adjustments in arteriole diameter cause huge changes in systemic resistance and therefore in blood pressure. It is also why narrowing of large arteries by atherosclerosis is more harmful than its modest-looking diameter change would suggest.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Pressure Lab</h2></div>
+    <p class="hint">About 25 minutes. Press Reset, then run experiments A, B and C, adding each to your log. Then try Exercise.</p>
+    <div class="card plab" id="plab">
+  <p class="hint" style="margin-top:0">A simplified model, not a patient: stroke volume depends only on blood volume, and the body&rsquo;s reflexes are switched off, so extreme settings overshoot.</p>
+  <div class="pl-grid">
+    <div class="pl-ctrl">
+      <label>Heart rate <b id="plHRv">72 beats/min</b><input type="range" id="plHR" min="40" max="180" value="72"></label>
+      <label>Blood volume <b id="plBVv">5.0 L</b><input type="range" id="plBV" min="3" max="7" step="0.1" value="5"></label>
+      <label>Arteriole radius <b id="plRv">100% of normal</b><input type="range" id="plR" min="40" max="150" value="100"></label>
+      <div class="pl-btns"><button type="button" class="btn small ghost" data-p="72,5,0.5">A: half radius</button><button type="button" class="btn small ghost" data-p="150,5,1">B: heart rate 150</button><button type="button" class="btn small ghost" data-p="72,6,1">C: +1 L volume</button><button type="button" class="btn small ghost" data-p="150,5,1.35">Exercise</button><button type="button" class="btn small ghost" data-p="72,5,1">Reset</button></div>
+    </div>
+    <div class="pl-out">
+      <svg viewBox="0 0 120 120" class="pl-art" aria-label="An arteriole cut across, its opening shrinking or widening with the radius"><circle cx="60" cy="60" r="56" fill="#E3828F" stroke="#8E1F35" stroke-width="3"/><circle id="plLum" cx="60" cy="60" r="40" fill="#fff"/><circle cx="60" cy="60" r="40" fill="none" stroke="#8E1F35" stroke-dasharray="4 3"/></svg>
+      <div class="pl-nums"><div><small>Cardiac output</small><b id="plCO">5.0</b><span>L/min</span></div><div><small>Resistance (TPR)</small><b id="plT">1.0&times;</b><span>vs normal</span></div><div><small>Blood pressure</small><b id="plBP">120/79</b><span>mmHg (estimated)</span></div></div>
+    </div>
+  </div>
+  <p class="pl-eq" id="plEq"></p>
+  <div class="pl-gauge"><span>low</span><span>normal</span><span>hypertension</span><span>severe</span><i id="plMk"></i></div>
+  <p class="pl-st" id="plSt"></p>
+  <div class="field" style="margin-bottom:0"><p class="q"><button type="button" class="btn small" id="plAdd">Add this setting to my log</button> <span class="hint">Each click adds a line below; it prints in your PDF. Add a sentence after each line saying what happened.</span></p>
+  <textarea class="jbox" id="w16lg" data-label="Pressure Lab log" data-min="20"></textarea></div>
+</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Read a Real Chart (optional)</h2></div>
+    <div class="draw web"><span class="label">Web interactive &middot; Blood pressure categories</span>
+      <p>Doctors sort readings into categories. Open the American Heart Association chart and find where a reading of 145/95 falls; you will meet that patient in your Notebook.</p><p class="weblinks"><a class="btn small ghost" href="https://www.heart.org/en/health-topics/high-blood-pressure/understanding-blood-pressure-readings" target="_blank" rel="noopener">American Heart Association: understanding blood pressure readings &#8599;</a></p><div class="field" style="margin-bottom:0"><p class="q">Which category does 145/95 fall in, and which number put it there? One sentence.</p><textarea class="jbox" id="w16wb" data-label="Blood-pressure categories" data-min="12"></textarea></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="types" type="button">&larr; Vessels and Cardiac Output</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Pressure Lab</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>A 54-year-old&rsquo;s blood pressure has been 145/95 for years. What is keeping his mean arterial pressure high, which organs are at risk and why, and how might a medicine bring it down?</p></div>
+        <p>Today you use CO = HR &times; SV and Q = &Delta;P / R to predict, not just calculate: reasoning forward from a scenario to its consequence is what a clinician does at the bedside. This Notebook asks for three predictions, your simulation log and a hypertension case.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Three Predictions</h2></div>
+    <p class="hint">Rubric: predictions, 4 pts.</p>
+    <div class="card idtable" id="w16rP" style="padding:16px 20px"><div class="idhead c1"><span></span><span>Direction</span><span></span></div><div class="idrow c1"><span class="loc">A. Aortic stenosis: stroke volume</span><select class="jfield" id="w16rPr0c0" data-label="Prediction: A. Aortic stenosis: stroke volume, Direction" data-ans="decrease"><option value="">choose</option><option>increase</option><option>decrease</option><option>no change</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">A. Aortic stenosis: cardiac output (same HR)</span><select class="jfield" id="w16rPr1c0" data-label="Prediction: A. Aortic stenosis: cardiac output (same HR), Direction" data-ans="decrease"><option value="">choose</option><option>increase</option><option>decrease</option><option>no change</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">B. Narrowed arterioles: total peripheral resistance</span><select class="jfield" id="w16rPr2c0" data-label="Prediction: B. Narrowed arterioles: total peripheral resistance, Direction" data-ans="increase"><option value="">choose</option><option>increase</option><option>decrease</option><option>no change</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">B. Narrowed arterioles: blood pressure (same CO)</span><select class="jfield" id="w16rPr3c0" data-label="Prediction: B. Narrowed arterioles: blood pressure (same CO), Direction" data-ans="increase"><option value="">choose</option><option>increase</option><option>decrease</option><option>no change</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">C. Dehydration: preload</span><select class="jfield" id="w16rPr4c0" data-label="Prediction: C. Dehydration: preload, Direction" data-ans="decrease"><option value="">choose</option><option>increase</option><option>decrease</option><option>no change</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">C. Dehydration: reflex heart rate</span><select class="jfield" id="w16rPr5c0" data-label="Prediction: C. Dehydration: reflex heart rate, Direction" data-ans="increase"><option value="">choose</option><option>increase</option><option>decrease</option><option>no change</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Predict each, then check.</span></div></div><div class="card loccard"><p class="sub">One or two sentences each, grounded in CO = HR &times; SV or Q = &Delta;P / R. (A) A narrowed aortic valve: stroke volume, cardiac output, and one compensation the heart will attempt. (B) Atherosclerosis narrows arterioles: resistance and pressure (use R &prop; 1/r&#8308;). (C) Dehydration: preload, and the reflex change in heart rate.</p><div class="ttrack" data-field="w16rR"><span class="tt" data-t="HR|heart rate|stroke">CO = HR x SV</span><span class="tt" data-t="resist|R">Q = ΔP/R</span><span class="tt" data-t="fourth|r4|r⁴|16">r4</span><span class="tt" data-t="compensat|hypertroph|faster|thick">compensation</span><span class="tt" data-t="reflex|faster|increase">reflex HR</span></div><textarea class="jbox" id="w16rR" data-label="Reasoning for scenarios A, B and C" data-min="50"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Simulation Log</h2></div>
+    <p class="hint">Rubric: simulation log, 3 pts.</p>
+    <div class="card loccard"><p class="sub">One sentence for each experiment: (a) arterioles at half radius, heart rate constant; (b) heart rate raised, radius constant; (c) blood volume up 1 L. Say what happened to blood pressure and why. (Your raw log from the lab also prints.)</p><div class="ttrack" data-field="w16rL"><span class="tt" data-t="radius|arteriole|half">(a) radius</span><span class="tt" data-t="heart rate|HR|150">(b) heart rate</span><span class="tt" data-t="volume|1 L|liter">(c) volume</span></div><textarea class="jbox" id="w16rL" data-label="Simulation log: one sentence per experiment" data-min="40"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>The Case</h2></div>
+    <p class="hint">Rubric: case response, 5 pts.</p>
+    <div class="card loccard"><p class="sub">In about 200 words: (a) what is keeping his MAP high: cardiac output, peripheral resistance, or both? (b) Name two organs at risk and explain why. (c) Suggest how a common antihypertensive might work, in terms of the equations.</p><div class="ttrack" data-field="w16rA"><span class="tt" data-t="MAP|CO|TPR|resist">MAP = CO x TPR</span><span class="tt" data-t="heart|ventric|hypertroph">heart</span><span class="tt" data-t="brain|stroke|kidney|glomerul">brain / kidney</span><span class="tt" data-t="drug|medic|dilat|diuretic|beta|ACE|lower">medicine</span></div><textarea class="jbox" id="w16rA" data-label="Case response: 145/95 for years" data-min="110"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w16c31">All three predictions are correct, each with reasoning from CO = HR &times; SV or Q = &Delta;P / R.</li><li data-ck="w16c32">My log covers all three experiments specifically.</li><li data-ck="w16c33">My case response cites the equations and explains two organs at risk.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 7.11 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="bp" type="button">&larr; Blood Pressure and Hypertension</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>flow rate</dt><dd>Volume moved per unit time (Q).</dd>
+  <dt>pressure gradient<button type="button" class="say" data-say="pressure-gradient" aria-label="Hear it: pressure gradient" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The pressure difference that drives flow (&Delta;P).</dd>
+  <dt>resistance</dt><dd>Opposition to flow (R); set mostly by vessel radius.</dd>
+  <dt>viscosity<button type="button" class="say" data-say="viscosity" aria-label="Hear it: viscosity" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>viscum</i> &ldquo;birdlime&rdquo;</small></dt><dd>A fluid&rsquo;s thickness; blood is about five times water.</dd>
+  <dt>total peripheral resistance<button type="button" class="say" data-say="tpr" aria-label="Hear it: total peripheral resistance" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The combined resistance of all systemic vessels (TPR).</dd>
+  <dt>arteriole<button type="button" class="say" data-say="arteriole" aria-label="Hear it: arteriole" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A small resistance artery whose smooth muscle sets blood pressure.</dd>
+  <dt>cardiac output<button type="button" class="say" data-say="cardiac-output" aria-label="Hear it: cardiac output" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Blood pumped per minute by one ventricle: CO = HR &times; SV.</dd>
+  <dt>stroke volume<button type="button" class="say" data-say="stroke-volume" aria-label="Hear it: stroke volume" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Blood ejected per beat, about 70 mL at rest.</dd>
+  <dt>preload<button type="button" class="say" data-say="preload" aria-label="Hear it: preload" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>How much the ventricle is filled and stretched before it contracts.</dd>
+  <dt>mean arterial pressure<button type="button" class="say" data-say="mean-arterial-pressure" aria-label="Hear it: mean arterial pressure" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Average arterial pressure across a beat: MAP &asymp; CO &times; TPR.</dd>
+  <dt>baroreceptor<button type="button" class="say" data-say="baroreceptor" aria-label="Hear it: baroreceptor" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>baros</i> &ldquo;weight&rdquo;</small></dt><dd>A pressure sensor in the carotid sinus and aortic arch.</dd>
+  <dt>hypertension<button type="button" class="say" data-say="hypertension" aria-label="Hear it: hypertension" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>hyper</i> &ldquo;over&rdquo;</small></dt><dd>Chronically high blood pressure, usually 130/80 or above.</dd>
+  <dt>left ventricular hypertrophy<button type="button" class="say" data-say="lvh" aria-label="Hear it: left ventricular hypertrophy" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>trophe</i> &ldquo;nourishment&rdquo;</small></dt><dd>Thickening of the left ventricle against high pressure.</dd>
+  <dt>heart failure<button type="button" class="say" data-say="heart-failure" aria-label="Hear it: heart failure" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A heart that can no longer pump enough for the body&rsquo;s needs.</dd>
+  <dt>stroke</dt><dd>Brain injury from a blocked or burst brain artery.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w16-l3", "title": "Blood Flow, Pressure and Hypertension", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 16 · Blood Flow and Pressure", "pdfTag": "AP_W16_L3"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f71102":{"src":"img/m7-7.11-02-how-three-vessel-types-handle-pr.webp","alt":""},"f71101":{"src":"img/m7-7.11-01-supplement-discussion-blood-flow.webp","alt":""},"f71103":{"src":"img/m7-7.11-03-cardiac-output.webp","alt":""},"f71104":{"src":"img/m7-7.11-04-hypertension-silent-killer.webp","alt":""}},"w16_fl":{"audio":"audio/ap-w16-l3-fl.mp3","words":[[0,0.32,"Blood"],[0.4,0.48,"is"],[0.56,0.64,"a"],[0.72,1.36,"fluid,"],[1.44,1.52,"and"],[1.68,2.04,"fluids"],[2.08,2.16,"in"],[2.24,2.64,"tubes"],[2.72,2.88,"obey"],[2.96,3.04,"a"],[3.12,3.28,"few"],[3.36,3.6,"simple"],[3.76,4.24,"rules."],[4.72,5.04,"Flow"],[5.12,5.28,"goes"],[5.36,5.44,"from"],[5.6,5.68,"high"],[5.76,6.16,"pressure"],[6.24,6.32,"to"],[6.48,6.8,"low."],[7.28,7.36,"The"],[7.44,7.76,"volume"],[7.8,7.84,"that"],[7.92,8.24,"flows"],[8.32,8.48,"each"],[8.56,8.88,"second"],[9.04,9.2,"depends"],[9.28,9.44,"on"],[9.52,9.6,"two"],[9.68,10.4,"things:"],[10.48,10.52,"the"],[10.56,10.8,"pressure"],[10.88,11.2,"difference"],[11.28,11.52,"pushing"],[11.6,11.92,"it,"],[11.96,12,"and"],[12.04,12.08,"the"],[12.2,12.72,"resistance"],[12.8,13.2,"opposing"],[13.28,13.44,"it."],[14,14.32,"Q"],[14.48,14.64,"equals"],[14.72,14.96,"delta"],[15.12,15.36,"P"],[15.44,15.6,"over"],[15.76,16.32,"R."],[16.64,16.72,"For"],[16.8,16.88,"the"],[16.96,17.04,"whole"],[17.12,18.08,"circulation,"],[18.16,18.4,"Q"],[18.48,18.56,"is"],[18.6,18.64,"the"],[18.72,19.12,"cardiac"],[19.32,19.92,"output,"],[20,20.24,"delta"],[20.32,20.56,"P"],[20.64,20.72,"is"],[20.8,20.88,"the"],[20.96,21.2,"drop"],[21.28,21.36,"from"],[21.4,21.44,"the"],[21.52,21.92,"aorta"],[21.96,22,"to"],[22.08,22.12,"the"],[22.16,22.32,"right"],[22.4,23.2,"atrium,"],[23.28,23.36,"and"],[23.44,23.76,"R"],[23.84,23.92,"is"],[24,24.08,"the"],[24.24,24.4,"total"],[24.48,24.96,"peripheral"],[25.08,25.52,"resistance"],[25.64,25.76,"of"],[25.84,25.92,"all"],[26,26.04,"the"],[26.08,26.48,"systemic"],[26.56,27.36,"vessels."],[27.68,28.24,"Resistance"],[28.36,28.48,"has"],[28.56,28.72,"three"],[28.88,29.6,"sources."],[29.84,30.72,"Viscosity,"],[30.84,30.96,"set"],[31.04,31.28,"mostly"],[31.36,31.44,"by"],[31.48,31.52,"the"],[31.6,32.4,"hematocrit,"],[32.48,32.8,"hardly"],[32.88,33.2,"changes"],[33.28,33.36,"from"],[33.44,33.52,"day"],[33.6,33.68,"to"],[33.8,34.56,"day."],[34.68,34.8,"Total"],[34.88,35.2,"vessel"],[35.28,35.6,"length"],[35.8,36,"changes"],[36.12,36.24,"only"],[36.32,37.36,"slowly."],[37.44,37.68,"Vessel"],[37.84,38.32,"radius"],[38.4,38.48,"is"],[38.52,38.56,"the"],[38.68,38.88,"body's"],[38.96,39.36,"control"],[39.44,40.16,"knob."],[40.48,40.8,"Resistance"],[40.92,41.04,"is"],[41.16,41.6,"inversely"],[41.68,42.24,"proportional"],[42.28,42.32,"to"],[42.44,42.56,"the"],[42.64,42.88,"fourth"],[43.04,43.2,"power"],[43.28,43.36,"of"],[43.4,43.44,"the"],[43.68,44.4,"radius:"],[44.48,44.72,"R"],[44.8,44.88,"is"],[44.96,45.44,"proportional"],[45.52,45.68,"to"],[45.76,46,"one"],[46.08,46.32,"over"],[46.4,46.48,"r"],[46.56,46.64,"to"],[46.72,46.8,"the"],[46.88,47.68,"fourth."],[47.8,47.92,"So"],[48,48.16,"halve"],[48.2,48.24,"a"],[48.28,48.64,"vessel's"],[48.88,49.12,"radius"],[49.16,49.2,"and"],[49.28,49.36,"its"],[49.44,50,"resistance"],[50.04,50.48,"rises"],[50.64,51.04,"sixteen"],[51.12,52.08,"times."],[52.16,52.24,"A"],[52.32,52.48,"little"],[52.56,52.96,"narrowing"],[53.04,53.12,"makes"],[53.2,53.36,"a"],[53.48,53.6,"big"],[53.84,54.32,"difference,"],[54.4,54.48,"which"],[54.56,54.6,"is"],[54.64,54.8,"why"],[55,55.36,"arteriole"],[55.44,55.76,"tone"],[55.88,56,"sets"],[56.12,56.24,"blood"],[56.32,56.88,"pressure,"],[56.96,57.04,"and"],[57.12,57.2,"why"],[57.28,57.52,"even"],[57.6,57.92,"modest"],[58,58.96,"atherosclerosis"],[59,59.744,"matters."]]},"w16_vt":{"audio":"audio/ap-w16-l3-vt.mp3","words":[[0.296,0.336,"A"],[0.416,0.656,"drop"],[0.736,0.816,"of"],[0.976,1.136,"blood"],[1.216,1.456,"leaves"],[1.536,1.616,"the"],[1.696,1.776,"left"],[1.856,2.336,"ventricle"],[2.376,2.416,"at"],[2.496,2.736,"about"],[2.816,2.896,"one"],[2.976,3.136,"hundred"],[3.296,3.456,"twenty"],[3.616,4.016,"millimeters"],[4.096,4.176,"of"],[4.256,4.656,"mercury"],[4.896,5.056,"and"],[5.096,5.296,"reaches"],[5.376,5.456,"the"],[5.576,5.696,"right"],[5.776,6.176,"atrium"],[6.256,6.336,"near"],[6.496,7.376,"zero."],[7.456,7.536,"The"],[7.696,7.856,"fall"],[7.936,8.096,"is"],[8.216,8.336,"not"],[8.416,9.216,"even."],[9.296,9.376,"The"],[9.536,9.696,"large"],[9.776,10.256,"elastic"],[10.336,10.736,"arteries"],[10.936,11.136,"stretch"],[11.216,11.296,"in"],[11.376,11.856,"systole"],[11.936,12.016,"and"],[12.136,12.576,"recoil"],[12.656,12.736,"in"],[12.816,13.696,"diastole,"],[13.776,14.176,"smoothing"],[14.256,14.336,"the"],[14.496,14.656,"pulse"],[14.776,14.896,"into"],[14.976,15.216,"steady"],[15.296,16.096,"flow."],[16.176,16.256,"They"],[16.376,16.496,"lose"],[16.576,16.816,"little"],[17.016,17.696,"pressure."],[17.736,17.776,"The"],[18.016,18.576,"arterioles"],[18.656,18.736,"are"],[18.776,18.816,"the"],[18.936,19.376,"resistance"],[19.456,20.256,"vessels."],[20.376,20.496,"Their"],[20.576,20.816,"thick"],[20.976,21.296,"smooth"],[21.376,21.776,"muscle"],[21.856,22.256,"narrows"],[22.376,22.496,"or"],[22.616,22.976,"widens"],[23.056,23.136,"to"],[23.216,23.696,"nerves,"],[23.776,24.256,"hormones"],[24.336,24.416,"and"],[24.576,24.736,"local"],[24.936,25.536,"chemicals,"],[25.656,25.776,"and"],[25.896,26.016,"most"],[26.096,26.136,"of"],[26.176,26.256,"the"],[26.416,26.736,"systemic"],[26.896,27.056,"pressure"],[27.176,27.296,"drop"],[27.376,27.696,"happens"],[27.776,28.603,"here."],[28.629,28.976,"Tighten"],[29.176,29.376,"them"],[29.456,29.536,"and"],[29.696,29.856,"pressure"],[29.936,30.416,"rises"],[30.496,30.896,"everywhere"],[31.016,31.936,"upstream."],[31.976,32.016,"In"],[32.096,32.176,"the"],[32.296,33.096,"capillaries,"],[33.136,33.296,"one"],[33.376,33.616,"cell"],[33.696,34.296,"thick,"],[34.336,34.656,"pressure"],[34.736,34.976,"falls"],[35.056,35.136,"from"],[35.216,35.456,"about"],[35.536,36.096,"thirty-five"],[36.176,36.336,"to"],[36.376,37.483,"fifteen."],[37.509,37.536,"At"],[37.616,37.696,"the"],[37.896,38.256,"arterial"],[38.336,38.496,"end"],[38.576,38.656,"it"],[38.736,39.056,"pushes"],[39.136,39.456,"fluid"],[39.536,39.696,"out"],[39.776,39.856,"into"],[39.936,40.016,"the"],[40.056,40.856,"tissues;"],[40.896,40.976,"at"],[41.016,41.056,"the"],[41.136,41.456,"venous"],[41.536,41.883,"end,"],[41.909,41.936,"the"],[42.016,42.336,"plasma"],[42.416,42.896,"proteins"],[43.016,43.136,"pull"],[43.256,43.376,"most"],[43.416,43.456,"of"],[43.536,43.616,"it"],[43.696,44.456,"back."],[44.496,44.576,"In"],[44.616,44.656,"the"],[44.736,45.256,"veins,"],[45.296,45.616,"pressure"],[45.696,45.856,"is"],[46.016,46.176,"under"],[46.256,47.056,"ten."],[47.136,47.216,"Their"],[47.296,47.536,"walls"],[47.616,47.696,"are"],[47.776,47.856,"built"],[47.936,48.016,"to"],[48.176,48.336,"hold"],[48.616,48.976,"volume,"],[49.096,49.216,"not"],[49.256,49.296,"to"],[49.376,49.616,"resist"],[49.696,50.549,"pressure."],[50.603,50.656,"How"],[50.776,50.896,"much"],[51.016,51.136,"blood"],[51.296,51.616,"moves"],[51.696,51.776,"is"],[51.816,51.856,"the"],[51.936,52.336,"cardiac"],[52.416,53.216,"output:"],[53.296,53.376,"heart"],[53.456,53.696,"rate"],[53.776,54.016,"times"],[54.096,54.336,"stroke"],[54.776,55.269,"volume."],[55.323,55.376,"At"],[55.456,55.896,"rest,"],[55.936,56.176,"about"],[56.256,56.736,"seventy-two"],[56.816,57.056,"beats"],[57.136,57.376,"times"],[57.456,57.736,"seventy"],[57.776,58.656,"milliliters,"],[58.736,58.976,"roughly"],[59.056,59.296,"five"],[59.376,59.616,"liters"],[59.656,59.696,"a"],[59.776,60.536,"minute."],[60.576,60.656,"In"],[60.736,60.896,"hard"],[60.976,61.536,"exercise"],[61.616,61.856,"both"],[61.936,62.549,"rise,"],[62.603,62.656,"and"],[62.776,63.056,"cardiac"],[63.136,63.376,"output"],[63.456,63.616,"can"],[63.736,63.856,"reach"],[63.936,64.576,"twenty-five"],[64.656,64.896,"liters"],[64.936,64.976,"a"],[65.056,65.216,"minute"],[65.296,65.376,"in"],[65.416,65.456,"an"],[65.536,65.856,"elite"],[65.936,66.535,"athlete."]]},"w16_bp":{"audio":"audio/ap-w16-l3-bp.mp3","words":[[0.521,0.601,"Mean"],[0.681,1.161,"arterial"],[1.361,1.561,"pressure"],[1.641,1.801,"is"],[1.921,2.201,"roughly"],[2.321,2.601,"cardiac"],[2.681,3.081,"output"],[3.161,3.401,"times"],[3.481,3.721,"total"],[3.801,4.201,"peripheral"],[4.281,5.361,"resistance."],[5.401,5.481,"To"],[5.561,5.721,"raise"],[5.801,6.068,"it,"],[6.094,6.121,"the"],[6.241,6.361,"body"],[6.441,6.601,"can"],[6.681,6.841,"speed"],[6.921,7.001,"the"],[7.241,7.521,"heart,"],[7.561,7.961,"increase"],[8.121,8.281,"stroke"],[8.561,8.881,"volume,"],[8.921,9.161,"or"],[9.241,9.401,"tighten"],[9.481,9.561,"its"],[9.641,10.641,"arterioles;"],[10.681,10.841,"to"],[10.961,11.081,"lower"],[11.161,11.508,"it,"],[11.534,11.561,"the"],[11.641,12.641,"reverse."],[12.681,12.921,"Three"],[13.001,13.401,"systems"],[13.481,13.801,"control"],[13.881,14.481,"it."],[14.521,15.241,"Baroreceptors"],[15.321,15.401,"in"],[15.441,15.481,"the"],[15.601,15.961,"carotid"],[16.081,16.361,"sinus"],[16.441,16.521,"and"],[16.601,16.921,"aortic"],[17.001,17.321,"arch"],[17.401,17.641,"sense"],[17.721,18.041,"pressure"],[18.121,18.201,"and"],[18.281,18.601,"trigger"],[18.681,19.001,"fast"],[19.081,19.241,"nerve"],[19.801,20.401,"responses."],[20.441,20.521,"The"],[20.601,20.921,"kidneys"],[21.001,21.321,"adjust"],[21.441,21.561,"blood"],[21.761,21.961,"volume"],[22.041,22.961,"slowly."],[23.001,23.481,"Hormones"],[23.561,23.641,"such"],[23.721,23.881,"as"],[23.961,24.641,"ADH,"],[24.681,25.481,"aldosterone"],[25.521,25.561,"and"],[25.641,25.721,"the"],[25.801,26.841,"renin-angiotensin"],[26.921,27.321,"system"],[27.401,27.481,"set"],[27.561,27.641,"the"],[27.721,28.201,"long-term"],[28.281,28.881,"level."],[28.921,29.588,"Hypertension"],[29.641,29.801,"is"],[29.881,30.241,"pressure"],[30.281,30.481,"that"],[30.521,30.921,"stays"],[31.001,31.801,"high,"],[31.881,32.201,"usually"],[32.281,32.681,"repeated"],[32.801,33.081,"readings"],[33.161,33.241,"of"],[33.321,33.401,"one"],[33.561,33.801,"thirty"],[33.961,34.201,"over"],[34.281,34.521,"eighty"],[34.681,34.761,"or"],[35.001,35.321,"above."],[35.801,35.881,"In"],[36.001,36.121,"about"],[36.201,36.441,"ninety"],[36.521,36.761,"percent"],[36.841,36.921,"of"],[37.081,37.241,"people"],[37.401,37.481,"there"],[37.561,37.641,"is"],[37.801,37.961,"no"],[38.121,38.361,"single"],[38.441,39.161,"cause,"],[39.281,39.401,"only"],[39.441,39.481,"a"],[39.561,39.801,"mix"],[39.881,39.961,"of"],[40.041,40.681,"genes,"],[40.881,41.081,"diet"],[41.161,41.241,"and"],[41.281,41.881,"lifestyle."],[42.361,42.441,"It"],[42.521,42.601,"is"],[42.681,43.481,"silent:"],[43.561,43.801,"people"],[43.881,44.041,"feel"],[44.201,44.521,"fine"],[44.601,44.681,"for"],[44.841,45.561,"years."],[45.801,46.281,"Meanwhile"],[46.441,46.521,"it"],[46.641,46.761,"does"],[46.961,47.161,"damage"],[47.321,47.801,"everywhere"],[47.921,48.041,"blood"],[48.121,48.801,"flows."],[49.081,49.161,"The"],[49.321,49.961,"heart:"],[50.001,50.041,"the"],[50.121,50.281,"left"],[50.361,50.841,"ventricle"],[50.921,51.321,"thickens"],[51.401,51.481,"to"],[51.561,51.721,"push"],[51.801,52.041,"against"],[52.081,52.121,"the"],[52.201,52.921,"pressure,"],[53.001,53.161,"left"],[53.241,53.721,"ventricular"],[53.801,54.841,"hypertrophy,"],[54.921,55.161,"then"],[55.321,55.881,"stiffens"],[55.961,56.121,"and"],[56.201,56.921,"fails."],[57.161,57.241,"The"],[57.441,58.041,"brain:"],[58.121,58.201,"high"],[58.281,58.681,"pressure"],[58.801,59.161,"damages"],[59.241,59.561,"small"],[59.641,60.041,"cerebral"],[60.121,60.761,"arteries,"],[60.921,61.081,"raising"],[61.121,61.161,"the"],[61.281,61.401,"risk"],[61.441,61.481,"of"],[61.561,62.201,"stroke,"],[62.281,62.361,"from"],[62.401,62.441,"a"],[62.601,62.761,"blocked"],[62.801,63.161,"vessel"],[63.321,63.401,"or"],[63.481,63.521,"a"],[63.561,63.881,"burst"],[63.961,64.521,"one."],[64.561,64.601,"The"],[64.681,65.481,"kidneys:"],[65.561,65.641,"their"],[65.801,66.201,"glomerular"],[66.321,66.841,"capillaries"],[66.881,66.921,"are"],[67.081,67.721,"exquisitely"],[67.801,68.201,"sensitive"],[68.241,68.281,"to"],[68.361,68.921,"pressure,"],[69.041,69.161,"and"],[69.241,69.481,"years"],[69.521,69.561,"of"],[69.641,69.721,"it"],[69.801,69.961,"lead"],[70.041,70.121,"to"],[70.241,70.521,"chronic"],[70.601,70.761,"kidney"],[70.841,71.721,"disease."],[71.841,71.961,"Now"],[72.041,72.121,"try"],[72.201,72.281,"the"],[72.441,72.601,"Pressure"],[72.681,72.841,"Lab"],[72.921,73.427,"below."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'blood flow physics: Q = delta P / R, what sets resistance (viscosity, length, radius; R proportional to 1/r to the fourth), how elastic arteries, arterioles, capillaries and veins handle pressure, capillary filtration, cardiac output CO = HR x SV, MAP = CO x TPR, baroreceptors, kidneys and hormones, hypertension and its damage to heart, brain and kidneys, and the Pressure Lab',
+  quick: ['What does R proportional to 1/r4 mean?', 'Where does pressure drop most?', 'Why is hypertension dangerous?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|case|prediction|log|response)/i,
+  guide: 'That part is yours to reason out, so here is a method instead. Write MAP = CO x TPR. For each scenario, ask: does heart rate change? Stroke volume? Arteriole radius? Follow each change through the equation, remembering that radius counts to the fourth power.',
+  notes: [
+    { k: ['q =','flow','pressure gradient','delta','resistance','equation'], w: 1.3, a: 'Q = delta P / R: flow equals the pressure difference divided by resistance. For the whole circulation, Q is cardiac output, delta P is aortic minus right atrial pressure, and R is total peripheral resistance.' },
+    { k: ['radius','r4','fourth','16','sixteen','viscosity','length'], w: 1.3, a: 'Resistance depends on viscosity (set by hematocrit), vessel length, and above all radius: R is proportional to 1/r to the fourth. Halving the radius raises resistance 16 times.' },
+    { k: ['arteriole','capillar','elastic','vein','drop','profile'], w: 1.2, a: 'Elastic arteries smooth the pulse and lose little pressure; arterioles take most of the pressure drop and set resistance; capillaries fall from about 35 to 15 mmHg (filtration out, then reabsorption); veins are under 10 mmHg.' },
+    { k: ['cardiac output','co =','stroke volume','heart rate','exercise','5 l'], w: 1.2, a: 'CO = HR x SV, about 72 x 70 mL, roughly 5 L/min at rest. In heavy exercise HR can triple and SV roughly double, so CO can reach about 25 L/min in elite athletes.' },
+    { k: ['map','mean arterial','tpr','baroreceptor','regulat'], w: 1.2, a: 'MAP is about CO x TPR. Baroreceptors in the carotid sinus and aortic arch drive fast nerve responses; the kidneys adjust volume slowly; ADH, aldosterone and the renin-angiotensin system set the long-term level.' },
+    { k: ['hypertension','130','silent','organ','heart','brain','kidney','stroke'], w: 1.3, a: 'Hypertension: repeated readings of 130/80 or above; about 90% have no single cause. It damages the heart (left ventricular hypertrophy, then failure), the brain (damaged arterioles, stroke) and the kidneys (glomerular damage, chronic kidney disease).' },
+    { k: ['stenosis','dehydrat','preload','prediction','scenario'], a: 'Aortic stenosis lowers stroke volume and cardiac output; the heart may speed up or thicken. Narrowed arterioles raise TPR and pressure. Dehydration lowers preload; the reflex raises heart rate.' },
+    { k: ['lab','simulation','slider','exercise button','log'], a: 'In the Pressure Lab, halving the arteriole radius sends resistance and pressure far up; raising heart rate raises output and pressure; adding volume raises stroke volume and pressure. Exercise raises output but widens arterioles, so pressure rises only modestly.' },
+    { k: ['notebook','lab report','submit','case','145'], w: 1.2, a: 'The 7.11 Notebook: three predictions with reasoning, a one-sentence-per-experiment simulation log, and a 200-word case: what keeps MAP high, two organs at risk, and how a medicine might work in terms of the equations.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+(function(){
+  var box=document.getElementById('plab'); if(!box) return;
+  var g=function(i){return document.getElementById(i);};
+  function calc(hr,bv,r){var sv=70*bv/5, co=hr*sv/1000, t=0.3+0.7/Math.pow(r,4), map=co*18.4*t, pp=sv/1.75; return {sv:sv,co:co,t:t,map:map,sbp:map+2*pp/3,dbp:map-pp/3};}
+  var B=calc(72,5,1);
+  function st(){return {hr:+g('plHR').value,bv:+g('plBV').value,r:+g('plR').value/100};}
+  function show(){
+    var s=st(), c=calc(s.hr,s.bv,s.r);
+    g('plHRv').textContent=s.hr+' beats/min'; g('plBVv').textContent=s.bv.toFixed(1)+' L'; g('plRv').textContent=Math.round(s.r*100)+'% of normal';
+    g('plLum').setAttribute('r',(40*s.r).toFixed(1));
+    g('plCO').textContent=c.co.toFixed(1); g('plT').innerHTML=c.t.toFixed(1)+'&times;';
+    g('plBP').textContent=c.map>400?'off scale':Math.round(c.sbp)+'/'+Math.round(c.dbp);
+    g('plEq').innerHTML='CO = HR &times; SV = '+s.hr+' &times; '+Math.round(c.sv)+' mL = '+c.co.toFixed(1)+' L/min &middot; MAP = CO &times; TPR &asymp; '+(c.map>400?'&gt; 400':Math.round(c.map))+' mmHg ('+(Math.abs(c.map/B.map-1)<.005?'no change':((c.map>B.map?'+':'&minus;')+Math.abs(Math.round((c.map/B.map-1)*100))+'%'))+' from normal)';
+    g('plMk').style.left='calc('+Math.max(0,Math.min(100,(c.map-40)/180*100))+'% - 2px)';
+    var m;
+    if(s.hr>=110&&s.r>=1.2&&c.sbp<190) m='<b>This looks like exercise.</b> Cardiac output has doubled, but working muscles have widened their arterioles, so total resistance fell and pressure rose only modestly.';
+    else if(c.sbp>=180||c.dbp>=120) m='<b>Severe hypertension.</b> The left ventricle is pushing against enormous resistance; small vessels in the brain and kidneys are at risk.';
+    else if(c.sbp>=130||c.dbp>=80) m='<b>In the hypertension range (130/80 or above).</b> The left ventricle works harder and thickens; the brain&rsquo;s and kidneys&rsquo; small vessels take the pressure directly.';
+    else if(c.sbp<90||c.dbp<60) m='<b>Low pressure.</b> Not enough pressure to push blood to the brain and kidneys: dizziness and fainting first.';
+    else m='<b>Normal range.</b> High enough to reach every capillary bed, low enough to spare the vessel walls.';
+    g('plSt').innerHTML=m;
+  }
+  ['plHR','plBV','plR'].forEach(function(i){g(i).addEventListener('input',show);});
+  Array.prototype.forEach.call(box.querySelectorAll('[data-p]'),function(b){b.addEventListener('click',function(){var p=b.dataset.p.split(',');g('plHR').value=p[0];g('plBV').value=p[1];g('plR').value=Math.round(p[2]*100);show();});});
+  g('plAdd').addEventListener('click',function(){
+    var s=st(), c=calc(s.hr,s.bv,s.r), t=g('w16lg');
+    var line='HR '+s.hr+', volume '+s.bv.toFixed(1)+' L, radius '+Math.round(s.r*100)+'% -> CO '+c.co.toFixed(1)+' L/min, TPR '+c.t.toFixed(1)+'x, BP '+(c.map>400?'off scale':Math.round(c.sbp)+'/'+Math.round(c.dbp))+'. What happened: ';
+    t.value=(t.value&&!/\n$/.test(t.value)?t.value+'\n':t.value)+line; t.dispatchEvent(new Event('input',{bubbles:true})); t.focus();
+  });
+  show();
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>

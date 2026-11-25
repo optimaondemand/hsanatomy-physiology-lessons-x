@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Fetal Circulation · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="An eighteenth-century engraving of a heart opened to show the foramen ovale and the valve at the mouth of the inferior vena cava" style="background-image:url(img/lesson-7-12-hero.jpg);background-position:center 25%"><span class="hlab">The foramen ovale and the Eustachian valve · engraving from Haller, <i>Icones anatomicae</i></span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 7.12 &middot; Module 7: Cardiovascular System</div>
+      <h1>Fetal Circulation</h1>
+      <div class="focusq"><div class="label">Focus</div><p>A premature baby&rsquo;s ductus arteriosus is still open on day 4, and the cardiologist orders indomethacin. What is a patent ductus arteriosus, why is it a problem, and why does indomethacin work?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to describe the placenta and the three umbilical vessels, and why the fetal circulation must bypass the lungs.</li><li>I will be able to name and place the three fetal shunts (ductus venosus, foramen ovale, ductus arteriosus) and what each bypasses.</li><li>I will be able to describe what happens at the first breath and how each shunt closes.</li><li>I will be able to name the adult landmarks the shunts leave behind (fossa ovalis, ligamentum arteriosum).</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">A circulation built for two</div>
+      <svg class="m2-fig" viewBox="0 0 360 300" role="img" aria-label="A schematic fetal circulation with the three shunts"><rect x="6" y="6" width="348" height="288" rx="14" fill="#F4F7FB"/><g transform="translate(0,6) scale(.66)"><rect x="226" y="16" width="188" height="34" rx="12" fill="#E9EEF3" stroke="#9AA3AD" stroke-width="2"/><text x="320" y="38" class="m2-ts" text-anchor="middle" style="fill:#56606B">lungs: fluid-filled, bypassed</text><rect x="250" y="104" width="64" height="52" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="104" width="64" height="52" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><rect x="250" y="160" width="64" height="58" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="160" width="64" height="58" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><text x="272" y="124" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RA</text><text x="372" y="124" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LA</text><text x="282" y="194" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RV</text><text x="350" y="194" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LV</text><path d="M300 160 C300 120 298 80 296 50" stroke="#fff" stroke-width="15" fill="none"/><path d="M300 160 C300 120 298 80 296 50" stroke="#7C77B9" stroke-width="9" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#fff" stroke-width="16" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#B8579A" stroke-width="10" fill="none"/><text x="440" y="180" class="m2-ts" style="fill:#8A3A72">aorta &rarr; body</text><path d="M30 270 C40 256 120 256 130 270 C120 288 40 288 30 270z" fill="#D9A3B8" stroke="#9A4A6A" stroke-width="2"/><text x="80" y="300" class="m2-ts" text-anchor="middle" style="fill:#7A2A4A">placenta</text><path d="M110 196 C126 180 186 180 200 196 C196 214 170 224 140 222 C118 220 104 210 110 196z" fill="#C98A7A" opacity=".6" stroke="#8A4A3A" stroke-width="1.5"/><text x="150" y="244" class="m2-ts" text-anchor="middle" style="fill:#8A4A3A">liver</text><path d="M232 270 V146 H250" stroke="#7C77B9" stroke-width="9" fill="none"/><text x="226" y="262" class="m2-ts" text-anchor="end" style="fill:#5A549A">IVC</text><path d="M100 262 C110 240 130 220 150 210" stroke="#C22F4A" stroke-width="6" fill="none"/><text x="20" y="236" class="m2-ts" style="fill:#8E1F35">umbilical vein</text><path d="M432 286 C300 300 160 296 124 282 M432 280 C300 292 170 288 128 276" stroke="#2E5FA8" stroke-width="4" fill="none" stroke-dasharray="none"/><text x="330" y="270" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">two umbilical arteries (O&#8322;-poor)</text><path d="M150 210 C180 214 210 210 232 206" stroke="#7A4FB0" stroke-width="6" fill="none" stroke-dasharray="none"/><ellipse cx="316" cy="138" rx="5" ry="12" fill="#fff" stroke="#7A4FB0" stroke-width="2.5"/><path d="M306 146 L340 146" stroke="#7A4FB0" stroke-width="2.5" fill="none"/><path d="M333.7 149.0 L340 146 L333.7 143.0" stroke="#7A4FB0" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M294 72 C310 62 342 62 360 72" stroke="#7A4FB0" stroke-width="7" fill="none" stroke-dasharray="none"/><text x="196" y="230" class="m2-t" text-anchor="middle" style="fill:#7A4FB0">DV</text><text x="316" y="94" class="m2-t" text-anchor="middle" style="fill:#7A4FB0">FO</text><text x="328" y="58" class="m2-t" text-anchor="middle" style="fill:#7A4FB0">DA</text></g><text x="24" y="240" class="m2-ts" style="fill:#7A4FB0">DV ductus venosus: skips the liver</text><text x="24" y="258" class="m2-ts" style="fill:#7A4FB0">FO foramen ovale: skips the lungs</text><text x="24" y="276" class="m2-ts" style="fill:#7A4FB0">DA ductus arteriosus: skips the lungs</text></svg>
+      <div class="cap">Before birth, the umbilical vein brings oxygen-rich blood from the placenta; the ductus venosus skips the liver, the foramen ovale and the ductus arteriosus skip the lungs, and two umbilical arteries carry blood back.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="plac" role="tab"><span class="n">01</span>The Placenta and the Cord</button>
+  <button class="tab" data-tab="shunts" role="tab"><span class="n">02</span>Three Shunts</button>
+  <button class="tab" data-tab="birth" role="tab"><span class="n">03</span>The First Breath</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 THE PLACENTA AND THE CORD ═════════ -->
+<section class="panel" id="tab-plac" role="tabpanel">
+  <div class="vo" data-clip="w16_pc">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A Circulation Built for Two</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The placenta, where fetal capillaries dip into pools of maternal blood, and a cut umbilical cord showing one large vein and two smaller arteries"><g data-step="0" class="nohalo"><text x="20" y="26" class="m2-t" style="fill:#1E2B3A">before birth: no breathing, no eating</text><text x="20" y="44" class="m2-ts" style="fill:#56606B">the lungs are full of fluid</text></g><g data-step="1" class="nohalo"><g transform="translate(0,40) scale(0.82)"><path d="M40 60 C40 30 300 30 300 60 V180 C300 210 40 210 40 180z" fill="#F4D3DA" stroke="#B9849A" stroke-width="2"/><path d="M80 210 C80 170 64 140 80 110 C96 140 80 170 84 210" stroke="#7C77B9" stroke-width="10" fill="none"/><path d="M124 210 C124 170 108 140 124 110 C140 140 124 170 128 210" stroke="#7C77B9" stroke-width="10" fill="none"/><path d="M168 210 C168 170 152 140 168 110 C184 140 168 170 172 210" stroke="#7C77B9" stroke-width="10" fill="none"/><path d="M212 210 C212 170 196 140 212 110 C228 140 212 170 216 210" stroke="#7C77B9" stroke-width="10" fill="none"/><path d="M256 210 C256 170 240 140 256 110 C272 140 256 170 260 210" stroke="#7C77B9" stroke-width="10" fill="none"/><circle cx="60" cy="80" r="5" fill="#C22F4A"/><circle cx="108" cy="110" r="5" fill="#C22F4A"/><circle cx="156" cy="80" r="5" fill="#C22F4A"/><circle cx="204" cy="110" r="5" fill="#C22F4A"/><circle cx="252" cy="80" r="5" fill="#C22F4A"/><circle cx="300" cy="110" r="5" fill="#C22F4A"/></g><text x="170" y="236" class="m2-ts" text-anchor="middle" style="fill:#7A2A4A">placenta: fetal capillaries in maternal blood</text></g><g data-step="2" class="nohalo"><text x="170" y="256" class="m2-ts" text-anchor="middle" style="fill:#56606B">close, but they do not mix: O&#8322;, glucose and</text><text x="170" y="272" class="m2-ts" text-anchor="middle" style="fill:#56606B">wastes diffuse across a thin barrier</text></g><g data-step="3" class="nohalo"><circle cx="500" cy="120" r="52" fill="#F2EAD8" stroke="#B9A88F" stroke-width="2"/><circle cx="480" cy="112" r="18" fill="#C22F4A" stroke="#8E1F35" stroke-width="2"/><circle cx="518" cy="102" r="10" fill="#2E5FA8" stroke="#1E3F78" stroke-width="2"/><circle cx="520" cy="138" r="10" fill="#2E5FA8" stroke="#1E3F78" stroke-width="2"/><text x="500" y="200" class="m2-ts" text-anchor="middle" style="fill:#8A6A4A">the umbilical cord, cut across</text></g><g data-step="4" class="nohalo"><path d="M480 112 L400 60" stroke="#9AA3AD" stroke-width="1"/><text x="396" y="56" class="m2-ts" text-anchor="end" style="fill:#8E1F35">1 umbilical vein: O&#8322;-rich,</text><text x="396" y="72" class="m2-ts" text-anchor="end" style="fill:#8E1F35">toward the fetal heart</text><path d="M530 102 L600 50" stroke="#9AA3AD" stroke-width="1"/><text x="604" y="46" class="m2-ts" style="fill:#1E3F78">2 umbilical arteries:</text><text x="604" y="62" class="m2-ts" style="fill:#1E3F78">O&#8322;-poor, back out</text></g><g data-step="5" class="nohalo"><text x="500" y="236" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">artery = away from the heart, still;</text><text x="500" y="252" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">like the pulmonary vessels,</text><text x="500" y="268" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">the oxygen is &ldquo;backwards&rdquo;</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["For nine months before your first breath, your circulation worked differently. The lungs were full of fluid, the gut did not eat, and every exchange of oxygen, food and waste happened somewhere else.", "That place is the placenta, an organ grown from both fetal and maternal tissue. Fetal capillaries dip into pools of the mother's blood.", "The two bloods do not mix. They lie close enough for oxygen, glucose and wastes to diffuse across a thin barrier between them.", "The umbilical cord connects the placenta to the fetus, and it carries three vessels.", "One umbilical vein carries oxygen-rich, nutrient-rich blood toward the fetus. Two umbilical arteries carry oxygen-poor, waste-laden blood back to the placenta.", "The names still follow the rule: arteries carry blood away from the heart, veins toward it. As in the pulmonary circuit, the oxygen is backwards."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The placenta, the umbilical cord and its three vessels.</span></div>
+    <p class="marg"><b>Service.</b> Before birth, another body breathes, eats and cleans for you through the placenta. The fetal heart&rsquo;s whole design depends on that gift, and at the first breath it reorganizes itself in seconds to stand on its own.</p>
+    <article class="atlas">
+      <h3>A circulation built for two</h3>
+      <p>For nine months before you breathed your first breath, your cardiovascular system worked very differently from the way it works now. The fetus has no functioning lungs — the lungs are filled with amniotic fluid and the pulmonary vessels are tightly constricted. The fetus has no functioning digestive system — it does not eat. The fetus does not get oxygen, nutrients, or rid of waste in the way an adult does. All of those exchanges happen at the <b>placenta</b><button type="button" class="say" data-say="placenta" aria-label="Hear it: placenta" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>: an organ that grows together with the fetus from both fetal and maternal tissue, and dissolves at birth.</p>
+      <p>This means the fetal circulation has to do something the adult’s does not: it has to bring oxygenated blood <i>in</i> from outside the body (from the placenta, through the umbilical cord) and send deoxygenated blood <i>out</i> the same way. It also has to bypass the lungs, since blood that goes through them gets nothing.</p>
+      <h3>The placenta and the umbilical cord</h3>
+      <p>The <b>placenta</b> is the organ where fetal blood meets maternal blood — not by mixing, but by lying close enough that oxygen, glucose, and waste products can diffuse across a thin barrier between them. The umbilical cord connects the placenta to the fetus and contains three vessels:</p>
+      <p><b>One umbilical vein</b><button type="button" class="say" data-say="umbilical-vein" aria-label="Hear it: one umbilical vein" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — carries oxygenated, nutrient-rich blood from the placenta to the fetus.</p>
+      <p><b>Two umbilical arteries</b><button type="button" class="say" data-say="umbilical-arteries" aria-label="Hear it: two umbilical arteries" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — carry deoxygenated, waste-laden blood from the fetus back to the placenta.</p>
+      <p>This is one of two places in the body where the artery/vein naming follows the standard rule (artery away from heart, vein toward heart), even though the oxygenation is “backwards.” The umbilical vein carries oxygenated blood; the umbilical arteries carry deoxygenated blood. (The other exception is the pulmonary circulation, which you met in Week 2.)</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w16m7"><p class="q">Which umbilical vessel carries oxygen-rich blood?</p>
+        <button class="opt" data-ok="1" data-fb="Right: a vein with oxygenated blood.">The single umbilical vein, toward the fetus.</button>
+        <button class="opt" data-fb="They carry oxygen-poor blood back to the placenta.">The two umbilical arteries.</button>
+        <button class="opt" data-fb="The vein and arteries carry different blood.">All three equally.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="shunts" type="button">Next: Three Shunts &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 THREE SHUNTS ═════════ -->
+<section class="panel" id="tab-shunts" role="tabpanel">
+  <div class="vo" data-clip="w16_sh">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Around the Liver, Around the Lungs</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A schematic of the fetal circulation: the placenta, the umbilical vein to the liver, the ductus venosus to the inferior vena cava, the foramen ovale between the atria, and the ductus arteriosus from the pulmonary trunk to the aorta"><g data-step="0" class="nohalo"><rect x="226" y="16" width="188" height="34" rx="12" fill="#E9EEF3" stroke="#9AA3AD" stroke-width="2"/><text x="320" y="38" class="m2-ts" text-anchor="middle" style="fill:#56606B">lungs: fluid-filled, bypassed</text><rect x="250" y="104" width="64" height="52" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="104" width="64" height="52" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><rect x="250" y="160" width="64" height="58" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="160" width="64" height="58" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><text x="272" y="124" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RA</text><text x="372" y="124" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LA</text><text x="282" y="194" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RV</text><text x="350" y="194" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LV</text><path d="M300 160 C300 120 298 80 296 50" stroke="#fff" stroke-width="15" fill="none"/><path d="M300 160 C300 120 298 80 296 50" stroke="#7C77B9" stroke-width="9" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#fff" stroke-width="16" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#B8579A" stroke-width="10" fill="none"/><text x="440" y="180" class="m2-ts" style="fill:#8A3A72">aorta &rarr; body</text><path d="M30 270 C40 256 120 256 130 270 C120 288 40 288 30 270z" fill="#D9A3B8" stroke="#9A4A6A" stroke-width="2"/><text x="80" y="300" class="m2-ts" text-anchor="middle" style="fill:#7A2A4A">placenta</text><path d="M110 196 C126 180 186 180 200 196 C196 214 170 224 140 222 C118 220 104 210 110 196z" fill="#C98A7A" opacity=".6" stroke="#8A4A3A" stroke-width="1.5"/><text x="150" y="244" class="m2-ts" text-anchor="middle" style="fill:#8A4A3A">liver</text><path d="M232 270 V146 H250" stroke="#7C77B9" stroke-width="9" fill="none"/><text x="226" y="262" class="m2-ts" text-anchor="end" style="fill:#5A549A">IVC</text><path d="M432 286 C300 300 160 296 124 282 M432 280 C300 292 170 288 128 276" stroke="#2E5FA8" stroke-width="4" fill="none" stroke-dasharray="none"/><text x="330" y="270" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">two umbilical arteries (O&#8322;-poor)</text><text x="20" y="30" class="m2-t" style="fill:#1E2B3A">the fetal plan</text></g><g data-step="1" class="nohalo"><path d="M100 262 C110 240 130 220 150 210" stroke="#C22F4A" stroke-width="6" fill="none"/><text x="20" y="236" class="m2-ts" style="fill:#8E1F35">umbilical vein</text><text x="20" y="60" class="m2-ts" style="fill:#8E1F35">umbilical vein brings</text><text x="20" y="76" class="m2-ts" style="fill:#8E1F35">O&#8322;-rich blood in</text></g><g data-step="2" class="nohalo"><path d="M150 210 C180 214 210 210 232 206" stroke="#7A4FB0" stroke-width="6" fill="none" stroke-dasharray="none"/><text x="20" y="110" class="m2-t" style="fill:#7A4FB0">1 ductus venosus:</text><text x="20" y="128" class="m2-ts" style="fill:#7A4FB0">~80% skips the liver</text><text x="20" y="144" class="m2-ts" style="fill:#7A4FB0">straight to the IVC</text></g><g data-step="3" class="nohalo"><ellipse cx="316" cy="138" rx="5" ry="12" fill="#fff" stroke="#7A4FB0" stroke-width="2.5"/><path d="M306 146 L340 146" stroke="#7A4FB0" stroke-width="2.5" fill="none"/><path d="M333.7 149.0 L340 146 L333.7 143.0" stroke="#7A4FB0" stroke-width="2.5" fill="none" stroke-linejoin="round"/><text x="470" y="100" class="m2-t" style="fill:#7A4FB0">2 foramen ovale:</text><text x="470" y="118" class="m2-ts" style="fill:#7A4FB0">right atrium &rarr; left atrium,</text><text x="470" y="134" class="m2-ts" style="fill:#7A4FB0">skipping the lungs</text></g><g data-step="4" class="nohalo"><path d="M294 72 C310 62 342 62 360 72" stroke="#7A4FB0" stroke-width="7" fill="none" stroke-dasharray="none"/><text x="470" y="30" class="m2-t" style="fill:#7A4FB0">3 ductus arteriosus:</text><text x="470" y="48" class="m2-ts" style="fill:#7A4FB0">pulmonary trunk &rarr; aorta,</text><text x="470" y="64" class="m2-ts" style="fill:#7A4FB0">skipping the lungs again</text></g><g data-step="5" class="nohalo"><text x="470" y="230" class="m2-ts" style="fill:#1E2B3A">almost all the output</text><text x="470" y="246" class="m2-ts" style="fill:#1E2B3A">goes around the lungs</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Here is the fetal plan as a schematic. The lungs at the top are full of fluid, and blood sent through them gets nothing. The placenta is at the bottom.", "The umbilical vein brings oxygen-rich blood in from the placenta, toward the liver.", "Shunt one, the ductus venosus, sends about eighty percent of that blood straight into the inferior vena cava, skipping most of the liver, so it reaches the heart fast.", "In the right atrium, most of that oxygen-rich blood does not go down into the right ventricle. Shunt two, the foramen ovale, a flap-valve opening in the wall between the atria, lets it pass straight into the left atrium, then the left ventricle and the aorta. The lungs are bypassed.", "Some blood does go into the right ventricle and up the pulmonary trunk. Shunt three, the ductus arteriosus, a short vessel from the pulmonary trunk to the aortic arch, sends it into the aorta instead of the lungs.", "Between them, the foramen ovale and the ductus arteriosus send almost the whole output around the lungs. The lungs get only a small share, enough to grow."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The three fetal shunts and what each bypasses.</span></div>
+    <article class="atlas">
+      <h3>Three fetal shunts</h3>
+      <p>The fetus has three special pathways — <b>shunts</b><button type="button" class="say" data-say="shunt" aria-label="Hear it: shunts" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — that exist only before birth. Each routes blood around an organ that is not yet doing its adult job.</p>
+      <figure class="plate"><img data-img="f71201" alt="Diagram of the fetal circulation showing the ductus arteriosus, foramen ovale, and ductus venosus, with the umbilical arteries, umbilical vein, and placenta"><figcaption>Figure 20.44 — Fetal Shunts. The foramen ovale in the interatrial septum allows blood to flow from the right atrium to the left atrium. The ductus arteriosus is a temporary vessel, connecting the aorta to the pulmonary trunk. The ductus venosus links the umbilical vein to the inferior vena cava largely through the liver.</figcaption></figure>
+      <h4>1. Ductus venosus — bypass the liver</h4>
+      <p>When the oxygenated umbilical vein reaches the fetus, most of its blood needs to get to the heart quickly — not detour through the maturing liver. The <b>ductus venosus</b><button type="button" class="say" data-say="ductus-venosus" aria-label="Hear it: ductus venosus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a small vessel that shunts about 80% of umbilical-vein blood directly into the inferior vena cava, bypassing most of the liver. The liver still gets some blood for development, but the main supply goes straight to the heart.</p>
+      <h4>2. Foramen ovale — bypass the lungs (option 1)</h4>
+      <p>When oxygenated blood arrives at the right atrium via the IVC, it should not flow through the right ventricle and then to the lungs (which are not working). Instead, most of it crosses to the left side immediately. The <b>foramen ovale</b><button type="button" class="say" data-say="foramen-ovale" aria-label="Hear it: foramen ovale" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a flap-valve opening in the interatrial septum that allows blood to pass directly from the right atrium into the left atrium. From there it follows the normal path: left ventricle → aorta → body. This is the first of two lung-bypass shunts.</p>
+      <h4>3. Ductus arteriosus — bypass the lungs (option 2)</h4>
+      <p>Some blood does pass into the right ventricle and out the pulmonary trunk. Instead of going to the lungs, however, it takes a second shortcut: the <b>ductus arteriosus</b><button type="button" class="say" data-say="ductus-arteriosus" aria-label="Hear it: ductus arteriosus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, a short vessel connecting the pulmonary trunk directly to the aortic arch. Blood ejected from the right ventricle therefore mostly bypasses the lungs by flowing from pulmonary trunk → ductus arteriosus → aorta → body.</p>
+      <p>Together, the foramen ovale and the ductus arteriosus deliver almost all of the cardiac output away from the lungs and into the systemic circulation. The fetal pulmonary vessels stay constricted and the lungs receive only a small fraction of cardiac output for their own growth and development.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Shunt?</h2></div>
+    <p class="hint">Sort each clue, then check.</p>
+    <div class="place card" id="w16sh">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="dv" data-fb="Ductus venosus: bypasses the liver." data-miss="What does it bypass?">sends umbilical-vein blood straight to the IVC</button>
+        <button class="chip" data-k="b" data-ans="fo" data-fb="Foramen ovale: bypasses the lungs." data-miss="Where is it?">an opening in the wall between the atria</button>
+        <button class="chip" data-k="c" data-ans="da" data-fb="Ductus arteriosus: bypasses the lungs." data-miss="Which vessels does it join?">joins the pulmonary trunk to the aortic arch</button>
+        <button class="chip" data-k="d" data-ans="dv" data-fb="Ductus venosus." data-miss="Which organ?">skips the liver</button>
+        <button class="chip" data-k="e" data-ans="fo" data-fb="Foramen ovale." data-miss="Which adult landmark?">becomes the fossa ovalis</button>
+        <button class="chip" data-k="f" data-ans="da" data-fb="Ductus arteriosus." data-miss="Which adult landmark?">becomes the ligamentum arteriosum</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="dv"><h4>Ductus venosus</h4><div class="drop"></div></div><div class="bin" data-bin="fo"><h4>Foramen ovale</h4><div class="drop"></div></div><div class="bin" data-bin="da"><h4>Ductus arteriosus</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Placenta to Brain</h2></div>
+    <p class="hint">Copy this into your fetal flow diagram.</p>
+    <div class="order card" id="w16pd" data-order="pl,uv,dv,ivc,ra,fo,la,lv,ao,cc" data-done="Placenta, umbilical vein, ductus venosus, IVC, right atrium, foramen ovale, left atrium, left ventricle, aorta, carotid: the lungs never enter it." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap one drop&rsquo;s path from the placenta to the brain.</p><div class="opool"><button data-k="pl">placenta</button><button data-k="fo">foramen ovale</button><button data-k="lv">left ventricle</button><button data-k="ra">right atrium</button><button data-k="ivc">inferior vena cava</button><button data-k="la">left atrium</button><button data-k="dv">ductus venosus</button><button data-k="ao">aorta</button><button data-k="uv">umbilical vein</button><button data-k="cc">carotid artery to the brain</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="plac" type="button">&larr; The Placenta and the Cord</button><button class="btn" data-go="birth" type="button">Next: The First Breath &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 THE FIRST BREATH ═════════ -->
+<section class="panel" id="tab-birth" role="tabpanel">
+  <div class="vo" data-clip="w16_fb">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Seconds to Reorganize</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The same circulation after the first breath: the lungs fill with air and their vessels open, the foramen ovale is pushed shut, the ductus arteriosus constricts, and the umbilical vessels and ductus venosus close"><g data-step="0" class="nohalo"><rect x="226" y="16" width="188" height="34" rx="12" fill="#E9EEF3" stroke="#9AA3AD" stroke-width="2"/><text x="320" y="38" class="m2-ts" text-anchor="middle" style="fill:#56606B">lungs: fluid-filled, bypassed</text><rect x="250" y="104" width="64" height="52" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="104" width="64" height="52" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><rect x="250" y="160" width="64" height="58" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="160" width="64" height="58" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><text x="272" y="124" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RA</text><text x="372" y="124" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LA</text><text x="282" y="194" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RV</text><text x="350" y="194" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LV</text><path d="M300 160 C300 120 298 80 296 50" stroke="#fff" stroke-width="15" fill="none"/><path d="M300 160 C300 120 298 80 296 50" stroke="#7C77B9" stroke-width="9" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#fff" stroke-width="16" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#B8579A" stroke-width="10" fill="none"/><text x="440" y="180" class="m2-ts" style="fill:#8A3A72">aorta &rarr; body</text><path d="M30 270 C40 256 120 256 130 270 C120 288 40 288 30 270z" fill="#D9A3B8" stroke="#9A4A6A" stroke-width="2"/><text x="80" y="300" class="m2-ts" text-anchor="middle" style="fill:#7A2A4A">placenta</text><path d="M110 196 C126 180 186 180 200 196 C196 214 170 224 140 222 C118 220 104 210 110 196z" fill="#C98A7A" opacity=".6" stroke="#8A4A3A" stroke-width="1.5"/><text x="150" y="244" class="m2-ts" text-anchor="middle" style="fill:#8A4A3A">liver</text><path d="M232 270 V146 H250" stroke="#7C77B9" stroke-width="9" fill="none"/><text x="226" y="262" class="m2-ts" text-anchor="end" style="fill:#5A549A">IVC</text><path d="M100 262 C110 240 130 220 150 210" stroke="#C22F4A" stroke-width="6" fill="none"/><text x="20" y="236" class="m2-ts" style="fill:#8E1F35">umbilical vein</text><path d="M432 286 C300 300 160 296 124 282 M432 280 C300 292 170 288 128 276" stroke="#2E5FA8" stroke-width="4" fill="none" stroke-dasharray="none"/><text x="330" y="270" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">two umbilical arteries (O&#8322;-poor)</text><path d="M150 210 C180 214 210 210 232 206" stroke="#7A4FB0" stroke-width="6" fill="none" stroke-dasharray="none"/><ellipse cx="316" cy="138" rx="5" ry="12" fill="#fff" stroke="#7A4FB0" stroke-width="2.5"/><path d="M306 146 L340 146" stroke="#7A4FB0" stroke-width="2.5" fill="none"/><path d="M333.7 149.0 L340 146 L333.7 143.0" stroke="#7A4FB0" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M294 72 C310 62 342 62 360 72" stroke="#7A4FB0" stroke-width="7" fill="none" stroke-dasharray="none"/><text x="20" y="30" class="m2-t" style="fill:#1E2B3A">the first breath</text></g><g data-step="1" class="nohalo"><rect x="226" y="16" width="188" height="34" rx="12" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><text x="320" y="38" class="m2-ts" text-anchor="middle" style="fill:#B5475E">lungs: air-filled</text><rect x="250" y="104" width="64" height="52" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="104" width="64" height="52" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><rect x="250" y="160" width="64" height="58" rx="8" fill="#E4E0F2" stroke="#B5475E" stroke-width="2"/><rect x="318" y="160" width="64" height="58" rx="8" fill="#F7D9DE" stroke="#B5475E" stroke-width="2"/><text x="272" y="124" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RA</text><text x="372" y="124" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LA</text><text x="282" y="194" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">RV</text><text x="350" y="194" class="m2-ts" text-anchor="middle" style="fill:#8E1F35">LV</text><path d="M300 160 C300 120 298 80 296 50" stroke="#fff" stroke-width="15" fill="none"/><path d="M300 160 C300 120 298 80 296 50" stroke="#2E5FA8" stroke-width="9" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#fff" stroke-width="16" fill="none"/><path d="M356 160 C356 110 356 84 362 74 C372 60 412 60 424 76 L432 286" stroke="#B8579A" stroke-width="10" fill="none"/><text x="440" y="180" class="m2-ts" style="fill:#8A3A72">aorta &rarr; body</text><path d="M30 270 C40 256 120 256 130 270 C120 288 40 288 30 270z" fill="#D9A3B8" stroke="#9A4A6A" stroke-width="2"/><text x="80" y="300" class="m2-ts" text-anchor="middle" style="fill:#7A2A4A">placenta</text><path d="M110 196 C126 180 186 180 200 196 C196 214 170 224 140 222 C118 220 104 210 110 196z" fill="#C98A7A" opacity=".6" stroke="#8A4A3A" stroke-width="1.5"/><text x="150" y="244" class="m2-ts" text-anchor="middle" style="fill:#8A4A3A">liver</text><path d="M232 270 V146 H250" stroke="#7C77B9" stroke-width="9" fill="none"/><text x="226" y="262" class="m2-ts" text-anchor="end" style="fill:#5A549A">IVC</text><path d="M100 262 C110 240 130 220 150 210" stroke="#C22F4A" stroke-width="6" fill="none"/><text x="20" y="236" class="m2-ts" style="fill:#8E1F35">umbilical vein</text><path d="M432 286 C300 300 160 296 124 282 M432 280 C300 292 170 288 128 276" stroke="#2E5FA8" stroke-width="4" fill="none" stroke-dasharray="none"/><text x="330" y="270" class="m2-ts" text-anchor="middle" style="fill:#1E3F78">two umbilical arteries (O&#8322;-poor)</text><path d="M150 210 C180 214 210 210 232 206" stroke="#7A4FB0" stroke-width="6" fill="none" stroke-dasharray="none"/><ellipse cx="316" cy="138" rx="5" ry="12" fill="#fff" stroke="#7A4FB0" stroke-width="2.5"/><path d="M306 146 L340 146" stroke="#7A4FB0" stroke-width="2.5" fill="none"/><path d="M333.7 149.0 L340 146 L333.7 143.0" stroke="#7A4FB0" stroke-width="2.5" fill="none" stroke-linejoin="round"/><path d="M294 72 C310 62 342 62 360 72" stroke="#7A4FB0" stroke-width="7" fill="none" stroke-dasharray="none"/><text x="20" y="60" class="m2-ts" style="fill:#8E1F35">1 lungs fill with air;</text><text x="20" y="76" class="m2-ts" style="fill:#8E1F35">pulmonary resistance falls</text></g><g data-step="2" class="nohalo"><ellipse cx="316" cy="138" rx="5" ry="12" fill="#E8D9E0" stroke="#B5475E" stroke-width="2.5"/><text x="470" y="100" class="m2-ts" style="fill:#8E1F35">2 more blood returns to the LA:</text><text x="470" y="116" class="m2-ts" style="fill:#8E1F35">LA pressure &gt; RA pressure,</text><text x="470" y="132" class="m2-ts" style="fill:#8E1F35">flap pushed shut &rarr; fossa ovalis</text></g><g data-step="3" class="nohalo"><path d="M294 72 C310 62 342 62 360 72" stroke="#C9C2BA" stroke-width="3" fill="none" stroke-dasharray="3 3"/><text x="470" y="30" class="m2-ts" style="fill:#8E1F35">3 more O&#8322;, fewer prostaglandins:</text><text x="470" y="46" class="m2-ts" style="fill:#8E1F35">the duct&rsquo;s muscle contracts</text><text x="470" y="62" class="m2-ts" style="fill:#8E1F35">&rarr; ligamentum arteriosum</text></g><g data-step="4" class="nohalo"><path d="M100 262 C110 240 130 220 150 210" stroke="#C9C2BA" stroke-width="4" fill="none" stroke-dasharray="4 4"/><path d="M432 286 C300 300 160 296 124 282 M432 280 C300 292 170 288 128 276" stroke="#C9C2BA" stroke-width="3" fill="none" stroke-dasharray="4 4"/><path d="M150 210 C180 214 210 210 232 206" stroke="#C9C2BA" stroke-width="3" fill="none" stroke-dasharray="4 4"/><text x="20" y="110" class="m2-ts" style="fill:#8E1F35">4 cord cut: umbilical</text><text x="20" y="126" class="m2-ts" style="fill:#8E1F35">vessels and the ductus</text><text x="20" y="142" class="m2-ts" style="fill:#8E1F35">venosus close</text></g><g data-step="5" class="nohalo"><text x="470" y="230" class="m2-ts" style="fill:#56606B">if one stays open: PFO (~25%),</text><text x="470" y="246" class="m2-ts" style="fill:#56606B">PDA (treated with indomethacin)</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["At the first breath after birth, the whole circulation reorganizes in seconds.", "One: the lungs fill with air. Oxygen in the air sacs widens the pulmonary blood vessels, resistance in the lungs falls, and blood that used to bypass them now flows through them.", "Two: a large volume of oxygenated blood returns to the left atrium and raises its pressure above the right atrium's. That pushes the flap of the foramen ovale shut. Over weeks it fuses, leaving a shallow dent in the right atrium: the fossa ovalis.", "Three: rising oxygen and falling prostaglandins make the smooth muscle of the ductus arteriosus contract. Within hours it is functionally closed; over weeks it becomes a fibrous cord, the ligamentum arteriosum, between the pulmonary trunk and the aortic arch.", "Four: once the cord is cut, the umbilical vein and arteries close and become ligaments, and the ductus venosus closes too.", "Sometimes a shunt stays open. A patent foramen ovale persists to some degree in about a quarter of adults, usually harmlessly. A patent ductus arteriosus can be treated with indomethacin, which blocks prostaglandin synthesis, or closed with a catheter."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The first breath, how each shunt closes, and when a shunt stays open.</span></div>
+    <article class="atlas">
+      <h3>What happens at the first breath</h3>
+      <p>When the baby takes its first breath after birth, the cardiovascular system reorganizes in seconds. Three changes happen almost simultaneously:</p>
+      <p><b>1. Pulmonary resistance drops.</b> The lungs fill with air. Oxygen in the alveoli dilates pulmonary blood vessels. Blood that used to bypass the lungs now flows through them, and a huge volume of oxygenated blood begins returning to the left atrium.</p>
+      <p><b>2. Left-atrial pressure rises above right-atrial pressure.</b> The increased pulmonary venous return raises pressure in the left atrium. This pressure shift forces the flap of the <i>foramen ovale</i> closed against the interatrial septum. Over weeks the flap fuses, leaving a small depression called the <b>fossa ovalis</b><button type="button" class="say" data-say="fossa-ovalis" aria-label="Hear it: fossa ovalis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — an adult landmark you can still see in any anatomical drawing of the right atrium.</p>
+      <p><b>3. The ductus arteriosus constricts.</b> Rising arterial oxygen and a drop in prostaglandin levels cause the smooth muscle in the wall of the ductus arteriosus to contract. Within hours the duct is functionally closed; within weeks it fibroses into the <b>ligamentum arteriosum</b><button type="button" class="say" data-say="ligamentum-arteriosum" aria-label="Hear it: ligamentum arteriosum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — a small fibrous cord still visible between the pulmonary trunk and the aortic arch.</p>
+      <p><b>4. The umbilical vessels close.</b> Once the umbilical cord is cut, the umbilical vein and arteries close off and eventually become fibrous ligaments. The ductus venosus closes shortly after for the same reason.</p>
+      <h3>Congenital persistence — when shunts don’t close</h3>
+      <p>Sometimes the fetal shunts do not close after birth. Each failure mode is its own congenital heart defect:</p>
+      <p><b>Patent foramen ovale (PFO)</b><button type="button" class="say" data-say="pfo" aria-label="Hear it: patent foramen ovale (pfo)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the most common, present in about 25% of adults to some degree. Usually benign, but in some patients allows small clots to bypass the lungs (which normally filter them) and reach the brain, causing certain unexplained strokes.</p>
+      <p><b>Patent ductus arteriosus (PDA)</b><button type="button" class="say" data-say="pda" aria-label="Hear it: patent ductus arteriosus (pda)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — when the ductus arteriosus stays open. Allows abnormal flow between the aorta and pulmonary trunk, with consequences depending on size. Sometimes closes on its own; sometimes treated with medication (indomethacin, which blocks prostaglandin synthesis) or surgical/catheter closure.</p>
+      <details class="selfcheck"><summary>Self-check: name the three fetal shunts and what each bypasses</summary><p><b>Ductus venosus</b> — bypasses the liver. Routes umbilical-vein blood directly to the IVC.</p><p><b>Foramen ovale</b> — bypasses the lungs (option 1). Routes blood from right atrium to left atrium.</p><p><b>Ductus arteriosus</b> — bypasses the lungs (option 2). Routes blood from pulmonary trunk to aorta.</p><p>Bonus: what is the umbilical vein doing that is “backwards”? <i>It is a vein carrying oxygenated blood — like the pulmonary veins. The two are exceptions to the “arteries oxygenated, veins deoxygenated” rule.</i></p></details>
+      <div class="inset"><div class="ilabel">GREEK &amp; LATIN ROOTS — MODULE 7</div><p>Every word below is built from a root you met somewhere in this module. Recognizing these roots will help you decode new anatomical terms for the rest of the course.</p><div class="roots"><div><i>kardia</i> — heart</div><div><i>angeion</i> — vessel</div><div><i>vasculum</i> — small vessel</div><div><i>vena</i> — vein</div><div><i>arteria</i> — artery</div><div><i>haima</i> — blood</div><div><i>erythros</i> — red</div><div><i>leukos</i> — white</div><div><i>phagein</i> — to eat</div><div><i>thrombos</i> — clot</div><div><i>peri-</i> — around (pericardium)</div><div><i>poiein</i> — to make (erythropoietin, hematopoiesis)</div><div><i>auris</i> — ear (the heart’s auricles)</div><div><i>tachys / bradys</i> — fast / slow (tachycardia, bradycardia)</div></div></div>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>The Birth Cascade</h2></div>
+    <p class="hint">This is your birth-transition flowchart.</p>
+    <div class="order card" id="w16bc" data-order="br,pvr,ret,lap,fo,da,cord,all" data-done="First breath, resistance falls, return rises, left-atrial pressure up, foramen shut, ductus constricts, cord closes, all shunts closed." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the steps from the first breath to all three shunts closed.</p><div class="opool"><button data-k="pvr">lungs fill with air; pulmonary resistance falls</button><button data-k="cord">cord cut: umbilical vessels and ductus venosus close</button><button data-k="lap">left-atrial pressure rises above right</button><button data-k="all">all three shunts closed</button><button data-k="fo">foramen ovale flap pushed shut</button><button data-k="da">more oxygen, fewer prostaglandins: ductus arteriosus constricts</button><button data-k="ret">more blood returns from the lungs to the left atrium</button><button data-k="br">baby takes its first breath</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>What Each Leaves Behind</h2></div>
+    <div class="card idtable" id="w16lm" style="padding:16px 20px"><div class="idhead c1"><span></span><span>Adult remnant</span><span></span></div><div class="idrow c1"><span class="loc">Foramen ovale</span><select data-ans="fossa ovalis"><option value="">choose</option><option>fossa ovalis</option><option>ligamentum arteriosum</option><option>a fibrous ligament (ligamentum venosum)</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Ductus arteriosus</span><select data-ans="ligamentum arteriosum"><option value="">choose</option><option>fossa ovalis</option><option>ligamentum arteriosum</option><option>a fibrous ligament (ligamentum venosum)</option></select><span class="mk"></span></div><div class="idrow c1"><span class="loc">Ductus venosus</span><select data-ans="a fibrous ligament (ligamentum venosum)"><option value="">choose</option><option>fossa ovalis</option><option>ligamentum arteriosum</option><option>a fibrous ligament (ligamentum venosum)</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Match each shunt to its remnant, then check.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 30 minutes.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Fetal shunts, then reassemble</span>
+      <p><b>Part 1.</b> On a fresh page, draw a small simplified fetal heart and placenta: the <b>umbilical vein</b> in red and the <b>two umbilical arteries</b> in blue; the <b>ductus venosus</b> from the umbilical vein into the IVC; the <b>foramen ovale</b> in the wall between the atria; the <b>ductus arteriosus</b> from the pulmonary trunk to the aortic arch.</p><p><b>Part 2.</b> Lay out your Circulatory Map and every detail page on a table or the floor (or on one slide): heart and great vessels, the inside of the heart and conduction system, the coronary views, the arterial and venous trees, the red- and white-cell pages, and the fetal-shunt diagram. Check that all are there.</p><p>Photograph (or export) the assembled figure now. You will submit it, with a spoken caption, for the Module 7 Assembled Figure.</p>
+      <ul class="checks"><li data-ck="w16d31">Fetal diagram with umbilical vessels and all three shunts.</li><li data-ck="w16d32">Circulatory Map and every detail page laid out together and checked.</li><li data-ck="w16d33">The assembled figure photographed for submission.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Circulatory Map page, heart drawing and detail page: they become your Module 7 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="shunts" type="button">&larr; Three Shunts</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The First Breath</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>A premature baby&rsquo;s ductus arteriosus is still open on day 4, and the cardiologist orders indomethacin. What is a patent ductus arteriosus, why is it a problem, and why does indomethacin work?</p></div>
+        <p>Birth is the most dramatic physiological transition in a human life: in seconds the circulation changes from a placenta-fed plan to a lung-fed one. This Notebook asks for your fetal flow diagram, your birth-transition flowchart and a short case on a patent ductus arteriosus.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Fetal Flow Diagram</h2></div>
+    <p class="hint">Rubric: fetal flow diagram, 4 pts.</p>
+    <div class="card loccard"><p class="sub">Submit your diagram: heart, the three shunts, the placenta and umbilical vessels, and the trace of one drop from the placenta to the brain. Here, write that drop&rsquo;s path.</p><textarea class="jbox" id="w16rF" data-label="Fetal flow diagram: shunts, umbilical vessels, one drop" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Birth-Transition Flowchart</h2></div>
+    <p class="hint">Rubric: birth-transition flow, 3 pts.</p>
+    <div class="card loccard"><p class="sub">Write your flowchart from &ldquo;baby takes its first breath&rdquo; to &ldquo;all three shunts closed&rdquo;, with every intermediate step: pulmonary resistance falls, left-atrial pressure rises, oxygen and prostaglandins act on the ductus arteriosus, the umbilical vessels close.</p><div class="ttrack" data-field="w16rB"><span class="tt" data-t="resist">resistance falls</span><span class="tt" data-t="left atri|LA">LA pressure</span><span class="tt" data-t="prostaglandin">prostaglandin</span><span class="tt" data-t="umbilical|cord">umbilical</span><span class="tt" data-t="foramen|fossa">foramen</span></div><textarea class="jbox" id="w16rB" data-label="Birth-transition flowchart" data-min="40"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>The Case</h2></div>
+    <p class="hint">Rubric: PDA case response, 5 pts.</p>
+    <div class="card loccard"><p class="sub">In about 200 words: (a) what is a patent ductus arteriosus? (b) Why is it usually a problem? (c) Why does indomethacin work: what does it do to the duct&rsquo;s smooth muscle?</p><div class="ttrack" data-field="w16rA"><span class="tt" data-t="open|patent|failed to close">(a) still open</span><span class="tt" data-t="aort|pulmonary">pulmonary trunk / aorta</span><span class="tt" data-t="lung|overload|extra|abnormal flow|heart">(b) problem</span><span class="tt" data-t="prostaglandin">(c) prostaglandin</span><span class="tt" data-t="constrict|contract|close">constrict</span></div><textarea class="jbox" id="w16rA" data-label="Case response: patent ductus arteriosus" data-min="110"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w16c41">My fetal diagram shows all three shunts and the umbilical vessels, with the flow path correct.</li><li data-ck="w16c42">My flowchart includes pulmonary resistance falling, left-atrial pressure rising and prostaglandins falling.</li><li data-ck="w16c43">My case names indomethacin&rsquo;s mechanism: it blocks prostaglandin synthesis, so the ductus constricts and closes.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 7.12 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="birth" type="button">&larr; The First Breath</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>placenta<button type="button" class="say" data-say="placenta" aria-label="Hear it: placenta" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;flat cake&rdquo;</small></dt><dd>The organ where fetal and maternal blood exchange without mixing.</dd>
+  <dt>umbilical vein<button type="button" class="say" data-say="umbilical-vein" aria-label="Hear it: umbilical vein" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>umbilicus</i> &ldquo;navel&rdquo;</small></dt><dd>Brings oxygen-rich blood from the placenta to the fetus.</dd>
+  <dt>umbilical arteries<button type="button" class="say" data-say="umbilical-arteries" aria-label="Hear it: umbilical arteries" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Two arteries carrying oxygen-poor blood back to the placenta.</dd>
+  <dt>shunt<button type="button" class="say" data-say="shunt" aria-label="Hear it: shunt" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A pathway that routes blood around an organ.</dd>
+  <dt>ductus venosus<button type="button" class="say" data-say="ductus-venosus" aria-label="Hear it: ductus venosus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;venous duct&rdquo;</small></dt><dd>Shunts umbilical-vein blood past the liver into the IVC.</dd>
+  <dt>foramen ovale<button type="button" class="say" data-say="foramen-ovale" aria-label="Hear it: foramen ovale" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;oval opening&rdquo;</small></dt><dd>An opening between the atria that bypasses the lungs.</dd>
+  <dt>ductus arteriosus<button type="button" class="say" data-say="ductus-arteriosus" aria-label="Hear it: ductus arteriosus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;arterial duct&rdquo;</small></dt><dd>Joins the pulmonary trunk to the aortic arch, bypassing the lungs.</dd>
+  <dt>fossa ovalis<button type="button" class="say" data-say="fossa-ovalis" aria-label="Hear it: fossa ovalis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>fossa</i> &ldquo;ditch&rdquo;</small></dt><dd>The dent left where the foramen ovale closed.</dd>
+  <dt>ligamentum arteriosum<button type="button" class="say" data-say="ligamentum-arteriosum" aria-label="Hear it: ligamentum arteriosum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The fibrous cord left where the ductus arteriosus closed.</dd>
+  <dt>prostaglandins<button type="button" class="say" data-say="prostaglandins" aria-label="Hear it: prostaglandins" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Chemical signals that keep the ductus arteriosus open before birth.</dd>
+  <dt>patent foramen ovale<button type="button" class="say" data-say="pfo" aria-label="Hear it: patent foramen ovale" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>patens</i> &ldquo;open&rdquo;</small></dt><dd>A foramen ovale that never fully closed (PFO).</dd>
+  <dt>patent ductus arteriosus<button type="button" class="say" data-say="pda" aria-label="Hear it: patent ductus arteriosus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A ductus arteriosus that stays open after birth (PDA).</dd>
+  <dt>indomethacin<button type="button" class="say" data-say="indomethacin" aria-label="Hear it: indomethacin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A drug that blocks prostaglandin synthesis and helps close a PDA.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w16-l4", "title": "Fetal Circulation", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 16 · Fetal Circulation", "pdfTag": "AP_W16_L4"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f71201":{"src":"img/m7-7.12-01-three-fetal-shunts-2e.webp","alt":""}},"w16_pc":{"audio":"audio/ap-w16-l4-pc.mp3","words":[[0,0.16,"For"],[0.24,0.48,"nine"],[0.56,0.8,"months"],[0.96,1.12,"before"],[1.2,1.28,"your"],[1.36,1.6,"first"],[1.68,2.24,"breath,"],[2.32,2.4,"your"],[2.52,3.04,"circulation"],[3.12,3.44,"worked"],[3.52,4.4,"differently."],[4.48,4.56,"The"],[4.6,4.88,"lungs"],[5,5.12,"were"],[5.2,5.28,"full"],[5.36,5.44,"of"],[5.64,6.08,"fluid,"],[6.16,6.24,"the"],[6.28,6.48,"gut"],[6.56,6.72,"did"],[6.84,6.96,"not"],[7.04,7.44,"eat,"],[7.56,7.68,"and"],[7.76,7.92,"every"],[8,8.4,"exchange"],[8.48,8.56,"of"],[8.64,9.28,"oxygen,"],[9.44,9.6,"food"],[9.68,9.76,"and"],[9.84,10.24,"waste"],[10.32,10.64,"happened"],[10.72,11.04,"somewhere"],[11.2,11.92,"else."],[12.04,12.16,"That"],[12.36,12.56,"place"],[12.64,12.72,"is"],[12.8,12.88,"the"],[12.92,13.76,"placenta,"],[13.84,13.92,"an"],[14,14.32,"organ"],[14.48,14.64,"grown"],[14.72,14.8,"from"],[14.88,14.96,"both"],[15.04,15.44,"fetal"],[15.52,15.68,"and"],[15.76,16.16,"maternal"],[16.2,17.12,"tissue."],[17.16,17.36,"Fetal"],[17.44,18.16,"capillaries"],[18.213,18.32,"dip"],[18.48,18.64,"into"],[18.68,18.96,"pools"],[19.04,19.12,"of"],[19.16,19.2,"the"],[19.28,19.6,"mother's"],[19.76,20.32,"blood."],[20.4,20.48,"The"],[20.56,20.64,"two"],[20.8,21.12,"bloods"],[21.2,21.28,"do"],[21.36,21.52,"not"],[21.6,22.32,"mix."],[22.4,22.48,"They"],[22.56,22.64,"lie"],[22.72,22.96,"close"],[23.04,23.2,"enough"],[23.28,23.44,"for"],[23.52,24.08,"oxygen,"],[24.12,24.56,"glucose"],[24.64,24.8,"and"],[24.96,25.28,"wastes"],[25.36,25.44,"to"],[25.56,25.84,"diffuse"],[25.92,26.24,"across"],[26.32,26.4,"a"],[26.52,26.64,"thin"],[26.72,27.04,"barrier"],[27.12,27.44,"between"],[27.52,28.16,"them."],[28.2,28.24,"The"],[28.32,28.72,"umbilical"],[28.8,29.04,"cord"],[29.12,29.44,"connects"],[29.48,29.52,"the"],[29.56,30,"placenta"],[30.08,30.16,"to"],[30.2,30.24,"the"],[30.32,30.88,"fetus,"],[30.92,30.96,"and"],[31,31.04,"it"],[31.12,31.44,"carries"],[31.52,31.76,"three"],[31.84,32.8,"vessels."],[32.92,33.04,"One"],[33.16,33.52,"umbilical"],[33.6,33.84,"vein"],[33.92,34.32,"carries"],[34.4,35.28,"oxygen-rich,"],[35.36,36,"nutrient-rich"],[36.08,36.32,"blood"],[36.4,36.64,"toward"],[36.68,36.72,"the"],[36.8,37.68,"fetus."],[37.8,37.92,"Two"],[38,38.4,"umbilical"],[38.56,39.04,"arteries"],[39.12,39.36,"carry"],[39.44,40.48,"oxygen-poor,"],[40.56,41.12,"waste-laden"],[41.2,41.44,"blood"],[41.6,41.84,"back"],[41.88,41.92,"to"],[41.96,42,"the"],[42.08,43.12,"placenta."],[43.16,43.2,"The"],[43.4,43.6,"names"],[43.72,43.84,"still"],[43.92,44.16,"follow"],[44.24,44.32,"the"],[44.48,45.04,"rule:"],[45.2,45.52,"arteries"],[45.64,45.76,"carry"],[45.88,46,"blood"],[46.08,46.4,"away"],[46.48,46.56,"from"],[46.64,46.68,"the"],[46.72,47.28,"heart,"],[47.36,47.68,"veins"],[47.76,48,"toward"],[48.08,48.24,"it."],[48.72,48.88,"As"],[48.96,49,"in"],[49.04,49.08,"the"],[49.12,49.6,"pulmonary"],[49.68,50.16,"circuit,"],[50.2,50.24,"the"],[50.32,50.8,"oxygen"],[50.88,50.96,"is"],[51.04,51.68,"backwards."]]},"w16_sh":{"audio":"audio/ap-w16-l4-sh.mp3","words":[[0.312,0.472,"Here"],[0.552,0.632,"is"],[0.672,0.712,"the"],[0.792,1.032,"fetal"],[1.112,1.352,"plan"],[1.432,1.512,"as"],[1.552,1.592,"a"],[1.632,2.232,"schematic."],[2.712,2.792,"The"],[2.872,3.112,"lungs"],[3.152,3.192,"at"],[3.232,3.272,"the"],[3.352,3.672,"top"],[3.752,3.832,"are"],[3.912,4.072,"full"],[4.152,4.232,"of"],[4.432,4.792,"fluid,"],[4.832,4.872,"and"],[4.952,5.192,"blood"],[5.272,5.432,"sent"],[5.512,5.752,"through"],[5.832,5.912,"them"],[5.992,6.232,"gets"],[6.312,6.792,"nothing."],[7.192,7.232,"The"],[7.272,7.832,"placenta"],[7.912,7.992,"is"],[8.032,8.072,"at"],[8.152,8.232,"the"],[8.392,8.632,"bottom."],[9.032,9.112,"The"],[9.192,9.592,"umbilical"],[9.672,9.912,"vein"],[9.952,10.152,"brings"],[10.312,10.952,"oxygen-rich"],[11.032,11.272,"blood"],[11.432,11.592,"in"],[11.672,11.752,"from"],[11.792,11.832,"the"],[11.912,12.552,"placenta,"],[12.592,12.792,"toward"],[12.872,12.912,"the"],[12.952,13.752,"liver."],[13.792,14.072,"Shunt"],[14.152,14.632,"one,"],[14.712,14.752,"the"],[14.792,15.112,"ductus"],[15.192,15.992,"venosus,"],[16.072,16.232,"sends"],[16.312,16.552,"about"],[16.632,16.832,"eighty"],[16.872,17.192,"percent"],[17.232,17.272,"of"],[17.352,17.512,"that"],[17.672,17.832,"blood"],[17.912,18.232,"straight"],[18.312,18.472,"into"],[18.552,18.632,"the"],[18.832,19.192,"inferior"],[19.272,19.512,"vena"],[19.592,20.152,"cava,"],[20.232,20.632,"skipping"],[20.752,20.872,"most"],[20.912,20.952,"of"],[21.032,21.112,"the"],[21.192,21.592,"liver,"],[21.632,21.672,"so"],[21.752,21.832,"it"],[21.912,22.152,"reaches"],[22.232,22.312,"the"],[22.472,22.632,"heart"],[22.712,23.592,"fast."],[23.632,23.672,"In"],[23.752,23.832,"the"],[23.912,23.992,"right"],[24.072,24.792,"atrium,"],[24.872,24.952,"most"],[25.032,25.072,"of"],[25.112,25.272,"that"],[25.352,25.992,"oxygen-rich"],[26.152,26.312,"blood"],[26.432,26.552,"does"],[26.672,26.792,"not"],[26.872,26.952,"go"],[27.032,27.192,"down"],[27.312,27.432,"into"],[27.472,27.512,"the"],[27.592,27.672,"right"],[27.752,28.632,"ventricle."],[28.712,29.032,"Shunt"],[29.192,29.592,"two,"],[29.632,29.672,"the"],[29.752,30.152,"foramen"],[30.272,30.872,"ovale,"],[30.952,31.032,"a"],[31.112,31.672,"flap-valve"],[31.752,32.072,"opening"],[32.112,32.152,"in"],[32.232,32.312,"the"],[32.432,32.552,"wall"],[32.752,32.952,"between"],[32.992,33.032,"the"],[33.112,33.805,"atria,"],[33.859,33.912,"lets"],[33.992,34.072,"it"],[34.232,34.392,"pass"],[34.592,34.792,"straight"],[34.912,35.032,"into"],[35.112,35.192,"the"],[35.312,35.432,"left"],[35.512,36.205,"atrium,"],[36.259,36.312,"then"],[36.392,36.472,"the"],[36.552,36.632,"left"],[36.712,37.272,"ventricle"],[37.352,37.432,"and"],[37.512,37.592,"the"],[37.632,38.472,"aorta."],[38.552,38.632,"The"],[38.672,39.032,"lungs"],[39.152,39.272,"are"],[39.312,40.312,"bypassed."],[40.432,40.552,"Some"],[40.712,40.872,"blood"],[40.992,41.112,"does"],[41.192,41.272,"go"],[41.352,41.512,"into"],[41.552,41.592,"the"],[41.672,41.752,"right"],[41.832,42.312,"ventricle"],[42.392,42.472,"and"],[42.552,42.632,"up"],[42.712,42.792,"the"],[42.845,43.272,"pulmonary"],[43.352,44.072,"trunk."],[44.152,44.392,"Shunt"],[44.472,45.032,"three,"],[45.112,45.192,"the"],[45.312,45.592,"ductus"],[45.752,46.712,"arteriosus,"],[46.792,46.872,"a"],[46.992,47.112,"short"],[47.152,47.432,"vessel"],[47.512,47.592,"from"],[47.632,47.672,"the"],[47.752,48.232,"pulmonary"],[48.312,48.552,"trunk"],[48.592,48.632,"to"],[48.712,48.752,"the"],[48.792,49.192,"aortic"],[49.272,49.832,"arch,"],[49.912,50.072,"sends"],[50.152,50.232,"it"],[50.352,50.472,"into"],[50.512,50.552,"the"],[50.632,51.112,"aorta"],[51.312,51.512,"instead"],[51.552,51.592,"of"],[51.632,51.672,"the"],[51.752,52.552,"lungs."],[52.752,52.952,"Between"],[53.032,53.352,"them,"],[53.392,53.432,"the"],[53.512,53.832,"foramen"],[53.912,54.392,"ovale"],[54.432,54.472,"and"],[54.552,54.592,"the"],[54.632,54.952,"ductus"],[55.032,55.912,"arteriosus"],[55.992,56.232,"send"],[56.392,56.552,"almost"],[56.672,56.792,"the"],[56.872,57.112,"whole"],[57.192,57.512,"output"],[57.592,57.912,"around"],[57.992,58.072,"the"],[58.152,58.872,"lungs."],[58.912,58.952,"The"],[59.032,59.272,"lungs"],[59.352,59.512,"get"],[59.592,59.752,"only"],[59.832,59.912,"a"],[60.072,60.232,"small"],[60.312,60.952,"share,"],[61.032,61.272,"enough"],[61.312,61.352,"to"],[61.432,62.011,"grow."]]},"w16_fb":{"audio":"audio/ap-w16-l4-fb.mp3","words":[[0.302,0.382,"At"],[0.462,0.542,"the"],[0.662,0.782,"first"],[0.862,1.182,"breath"],[1.302,1.422,"after"],[1.502,1.982,"birth,"],[2.062,2.222,"the"],[2.342,2.462,"whole"],[2.542,3.182,"circulation"],[3.262,4.062,"reorganizes"],[4.142,4.382,"in"],[4.622,5.342,"seconds."],[5.502,5.982,"One:"],[6.022,6.062,"the"],[6.142,6.542,"lungs"],[6.702,6.862,"fill"],[6.942,7.022,"with"],[7.102,7.822,"air."],[7.902,8.302,"Oxygen"],[8.342,8.382,"in"],[8.422,8.462,"the"],[8.542,8.702,"air"],[8.782,9.102,"sacs"],[9.182,9.582,"widens"],[9.622,9.662,"the"],[9.742,10.142,"pulmonary"],[10.222,10.382,"blood"],[10.462,11.102,"vessels,"],[11.182,11.582,"resistance"],[11.662,11.702,"in"],[11.742,11.782,"the"],[11.822,12.142,"lungs"],[12.222,12.862,"falls,"],[12.942,13.022,"and"],[13.102,13.262,"blood"],[13.342,13.422,"that"],[13.582,13.742,"used"],[13.822,13.902,"to"],[13.942,14.382,"bypass"],[14.462,14.702,"them"],[14.782,15.022,"now"],[15.102,15.422,"flows"],[15.502,15.662,"through"],[15.742,16.382,"them."],[16.542,17.102,"Two:"],[17.182,17.262,"a"],[17.422,17.582,"large"],[17.662,17.982,"volume"],[18.062,18.142,"of"],[18.222,18.782,"oxygenated"],[18.862,19.102,"blood"],[19.182,19.662,"returns"],[19.702,19.742,"to"],[19.822,19.902,"the"],[19.982,20.142,"left"],[20.222,20.702,"atrium"],[20.782,20.862,"and"],[21.062,21.262,"raises"],[21.342,21.422,"its"],[21.502,21.822,"pressure"],[21.902,22.302,"above"],[22.382,22.462,"the"],[22.542,22.622,"right"],[22.702,23.662,"atrium's."],[23.782,23.902,"That"],[23.982,24.222,"pushes"],[24.302,24.382,"the"],[24.422,24.622,"flap"],[24.702,24.782,"of"],[24.822,24.862,"the"],[24.942,25.262,"foramen"],[25.342,25.822,"ovale"],[25.902,26.622,"shut."],[26.782,26.942,"Over"],[27.102,27.262,"weeks"],[27.342,27.502,"it"],[27.542,28.249,"fuses,"],[28.275,28.462,"leaving"],[28.542,28.622,"a"],[28.702,29.102,"shallow"],[29.222,29.342,"dent"],[29.422,29.462,"in"],[29.502,29.582,"the"],[29.662,29.742,"right"],[29.822,30.595,"atrium:"],[30.649,30.702,"the"],[30.782,31.102,"fossa"],[31.182,31.982,"ovalis."],[32.062,32.542,"Three:"],[33.022,33.342,"rising"],[33.422,33.982,"oxygen"],[34.062,34.142,"and"],[34.222,34.542,"falling"],[34.622,35.582,"prostaglandins"],[35.662,35.822,"make"],[35.862,35.902,"the"],[35.982,36.302,"smooth"],[36.382,36.702,"muscle"],[36.742,36.782,"of"],[36.862,36.902,"the"],[36.942,37.342,"ductus"],[37.502,38.142,"arteriosus"],[38.222,38.862,"contract."],[39.342,39.582,"Within"],[39.662,40.062,"hours"],[40.142,40.182,"it"],[40.222,40.302,"is"],[40.382,40.862,"functionally"],[40.942,41.822,"closed;"],[41.902,42.062,"over"],[42.142,42.542,"weeks"],[42.622,42.702,"it"],[42.782,43.022,"becomes"],[43.062,43.102,"a"],[43.182,43.582,"fibrous"],[43.662,44.302,"cord,"],[44.342,44.382,"the"],[44.462,44.942,"ligamentum"],[45.022,46.062,"arteriosum,"],[46.222,46.382,"between"],[46.422,46.462,"the"],[46.542,46.942,"pulmonary"],[47.022,47.342,"trunk"],[47.422,47.502,"and"],[47.542,47.582,"the"],[47.662,48.062,"aortic"],[48.142,48.782,"arch."],[49.102,49.902,"Four:"],[49.982,50.142,"once"],[50.182,50.222,"the"],[50.302,50.462,"cord"],[50.542,50.622,"is"],[50.702,51.182,"cut,"],[51.262,51.342,"the"],[51.422,51.822,"umbilical"],[51.902,52.142,"vein"],[52.182,52.222,"and"],[52.302,52.702,"arteries"],[52.782,53.262,"close"],[53.302,53.342,"and"],[53.422,53.662,"become"],[53.742,54.462,"ligaments,"],[54.502,54.542,"and"],[54.582,54.622,"the"],[54.702,55.022,"ductus"],[55.142,55.582,"venosus"],[55.622,55.982,"closes"],[56.062,56.382,"too."],[56.862,57.342,"Sometimes"],[57.382,57.422,"a"],[57.502,57.742,"shunt"],[57.822,58.062,"stays"],[58.142,58.462,"open."],[58.942,58.982,"A"],[59.022,59.342,"patent"],[59.422,59.822,"foramen"],[59.942,60.302,"ovale"],[60.382,60.942,"persists"],[61.022,61.102,"to"],[61.182,61.342,"some"],[61.422,61.742,"degree"],[61.782,61.822,"in"],[61.902,62.062,"about"],[62.102,62.142,"a"],[62.222,62.462,"quarter"],[62.542,62.622,"of"],[62.822,63.342,"adults,"],[63.542,63.742,"usually"],[63.822,64.382,"harmlessly."],[64.862,64.942,"A"],[65.022,65.262,"patent"],[65.342,65.662,"ductus"],[65.822,66.462,"arteriosus"],[66.542,66.622,"can"],[66.662,66.702,"be"],[66.782,67.102,"treated"],[67.182,67.262,"with"],[67.342,68.222,"indomethacin,"],[68.302,68.382,"which"],[68.462,68.782,"blocks"],[68.862,69.502,"prostaglandin"],[69.582,70.382,"synthesis,"],[70.462,70.622,"or"],[70.782,71.102,"closed"],[71.142,71.182,"with"],[71.262,71.302,"a"],[71.342,71.949,"catheter."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'fetal circulation: the placenta and umbilical cord (one vein, two arteries), why the fetus bypasses its lungs and liver, the ductus venosus, foramen ovale and ductus arteriosus, the first breath (pulmonary resistance falls, left-atrial pressure rises, prostaglandins fall), the adult remnants (fossa ovalis, ligamentum arteriosum), and patent foramen ovale and patent ductus arteriosus',
+  quick: ['What are the three fetal shunts?', 'What closes the foramen ovale?', 'How does indomethacin work?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|case|flowchart|response)/i,
+  guide: 'That part is yours to write, so here are some questions instead. What keeps the ductus arteriosus open before birth? What normally makes it close? If it stays open after birth, which way does blood flow through it, and where does the extra blood go? And what would blocking that chemical do?',
+  notes: [
+    { k: ['placenta','cord','umbilical','vein','arter'], w: 1.2, a: 'The placenta lets fetal and maternal blood exchange oxygen, glucose and wastes without mixing. The cord carries one umbilical vein (oxygen-rich, toward the fetus) and two umbilical arteries (oxygen-poor, back to the placenta).' },
+    { k: ['ductus venosus','liver'], a: 'The ductus venosus sends about 80% of umbilical-vein blood past the liver straight into the inferior vena cava.' },
+    { k: ['foramen ovale','atri','fossa'], w: 1.2, a: 'The foramen ovale is a flap-valve opening between the atria that lets blood pass from right to left, bypassing the lungs. After birth, higher left-atrial pressure pushes it shut; it fuses into the fossa ovalis.' },
+    { k: ['ductus arteriosus','pulmonary trunk','ligamentum'], w: 1.2, a: 'The ductus arteriosus joins the pulmonary trunk to the aortic arch, sending right-ventricular output away from the lungs. After birth, more oxygen and fewer prostaglandins make it constrict; it becomes the ligamentum arteriosum.' },
+    { k: ['first breath','birth','resistance','transition','close'], w: 1.3, a: 'At the first breath: the lungs fill with air and pulmonary resistance falls; more blood returns to the left atrium, so its pressure exceeds the right and shuts the foramen ovale; oxygen rises and prostaglandins fall, so the ductus arteriosus constricts; after the cord is cut, the umbilical vessels and ductus venosus close.' },
+    { k: ['drop','trace','placenta to brain','path'], a: 'Placenta, umbilical vein, ductus venosus, IVC, right atrium, foramen ovale, left atrium, left ventricle, aorta, carotid artery, brain.' },
+    { k: ['pfo','patent','pda','indomethacin','prostaglandin'], w: 1.3, a: 'A patent foramen ovale persists to some degree in about 25% of adults. A patent ductus arteriosus stays open after birth, letting abnormal flow between aorta and pulmonary trunk. Indomethacin blocks prostaglandin synthesis, so the ductus muscle contracts and closes.' },
+    { k: ['notebook','lab report','submit','case','flowchart'], w: 1.2, a: 'The 7.12 Notebook: a fetal flow diagram (three shunts, umbilical vessels, one drop from placenta to brain), a birth-transition flowchart (first breath to all shunts closed), and a 200-word PDA case: what it is, why it is a problem, how indomethacin works.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>
