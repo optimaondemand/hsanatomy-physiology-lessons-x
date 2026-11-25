@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>The Synapse: How One Neuron Talks to the Next · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="An ink drawing of neurons in the brainstem of a bird, with axon endings wrapped around the cell bodies they contact" style="background-image:url(img/lesson-5-03-hero.jpg);background-position:center"><span class="hlab">Connection by contact: vestibular neurons · Ramón y Cajal, 1923</span><span class="hcred">Image: Santiago Ramón y Cajal, public domain, via the U.S. National Library of Medicine and Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 5.03 &middot; Module 5: Nervous System</div>
+      <h1>The Synapse: How One Neuron Talks to the Next</h1>
+      <div class="focusq"><div class="label">Focus</div><p>A signal between two neurons is electrical, then chemical, then electrical again. Why does the body bother with the chemical step in the middle?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to identify the three parts of a chemical synapse (presynaptic terminal, synaptic cleft, postsynaptic membrane) and what is inside each.</li><li>I will be able to walk through the five steps of a synaptic event in order, naming the role of calcium and of vesicles.</li><li>I will be able to contrast an excitatory and an inhibitory synapse and name one neurotransmitter for each.</li><li>I will be able to name six common neurotransmitters and one job each does.</li><li>I will be able to explain Sherrington&rsquo;s contribution to our understanding of how the nervous system integrates signals.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Electrical, chemical, electrical</div>
+      <svg class="m2-fig" viewBox="0 0 440 240" role="img" aria-label="A chemical synapse with vesicles releasing neurotransmitter across the cleft to receptors"><rect x="6" y="6" width="428" height="228" rx="14" fill="#F4F7FB"/><path d="M178 0 V36 C100 46 70 90 80 140 H300 C310 90 280 46 202 36 V0 Z" fill="#EFE6F7" stroke="#8E5BC0" stroke-width="3"/><circle cx="130" cy="92" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="126" cy="89" r="2" fill="#F28C28"/><circle cx="133" cy="88" r="2" fill="#F28C28"/><circle cx="130" cy="95" r="2" fill="#F28C28"/><circle cx="135" cy="95" r="2" fill="#F28C28"/><circle cx="168" cy="76" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="164" cy="73" r="2" fill="#F28C28"/><circle cx="171" cy="72" r="2" fill="#F28C28"/><circle cx="168" cy="79" r="2" fill="#F28C28"/><circle cx="173" cy="79" r="2" fill="#F28C28"/><circle cx="208" cy="82" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="204" cy="79" r="2" fill="#F28C28"/><circle cx="211" cy="78" r="2" fill="#F28C28"/><circle cx="208" cy="85" r="2" fill="#F28C28"/><circle cx="213" cy="85" r="2" fill="#F28C28"/><circle cx="246" cy="96" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="242" cy="93" r="2" fill="#F28C28"/><circle cx="249" cy="92" r="2" fill="#F28C28"/><circle cx="246" cy="99" r="2" fill="#F28C28"/><circle cx="251" cy="99" r="2" fill="#F28C28"/><circle cx="150" cy="128" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="146" cy="125" r="2" fill="#F28C28"/><circle cx="153" cy="124" r="2" fill="#F28C28"/><circle cx="150" cy="131" r="2" fill="#F28C28"/><circle cx="155" cy="131" r="2" fill="#F28C28"/><circle cx="230" cy="128" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="226" cy="125" r="2" fill="#F28C28"/><circle cx="233" cy="124" r="2" fill="#F28C28"/><circle cx="230" cy="131" r="2" fill="#F28C28"/><circle cx="235" cy="131" r="2" fill="#F28C28"/><circle cx="268" cy="124" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="264" cy="121" r="2" fill="#F28C28"/><circle cx="271" cy="120" r="2" fill="#F28C28"/><circle cx="268" cy="127" r="2" fill="#F28C28"/><circle cx="273" cy="127" r="2" fill="#F28C28"/><rect x="60" y="172" width="260" height="56" rx="10" fill="#E2F2F2" stroke="#2E8C8C" stroke-width="3"/><path d="M103 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M143 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M183 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M223 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M263 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><rect x="92" y="132" width="14" height="14" rx="3" fill="#2F8F6B"/><rect x="276" y="132" width="14" height="14" rx="3" fill="#2F8F6B"/><circle cx="120" cy="150" r="3" fill="#F28C28"/><circle cx="140" cy="158" r="3" fill="#F28C28"/><circle cx="165" cy="152" r="3" fill="#F28C28"/><circle cx="186" cy="160" r="3" fill="#F28C28"/><circle cx="205" cy="150" r="3" fill="#F28C28"/><circle cx="228" cy="158" r="3" fill="#F28C28"/><circle cx="250" cy="152" r="3" fill="#F28C28"/><circle cx="266" cy="160" r="3" fill="#F28C28"/><circle cx="110" cy="166" r="4" fill="#F28C28"/><circle cx="150" cy="166" r="4" fill="#F28C28"/><circle cx="190" cy="166" r="4" fill="#F28C28"/><circle cx="230" cy="166" r="4" fill="#F28C28"/><circle cx="270" cy="166" r="4" fill="#F28C28"/><path d="M178 140 q12 18 24 0" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><text x="330" y="60" class="m2-ts" style="fill:#8E5BC0">presynaptic</text><text x="330" y="160" class="m2-ts" style="fill:#8A6A4A">cleft</text><text x="330" y="205" class="m2-ts" style="fill:#2E8C8C">postsynaptic</text></svg>
+      <div class="cap">An action potential opens Ca&#178;&#8314; channels; vesicles release neurotransmitter into the cleft; receptors on the next cell open ion channels.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="anatomy" role="tab"><span class="n">01</span>Anatomy of a Synapse</button>
+  <button class="tab" data-tab="event" role="tab"><span class="n">02</span>The Synaptic Event</button>
+  <button class="tab" data-tab="integrate" role="tab"><span class="n">03</span>Excite, Inhibit, Decide</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 ANATOMY OF A SYNAPSE ═════════ -->
+<section class="panel" id="tab-anatomy" role="tabpanel">
+  <div class="vo" data-clip="w9_syn">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Gap Between Cells</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A chemical synapse: presynaptic terminal with vesicles, synaptic cleft, and postsynaptic membrane with receptors"><g data-step="0" class="nohalo"><path d="M178 0 V36 C100 46 70 90 80 140 H300 C310 90 280 46 202 36 V0 Z" fill="#EFE6F7" stroke="#8E5BC0" stroke-width="3"/><text x="380" y="40" class="m2-t" style="fill:#8E5BC0">presynaptic terminal</text><text x="380" y="58" class="m2-ts">the swollen end of the sending axon</text></g><g data-step="1" class="nohalo"><circle cx="130" cy="92" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="126" cy="89" r="2" fill="#F28C28"/><circle cx="133" cy="88" r="2" fill="#F28C28"/><circle cx="130" cy="95" r="2" fill="#F28C28"/><circle cx="135" cy="95" r="2" fill="#F28C28"/><circle cx="168" cy="76" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="164" cy="73" r="2" fill="#F28C28"/><circle cx="171" cy="72" r="2" fill="#F28C28"/><circle cx="168" cy="79" r="2" fill="#F28C28"/><circle cx="173" cy="79" r="2" fill="#F28C28"/><circle cx="208" cy="82" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="204" cy="79" r="2" fill="#F28C28"/><circle cx="211" cy="78" r="2" fill="#F28C28"/><circle cx="208" cy="85" r="2" fill="#F28C28"/><circle cx="213" cy="85" r="2" fill="#F28C28"/><circle cx="246" cy="96" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="242" cy="93" r="2" fill="#F28C28"/><circle cx="249" cy="92" r="2" fill="#F28C28"/><circle cx="246" cy="99" r="2" fill="#F28C28"/><circle cx="251" cy="99" r="2" fill="#F28C28"/><circle cx="150" cy="128" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="146" cy="125" r="2" fill="#F28C28"/><circle cx="153" cy="124" r="2" fill="#F28C28"/><circle cx="150" cy="131" r="2" fill="#F28C28"/><circle cx="155" cy="131" r="2" fill="#F28C28"/><circle cx="190" cy="128" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="186" cy="125" r="2" fill="#F28C28"/><circle cx="193" cy="124" r="2" fill="#F28C28"/><circle cx="190" cy="131" r="2" fill="#F28C28"/><circle cx="195" cy="131" r="2" fill="#F28C28"/><circle cx="230" cy="128" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="226" cy="125" r="2" fill="#F28C28"/><circle cx="233" cy="124" r="2" fill="#F28C28"/><circle cx="230" cy="131" r="2" fill="#F28C28"/><circle cx="235" cy="131" r="2" fill="#F28C28"/><circle cx="268" cy="124" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="264" cy="121" r="2" fill="#F28C28"/><circle cx="271" cy="120" r="2" fill="#F28C28"/><circle cx="268" cy="127" r="2" fill="#F28C28"/><circle cx="273" cy="127" r="2" fill="#F28C28"/><text x="380" y="92" class="m2-ts" style="fill:#8E5BC0">synaptic vesicles: sacs of neurotransmitter</text><text x="380" y="108" class="m2-ts" style="fill:#8E5BC0">some docked at the membrane, ready</text></g><g data-step="2" class="nohalo"><rect x="60" y="172" width="260" height="56" rx="10" fill="#E2F2F2" stroke="#2E8C8C" stroke-width="3"/><text x="190" y="206" class="m2-ts" text-anchor="middle" style="fill:#2E8C8C">postsynaptic membrane</text><text x="380" y="142" class="m2-ts" style="fill:#8A6A4A">synaptic cleft: 20&ndash;40 nm of fluid</text><text x="380" y="158" class="m2-ts" style="fill:#2E8C8C">postsynaptic membrane: the next cell</text></g><g data-step="3" class="nohalo"><path d="M103 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M143 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M183 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M223 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M263 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><text x="380" y="190" class="m2-ts" style="fill:#2E8C8C">receptors wait on the receiving side</text></g><g data-step="4" class="nohalo"><text x="380" y="224" class="m2-ts" style="fill:#56606B">electrical synapses (gap junctions): rare</text><text x="380" y="240" class="m2-ts" style="fill:#56606B">almost every human synapse is chemical</text></g><g data-step="5" class="nohalo"><text x="380" y="278" class="m2-ts" style="fill:#6B4AA0">Sherrington named it, 1897: &ldquo;clasping together&rdquo;</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Cajal claimed the nervous system was built of separate cells. That meant a signal had to cross a gap to reach the next one. He could not see it; he inferred it.", "A chemical synapse has three parts. On the sending side is the presynaptic terminal, the swollen end of an axon terminal.", "Inside it are dozens of synaptic vesicles, small sacs each packed with thousands of molecules of a chemical messenger, a neurotransmitter. Some sit docked at the membrane, ready to go.", "Then the synaptic cleft: a gap twenty to forty nanometers wide, filled with fluid. Below it is the postsynaptic membrane, usually a dendrite or the cell body of the next neuron, studded with receptors.", "There are also electrical synapses, where ions pass straight through gap junctions, but in humans they are rare. Almost every synapse you have is chemical.", "In 1897 Charles Sherrington named the junction from the Greek synapsis, clasping together. His lifelong point: the nervous system does not just transmit signals. It integrates them, and it does that at synapses."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The three parts of a chemical synapse, and Sherrington.</span></div>
+    <p class="marg"><b>Courage.</b> Most of what happens in your nervous system is not transmission &mdash; it is decision. At every synapse, a vote is cast and a sum is taken. The brain has the courage to act because thousands of these sums settle in its favor every second.</p>
+    <article class="atlas">
+      <h3>The gap between cells — and why it matters</h3>
+      <p>When Cajal proposed the neuron doctrine in the 1880s, he claimed that the nervous system was built of separate cells — not a fused web. That meant a signal traveling down an axon had to cross a gap to reach the next cell. He could not see the gap with his microscope. He inferred it. We now know it is real, it is real-named, and it is small — about 20 to 40 nanometers wide. That tiny space is the <b>synaptic cleft</b><button type="button" class="say" data-say="synaptic-cleft" aria-label="Hear it: synaptic cleft" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, and the whole junction (the end of one neuron, the cleft, and the start of the next cell) is called a <b>synapse</b><button type="button" class="say" data-say="synapse" aria-label="Hear it: synapse" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>.</p>
+      <p>Synapses are where the nervous system does most of its actual computing. An action potential is binary — on or off. But the strength, timing, and chemistry of a synapse can vary in many directions. The neuron on the receiving end may have thousands of synapses with different partners; it adds up the inputs and decides whether to fire. Learning happens by strengthening some synapses and weakening others. Drugs, hormones, and neurotoxins exert most of their effects by changing what happens at synapses. This reading covers what one looks like, what happens at one, and why this is the place to understand if you want to understand how the nervous system actually works.</p>
+      <h3>Anatomy of a chemical synapse</h3>
+      <p>There are two kinds of synapse — <i>electrical</i> and <i>chemical</i>. Electrical synapses are rare in humans; we will mention them briefly later. Almost every synapse in your nervous system is a chemical synapse, so that is what we describe in detail.</p>
+      <figure class="plate"><img data-img="f50202" alt="A chemical synapse using vesicles and receptors compared to an electrical synapse using gap junction channels"><figcaption>Figure — (a) A chemical synapse releases neurotransmitter across the cleft; (b) an electrical synapse passes current directly through gap junction channels.</figcaption></figure>
+      <p>A chemical synapse has three parts.</p>
+      <p>▶ <b>The presynaptic terminal.</b><button type="button" class="say" data-say="presynaptic-terminal" aria-label="Hear it: the presynaptic terminal." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> This is the swelling at the end of an axon terminal of the sending neuron. Inside it are dozens of small membrane-bound sacs called <i>synaptic vesicles</i>, each one packed with thousands of molecules of a chemical messenger called a <b>neurotransmitter</b><button type="button" class="say" data-say="neurotransmitter" aria-label="Hear it: neurotransmitter" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. The terminal also contains voltage-gated calcium channels in its membrane and a large supply of mitochondria (vesicle recycling is energetically expensive).</p>
+      <p>▶ <b>The synaptic cleft.</b> The gap. Twenty to forty nanometers wide — small enough that you would need an electron microscope to see it. Filled with extracellular fluid plus a thin scaffolding of proteins that hold the two membranes in precise alignment.</p>
+      <p>▶ <b>The postsynaptic membrane.</b><button type="button" class="say" data-say="postsynaptic-membrane" aria-label="Hear it: the postsynaptic membrane." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> The receiving side. On a neuron-to-neuron synapse, this is usually a dendrite or the cell body of the next neuron. On a neuron-to-muscle synapse (the <i>neuromuscular junction</i> you met in Module 4), it is the motor end plate on the muscle fiber. The postsynaptic membrane is studded with <b>neurotransmitter receptors</b> — protein molecules shaped to bind a specific neurotransmitter.</p>
+      <figure class="plate"><img data-img="f50201" alt="A detailed chemical synapse showing the presynaptic terminal with mitochondria and vesicles, calcium channels, SNARE proteins, the synaptic cleft, and postsynaptic receptors"><figcaption>Figure — A chemical synapse in detail: the presynaptic terminal (vesicles, mitochondria, voltage-gated Ca²⁺ channels, SNARE proteins) and the postsynaptic membrane (receptors and ion channels).</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Inside Each Part</h2></div>
+    <p class="hint">Tap an item, then the part of the synapse it belongs to.</p>
+    <div class="place card" id="w9sp">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="pre" data-fb="Presynaptic terminal." data-miss="Sending side or receiving side?">synaptic vesicles</button>
+        <button class="chip" data-k="b" data-ans="pre" data-fb="Presynaptic terminal." data-miss="Where does calcium enter?">voltage-gated Ca&#178;&#8314; channels</button>
+        <button class="chip" data-k="c" data-ans="cl" data-fb="The synaptic cleft." data-miss="Which part is a gap?">20&ndash;40 nm of extracellular fluid</button>
+        <button class="chip" data-k="d" data-ans="post" data-fb="Postsynaptic membrane." data-miss="Sending side or receiving side?">neurotransmitter receptors</button>
+        <button class="chip" data-k="e" data-ans="post" data-fb="Postsynaptic membrane." data-miss="Sending side or receiving side?">a dendrite of the next neuron</button>
+        <button class="chip" data-k="f" data-ans="pre" data-fb="Presynaptic terminal." data-miss="Which side releases?">mitochondria powering release</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="pre"><h4>Presynaptic terminal</h4><div class="drop"></div></div><div class="bin" data-bin="cl"><h4>Synaptic cleft</h4><div class="drop"></div></div><div class="bin" data-bin="post"><h4>Postsynaptic membrane</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w9m5"><p class="q">What did Sherrington mean by the &ldquo;integrative action&rdquo; of the nervous system?</p>
+        <button class="opt" data-ok="1" data-fb="Right: integration happens at synapses.">Synapses add up many inputs instead of just passing signals along.</button>
+        <button class="opt" data-fb="That was the reticular theory Cajal overturned.">Neurons are fused into one continuous web.</button>
+        <button class="opt" data-fb="The point is selection and summing, not broadcasting.">Every signal reaches every muscle.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="event" type="button">Next: The Synaptic Event &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 THE SYNAPTIC EVENT ═════════ -->
+<section class="panel" id="tab-event" role="tabpanel">
+  <div class="vo" data-clip="w9_event">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Five Steps in Two Milliseconds</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The five steps of a synaptic event"><g data-step="0" class="nohalo"><path d="M178 0 V36 C100 46 70 90 80 140 H300 C310 90 280 46 202 36 V0 Z" fill="#EFE6F7" stroke="#8E5BC0" stroke-width="3"/><rect x="60" y="172" width="260" height="56" rx="10" fill="#E2F2F2" stroke="#2E8C8C" stroke-width="3"/><path d="M103 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M143 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M183 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M223 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><path d="M263 172 v-8 m14 0 v8" stroke="#2E8C8C" stroke-width="4" fill="none"/><rect x="92" y="132" width="14" height="14" rx="3" fill="#2F8F6B"/><rect x="276" y="132" width="14" height="14" rx="3" fill="#2F8F6B"/><path d="M190 -2 V30" stroke="#F28C28" stroke-width="5"/><path d="M182 22 l8 10 l8 -10" stroke="#F28C28" stroke-width="4" fill="none"/><text x="380" y="30" class="m2-t" style="fill:#B85C00">an action potential arrives</text></g><g data-step="1" class="nohalo"><circle cx="130" cy="92" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="126" cy="89" r="2" fill="#F28C28"/><circle cx="133" cy="88" r="2" fill="#F28C28"/><circle cx="130" cy="95" r="2" fill="#F28C28"/><circle cx="135" cy="95" r="2" fill="#F28C28"/><circle cx="168" cy="76" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="164" cy="73" r="2" fill="#F28C28"/><circle cx="171" cy="72" r="2" fill="#F28C28"/><circle cx="168" cy="79" r="2" fill="#F28C28"/><circle cx="173" cy="79" r="2" fill="#F28C28"/><circle cx="208" cy="82" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="204" cy="79" r="2" fill="#F28C28"/><circle cx="211" cy="78" r="2" fill="#F28C28"/><circle cx="208" cy="85" r="2" fill="#F28C28"/><circle cx="213" cy="85" r="2" fill="#F28C28"/><circle cx="246" cy="96" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="242" cy="93" r="2" fill="#F28C28"/><circle cx="249" cy="92" r="2" fill="#F28C28"/><circle cx="246" cy="99" r="2" fill="#F28C28"/><circle cx="251" cy="99" r="2" fill="#F28C28"/><circle cx="150" cy="128" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="146" cy="125" r="2" fill="#F28C28"/><circle cx="153" cy="124" r="2" fill="#F28C28"/><circle cx="150" cy="131" r="2" fill="#F28C28"/><circle cx="155" cy="131" r="2" fill="#F28C28"/><circle cx="230" cy="128" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="226" cy="125" r="2" fill="#F28C28"/><circle cx="233" cy="124" r="2" fill="#F28C28"/><circle cx="230" cy="131" r="2" fill="#F28C28"/><circle cx="235" cy="131" r="2" fill="#F28C28"/><circle cx="268" cy="124" r="10" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="264" cy="121" r="2" fill="#F28C28"/><circle cx="271" cy="120" r="2" fill="#F28C28"/><circle cx="268" cy="127" r="2" fill="#F28C28"/><circle cx="273" cy="127" r="2" fill="#F28C28"/><circle cx="84" cy="120" r="4" fill="#2F8F6B"/><circle cx="78" cy="104" r="4" fill="#2F8F6B"/><circle cx="300" cy="118" r="4" fill="#2F8F6B"/><circle cx="306" cy="102" r="4" fill="#2F8F6B"/><circle cx="100" cy="112" r="4" fill="#2F8F6B"/><circle cx="290" cy="110" r="4" fill="#2F8F6B"/><circle cx="60" cy="112" r="11" fill="#1E2B3A"/><text x="60" y="116" class="m2-ts" text-anchor="middle" style="fill:#fff">1</text><text x="380" y="70" class="m2-ts" style="fill:#2F8F6B">1 &middot; Ca&#178;&#8314; channels open; calcium rushes in</text></g><g data-step="2" class="nohalo"><path d="M178 140 q12 18 24 0" fill="#fff" stroke="#8E5BC0" stroke-width="2"/><circle cx="190" cy="100" r="11" fill="#1E2B3A"/><text x="190" y="104" class="m2-ts" text-anchor="middle" style="fill:#fff">2</text><text x="380" y="106" class="m2-ts" style="fill:#8E5BC0">2 &middot; Ca&#178;&#8314; makes vesicles fuse and release</text></g><g data-step="3" class="nohalo"><circle cx="120" cy="150" r="3" fill="#F28C28"/><circle cx="140" cy="158" r="3" fill="#F28C28"/><circle cx="165" cy="152" r="3" fill="#F28C28"/><circle cx="186" cy="160" r="3" fill="#F28C28"/><circle cx="205" cy="150" r="3" fill="#F28C28"/><circle cx="228" cy="158" r="3" fill="#F28C28"/><circle cx="250" cy="152" r="3" fill="#F28C28"/><circle cx="266" cy="160" r="3" fill="#F28C28"/><circle cx="330" cy="156" r="11" fill="#1E2B3A"/><text x="330" y="160" class="m2-ts" text-anchor="middle" style="fill:#fff">3</text><text x="380" y="142" class="m2-ts" style="fill:#B85C00">3 &middot; neurotransmitter diffuses across the cleft</text><text x="380" y="158" class="m2-ts" style="fill:#B85C00">(microseconds: the gap is tiny)</text></g><g data-step="4" class="nohalo"><circle cx="110" cy="166" r="4" fill="#F28C28"/><circle cx="150" cy="166" r="4" fill="#F28C28"/><circle cx="190" cy="166" r="4" fill="#F28C28"/><circle cx="230" cy="166" r="4" fill="#F28C28"/><circle cx="270" cy="166" r="4" fill="#F28C28"/><circle cx="330" cy="200" r="11" fill="#1E2B3A"/><text x="330" y="204" class="m2-ts" text-anchor="middle" style="fill:#fff">4</text><text x="380" y="192" class="m2-ts" style="fill:#2E8C8C">4 &middot; it binds receptors; ion channels open</text><text x="380" y="208" class="m2-ts" style="fill:#2E8C8C">the next cell&rsquo;s voltage changes</text></g><g data-step="5" class="nohalo"><circle cx="330" cy="250" r="11" fill="#1E2B3A"/><text x="330" y="254" class="m2-ts" text-anchor="middle" style="fill:#fff">5</text><text x="380" y="244" class="m2-ts" style="fill:#C22F4A">5 &middot; signal cleared: enzymes, reuptake, diffusion</text><text x="380" y="276" class="m2-ts" style="fill:#2F6B4F">vesicles on one side, receptors on the other: one way</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["When an action potential reaches the presynaptic terminal, a sequence unfolds in about one to two milliseconds.", "Step one: calcium rushes in. The depolarization opens voltage-gated calcium channels, and calcium, abundant outside the cell, floods into the terminal.", "Step two: vesicles fuse and release. Calcium binds proteins on the vesicles, the vesicles fuse with the membrane, and they dump their neurotransmitter into the cleft.", "Step three: the neurotransmitter diffuses across the cleft. Because the gap is so narrow, the trip takes microseconds.", "Step four: it binds receptors on the postsynaptic membrane, opening or closing ion channels and changing the next cell's voltage.", "Step five: the signal is cleared, by an enzyme like acetylcholinesterase, by reuptake into the terminal, or by diffusion away. And because only one side has vesicles and only the other has receptors, the synapse works in one direction."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The five-step synaptic event and why it runs one way.</span></div>
+    <article class="atlas">
+      <h3>What happens during a synaptic event</h3>
+      <p>When the action potential travels down the axon and reaches the presynaptic terminal, a sequence unfolds in about one to two milliseconds.</p>
+      <p><b>1. Calcium rushes in.</b> The arriving depolarization opens voltage-gated calcium channels in the terminal membrane. Calcium ions (Ca²⁺), abundant outside the cell, flood into the terminal.</p>
+      <p><b>2. Vesicles fuse and release.</b> The Ca²⁺ binds to specialized proteins on the synaptic vesicles, triggering vesicle fusion with the presynaptic membrane. The vesicles dump their neurotransmitter into the cleft. Each vesicle is a small “quantal” release; a single action potential may release many vesicles at once.</p>
+      <p><b>3. Neurotransmitter crosses the cleft.</b> The neurotransmitter molecules diffuse across the cleft — a journey of microseconds because the distance is so short.</p>
+      <p><b>4. Receptor binding.</b> The neurotransmitter binds to receptors on the postsynaptic membrane. The binding opens (or closes) ion channels on the postsynaptic cell, changing its membrane potential.</p>
+      <p><b>5. Signal is cleared.</b> The neurotransmitter is removed from the cleft — usually by enzymatic breakdown (acetylcholinesterase breaks down ACh in the neuromuscular junction within milliseconds), reuptake into the presynaptic terminal, or diffusion away. Without this clearance step, the synapse would stay activated and the signal would lose its precision.</p>
+      <figure class="plate"><img data-img="f50203" alt="The five steps of synaptic transmission from action potential arrival to signal clearance, illustrated step by step"><figcaption>Figure — The five steps of synaptic transmission: action potential arrives, calcium enters, neurotransmitter is released, it binds receptors, and the signal ends.</figcaption></figure>
+      <figure class="plate"><img data-img="f50204" alt="The three ways a neurotransmitter signal ends: enzymatic breakdown, reuptake, and diffusion away from the synapse"><figcaption>Figure — How neurotransmitter signals end: enzymatic breakdown (e.g., acetylcholinesterase), reuptake into the presynaptic terminal, or diffusion away from the synapse.</figcaption></figure>
+      <p>This is why a chemical synapse is one-directional: only the presynaptic side has vesicles, and only the postsynaptic side has receptors. The signal can only flow one way.</p>
+      <div class="inset"><div class="ilabel">THE NAME “SYNAPSE”</div><p>The word <i>synapse</i> was coined by the British physiologist <b>Charles Sherrington</b><button type="button" class="say" data-say="sherrington" aria-label="Hear it: charles sherrington" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (1857–1952) in 1897. Sherrington spent his career working out the integrative behavior of the nervous system — how spinal reflexes are constructed from the simultaneous excitation and inhibition of many neurons at once. He needed a name for the special junction between two neurons that Cajal had inferred and electrophysiologists were beginning to characterize. He took the Greek word <i>synapsis</i>, meaning “clasping together,” and proposed it as a technical term. It has been the word ever since.</p><p>Sherrington also coined <i>motor unit</i> (a motor neuron and all the muscle fibers it controls) and <i>proprioception</i> (the body’s sense of itself in space). He shared the 1932 Nobel Prize with Edgar Adrian. His 1906 book <i>The Integrative Action of the Nervous System</i> is one of those rare scientific works that is still readable a century later. The central insight he repeated again and again is the one we keep returning to: the nervous system does not just transmit signals, it integrates them — and the place where that integration happens is at synapses.</p></div>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Run the Synapse</h2></div>
+    <div class="order card" id="w9se" data-order="a,c,v,d,b,x" data-done="Arrive, calcium in, release, diffuse, bind, clear: one synaptic event." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the events in order, starting with the arriving action potential.</p><div class="opool"><button data-k="c">Ca&#178;&#8314; channels open; calcium flows in</button><button data-k="v">vesicles fuse and release neurotransmitter</button><button data-k="a">action potential reaches the terminal</button><button data-k="x">neurotransmitter cleared from the cleft</button><button data-k="b">neurotransmitter binds receptors; voltage changes</button><button data-k="d">neurotransmitter diffuses across the cleft</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>The Five-Step Trace</h2></div>
+    <p class="hint">About 13 minutes.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In your notebook, sketch a synapse flat and number the five steps of a synaptic event beside it. Here, write the step where calcium matters and say exactly what it does.</p><textarea class="jbox" id="w9t4" data-label="Five-step trace: calcium&rsquo;s role" data-min="12"></textarea></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 30 minutes. This synapse is a required detail page in your Assembled Figure.</p>
+    <div class="draw"><span class="label">Drawing session &middot; Detail page: a synapse</span>
+      <p>Take out the neuron you drew in Lesson 5.02. On a fresh page, draw one of its axon terminals enlarged into a clear bulb: the <b>presynaptic terminal</b>. Inside, draw 6&ndash;10 small spheres, the <b>synaptic vesicles</b>, with a few touching the bottom inner edge (ready to release).</p><p>Below it, leave a small gap, the <b>synaptic cleft</b>, and draw a flat or gently curved <b>postsynaptic membrane</b> (the next neuron&rsquo;s dendrite) with 4&ndash;6 small bumps for <b>neurotransmitter receptors</b>. Scatter a few tiny dots of <b>neurotransmitter</b> in the cleft.</p><p>Label all six parts and add an arrow for signal direction (presynaptic &rarr; postsynaptic). Keep the page.</p>
+      <ul class="checks"><li data-ck="w9d31">Presynaptic terminal with vesicles drawn.</li><li data-ck="w9d32">Cleft, postsynaptic membrane, receptors and neurotransmitter drawn.</li><li data-ck="w9d33">All six labels and the direction arrow.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Nervous System Map page and detail page: they become your Module 5 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="anatomy" type="button">&larr; Anatomy of a Synapse</button><button class="btn" data-go="integrate" type="button">Next: Excite, Inhibit, Decide &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 EXCITE, INHIBIT, DECIDE ═════════ -->
+<section class="panel" id="tab-integrate" role="tabpanel">
+  <div class="vo" data-clip="w9_sum">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Thousands of Small Votes</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A neuron sums excitatory and inhibitory inputs at the axon hillock"><g data-step="0" class="nohalo"><ellipse cx="200" cy="160" rx="70" ry="56" fill="#EFE6F7" stroke="#8E5BC0" stroke-width="3"/><path d="M268 150 L300 156 L300 164 L268 170 Z" fill="#D9C7EC" stroke="#8E5BC0" stroke-width="2"/><path d="M300 160 H350" stroke="#8E5BC0" stroke-width="8" stroke-linecap="round"/><text x="304" y="190" class="m2-ts" text-anchor="middle" style="fill:#6B4AA0">axon hillock</text><text x="400" y="40" class="m2-t">thousands of inputs, one decision</text></g><g data-step="1" class="nohalo"><circle cx="150" cy="108" r="9" fill="#2F8F6B"/><text x="150" y="112" class="m2-ts" text-anchor="middle" style="fill:#fff">+</text><circle cx="200" cy="100" r="9" fill="#2F8F6B"/><text x="200" y="104" class="m2-ts" text-anchor="middle" style="fill:#fff">+</text><circle cx="140" cy="190" r="9" fill="#2F8F6B"/><text x="140" y="194" class="m2-ts" text-anchor="middle" style="fill:#fff">+</text><circle cx="250" cy="112" r="9" fill="#2F8F6B"/><text x="250" y="116" class="m2-ts" text-anchor="middle" style="fill:#fff">+</text><circle cx="232" cy="210" r="9" fill="#2F8F6B"/><text x="232" y="214" class="m2-ts" text-anchor="middle" style="fill:#fff">+</text><circle cx="176" cy="214" r="9" fill="#2F8F6B"/><text x="176" y="218" class="m2-ts" text-anchor="middle" style="fill:#fff">+</text><text x="400" y="76" class="m2-ts" style="fill:#2F6B4F">excitatory (glutamate): Na&#8314; in</text><text x="400" y="92" class="m2-ts" style="fill:#2F6B4F">EPSP: a step toward threshold</text></g><g data-step="2" class="nohalo"><circle cx="132" cy="148" r="9" fill="#C22F4A"/><text x="132" y="152" class="m2-ts" text-anchor="middle" style="fill:#fff">&minus;</text><circle cx="262" cy="196" r="9" fill="#C22F4A"/><text x="262" y="200" class="m2-ts" text-anchor="middle" style="fill:#fff">&minus;</text><circle cx="214" cy="104" r="9" fill="#C22F4A"/><text x="214" y="108" class="m2-ts" text-anchor="middle" style="fill:#fff">&minus;</text><text x="400" y="124" class="m2-ts" style="fill:#C22F4A">inhibitory (GABA): Cl&#8315; in</text><text x="400" y="140" class="m2-ts" style="fill:#C22F4A">IPSP: a step away from threshold</text></g><g data-step="3" class="nohalo"><path d="M284 150 V36" stroke="#B85C00" stroke-width="2" stroke-dasharray="4 4"/><text x="290" y="30" class="m2-ts" text-anchor="middle" style="fill:#B85C00">sum at the hillock</text><text x="400" y="172" class="m2-ts" style="fill:#B85C00">sum reaches threshold: fire</text><text x="400" y="188" class="m2-ts" style="fill:#B85C00">falls short: stay silent</text></g><g data-step="4" class="nohalo"><text x="400" y="222" class="m2-ts" style="fill:#1E2B3A">ACh &middot; glutamate &middot; GABA</text><text x="400" y="238" class="m2-ts" style="fill:#1E2B3A">dopamine &middot; serotonin &middot; norepinephrine</text></g><g data-step="5" class="nohalo"><text x="40" y="272" class="m2-t" style="fill:#8A3B47">most drugs, toxins and medicines act right here, at synapses</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["A typical neuron receives thousands of synaptic inputs at any moment, and it adds them up.", "Some are excitatory. Glutamate, the main excitatory transmitter in the brain, opens sodium channels; sodium flows in and makes a small depolarization, an EPSP, a step toward threshold.", "Some are inhibitory. GABA, the main inhibitory transmitter, opens chloride channels; chloride flows in and makes a small hyperpolarization, an IPSP, a step away from threshold.", "The cell sums them at the axon hillock. If the total reaches threshold, it fires. If inhibition cancels excitation, it stays silent. Thousands of small votes, judged against one number.", "Six neurotransmitters to know: acetylcholine, glutamate, GABA, dopamine, serotonin and norepinephrine. Over a hundred others exist.", "Most medicines, toxins and recreational drugs act at synapses. Botox blocks release. SSRIs block serotonin reuptake. Benzodiazepines boost GABA. Opioids inhibit pain synapses and, in overdose, breathing; naloxone displaces them."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>EPSPs and IPSPs, summation, the six neurotransmitters, and drugs.</span></div>
+    <article class="atlas">
+      <h3>Excitatory vs inhibitory: not every synapse fires the next cell</h3>
+      <p>Receptor binding can have two opposite effects on the postsynaptic cell.</p>
+      <p>▶ <b>An excitatory postsynaptic potential (EPSP)</b> is a small depolarization — it brings the postsynaptic cell <i>closer</i> to threshold. The neurotransmitter <i>glutamate</i>, the most common excitatory transmitter in the human CNS, produces EPSPs by opening Na⁺ channels.</p>
+      <p>▶ <b>An inhibitory postsynaptic potential (IPSP)</b> is a small hyperpolarization — it pushes the postsynaptic cell <i>farther</i> from threshold. The neurotransmitter <i>GABA</i>, the most common inhibitory transmitter in the human CNS, produces IPSPs by opening Cl⁻ channels.</p>
+      <figure class="plate"><img data-img="f50205" alt="Excitatory glutamate synapses causing depolarization compared to inhibitory GABA synapses causing hyperpolarization"><figcaption>Figure — Excitatory (glutamate, Na⁺) synapses depolarize the postsynaptic cell; inhibitory (GABA, Cl⁻) synapses hyperpolarize it.</figcaption></figure>
+      <p>A typical neuron receives thousands of synaptic inputs at any moment — some excitatory, some inhibitory. The cell adds them up at the axon hillock. If the net depolarization at threshold is reached, the cell fires an action potential. If the inhibitory inputs cancel out the excitatory inputs, it stays silent. This summation is the closest the nervous system gets to “deciding”: thousands of small votes, weighted by the strength of each synapse, summed in one place, judged against one number.</p>
+      <figure class="plate"><img data-img="f50206" alt="Multiple excitatory and inhibitory inputs summing at the axon hillock to decide whether the neuron fires"><figcaption>Figure — Summation at a neuron: excitatory and inhibitory inputs are added together at the axon hillock, and an action potential fires only if the total reaches threshold.</figcaption></figure>
+      <h3>Neurotransmitters you should know by name</h3>
+      <p>There are more than a hundred chemicals that act as neurotransmitters in the human body. You need to know six by name and function.</p>
+      <p><table style="width: 100%; border-collapse: collapse; min-width: 580px;"> <thead><tr style="background: #0E1C42;"> <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">Neurotransmitter</th> <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">Main role(s)</th> </tr></thead> <tbody> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;"><b>Acetylcholine (ACh)</b><button type="button" class="say" data-say="acetylcholine" aria-label="Hear it: acetylcholine (ach)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Neuromuscular junction (excites skeletal muscle); many CNS roles in attention and arousal.</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;"><b>Glutamate</b><button type="button" class="say" data-say="glutamate" aria-label="Hear it: glutamate" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Main excitatory transmitter in CNS; central to learning and memory.</td></tr> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;"><b>GABA</b><button type="button" class="say" data-say="gaba" aria-label="Hear it: gaba" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Main inhibitory transmitter in CNS; target of many anti-anxiety drugs.</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;"><b>Dopamine</b><button type="button" class="say" data-say="dopamine" aria-label="Hear it: dopamine" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Reward, motivation, motor control; Parkinson’s disease is dopamine loss.</td></tr> <tr><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;"><b>Serotonin</b><button type="button" class="say" data-say="serotonin" aria-label="Hear it: serotonin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Mood, sleep, appetite; target of SSRIs.</td></tr> <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 14px; color: #0e1c42; border: 1px solid #D0D9E8;"><b>Norepinephrine</b><button type="button" class="say" data-say="norepinephrine" aria-label="Hear it: norepinephrine" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></td><td style="padding: 8px 12px; font-size: 14px; color: #1a2340; border: 1px solid #D0D9E8;">Arousal, alertness, sympathetic nervous system (Week 3).</td></tr> </tbody> </table></p>
+      <h3>Why this matters clinically</h3>
+      <p>Most psychiatric medications, most neurotoxins, and most recreational drugs work at synapses. <i>Botulinum toxin</i> (Botox), which you met in Module 4, prevents ACh release at neuromuscular junctions. <i>SSRIs</i> (selective serotonin reuptake inhibitors) used for depression and anxiety block the reuptake of serotonin, keeping it active longer in the cleft. <i>Cocaine</i> and <i>amphetamines</i> increase dopamine signaling. <i>Benzodiazepines</i> (anti-anxiety drugs) enhance GABA inhibition, and general anesthetics used in surgery work on the same principle — enhancing GABA-mediated inhibition broadly enough across the brain to suppress consciousness. <i>Opioids</i> (such as morphine and fentanyl) bind receptors that inhibit pain-signaling synapses and, at high doses, synapses in the brainstem that drive breathing — which is why an opioid overdose is fatal: breathing simply stops. <i>Naloxone</i> (Narcan) works by displacing opioid molecules from those same receptors, reversing the overdose within minutes. Once you understand what a synapse is and how it works, the mechanism behind these drug classes is no longer mysterious — it is just chemistry happening at a very specific location.</p>
+      <figure class="plate"><img data-img="f50207" alt="Five drug targets at the synapse: blocking release, breaking down neurotransmitter, blocking receptors, blocking reuptake, and enhancing inhibitory signaling"><figcaption>Figure — Drug targets at the synapse: Botox blocks release, acetylcholinesterase breaks down ACh, Naloxone blocks opioid receptors, SSRIs block reuptake, and benzodiazepines enhance inhibitory (GABA) signaling.</figcaption></figure>
+      <details class="selfcheck"><summary>Self-check: list the five steps of a synaptic event in order, before clicking</summary><p>(1) Calcium rushes in. (2) Vesicles fuse with the presynaptic membrane and release neurotransmitter. (3) Neurotransmitter diffuses across the cleft. (4) Neurotransmitter binds to receptors on the postsynaptic membrane, opening or closing ion channels. (5) Neurotransmitter is cleared (enzymatic breakdown, reuptake, or diffusion).</p><p>If you got all five, you are ready for reflex arcs in Reading 5.04.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Excitatory vs Inhibitory</h2></div>
+    <p class="hint">Your notebook chart, checked.</p>
+    <div class="card idtable" id="w9ei" style="padding:16px 20px"><div class="idhead c2"><span></span><span>Excitatory</span><span>Inhibitory</span><span></span></div><div class="idrow c2"><span class="loc">Example transmitter</span><select class="jfield" id="w9eir0c0" data-label="E/I chart: Example transmitter, Excitatory" data-ans="glutamate"><option value="">choose</option><option>glutamate</option><option>GABA</option></select><select class="jfield" id="w9eir0c1" data-label="E/I chart: Example transmitter, Inhibitory" data-ans="GABA"><option value="">choose</option><option>glutamate</option><option>GABA</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">Ion that moves</span><select class="jfield" id="w9eir1c0" data-label="E/I chart: Ion that moves, Excitatory" data-ans="Na&#8314; in"><option value="">choose</option><option>Na&#8314; in</option><option>Cl&#8315; in</option></select><select class="jfield" id="w9eir1c1" data-label="E/I chart: Ion that moves, Inhibitory" data-ans="Cl&#8315; in"><option value="">choose</option><option>Na&#8314; in</option><option>Cl&#8315; in</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">Voltage change</span><select class="jfield" id="w9eir2c0" data-label="E/I chart: Voltage change, Excitatory" data-ans="depolarizes"><option value="">choose</option><option>depolarizes</option><option>hyperpolarizes</option></select><select class="jfield" id="w9eir2c1" data-label="E/I chart: Voltage change, Inhibitory" data-ans="hyperpolarizes"><option value="">choose</option><option>depolarizes</option><option>hyperpolarizes</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">Threshold</span><select class="jfield" id="w9eir3c0" data-label="E/I chart: Threshold, Excitatory" data-ans="closer"><option value="">choose</option><option>closer</option><option>farther</option></select><select class="jfield" id="w9eir3c1" data-label="E/I chart: Threshold, Inhibitory" data-ans="farther"><option value="">choose</option><option>closer</option><option>farther</option></select><span class="mk"></span></div><div class="idrow c2"><span class="loc">Name of the potential</span><select class="jfield" id="w9eir4c0" data-label="E/I chart: Name of the potential, Excitatory" data-ans="EPSP"><option value="">choose</option><option>EPSP</option><option>IPSP</option></select><select class="jfield" id="w9eir4c1" data-label="E/I chart: Name of the potential, Inhibitory" data-ans="IPSP"><option value="">choose</option><option>EPSP</option><option>IPSP</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill all 10 cells, then check. Copy the finished chart into your notebook.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Six Transmitters</h2></div>
+    <p class="hint">Tap a job, then the transmitter that does it.</p>
+    <div class="place card" id="w9nt">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="ach" data-fb="Acetylcholine." data-miss="Module 4&rsquo;s transmitter.">excites skeletal muscle at the neuromuscular junction</button>
+        <button class="chip" data-k="b" data-ans="glu" data-fb="Glutamate." data-miss="Excitatory or inhibitory?">main excitatory transmitter; learning and memory</button>
+        <button class="chip" data-k="c" data-ans="gaba" data-fb="GABA." data-miss="Excitatory or inhibitory?">main inhibitory transmitter; anti-anxiety drug target</button>
+        <button class="chip" data-k="d" data-ans="da" data-fb="Dopamine." data-miss="Which one fails in Parkinson&rsquo;s?">reward, motivation, movement; lost in Parkinson&rsquo;s</button>
+        <button class="chip" data-k="e" data-ans="ser" data-fb="Serotonin." data-miss="What does an SSRI keep in the cleft?">mood, sleep, appetite; target of SSRIs</button>
+        <button class="chip" data-k="f" data-ans="ne" data-fb="Norepinephrine." data-miss="Fight or flight.">arousal and the sympathetic system</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="ach"><h4>Acetylcholine</h4><div class="drop"></div></div><div class="bin" data-bin="glu"><h4>Glutamate</h4><div class="drop"></div></div><div class="bin" data-bin="gaba"><h4>GABA</h4><div class="drop"></div></div><div class="bin" data-bin="da"><h4>Dopamine</h4><div class="drop"></div></div><div class="bin" data-bin="ser"><h4>Serotonin</h4><div class="drop"></div></div><div class="bin" data-bin="ne"><h4>Norepinephrine</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w9m6"><p class="q">An SSRI keeps serotonin active longer. Which step of the synaptic event does it change?</p>
+        <button class="opt" data-ok="1" data-fb="Right: selective serotonin reuptake inhibitor.">Step five: it blocks reuptake, so clearing is slower.</button>
+        <button class="opt" data-fb="That would stop release, not prolong it.">Step one: it blocks calcium channels.</button>
+        <button class="opt" data-fb="It works on clearance, not receptors.">Step four: it destroys the receptors.</button></div>
+      <div class="mcq card" data-qid="w9m7"><p class="q">A neuron receives strong IPSPs and weak EPSPs at the same moment. What happens?</p>
+        <button class="opt" data-ok="1" data-fb="Yes: inhibition wins the vote.">The sum stays below threshold; it does not fire.</button>
+        <button class="opt" data-fb="There are no small action potentials: all-or-nothing.">It fires a smaller action potential.</button>
+        <button class="opt" data-fb="Only the sum at the hillock counts.">It fires, because any excitation is enough.</button></div>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="event" type="button">&larr; The Synaptic Event</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Label the Synapse and Trace a Signal</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>A signal between two neurons is electrical, then chemical, then electrical again. Why does the body bother with the chemical step in the middle?</p></div>
+        <p>You have drawn a synapse and run its five steps. This Notebook asks for your labeled diagram, a five-step trace and a short argument. Diagram plus 175&ndash;250 words.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Labeled Synapse</h2></div>
+    <p class="hint">The drawing goes to Canvas as a photo or scan, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit a photo or scan of your synapse drawing labeling all six parts: presynaptic terminal, synaptic vesicles, synaptic cleft, neurotransmitter, postsynaptic membrane, neurotransmitter receptors. Here, list your labels.</p><textarea class="jbox" id="w9rS" data-label="Labeled synapse: the six parts" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>The Five-Step Signal Trace</h2></div>
+    <div class="card loccard"><p class="sub">In 5&ndash;8 sentences, trace the signal from an action potential arriving at the presynaptic terminal to the voltage change on the postsynaptic membrane. Name calcium&rsquo;s role and the vesicles&rsquo; role, and identify the step where the signal is cleared.</p><div class="ttrack" data-field="w9rT"><span class="tt" data-t="calcium|ca²|ca2">calcium</span><span class="tt" data-t="vesicle">vesicle</span><span class="tt" data-t="cleft">cleft</span><span class="tt" data-t="receptor">receptor</span><span class="tt" data-t="clear|reuptake|enzyme|acetylcholinesterase|breaks? down">cleared</span></div><textarea class="jbox" id="w9rT" data-label="Five-step signal trace" data-min="60"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Answer the Focus Question</h2></div>
+    <div class="card loccard"><p class="sub">In 3&ndash;5 sentences: why a chemical middle step? Name at least one specific benefit it gives the nervous system (one-way flow, amplification, room for modulation, diverse transmitter effects). Do not restate the question.</p><div class="ttrack" data-field="w9rQ"><span class="tt" data-t="one.way|one direction|amplif|modulat|divers|different (effects|transmitters)|excit|inhibit">benefit</span></div><textarea class="jbox" id="w9rQ" data-label="Why a chemical step" data-min="30"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w9rS,w9rT,w9rQ" data-min="175" data-max="250"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w9c31">All six synapse parts are labeled and correctly placed.</li><li data-ck="w9c32">My five-step trace is in order and names the roles of calcium and vesicles.</li><li data-ck="w9c33">My focus paragraph argues for at least one specific advantage of the chemical step.</li><li data-ck="w9c34">I use presynaptic, postsynaptic, vesicle, cleft, neurotransmitter and receptor correctly.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 5.03 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="integrate" type="button">&larr; Excite, Inhibit, Decide</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>synapse<button type="button" class="say" data-say="synapse" aria-label="Hear it: synapse" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek <i>synapsis</i> &ldquo;clasping together&rdquo;</small></dt><dd>The junction where one neuron passes a signal to another cell.</dd>
+  <dt>presynaptic terminal<button type="button" class="say" data-say="presynaptic-terminal" aria-label="Hear it: presynaptic terminal" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The swollen end of the sending axon, holding synaptic vesicles.</dd>
+  <dt>synaptic vesicle<button type="button" class="say" data-say="synaptic-vesicle" aria-label="Hear it: synaptic vesicle" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>vesicula</i> &ldquo;little bladder&rdquo;</small></dt><dd>A membrane sac packed with neurotransmitter.</dd>
+  <dt>synaptic cleft<button type="button" class="say" data-say="synaptic-cleft" aria-label="Hear it: synaptic cleft" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The 20&ndash;40 nm gap between the two cells.</dd>
+  <dt>postsynaptic membrane<button type="button" class="say" data-say="postsynaptic-membrane" aria-label="Hear it: postsynaptic membrane" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The receiving membrane, carrying neurotransmitter receptors.</dd>
+  <dt>neurotransmitter<button type="button" class="say" data-say="neurotransmitter" aria-label="Hear it: neurotransmitter" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A chemical messenger released into the cleft.</dd>
+  <dt>EPSP<button type="button" class="say" data-say="epsp" aria-label="Hear it: epsp" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Excitatory postsynaptic potential: a small depolarization toward threshold.</dd>
+  <dt>IPSP<button type="button" class="say" data-say="ipsp" aria-label="Hear it: ipsp" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Inhibitory postsynaptic potential: a small hyperpolarization away from threshold.</dd>
+  <dt>glutamate<button type="button" class="say" data-say="glutamate" aria-label="Hear it: glutamate" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The main excitatory neurotransmitter of the CNS.</dd>
+  <dt>GABA<button type="button" class="say" data-say="gaba" aria-label="Hear it: gaba" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Gamma-aminobutyric acid, the main inhibitory neurotransmitter of the CNS.</dd>
+  <dt>dopamine<button type="button" class="say" data-say="dopamine" aria-label="Hear it: dopamine" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A neurotransmitter of reward, motivation and movement.</dd>
+  <dt>serotonin<button type="button" class="say" data-say="serotonin" aria-label="Hear it: serotonin" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A neurotransmitter of mood, sleep and appetite.</dd>
+  <dt>norepinephrine<button type="button" class="say" data-say="norepinephrine" aria-label="Hear it: norepinephrine" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A neurotransmitter of arousal and the sympathetic system.</dd>
+  <dt>reuptake</dt><dd>Removal of neurotransmitter by pumping it back into the presynaptic terminal.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w9-l3", "title": "The Synapse: How One Neuron Talks to the Next", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 9 · The Synapse", "pdfTag": "AP_W9_L3"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f50202":{"src":"img/m5-5.02-02-electrical-vs-chemical-synapses.webp","alt":""},"f50201":{"src":"img/m5-5.02-01-complete-action-potential-animat.webp","alt":""},"f50203":{"src":"img/m5-5.02-03-five-steps-synaptic-transmission.webp","alt":""},"f50204":{"src":"img/m5-5.02-04-table-three-ways-signal-ends-neu.webp","alt":""},"f50205":{"src":"img/m5-5.02-05-excitatory-vs-inhibitory-synapse.webp","alt":""},"f50206":{"src":"img/m5-5.02-06-concept-summation-again-i-asked-.webp","alt":""},"f50207":{"src":"img/m5-5.02-07-mixed-feelings-about-idea-but-ma.webp","alt":""}},"w9_syn":{"audio":"audio/ap-w9-l3-syn.mp3","words":[[0,0.4,"Cajal"],[0.48,0.8,"claimed"],[0.84,0.88,"the"],[0.96,1.28,"nervous"],[1.48,1.68,"system"],[1.76,1.84,"was"],[1.92,2.16,"built"],[2.28,2.4,"of"],[2.48,2.8,"separate"],[2.88,3.84,"cells."],[3.92,4,"That"],[4.08,4.24,"meant"],[4.32,4.48,"a"],[4.64,4.8,"signal"],[4.88,4.96,"had"],[5.04,5.12,"to"],[5.28,5.44,"cross"],[5.52,5.6,"a"],[5.76,5.92,"gap"],[6,6.08,"to"],[6.2,6.32,"reach"],[6.36,6.4,"the"],[6.48,6.64,"next"],[6.72,7.28,"one."],[7.36,7.44,"He"],[7.48,7.52,"could"],[7.6,7.84,"not"],[7.92,8.08,"see"],[8.16,8.56,"it;"],[8.64,8.72,"he"],[8.8,9.28,"inferred"],[9.36,9.92,"it."],[10,10.08,"A"],[10.24,10.4,"chemical"],[10.48,10.88,"synapse"],[10.96,11.12,"has"],[11.2,11.44,"three"],[11.52,12.24,"parts."],[12.32,12.4,"On"],[12.48,12.56,"the"],[12.72,12.88,"sending"],[12.96,13.28,"side"],[13.36,13.44,"is"],[13.52,13.6,"the"],[13.76,14.32,"presynaptic"],[14.4,15.04,"terminal,"],[15.12,15.2,"the"],[15.24,15.6,"swollen"],[15.68,15.84,"end"],[15.88,15.92,"of"],[15.96,16,"an"],[16.08,16.48,"axon"],[16.68,17.36,"terminal."],[17.56,17.76,"Inside"],[17.84,17.92,"it"],[18,18.16,"are"],[18.24,18.56,"dozens"],[18.64,18.68,"of"],[18.72,19.2,"synaptic"],[19.28,20.08,"vesicles,"],[20.24,20.4,"small"],[20.56,20.96,"sacs"],[21.08,21.2,"each"],[21.28,21.52,"packed"],[21.64,21.76,"with"],[21.8,22.16,"thousands"],[22.24,22.32,"of"],[22.36,22.88,"molecules"],[22.96,23,"of"],[23.04,23.12,"a"],[23.28,23.44,"chemical"],[23.52,24.16,"messenger,"],[24.2,24.24,"a"],[24.32,25.6,"neurotransmitter."],[25.76,25.92,"Some"],[26,26.16,"sit"],[26.24,26.48,"docked"],[26.56,26.6,"at"],[26.64,26.68,"the"],[26.72,27.36,"membrane,"],[27.48,27.6,"ready"],[27.64,27.68,"to"],[27.76,28.48,"go."],[28.64,28.8,"Then"],[28.96,29,"the"],[29.04,29.52,"synaptic"],[29.6,30.4,"cleft:"],[30.48,30.56,"a"],[30.64,30.88,"gap"],[31.04,31.28,"twenty"],[31.36,31.52,"to"],[31.6,31.76,"forty"],[31.84,32.4,"nanometers"],[32.48,32.96,"wide,"],[33.04,33.28,"filled"],[33.36,33.44,"with"],[33.64,34.24,"fluid."],[34.4,34.56,"Below"],[34.64,34.72,"it"],[34.8,34.88,"is"],[34.96,35.04,"the"],[35.2,35.76,"postsynaptic"],[35.84,36.56,"membrane,"],[36.72,36.88,"usually"],[36.96,37.04,"a"],[37.08,37.6,"dendrite"],[37.68,37.76,"or"],[37.84,37.92,"the"],[38,38.08,"cell"],[38.16,38.4,"body"],[38.48,38.52,"of"],[38.56,38.6,"the"],[38.64,38.88,"next"],[38.92,39.52,"neuron,"],[39.6,39.92,"studded"],[40,40.08,"with"],[40.16,41.12,"receptors."],[41.16,41.2,"There"],[41.28,41.36,"are"],[41.44,41.68,"also"],[41.76,42.32,"electrical"],[42.4,43.04,"synapses,"],[43.16,43.28,"where"],[43.36,43.76,"ions"],[43.92,44.08,"pass"],[44.24,44.4,"straight"],[44.52,44.64,"through"],[44.72,44.88,"gap"],[44.96,45.68,"junctions,"],[45.76,45.84,"but"],[45.88,45.92,"in"],[46,46.4,"humans"],[46.48,46.56,"they"],[46.64,46.72,"are"],[46.76,47.44,"rare."],[47.64,47.84,"Almost"],[47.92,48.08,"every"],[48.16,48.56,"synapse"],[48.64,48.72,"you"],[48.8,49.04,"have"],[49.2,49.28,"is"],[49.36,49.84,"chemical."],[50.32,50.4,"In"],[50.48,51.36,"1897"],[51.52,51.84,"Charles"],[51.92,52.48,"Sherrington"],[52.6,52.72,"named"],[52.8,52.84,"the"],[52.88,53.28,"junction"],[53.36,53.44,"from"],[53.48,53.52,"the"],[53.6,53.84,"Greek"],[54,54.88,"synapsis,"],[54.96,55.44,"clasping"],[55.52,56,"together."],[56.32,56.48,"His"],[56.56,56.88,"lifelong"],[56.96,57.68,"point:"],[57.72,57.76,"the"],[57.84,58.08,"nervous"],[58.16,58.48,"system"],[58.56,58.64,"does"],[58.72,58.88,"not"],[58.96,59.12,"just"],[59.28,59.76,"transmit"],[59.84,60.4,"signals."],[60.64,60.8,"It"],[60.88,61.44,"integrates"],[61.52,61.84,"them,"],[61.88,61.92,"and"],[62,62.08,"it"],[62.16,62.32,"does"],[62.4,62.64,"that"],[62.72,62.88,"at"],[62.96,63.6,"synapses."]]},"w9_event":{"audio":"audio/ap-w9-l3-event.mp3","words":[[0.211,0.291,"When"],[0.331,0.371,"an"],[0.451,0.691,"action"],[0.771,1.171,"potential"],[1.251,1.571,"reaches"],[1.611,1.651,"the"],[1.731,2.371,"presynaptic"],[2.451,3.011,"terminal,"],[3.091,3.171,"a"],[3.251,3.571,"sequence"],[3.651,4.131,"unfolds"],[4.171,4.211,"in"],[4.331,4.451,"about"],[4.611,4.691,"one"],[4.771,4.931,"to"],[5.011,5.091,"two"],[5.251,5.971,"milliseconds."],[6.371,6.611,"Step"],[6.691,7.331,"one:"],[7.491,7.811,"calcium"],[7.971,8.291,"rushes"],[8.371,8.611,"in."],[8.931,9.011,"The"],[9.131,9.971,"depolarization"],[10.051,10.371,"opens"],[10.451,11.091,"voltage-gated"],[11.171,11.571,"calcium"],[11.651,12.131,"channels,"],[12.171,12.211,"and"],[12.291,13.011,"calcium,"],[13.091,13.491,"abundant"],[13.571,13.891,"outside"],[13.971,14.051,"the"],[14.171,14.531,"cell,"],[14.611,14.971,"floods"],[15.011,15.171,"into"],[15.211,15.251,"the"],[15.331,15.731,"terminal."],[16.211,16.451,"Step"],[16.531,17.171,"two:"],[17.291,17.651,"vesicles"],[17.811,18.211,"fuse"],[18.251,18.291,"and"],[18.371,18.931,"release."],[19.331,19.811,"Calcium"],[19.891,20.211,"binds"],[20.291,20.771,"proteins"],[20.811,20.851,"on"],[20.891,20.931,"the"],[21.051,21.731,"vesicles,"],[21.771,21.811,"the"],[21.891,22.211,"vesicles"],[22.371,22.611,"fuse"],[22.691,22.771,"with"],[22.811,22.851,"the"],[22.931,23.571,"membrane,"],[23.651,23.691,"and"],[23.731,23.811,"they"],[23.971,24.131,"dump"],[24.211,24.291,"their"],[24.371,25.171,"neurotransmitter"],[25.251,25.411,"into"],[25.491,25.571,"the"],[25.651,26.051,"cleft."],[26.451,26.691,"Step"],[26.771,27.411,"three:"],[27.451,27.491,"the"],[27.531,28.291,"neurotransmitter"],[28.371,28.931,"diffuses"],[29.011,29.331,"across"],[29.371,29.411,"the"],[29.491,29.891,"cleft."],[30.211,30.451,"Because"],[30.531,30.571,"the"],[30.611,30.851,"gap"],[30.931,31.011,"is"],[31.091,31.251,"so"],[31.331,31.891,"narrow,"],[31.931,31.971,"the"],[32.051,32.291,"trip"],[32.371,32.611,"takes"],[32.771,33.651,"microseconds."],[34.051,34.291,"Step"],[34.371,35.011,"four:"],[35.091,35.171,"it"],[35.251,35.544,"binds"],[35.598,36.051,"receptors"],[36.091,36.131,"on"],[36.171,36.211,"the"],[36.291,36.931,"postsynaptic"],[37.011,37.651,"membrane,"],[37.731,38.131,"opening"],[38.171,38.211,"or"],[38.371,38.691,"closing"],[38.851,39.091,"ion"],[39.171,39.571,"channels"],[39.651,39.731,"and"],[39.811,40.211,"changing"],[40.251,40.291,"the"],[40.371,40.531,"next"],[40.611,40.851,"cell's"],[40.931,41.411,"voltage."],[41.811,42.051,"Step"],[42.131,42.851,"five:"],[42.891,42.931,"the"],[43.011,43.331,"signal"],[43.411,43.491,"is"],[43.571,44.291,"cleared,"],[44.331,44.371,"by"],[44.451,44.531,"an"],[44.611,45.011,"enzyme"],[45.091,45.251,"like"],[45.331,46.771,"acetylcholinesterase,"],[46.811,46.851,"by"],[47.011,47.491,"reuptake"],[47.571,47.651,"into"],[47.731,47.771,"the"],[47.811,48.451,"terminal,"],[48.531,48.611,"or"],[48.691,48.771,"by"],[48.851,49.331,"diffusion"],[49.531,49.811,"away."],[50.131,50.211,"And"],[50.371,50.531,"because"],[50.611,50.851,"only"],[51.011,51.171,"one"],[51.251,51.491,"side"],[51.571,51.651,"has"],[51.731,52.291,"vesicles"],[52.371,52.531,"and"],[52.651,52.771,"only"],[52.811,52.851,"the"],[53.011,53.171,"other"],[53.251,53.411,"has"],[53.491,54.291,"receptors,"],[54.331,54.371,"the"],[54.451,54.851,"synapse"],[54.931,55.251,"works"],[55.331,55.411,"in"],[55.491,55.651,"one"],[55.731,56.291,"direction."]]},"w9_sum":{"audio":"audio/ap-w9-l3-sum.mp3","words":[[0.225,0.305,"A"],[0.385,0.625,"typical"],[0.705,1.105,"neuron"],[1.225,1.505,"receives"],[1.665,2.065,"thousands"],[2.105,2.145,"of"],[2.225,2.625,"synaptic"],[2.705,3.105,"inputs"],[3.185,3.265,"at"],[3.345,3.425,"any"],[3.505,4.065,"moment,"],[4.105,4.145,"and"],[4.225,4.305,"it"],[4.425,4.545,"adds"],[4.625,4.705,"them"],[4.785,5.025,"up."],[5.425,5.665,"Some"],[5.745,5.825,"are"],[5.945,6.825,"excitatory."],[7.025,7.745,"Glutamate,"],[7.785,7.825,"the"],[7.905,8.065,"main"],[8.185,8.705,"excitatory"],[8.785,9.185,"transmitter"],[9.265,9.345,"in"],[9.385,9.425,"the"],[9.625,10.065,"brain,"],[10.145,10.465,"opens"],[10.545,10.865,"sodium"],[10.945,11.745,"channels;"],[11.785,12.145,"sodium"],[12.225,12.545,"flows"],[12.625,12.785,"in"],[12.865,12.945,"and"],[13.025,13.105,"makes"],[13.185,13.265,"a"],[13.345,13.665,"small"],[13.745,14.945,"depolarization,"],[15.025,15.105,"an"],[15.185,16.225,"EPSP,"],[16.465,16.545,"a"],[16.625,16.865,"step"],[16.945,17.185,"toward"],[17.265,17.825,"threshold."],[18.305,18.545,"Some"],[18.625,18.705,"are"],[18.785,19.745,"inhibitory."],[19.985,20.545,"GABA,"],[20.585,20.625,"the"],[20.745,20.865,"main"],[20.945,21.425,"inhibitory"],[21.505,22.225,"transmitter,"],[22.385,22.545,"opens"],[22.625,23.025,"chloride"],[23.105,23.825,"channels;"],[23.905,24.305,"chloride"],[24.385,24.625,"flows"],[24.705,24.865,"in"],[24.945,25.025,"and"],[25.105,25.265,"makes"],[25.305,25.345,"a"],[25.425,25.665,"small"],[25.825,27.105,"hyperpolarization,"],[27.145,27.185,"an"],[27.345,28.385,"IPSP,"],[28.425,28.465,"a"],[28.545,28.785,"step"],[28.865,29.185,"away"],[29.265,29.345,"from"],[29.425,29.985,"threshold."],[30.385,30.465,"The"],[30.545,30.785,"cell"],[30.945,31.185,"sums"],[31.265,31.425,"them"],[31.505,31.585,"at"],[31.625,31.665,"the"],[31.745,32.145,"axon"],[32.225,32.865,"hillock."],[32.945,33.105,"If"],[33.145,33.185,"the"],[33.265,33.505,"total"],[33.585,33.825,"reaches"],[33.905,34.705,"threshold,"],[34.785,34.865,"it"],[35.105,35.425,"fires."],[35.825,35.905,"If"],[35.985,36.465,"inhibition"],[36.545,36.945,"cancels"],[37.065,37.985,"excitation,"],[38.065,38.145,"it"],[38.185,38.385,"stays"],[38.465,38.945,"silent."],[39.425,39.825,"Thousands"],[39.905,39.985,"of"],[40.065,40.305,"small"],[40.385,41.025,"votes,"],[41.105,41.345,"judged"],[41.425,41.745,"against"],[41.905,42.065,"one"],[42.145,42.745,"number."],[43.025,43.185,"Six"],[43.265,44.145,"neurotransmitters"],[44.185,44.225,"to"],[44.305,44.945,"know:"],[45.025,45.985,"acetylcholine,"],[46.065,46.945,"glutamate,"],[46.985,47.665,"GABA,"],[47.705,48.465,"dopamine,"],[48.545,49.105,"serotonin"],[49.265,49.345,"and"],[49.425,50.225,"norepinephrine."],[50.625,50.785,"Over"],[50.865,50.945,"a"],[51.025,51.265,"hundred"],[51.345,51.585,"others"],[51.665,52.385,"exist."],[52.625,52.865,"Most"],[52.945,53.585,"medicines,"],[53.705,54.145,"toxins"],[54.225,54.305,"and"],[54.385,54.945,"recreational"],[55.025,55.345,"drugs"],[55.505,55.665,"act"],[55.745,55.825,"at"],[55.905,56.745,"synapses."],[56.945,57.505,"Botox"],[57.585,57.905,"blocks"],[58.145,58.465,"release."],[58.865,59.665,"SSRIs"],[59.745,59.985,"block"],[60.065,60.625,"serotonin"],[60.705,61.265,"reuptake."],[61.585,62.625,"Benzodiazepines"],[62.785,63.025,"boost"],[63.105,63.505,"GABA."],[63.905,64.385,"Opioids"],[64.465,64.865,"inhibit"],[64.985,65.105,"pain"],[65.185,65.825,"synapses"],[65.905,66.225,"and,"],[66.305,66.385,"in"],[66.505,67.025,"overdose,"],[67.105,67.905,"breathing;"],[67.985,68.465,"naloxone"],[68.545,69.025,"displaces"],[69.105,69.394,"them."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the chemical synapse, its three parts, the five-step synaptic event, calcium and vesicles, excitatory and inhibitory synapses, EPSPs and IPSPs, summation at the axon hillock, six neurotransmitters, drugs that act at synapses, and Sherrington',
+  quick: ['What are the five steps at a synapse?', 'What is the difference between an EPSP and an IPSP?', 'How does an SSRI work?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|paragraph|trace|focus question)/i,
+  guide: 'That part is yours to write, so here are my questions instead. If two neurons were wired straight together, what could you not do to the signal in between? Where could a drug or a second transmitter change things? Think it through, then write it.',
+  notes: [
+    { k: ['parts','presynaptic','postsynaptic','cleft','vesicle'], w: 1.3, a: 'Three parts: the presynaptic terminal (vesicles of neurotransmitter, Ca2+ channels), the synaptic cleft (20 to 40 nm of fluid), and the postsynaptic membrane (receptors).' },
+    { k: ['steps','five','calcium','ca2+','release','fuse'], w: 1.4, a: 'One: the action potential opens Ca2+ channels and calcium rushes in. Two: Ca2+ makes vesicles fuse and release neurotransmitter. Three: it diffuses across the cleft. Four: it binds receptors and opens ion channels. Five: it is cleared by enzymes, reuptake or diffusion.' },
+    { k: ['one way','one direction','direction'], a: 'Only the presynaptic side has vesicles and only the postsynaptic side has receptors, so a chemical synapse works in one direction.' },
+    { k: ['epsp','ipsp','excitatory','inhibitory','glutamate','gaba'], w: 1.3, a: 'Glutamate opens Na+ channels: an EPSP, a small depolarization toward threshold. GABA opens Cl- channels: an IPSP, a small hyperpolarization away from threshold.' },
+    { k: ['sum','summation','hillock','decide','decision'], w: 1.1, a: 'A neuron adds its thousands of EPSPs and IPSPs at the axon hillock. If the total reaches threshold it fires; if not, it stays silent.' },
+    { k: ['dopamine','serotonin','norepinephrine','acetylcholine','ach','neurotransmitters'], w: 1.2, a: 'ACh: skeletal muscle and attention. Glutamate: main excitatory, learning. GABA: main inhibitory. Dopamine: reward and movement (Parkinson\'s). Serotonin: mood, sleep, appetite (SSRIs). Norepinephrine: arousal and the sympathetic system.' },
+    { k: ['drug','drugs','ssri','botox','opioid','naloxone','benzodiazepine'], a: 'Botox blocks ACh release. SSRIs block serotonin reuptake. Benzodiazepines enhance GABA. Opioids inhibit pain synapses and, at high doses, breathing; naloxone displaces them from their receptors.' },
+    { k: ['sherrington','1897','integrative'], a: 'Charles Sherrington named the synapse in 1897 and argued that the nervous system integrates signals, at synapses. He shared the 1932 Nobel Prize with Edgar Adrian.' },
+    { k: ['notebook','lab report','submit','words'], w: 1.2, a: 'The 5.03 Notebook: a photo of your labeled synapse (six parts), a 5 to 8 sentence five-step trace naming calcium and vesicles and the clearing step, and a 3 to 5 sentence argument for the chemical step. 175 to 250 words.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>

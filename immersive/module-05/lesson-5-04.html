@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Reflex Arcs: Survival Without Thinking · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="A seventeenth-century woodcut of a kneeling boy whose foot is near a fire, with a line tracing the signal from foot to head" style="background-image:url(img/lesson-5-04-hero.jpg);background-position:center"><span class="hlab">The path of burning pain · René Descartes, Treatise of Man, 1664</span><span class="hcred">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 5.04 &middot; Module 5: Nervous System</div>
+      <h1>Reflex Arcs: Survival Without Thinking</h1>
+      <div class="focusq"><div class="label">Focus</div><p>Why is it dangerous, evolutionarily, to require conscious thought before pulling your hand off a hot stove?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to name the five components of a reflex arc, in order, and describe what each one does.</li><li>I will be able to distinguish monosynaptic from polysynaptic reflexes and give one example of each.</li><li>I will be able to describe the withdrawal reflex, the patellar reflex and the pupillary light reflex, including which spinal or brainstem level each is integrated at.</li><li>I will be able to explain why reflex arcs do not require the brain, and how the brain modifies reflexes after the fact.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Five parts, no brain</div>
+      <svg class="m2-fig" viewBox="0 0 380 290" role="img" aria-label="A reflex arc through a spinal cord cross-section"><rect x="6" y="6" width="368" height="278" rx="14" fill="#F4F7FB"/><g transform="translate(270,130) scale(0.7)"><ellipse rx="90" ry="66" fill="#F4F1EA" stroke="#8A6A4A" stroke-width="3"/><path d="M0 -10 C-10 -40 -30 -58 -46 -52 C-58 -46 -40 -20 -36 -6 C-50 6 -70 22 -64 40 C-56 54 -28 30 -10 16 L10 16 C28 30 56 54 64 40 C70 22 50 6 36 -6 C40 -20 58 -46 46 -52 C30 -58 10 -40 0 -10Z" fill="#C9B8A8" stroke="#8A6A4A" stroke-width="2"/><circle cy="2" r="4" fill="#fff" stroke="#8A6A4A"/><path d="M-40 -52 Q-80 -80 -130 -70" stroke="#2E6FB7" stroke-width="7" fill="none"/><ellipse cx="-112" cy="-72" rx="14" ry="9" fill="#2E6FB7"/><path d="M-48 44 Q-90 70 -130 60" stroke="#C22F4A" stroke-width="7" fill="none"/><path d="M40 -52 Q80 -80 130 -70" stroke="#2E6FB7" stroke-width="7" fill="none"/><ellipse cx="112" cy="-72" rx="14" ry="9" fill="#2E6FB7"/><path d="M48 44 Q90 70 130 60" stroke="#C22F4A" stroke-width="7" fill="none"/></g><path d="M20 30 Q50 20 80 34" stroke="#C9A66B" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M50 40 l6 -14 l6 14 l-6 -6Z" fill="#F28C28"/><circle cx="56" cy="44" r="6" fill="#F28C28"/><path d="M56 44 C90 70 140 74 192 80" stroke="#2E6FB7" stroke-width="4" fill="none"/><path d="M142 70 L150 76 L141 80" stroke="#2E6FB7" stroke-width="3" fill="none"/><path d="M192 80 Q220 84 240 104" stroke="#2E6FB7" stroke-width="3" fill="none"/><circle cx="252" cy="128" r="8" fill="#8E5BC0"/><path d="M244 112 L252 128 L240 146" stroke="#8E5BC0" stroke-width="3" fill="none"/><path d="M240 146 Q220 166 190 172 C140 182 110 210 90 236" stroke="#C22F4A" stroke-width="4" fill="none"/><path d="M117 210 L108 214 L110 204" stroke="#C22F4A" stroke-width="3" fill="none"/><ellipse cx="70" cy="252" rx="46" ry="20" fill="#E9A8A8" stroke="#A33B3B" stroke-width="3"/><path d="M46 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M58 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M70 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M82 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M94 238 V266" stroke="#A33B3B" stroke-width="1.5"/><text x="88" y="22" class="m2-ts" style="fill:#B85C00">receptor</text><text x="130" y="262" class="m2-ts" style="fill:#A33B3B">effector</text><text x="110" y="108" class="m2-ts" text-anchor="middle" style="fill:#2E6FB7">afferent</text><text x="160" y="200" class="m2-ts" style="fill:#C22F4A">efferent</text></svg>
+      <div class="cap">Receptor, sensory (afferent) neuron, integration center in the cord, motor (efferent) neuron, effector: the hand moves before you feel the heat.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="arc" role="tab"><span class="n">01</span>Five Components</button>
+  <button class="tab" data-tab="types" role="tab"><span class="n">02</span>One Synapse or Many</button>
+  <button class="tab" data-tab="three" role="tab"><span class="n">03</span>Three Reflexes</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 FIVE COMPONENTS ═════════ -->
+<section class="panel" id="tab-arc" role="tabpanel">
+  <div class="vo" data-clip="w9_arc">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Before You Know It</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A reflex arc: receptor, sensory neuron, integration center in the spinal cord, motor neuron, effector"><g data-step="0" class="nohalo"><g transform="translate(270,130) scale(0.7)"><ellipse rx="90" ry="66" fill="#F4F1EA" stroke="#8A6A4A" stroke-width="3"/><path d="M0 -10 C-10 -40 -30 -58 -46 -52 C-58 -46 -40 -20 -36 -6 C-50 6 -70 22 -64 40 C-56 54 -28 30 -10 16 L10 16 C28 30 56 54 64 40 C70 22 50 6 36 -6 C40 -20 58 -46 46 -52 C30 -58 10 -40 0 -10Z" fill="#C9B8A8" stroke="#8A6A4A" stroke-width="2"/><circle cy="2" r="4" fill="#fff" stroke="#8A6A4A"/><path d="M-40 -52 Q-80 -80 -130 -70" stroke="#2E6FB7" stroke-width="7" fill="none"/><ellipse cx="-112" cy="-72" rx="14" ry="9" fill="#2E6FB7"/><path d="M-48 44 Q-90 70 -130 60" stroke="#C22F4A" stroke-width="7" fill="none"/><path d="M40 -52 Q80 -80 130 -70" stroke="#2E6FB7" stroke-width="7" fill="none"/><ellipse cx="112" cy="-72" rx="14" ry="9" fill="#2E6FB7"/><path d="M48 44 Q90 70 130 60" stroke="#C22F4A" stroke-width="7" fill="none"/></g><text x="270" y="222" class="m2-ts" text-anchor="middle" style="fill:#8A6A4A">spinal cord</text><text x="400" y="36" class="m2-t">the brain is not in this circuit</text></g><g data-step="1" class="nohalo"><path d="M20 30 Q50 20 80 34" stroke="#C9A66B" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M50 40 l6 -14 l6 14 l-6 -6Z" fill="#F28C28"/><circle cx="56" cy="44" r="6" fill="#F28C28"/><text x="88" y="22" class="m2-ts" style="fill:#B85C00">receptor</text><text x="400" y="72" class="m2-ts" style="fill:#B85C00">1 &middot; sensory receptor detects the stimulus</text></g><g data-step="2" class="nohalo"><path d="M56 44 C90 70 140 74 192 80" stroke="#2E6FB7" stroke-width="4" fill="none"/><path d="M142 70 L150 76 L141 80" stroke="#2E6FB7" stroke-width="3" fill="none"/><path d="M192 80 Q220 84 240 104" stroke="#2E6FB7" stroke-width="3" fill="none"/><text x="400" y="104" class="m2-ts" style="fill:#2E6FB7">2 &middot; sensory (afferent) neuron carries it in</text><text x="400" y="120" class="m2-ts" style="fill:#2E6FB7">afferre: to carry toward</text></g><g data-step="3" class="nohalo"><circle cx="252" cy="128" r="8" fill="#8E5BC0"/><path d="M244 112 L252 128 L240 146" stroke="#8E5BC0" stroke-width="3" fill="none"/><text x="400" y="152" class="m2-ts" style="fill:#8E5BC0">3 &middot; integration center in the cord:</text><text x="400" y="168" class="m2-ts" style="fill:#8E5BC0">one synapse, or interneurons</text></g><g data-step="4" class="nohalo"><path d="M240 146 Q220 166 190 172 C140 182 110 210 90 236" stroke="#C22F4A" stroke-width="4" fill="none"/><path d="M117 210 L108 214 L110 204" stroke="#C22F4A" stroke-width="3" fill="none"/><text x="400" y="200" class="m2-ts" style="fill:#C22F4A">4 &middot; motor (efferent) neuron carries it out</text><text x="400" y="216" class="m2-ts" style="fill:#C22F4A">efferre: to carry away</text></g><g data-step="5" class="nohalo"><ellipse cx="70" cy="252" rx="46" ry="20" fill="#E9A8A8" stroke="#A33B3B" stroke-width="3"/><path d="M46 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M58 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M70 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M82 238 V266" stroke="#A33B3B" stroke-width="1.5"/><path d="M94 238 V266" stroke="#A33B3B" stroke-width="1.5"/><text x="130" y="262" class="m2-ts" style="fill:#A33B3B">effector</text><text x="400" y="248" class="m2-ts" style="fill:#A33B3B">5 &middot; effector: a muscle contracts</text><text x="400" y="264" class="m2-ts" style="fill:#A33B3B">(or a gland secretes)</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Touch a hot stove and your hand jerks back in about two hundred milliseconds. You feel the heat a hundred or two hundred milliseconds later. You moved before you knew anything was wrong. That is a reflex arc, and every one has five parts.", "One: a sensory receptor, a cell or nerve ending that detects the stimulus: heat, pressure, stretch, pain.", "Two: a sensory neuron, also called afferent, from the Latin for to carry toward. It carries the signal in toward the spinal cord.", "Three: an integration center, inside the spinal cord or sometimes the brainstem. It may be a single synapse onto a motor neuron, or one or more interneurons in between. This is where the decision is made.", "Four: a motor neuron, efferent, from to carry away. It carries the do-this signal out toward the effector.", "Five: the effector, usually a skeletal muscle that contracts, sometimes a gland. Notice what is missing: the brain. It finds out later, along a separate ascending pathway."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The five components of a reflex arc, afferent and efferent.</span></div>
+    <p class="marg"><b>Courage.</b> Some forms of courage are slow and deliberate. Some are pre-installed below conscious thought. Reflexes are the body&rsquo;s way of being brave before you can be afraid.</p>
+    <article class="atlas">
+      <h3>Pulling your hand off a hot stove before you know it is hot</h3>
+      <p>Touch a hot stove. Your hand jerks back. By the time you feel the heat — really feel it, consciously — your hand is already gone. The withdrawal happens in roughly 200 milliseconds. The conscious sensation of pain doesn’t arrive at your cortex for another 100 to 200 milliseconds after that. You moved before you knew anything was wrong.</p>
+      <p>This is not magic. It is a <b>reflex arc</b><button type="button" class="say" data-say="reflex-arc" aria-label="Hear it: reflex arc" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — the simplest functional circuit in your nervous system. A reflex arc takes a sensory signal, runs it into the spinal cord, and routes it to a motor neuron without ever sending it up to the brain. The brain finds out later. The point is that some decisions are too important to wait on.</p>
+      <h3>The five components of a reflex arc</h3>
+      <p>Every reflex, no matter how simple, has the same five components. Memorize them in this order:</p>
+      <p>▶ <b>1. Sensory receptor.</b> A specialized cell or nerve ending that detects a stimulus — heat, pressure, stretch, pH, vibration, pain. (You will meet many of these in Week 3.)</p>
+      <p>▶ <b>2. Sensory neuron (afferent).</b> Carries the signal from the receptor inward, toward the spinal cord. “Afferent” comes from the Latin <i>afferre</i>, “to carry toward” — toward the CNS.</p>
+      <p>▶ <b>3. Integration center.</b> Inside the spinal cord (or sometimes the brainstem). This is where the decision is made. It may be as simple as one synapse directly onto a motor neuron, or it may involve one or more interneurons in between.</p>
+      <p>▶ <b>4. Motor neuron (efferent).</b> Carries the “do this” signal out of the spinal cord toward the effector. “Efferent” comes from <i>efferre</i>, “to carry away” — away from the CNS.</p>
+      <p>▶ <b>5. Effector.</b> The structure that responds — usually a skeletal muscle (which contracts) or a gland (which secretes). For most reflex arcs in your body, the effector is skeletal muscle.</p>
+      <p>Notice what is missing: the brain. A reflex arc does not require conscious awareness, and the brain’s involvement is optional and slow. The brain often gets informed of the reflex by a separate (ascending) pathway, but by the time the brain knows, the action is done.</p>
+      <figure class="plate"><img data-img="f50301" alt="A reflex arc diagram: stimulus, receptor, sensory neuron, interneuron, motor neuron, and effector muscle"><figcaption>Figure — The reflex arc: receptor → sensory (afferent) neuron → interneuron in the spinal cord → motor (efferent) neuron → effector.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Build the Arc</h2></div>
+    <div class="order card" id="w9ra" data-order="r,s,i,m,e" data-done="Receptor, sensory neuron, integration center, motor neuron, effector." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the five components in the order a reflex signal passes through them.</p><div class="opool"><button data-k="r">sensory receptor</button><button data-k="e">effector</button><button data-k="i">integration center</button><button data-k="s">sensory (afferent) neuron</button><button data-k="m">motor (efferent) neuron</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w9m8"><p class="q">Which neuron is efferent?</p>
+        <button class="opt" data-ok="1" data-fb="Right: efferre, to carry away.">The motor neuron, carrying the signal away from the CNS</button>
+        <button class="opt" data-fb="That one is afferent.">The sensory neuron, carrying the signal toward the CNS</button>
+        <button class="opt" data-fb="Interneurons stay within the CNS.">The interneuron inside the cord</button></div>
+    </div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="types" type="button">Next: One Synapse or Many &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 ONE SYNAPSE OR MANY ═════════ -->
+<section class="panel" id="tab-types" role="tabpanel">
+  <div class="vo" data-clip="w9_types">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Simple and Less Simple</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Monosynaptic and polysynaptic reflex circuits side by side"><g data-step="0" class="nohalo"><rect x="150" y="60" width="90" height="170" rx="16" fill="#EEE6DC" stroke="#8A6A4A" stroke-width="2"/><rect x="500" y="60" width="90" height="170" rx="16" fill="#EEE6DC" stroke="#8A6A4A" stroke-width="2"/><text x="150" y="40" class="m2-t" style="fill:#1E2B3A">monosynaptic</text><text x="500" y="40" class="m2-t" style="fill:#1E2B3A">polysynaptic</text></g><g data-step="1" class="nohalo"><path d="M40 90 H196" stroke="#2E6FB7" stroke-width="4" fill="none"/><circle cx="196" cy="90" r="6" fill="#2E6FB7"/><path d="M202 96 Q210 150 110 180" stroke="#C22F4A" stroke-width="4" fill="none"/><ellipse cx="80" cy="190" rx="30" ry="13" fill="#E9A8A8" stroke="#A33B3B" stroke-width="2"/><text x="80" y="220" class="m2-ts" text-anchor="middle" style="fill:#A33B3B">quadriceps</text><text x="30" y="80" class="m2-ts" style="fill:#2E6FB7">stretch</text><text x="160" y="264" class="m2-ts" text-anchor="middle" style="fill:#56606B">patellar: one synapse, L2&ndash;L4, ~50 ms</text></g><g data-step="2" class="nohalo"><path d="M390 90 H520" stroke="#2E6FB7" stroke-width="4" fill="none"/><circle cx="524" cy="92" r="6" fill="#2E6FB7"/><path d="M528 96 L556 122" stroke="#8E5BC0" stroke-width="4" fill="none"/><circle cx="558" cy="126" r="6" fill="#8E5BC0"/><path d="M552 132 Q520 160 450 168" stroke="#C22F4A" stroke-width="4" fill="none"/><ellipse cx="420" cy="170" rx="30" ry="13" fill="#E9A8A8" stroke="#A33B3B" stroke-width="2"/><text x="420" y="200" class="m2-ts" text-anchor="middle" style="fill:#A33B3B">biceps</text><text x="380" y="80" class="m2-ts" style="fill:#2E6FB7">pain</text><text x="600" y="130" class="m2-ts" style="fill:#8E5BC0">interneuron</text></g><g data-step="3" class="nohalo"><path d="M560 132 L566 196" stroke="#8E5BC0" stroke-width="3" fill="none" stroke-dasharray="5 4"/><circle cx="566" cy="202" r="9" fill="#fff" stroke="#C22F4A" stroke-width="2"/><text x="566" y="207" class="m2-ts" text-anchor="middle" style="fill:#C22F4A">&minus;</text><path d="M556 208 Q520 236 450 238" stroke="#C22F4A" stroke-width="3" fill="none" stroke-dasharray="5 4"/><ellipse cx="420" cy="240" rx="30" ry="13" fill="#F4D6D6" stroke="#A33B3B" stroke-width="2"/><text x="420" y="270" class="m2-ts" text-anchor="middle" style="fill:#A33B3B">triceps</text><text x="600" y="210" class="m2-ts" style="fill:#C22F4A">inhibits the antagonist</text></g><g data-step="4" class="nohalo"><text x="600" y="234" class="m2-ts" style="fill:#2F6B4F">crossed extensor:</text><text x="600" y="250" class="m2-ts" style="fill:#2F6B4F">other leg stiffens</text></g><g data-step="5" class="nohalo"><text x="500" y="290" class="m2-ts" text-anchor="middle" style="fill:#56606B">withdrawal: interneurons, ~200 ms</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Reflex arcs come in two complexities: monosynaptic, with one synapse, and polysynaptic, with interneurons in between.", "The patellar reflex is monosynaptic. A tap on the tendon stretches the quadriceps, stretch receptors fire, and in the cord at L two to L four the sensory neuron synapses straight onto motor neurons to the quadriceps. One synapse, about fifty milliseconds.", "The withdrawal reflex is polysynaptic. Pain receptors in a fingertip fire; in the cord an interneuron routes the signal to motor neurons for the flexors, the biceps brachii and brachialis, and the hand pulls back.", "A second interneuron inhibits the triceps on the same arm so it does not fight the pull. Whenever a flexor is told to contract, its antagonist is told to relax: reciprocal inhibition.", "Polysynaptic reflexes can reach the other side too. Step on a tack and the crossed extensor reflex stiffens your other leg as the first one lifts, so you do not fall.", "More synapses take a little more time, but they let one stimulus coordinate several muscles at once."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Monosynaptic and polysynaptic reflexes, and reciprocal inhibition.</span></div>
+    <article class="atlas">
+      <h3>Monosynaptic vs polysynaptic reflexes</h3>
+      <p>Reflex arcs come in two basic complexities.</p>
+      <p>▶ <b>Monosynaptic.</b><button type="button" class="say" data-say="monosynaptic" aria-label="Hear it: monosynaptic." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> One synapse total: the sensory neuron synapses directly onto a motor neuron. The classic example is the <i>patellar reflex</i> — the knee-jerk every doctor has elicited with a small rubber hammer. Tapping the patellar tendon stretches the quadriceps. Stretch receptors in the muscle fire, sensory neurons carry the signal to the spinal cord (at level L2–L4), and the signal jumps directly to motor neurons that fire the quadriceps, jerking the lower leg forward. One synapse. About 50 ms total.</p>
+      <p>▶ <b>Polysynaptic.</b><button type="button" class="say" data-say="polysynaptic" aria-label="Hear it: polysynaptic." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> One or more interneurons between the sensory and motor neurons. The classic example is the <i>withdrawal reflex</i> — pulling your hand off the hot stove. Pain receptors in the fingertip fire, sensory neurons carry the signal to the spinal cord, and an interneuron there routes the signal to multiple motor neurons that fire the flexor muscles of the arm (biceps brachii, brachialis), pulling the hand back. The withdrawal reflex usually <i>also</i> involves a second interneuron that <i>inhibits</i> the extensors of the same arm (triceps brachii) so they don’t fight the contraction — a pairing called <b>reciprocal inhibition</b><button type="button" class="say" data-say="reciprocal-inhibition" aria-label="Hear it: reciprocal inhibition" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>: whenever a flexor is told to contract, its antagonist extensor is simultaneously told to relax, so the two muscles don’t work against each other. Polysynaptic reflexes can also coordinate the other side of the body — the <i>crossed extensor reflex</i> simultaneously stiffens the opposite leg when you yank one foot off a tack, so you don’t fall over.</p>
+      <figure class="plate"><img data-img="f50302" alt="The monosynaptic patellar reflex compared to the polysynaptic withdrawal reflex, showing receptor, sensory neuron, interneuron where present, motor neuron, and effector"><figcaption>Figure — Monosynaptic reflex (patellar reflex): one synapse, sensory neuron directly to motor neuron. Polysynaptic reflex (withdrawal reflex): one or more interneurons process the signal, including an inhibitory interneuron to the antagonist muscle.</figcaption></figure>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Sort the Reflexes</h2></div>
+    <p class="hint">Tap a reflex, then its type.</p>
+    <div class="place card" id="w9mp">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="mono" data-fb="Monosynaptic: sensory straight to motor." data-miss="Is there an interneuron?">the knee jerk from a tendon tap</button>
+        <button class="chip" data-k="b" data-ans="poly" data-fb="Polysynaptic: interneurons route it." data-miss="Is there an interneuron?">pulling your hand off a hot stove</button>
+        <button class="chip" data-k="c" data-ans="mono" data-fb="Monosynaptic: a stretch reflex." data-miss="It works like the knee jerk.">your calves bracing when you wobble forward</button>
+        <button class="chip" data-k="d" data-ans="poly" data-fb="Polysynaptic: the crossed extensor reflex." data-miss="Does it cross the cord?">your other leg stiffening as you lift a foot off a tack</button>
+        <button class="chip" data-k="e" data-ans="poly" data-fb="Polysynaptic: reciprocal inhibition needs an inhibitory interneuron." data-miss="What tells the triceps to relax?">the triceps relaxing as the biceps pulls</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="mono"><h4>Monosynaptic</h4><div class="drop"></div></div><div class="bin" data-bin="poly"><h4>Polysynaptic</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Diagram the Withdrawal Reflex</h2></div>
+    <p class="hint">About 15 minutes. This diagram is the first part of your Notebook.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In your notebook, draw the withdrawal reflex as a flat circuit diagram (not on the body). Label all five components, show the interneuron, and show one inhibitory branch to the triceps. Here, explain in one or two sentences why the triceps must be inhibited.</p><textarea class="jbox" id="w9t5" data-label="Withdrawal circuit: why inhibit the triceps" data-min="15"></textarea></div></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="arc" type="button">&larr; Five Components</button><button class="btn" data-go="three" type="button">Next: Three Reflexes &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 THREE REFLEXES ═════════ -->
+<section class="panel" id="tab-three" role="tabpanel">
+  <div class="vo" data-clip="w9_three">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Reflex Saves You; the Brain Learns</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A timeline from touching a hot stove to feeling the pain"><g data-step="0" class="nohalo"><path d="M60 120 H640" stroke="#1E2B3A" stroke-width="3"/><path d="M60.0 114 V126" stroke="#1E2B3A" stroke-width="2"/><text x="60.0" y="144" class="m2-ts" text-anchor="middle">0</text><path d="M200.0 114 V126" stroke="#1E2B3A" stroke-width="2"/><text x="200.0" y="144" class="m2-ts" text-anchor="middle">100</text><path d="M340.0 114 V126" stroke="#1E2B3A" stroke-width="2"/><text x="340.0" y="144" class="m2-ts" text-anchor="middle">200</text><path d="M480.0 114 V126" stroke="#1E2B3A" stroke-width="2"/><text x="480.0" y="144" class="m2-ts" text-anchor="middle">300</text><path d="M620.0 114 V126" stroke="#1E2B3A" stroke-width="2"/><text x="620.0" y="144" class="m2-ts" text-anchor="middle">400</text><text x="640" y="164" class="m2-ts" text-anchor="end">ms</text><text x="60" y="40" class="m2-t" style="fill:#1E2B3A">touch the stove at 0 ms</text></g><g data-step="1" class="nohalo"><circle cx="130.0" cy="120" r="6" fill="#2E6FB7"/><text x="130.0" y="100" class="m2-ts" text-anchor="middle" style="fill:#2E6FB7">knee jerk ~50</text></g><g data-step="2" class="nohalo"><rect x="270.0" y="112" width="140.0" height="16" rx="8" fill="#C22F4A" opacity=".35"/><circle cx="340.0" cy="120" r="6" fill="#C22F4A"/><text x="340.0" y="80" class="m2-ts" text-anchor="middle" style="fill:#C22F4A">hand is gone ~200</text></g><g data-step="3" class="nohalo"><rect x="480.0" y="112" width="140.0" height="16" rx="8" fill="#8E5BC0" opacity=".35"/><text x="550.0" y="100" class="m2-ts" text-anchor="middle" style="fill:#8E5BC0">you feel it 300&ndash;400</text></g><g data-step="4" class="nohalo"><text x="60" y="200" class="m2-ts" style="fill:#2E8C8C">pupillary light reflex: optic nerve &rarr; brainstem &rarr; cranial nerve III</text><text x="60" y="216" class="m2-ts" style="fill:#2E8C8C">light in one eye narrows both pupils</text></g><g data-step="5" class="nohalo"><text x="60" y="252" class="m2-ts" style="fill:#6B4AA0">then the brain names the cause, files the memory, and can veto next time</text><text x="60" y="276" class="m2-ts" style="fill:#8A3B47">a missing knee jerk points to L2&ndash;L4, the femoral nerve or the quadriceps</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Set the clock at the moment your finger touches the stove.", "A knee jerk, for comparison, takes about fifty milliseconds.", "The withdrawal reflex takes about a hundred fifty to two hundred fifty. Nociceptors fire, the cord at C six to C eight routes the signal, and the biceps pulls your hand away.", "Meanwhile the same signal climbs to the cortex. You consciously feel the burn at about three hundred to four hundred milliseconds, after your hand has already moved.", "The pupillary light reflex runs through the brainstem instead: optic nerve in, cranial nerve three out, and light in one eye narrows both pupils. A fixed, dilated pupil after a head injury is a red flag.", "Afterward the brain names the cause, files the memory, and can even veto a reflex, as a boxer suppresses a blink. Because the wiring is known, doctors read missing or exaggerated reflexes back to the broken part."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The withdrawal, patellar and pupillary light reflexes, and what the brain does afterward.</span></div>
+    <article class="atlas">
+      <h3>Three reflexes worth knowing</h3>
+      <p>You will refer back to these three reflexes for the rest of the year. Read each carefully.</p>
+      <h4>Withdrawal reflex (polysynaptic, somatic)</h4>
+      <p>Stimulus: a painful or damaging touch (heat, cut, sharp pressure) on the skin. Receptors: nociceptors (pain receptors). Path: sensory neuron → spinal cord → one or more interneurons → motor neuron to flexor muscle. Effect: flexor muscles contract, joint flexes, the body part jerks away from the stimulus. Survival purpose: limit damage from the offending stimulus before the brain has time to think about it. Speed: ~150–250 ms.</p>
+      <figure class="plate"><img data-img="f50103" alt="The withdrawal reflex: sensory receptors in a fingertip send a signal through a sensory neuron to the spinal cord, where an interneuron routes it to a motor neuron that withdraws the hand"><figcaption>Figure — The withdrawal reflex: sensory receptors detect the painful stimulus, the sensory neuron carries the signal to the spinal cord, an interneuron routes it to the motor neuron, and the hand withdraws.</figcaption></figure>
+      <h4>Patellar reflex (monosynaptic, somatic)</h4>
+      <p>Stimulus: a tap on the patellar tendon, just below the kneecap. Receptors: muscle spindles inside the quadriceps that detect stretch. Path: sensory neuron → spinal cord at L2–L4 → motor neuron back to the quadriceps. Effect: quadriceps contract, lower leg kicks forward. Survival purpose: in everyday life, this reflex (called the <i>stretch reflex</i> when not elicited with a hammer) keeps your posture stable. When you wobble forward, your calves stretch, the same reflex fires, and your calf muscles brace you. Doctors use the patellar reflex to test the integrity of the L2–L4 spinal cord segments and the femoral nerve.</p>
+      <figure class="plate"><img data-img="f50303" alt="The patellar tendon reflex, showing the stimulus, receptor, afferent path, integrating center, efferent paths, and reciprocal inhibition of the hamstring"><figcaption>Figure — The patellar (knee-jerk) reflex illustrates a monosynaptic stretch reflex and reciprocal inhibition of the antagonist hamstring muscle.</figcaption></figure>
+      <h4>Pupillary light reflex (polysynaptic, autonomic)</h4>
+      <p>Stimulus: a bright light shining into one eye. Receptors: photoreceptors in the retina. Path: optic nerve → brainstem (not the spinal cord this time) → cranial nerve III → pupillary constrictor muscle. Effect: both pupils constrict (the consensual response — light in one eye constricts both pupils). Survival purpose: limit how much light hits the retina, protecting the photoreceptors from over-saturation. EMTs and neurologists check the pupillary light reflex to evaluate brainstem function in unconscious patients — a fixed, dilated pupil after head injury is a red flag for serious brainstem damage.</p>
+      <h3>What the brain does after the reflex</h3>
+      <p>A reflex does not happen in isolation. While the spinal cord is firing the motor response, the same sensory signal is also climbing up the spinal cord toward the brain along separate (ascending) pathways. About 100 to 200 ms later it reaches the cerebral cortex, and that is when you become consciously aware of what happened. The brain then does several things the reflex did not do: it identifies the cause (“the kettle was hot”), files the memory (“don’t touch that kettle again”), and may modify future behavior. The reflex saved you. The brain figures out what to do about it.</p>
+      <p>The brain can also <i>modify</i> reflexes after the fact. A trained boxer can suppress the blink reflex when expecting a punch. A pianist can suppress the withdrawal reflex when their finger slips into a hot light. These are not failures of the reflex — they are descending signals from the cortex to the spinal cord that inhibit the reflex circuit. The brain has veto power, but it is slow.</p>
+      <h3>Why this matters: the diagnostic value of reflexes</h3>
+      <p>Because reflexes have such well-known anatomical pathways, neurologists and emergency physicians use them constantly to test whether specific parts of the nervous system are working. A missing patellar reflex points to a problem in the L2–L4 segments, the femoral nerve, or the quadriceps. A hyper-active reflex points to a problem with descending inhibition from the brain (which normally damps reflexes a bit). A missing pupillary reflex on one side after a head injury points to brainstem compromise. Knowing the wiring lets the clinician read the symptoms back to the broken part.</p>
+      <details class="selfcheck"><summary>Self-check: name the five components of a reflex arc in order, before clicking</summary><p>(1) Sensory receptor → (2) sensory (afferent) neuron → (3) integration center in the CNS → (4) motor (efferent) neuron → (5) effector (skeletal muscle or gland).</p><p>If you got all five, you are ready for this week’s reading quiz.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Compare Three Reflexes</h2></div>
+    <p class="hint">Your notebook chart, checked.</p>
+    <div class="card idtable" id="w9rc" style="padding:16px 20px"><div class="idhead c3"><span></span><span>Withdrawal</span><span>Patellar</span><span>Pupillary light</span><span></span></div><div class="idrow c3"><span class="loc">Stimulus</span><select class="jfield" id="w9rcr0c0" data-label="Reflex chart: Stimulus, Withdrawal" data-ans="painful touch"><option value="">choose</option><option>painful touch</option><option>tendon tap</option><option>bright light</option></select><select class="jfield" id="w9rcr0c1" data-label="Reflex chart: Stimulus, Patellar" data-ans="tendon tap"><option value="">choose</option><option>painful touch</option><option>tendon tap</option><option>bright light</option></select><select class="jfield" id="w9rcr0c2" data-label="Reflex chart: Stimulus, Pupillary light" data-ans="bright light"><option value="">choose</option><option>painful touch</option><option>tendon tap</option><option>bright light</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Receptor</span><select class="jfield" id="w9rcr1c0" data-label="Reflex chart: Receptor, Withdrawal" data-ans="nociceptors"><option value="">choose</option><option>nociceptors</option><option>muscle spindles</option><option>photoreceptors</option></select><select class="jfield" id="w9rcr1c1" data-label="Reflex chart: Receptor, Patellar" data-ans="muscle spindles"><option value="">choose</option><option>nociceptors</option><option>muscle spindles</option><option>photoreceptors</option></select><select class="jfield" id="w9rcr1c2" data-label="Reflex chart: Receptor, Pupillary light" data-ans="photoreceptors"><option value="">choose</option><option>nociceptors</option><option>muscle spindles</option><option>photoreceptors</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Integrates at</span><select class="jfield" id="w9rcr2c0" data-label="Reflex chart: Integrates at, Withdrawal" data-ans="spinal cord, C6&ndash;C8"><option value="">choose</option><option>spinal cord, C6&ndash;C8</option><option>spinal cord, L2&ndash;L4</option><option>brainstem</option></select><select class="jfield" id="w9rcr2c1" data-label="Reflex chart: Integrates at, Patellar" data-ans="spinal cord, L2&ndash;L4"><option value="">choose</option><option>spinal cord, C6&ndash;C8</option><option>spinal cord, L2&ndash;L4</option><option>brainstem</option></select><select class="jfield" id="w9rcr2c2" data-label="Reflex chart: Integrates at, Pupillary light" data-ans="brainstem"><option value="">choose</option><option>spinal cord, C6&ndash;C8</option><option>spinal cord, L2&ndash;L4</option><option>brainstem</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Effector</span><select class="jfield" id="w9rcr3c0" data-label="Reflex chart: Effector, Withdrawal" data-ans="biceps and brachialis"><option value="">choose</option><option>biceps and brachialis</option><option>quadriceps</option><option>pupillary constrictor</option></select><select class="jfield" id="w9rcr3c1" data-label="Reflex chart: Effector, Patellar" data-ans="quadriceps"><option value="">choose</option><option>biceps and brachialis</option><option>quadriceps</option><option>pupillary constrictor</option></select><select class="jfield" id="w9rcr3c2" data-label="Reflex chart: Effector, Pupillary light" data-ans="pupillary constrictor"><option value="">choose</option><option>biceps and brachialis</option><option>quadriceps</option><option>pupillary constrictor</option></select><span class="mk"></span></div><div class="idrow c3"><span class="loc">Synapses</span><select class="jfield" id="w9rcr4c0" data-label="Reflex chart: Synapses, Withdrawal" data-ans="polysynaptic"><option value="">choose</option><option>monosynaptic</option><option>polysynaptic</option></select><select class="jfield" id="w9rcr4c1" data-label="Reflex chart: Synapses, Patellar" data-ans="monosynaptic"><option value="">choose</option><option>monosynaptic</option><option>polysynaptic</option></select><select class="jfield" id="w9rcr4c2" data-label="Reflex chart: Synapses, Pupillary light" data-ans="polysynaptic"><option value="">choose</option><option>monosynaptic</option><option>polysynaptic</option></select><span class="mk"></span></div><div class="idbar"><button type="button" class="btn small idcheck">Check my table</button><span class="hint idout">Fill all 15 cells, then check. Copy the finished chart into your notebook.</span></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 25 minutes. This drawing is on the body map, not a detail page.</p>
+    <div class="draw"><span class="label">Drawing session &middot; On the Nervous System Map: a withdrawal reflex</span>
+      <p>Take out your Nervous System Map and your Module 4 Muscle Map. If it helps, sketch an enlarged right arm and upper trunk beside the map. Place a marker at the tip of the right index finger: the <b>sensory receptor</b> (a nociceptor).</p><p>Draw a line from the fingertip up the median nerve and in to the spinal cord at about <b>C6&ndash;C8</b>: the <b>sensory neuron</b>. Inside the cord, mark a small junction: the <b>integration center</b> (interneurons). Draw a second line out through a spinal nerve at the same level, down to the <b>biceps brachii</b>: the <b>motor neuron</b> and the <b>effector</b>. Optionally add an inhibitory branch to the triceps.</p><p>Label each segment with its component and add arrows for the direction of travel. Photograph the finished map.</p>
+      <ul class="checks"><li data-ck="w9d41">Receptor at the fingertip and sensory neuron to C6&ndash;C8.</li><li data-ck="w9d42">Integration center, motor neuron and biceps.</li><li data-ck="w9d43">All five labels and direction arrows.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Nervous System Map page and detail page: they become your Module 5 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w9m9"><p class="q">A patient has no knee-jerk reflex on one side. Where would a doctor look first?</p>
+        <button class="opt" data-ok="1" data-fb="Right: that is the patellar circuit.">The L2&ndash;L4 cord segments, the femoral nerve or the quadriceps</button>
+        <button class="opt" data-fb="That level runs the arm.">The cervical cord at C6&ndash;C8</button>
+        <button class="opt" data-fb="That is the pupillary circuit.">Cranial nerve III</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Then the Reading Quiz</h2></div>
+    <div class="card"><p style="margin:0">After you submit the 5.04 Notebook, take the <b>Week 9 Reading Quiz</b> in Canvas. It covers Readings 5.01 through 5.04.</p></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="types" type="button">&larr; One Synapse or Many</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Diagram a Reflex Arc</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>Why is it dangerous, evolutionarily, to require conscious thought before pulling your hand off a hot stove?</p></div>
+        <p>You have drawn the withdrawal reflex twice: once as a circuit and once on the body. This Notebook asks for both drawings and one paragraph. Two diagrams plus 175&ndash;275 words.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Circuit Diagram</h2></div>
+    <p class="hint">Photo or scan to Canvas, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit a photo of your withdrawal-reflex circuit with all five components labeled (sensory receptor, sensory neuron, integration center / interneuron, motor neuron, effector) and at least one inhibitory branch to the triceps. Here, list your labels.</p><textarea class="jbox" id="w9rC" data-label="Circuit-level diagram: the five components" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Body-Map Drawing</h2></div>
+    <p class="hint">Photo or scan to Canvas, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit a photo of your on-body reflex drawing: fingertip &rarr; spinal cord at C6&ndash;C8 &rarr; biceps brachii, with the five components labeled. Here, describe the path you drew.</p><textarea class="jbox" id="w9rB" data-label="Body-map drawing: the path on the anatomy" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Answer the Focus Question</h2></div>
+    <div class="card loccard"><p class="sub">In 5&ndash;7 sentences, answer the focus question. Use specific time numbers (reflex about 200 ms, conscious sensation about 300&ndash;400 ms) and at least one specific consequence of routing the signal through the cortex first.</p><div class="ttrack" data-field="w9rW"><span class="tt" data-t="[0-9]+ ?ms|millisecond">timing</span><span class="tt" data-t="cortex|brain|conscious">cortex</span><span class="tt" data-t="burn|damage|injur|tissue|blister">consequence</span></div><textarea class="jbox" id="w9rW" data-label="Why not wait for the brain" data-min="50"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w9rC,w9rB,w9rW" data-min="175" data-max="275"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w9c41">My circuit diagram labels all five components and shows an inhibitory branch to the triceps.</li><li data-ck="w9c42">My body-map drawing traces fingertip to C6&ndash;C8 to biceps with all five labels.</li><li data-ck="w9c43">My paragraph uses concrete timing numbers and names a specific cost of routing through the brain.</li><li data-ck="w9c44">I use afferent, efferent, interneuron, monosynaptic and polysynaptic correctly.</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 5.04 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="three" type="button">&larr; Three Reflexes</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>reflex arc<button type="button" class="say" data-say="reflex-arc" aria-label="Hear it: reflex arc" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The circuit of a reflex: receptor, sensory neuron, integration center, motor neuron, effector.</dd>
+  <dt>afferent<button type="button" class="say" data-say="afferent" aria-label="Hear it: afferent" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>afferre</i> &ldquo;to carry toward&rdquo;</small></dt><dd>Carrying signals toward the CNS; sensory.</dd>
+  <dt>efferent<button type="button" class="say" data-say="efferent" aria-label="Hear it: efferent" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>efferre</i> &ldquo;to carry away&rdquo;</small></dt><dd>Carrying signals away from the CNS; motor.</dd>
+  <dt>integration center</dt><dd>The site in the CNS where a reflex decision is made.</dd>
+  <dt>effector<button type="button" class="say" data-say="effector" aria-label="Hear it: effector" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The muscle or gland that carries out a response.</dd>
+  <dt>monosynaptic<button type="button" class="say" data-say="monosynaptic" aria-label="Hear it: monosynaptic" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A reflex with one synapse, sensory directly onto motor.</dd>
+  <dt>polysynaptic<button type="button" class="say" data-say="polysynaptic" aria-label="Hear it: polysynaptic" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A reflex with one or more interneurons between sensory and motor neurons.</dd>
+  <dt>nociceptor<button type="button" class="say" data-say="nociceptor" aria-label="Hear it: nociceptor" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>nocere</i> &ldquo;to harm&rdquo;</small></dt><dd>A pain receptor.</dd>
+  <dt>muscle spindle<button type="button" class="say" data-say="muscle-spindle" aria-label="Hear it: muscle spindle" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A stretch receptor inside a skeletal muscle.</dd>
+  <dt>reciprocal inhibition<button type="button" class="say" data-say="reciprocal-inhibition" aria-label="Hear it: reciprocal inhibition" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Relaxing the antagonist whenever a muscle is told to contract.</dd>
+  <dt>crossed extensor reflex<button type="button" class="say" data-say="crossed-extensor" aria-label="Hear it: crossed extensor reflex" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>A reflex that stiffens the opposite limb as one limb withdraws.</dd>
+  <dt>consensual response<button type="button" class="say" data-say="consensual-response" aria-label="Hear it: consensual response" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Both pupils constricting when light enters one eye.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w9-l4", "title": "Reflex Arcs: Survival Without Thinking", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 9 · Reflex Arcs", "pdfTag": "AP_W9_L4"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f50301":{"src":"img/m5-5.03-01-i-one-design-note-help-keeping.webp","alt":""},"f50302":{"src":"img/m5-5.03-02-monosynaptic-vs-polysynaptic-ref.webp","alt":""},"f50103":{"src":"img/m5-5.01-03-somatic-nervous-system-rather-th.webp","alt":""},"f50303":{"src":"img/m5-5.03-03-reciprocal-inhibition-explains-w.webp","alt":""}},"w9_arc":{"audio":"audio/ap-w9-l4-arc.mp3","words":[[0,0.216,"Touch"],[0.24,0.28,"a"],[0.32,0.52,"hot"],[0.56,1.013,"stove"],[1.12,1.28,"and"],[1.36,1.44,"your"],[1.56,1.68,"hand"],[1.76,2,"jerks"],[2.08,2.24,"back"],[2.32,2.36,"in"],[2.4,2.72,"about"],[2.8,2.88,"two"],[2.96,3.12,"hundred"],[3.28,4.4,"milliseconds."],[4.48,4.56,"You"],[4.64,4.72,"feel"],[4.8,4.96,"the"],[5.12,5.28,"heat"],[5.36,5.44,"a"],[5.48,5.84,"hundred"],[5.96,6.08,"or"],[6.16,6.24,"two"],[6.32,6.48,"hundred"],[6.56,7.12,"milliseconds"],[7.28,8,"later."],[8.12,8.24,"You"],[8.44,8.64,"moved"],[8.8,8.96,"before"],[9.04,9.12,"you"],[9.173,9.28,"knew"],[9.36,9.68,"anything"],[9.76,9.92,"was"],[10.12,10.8,"wrong."],[10.96,11.12,"That"],[11.16,11.2,"is"],[11.28,11.36,"a"],[11.48,11.84,"reflex"],[11.96,12.32,"arc,"],[12.44,12.56,"and"],[12.72,12.88,"every"],[12.96,13.2,"one"],[13.32,13.44,"has"],[13.52,13.76,"five"],[13.84,14.8,"parts."],[14.92,15.44,"One:"],[15.52,15.6,"a"],[15.64,16,"sensory"],[16.08,16.88,"receptor,"],[16.96,17.04,"a"],[17.12,17.44,"cell"],[17.52,17.6,"or"],[17.68,17.92,"nerve"],[18,18.24,"ending"],[18.32,18.4,"that"],[18.56,18.8,"detects"],[18.84,18.88,"the"],[18.96,19.84,"stimulus:"],[20,20.4,"heat,"],[20.64,21.04,"pressure,"],[21.28,21.76,"stretch,"],[21.96,22.44,"pain."],[22.72,23.36,"Two:"],[23.4,23.44,"a"],[23.52,23.92,"sensory"],[24,24.72,"neuron,"],[24.84,24.96,"also"],[25.04,25.28,"called"],[25.36,26.08,"afferent,"],[26.16,26.24,"from"],[26.28,26.32,"the"],[26.4,26.72,"Latin"],[26.8,26.96,"for"],[27.12,27.2,"to"],[27.28,27.6,"carry"],[27.68,28.16,"toward."],[28.56,28.72,"It"],[28.8,29.04,"carries"],[29.12,29.16,"the"],[29.2,29.52,"signal"],[29.68,29.92,"in"],[30,30.24,"toward"],[30.28,30.32,"the"],[30.4,30.64,"spinal"],[30.72,31.44,"cord."],[31.6,32.08,"Three:"],[32.12,32.16,"an"],[32.24,32.8,"integration"],[32.88,33.52,"center,"],[33.72,33.92,"inside"],[34,34.04,"the"],[34.08,34.4,"spinal"],[34.48,34.72,"cord"],[34.8,34.88,"or"],[34.96,35.36,"sometimes"],[35.4,35.44,"the"],[35.6,36.08,"brainstem."],[36.48,36.56,"It"],[36.64,36.72,"may"],[36.8,36.84,"be"],[36.88,36.96,"a"],[37.04,37.28,"single"],[37.44,37.84,"synapse"],[37.96,38.08,"onto"],[38.12,38.16,"a"],[38.24,38.4,"motor"],[38.48,39.04,"neuron,"],[39.12,39.2,"or"],[39.36,39.44,"one"],[39.52,39.6,"or"],[39.68,39.76,"more"],[39.84,40.56,"interneurons"],[40.6,40.64,"in"],[40.72,41.2,"between."],[41.68,41.92,"This"],[42,42.08,"is"],[42.16,42.24,"where"],[42.28,42.32,"the"],[42.56,42.8,"decision"],[42.84,42.88,"is"],[42.96,43.68,"made."],[43.84,44.32,"Four:"],[44.36,44.4,"a"],[44.48,44.72,"motor"],[44.8,45.44,"neuron,"],[45.52,46.16,"efferent,"],[46.24,46.4,"from"],[46.56,46.64,"to"],[46.72,46.96,"carry"],[47.04,47.52,"away."],[47.92,48,"It"],[48.08,48.4,"carries"],[48.48,48.56,"the"],[48.72,49.28,"do-this"],[49.36,49.76,"signal"],[49.84,50.08,"out"],[50.12,50.32,"toward"],[50.36,50.4,"the"],[50.48,51.04,"effector."],[51.44,52.08,"Five:"],[52.16,52.24,"the"],[52.36,53.12,"effector,"],[53.2,53.52,"usually"],[53.56,53.6,"a"],[53.68,54.08,"skeletal"],[54.16,54.4,"muscle"],[54.44,54.48,"that"],[54.56,55.36,"contracts,"],[55.56,55.76,"sometimes"],[55.8,55.84,"a"],[55.92,56.32,"gland."],[56.88,57.12,"Notice"],[57.16,57.2,"what"],[57.28,57.36,"is"],[57.44,58.32,"missing:"],[58.36,58.4,"the"],[58.48,59.04,"brain."],[59.44,59.52,"It"],[59.6,59.8,"finds"],[59.84,60,"out"],[60.08,60.48,"later,"],[60.6,60.72,"along"],[60.8,60.88,"a"],[60.96,61.36,"separate"],[61.64,61.92,"ascending"],[62,62.758,"pathway."]]},"w9_types":{"audio":"audio/ap-w9-l4-types.mp3","words":[[0.282,0.682,"Reflex"],[0.722,1.002,"arcs"],[1.082,1.162,"come"],[1.242,1.322,"in"],[1.402,1.562,"two"],[1.642,2.682,"complexities:"],[2.762,3.722,"monosynaptic,"],[3.802,3.882,"with"],[3.962,4.122,"one"],[4.202,4.842,"synapse,"],[4.922,5.002,"and"],[5.082,6.042,"polysynaptic,"],[6.122,6.202,"with"],[6.282,6.922,"interneurons"],[6.962,7.002,"in"],[7.082,7.962,"between."],[8.002,8.042,"The"],[8.162,8.442,"patellar"],[8.522,9.002,"reflex"],[9.082,9.242,"is"],[9.322,10.442,"monosynaptic."],[10.482,10.522,"A"],[10.602,10.762,"tap"],[10.842,10.922,"on"],[10.962,11.002,"the"],[11.082,11.402,"tendon"],[11.482,11.802,"stretches"],[11.882,11.962,"the"],[12.002,12.842,"quadriceps,"],[12.922,13.162,"stretch"],[13.242,13.642,"receptors"],[13.722,14.362,"fire,"],[14.402,14.442,"and"],[14.522,14.562,"in"],[14.602,14.682,"the"],[14.762,15.002,"cord"],[15.082,15.162,"at"],[15.242,15.402,"L"],[15.482,15.642,"two"],[15.722,15.802,"to"],[15.882,16.042,"L"],[16.122,16.362,"four"],[16.602,16.682,"the"],[16.722,17.082,"sensory"],[17.162,17.562,"neuron"],[17.642,18.202,"synapses"],[18.362,18.522,"straight"],[18.602,18.842,"onto"],[18.922,19.082,"motor"],[19.162,19.562,"neurons"],[19.642,19.682,"to"],[19.722,19.802,"the"],[19.842,20.922,"quadriceps."],[21.002,21.082,"One"],[21.162,21.802,"synapse,"],[21.962,22.122,"about"],[22.202,22.442,"fifty"],[22.522,23.562,"milliseconds."],[23.602,23.642,"The"],[23.842,24.202,"withdrawal"],[24.322,24.682,"reflex"],[24.762,24.922,"is"],[25.002,26.202,"polysynaptic."],[26.255,26.362,"Pain"],[26.442,26.842,"receptors"],[26.922,26.962,"in"],[27.002,27.082,"a"],[27.162,27.642,"fingertip"],[27.722,28.362,"fire;"],[28.402,28.442,"in"],[28.522,28.602,"the"],[28.802,29.002,"cord"],[29.082,29.242,"an"],[29.402,29.962,"interneuron"],[30.042,30.282,"routes"],[30.362,30.442,"the"],[30.602,30.762,"signal"],[30.842,30.922,"to"],[31.002,31.242,"motor"],[31.282,31.642,"neurons"],[31.722,31.802,"for"],[31.842,31.882,"the"],[31.962,32.602,"flexors,"],[32.642,32.682,"the"],[32.762,33.162,"biceps"],[33.242,33.722,"brachii"],[33.762,33.802,"and"],[33.882,34.842,"brachialis,"],[34.882,34.922,"and"],[35.002,35.042,"the"],[35.082,35.402,"hand"],[35.562,35.802,"pulls"],[35.882,36.602,"back."],[36.682,36.762,"A"],[36.922,37.082,"second"],[37.162,37.722,"interneuron"],[37.802,38.282,"inhibits"],[38.362,38.442,"the"],[38.482,38.922,"triceps"],[39.002,39.042,"on"],[39.082,39.162,"the"],[39.242,39.482,"same"],[39.562,39.802,"arm"],[39.882,39.962,"so"],[40.002,40.042,"it"],[40.122,40.202,"does"],[40.282,40.522,"not"],[40.602,40.762,"fight"],[40.842,40.922,"the"],[41.082,41.722,"pull."],[41.882,42.042,"Whenever"],[42.082,42.122,"a"],[42.202,42.522,"flexor"],[42.602,42.682,"is"],[42.762,42.922,"told"],[42.962,43.002,"to"],[43.082,43.722,"contract,"],[43.802,43.882,"its"],[43.962,44.602,"antagonist"],[44.682,44.762,"is"],[44.842,45.002,"told"],[45.082,45.162,"to"],[45.282,46.042,"relax:"],[46.162,46.682,"reciprocal"],[46.762,47.402,"inhibition."],[47.802,48.522,"Polysynaptic"],[48.642,49.082,"reflexes"],[49.162,49.242,"can"],[49.322,49.482,"reach"],[49.562,49.602,"the"],[49.642,49.802,"other"],[49.882,50.122,"side"],[50.202,50.602,"too."],[51.002,51.162,"Step"],[51.242,51.322,"on"],[51.362,51.402,"a"],[51.482,51.802,"tack"],[51.882,51.962,"and"],[52.002,52.042,"the"],[52.122,52.442,"crossed"],[52.562,52.922,"extensor"],[53.002,53.482,"reflex"],[53.562,53.882,"stiffens"],[53.962,54.122,"your"],[54.242,54.362,"other"],[54.442,54.682,"leg"],[54.722,54.762,"as"],[54.842,54.922,"the"],[55.042,55.162,"first"],[55.242,55.322,"one"],[55.482,55.962,"lifts,"],[56.002,56.042,"so"],[56.122,56.202,"you"],[56.242,56.282,"do"],[56.362,56.442,"not"],[56.602,56.922,"fall."],[57.402,57.562,"More"],[57.642,58.202,"synapses"],[58.282,58.362,"take"],[58.402,58.442,"a"],[58.522,58.682,"little"],[58.762,58.922,"more"],[59.122,59.482,"time,"],[59.522,59.562,"but"],[59.642,59.722,"they"],[59.802,59.882,"let"],[60.042,60.202,"one"],[60.282,60.762,"stimulus"],[60.842,61.322,"coordinate"],[61.482,61.802,"several"],[61.882,62.122,"muscles"],[62.202,62.282,"at"],[62.362,62.902,"once."]]},"w9_three":{"audio":"audio/ap-w9-l4-three.mp3","words":[[0.26,0.42,"Set"],[0.5,0.58,"the"],[0.74,0.9,"clock"],[0.94,0.98,"at"],[1.06,1.22,"the"],[1.38,1.54,"moment"],[1.62,1.7,"your"],[1.78,2.02,"finger"],[2.1,2.42,"touches"],[2.46,2.5,"the"],[2.58,3.38,"stove."],[3.42,3.46,"A"],[3.54,3.62,"knee"],[3.7,4.06,"jerk,"],[4.1,4.18,"for"],[4.46,4.9,"comparison,"],[4.98,5.06,"takes"],[5.14,5.46,"about"],[5.54,5.7,"fifty"],[5.78,6.82,"milliseconds."],[6.86,6.9,"The"],[7.1,7.46,"withdrawal"],[7.58,7.94,"reflex"],[8.02,8.18,"takes"],[8.3,8.42,"about"],[8.46,8.5,"a"],[8.58,8.74,"hundred"],[8.9,9.14,"fifty"],[9.3,9.46,"to"],[9.54,9.62,"two"],[9.7,9.86,"hundred"],[9.94,10.74,"fifty."],[10.78,11.38,"Nociceptors"],[11.46,12.02,"fire,"],[12.06,12.1,"the"],[12.18,12.42,"cord"],[12.5,12.58,"at"],[12.66,12.82,"C"],[12.9,13.06,"six"],[13.14,13.3,"to"],[13.42,13.54,"C"],[13.62,13.78,"eight"],[13.86,14.1,"routes"],[14.18,14.26,"the"],[14.42,14.9,"signal,"],[14.94,14.98,"and"],[15.06,15.14,"the"],[15.327,15.7,"biceps"],[15.78,15.94,"pulls"],[16.02,16.1,"your"],[16.18,16.26,"hand"],[16.34,17.06,"away."],[17.34,17.62,"Meanwhile"],[17.7,17.78,"the"],[17.9,18.02,"same"],[18.1,18.5,"signal"],[18.54,18.82,"climbs"],[18.86,18.9,"to"],[18.98,19.06,"the"],[19.38,20.1,"cortex."],[20.18,20.26,"You"],[20.38,20.9,"consciously"],[20.98,21.14,"feel"],[21.22,21.3,"the"],[21.46,21.62,"burn"],[21.66,21.7,"at"],[21.78,22.02,"about"],[22.1,22.26,"three"],[22.34,22.5,"hundred"],[22.66,22.9,"to"],[22.98,23.06,"four"],[23.14,23.3,"hundred"],[23.38,24.34,"milliseconds,"],[24.5,24.66,"after"],[24.74,24.82,"your"],[24.94,25.06,"hand"],[25.18,25.3,"has"],[25.5,25.7,"already"],[25.86,26.18,"moved."],[26.26,26.42,"The"],[26.46,26.9,"pupillary"],[26.98,27.14,"light"],[27.26,27.62,"reflex"],[27.7,27.94,"runs"],[28.02,28.1,"through"],[28.14,28.18,"the"],[28.26,28.82,"brainstem"],[29.06,29.78,"instead:"],[29.86,30.18,"optic"],[30.26,30.42,"nerve"],[30.5,30.98,"in,"],[31.06,31.38,"cranial"],[31.46,31.62,"nerve"],[31.78,32.1,"three"],[32.26,32.9,"out,"],[32.94,32.98,"and"],[33.06,33.3,"light"],[33.38,33.46,"in"],[33.54,33.7,"one"],[33.82,33.94,"eye"],[34.1,34.5,"narrows"],[34.58,34.82,"both"],[34.9,35.38,"pupils."],[35.86,35.94,"A"],[36.02,36.5,"fixed,"],[36.54,36.98,"dilated"],[37.06,37.38,"pupil"],[37.5,37.62,"after"],[37.7,37.74,"a"],[37.78,37.94,"head"],[38.02,38.34,"injury"],[38.42,38.5,"is"],[38.54,38.58,"a"],[38.66,38.82,"red"],[38.9,39.62,"flag."],[39.94,40.42,"Afterward"],[40.58,40.66,"the"],[40.82,40.98,"brain"],[41.06,41.3,"names"],[41.38,41.42,"the"],[41.46,42.1,"cause,"],[42.26,42.42,"files"],[42.46,42.5,"the"],[42.58,43.06,"memory,"],[43.1,43.14,"and"],[43.22,43.3,"can"],[43.42,43.54,"even"],[43.62,44.02,"veto"],[44.06,44.1,"a"],[44.18,44.82,"reflex,"],[44.86,44.9,"as"],[44.98,45.02,"a"],[45.06,45.46,"boxer"],[45.54,45.94,"suppresses"],[45.98,46.02,"a"],[46.1,46.7,"blink."],[46.98,47.22,"Because"],[47.26,47.3,"the"],[47.38,47.7,"wiring"],[47.78,47.86,"is"],[47.94,48.58,"known,"],[48.66,48.98,"doctors"],[49.06,49.3,"read"],[49.38,49.78,"missing"],[49.82,49.86,"or"],[49.94,50.66,"exaggerated"],[50.78,51.3,"reflexes"],[51.38,51.62,"back"],[51.66,51.7,"to"],[51.78,51.82,"the"],[51.86,52.18,"broken"],[52.26,52.704,"part."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the reflex arc and its five components, afferent and efferent, monosynaptic and polysynaptic reflexes, reciprocal inhibition and the crossed extensor reflex, the withdrawal, patellar and pupillary light reflexes, reflex timing, and how the brain modifies reflexes',
+  quick: ['What are the five parts of a reflex arc?', 'Why is the knee jerk monosynaptic?', 'Why does my hand move before I feel the heat?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|paragraph|focus question)/i,
+  guide: 'That part is yours to write, so here are my questions instead. How long does the reflex take, and how long until you feel it? What would the stove be doing to your skin during the gap? Think it through, then write it.',
+  notes: [
+    { k: ['five','components','parts','arc'], w: 1.4, a: 'Sensory receptor, sensory (afferent) neuron, integration center in the CNS, motor (efferent) neuron, effector (a muscle or gland).' },
+    { k: ['afferent','efferent'], w: 1.2, a: 'Afferent (afferre, to carry toward) neurons carry signals toward the CNS; efferent (efferre, to carry away) neurons carry them out to effectors.' },
+    { k: ['monosynaptic','polysynaptic','interneuron'], w: 1.3, a: 'Monosynaptic: one synapse, sensory directly onto motor (the patellar reflex, about 50 ms). Polysynaptic: interneurons in between (the withdrawal reflex), which lets one stimulus coordinate several muscles.' },
+    { k: ['reciprocal','triceps','antagonist','crossed'], a: 'In the withdrawal reflex a second interneuron inhibits the triceps so it does not fight the biceps: reciprocal inhibition. The crossed extensor reflex stiffens the opposite leg when you lift one foot off a tack.' },
+    { k: ['withdrawal','stove','hot','c6','c8'], w: 1.2, a: 'Withdrawal: nociceptors, sensory neuron to the cord at about C6 to C8 for the arm, interneurons, motor neurons to the biceps and brachialis. About 150 to 250 ms; you feel the pain at about 300 to 400 ms.' },
+    { k: ['patellar','knee','l2','l4','spindle'], w: 1.2, a: 'Patellar: a tendon tap stretches the quadriceps, muscle spindles fire, the cord at L2 to L4 sends a motor signal straight back to the quadriceps. A missing knee jerk points to L2 to L4, the femoral nerve or the quadriceps.' },
+    { k: ['pupil','pupillary','light','brainstem','cranial'], a: 'Pupillary light reflex: photoreceptors, optic nerve, brainstem, cranial nerve III, pupillary constrictor. Light in one eye narrows both pupils (consensual response). A fixed, dilated pupil after head injury suggests brainstem damage.' },
+    { k: ['brain','veto','suppress','after'], a: 'The signal also climbs to the cortex, where you become aware 100 to 200 ms later. The brain identifies the cause, files the memory, and can suppress a reflex with descending signals, like a boxer not blinking.' },
+    { k: ['notebook','lab report','submit','words','quiz'], w: 1.2, a: 'The 5.04 Notebook: a photo of your withdrawal circuit (five labels plus an inhibitory branch), a photo of your body-map drawing (fingertip to C6 to C8 to biceps), and a 5 to 7 sentence focus paragraph with timing numbers. 175 to 275 words. Then take the Week 9 Reading Quiz.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+</body>
+</html>

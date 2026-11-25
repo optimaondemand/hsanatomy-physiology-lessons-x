@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Optima Academy Online">
+<title>Cerebrum: Cortex, Lobes, Ventricles, Meninges · Anatomy and Physiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Algebra 1 integrated lesson · core look. Same frame as the 9th ELA pilot (Inter labels, Source Serif text, focus + objectives,
+   numbered tabs, teacher card); math keeps its graph-paper ground and Binary Blue ink. Two accents: blue (working), red (marks). */
+:root{
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#0E1C42; --ink2:#38434F; --muted:#65707C; --line:#DCE3EA; --line2:#C3CED9;
+  --grid:#E2EAF3; --grid2:#C9D8E8;
+  --blue:#1E5AA0; --blue-t:#E8F0FA; --red:#C43D27; --red-t:#FBEBE7;
+  --ok:#2F6B4F; --ok-t:#EAF3EE;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --ui:Inter, "Segoe UI", system-ui, sans-serif;
+  --r:10px; --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+.hero{padding:22px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-bottom:16px;border-bottom:1.5px solid var(--ink)}
+.brand img{width:28px;height:28px}
+.hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding-top:26px}
+@media (max-width:760px){.hero-g{grid-template-columns:1fr;gap:20px}}
+.kicker{font:600 12px/1.3 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font:700 clamp(34px,5.4vw,50px)/1.06 var(--ui);letter-spacing:-.02em;margin:10px 0 14px;max-width:16ch}
+.focusq{border-left:3px solid var(--red);padding:2px 0 2px 16px}
+.label{font:600 11.5px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.focusq p{margin:6px 0 0;font:400 20px/1.45 var(--serif);color:var(--ink)}
+.objs{margin:10px 0 0}
+.objs summary{font:600 13px/1.4 var(--ui);color:var(--ink2);cursor:pointer;list-style:none}
+.objs summary::-webkit-details-marker{display:none}
+.objs summary::before{content:"+ ";color:var(--red)}
+.objs[open] summary::before{content:"– "}
+.objs ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--ink2)}
+.figcard{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;box-shadow:0 1px 2px rgba(14,28,66,.05),0 10px 24px rgba(14,28,66,.06)}
+.figcard svg{display:block;width:100%;height:auto}
+.figcard .cap{font:12.5px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+
+/* ---------- tabs + tools ---------- */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(247,249,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);margin-top:26px}
+.tabs .wrap{display:flex;align-items:center;gap:4px}
+.tabs .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;padding:14px 12px 12px;font:600 14px/1 var(--ui);color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.tab .n{font:500 12px/1 var(--ui);color:var(--line2);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--blue)}
+.tab.on .n{color:var(--blue)}
+.tab.seen .n::after{content:" ✓";color:var(--ok)}
+.tools{display:flex;gap:6px;flex:none;padding-left:8px;border-left:1px solid var(--line)}
+.tool{display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 11px 5px 6px;font:600 12.5px/1 var(--ui);color:var(--ink)}
+.tool:hover,.tool.on{border-color:var(--ink)}
+.tool .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 12px/1 var(--ui)}
+.tool img.ic{object-fit:cover;background:none}
+@media (max-width:700px){.tool .tx{display:none}.tool{padding:5px}}
+.tabs .wrap:has(.tab:nth-child(5)) .tool .tx{display:none}
+.tabs .wrap:has(.tab:nth-child(5)) .tool{padding:5px}
+.tabs .wrap:has(.tab:nth-child(5)) .tab{padding-left:10px;padding-right:10px}
+.panel{display:none;padding:30px 0 60px;animation:rise .35s ease}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+.sec{margin:0 0 38px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-h .num{font:600 13px/1 var(--ui);color:var(--red);letter-spacing:.08em}
+.sec-h h2{font:700 26px/1.2 var(--ui);letter-spacing:-.01em;margin:0}
+.sec h3{font:600 17px/1.3 var(--ui);margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.card + .card{margin-top:14px}
+@media (max-width:600px){.card{padding:16px}}
+.hint{font:13.5px/1.5 var(--ui);color:var(--muted)}
+.prose{max-width:68ch}
+.prose p{margin:0 0 12px}
+
+/* ---------- math typesetting (HTML, no MathJax) ---------- */
+.m{font-family:var(--serif);white-space:nowrap}
+.m i{font-style:italic}
+.m sup{font-size:.68em;line-height:0}
+.mb{display:block;text-align:center;font:400 24px/1.5 var(--serif);margin:14px 0;white-space:normal}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr > span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px}
+.fr > span:last-child{padding:0 3px}
+.hl{background:var(--blue-t);border-radius:3px;padding:0 2px}
+.hl-r{background:var(--red-t);border-radius:3px;padding:0 2px}
+
+/* worked example: steps that open one at a time */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:0 0 16px}
+.ex-h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-h .label{color:var(--red)}
+.ex-q{font:400 21px/1.45 var(--serif)}
+.ex ol.steps{list-style:none;counter-reset:s;margin:12px 0 0;padding:0}
+.ex ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px dashed var(--line);display:none}
+.ex ol.steps li.on{display:block;animation:rise .3s ease}
+.ex ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--blue-t);color:var(--blue);font:700 12px/22px var(--ui);text-align:center}
+.ex .more{margin-top:10px}
+.ex.done .more{display:none}
+
+/* video, tucked */
+details.watch{margin:6px 0 30px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+details.watch summary{list-style:none;cursor:pointer;padding:11px 16px;font:600 13.5px/1.3 var(--ui);color:var(--ink2);display:flex;gap:10px;align-items:center}
+details.watch summary::-webkit-details-marker{display:none}
+details.watch summary::before{content:"▶";font-size:10px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+details.watch[open] summary::before{content:"▾";font-size:13px}
+details.watch summary span{font-weight:400;color:var(--muted)}
+details.watch video{display:block;width:100%;max-height:520px;background:#000;border-radius:0 0 var(--r) var(--r)}
+
+/* word list (reference) */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.word{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:15px/1.5 var(--serif)}
+.word b{display:block;font:600 14.5px/1.3 var(--ui);color:var(--ink);margin-bottom:2px}
+details.gloss{margin:0 0 26px}
+details.gloss > summary{list-style:none;cursor:pointer;font:600 13.5px/1.4 var(--ui);color:var(--ink2);padding:6px 0}
+details.gloss > summary::-webkit-details-marker{display:none}
+details.gloss > summary::before{content:"+ ";color:var(--red)}
+details.gloss[open] > summary::before{content:"– "}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font:600 14px/1 var(--ui)}
+.btn:hover{background:#1F3266}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:7px 13px;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:default}
+.next{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line2)}
+
+/* ---------- typed answers (words) ---------- */
+.field{margin:14px 0 20px}
+.field .q{font:600 16px/1.45 var(--serif);margin:0 0 8px}
+textarea.jbox,input.name{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:12px 14px;font:16.5px/1.6 var(--serif);color:var(--ink);resize:vertical;min-height:100px}
+input.name{min-height:0;font-family:var(--ui);font-size:15px;max-width:360px}
+textarea.jbox:focus,input.name:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.wc{font:12.5px/1 var(--ui);color:var(--muted);margin-top:6px;text-align:right}
+.wc.met{color:var(--ok)}
+
+/* ---------- choices ---------- */
+.mcq,.mq{margin:0 0 24px}
+.stem{font-weight:600;margin:0 0 10px}
+.stem .qn{display:inline-block;min-width:26px;font:700 13px/1 var(--ui);color:var(--blue)}
+.opts{display:grid;gap:8px}
+.opts.row{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opt{text-align:left;border:1px solid var(--line2);background:#fff;border-radius:8px;padding:10px 14px;font:16px/1.45 var(--serif);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.no{background:#F3F4F2;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.opt.yes{border-color:var(--ok);background:var(--ok-t)}
+.mcq.done .opt:not(.yes){opacity:.55;pointer-events:none}
+.fb{font:15px/1.5 var(--serif);margin-top:10px;padding:10px 14px;border-radius:8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-t);border-left:3px solid var(--ok)}
+.fb.try{background:#F3F4F2;border-left:3px solid var(--line2)}
+.shake{animation:shake .32s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ---------- typed math (checked by value, not by spelling) ---------- */
+.mq-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mq-in{flex:1;min-width:200px;max-width:440px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:10px 13px;font:17px/1.3 var(--serif);color:var(--ink)}
+.mq-in:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--blue-t)}
+.mq.done .mq-in{border-color:var(--ok);background:var(--ok-t)}
+.mq-prev{font:15px/1.4 var(--serif);color:var(--muted);min-height:1.4em;margin-top:6px}
+.mq-prev .m{color:var(--ink)}
+.mq-keys{font:12.5px/1.4 var(--ui);color:var(--muted);margin:0 0 14px}
+.mq-keys code{font:600 12.5px/1 var(--ui);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:1px 5px;color:var(--ink)}
+
+/* ---------- place (tap a card, tap a bin) ---------- */
+.place .bank{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;min-height:44px}
+.chip{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:8px 13px;font:16px/1.4 var(--serif);text-align:left;max-width:100%;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chip.sel{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-t);transform:translateY(-2px)}
+.chip.placed{pointer-events:none;cursor:default;border-color:transparent;background:transparent;padding:4px 0;font-size:15px}
+.chip.placed::before{content:"✓ ";color:var(--ok)}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.bin{border:1px dashed var(--line2);border-radius:var(--r);padding:12px 14px;background:#fff;min-height:70px;transition:border-color .15s,background .15s}
+.bin.armed{border-color:var(--ink);background:var(--blue-t);cursor:pointer}
+.bin h4{margin:0 0 4px;font:600 12px/1.3 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tally{font:600 13px/1.4 var(--ui);color:var(--muted);margin-top:8px}
+.tally.done{color:var(--ok)}
+
+/* ---------- problem set + PDF ---------- */
+.pset-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between;margin:0 0 22px}
+.score{display:flex;gap:26px;font:600 12.5px/1.3 var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.score b{display:block;font:700 30px/1.05 var(--ui);color:var(--ink);letter-spacing:-.01em;text-transform:none}
+.pdfbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r)}
+.print-note{display:none;font:13.5px/1.5 var(--ui);color:var(--red)}
+.print-note.show{display:block}
+.checks{list-style:none;padding:0;margin:8px 0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+.checks li .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line2);border-radius:5px;margin-top:3px;display:grid;place-items:center;font:700 13px/1 var(--ui);color:#fff}
+.checks li.on .bx{background:var(--ink);border-color:var(--ink)}
+
+/* ---------- side box (optional work, kept quiet) ---------- */
+.aside{border-left:3px solid var(--blue);background:rgba(255,255,255,.75);padding:12px 16px;border-radius:0 8px 8px 0;font-size:16px;margin:0 0 22px}
+.aside .label{color:var(--blue);display:block;margin-bottom:4px}
+
+/* ---------- drawers: calculator + Ask ---------- */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:60;background:#fff;border-left:1px solid var(--line2);box-shadow:-12px 0 30px rgba(14,28,66,.16);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.dr-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2)}
+.dr-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.dr-head div{flex:1}
+.dr-head small{display:block;font:600 10.5px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dr-head b{display:block;font:600 16px/1.3 var(--ui)}
+.dr-x{background:none;border:0;font-size:26px;line-height:1;padding:0 6px;color:var(--ink2)}
+.calc-frame{flex:1;width:100%;border:0;background:#fff}
+.dr-foot{font:12.5px/1.4 var(--ui);color:var(--muted);padding:8px 14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.dr-foot a{color:var(--blue)}
+.letters{flex:1;overflow:auto;padding:16px 14px;background:var(--paper)}
+.letter{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:10px 13px;margin:0 0 12px;font:15px/1.55 var(--serif)}
+.letter.mine{margin-left:34px;border-color:var(--blue);background:var(--blue-t)}
+.letter.his{margin-right:24px}
+.letter .who{font:600 12px/1.3 var(--ui);color:var(--muted);margin-bottom:3px}
+.letters .empty{font:14px/1.5 var(--ui);color:var(--muted)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.quick button{border:1px solid var(--line2);background:#fff;border-radius:999px;font:13px/1.3 var(--ui);padding:5px 11px;text-align:left}
+.quick button:hover{border-color:var(--ink)}
+.compose{padding:12px 14px 14px;border-top:1px solid var(--line2)}
+.compose textarea{width:100%;min-height:64px;border:1px solid var(--line2);border-radius:8px;padding:9px 11px;font:15px/1.5 var(--serif);resize:vertical}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.compose .pg-note{font:11.5px/1.35 var(--ui);color:var(--muted)}
+@media (max-width:760px){.drawer{top:auto;height:84vh;width:100%;border-left:0;border-top:1px solid var(--line2);transform:translateY(105%)}}
+@media print{.tabs,.drawer{display:none!important}}
+
+footer.foot{border-top:1px solid var(--line2);padding:22px 0 40px;font:12.5px/1.5 var(--ui);color:var(--muted);background:rgba(247,249,245,.9)}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- problem-set bands: each question is its own soft band, alternating, so a long set doesn't read as one wall ---------- */
+.pset .mq,.pset .mcq{padding:14px 16px 16px;margin:0 -10px 8px;border-radius:10px}
+.pset :is(.mq,.mcq):nth-child(even of .mq,.mcq){background:#F2F6FB;box-shadow:inset 0 0 0 1px #E3EBF4}
+.pset :is(.mq,.mcq) .fb.try{background:#fff}
+@media (max-width:600px){.pset .mq,.pset .mcq{padding:12px 12px 14px;margin:0 -6px 8px}}
+
+/* ---------- teacher mini-lesson card (same card as the 9th ELA teacher) ---------- */
+.vo{background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin:0 0 30px;box-shadow:0 1px 2px rgba(14,28,66,.04),0 10px 26px rgba(14,28,66,.06)}
+.vo-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vo-face{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2)}
+.vo-who{flex:1;min-width:0}
+.vo-name{font:600 15px/1.2 var(--ui);color:var(--ink)}
+.vo-title{font:600 20px/1.25 var(--ui);letter-spacing:-.01em;color:var(--ink);margin-top:2px}
+.vo-note{font:11.5px/1.3 var(--ui);color:var(--muted);margin-top:2px}
+.vo-ctl{display:flex;align-items:center;gap:10px;flex:none}
+.vo-time{font:12.5px/1 var(--ui);color:var(--muted)}
+.vo-stage{position:relative;padding:24px 22px 18px;min-height:220px;background-color:#FBFCFE;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.vo-cap{min-height:3.2em;padding:14px 22px 6px;font:400 19px/1.5 var(--serif);color:var(--ink);max-width:62ch}
+.vo-cap.in{animation:capin .45s ease}
+@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks.";color:var(--muted);font:14px/1.5 var(--ui)}
+.vo-foot{display:flex;align-items:center;gap:14px;padding:6px 22px 16px}
+.vo-bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.vo-fill{height:100%;width:0;background:var(--blue);transition:width .25s linear}
+.vo-dots{display:flex;gap:5px}
+.vo-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2);background:#fff;padding:0}
+.vo-dots button.on{background:var(--ink);border-color:var(--ink)}
+.vo-tbtn{border:0;background:none;font:600 12.5px/1 var(--ui);color:var(--muted);padding:4px 0}
+.vo-trans{display:none;padding:0 22px 18px;font:15px/1.6 var(--serif);color:var(--ink2)}
+.vo.show-trans .vo-trans{display:block}
+.vo-trans p{margin:0 0 6px}
+/* step-driven visuals: anything with data-step fades in when he reaches it; .now is the beat he is on */
+.vo-stage [data-step]{opacity:.18;transition:opacity .6s ease,transform .6s ease,color .4s,background .4s,border-color .4s,box-shadow .4s}
+.vo-stage [data-step].on{opacity:1}
+.vo-stage [data-step].now{box-shadow:0 0 0 3px var(--blue-t)}
+.vo-stage svg [data-step].now,.vo-stage .nohalo.now{box-shadow:none}
+.vo.finished .vo-stage [data-step],.vo:not(.started) .vo-stage [data-step].keep{opacity:1}
+.vo.finished .vo-stage [data-step].now{box-shadow:none}
+@media (max-width:600px){ .vo-head{flex-wrap:wrap} .vo-ctl{width:100%;justify-content:space-between} .vo-cap{font-size:17.5px;padding:12px 16px 4px} .vo-stage{padding:18px 12px 14px} .vo-foot{padding:6px 16px 14px} }
+
+/* ===== Anatomy & Physiology · Anatomy Lab layer (loads after core.css + vo.css; replaces kitBio field.css) =====
+   Clinical imaging-suite look: a full-color scientific image (micrograph, MRI, protein structure) heads every page, cool
+   blue-white ground, Space Grotesk display + Source Sans 3 reading text + JetBrains Mono for small instrument readouts.
+   Two accents: deep teal (var(--blue): structure, working, "on") and crimson (var(--red): marks, prompts, "attention").
+   Variable names are kept from kitA1 so core.js / vo.js and the page parts work unchanged. */
+:root{
+  --paper:#F2F5F9; --card:#FFFFFF; --ink:#0B1B33; --ink2:#2E3D55; --muted:#5D6B80; --line:#DCE3EC; --line2:#C4CFDC;
+  --grid:transparent; --grid2:transparent;
+  --blue:#0B6E7F; --blue-t:#E0F1F3; --red:#C22F4A; --red-t:#FBE8EC;
+  --ok:#0B6E7F; --ok-t:#E0F1F3;
+  --disp:"Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --serif:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:14px; --wrap:1120px;
+}
+body{background-image:none;background-color:var(--paper);font-size:17.5px;line-height:1.62}
+
+/* ---------- header: imaging band + overlapping title panel ---------- */
+.brand{border-bottom:0;padding-bottom:12px}
+.band{display:none}
+.hphoto{position:relative;height:clamp(220px,34vw,380px);border-radius:18px;overflow:hidden;background:#0B1B33 center/cover no-repeat;box-shadow:0 18px 40px rgba(11,27,51,.22)}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 70%,rgba(5,14,30,.35))}
+.hphoto .hcred{position:absolute;right:14px;top:10px;z-index:1;font:500 11.5px/1.3 var(--ui);color:rgba(255,255,255,.92);text-shadow:0 1px 2px rgba(0,0,0,.6);max-width:70%;text-align:right}
+.hphoto .hlab{position:absolute;left:16px;top:12px;z-index:1;font:600 11px/1 var(--mono);letter-spacing:.08em;color:rgba(255,255,255,.88);text-transform:uppercase;
+  background:rgba(5,14,30,.45);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:6px 8px}
+.hero-g{position:relative;z-index:2;margin:-90px 18px 0;background:var(--card);border-radius:18px;padding:26px 28px;box-shadow:0 10px 30px rgba(11,27,51,.12);gap:28px}
+@media (max-width:760px){.hero-g{margin:-48px 8px 0;padding:20px 18px}}
+.hero h1{font:700 clamp(34px,5.2vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--ink)}
+.kicker{display:inline-block;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 12px;letter-spacing:.12em}
+.focusq{border-left:4px solid var(--red);border-radius:2px}
+.focusq p{font:500 20px/1.45 var(--serif);color:var(--ink)}
+.objs summary::before{color:var(--red)}
+
+/* figure card inside the title panel */
+.figcard{border-radius:14px;border:1px solid var(--line);box-shadow:none;background:#F7FAFC}
+.figcard .cap{font:italic 14px/1.4 var(--serif);color:var(--muted)}
+.cat{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- tabs ---------- */
+.tabs{background:rgba(242,245,249,.95);border-bottom:1px solid var(--line2)}
+.tab{font-size:14.5px}
+.tab .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1.5px solid var(--line2);color:var(--muted);font:700 11px/1 var(--mono);letter-spacing:0}
+.tab.on{border-bottom:3px solid var(--red)}
+.tab.on .n{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab.seen .n{background:var(--blue-t);border-color:var(--blue);color:var(--blue)}
+.tab.seen .n::after{content:""}
+.tool{border-color:var(--line2)}
+.tool .ic{background:var(--blue)}
+
+/* ---------- sections ---------- */
+.sec-h{align-items:center}
+.sec-h .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font:700 13px/1 var(--mono);letter-spacing:0;flex:none}
+.sec-h h2{font:700 28px/1.15 var(--disp);letter-spacing:-.025em}
+.sec h3{font:700 19px/1.3 var(--disp)}
+.card{border-radius:var(--r);border-color:var(--line);box-shadow:0 1px 2px rgba(11,27,51,.04)}
+.btn{border-radius:999px;background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line2)}
+.opt{border-radius:10px;font-family:var(--serif)}
+.opt:hover{border-color:var(--blue)}
+.fb.good{background:var(--blue-t);border-left-color:var(--blue)}
+.fb.try{background:var(--red-t);border-left-color:var(--red)}
+.chip{border-radius:999px}
+.bin{border-radius:12px}
+.hint{color:var(--muted)}
+
+/* ---------- teacher card: light-box stage with a faint measuring grid ---------- */
+.vo{border-radius:18px;border-color:var(--line);box-shadow:0 12px 30px rgba(11,27,51,.08)}
+.vo-head{background:linear-gradient(90deg,var(--blue-t),#fff 70%)}
+.vo-face{width:60px;height:60px;border:3px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.vo-title{font:700 22px/1.2 var(--disp);letter-spacing:-.015em}
+.vo-stage{background-color:#F6F9FC;background-image:linear-gradient(rgba(11,110,127,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,127,.06) 1px,transparent 1px);background-size:24px 24px}
+.vo-cap{font:500 19px/1.5 var(--serif)}
+.vo-fill{background:var(--red)}
+.vo-dots button.on{background:var(--blue);border-color:var(--blue)}
+.vo:not(.started) .vo-cap::before{content:"Press Play. The picture builds as he talks."}
+
+/* ---------- The Atlas (the reading): one clean atlas sheet ---------- */
+.asec{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 36px 30px 40px;box-shadow:0 18px 34px rgba(11,27,51,.07)}
+.asec::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:5px;border-radius:0 4px 4px 0;background:var(--blue)}
+@media (max-width:700px){.asec{padding:22px 18px 22px 22px}}
+.asec{max-width:900px}
+@media (max-width:600px){.hphoto .hlab{display:none}}
+.asec > .sec-h .num{display:none}
+.asec > .sec-h h2{font:600 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.atlas,.journal{max-width:74ch}
+.atlas h3,.journal h3{font:700 23px/1.25 var(--disp);letter-spacing:-.015em;margin:28px 0 8px;color:var(--ink)}
+.atlas h3:first-child,.journal h3:first-child{margin-top:6px}
+.atlas h4,.journal h4{font:700 17px/1.3 var(--disp);margin:20px 0 6px;color:var(--blue)}
+.atlas p,.journal p{margin:0 0 13px}
+.atlas ul,.journal ul{margin:0 0 14px;padding-left:22px}
+.atlas li,.journal li{margin:0 0 6px}
+.asec .readfor{display:block;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 0 12px;margin:0 0 18px;font:500 16.5px/1.45 var(--serif);color:var(--ink2)}
+.asec .readfor b{display:inline;background:none;color:var(--red);padding:0;margin:0 8px 0 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.readfor{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 16px;font:500 15.5px/1.45 var(--ui);color:var(--ink)}
+.readfor b{font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 9px;flex:none;margin-top:1px}
+/* key rule: outlined readout */
+.rule{font:600 15px/1.45 var(--mono);color:var(--ink);background:none;border:1.5px solid var(--blue);border-radius:10px;padding:10px 14px;margin:16px 0;text-align:center}
+/* margin note: teal-tinted aside */
+.marg{font:500 16px/1.5 var(--serif);color:var(--ink2);background:var(--blue-t);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0}
+/* plates (the reading's own figures, numbered) */
+.atlas{counter-reset:plate}
+.plate{counter-increment:plate;margin:20px 0 22px;background:#F7FAFC;border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+.plate img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:8px;cursor:zoom-in}
+.plate.sm img{max-height:340px}
+.plate figcaption{font:15px/1.5 var(--serif);color:var(--ink2);padding:10px 4px 0}
+.plate figcaption::before{content:"Plate " counter(plate);display:block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.plate .credit{display:block;font:italic 13px/1.4 var(--serif);color:var(--muted);margin-top:4px}
+/* callouts kept from the source (history, careers, research, AI): labeled insets, not colored banners */
+.inset{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:20px 0;background:#FBFCFE}
+.inset .ilabel{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-t);border-radius:999px;padding:6px 10px;margin-bottom:10px}
+.inset h4{margin-top:0}
+.inset p:last-child{margin-bottom:0}
+/* self-check: commit, then compare (single definite answer only) */
+.selfcheck{border:1.5px dashed var(--blue);border-radius:12px;padding:14px 16px;margin:22px 0 4px}
+.selfcheck summary{cursor:pointer;font:600 16px/1.4 var(--ui);color:var(--blue)}
+
+/* note card */
+.fnote{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 16px}
+.fnote .label{color:var(--red)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--ui);background:var(--blue-t);border:0;border-radius:999px;padding:6px 10px;color:var(--blue)}
+.readout{font:600 13px/1.2 var(--mono);color:var(--ink);background:#EEF3F8;border:1px solid var(--line2);border-radius:8px;padding:6px 9px;display:inline-block}
+
+/* lab bench: the content-native interactive's frame */
+.bench{background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:0 10px 26px rgba(11,27,51,.06)}
+.bench .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.bench .bh b{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px/1 var(--ui);border:1.5px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+input[type=range]{accent-color:var(--blue)}
+
+/* Terms and Roots drawer */
+.fg-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.fg{margin:0}
+.fg dt{font:700 17px/1.3 var(--disp);color:var(--blue);margin:16px 0 3px;padding-top:12px;border-top:1px solid var(--line)}
+.fg dt:first-child{border-top:0;margin-top:6px}
+.fg dt small{font:500 12.5px/1 var(--mono);color:var(--red);margin-left:6px}
+.fg dd{margin:0;font:15.5px/1.55 var(--serif);color:var(--ink2)}
+.drawer{border-radius:18px 0 0 18px}
+.foot{background:#E6ECF3}
+
+/* zoomed plate (click a plate image) */
+.zoomer{position:fixed;inset:0;z-index:90;background:rgba(5,14,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.zoomer.on{display:flex}
+.zoomer img{max-width:100%;max-height:100%;background:#fff;border-radius:10px}
+
+/* narration recorder */
+.narrate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.nr-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nr-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:1px}
+.nr-rec.on{background:var(--red);border-color:var(--red)}
+.nr-rec.on .nr-dot{animation:nrp 1s infinite}
+@keyframes nrp{50%{opacity:.25}}
+.nr-dl{font:600 14px/1 var(--ui);color:var(--blue)}
+.nr-note{margin-top:8px;font-size:14px}
+/* short fields */
+input.jfield,select.jfield{font:16px/1.4 var(--serif);border:1.5px solid var(--line2);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}
+input.jfield:focus,select.jfield:focus,textarea.jbox:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+</style>
+<style>
+/* ---- Module 2 shared widgets ---- */
+svg text{font-family:"Source Sans 3","Segoe UI",sans-serif}
+.m2-fig{width:100%;height:auto;display:block}
+.m2-t{font:600 15px/1 "Source Sans 3",sans-serif;fill:#0B1B33}
+.m2-ts{font:600 12.5px/1 "Source Sans 3",sans-serif;fill:#38434F}
+.m2-tw{font:700 15px/1 "Space Grotesk",sans-serif;fill:#fff}
+.m2-stage{width:100%;height:auto;display:block;max-height:340px}
+.idrow{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:8px 10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.idrow:first-of-type{border-top:0}
+.idrow .loc{font:600 15px/1.3 var(--ui);color:var(--ink)}
+.idrow select,.m2-in{font:15px/1.4 var(--serif);border:1px solid var(--line2);border-radius:8px;padding:7px 9px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.idrow .mk{font:700 18px/1 var(--ui);text-align:center}
+.idrow.good .mk{color:var(--ok,#2F6B4F)}.idrow.try .mk{color:var(--red)}
+.idrow .why{grid-column:1/-1}
+.idrow .why textarea{min-height:56px}
+.idhead{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(130px,.8fr) minmax(170px,1.1fr) 28px;gap:10px;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(140px,.9fr) repeat(3,minmax(0,1fr)) 28px}
+.idrow.c4,.idhead.c4{grid-template-columns:minmax(120px,.75fr) repeat(4,minmax(0,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(150px,1fr) minmax(0,1.4fr) 28px}
+.idrow.c5,.idhead.c5{grid-template-columns:minmax(96px,.7fr) repeat(5,minmax(0,1fr)) 28px}
+@media (max-width:640px){.idrow,.idhead,.idrow.c3,.idrow.c4,.idrow.c5{grid-template-columns:1fr 1fr}.idrow.c1{grid-template-columns:1fr 28px}.idrow .loc{grid-column:1/-1}.idhead{display:none}.idrow .mk{grid-column:2;text-align:right}}
+.idbar{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.pickset{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pickset button{font:500 14px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer}
+.pickset button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wmeter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.wmeter .bar{flex:1;min-width:180px;height:10px;border-radius:999px;background:var(--grid);position:relative;overflow:hidden}
+.wmeter .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .3s}
+.wmeter .zone{position:absolute;top:0;bottom:0;background:rgba(47,107,79,.25)}
+.wmeter.ok .fill{background:var(--ok,#2F6B4F)}
+.ttrack{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.ttrack .tt{font:600 12px/1 var(--mono,monospace);letter-spacing:.04em;border:1px dashed var(--line2);border-radius:999px;padding:6px 10px;color:var(--muted)}
+.ttrack .tt.on{border-style:solid;border-color:var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);color:var(--ok,#2F6B4F)}
+.loccard{padding:16px 20px;margin-top:12px}
+.loccard h4{margin:0 0 8px;font:700 17px/1.3 var(--disp,var(--ui));color:var(--ink)}
+.loccard .sub{font:14px/1.5 var(--ui);color:var(--muted);margin:0 0 8px}
+.draw{border-left:4px solid var(--ok,#2F6B4F);background:var(--ok-t,#EAF3EE);border-radius:4px 14px 14px 4px;padding:16px 20px}
+.draw .label{display:block;font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ok,#2F6B4F);margin-bottom:8px}
+.draw p{margin:0 0 10px}
+.extlink{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.extlink .btn{white-space:nowrap}
+.ytbox{aspect-ratio:16/9;background:#0B1B33;border-radius:14px;overflow:hidden}
+.ytbox iframe{width:100%;height:100%;border:0;display:block}
+.yt-go{width:100%;height:100%;border:0;background:radial-gradient(ellipse at 50% 40%,#1E5AA0,#0B1B33 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:600 18px/1.3 var(--ui)}
+.yt-play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#C22F4A;font-size:28px}
+.yt-go small{font:500 12px var(--ui);opacity:.8}
+.order .opool{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.order .opool button{font:500 15px/1.2 var(--ui);border:1px solid var(--line2);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.order .opool button:disabled{opacity:.35;cursor:default}
+.order .ostack{margin:0;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column-reverse;gap:4px;min-height:40px}
+.order .ostack li{font:600 15px/1.3 var(--ui);background:var(--blue-t);border-left:4px solid var(--blue);border-radius:4px 10px 10px 4px;padding:8px 12px;color:var(--ink)}
+.m2-mcqs{display:grid;gap:12px}.m2-mcqs .mcq{padding:16px 18px}.m2-mcqs .mcq .q{margin:0 0 10px}.m2-mcqs .opt{margin:0 8px 8px 0}
+.seg-pane{margin-top:12px}
+table[style*="min-width"]{display:block;max-width:100%;min-width:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.idrow.c3,.idhead.c3{grid-template-columns:minmax(120px,1fr) repeat(3,minmax(110px,1fr)) 28px}
+.idrow.c2,.idhead.c2{grid-template-columns:minmax(140px,1.2fr) repeat(2,minmax(130px,1fr)) 28px}
+.idrow.c1,.idhead.c1{grid-template-columns:minmax(160px,1.4fr) minmax(150px,1fr) 28px}
+@media (max-width:640px){.idrow.c3,.idhead.c3,.idrow.c2,.idhead.c2,.idrow.c1,.idhead.c1{grid-template-columns:1fr 1fr}.idrow .loc{grid-column:1/-1}}
+.m3-fig{padding:10px}.m3-fig svg{width:100%;height:auto;display:block}
+.m3-mk circle{fill:#fff;stroke:#C22F4A;stroke-width:2.5}.m3-mk text{font:700 15px var(--ui);fill:#C22F4A;text-anchor:middle}
+.ofb{margin:8px 0}.order .btn.oreset{margin-top:4px}
+
+/* ---------- Canvas frame kit ---------- */
+.framed .drawer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh);transition:top .15s ease}
+.framed .zoomer{position:absolute;top:var(--vis-top,0px);bottom:auto;height:var(--vis-h,100vh)}
+.framed .tabs{position:relative;transition:transform .12s ease}
+.framed .tabs.floating{box-shadow:0 6px 16px rgba(14,28,66,.12)}
+.tabs-anchor{height:0}
+.savenote{max-width:var(--wrap,1000px);margin:18px auto 0;padding:0 24px;font:500 13.5px/1.5 var(--ui);color:var(--muted)}
+.savenote b{color:var(--ink)}
+.savenote::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok,#2F6B4F);margin-right:8px;vertical-align:1px}
+/* 3D model cards, restyled to sit in the Atlas like a plate */
+main .oao-3d{margin:18px 0 22px;border:1px solid var(--line2);border-top:4px solid var(--blue);border-radius:14px;box-shadow:0 10px 24px rgba(11,27,51,.07);font-family:var(--ui)}
+main .oao-3d .oao-3d-head{background:var(--blue-t);border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-head .k{color:var(--blue);font:600 10.5px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+main .oao-3d .oao-3d-head .t{font:700 19px/1.25 var(--disp,var(--ui));color:var(--ink);letter-spacing:-.01em}
+main .oao-3d .oao-3d-tabs{background:#F7FAFC;border-bottom:1px solid var(--line)}
+main .oao-3d .oao-3d-tabs button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d .oao-3d-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+main .oao-3d .oao-3d-play{background:var(--blue);font-family:var(--ui)}
+main .oao-3d .oao-3d-bar button,main .oao-3d .oao-3d-planes button{font-family:var(--ui);border-color:var(--line2);color:var(--ink)}
+main .oao-3d p{margin:0}
+main .oao-3d .oao-3d-planes{top:10px;bottom:auto}
+main .oao-3d .oao-3d-stage model-viewer{--progress-bar-color:var(--blue)}
+/* pronunciation buttons */
+.say{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 2px 0 4px;padding:0;border:1px solid var(--line2);border-radius:50%;background:#fff;color:var(--blue);cursor:pointer;vertical-align:-3px;line-height:1;transition:background .2s,color .2s}
+.say svg{width:12px;height:12px;display:block}
+.say:hover,.say:focus-visible{background:var(--blue-t);border-color:var(--blue)}
+.say.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media print{.say{display:none}}
+</style>
+
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="">Optima Academy Online</div>
+  <div class="hphoto" role="img" aria-label="An engraving of the left side of the brain showing the folded gyri and sulci of the cerebral cortex" style="background-image:url(img/lesson-5-06-hero.jpg);background-position:center"><span class="hlab">The convolutions of the cerebrum · Gall and Spurzheim, 1810</span><span class="hcred">Image: Franz Joseph Gall and Johann Spurzheim, public domain, via Wellcome Collection and Wikimedia Commons</span></div>
+  <div class="hero-g">
+    <div>
+      <div class="kicker">Anatomy &amp; Physiology &middot; Lesson 5.06 &middot; Module 5: Nervous System</div>
+      <h1>Cerebrum: Cortex, Lobes, Ventricles, Meninges</h1>
+      <div class="focusq"><div class="label">Focus</div><p>Why does damage to one side of the brain produce symptoms on the opposite side of the body?</p></div>
+      <details class="objs"><summary>Objectives</summary><ul>
+        <li>I will be able to identify the four lobes of the cerebrum and locate at least one specialized cortex area in each.</li><li>I will be able to explain contralateral organization and predict which side of the body is affected by a stroke in a given hemisphere.</li><li>I will be able to name the four ventricles and three jobs of CSF.</li><li>I will be able to list the three meningeal layers in order from outside to inside.</li>
+      </ul></details>
+    </div>
+    <figure class="figcard" style="margin:0">
+      <div class="cat">Lobes and landmarks</div>
+      <svg class="m2-fig" viewBox="0 0 330 290" role="img" aria-label="A side view of the cerebrum with cortex areas"><rect x="6" y="6" width="318" height="278" rx="14" fill="#F4F7FB"/><g transform="translate(20,20) scale(1)"><path d="M20 120 C0 60 60 0 150 4 C240 6 290 60 286 120 C284 150 260 170 220 172 L80 172 C44 170 26 150 20 120Z" fill="#F2C7CF" stroke="#8A3B47" stroke-width="3"/><path d="M60 60 Q90 70 80 100" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M120 30 Q130 70 110 110" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M190 30 Q170 70 200 110" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M240 70 Q220 90 250 130" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M60 140 Q120 120 180 146" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M200 170 C210 210 270 214 284 176 C286 160 260 150 230 158Z" fill="#E7B36A" stroke="#A07800" stroke-width="3"/><path d="M212 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M226 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M240 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M254 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M160 160 L196 160 L200 250 L176 250Z" fill="#9CC9E8" stroke="#1E5AA0" stroke-width="3"/></g><g transform="translate(20,20)"><path d="M150 6 Q142 70 152 130" stroke="#1E2B3A" stroke-width="4" fill="none"/><path d="M40 128 Q120 104 210 150" stroke="#1E2B3A" stroke-width="4" fill="none"/></g><g transform="translate(20,20)"><path d="M30 100 C24 60 60 24 110 14" stroke="#E07A9A" stroke-width="12" fill="none" opacity=".45"/></g><g transform="translate(20,20)"><path d="M137 10 Q129 70 139 128" stroke="#C22F4A" stroke-width="11" fill="none" opacity=".55"/></g><g transform="translate(20,20)"><path d="M163 8 Q155 70 165 132" stroke="#2E6FB7" stroke-width="11" fill="none" opacity=".55"/></g><g transform="translate(20,20)"><circle cx="66" cy="110" r="12" fill="#C22F4A" opacity=".85"/></g><g transform="translate(20,20)"><ellipse cx="130" cy="138" rx="22" ry="8" fill="#F28C28" opacity=".8"/></g><g transform="translate(20,20)"><circle cx="222" cy="148" r="11" fill="#B85C00" opacity=".85"/></g><g transform="translate(20,20)"><path d="M262 82 C280 100 280 136 268 154" stroke="#2F8F6B" stroke-width="12" fill="none" opacity=".7"/></g><g transform="translate(20,20)"><text x="70" y="60" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">frontal</text><text x="214" y="52" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">parietal</text><text x="84" y="160" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">temporal</text><text x="236" y="124" class="m2-ts" text-anchor="middle" style="fill:#1E2B3A">occipital</text></g></svg>
+      <div class="cap">Motor cortex in front of the central sulcus, somatosensory behind it; Broca&rsquo;s area low in the frontal lobe, Wernicke&rsquo;s at the back of the temporal lobe, vision at the back.</div>
+    </figure>
+  </div>
+</div></header>
+
+<div class="savenote" role="note"><b>Your work saves in this browser, on this device only.</b> Another computer, a private window or clearing the browser will not have it. When you finish, use <b>Download my work (PDF)</b> on the Lab Report tab: the PDF is your record and what you hand in.</div>
+
+<nav class="tabs" aria-label="Lesson sections"><div class="wrap"><div class="tl" role="tablist">
+  <button class="tab" data-tab="lobes" role="tab"><span class="n">01</span>Cortex and Lobes</button>
+  <button class="tab" data-tab="cross" role="tab"><span class="n">02</span>Crossing and Ventricles</button>
+  <button class="tab" data-tab="meninges" role="tab"><span class="n">03</span>The Meninges</button>
+  <button class="tab" data-tab="report" role="tab"><span class="n">04</span>Lab Report</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- ═════════ 01 CORTEX AND LOBES ═════════ -->
+<section class="panel" id="tab-lobes" role="tabpanel">
+  <div class="vo" data-clip="w10_lobes">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">A Folded Napkin</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="A side view of the cerebrum with its sulci, four lobes and specialized cortex areas"><g data-step="0" class="nohalo"><g transform="translate(20,20) scale(1)"><path d="M20 120 C0 60 60 0 150 4 C240 6 290 60 286 120 C284 150 260 170 220 172 L80 172 C44 170 26 150 20 120Z" fill="#F2C7CF" stroke="#8A3B47" stroke-width="3"/><path d="M60 60 Q90 70 80 100" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M120 30 Q130 70 110 110" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M190 30 Q170 70 200 110" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M240 70 Q220 90 250 130" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M60 140 Q120 120 180 146" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M200 170 C210 210 270 214 284 176 C286 160 260 150 230 158Z" fill="#E7B36A" stroke="#A07800" stroke-width="3"/><path d="M212 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M226 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M240 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M254 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M160 160 L196 160 L200 250 L176 250Z" fill="#9CC9E8" stroke="#1E5AA0" stroke-width="3"/></g><text x="340" y="36" class="m2-t">cortex: 2&ndash;4 mm thick, the size of a napkin</text><text x="340" y="54" class="m2-ts">folded into gyri and sulci to fit the skull</text></g><g data-step="1" class="nohalo"><g transform="translate(20,20)"><path d="M150 6 Q142 70 152 130" stroke="#1E2B3A" stroke-width="4" fill="none"/><path d="M40 128 Q120 104 210 150" stroke="#1E2B3A" stroke-width="4" fill="none"/></g><text x="340" y="86" class="m2-ts" style="fill:#1E2B3A">landmarks: the central sulcus (across the top)</text><text x="340" y="102" class="m2-ts" style="fill:#1E2B3A">and the lateral sulcus (along the side)</text></g><g data-step="2" class="nohalo"><g transform="translate(20,20)"><path d="M30 100 C24 60 60 24 110 14" stroke="#E07A9A" stroke-width="12" fill="none" opacity=".45"/></g><g transform="translate(20,20)"><path d="M137 10 Q129 70 139 128" stroke="#C22F4A" stroke-width="11" fill="none" opacity=".55"/></g><g transform="translate(20,20)"><circle cx="66" cy="110" r="12" fill="#C22F4A" opacity=".85"/></g><text x="340" y="134" class="m2-ts" style="fill:#C22F4A">frontal: primary motor cortex, prefrontal</text><text x="340" y="150" class="m2-ts" style="fill:#C22F4A">cortex (planning), Broca&rsquo;s area (speech)</text></g><g data-step="3" class="nohalo"><g transform="translate(20,20)"><path d="M163 8 Q155 70 165 132" stroke="#2E6FB7" stroke-width="11" fill="none" opacity=".55"/></g><text x="340" y="182" class="m2-ts" style="fill:#2E6FB7">parietal: primary somatosensory cortex</text><text x="340" y="198" class="m2-ts" style="fill:#2E6FB7">(touch, temperature, body position)</text></g><g data-step="4" class="nohalo"><g transform="translate(20,20)"><ellipse cx="130" cy="138" rx="22" ry="8" fill="#F28C28" opacity=".8"/></g><g transform="translate(20,20)"><circle cx="222" cy="148" r="11" fill="#B85C00" opacity=".85"/></g><text x="340" y="230" class="m2-ts" style="fill:#B85C00">temporal: primary auditory cortex,</text><text x="340" y="246" class="m2-ts" style="fill:#B85C00">Wernicke&rsquo;s area (understanding language)</text></g><g data-step="5" class="nohalo"><g transform="translate(20,20)"><path d="M262 82 C280 100 280 136 268 154" stroke="#2F8F6B" stroke-width="12" fill="none" opacity=".7"/></g><text x="340" y="278" class="m2-ts" style="fill:#2F6B4F">occipital: primary visual cortex</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The cerebral cortex is a sheet of gray matter two to four millimeters thick. Unfolded, it would cover about a large dinner napkin. Its gyri and sulci are how all that surface fits in your skull; beneath it, white matter is the wiring.", "Two grooves are your landmarks: the central sulcus running across the top, and the lateral sulcus running along each side.", "In front of the central sulcus is the frontal lobe. Its primary motor cortex issues every voluntary movement; ahead of it, the prefrontal cortex plans and judges. Phineas Gage survived an iron rod through it and was no longer Gage. Broca's area, for speech, sits low in it.", "Behind the central sulcus is the parietal lobe. Its primary somatosensory cortex receives touch, pressure, temperature and body position, and the lobe handles spatial awareness.", "Below the lateral sulcus is the temporal lobe, with the primary auditory cortex and, at its back, Wernicke's area for understanding language. Damage there gives fluent but meaningless speech, the opposite of Broca's aphasia.", "At the back is the occipital lobe and the primary visual cortex. Every photon you have ever consciously seen has had its electrical echo arrive here."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>The cortex, the two sulci, the four lobes and their specialized areas.</span></div>
+    <p class="marg"><b>Courage.</b> Most of who you are &mdash; planner, decider, rememberer, speaker &mdash; lives in a sheet a few millimeters thick. Three layers of tough connective tissue and a cushion of fluid keep that sheet safe.</p>
+    <article class="atlas">
+      <div class="oao-3d" data-key="5.06-reading" data-title="Ventricles and meninges" data-models='[{"label": "Ventricles", "src": "../../assets/models/ventricles.glb", "orbit": "-60deg 70deg auto"}, {"label": "Meninges", "src": "../../assets/models/meninges.glb", "orbit": "-60deg 70deg auto"}]'></div>
+      <h3>A folded sheet of cells, the size of a dinner napkin</h3>
+      <p>Last lesson you met the four major divisions of the brain. This lesson we zoom in on the part you usually mean when you say “the brain” — the <b>cerebrum</b><button type="button" class="say" data-say="cerebrum" aria-label="Hear it: cerebrum" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — and look at four things in detail: its outer cortex, the four lobes it is divided into, the ventricles inside, and the meninges that wrap it.</p>
+      <p>The <b>cerebral cortex</b><button type="button" class="say" data-say="cerebral-cortex" aria-label="Hear it: cerebral cortex" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> is a sheet of gray matter only two to four millimeters thick — about the thickness of a credit card — but if you could peel it off your brain and unfold it flat, it would cover something like 2,500 square centimeters, roughly the area of a large dinner napkin. The folds (<i>gyri</i>) and grooves (<i>sulci</i>) you see on the surface of any brain image are how all that surface area fits inside a roughly basketball-sized skull. Two big sulci you should learn by name: the <i>central sulcus</i>, which runs across the top of the brain, and the <i>lateral sulcus</i> (Sylvian fissure), which runs along each side. They are the main anatomical landmarks for dividing the cortex into lobes.</p>
+      <p>Underneath the cortex is <b>white matter</b><button type="button" class="say" data-say="white-matter" aria-label="Hear it: white matter" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> — bundles of myelinated axons connecting one part of the cortex to another and connecting the cortex to subcortical structures. The cortex is where the cell bodies live and the work happens; the white matter is the wiring.</p>
+      <figure class="plate"><img data-img="f50502" alt="A whole brain showing its folded surface, with a cutaway diagram labeling a gyrus and a sulcus and the gray and white matter beneath them"><figcaption>Figure — Gyri and sulci are the brain's ridges and grooves, increasing cortical surface area within the skull.</figcaption></figure>
+      <h3>The four lobes of the cerebrum</h3>
+      <p>Each cerebral hemisphere is divided into four lobes. The boundaries are partly defined by the major sulci above, and partly by convention. The lobes are named after the cranial bones they sit under (which you drew in Module 3).</p>
+      <p>▶ <b>Frontal lobe.</b><button type="button" class="say" data-say="frontal-lobe" aria-label="Hear it: frontal lobe." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> At the front, under the frontal bone. Contains the <i>primary motor cortex</i> (just in front of the central sulcus) — the source of every voluntary movement command. Just in front of that lies the prefrontal cortex, the seat of planning, judgment, decision-making, working memory, and what we tend to call personality. (The famous railway worker Phineas Gage — impaled by a tamping iron through his frontal lobe in 1848 — survived but became, by his coworkers’ account, “no longer Gage”: erratic, impulsive, unable to plan. The frontal lobe is where the person you are mostly lives.) Broca’s area — speech production, almost always on the left — sits at the bottom of the frontal lobe.</p>
+      <p>▶ <b>Parietal lobe.</b><button type="button" class="say" data-say="parietal-lobe" aria-label="Hear it: parietal lobe." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Behind the frontal lobe, under the parietal bone. Contains the <i>primary somatosensory cortex</i> (just behind the central sulcus) — the destination of all touch, pressure, temperature, and proprioceptive signals from the body. Also handles spatial awareness and numerical reasoning.</p>
+      <p>▶ <b>Temporal lobe.</b><button type="button" class="say" data-say="temporal-lobe" aria-label="Hear it: temporal lobe." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> Under the temporal bone, on each side of the head, below the lateral sulcus. Contains the <i>primary auditory cortex</i> (hearing) and the structures critical for memory formation (the hippocampus is buried inside the medial temporal lobe). <i>Wernicke’s area</i>, the part of the cortex responsible for language comprehension, sits at the back of the temporal lobe (almost always on the left). Damage to Wernicke’s area produces fluent but meaningless speech — the opposite of Broca’s aphasia.</p>
+      <p>▶ <b>Occipital lobe.</b><button type="button" class="say" data-say="occipital-lobe" aria-label="Hear it: occipital lobe." title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> At the very back, under the occipital bone. Contains the <i>primary visual cortex</i>. Every photon you have ever consciously seen has had its electrical echo arrive here.</p>
+      <figure class="plate"><img data-img="f50501" alt="The frontal, parietal, temporal, and occipital lobes of the cerebrum, shown alongside the cerebellum, pons, and medulla oblongata"><figcaption>Figure — The four lobes of the cerebrum: frontal, parietal, temporal, and occipital, shown with the central sulcus, lateral sulcus, cerebellum, pons, and medulla oblongata.</figcaption></figure>
+      <figure class="plate"><img data-img="f50117" alt="The cerebral cortex&#x27;s functional areas: primary motor cortex, primary somatosensory cortex, primary auditory cortex, primary visual cortex, Broca&#x27;s area, and Wernicke&#x27;s area"><figcaption>Figure — Functional areas of the cerebral cortex: primary motor cortex, primary somatosensory cortex, primary auditory cortex, primary visual cortex, Broca's area, and Wernicke's area.</figcaption></figure>
+      <p>There is also a fifth, less-talked-about region called the <i>insula</i>, hidden inside the lateral sulcus — involved in taste, interoception (your sense of the inside of your body), and certain emotional responses. You should be aware it exists but do not need to memorize its functions for this course.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Which Lobe?</h2></div>
+    <p class="hint">Tap a cortex area, then its lobe.</p>
+    <div class="place card" id="w10lb">
+      <div class="bank">
+        <button class="chip" data-k="a" data-ans="fr" data-fb="Frontal lobe, in front of the central sulcus." data-miss="Front or behind the central sulcus?">primary motor cortex</button>
+        <button class="chip" data-k="b" data-ans="fr" data-fb="Frontal lobe, low on the left." data-miss="Speech production.">Broca&rsquo;s area</button>
+        <button class="chip" data-k="c" data-ans="fr" data-fb="Frontal lobe: the prefrontal cortex." data-miss="Phineas Gage.">planning and judgment</button>
+        <button class="chip" data-k="d" data-ans="pa" data-fb="Parietal lobe, behind the central sulcus." data-miss="Front or behind the central sulcus?">primary somatosensory cortex</button>
+        <button class="chip" data-k="e" data-ans="te" data-fb="Temporal lobe." data-miss="Below the lateral sulcus.">primary auditory cortex</button>
+        <button class="chip" data-k="f" data-ans="te" data-fb="Temporal lobe, at the back." data-miss="Language comprehension.">Wernicke&rsquo;s area</button>
+        <button class="chip" data-k="g" data-ans="oc" data-fb="Occipital lobe." data-miss="At the very back.">primary visual cortex</button>
+      </div>
+      <div class="bins"><div class="bin" data-bin="fr"><h4>Frontal</h4><div class="drop"></div></div><div class="bin" data-bin="pa"><h4>Parietal</h4><div class="drop"></div></div><div class="bin" data-bin="te"><h4>Temporal</h4><div class="drop"></div></div><div class="bin" data-bin="oc"><h4>Occipital</h4><div class="drop"></div></div></div>
+      <div class="place-fb"></div><div class="tally"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w10m4"><p class="q">A patient speaks fluently, but the words make no sense, and she does not understand questions. Which area is damaged?</p>
+        <button class="opt" data-ok="1" data-fb="Right: comprehension fails, fluency remains.">Wernicke&rsquo;s area</button>
+        <button class="opt" data-fb="Broca&rsquo;s aphasia is halting speech with comprehension intact.">Broca&rsquo;s area</button>
+        <button class="opt" data-fb="That would affect sight.">Primary visual cortex</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Labeled Cortex Sketch</h2></div>
+    <p class="hint">About 10 minutes. This sketch is the first part of your Notebook.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In your notebook, draw a lateral-view cerebrum. Color and label the four lobes, central sulcus, lateral sulcus, primary motor cortex, primary somatosensory cortex, primary visual cortex, Broca&rsquo;s area and Wernicke&rsquo;s area. Here, describe where the motor and somatosensory strips sit relative to each other.</p><textarea class="jbox" id="w10t2" data-label="Cortex sketch: the two strips" data-min="12"></textarea></div></div>
+  </div>
+
+  <div class="next"><span></span><button class="btn" data-go="cross" type="button">Next: Crossing and Ventricles &rarr;</button></div>
+</section>
+
+<!-- ═════════ 02 CROSSING AND VENTRICLES ═════════ -->
+<section class="panel" id="tab-cross" role="tabpanel">
+  <div class="vo" data-clip="w10_vent">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">The Crossing and the Cavities</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="Left: motor fibers cross so each hemisphere controls the opposite side. Right: the four ventricles inside the brain."><g data-step="0" class="nohalo"><ellipse cx="110" cy="70" rx="46" ry="52" fill="#F2C7CF" stroke="#8A3B47" stroke-width="3"/><ellipse cx="210" cy="70" rx="46" ry="52" fill="#F2C7CF" stroke="#8A3B47" stroke-width="3"/><text x="110" y="76" class="m2-t" text-anchor="middle" style="fill:#8A3B47">L</text><text x="210" y="76" class="m2-t" text-anchor="middle" style="fill:#8A3B47">R</text><text x="160" y="14" class="m2-ts" text-anchor="middle" style="fill:#56606B">the two hemispheres, from above</text></g><g data-step="1" class="nohalo"><rect x="146" y="140" width="28" height="44" rx="8" fill="#9CC9E8" stroke="#1E5AA0" stroke-width="2"/><path d="M110 100 C110 130 150 150 160 162 C170 174 220 200 232 224" stroke="#C22F4A" stroke-width="4" fill="none"/><circle cx="232" cy="240" r="18" fill="#F7EFE6" stroke="#8A6A4A" stroke-width="2"/><text x="232" y="274" class="m2-ts" text-anchor="middle" style="fill:#56606B">right side</text><text x="184" y="164" class="m2-ts" style="fill:#1E5AA0">crossing in the medulla</text></g><g data-step="2" class="nohalo"><path d="M210 100 C210 130 170 150 160 162 C150 174 100 200 88 224" stroke="#2E6FB7" stroke-width="4" fill="none"/><circle cx="88" cy="240" r="18" fill="#F7EFE6" stroke="#8A6A4A" stroke-width="2"/><text x="88" y="274" class="m2-ts" text-anchor="middle" style="fill:#56606B">left side</text><text x="20" y="174" class="m2-t" style="fill:#1E2B3A">contralateral</text></g><g data-step="3" class="nohalo"><g transform="translate(360,40) scale(1)"><path d="M20 120 C0 60 60 0 150 4 C240 6 290 60 286 120 C284 150 260 170 220 172 L80 172 C44 170 26 150 20 120Z" fill="#F2C7CF" stroke="#8A3B47" stroke-width="3"/><path d="M60 60 Q90 70 80 100" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M120 30 Q130 70 110 110" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M190 30 Q170 70 200 110" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M240 70 Q220 90 250 130" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M60 140 Q120 120 180 146" fill="none" stroke="#C98A96" stroke-width="2"/><path d="M200 170 C210 210 270 214 284 176 C286 160 260 150 230 158Z" fill="#E7B36A" stroke="#A07800" stroke-width="3"/><path d="M212 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M226 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M240 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M254 172 q6 18 18 22" stroke="#A07800" fill="none" stroke-width="1.5"/><path d="M160 160 L196 160 L200 250 L176 250Z" fill="#9CC9E8" stroke="#1E5AA0" stroke-width="3"/></g><g transform="translate(360,40)"><path d="M90 92 C104 58 196 56 214 94 C222 120 196 128 176 116 C160 104 120 100 104 112 Z" fill="#7FB8E6" stroke="#1E5AA0" stroke-width="2"/></g><text x="500" y="22" class="m2-ts" text-anchor="middle" style="fill:#1E5AA0">two lateral ventricles, one per hemisphere</text></g><g data-step="4" class="nohalo"><g transform="translate(360,40)"><rect x="156" y="112" width="10" height="38" rx="4" fill="#7FB8E6" stroke="#1E5AA0" stroke-width="2"/><path d="M162 150 L184 170" stroke="#1E5AA0" stroke-width="3"/><path d="M178 166 L200 162 L192 190 Z" fill="#7FB8E6" stroke="#1E5AA0" stroke-width="2"/><path d="M188 190 V250" stroke="#1E5AA0" stroke-width="3"/></g><g transform="translate(360,40)"><text x="150" y="136" class="m2-ts" text-anchor="end" style="fill:#1E5AA0">3rd</text><text x="150" y="190" class="m2-ts" text-anchor="end" style="fill:#1E5AA0">4th</text></g></g><g data-step="5" class="nohalo"><text x="340" y="298" class="m2-ts" text-anchor="middle" style="fill:#2F6B4F">CSF floats the brain (1,400 g feels like 50), cushions it and clears waste</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["The cerebral cortex is organized contralaterally: each hemisphere controls, and senses from, the opposite side of the body.", "Most descending motor fibers cross at the bottom of the medulla, in the pyramidal decussation. So the left motor cortex moves the right side of the body.", "And the right hemisphere runs the left side. A stroke in the left motor cortex weakens the right side; in the left somatosensory cortex, the right side goes numb. Almost every emergency neurological exam depends on this rule.", "Inside the brain are four connected, fluid-filled cavities, the ventricles. The two largest are the lateral ventricles, one in each hemisphere.", "Below them, the third ventricle sits in the diencephalon, and a narrow aqueduct leads to the fourth ventricle between the brainstem and cerebellum, which continues as the central canal of the spinal cord.", "The choroid plexus in the ventricles makes cerebrospinal fluid. It floats the brain, so fourteen hundred grams weighs about fifty; it cushions blows; and it clears waste, mostly during sleep. Block its flow and pressure builds: hydrocephalus."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Contralateral organization, the four ventricles and the jobs of CSF.</span></div>
+    <article class="atlas">
+      <h3>Contralateral organization — why a left-hemisphere stroke weakens the right side</h3>
+      <p>The cerebral cortex is organized <b>contralaterally</b><button type="button" class="say" data-say="contralateral" aria-label="Hear it: contralaterally" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>: the left hemisphere controls (and senses from) the right side of the body, and vice versa. Most descending motor fibers cross to the opposite side at the bottom of the medulla, in a structure called the <i>pyramidal decussation</i>. Most ascending sensory fibers cross at the same level or higher. The result: when a stroke kills tissue in the left motor cortex, the right side of the body becomes weak. When it hits the left somatosensory cortex, the right side loses feeling. Almost every emergency-room neurological assessment depends on this rule.</p>
+      <figure class="plate"><img data-img="f50118" alt="The right hemisphere connected to the left hand and the left hemisphere connected to the right hand, illustrating contralateral organization"><figcaption>Figure — Contralateral organization: the right hemisphere controls the left hand, and the left hemisphere controls the right hand.</figcaption></figure>
+      <h3>The ventricular system</h3>
+      <p>Buried inside the brain is a connected network of four fluid-filled cavities called <b>ventricles</b><button type="button" class="say" data-say="ventricle" aria-label="Hear it: ventricles" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. From top to bottom they are: the two large <i>lateral ventricles</i> (one in each hemisphere), the <i>third ventricle</i> in the diencephalon, and the <i>fourth ventricle</i> between the brainstem and cerebellum. The fourth ventricle is continuous with the central canal of the spinal cord below it.</p>
+      <figure class="plate"><img data-img="f50119" alt="The ventricular system: lateral ventricles, interventricular foramen, third ventricle, cerebral aqueduct, fourth ventricle, and central canal, in lateral and anterior views"><figcaption>Figure — The ventricular system: the two lateral ventricles, the third ventricle, the cerebral aqueduct, the fourth ventricle, and the central canal.</figcaption></figure>
+      <p>The ventricles produce and contain <b>cerebrospinal fluid (CSF)</b><button type="button" class="say" data-say="cerebrospinal-fluid" aria-label="Hear it: cerebrospinal fluid (csf)" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>, a clear liquid that bathes both the inside (ventricles) and the outside (the space between meningeal layers) of the brain and spinal cord. CSF is produced by a tissue called the <i>choroid plexus</i>, lining the walls of the ventricles. It does three jobs:</p>
+      <p>▶ <b>Mechanical buffer.</b> The brain floats in CSF; its effective weight inside the skull drops from about 1,400 grams to about 50. Without that buffering, the brain’s own weight would crush its lower regions.</p>
+      <p>▶ <b>Shock absorber.</b> CSF cushions the brain against the inner wall of the skull when the head is jolted. Even so, severe concussions still happen; the buffer is real but not perfect.</p>
+      <p>▶ <b>Chemical environment and waste clearance.</b> CSF helps regulate ion concentrations around neurons and carries metabolic waste away from brain tissue, with this clearance largely happening during sleep.</p>
+      <p>When CSF flow is blocked — for example by a tumor or a developmental abnormality — pressure builds inside the ventricles. The condition is called <i>hydrocephalus</i>. In infants, whose skull bones are not yet fused, this causes the head to enlarge visibly. In adults, it causes severe headaches, vision problems, and altered consciousness. Surgical drainage, often via an implanted shunt, is the standard treatment.</p>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Check Yourself</h2></div>
+    <div class="m2-mcqs">
+      <div class="mcq card" data-qid="w10m5"><p class="q">A stroke damages the right primary motor cortex. Which side of the body is weak?</p>
+        <button class="opt" data-ok="1" data-fb="Right: the fibers cross in the medulla.">The left side</button>
+        <button class="opt" data-fb="Motor fibers cross; the effect is contralateral.">The right side</button>
+        <button class="opt" data-fb="Each hemisphere runs mainly the opposite side.">Both sides equally</button></div>
+      <div class="mcq card" data-qid="w10m6"><p class="q">Which is NOT a job of CSF?</p>
+        <button class="opt" data-ok="1" data-fb="Right: blood does that.">Carrying oxygen to neurons</button>
+        <button class="opt" data-fb="That is a CSF job.">Floating the brain so it does not crush itself</button>
+        <button class="opt" data-fb="That is a CSF job, mostly during sleep.">Clearing metabolic waste</button></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Follow the Fluid</h2></div>
+    <div class="order card" id="w10vf" data-order="l,t,aq,f,cc" data-done="Lateral ventricles, third ventricle, aqueduct, fourth ventricle, central canal." style="padding:16px 20px"><p class="q" style="margin-top:0">Tap the spaces in the order CSF flows through them.</p><div class="opool"><button data-k="cc">central canal of the spinal cord</button><button data-k="aq">cerebral aqueduct</button><button data-k="f">fourth ventricle</button><button data-k="l">lateral ventricles</button><button data-k="t">third ventricle</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="lobes" type="button">&larr; Cortex and Lobes</button><button class="btn" data-go="meninges" type="button">Next: The Meninges &rarr;</button></div>
+</section>
+
+<!-- ═════════ 03 THE MENINGES ═════════ -->
+<section class="panel" id="tab-meninges" role="tabpanel">
+  <div class="vo" data-clip="w10_men">
+    <div class="vo-head">
+      <img class="vo-face" alt="">
+      <div class="vo-who"><div class="vo-name"></div><div class="vo-title">Three Mothers</div><div class="vo-note">An AI-generated character and voice.</div></div>
+      <div class="vo-ctl"><span class="vo-time"></span><button class="btn small vo-play" type="button">&#9654; Play</button></div>
+    </div>
+    <div class="vo-stage"><svg class="m2-stage" viewBox="0 0 680 300" aria-label="The meninges in cross-section: skull, dura mater, arachnoid mater, subarachnoid space with CSF, pia mater, cortex"><g data-step="0" class="nohalo"><rect x="20" y="20" width="340" height="50" fill="#EFE3C8" stroke="#A08A5A" stroke-width="2"/><circle cx="50" cy="36" r="4" fill="#D9C79F"/><circle cx="90" cy="52" r="4" fill="#D9C79F"/><circle cx="140" cy="40" r="4" fill="#D9C79F"/><circle cx="200" cy="54" r="4" fill="#D9C79F"/><circle cx="250" cy="38" r="4" fill="#D9C79F"/><circle cx="310" cy="50" r="4" fill="#D9C79F"/><path d="M20 156 L20 165 L30 166 L40 164 L50 160 L60 154 L70 149 L80 146 L90 146 L100 149 L110 154 L120 160 L130 164 L140 166 L150 165 L160 161 L170 156 L180 151 L190 147 L200 146 L210 148 L220 153 L230 158 L240 163 L250 166 L260 166 L270 163 L280 158 L290 152 L300 148 L310 146 L320 147 L330 151 L340 156 L350 162 L360 165 L360 240 L20 240 Z" fill="#C9B8A8" stroke="#8A6A4A" stroke-width="2"/><text x="30" y="230" class="m2-ts" style="fill:#56606B">cortex</text><text x="30" y="62" class="m2-ts" style="fill:#8A6A4A">skull</text><text x="390" y="36" class="m2-t">three layers between bone and brain</text></g><g data-step="1" class="nohalo"><rect x="20" y="70" width="340" height="22" fill="#C98A6A" stroke="#8A4A2A" stroke-width="2"/><text x="390" y="82" class="m2-ts" style="fill:#8A4A2A">dura mater, &ldquo;tough mother&rdquo;:</text><text x="390" y="98" class="m2-ts" style="fill:#8A4A2A">thick, leathery, fused to the skull</text></g><g data-step="2" class="nohalo"><rect x="20" y="92" width="340" height="6" fill="#E9D4F2" stroke="#8E5BC0" stroke-width="1.5"/><rect x="20" y="98" width="340" height="52" fill="#DCEFFB"/><path d="M34 98 L42 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M60 98 L68 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M86 98 L94 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M112 98 L120 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M138 98 L146 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M164 98 L172 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M190 98 L198 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M216 98 L224 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M242 98 L250 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M268 98 L276 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M294 98 L302 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M320 98 L328 146" stroke="#B9A0D6" stroke-width="1.5"/><path d="M346 98 L354 146" stroke="#B9A0D6" stroke-width="1.5"/><circle cx="150" cy="122" r="10" fill="#C22F4A" opacity=".8"/><circle cx="270" cy="118" r="8" fill="#C22F4A" opacity=".8"/><text x="390" y="130" class="m2-ts" style="fill:#6B4AA0">arachnoid mater, &ldquo;spider-like&rdquo;; beneath it the</text><text x="390" y="146" class="m2-ts" style="fill:#1E5AA0">subarachnoid space: CSF and blood vessels</text></g><g data-step="3" class="nohalo"><path d="M20 152 L20 161 L30 162 L40 160 L50 156 L60 150 L70 145 L80 142 L90 142 L100 145 L110 150 L120 156 L130 160 L140 162 L150 161 L160 157 L170 152 L180 147 L190 143 L200 142 L210 144 L220 149 L230 154 L240 159 L250 162 L260 162 L270 159 L280 154 L290 148 L300 144 L310 142 L320 143 L330 147 L340 152 L350 158 L360 161" stroke="#2F8F6B" stroke-width="3" fill="none"/><text x="390" y="178" class="m2-ts" style="fill:#2F6B4F">pia mater, &ldquo;tender mother&rdquo;:</text><text x="390" y="194" class="m2-ts" style="fill:#2F6B4F">clings to every gyrus and sulcus</text></g><g data-step="4" class="nohalo"><text x="390" y="226" class="m2-ts" style="fill:#8A3B47">meningitis: the coverings inflamed</text><text x="390" y="242" class="m2-ts" style="fill:#8A3B47">encephalitis: the brain itself</text></g><g data-step="5" class="nohalo"><text x="20" y="280" class="m2-ts" style="fill:#6B4AA0">brain-computer interfaces read the motor cortex through implanted electrodes</text></g></svg></div>
+    <div class="vo-cap" aria-live="polite"></div>
+    <div class="vo-foot"><div class="vo-bar"><div class="vo-fill"></div></div><div class="vo-dots"></div><button class="vo-tbtn" type="button" aria-expanded="false">Transcript</button></div>
+    <div class="vo-trans"></div>
+    <script type="application/json" class="vo-script">{"steps": ["Between your skull and your cortex lie three layers of connective tissue, the meninges. They wrap the spinal cord too. Learn them from outside in.", "First, the dura mater, Latin for tough mother: thick, fibrous and leathery, fused to the inside of the skull. A neurosurgeon has to cut through it to reach the brain.", "Second, the arachnoid mater, spider-like, a web draped over the brain. Beneath it is the subarachnoid space, filled with CSF and carrying the brain's major blood vessels. A subarachnoid hemorrhage is one of the most dangerous strokes.", "Third, the pia mater, tender mother, a delicate membrane stuck to the brain's surface, following every gyrus and sulcus.", "Inflammation of the coverings is meningitis, diagnosed by a lumbar puncture that samples CSF from between lumbar vertebrae. Inflammation of the brain itself is encephalitis, adding confusion and seizures.", "Because the motor cortex fires in predictable patterns, brain-computer interfaces can read them through implanted electrodes, letting paralyzed patients move a cursor or a robotic arm. It is real research, still early."]}</script>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>The Atlas</h2></div>
+    <div class="readfor"><b>Read for</b><span>Dura, arachnoid and pia mater; meningitis; brain-computer interfaces.</span></div>
+    <article class="atlas">
+      <h3>The meninges — three layers of protection</h3>
+      <p>Surrounding the entire CNS — both the brain and the spinal cord — are three layers of connective tissue called the <b>meninges</b><button type="button" class="say" data-say="meninges" aria-label="Hear it: meninges" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>. Memorize them from outside to inside.</p>
+      <p>▶ <b>Dura mater</b><button type="button" class="say" data-say="dura-mater" aria-label="Hear it: dura mater" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (“tough mother” in Latin). The outermost layer. Thick, fibrous, leathery — the layer a neurosurgeon has to cut through to reach the brain itself. The dura is fused to the inside of the cranium and dips into some of the deeper fissures of the brain.</p>
+      <p>▶ <b>Arachnoid mater</b><button type="button" class="say" data-say="arachnoid-mater" aria-label="Hear it: arachnoid mater" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (“spider-like”). The middle layer. A web-like sheet that drapes over the surface of the brain. Beneath it is the <i>subarachnoid space</i>, which is filled with CSF and contains the major blood vessels of the brain. A “subarachnoid hemorrhage” is bleeding into this space — one of the most dangerous kinds of stroke.</p>
+      <p>▶ <b>Pia mater</b><button type="button" class="say" data-say="pia-mater" aria-label="Hear it: pia mater" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> (“tender mother”). The innermost layer. A thin, delicate membrane that adheres directly to the surface of the brain and spinal cord, following every gyrus and sulcus.</p>
+      <figure class="plate"><img data-img="f50120" alt="The three meningeal layers over the cerebral cortex: dura mater, arachnoid mater with the subarachnoid space, and pia mater, with the superior sagittal sinus"><figcaption>Figure — The meninges, from outside to inside: dura mater, arachnoid mater (with the CSF-filled subarachnoid space beneath it), and pia mater, adhering directly to the cerebral cortex.</figcaption></figure>
+      <p>Infections of the meninges are called <i>meningitis</i>. Bacterial meningitis is a true medical emergency; viral meningitis is usually less severe. Diagnosis often involves a <i>lumbar puncture</i> — a needle inserted between two lumbar vertebrae (you drew these in Module 3) to draw a small sample of CSF for analysis. A related but distinct condition is <i>encephalitis</i> — inflammation of the brain tissue itself rather than its coverings, usually from a viral infection. Because encephalitis affects the cortex directly, it produces symptoms meningitis alone does not: confusion, personality change, and seizures, on top of the fever and headache the two conditions share.</p>
+      <div class="inset"><div class="ilabel">CONTEMPORARY RESEARCH — BRAIN-COMPUTER INTERFACES</div><p>Because the primary motor cortex produces movement commands as predictable electrical patterns, researchers have been exploring whether those patterns can be read directly from the cortex and used to control external devices. This is the basic idea behind a <b>brain-computer interface (BCI)</b>: implant or wear a sensor that detects motor-cortex activity, translate the patterns into control signals, and drive a computer cursor, a robotic arm, or a paralyzed person’s own muscles.</p><p>Both academic groups (BrainGate, Stanford, the University of California, and others) and private companies (including Neuralink) have published demonstrations of patients with severe paralysis using implanted electrode arrays to type, move a cursor, or operate a robotic arm by thought. Recent research suggests that a few hundred well-placed electrodes can carry enough information to allow communication at meaningful rates. The technology is still early, however: the implants are surgically invasive, the long-term reliability of electrodes inside brain tissue is an active question, and the FDA-approved use cases are limited to specific medical conditions. Scientists are currently exploring less invasive sensors and the question of how stable the brain’s motor representations are over time. This is real research with real patients, not yet a consumer technology — but it is one of the most active areas in clinical neuroscience right now.</p></div>
+      <details class="selfcheck"><summary>Self-check: name the four lobes and one specialized cortex area in each, and the three meningeal layers in order, before clicking</summary><p><b>Lobes:</b> Frontal (primary motor cortex; Broca’s area). Parietal (primary somatosensory cortex). Temporal (primary auditory cortex; Wernicke’s area; hippocampus). Occipital (primary visual cortex). <b>Meninges, outside to inside:</b> Dura mater → arachnoid mater → pia mater. CSF sits in the subarachnoid space, between arachnoid and pia.</p><p>If you got all this, you are ready for the spinal cord.</p></details>
+    </article>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Outside to Inside</h2></div>
+    <div class="order card" id="w10mn" data-order="s,d,a,sa,p,c" data-done="Skull, dura, arachnoid, subarachnoid space, pia, cortex." style="padding:16px 20px"><p class="q" style="margin-top:0">Starting at the skull, tap the layers in order going in.</p><div class="opool"><button data-k="sa">subarachnoid space (CSF)</button><button data-k="d">dura mater</button><button data-k="a">arachnoid mater</button><button data-k="p">pia mater</button><button data-k="c">cerebral cortex</button><button data-k="s">skull bone</button></div><ol class="ostack"></ol><p class="ofb"></p><button class="btn small ghost oreset" type="button">Start over</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Meninges Cross-Section</h2></div>
+    <p class="hint">About 8 minutes. This sketch is the second part of your Notebook.</p>
+    <div class="card"><div class="field" style="margin:0"><p class="q">In your notebook, draw a small cross-section showing skull bone, dura mater, arachnoid mater, the subarachnoid space (with CSF) and pia mater on the surface of the cortex. Here, say which layer a lumbar-puncture needle must pass to reach CSF, and why.</p><textarea class="jbox" id="w10t3" data-label="Meninges sketch: where the CSF is" data-min="12"></textarea></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>Your Drawing Session</h2></div>
+    <p class="hint">About 35 minutes. This is the brain page for your Assembled Figure.</p>
+    <div class="draw"><span class="label">Drawing session &middot; The brain page: lobes, ventricles, meninges</span>
+      <p><b>Add the four lobes.</b> On the cerebrum of your Lesson 5.05 brain page, divide the surface into frontal, parietal, temporal and occipital lobes using the central and lateral sulci. Use four shades. Label each lobe and one specialized area in each (primary motor, primary somatosensory, primary auditory, primary visual). Mark Broca&rsquo;s area.</p><p><b>Add the ventricles</b> with dashed outlines: the two lateral ventricles, the third ventricle in the diencephalon, and the fourth ventricle between brainstem and cerebellum, continuous with the central canal.</p><p><b>Add the meninges</b> in a small magnified inset at the edge of the page: dura mater (thick), arachnoid mater (web-like), pia mater (thin, following every fold). Label each. Keep the page.</p>
+      <ul class="checks"><li data-ck="w10d21">Four lobes shaded, each with a specialized area; Broca&rsquo;s area marked.</li><li data-ck="w10d22">Four ventricles in dashed outline.</li><li data-ck="w10d23">Meninges inset with three labels.</li></ul>
+      <p class="hint" style="margin-bottom:0">Keep every Nervous System Map page and detail page: they become your Module 5 Assembled Figure. <a href="project-figure.html" target="_blank">Open the figure studio</a></p>
+    </div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="cross" type="button">&larr; Crossing and Ventricles</button><button class="btn" data-go="report" type="button">Next: Lab Report &rarr;</button></div>
+</section>
+
+<!-- ═════════ 04 LAB REPORT ═════════ -->
+<section class="panel" id="tab-report" role="tabpanel">
+  <div class="pset">
+    <div class="pset-top"><label class="field" style="margin:0"><span class="label">Your name</span><br><input class="name" type="text" autocomplete="name" placeholder="First and last name"></label></div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">A</span><h2>Cortex, Meninges and a Stroke</h2></div>
+    <div class="card">
+        <div class="focusq"><div class="label">Focus question</div><p>Why does damage to one side of the brain produce symptoms on the opposite side of the body?</p></div>
+        <p>You have mapped the cortex and wrapped it in its meninges. This Notebook asks for both diagrams and one piece of clinical reasoning. Two diagrams plus 150&ndash;225 words.</p>
+      </div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">B</span><h2>Your Labeled Cortex Diagram</h2></div>
+    <p class="hint">Photo or scan to Canvas, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit your lateral-view sketch labeling the four lobes, central sulcus, lateral sulcus, primary motor cortex, primary somatosensory cortex, primary visual cortex, Broca&rsquo;s area and Wernicke&rsquo;s area. Here, list your labels.</p><textarea class="jbox" id="w10rX" data-label="Cortex diagram: nine labels" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">C</span><h2>Your Meninges Cross-Section</h2></div>
+    <p class="hint">Photo or scan to Canvas, with this PDF.</p>
+    <div class="card loccard"><p class="sub">Submit your cross-section labeling skull bone, dura mater, arachnoid mater, subarachnoid space (with CSF) and pia mater, with the cortex underneath. Here, list the layers in order.</p><textarea class="jbox" id="w10rM" data-label="Meninges cross-section: five labels" data-min="8"></textarea></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">D</span><h2>The Clinical Reasoning</h2></div>
+    <div class="card loccard"><p class="sub">A 58-year-old patient can no longer move her right arm or right leg, and has trouble producing speech, though she understands it. In 5&ndash;7 sentences, predict (a) which hemisphere is damaged, (b) which lobe and which named cortex areas, and (c) why the symptoms are on the right side of her body.</p><div class="ttrack" data-field="w10rR"><span class="tt" data-t="left">left hemisphere</span><span class="tt" data-t="frontal">frontal</span><span class="tt" data-t="motor">motor cortex</span><span class="tt" data-t="broca">Broca</span><span class="tt" data-t="decussat|cross">crossing</span></div><textarea class="jbox" id="w10rR" data-label="A patient in the ER" data-min="50"></textarea></div><div class="card" style="padding:12px 18px"><div class="wmeter" data-fields="w10rX,w10rM,w10rR" data-min="150" data-max="225"></div></div>
+  </div>
+    <div class="sec">
+    <div class="sec-h"><span class="num">E</span><h2>Before You Download</h2></div>
+    <ul class="checks"><li data-ck="w10c21">My cortex diagram places all nine labels correctly.</li><li data-ck="w10c22">My meninges cross-section labels five layers in the right order.</li><li data-ck="w10c23">My reasoning names the left hemisphere, frontal lobe, primary motor cortex and Broca&rsquo;s area.</li><li data-ck="w10c24">I explain the crossing of motor fibers in the medulla (the pyramidal decussation).</li></ul>
+  </div>
+    <div class="pdfbar"><button class="btn" data-pdf type="button">Download my work (PDF)</button><span class="hint">Every answer on this page. Upload the PDF to the 5.06 Notebook assignment.</span><span class="print-note"></span></div>
+  </div>
+
+  <div class="next"><button class="btn ghost" data-go="meninges" type="button">&larr; The Meninges</button><span></span></div>
+</section>
+
+</main>
+
+<template id="fg"><dl class="fg">
+  <dt>cerebral cortex<button type="button" class="say" data-say="cerebral-cortex" aria-label="Hear it: cerebral cortex" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>cortex</i> &ldquo;bark&rdquo;</small></dt><dd>The outer sheet of gray matter, 2&ndash;4 mm thick.</dd>
+  <dt>central sulcus<button type="button" class="say" data-say="central-sulcus" aria-label="Hear it: central sulcus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The groove across the top that separates the frontal and parietal lobes.</dd>
+  <dt>lateral sulcus<button type="button" class="say" data-say="lateral-sulcus" aria-label="Hear it: lateral sulcus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The groove along each side above the temporal lobe; the Sylvian fissure.</dd>
+  <dt>frontal lobe<button type="button" class="say" data-say="frontal-lobe" aria-label="Hear it: frontal lobe" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The front lobe: movement, planning, judgment, speech production.</dd>
+  <dt>parietal lobe<button type="button" class="say" data-say="parietal-lobe" aria-label="Hear it: parietal lobe" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The lobe behind the central sulcus: body sensation and spatial awareness.</dd>
+  <dt>temporal lobe<button type="button" class="say" data-say="temporal-lobe" aria-label="Hear it: temporal lobe" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The side lobe below the lateral sulcus: hearing, language comprehension, memory.</dd>
+  <dt>occipital lobe<button type="button" class="say" data-say="occipital-lobe" aria-label="Hear it: occipital lobe" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The back lobe: vision.</dd>
+  <dt>primary motor cortex<button type="button" class="say" data-say="primary-motor-cortex" aria-label="Hear it: primary motor cortex" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The strip in front of the central sulcus that issues voluntary movement commands.</dd>
+  <dt>primary somatosensory cortex<button type="button" class="say" data-say="primary-somatosensory-cortex" aria-label="Hear it: primary somatosensory cortex" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The strip behind the central sulcus that receives body sensation.</dd>
+  <dt>prefrontal cortex<button type="button" class="say" data-say="prefrontal-cortex" aria-label="Hear it: prefrontal cortex" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The front of the frontal lobe: planning, judgment, working memory.</dd>
+  <dt>Wernicke&rsquo;s area<button type="button" class="say" data-say="wernicke" aria-label="Hear it: wernicke’s area" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The area at the back of the left temporal lobe for language comprehension.</dd>
+  <dt>insula<button type="button" class="say" data-say="insula" aria-label="Hear it: insula" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;island&rdquo;</small></dt><dd>Cortex hidden inside the lateral sulcus.</dd>
+  <dt>contralateral<button type="button" class="say" data-say="contralateral" aria-label="Hear it: contralateral" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;opposite side&rdquo;</small></dt><dd>Serving the opposite side of the body.</dd>
+  <dt>pyramidal decussation<button type="button" class="say" data-say="pyramidal-decussation" aria-label="Hear it: pyramidal decussation" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin <i>decussare</i> &ldquo;to cross like an X&rdquo;</small></dt><dd>Where motor fibers cross at the bottom of the medulla.</dd>
+  <dt>ventricle<button type="button" class="say" data-say="ventricle" aria-label="Hear it: ventricle" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;little belly&rdquo;</small></dt><dd>One of four fluid-filled cavities in the brain.</dd>
+  <dt>cerebrospinal fluid<button type="button" class="say" data-say="cerebrospinal-fluid" aria-label="Hear it: cerebrospinal fluid" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The clear fluid in the ventricles and subarachnoid space.</dd>
+  <dt>choroid plexus<button type="button" class="say" data-say="choroid-plexus" aria-label="Hear it: choroid plexus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The tissue lining the ventricles that produces CSF.</dd>
+  <dt>hydrocephalus<button type="button" class="say" data-say="hydrocephalus" aria-label="Hear it: hydrocephalus" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek &ldquo;water head&rdquo;</small></dt><dd>A buildup of CSF pressure when its flow is blocked.</dd>
+  <dt>meninges<button type="button" class="say" data-say="meninges" aria-label="Hear it: meninges" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek &ldquo;membranes&rdquo;</small></dt><dd>The three connective-tissue layers around the brain and spinal cord.</dd>
+  <dt>dura mater<button type="button" class="say" data-say="dura-mater" aria-label="Hear it: dura mater" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;tough mother&rdquo;</small></dt><dd>The thick outer meningeal layer.</dd>
+  <dt>arachnoid mater<button type="button" class="say" data-say="arachnoid-mater" aria-label="Hear it: arachnoid mater" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Greek &ldquo;spider-like&rdquo;</small></dt><dd>The web-like middle meningeal layer.</dd>
+  <dt>subarachnoid space<button type="button" class="say" data-say="subarachnoid-space" aria-label="Hear it: subarachnoid space" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>The CSF-filled space beneath the arachnoid, carrying major blood vessels.</dd>
+  <dt>pia mater<button type="button" class="say" data-say="pia-mater" aria-label="Hear it: pia mater" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button> <small>Latin &ldquo;tender mother&rdquo;</small></dt><dd>The thin inner layer clinging to the brain&rsquo;s surface.</dd>
+  <dt>meningitis<button type="button" class="say" data-say="meningitis" aria-label="Hear it: meningitis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Inflammation of the meninges.</dd>
+  <dt>encephalitis<button type="button" class="say" data-say="encephalitis" aria-label="Hear it: encephalitis" title="Hear it"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.3 3.7a6 6 0 0 1 0 8.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></dt><dd>Inflammation of the brain tissue itself.</dd>
+  <dt>lumbar puncture</dt><dd>A needle between lumbar vertebrae to sample CSF.</dd>
+</dl></template>
+
+<footer class="foot"><div class="wrap"><span>Optima Academy Online · Anatomy and Physiology</span><span>Academic Design and Curriculum (AcDC) · © Optima Academy Online</span></div></footer>
+<script type="application/json" id="page-config">{"key": "ap-w10-l2", "title": "Cerebrum: Cortex, Lobes, Ventricles, Meninges", "course": "Anatomy and Physiology", "teacher": {"full": "Professor Leonard", "short": "Professor Leonard"}, "footer": "Anatomy and Physiology · Week 10 · The Cerebrum", "pdfTag": "AP_W10_L2"}</script>
+<script type="application/json" id="page-assets">{"img":{"usb":{"src":"img/leonard.jpg","alt":""},"f50502":{"src":"img/m5-5.05-02-gyri-sulci-increase-surface-area.webp","alt":""},"f50501":{"src":"img/m5-5.05-01-table-provides-functional-overvi.webp","alt":""},"f50117":{"src":"img/m5-5.01-17-functional-areas-cerebral-cortex.webp","alt":""},"f50118":{"src":"img/m5-5.01-18-contralateral-organization.webp","alt":""},"f50119":{"src":"img/m5-5.01-19-ventricular-system-highlight-lat.webp","alt":""},"f50120":{"src":"img/m5-5.01-20-csf-flowchart-just-arrows-indica.webp","alt":""}},"w10_lobes":{"audio":"audio/ap-w10-l2-lobes.mp3","words":[[0,0.08,"The"],[0.16,0.56,"cerebral"],[0.64,1.28,"cortex"],[1.36,1.44,"is"],[1.52,1.6,"a"],[1.68,1.76,"sheet"],[1.84,1.92,"of"],[2,2.16,"gray"],[2.24,2.56,"matter"],[2.72,2.88,"two"],[2.96,3.04,"to"],[3.12,3.28,"four"],[3.36,3.84,"millimeters"],[3.92,4.48,"thick."],[4.72,5.44,"Unfolded,"],[5.48,5.52,"it"],[5.6,5.68,"would"],[5.8,5.92,"cover"],[6.04,6.16,"about"],[6.2,6.24,"a"],[6.32,6.56,"large"],[6.72,6.88,"dinner"],[6.96,7.44,"napkin."],[7.92,8.08,"Its"],[8.16,8.64,"gyri"],[8.72,8.8,"and"],[8.96,9.44,"sulci"],[9.52,9.6,"are"],[9.72,9.84,"how"],[9.92,10,"all"],[10.12,10.24,"that"],[10.32,10.72,"surface"],[10.84,10.96,"fits"],[11,11.04,"in"],[11.12,11.2,"your"],[11.28,12,"skull;"],[12.04,12.32,"beneath"],[12.4,12.72,"it,"],[12.8,12.96,"white"],[13.04,13.28,"matter"],[13.36,13.44,"is"],[13.52,13.56,"the"],[13.6,14.4,"wiring."],[14.72,14.88,"Two"],[14.96,15.36,"grooves"],[15.44,15.52,"are"],[15.6,15.68,"your"],[15.8,16.56,"landmarks:"],[16.6,16.64,"the"],[16.72,16.96,"central"],[17.12,17.52,"sulcus"],[17.64,17.76,"running"],[17.84,18.08,"across"],[18.16,18.24,"the"],[18.32,18.88,"top,"],[18.92,18.96,"and"],[19.04,19.08,"the"],[19.12,19.52,"lateral"],[19.6,20,"sulcus"],[20.12,20.24,"running"],[20.32,20.56,"along"],[20.64,20.8,"each"],[20.88,21.28,"side."],[21.76,21.84,"In"],[21.92,22.08,"front"],[22.12,22.16,"of"],[22.2,22.24,"the"],[22.32,22.56,"central"],[22.64,23.04,"sulcus"],[23.12,23.2,"is"],[23.28,23.36,"the"],[23.44,23.76,"frontal"],[23.84,24.16,"lobe."],[24.48,24.64,"Its"],[24.72,25.04,"primary"],[25.12,25.36,"motor"],[25.44,25.92,"cortex"],[26,26.32,"issues"],[26.4,26.72,"every"],[26.8,27.28,"voluntary"],[27.36,28.16,"movement;"],[28.24,28.4,"ahead"],[28.48,28.56,"of"],[28.64,28.96,"it,"],[29.04,29.12,"the"],[29.2,29.64,"prefrontal"],[29.68,30.16,"cortex"],[30.32,30.72,"plans"],[30.8,30.88,"and"],[30.96,31.44,"judges."],[31.92,32.24,"Phineas"],[32.32,32.72,"Gage"],[32.84,33.2,"survived"],[33.28,33.36,"an"],[33.44,33.68,"iron"],[33.76,34.08,"rod"],[34.2,34.32,"through"],[34.4,34.48,"it"],[34.64,34.72,"and"],[34.8,34.88,"was"],[34.92,34.96,"no"],[35.04,35.36,"longer"],[35.44,35.92,"Gage."],[36.4,36.8,"Broca's"],[36.88,37.28,"area,"],[37.32,37.36,"for"],[37.44,38,"speech,"],[38.08,38.24,"sits"],[38.32,38.48,"low"],[38.52,38.56,"in"],[38.64,38.8,"it."],[39.36,39.6,"Behind"],[39.64,39.68,"the"],[39.76,40,"central"],[40.08,40.48,"sulcus"],[40.56,40.64,"is"],[40.72,40.76,"the"],[40.8,41.28,"parietal"],[41.36,41.88,"lobe."],[42.08,42.24,"Its"],[42.44,42.64,"primary"],[42.72,43.52,"somatosensory"],[43.6,44.08,"cortex"],[44.2,44.48,"receives"],[44.56,45.12,"touch,"],[45.32,45.68,"pressure,"],[45.92,46.16,"temperature"],[46.24,46.32,"and"],[46.4,46.64,"body"],[46.84,47.44,"position,"],[47.52,47.6,"and"],[47.64,47.68,"the"],[47.76,48,"lobe"],[48.08,48.4,"handles"],[48.48,48.8,"spatial"],[48.92,49.84,"awareness."],[49.96,50.08,"Below"],[50.12,50.16,"the"],[50.24,50.56,"lateral"],[50.72,51.12,"sulcus"],[51.16,51.2,"is"],[51.28,51.36,"the"],[51.44,51.76,"temporal"],[51.84,52.32,"lobe,"],[52.4,52.48,"with"],[52.52,52.56,"the"],[52.64,53.04,"primary"],[53.12,53.52,"auditory"],[53.6,54.16,"cortex"],[54.4,54.72,"and,"],[54.76,54.8,"at"],[54.92,55.04,"its"],[55.16,55.6,"back,"],[55.68,56.16,"Wernicke's"],[56.32,56.48,"area"],[56.56,56.64,"for"],[56.72,57.2,"understanding"],[57.28,58.24,"language."],[58.4,58.56,"Damage"],[58.64,58.96,"there"],[59.04,59.2,"gives"],[59.28,59.68,"fluent"],[59.76,59.84,"but"],[60,60.48,"meaningless"],[60.68,61.2,"speech,"],[61.28,61.36,"the"],[61.44,61.76,"opposite"],[61.8,61.84,"of"],[61.92,62.24,"Broca's"],[62.36,63.28,"aphasia."],[63.36,63.44,"At"],[63.48,63.52,"the"],[63.6,63.84,"back"],[63.92,64,"is"],[64.04,64.08,"the"],[64.16,64.64,"occipital"],[64.72,65.04,"lobe"],[65.12,65.2,"and"],[65.24,65.28,"the"],[65.36,65.76,"primary"],[65.84,66.16,"visual"],[66.24,67.2,"cortex."],[67.28,67.6,"Every"],[67.68,68.16,"photon"],[68.2,68.24,"you"],[68.36,68.48,"have"],[68.56,68.8,"ever"],[68.88,69.44,"consciously"],[69.52,69.84,"seen"],[69.92,70,"has"],[70.08,70.16,"had"],[70.2,70.24,"its"],[70.32,70.8,"electrical"],[70.88,71.2,"echo"],[71.28,71.68,"arrive"],[71.76,72.279,"here."]]},"w10_vent":{"audio":"audio/ap-w10-l2-vent.mp3","words":[[0.321,0.361,"The"],[0.401,0.761,"cerebral"],[0.841,1.321,"cortex"],[1.401,1.481,"is"],[1.561,2.041,"organized"],[2.121,3.401,"contralaterally:"],[3.521,3.641,"each"],[3.721,4.121,"hemisphere"],[4.201,4.921,"controls,"],[5.001,5.081,"and"],[5.161,5.561,"senses"],[5.681,6.041,"from,"],[6.121,6.201,"the"],[6.281,6.601,"opposite"],[6.681,6.841,"side"],[6.921,6.961,"of"],[7.001,7.041,"the"],[7.081,7.881,"body."],[8.041,8.201,"Most"],[8.441,8.681,"descending"],[8.761,9.001,"motor"],[9.081,9.481,"fibers"],[9.641,9.801,"cross"],[9.841,9.881,"at"],[9.961,10.121,"the"],[10.241,10.361,"bottom"],[10.441,10.481,"of"],[10.521,10.561,"the"],[10.601,11.241,"medulla,"],[11.281,11.321,"in"],[11.361,11.401,"the"],[11.481,11.881,"pyramidal"],[11.961,13.081,"decussation."],[13.121,13.161,"So"],[13.241,13.321,"the"],[13.401,13.561,"left"],[13.641,13.801,"motor"],[13.881,14.441,"cortex"],[14.521,14.681,"moves"],[14.761,14.841,"the"],[14.921,15.081,"right"],[15.161,15.321,"side"],[15.361,15.401,"of"],[15.441,15.481,"the"],[15.561,16.121,"body."],[16.161,16.201,"And"],[16.241,16.281,"the"],[16.361,16.521,"right"],[16.601,17.001,"hemisphere"],[17.081,17.241,"runs"],[17.321,17.401,"the"],[17.521,17.641,"left"],[17.721,18.201,"side."],[18.441,18.521,"A"],[18.601,18.921,"stroke"],[19.001,19.041,"in"],[19.081,19.161,"the"],[19.241,19.481,"left"],[19.601,19.721,"motor"],[19.801,20.281,"cortex"],[20.361,20.761,"weakens"],[20.801,20.841,"the"],[20.921,21.081,"right"],[21.161,21.801,"side;"],[21.841,21.881,"in"],[21.961,22.001,"the"],[22.041,22.201,"left"],[22.281,23.001,"somatosensory"],[23.081,23.721,"cortex,"],[23.761,23.801,"the"],[23.881,24.041,"right"],[24.121,24.361,"side"],[24.441,24.601,"goes"],[24.681,25.081,"numb."],[25.401,25.801,"Almost"],[25.961,26.121,"every"],[26.201,26.681,"emergency"],[26.761,27.321,"neurological"],[27.401,27.721,"exam"],[27.801,28.281,"depends"],[28.321,28.361,"on"],[28.441,28.601,"this"],[28.681,29.001,"rule."],[29.481,29.881,"Inside"],[29.921,29.961,"the"],[30.121,30.281,"brain"],[30.361,30.521,"are"],[30.601,30.841,"four"],[30.921,31.641,"connected,"],[31.801,32.281,"fluid-filled"],[32.361,33.081,"cavities,"],[33.121,33.161,"the"],[33.241,33.881,"ventricles."],[34.281,34.361,"The"],[34.441,34.521,"two"],[34.601,35.081,"largest"],[35.121,35.161,"are"],[35.241,35.321,"the"],[35.401,35.721,"lateral"],[35.801,36.521,"ventricles,"],[36.601,36.761,"one"],[36.841,36.921,"in"],[37.001,37.081,"each"],[37.161,37.721,"hemisphere."],[38.121,38.361,"Below"],[38.441,38.761,"them,"],[38.801,38.841,"the"],[38.921,39.161,"third"],[39.281,39.641,"ventricle"],[39.721,39.961,"sits"],[40.001,40.041,"in"],[40.081,40.121,"the"],[40.201,41.321,"diencephalon,"],[41.361,41.401,"and"],[41.481,41.521,"a"],[41.561,41.881,"narrow"],[41.961,42.521,"aqueduct"],[42.601,42.841,"leads"],[42.881,42.921,"to"],[43.001,43.081,"the"],[43.161,43.321,"fourth"],[43.401,43.801,"ventricle"],[43.881,44.201,"between"],[44.241,44.281,"the"],[44.441,44.841,"brainstem"],[44.921,45.001,"and"],[45.081,45.961,"cerebellum,"],[46.041,46.121,"which"],[46.281,46.681,"continues"],[46.761,46.841,"as"],[46.921,47.001,"the"],[47.081,47.321,"central"],[47.401,47.721,"canal"],[47.801,47.881,"of"],[47.921,47.961,"the"],[48.041,48.281,"spinal"],[48.361,48.921,"cord."],[49.161,49.241,"The"],[49.321,49.641,"choroid"],[49.721,50.121,"plexus"],[50.201,50.241,"in"],[50.281,50.321,"the"],[50.361,50.841,"ventricles"],[50.921,51.081,"makes"],[51.161,52.041,"cerebrospinal"],[52.121,52.521,"fluid."],[52.921,53.001,"It"],[53.081,53.361,"floats"],[53.401,53.481,"the"],[53.641,53.961,"brain,"],[54.041,54.201,"so"],[54.361,54.681,"fourteen"],[54.761,54.921,"hundred"],[55.001,55.401,"grams"],[55.481,55.641,"weighs"],[55.761,55.881,"about"],[55.961,56.761,"fifty;"],[56.841,56.921,"it"],[56.961,57.321,"cushions"],[57.401,58.041,"blows;"],[58.161,58.281,"and"],[58.321,58.361,"it"],[58.441,58.761,"clears"],[58.841,59.401,"waste,"],[59.561,59.721,"mostly"],[59.841,59.961,"during"],[60.041,60.441,"sleep."],[60.841,61.081,"Block"],[61.161,61.241,"its"],[61.321,61.641,"flow"],[61.801,61.881,"and"],[62.041,62.281,"pressure"],[62.361,63.081,"builds:"],[63.281,64.121,"hydrocephalus."]]},"w10_men":{"audio":"audio/ap-w10-l2-men.mp3","words":[[0.244,0.564,"Between"],[0.644,0.724,"your"],[0.804,1.124,"skull"],[1.164,1.204,"and"],[1.284,1.364,"your"],[1.444,1.924,"cortex"],[2.004,2.244,"lie"],[2.364,2.484,"three"],[2.564,2.884,"layers"],[2.924,2.964,"of"],[3.044,3.444,"connective"],[3.524,4.084,"tissue,"],[4.124,4.164,"the"],[4.244,4.884,"meninges."],[5.284,5.364,"They"],[5.444,5.524,"wrap"],[5.604,5.684,"the"],[5.764,6.004,"spinal"],[6.084,6.324,"cord"],[6.404,6.724,"too."],[7.124,7.284,"Learn"],[7.364,7.444,"them"],[7.524,7.604,"from"],[7.764,8.244,"outside"],[8.324,8.724,"in."],[8.804,9.204,"First,"],[9.444,9.577,"the"],[9.604,9.871,"dura"],[9.924,10.324,"mater,"],[10.644,10.98,"Latin"],[11.044,11.177,"for"],[11.204,11.624,"tough"],[11.684,12.084,"mother:"],[12.724,13.284,"thick,"],[13.404,13.844,"fibrous"],[13.884,13.924,"and"],[14.084,14.724,"leathery,"],[14.804,15.124,"fused"],[15.164,15.204,"to"],[15.284,15.364,"the"],[15.444,15.844,"inside"],[15.884,15.924,"of"],[15.964,16.004,"the"],[16.084,16.724,"skull."],[16.964,17.044,"A"],[17.124,17.684,"neurosurgeon"],[17.764,17.844,"has"],[17.924,18.004,"to"],[18.124,18.244,"cut"],[18.324,18.564,"through"],[18.644,18.724,"it"],[18.764,18.804,"to"],[18.884,19.044,"reach"],[19.124,19.204,"the"],[19.404,19.924,"brain."],[20.244,20.804,"Second,"],[20.884,20.964,"the"],[21.044,21.604,"arachnoid"],[21.684,22.324,"mater,"],[22.404,23.284,"spider-like,"],[23.324,23.364,"a"],[23.444,23.764,"web"],[23.844,24.164,"draped"],[24.244,24.404,"over"],[24.444,24.484,"the"],[24.564,25.444,"brain."],[25.484,25.764,"Beneath"],[25.844,25.924,"it"],[26.004,26.084,"is"],[26.164,26.244,"the"],[26.324,26.964,"subarachnoid"],[27.124,27.764,"space,"],[27.884,28.004,"filled"],[28.084,28.164,"with"],[28.244,28.884,"CSF"],[28.964,29.044,"and"],[29.124,29.364,"carrying"],[29.444,29.524,"the"],[29.644,29.924,"brain's"],[30.044,30.164,"major"],[30.244,30.484,"blood"],[30.564,31.364,"vessels."],[31.444,31.524,"A"],[31.604,32.084,"subarachnoid"],[32.244,32.724,"hemorrhage"],[32.804,32.884,"is"],[32.924,32.964,"one"],[33.004,33.044,"of"],[33.124,33.164,"the"],[33.204,33.524,"most"],[33.684,34.004,"dangerous"],[34.084,35.044,"strokes."],[35.204,35.604,"Third,"],[35.684,35.764,"the"],[35.844,36.084,"pia"],[36.164,36.804,"mater,"],[36.844,37.204,"tender"],[37.364,37.924,"mother,"],[38.004,38.084,"a"],[38.164,38.564,"delicate"],[38.644,39.044,"membrane"],[39.124,39.364,"stuck"],[39.404,39.444,"to"],[39.524,39.604,"the"],[39.724,39.924,"brain's"],[40.164,40.564,"surface,"],[40.644,41.044,"following"],[41.204,41.364,"every"],[41.444,41.844,"gyrus"],[41.924,42.004,"and"],[42.084,43.124,"sulcus."],[43.204,43.684,"Inflammation"],[43.764,43.804,"of"],[43.844,43.924,"the"],[44.004,44.484,"coverings"],[44.564,44.644,"is"],[44.724,45.764,"meningitis,"],[45.844,46.324,"diagnosed"],[46.404,46.484,"by"],[46.524,46.564,"a"],[46.644,46.964,"lumbar"],[47.044,47.364,"puncture"],[47.444,47.524,"that"],[47.604,48.004,"samples"],[48.084,48.644,"CSF"],[48.724,48.804,"from"],[49.004,49.204,"between"],[49.284,49.604,"lumbar"],[49.684,50.724,"vertebrae."],[50.804,51.204,"Inflammation"],[51.284,51.364,"of"],[51.404,51.444,"the"],[51.564,51.684,"brain"],[51.804,52.244,"itself"],[52.324,52.404,"is"],[52.564,53.524,"encephalitis,"],[53.644,53.764,"adding"],[53.844,54.484,"confusion"],[54.564,54.644,"and"],[54.724,55.684,"seizures."],[55.844,56.004,"Because"],[56.044,56.084,"the"],[56.164,56.404,"motor"],[56.484,56.884,"cortex"],[56.964,57.284,"fires"],[57.324,57.364,"in"],[57.444,57.924,"predictable"],[58.004,58.804,"patterns,"],[58.924,59.444,"brain-computer"],[59.524,60.084,"interfaces"],[60.164,60.324,"can"],[60.404,60.564,"read"],[60.644,60.804,"them"],[60.884,60.964,"through"],[61.124,61.444,"implanted"],[61.524,62.404,"electrodes,"],[62.484,62.724,"letting"],[62.804,63.204,"paralyzed"],[63.284,63.684,"patients"],[63.764,63.844,"move"],[63.924,64.004,"a"],[64.244,64.484,"cursor"],[64.564,64.724,"or"],[64.804,64.844,"a"],[64.884,65.284,"robotic"],[65.444,66.164,"arm."],[66.204,66.244,"It"],[66.324,66.404,"is"],[66.484,66.724,"real"],[66.804,67.604,"research,"],[67.764,67.924,"still"],[68.084,68.453,"early."]]}}</script>
+<script>
+window.ASK = {
+  scope: 'the cerebral cortex, gyri and sulci, the four lobes and their specialized areas, Broca and Wernicke, contralateral organization and the pyramidal decussation, the ventricles and CSF, hydrocephalus, the meninges, meningitis and encephalitis, and brain-computer interfaces',
+  quick: ['What does each lobe do?', 'Why does a left-brain stroke affect the right side?', 'What are the three meninges?'],
+  practice: /(write|answer|do|fill) (my|the) (notebook|lab report|paragraph|clinical reasoning|focus question)/i,
+  guide: 'That reasoning is yours to write, so here are my questions instead. Which lobe holds the motor strip, and which area produces speech? Which side of the brain is speech almost always on? Where do the motor fibers cross? Put those together, then write it.',
+  notes: [
+    { k: ['cortex','gyri','sulci','gyrus','sulcus','napkin'], a: 'The cortex is gray matter 2 to 4 mm thick, about the area of a dinner napkin, folded into gyri and sulci. The central sulcus and lateral sulcus are the landmarks for the lobes.' },
+    { k: ['lobe','lobes','frontal','parietal','temporal','occipital'], w: 1.4, a: 'Frontal: primary motor cortex, prefrontal cortex, Broca\'s area. Parietal: primary somatosensory cortex, spatial awareness. Temporal: primary auditory cortex, Wernicke\'s area, hippocampus. Occipital: primary visual cortex.' },
+    { k: ['broca','wernicke','aphasia','speech','language'], w: 1.2, a: 'Broca\'s area (left frontal) produces speech: damage gives halting speech with comprehension intact. Wernicke\'s area (back of the left temporal lobe) understands language: damage gives fluent but meaningless speech.' },
+    { k: ['contralateral','opposite','cross','decussation','stroke'], w: 1.4, a: 'Each hemisphere controls and senses the opposite side. Most motor fibers cross at the bottom of the medulla, the pyramidal decussation, so a left motor-cortex stroke weakens the right side.' },
+    { k: ['ventricle','ventricles','csf','cerebrospinal','choroid','hydrocephalus'], w: 1.2, a: 'Four ventricles: two lateral, the third (diencephalon), the fourth (between brainstem and cerebellum), continuing as the central canal. The choroid plexus makes CSF, which floats the brain (1,400 g to about 50), cushions it and clears waste. Blocked flow causes hydrocephalus.' },
+    { k: ['meninges','dura','arachnoid','pia','subarachnoid'], w: 1.3, a: 'Outside to inside: dura mater (tough, fused to the skull), arachnoid mater (web-like; beneath it the CSF-filled subarachnoid space with blood vessels), pia mater (clings to every fold).' },
+    { k: ['meningitis','encephalitis','lumbar','puncture'], a: 'Meningitis inflames the coverings; encephalitis inflames the brain itself, adding confusion and seizures. A lumbar puncture samples CSF from between lumbar vertebrae.' },
+    { k: ['bci','brain-computer','neuralink','braingate','implant'], a: 'Brain-computer interfaces read motor-cortex patterns through implanted electrodes so paralyzed patients can move a cursor or robotic arm. It is real, early research with invasive implants.' },
+    { k: ['notebook','lab report','submit','words'], w: 1.2, a: 'The 5.06 Notebook: a photo of your labeled cortex (nine labels), a photo of your meninges cross-section (five labels), and a 5 to 7 sentence clinical-reasoning paragraph. 150 to 225 words.' }
+  ]
+};
+</script>
+<script>
+/* Anatomy & Physiology integrated lesson · core engine (kitAP; fork of kitBio / Algebra 1 kit).
+   CFG (#page-config): { key, n, title, course, footer, pdfTag, teacher:{full,short} }
+   Page may define window.ASK = { scope, notes:[{k:[...], a:"..."}], practice:/regex/, quick:[...] } before this script. */
+var CFG = (function(){ try { return JSON.parse(document.getElementById('page-config').textContent); } catch(e){ return { key:'alg1-x', title:'' }; } })();
+var TEACHER = CFG.teacher || { full: 'Dr. Oswaldo Usborne', short: 'Dr. Usborne' };
+var PREFIX = CFG.key + '-';
+var ASSETS = (function(){ var el = document.getElementById('page-assets'); try { return el ? JSON.parse(el.textContent) : {}; } catch(e){ return {}; } })();
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+var STORE = (function(){
+  var mem = {}, s = null;
+  try { var t = window.localStorage; t.setItem('__t', '1'); t.removeItem('__t'); s = t; } catch(e){ s = null; }
+  function rget(k){ try { return s ? s.getItem(k) : (k in mem ? mem[k] : null); } catch(e){ return null; } }
+  function rset(k, v){ try { if (s) s.setItem(k, v); else mem[k] = v; } catch(e){ mem[k] = v; } }
+  return { get: function(k){ return rget(PREFIX + k); }, set: function(k, v){ rset(PREFIX + k, v); }, rawGet: rget, rawSet: rset };
+})();
+function jget(k, d){ try { var v = STORE.get(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function jset(k, v){ STORE.set(k, JSON.stringify(v)); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- images from the asset pack ---------- */
+$$('[data-img]').forEach(function(el){
+  var a = (ASSETS.img || {})[el.dataset.img]; if (!a) return;
+  if (el.tagName === 'IMG') { el.loading = 'lazy'; el.decoding = 'async'; el.src = a.src; if (!el.alt) el.alt = a.alt || ''; } else el.style.backgroundImage = 'url("' + a.src + '")';
+});
+
+/* ---------- tabs ---------- */
+var TABS = $$('.tab').map(function(b){ return b.dataset.tab; });
+function switchTab(id, noScroll){
+  if (TABS.indexOf(id) < 0) id = TABS[0];
+  $$('.tab').forEach(function(b){ var on = b.dataset.tab === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+  $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === 'tab-' + id); });
+  STORE.set('tab', id);
+  var seen = (STORE.get('seen') || '').split(',').filter(Boolean);
+  if (seen.indexOf(id) < 0) { seen.push(id); STORE.set('seen', seen.join(',')); }
+  $$('.tab').forEach(function(b){ b.classList.toggle('seen', seen.indexOf(b.dataset.tab) > -1 && b.dataset.tab !== id); });
+  /* open the new tab at its top. The tab bar is sticky, so its offsetTop reads as the current scroll position once pinned;
+     measure the panel instead, and jump (no long animated scroll from the bottom of a page). */
+  if (!noScroll) {
+    var p = $('#tab-' + id), bar = $('.tabs');
+    if (p) {
+      var top = p.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0);
+      if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    }
+  }
+  document.dispatchEvent(new CustomEvent('tabchange', { detail: id }));
+  psetScore();
+}
+$$('.tab').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.go); }); });
+
+/* ---------- typed answers (words) ---------- */
+function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+$$('textarea.jbox').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  var d = document.createElement('div'); d.className = 'wc'; el.parentNode.insertBefore(d, el.nextSibling);
+  function wc(){ var n = words(el.value), min = +(el.dataset.min || 0); d.textContent = n + (n === 1 ? ' word' : ' words') + (min ? ' · aim for ' + min + '+' : ''); d.classList.toggle('met', min > 0 && n >= min); }
+  wc(); el.addEventListener('input', function(){ STORE.set('j-' + el.id, el.value); wc(); });
+});
+/* short typed fields + choices that belong in the PDF: <input class="jfield" id data-label> / <select class="jfield" id data-label> */
+$$('input.jfield, select.jfield').forEach(function(el){
+  var v = STORE.get('j-' + el.id); if (v !== null) el.value = v;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function(){ STORE.set('j-' + el.id, el.value); el.dispatchEvent(new CustomEvent('jsaved', { bubbles: true })); });
+});
+$$('input.name').forEach(function(el){
+  var v = STORE.rawGet('ap-name'); if (v) el.value = v;
+  el.addEventListener('input', function(){ STORE.rawSet('ap-name', el.value); });
+});
+
+/* ---------- worked examples: one step at a time ---------- */
+$$('.ex').forEach(function(ex, xi){
+  var lis = $$('ol.steps > li', ex); if (!lis.length) return;
+  var key = 'ex-' + (ex.id || xi), n = +(STORE.get(key) || 0);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost small more';
+  ex.appendChild(b);
+  function draw(){ lis.forEach(function(li, i){ li.classList.toggle('on', i < n); }); ex.classList.toggle('done', n >= lis.length); b.textContent = n ? 'Next step' : 'Show the first step'; }
+  b.addEventListener('click', function(){ n = Math.min(lis.length, n + 1); STORE.set(key, n); draw(); });
+  draw();
+});
+
+/* ---------- choices (data-ok="1" on the right option; data-fb on any option) ---------- */
+$$('.mcq').forEach(function(q){
+  var id = q.dataset.qid, fb = $('.fb', q), opts = $$('.opt', q);
+  if (!fb) { fb = document.createElement('div'); fb.className = 'fb'; q.appendChild(fb); }
+  function show(o, quiet){
+    var good = o.dataset.ok === '1';
+    if (good) { o.classList.add('yes'); q.classList.add('done'); }
+    else { o.classList.add('no'); if (!quiet) { o.classList.remove('shake'); void o.offsetWidth; o.classList.add('shake'); } }
+    fb.innerHTML = o.dataset.fb || (good ? 'Right.' : 'Not this one. Look again.'); fb.className = 'fb show ' + (good ? 'good' : 'try');
+  }
+  opts.forEach(function(o, i){
+    o.type = 'button';
+    o.addEventListener('click', function(){
+      if (q.classList.contains('done')) return;
+      show(o);
+      var r = jget('c-' + id, { tried: [] }); if (r.tried.indexOf(i) < 0) r.tried.push(i);
+      r.ok = o.dataset.ok === '1'; if (r.first === undefined) r.first = r.ok; r.v = o.textContent.trim(); jset('c-' + id, r); psetScore();
+    });
+  });
+  jget('c-' + id, { tried: [] }).tried.forEach(function(i){ if (opts[i]) show(opts[i], true); });
+});
+
+/* ---------- typed math: checked by value at random points, then for simplified form ---------- */
+var MATH = (function(){
+  var SUP = { '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'-' };
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[−–—]/g, '-').replace(/[×·∙]/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, function(m){ return '^' + m.split('').map(function(c){ return SUP[c]; }).join(''); });
+    s = s.replace(/\^\((-?\d+)\)/g, '^$1');
+    return s;
+  }
+  function tokens(s){
+    var t = [], m, re = /\d+\.?\d*|\.\d+|[a-z]|[-+*/^()]/g, used = 0;
+    while ((m = re.exec(s))) { if (m.index !== used) return null; t.push(m[0]); used = re.lastIndex; }
+    return used === s.length ? t : null;
+  }
+  function parse(src){
+    var t = tokens(norm(src)); if (!t || !t.length) return null;
+    var p = 0, err = null;
+    function peek(){ return t[p]; }
+    function isNum(x){ return x !== undefined && /^[\d.]/.test(x); }
+    function isVar(x){ return x !== undefined && /^[a-z]$/.test(x); }
+    function expr(){
+      var f = term();
+      while (peek() === '+' || peek() === '-') { var op = t[p++], g = term(); f = (function(a, b, o){ return o === '+' ? function(e){ return a(e) + b(e); } : function(e){ return a(e) - b(e); }; })(f, g, op); }
+      return f;
+    }
+    function term(){
+      var f = unary();
+      for (;;) {
+        var x = peek();
+        if (x === '*' || x === '/') { p++; var g = unary(); f = (function(a, b, o){ return o === '*' ? function(e){ return a(e) * b(e); } : function(e){ return a(e) / b(e); }; })(f, g, x); }
+        else if (isVar(x) || x === '(') { var h = power(); f = (function(a, b){ return function(e){ return a(e) * b(e); }; })(f, h); }
+        else if (isNum(x)) { err = 'digits'; p++; }
+        else break;
+      }
+      return f;
+    }
+    function unary(){
+      if (peek() === '-') { p++; var f = unary(); return function(e){ return -f(e); }; }
+      if (peek() === '+') { p++; return unary(); }
+      return power();
+    }
+    function power(){
+      var b = atom();
+      if (peek() === '^') { p++; var x = unary(); return function(e){ return Math.pow(b(e), x(e)); }; }
+      return b;
+    }
+    function atom(){
+      var x = t[p++];
+      if (isNum(x)) { var v = parseFloat(x); return function(){ return v; }; }
+      if (isVar(x)) return function(e){ return e[x]; };
+      if (x === '(') { var f = expr(); if (t[p++] !== ')') err = 'paren'; return f; }
+      err = 'syntax'; return function(){ return NaN; };
+    }
+    var f;
+    try { f = expr(); } catch(e){ return null; }
+    if (p !== t.length || err) return { err: err || 'syntax' };
+    return { f: f };
+  }
+  var PTS = [[1.37, 2.11, 0.73], [2.59, 0.81, 1.93], [0.67, 1.71, 2.37], [3.13, 1.29, 0.59]];
+  function same(a, b, vars){
+    var A = parse(a), B = parse(b); if (!A || !B || !A.f || !B.f) return false;
+    for (var k = 0; k < PTS.length; k++) {
+      var e = {}; 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(function(c, i){ e[c] = PTS[k][i % 3] + i * 0.013; });
+      (vars || '').split('').forEach(function(c, i){ e[c] = PTS[k][i % 3]; });
+      var x = A.f(e), y = B.f(e);
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+    }
+    return true;
+  }
+  /* top-level terms; each must be one coefficient and each variable at most once; parentheses only in a denominator */
+  function terms(s){
+    s = norm(s); var out = [], depth = 0, cur = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '(') depth++; if (c === ')') depth--;
+      if ((c === '+' || c === '-') && depth === 0 && i > 0 && !/[\^*/(]/.test(s[i - 1])) { out.push(cur); cur = c === '-' ? '-' : ''; }
+      else cur += c;
+    }
+    out.push(cur); return out.filter(function(x){ return x !== '' && x !== '-'; });
+  }
+  function simple(s){
+    var T = terms(s);
+    for (var i = 0; i < T.length; i++) {
+      var t = T[i].replace(/^-/, '').replace(/\^\((-?\d+)\/(\d+)\)/g, function(m0, a, b){
+        a = Math.abs(+a); b = +b; var g = a, h = b; while (h) { var r = g % h; g = h; h = r; }
+        return (g === 1 && b !== 1) ? '^1' : '^(unreduced'; }), num = t.split('/')[0], den = t.split('/').slice(1).join('/');
+      if (/[()]/.test(num)) return false;
+      var core = num.replace(/\^-?\d+(\.\d+)?/g, '').replace(/\*/g, '');
+      var nums = core.match(/\d+\.?\d*|\.\d+/g) || [];
+      if (nums.length > 1 || (nums.length === 1 && core.indexOf(nums[0]) !== 0)) return false;
+      var letters = core.replace(/[\d.]/g, '').split('');
+      if (letters.some(function(c, k){ return letters.indexOf(c) !== k; })) return false;
+    }
+    return true;
+  }
+  function pretty(s){
+    var n = norm(s); if (!n) return '';
+    var h = esc(n).replace(/\^\(([^()]*)\)/g, '<sup>$1</sup>').replace(/\^(-?\d+(?:\.\d+)?)/g, '<sup>$1</sup>').replace(/([a-z])/g, '<i>$1</i>').replace(/\*/g, '·').replace(/-/g, ' − ').replace(/\+/g, ' + ').replace(/^ − /, '−').replace(/\( − /g, '(−').replace(/<sup> − /g, '<sup>−');
+    return '<span class="m">' + h + '</span>';
+  }
+  return { parse: parse, same: same, terms: terms, simple: simple, pretty: pretty, norm: norm };
+})();
+
+$$('.mq').forEach(function(q){
+  var id = q.dataset.qid, ans = q.dataset.ans, vars = q.dataset.vars || 'x', form = q.dataset.form || 'simp';
+  var miss = []; try { miss = JSON.parse(q.dataset.miss || '[]'); } catch(e){}
+  if (!$('.mq-row', q)) q.insertAdjacentHTML('beforeend', '<div class="mq-row"><input class="mq-in" type="text" autocomplete="off" spellcheck="false" aria-label="Your answer" placeholder="' + esc(q.dataset.ph || 'type your answer') + '"><button class="btn small" type="button">Check</button></div><div class="mq-prev" aria-live="polite"></div><div class="fb"></div>');
+  var inp = $('.mq-in', q), go = $('.mq-row button', q), prev = $('.mq-prev', q), fb = $('.fb', q);
+  var r = jget('m-' + id, null);
+  function say(ok, msg){ fb.innerHTML = msg; fb.className = 'fb show ' + (ok ? 'good' : 'try'); }
+  function preview(){ var v = inp.value.trim(); prev.innerHTML = v ? 'Reads as: ' + MATH.pretty(v) : ''; }
+  function check(quiet){
+    var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+    var P = MATH.parse(v);
+    if (!P) { say(false, 'I can&rsquo;t read that yet. Use <code>^</code> for powers, like <code>x^2</code>.'); return; }
+    if (P.err === 'digits') { say(false, 'A number right after a letter is ambiguous. Write powers with <code>^</code>: <code>x^2</code>, not <code>x2</code>.'); return; }
+    if (P.err) { say(false, 'Check your parentheses and signs; I can&rsquo;t read that yet.'); return; }
+    var eq = MATH.same(v, ans, vars), ok = eq && (form !== 'simp' || (MATH.simple(v) && MATH.terms(v).length === MATH.terms(ans).length));
+    var msg;
+    if (ok) msg = q.dataset.fb || 'Right.';
+    else if (eq) msg = 'That&rsquo;s equal in value, but not simplified yet. Combine like terms and clear the parentheses.';
+    else {
+      msg = q.dataset.hint || 'Not equal yet. Check each like term: its sign, then its coefficient.';
+      for (var i = 0; i < miss.length; i++) if (MATH.same(v, miss[i][0], vars)) { msg = miss[i][1]; break; }
+    }
+    say(ok, msg);
+    if (quiet) return;
+    var rec = jget('m-' + id, { tries: 0 }); rec.tries++; rec.v = v; rec.ok = ok; if (rec.first === undefined) rec.first = ok;
+    jset('m-' + id, rec);
+    if (ok) { q.classList.add('done'); } else { inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake'); }
+    psetScore();
+  }
+  inp.addEventListener('input', preview);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
+  go.addEventListener('click', function(){ check(); });
+  if (r && r.v) { inp.value = r.v; preview(); check(true); if (r.ok) q.classList.add('done'); }
+});
+
+/* ---------- place: tap a card, then tap its bin ---------- */
+$$('.place').forEach(function(g){
+  var id = g.id, fb = $('.place-fb', g), tally = $('.tally', g), chips = $$('.chip', g), sel = null;
+  function count(){ var n = $$('.chip.placed', g).length; if (tally) { tally.textContent = n + ' of ' + chips.length + ' placed'; tally.classList.toggle('done', n === chips.length); } }
+  function arm(on){ $$('.bin', g).forEach(function(b){ b.classList.toggle('armed', on); }); }
+  function put(c, b, quiet){ c.classList.remove('sel'); c.classList.add('placed'); c.tabIndex = -1; $('.drop', b).appendChild(c); if (!quiet && fb) fb.innerHTML = '<div class="fb show good">' + (c.dataset.fb || 'Right.') + '</div>'; }
+  chips.forEach(function(c){
+    c.type = 'button';
+    c.addEventListener('click', function(){
+      if (c.classList.contains('placed')) return;
+      if (sel === c) { c.classList.remove('sel'); sel = null; arm(false); return; }
+      if (sel) sel.classList.remove('sel'); sel = c; c.classList.add('sel'); arm(true);
+    });
+  });
+  $$('.bin', g).forEach(function(b){
+    b.addEventListener('click', function(){
+      if (!sel) return; var c = sel; sel = null; arm(false);
+      if (c.dataset.ans === b.dataset.bin) { put(c, b); var d = (STORE.get('p-' + id) || '').split(',').filter(Boolean); d.push(c.dataset.k); STORE.set('p-' + id, d.join(',')); }
+      else { c.classList.remove('sel', 'shake'); void c.offsetWidth; c.classList.add('shake'); if (fb) fb.innerHTML = '<div class="fb show try">' + (c.dataset.miss || 'Not there. Look again.') + '</div>'; }
+      count();
+    });
+  });
+  (STORE.get('p-' + id) || '').split(',').filter(Boolean).forEach(function(k){ var c = $('.chip[data-k="' + k + '"]', g); if (c) { var b = $('.bin[data-bin="' + c.dataset.ans + '"]', g); if (b) put(c, b, true); } });
+  count();
+});
+
+/* ---------- checklists ---------- */
+$$('.checks li').forEach(function(li){
+  li.insertAdjacentHTML('afterbegin', '<span class="bx" aria-hidden="true"></span>');
+  li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
+  function set(on){ li.classList.toggle('on', on); li.setAttribute('aria-checked', on ? 'true' : 'false'); $('.bx', li).textContent = on ? '✓' : ''; }
+  set(STORE.get('ck-' + li.dataset.ck) === '1');
+  function tog(){ var on = !li.classList.contains('on'); set(on); STORE.set('ck-' + li.dataset.ck, on ? '1' : '0'); }
+  li.addEventListener('click', tog);
+  li.addEventListener('keydown', function(e){ if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } });
+});
+
+/* ---------- problem set score ---------- */
+function itemRec(el){ return el.classList.contains('mq') ? jget('m-' + el.dataset.qid, null) : jget('c-' + el.dataset.qid, null); }
+function psetItems(){ return $$('.pset .mq, .pset .mcq'); }
+function psetScore(){
+  var it = psetItems(), done = 0, first = 0;
+  it.forEach(function(el){ var r = itemRec(el); if (r && r.ok) done++; if (r && r.first) first++; });
+  $$('[data-score="done"]').forEach(function(b){ b.textContent = done + ' / ' + it.length; });
+  $$('[data-score="first"]').forEach(function(b){ b.textContent = first + ' / ' + it.length; });
+}
+
+/* ---------- PDF (print window: no library needed) ---------- */
+function studentFile(){
+  var nm = (STORE.rawGet('ap-name') || '').trim().split(/\s+/).filter(Boolean);
+  var who = nm.length >= 2 ? nm[nm.length - 1] + '_' + nm.slice(0, -1).join('') : (nm[0] || 'LastName_FirstName');
+  return who + '_' + (CFG.pdfTag || 'AP');
+}
+function stemText(el){ var s = $('.stem', el); if (!s) return ''; var c = s.cloneNode(true); $$('.qn', c).forEach(function(x){ x.remove(); }); return c.innerHTML.trim(); }
+function pdfHtml(){
+  if (!psetItems().length) return pdfWritten();
+  var h = '<h2>Lab Report</h2><table class="ps"><tr><th>#</th><th>Problem</th><th>My answer</th><th>Result</th></tr>';
+  psetItems().forEach(function(el, i){
+    var r = itemRec(el), a = !r || !r.v ? '<span class="missing">(not answered)</span>' : (el.classList.contains('mq') ? MATH.pretty(r.v) : esc(r.v));
+    var res = !r ? '' : r.ok ? (r.first ? '✓ first try' : '✓ after ' + ((r.tries || (r.tried || []).length) - 1) + ' more') : '✗ not yet';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + stemText(el) + '</td><td>' + a + '</td><td>' + res + '</td></tr>';
+  });
+  h += '</table>';
+  return h + pdfWritten();
+}
+function pdfWritten(){
+  var h = '';
+  var js = $$('textarea.jbox, input.jfield, select.jfield');
+  if (js.length) {
+    h += '<h2>Written answers</h2>';
+    js.forEach(function(el){ var v = (STORE.get('j-' + el.id) || '').trim(); if (el.tagName === 'SELECT' && v) { var o = el.querySelector('option[value="' + v.replace(/"/g, '') + '"]'); if (o) v = o.textContent.trim(); }
+      var shown = esc(v);
+      /* data-mark="superior|inferior|…" on a textarea: the PDF bolds and underlines every listed term the student used */
+      if (v && el.dataset.mark) shown = shown.replace(new RegExp('\\b(' + el.dataset.mark + ')\\b', 'gi'), '<b><u>$1</u></b>');
+      h += '<div class="q">' + esc(el.dataset.label || el.id) + '</div>' + (v ? '<div class="a">' + shown + '</div>' : '<div class="a missing">(no answer saved)</div>'); });
+  }
+  var ims = $$('img[data-pdf-img]').filter(function(im){ return im.getAttribute('src'); });
+  if (ims.length) { h += '<h2>Attachments</h2>'; ims.forEach(function(im){ h += '<div class="q">' + esc(im.dataset.pdfImg) + '</div><img src="' + im.getAttribute('src') + '" style="max-width:100%;max-height:520px;border:1px solid #C3CED9;margin-top:4px">'; }); }
+  var ck = $$('.pset .checks li');
+  if (ck.length) { h += '<h2>Checklist</h2>'; ck.forEach(function(li){ h += '<div class="a">' + (li.classList.contains('on') ? '☑ ' : '☐ ') + esc(li.textContent.replace(/^✓/, '').trim()) + '</div>'; }); }
+  return h;
+}
+function openPrint(){
+  psetScore();
+  var nm = (STORE.rawGet('ap-name') || '').trim(), file = studentFile();
+  var done = ($('[data-score="done"]') || {}).textContent || '', first = ($('[data-score="first"]') || {}).textContent || '';
+  var css = 'body{font:14.5px/1.55 Georgia,serif;color:#0E1C42;max-width:760px;margin:0 auto;padding:28px 36px}' +
+    'h1{font:700 22px/1.2 Arial,sans-serif;margin:0 0 4px}.sub{font:12.5px/1.4 Arial,sans-serif;color:#65707C;margin-bottom:6px}' +
+    '.sc{font:700 12.5px/1.4 Arial,sans-serif;margin:0 0 18px}h2{font:700 11px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C43D27;margin:22px 0 6px;padding-top:10px;border-top:2px solid #0E1C42}' +
+    'table.ps{border-collapse:collapse;width:100%;font-size:13.5px}table.ps th{font:700 10.5px/1.3 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:#65707C;border-bottom:1px solid #C3CED9;padding:4px 8px 4px 0}' +
+    'table.ps td{vertical-align:top;border-bottom:1px solid #E2EAF3;padding:6px 8px 6px 0}table.ps td:last-child{white-space:nowrap;font:12px Arial,sans-serif}' +
+    '.q{font:700 13px/1.45 Arial,sans-serif;margin-top:10px}.a{white-space:pre-wrap;margin:3px 0 0}.missing{color:#C43D27;font-style:italic}.m{white-space:nowrap}sup{font-size:.7em}.fr{display:inline-block;text-align:center;vertical-align:middle}.fr>span{display:block}.fr>span:first-child{border-bottom:1px solid}';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(file) + '<\/title>\x3cstyle>' + css + '<\/style><\/head><body><h1>' + esc(CFG.title) + '<\/h1><div class="sub">' + (nm ? esc(nm) + ' · ' : '') + esc(CFG.footer || '') + '<\/div>' + (psetItems().length ? '<div class="sc">Solved: ' + esc(done || psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok; }).length + ' of ' + psetItems().length) + (first ? ' · First try: ' + esc(first) : ' · First try: ' + psetItems().filter(function(el){ var r = itemRec(el); return r && r.ok && r.first; }).length) + '<\/div>' : '') + pdfHtml() + '<\/body><\/html>';
+  var win = window.open('', '_blank');
+  if (!win) { $$('.print-note').forEach(function(n){ n.textContent = 'The PDF window was blocked. Allow pop-ups for this page and try again.'; n.classList.add('show'); }); return; }
+  win.document.write(html); win.document.close();
+  setTimeout(function(){ win.focus(); win.print(); }, 400);
+}
+$$('[data-pdf]').forEach(function(b){ b.addEventListener('click', openPrint); });
+
+/* ---------- tools: Field Guide + Ask the teacher (two buttons in the tab bar, drawers on the right) ---------- */
+(function(){
+  var bar = $('.tabs .wrap'); if (!bar) return;
+  var face = ASSETS.img && ASSETS.img.usb ? ASSETS.img.usb.src : '';
+  if (document.getElementById('obj-calc')) {
+    /* desk objects on the right edge: a calculator and an "Ask Dr. Usborne" sticky note */
+    document.body.insertAdjacentHTML('beforeend', '<div class="rail" aria-label="Tools">' +
+      '<button type="button" id="tCalc" class="obj-calc" aria-controls="calcDrawer" aria-label="Open the calculator" title="Calculator"><svg viewBox="0 0 100 150" aria-hidden="true"><use href="#obj-calc"/></svg></button>' +
+      '<button type="button" id="tAsk" class="obj-note" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.full) + '"><span class="pin" aria-hidden="true"></span><span class="k">Questions?</span><span class="h">Ask ' + esc(TEACHER.short) + '</span>' +
+      '<img class="face" src="' + face + '" alt="">' +
+      '<svg class="plane" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20c6-2 9-6 13-6" fill="none" stroke="#0E1C42" stroke-width="1.2" stroke-dasharray="2 2.5"/><path d="M15 12 38 3l-8 18-5-6z" fill="#fff" stroke="#0E1C42" stroke-width="1.4" stroke-linejoin="round"/><path d="M38 3 25 15l-2 6" fill="none" stroke="#0E1C42" stroke-width="1.2"/></svg></button></div>');
+  } else {
+  bar.insertAdjacentHTML('beforeend', '<div class="tools"><button class="tool" id="tCalc" type="button" aria-controls="calcDrawer" aria-label="Terms and Roots" title="Terms and Roots"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 5.5C6.5 4.3 9.5 4.3 12 6c2.5-1.7 5.5-1.7 8-.5V19c-2.5-1.2-5.5-1.2-8 .5-2.5-1.7-5.5-1.7-8-.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13.5" stroke="#fff" stroke-width="1.8"/></svg></span><span class="tx">Terms</span></button>' +
+    '<button class="tool" id="tAsk" type="button" aria-controls="askDrawer" aria-label="Ask ' + esc(TEACHER.short) + '" title="Ask ' + esc(TEACHER.short) + '"><img class="ic" src="' + face + '" alt=""><span class="tx">Ask ' + esc(TEACHER.short) + '</span></button></div>');
+  }
+  var A = window.ASK || {};
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="drawer" id="calcDrawer" role="dialog" aria-label="Terms and Roots"><div class="dr-head"><div><small>Glossary</small><b>Terms and Roots</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="fg-body">' + ((document.getElementById('fg') || {}).innerHTML || '') + '</div></div>' +
+    '<div class="drawer" id="askDrawer" role="dialog" aria-label="Ask ' + esc(TEACHER.full) + '"><div class="dr-head"><img src="' + face + '" alt=""><div><small>Questions</small><b>Ask ' + esc(TEACHER.full) + '</b></div><button class="dr-x" type="button" aria-label="Close">&times;</button></div>' +
+    '<div class="letters" id="letters"><div class="empty">Ask about ' + esc(A.scope || 'this lesson') + '. ' + esc(TEACHER.short) + ' answers from notes on this page.<div class="quick">' + (A.quick || []).map(function(q){ return '<button type="button">' + esc(q) + '</button>'; }).join('') + '</div></div></div>' +
+    '<div class="compose"><textarea id="askQ" maxlength="300" aria-label="Your question" placeholder="Type a question"></textarea><div class="row"><span class="pg-note">An AI-generated character. Replies come from prepared notes.</span><button class="btn small" id="askSend" type="button">Send</button></div></div></div>');
+  var map = { calc: ['#tCalc', '#calcDrawer'], ask: ['#tAsk', '#askDrawer'] };
+  function open(name){
+    Object.keys(map).forEach(function(k){ var on = k === name; $(map[k][1]).classList.toggle('open', on); $(map[k][0]).classList.toggle('on', on); $(map[k][0]).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+    if (name === 'ask') setTimeout(function(){ $('#askQ').focus(); }, 350);
+  }
+  Object.keys(map).forEach(function(k){
+    $(map[k][0]).addEventListener('click', function(){ $(map[k][1]).classList.contains('open') ? open(null) : open(k); });
+    $('.dr-x', $(map[k][1])).addEventListener('click', function(){ open(null); });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') open(null); });
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(){ open(b.dataset.open); }); });
+
+  var BASE = [
+    { k: ['hello','hi','hey','who are you','your name'], w: 1, a: 'Hello! I teach anatomy and physiology. Ask me about anything on this page, and I will answer from my notes.' },
+    { k: ['pdf','download','submit','turn in','hand in','save'], a: 'Finish the Lab Report, then press "Download my work (PDF)". It lists each answer and whether you had it on the first try. Your teacher will tell you where to hand it in.' },
+    { k: ['terms','roots','glossary','define','definition','meaning'], a: 'The Terms button in the bar at the top lists every term on this page with its meaning and word root.' }
+  ];
+  var NOTES = BASE.concat(A.notes || []);
+  function answer(q){
+    var t = ' ' + q.toLowerCase().replace(/[^a-z0-9^',= ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    if (A.practice && A.practice.test(q)) return A.guide || 'That one is from your practice, so I will give you my questions instead of the answer. What does the evidence on this page show? Look again, then press Check.';
+    var best = null, bs = 0;
+    NOTES.forEach(function(n){
+      var s = 0;
+      n.k.forEach(function(key){ var re = new RegExp('(^|[^a-z])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(s|es|ed|ing)?([^a-z]|$)'); if (re.test(t)) s += key.indexOf(' ') > 0 ? 3 : 2; });
+      s *= (n.w || 1.5); if (s > bs) { bs = s; best = n; }
+    });
+    if (!best || bs < 2) return 'Good question, but my notes only cover ' + (A.scope || 'this lesson') + '. Bring that one to your teacher.';
+    return best.a;
+  }
+  var list = $('#letters'), ta = $('#askQ'), send = $('#askSend'), LOG = jget('ask', []);
+  function letter(cls, who, text){ var e = $('.empty', list); if (e) e.remove(); var d = document.createElement('div'); d.className = 'letter ' + cls; d.innerHTML = '<div class="who">' + esc(who) + '</div>' + esc(text); list.appendChild(d); list.scrollTop = list.scrollHeight; }
+  LOG.forEach(function(m){ letter('mine', 'You', m.q); letter('his', TEACHER.short, m.a); });
+  function ask(q){
+    q = q.trim(); if (!q) { ta.focus(); return; }
+    letter('mine', 'You', q); ta.value = '';
+    var a = answer(q); setTimeout(function(){ letter('his', TEACHER.short, a); }, 350);
+    LOG.push({ q: q, a: a }); if (LOG.length > 20) LOG.shift(); jset('ask', LOG);
+  }
+  send.addEventListener('click', function(){ ask(ta.value); });
+  ta.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(ta.value); } });
+  $$('.quick button', list).forEach(function(b){ b.addEventListener('click', function(){ ask(b.textContent); }); });
+})();
+
+/* ---------- journal page: pin each margin note beside the passage it annotates ---------- */
+(function(){
+  $$('.jsec .marg').forEach(function(m){
+    var prev = m.previousElementSibling;
+    if (prev && /^(P|H3|DIV)$/.test(prev.tagName)) { prev.parentNode.insertBefore(m, prev); return; }
+    /* a note standing on its own (e.g. after the specimen plates) is the entry's closing line: keep it in place, inline */
+    m.classList.add('close');
+  });
+  $$('.jsec').forEach(function(s){ if (!s.querySelector('.marg:not(.close)')) s.classList.add('nomarg'); });
+})();
+
+/* ---------- boot ---------- */
+switchTab(STORE.get('tab') || TABS[0], true);
+psetScore();
+
+/* ---------- plate zoom: click any atlas plate image to see it full screen ---------- */
+(function(){
+  var z = document.createElement('div'); z.className = 'zoomer'; z.setAttribute('role', 'dialog'); z.setAttribute('aria-label', 'Enlarged figure');
+  z.innerHTML = '<img alt="">'; document.body.appendChild(z);
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.plate img');
+    if (im) { z.firstChild.src = im.src; z.firstChild.alt = im.alt; z.classList.add('on'); return; }
+    if (e.target.closest && e.target.closest('.zoomer')) z.classList.remove('on');
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') z.classList.remove('on'); });
+})();
+
+/* ---------- narration recorder: <div class="narrate" data-words="150"></div>
+   Records the student speaking (microphone, MediaRecorder), plays it back, offers a download. Stays on this device; nothing is uploaded. ---------- */
+$$('.narrate').forEach(function(box){
+  var target = box.dataset.words ? ' Aim for about ' + box.dataset.words + ' words.' : '';
+  box.innerHTML = '<div class="nr-row"><button type="button" class="btn nr-rec"><span class="nr-dot" aria-hidden="true"></span><span class="nr-l">Record</span></button>' +
+    '<button type="button" class="btn ghost nr-play" disabled>&#9654; Play back</button><span class="nr-time readout">0:00</span><a class="nr-dl" download hidden>Save recording</a></div>' +
+    '<div class="nr-note hint">Your recording stays on this device. Nothing is uploaded.' + target + '</div>';
+  var rec = $('.nr-rec', box), lab = $('.nr-l', box), play = $('.nr-play', box), tm = $('.nr-time', box), dl = $('.nr-dl', box), mr = null, chunks = [], t0 = 0, iv = null, audio = null;
+  function fmt(s){ s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  if (!(navigator.mediaDevices && window.MediaRecorder)) { rec.disabled = true; $('.nr-note', box).textContent = 'Recording is not available in this browser. Say your narration out loud instead, or use your phone or computer recorder.' + target; return; }
+  rec.addEventListener('click', function(){
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      chunks = []; mr = new MediaRecorder(stream);
+      mr.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+      mr.onstop = function(){
+        clearInterval(iv); stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' }), url = URL.createObjectURL(blob);
+        audio = new Audio(url); audio.onended = function(){ play.innerHTML = '&#9654; Play back'; };
+        play.disabled = false; dl.href = url; dl.download = (CFG.pdfTag || 'AP') + '_narration.webm'; dl.hidden = false;
+        rec.classList.remove('on'); lab.textContent = 'Record again'; box.classList.add('has');
+      };
+      mr.start(); t0 = Date.now(); rec.classList.add('on'); lab.textContent = 'Stop';
+      iv = setInterval(function(){ tm.textContent = fmt((Date.now() - t0) / 1000); }, 250);
+    }).catch(function(){ $('.nr-note', box).textContent = 'The microphone is blocked. Allow it for this page, or say your narration out loud instead.' + target; });
+  });
+  play.addEventListener('click', function(){ if (!audio) return; if (audio.paused) { audio.currentTime = 0; audio.play(); play.innerHTML = '&#10073;&#10073; Pause'; } else { audio.pause(); play.innerHTML = '&#9654; Play back'; } });
+});
+
+</script>
+<script>
+/* Teacher mini-lessons: a short talk that moves a visual step by step (same engine as the 9th ELA teacher card).
+   <div class="vo" data-clip="v_parts"> … <div class="vo-stage"> [data-step="n"] elements … </div> … a JSON block (.vo-script) holding {"steps":[…]}
+   With audio (ASSETS[clip] = {audio, words:[[s,e,t],…]}) steps follow the words; without it, Play steps through on a reading-pace timer.
+   Each new step fires document event "vo-step" {detail:{card, clip, i}} so a page can animate beyond fade-ins. */
+(function(){
+  $$('.vo').forEach(function(card){
+    var sc; try { sc = JSON.parse(card.querySelector('.vo-script').textContent); } catch(e){ return; }
+    var steps = sc.steps, clip = ASSETS[card.dataset.clip] || {}, audio = null, timer = null, cur = -1, playing = false, t0 = 0, elapsed = 0;
+    var cap = card.querySelector('.vo-cap'), btn = card.querySelector('.vo-play'), fill = card.querySelector('.vo-fill'), dots = card.querySelector('.vo-dots'), stage = card.querySelector('.vo-stage');
+    var face = card.querySelector('.vo-face'); if (face && ASSETS.img && ASSETS.img.usb) { face.src = ASSETS.img.usb.src; face.alt = ''; }
+    var nm = card.querySelector('.vo-name'); if (nm && !nm.textContent.trim()) nm.textContent = TEACHER.short;
+    var wc = steps.map(function(s){ return (s.match(/\S+/g) || []).length; });
+    var bounds = [], acc = 0;
+    if (clip.audio && clip.words && clip.words.length) {
+      audio = new Audio(clip.audio); audio.preload = 'none';
+      steps.forEach(function(s, i){ var w = clip.words[Math.min(acc, clip.words.length - 1)]; bounds.push(w ? w[0] : 0); acc += wc[i]; });
+    } else {
+      steps.forEach(function(s, i){ bounds.push(acc); acc += Math.max(2.4, wc[i] / 2.6); });
+    }
+    var total = audio ? (clip.words[clip.words.length - 1][1] + .4) : acc;
+    var sEl = card.querySelector('.vo-time'); if (sEl) sEl.textContent = fmt(total);
+    dots.innerHTML = steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var tr = card.querySelector('.vo-trans'); if (tr) tr.innerHTML = steps.map(function(s){ return '<p>' + esc(s) + '</p>'; }).join('');
+
+    function fmt(s){ s = Math.round(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+    function show(i){
+      if (i === cur) return; cur = i;
+      stage.querySelectorAll('[data-step]').forEach(function(el){
+        var ks = String(el.dataset.step).split(/[ ,]+/).map(Number), k = ks[0];
+        el.classList.toggle('on', k <= i); el.classList.toggle('now', ks.indexOf(i) > -1);
+      });
+      cap.textContent = i >= 0 ? steps[i] : '';
+      cap.classList.remove('in'); void cap.offsetWidth; cap.classList.add('in');
+      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k <= i); });
+      card.classList.toggle('started', i >= 0);
+      document.dispatchEvent(new CustomEvent('vo-step', { detail: { card: card, clip: card.dataset.clip, i: i } }));
+    }
+    function at(t){ var i = -1; bounds.forEach(function(b, k){ if (t >= b - .05) i = k; }); return i; }
+    function tick(){
+      var t = audio ? audio.currentTime : elapsed + (performance.now() - t0) / 1000;
+      show(at(t)); fill.style.width = Math.min(100, t / total * 100) + '%';
+      if (t >= total) { finish(); return; }
+      if (playing) timer = requestAnimationFrame(tick);
+    }
+    function play(){
+      if (card.classList.contains('finished')) reset();
+      playing = true; card.classList.add('playing'); btn.innerHTML = '&#10074;&#10074; Pause';
+      document.dispatchEvent(new CustomEvent('vo-play', { detail: card }));
+      if (audio) { audio.play().catch(function(){}); } else t0 = performance.now();
+      tick();
+    }
+    function pause(){
+      playing = false; card.classList.remove('playing'); btn.innerHTML = '&#9654; Resume';
+      if (audio) audio.pause(); else elapsed += (performance.now() - t0) / 1000;
+      cancelAnimationFrame(timer);
+    }
+    function finish(){
+      playing = false; card.classList.remove('playing'); cancelAnimationFrame(timer);
+      show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished');
+      STORE.set('vo-' + card.dataset.clip, '1');
+    }
+    function reset(){ elapsed = 0; if (audio) audio.currentTime = 0; cur = -2; show(-1); fill.style.width = '0'; card.classList.remove('finished'); }
+    function jump(i){
+      var t = bounds[i]; if (audio) audio.currentTime = t; else { elapsed = t; t0 = performance.now(); }
+      card.classList.remove('finished'); show(i); fill.style.width = (t / total * 100) + '%';
+      if (!playing) { btn.innerHTML = '&#9654; Resume'; }
+    }
+    btn.addEventListener('click', function(){ playing ? pause() : play(); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('button'); if (d) jump(+d.dataset.i); });
+    var tb = card.querySelector('.vo-tbtn'); if (tb) tb.addEventListener('click', function(){ var o = card.classList.toggle('show-trans'); tb.setAttribute('aria-expanded', o ? 'true' : 'false'); tb.textContent = o ? 'Hide transcript' : 'Transcript'; });
+    if (audio) audio.addEventListener('ended', finish);
+    document.addEventListener('vo-play', function(e){ if (e.detail !== card && playing) pause(); });
+    document.addEventListener('tabchange', function(){ if (playing) pause(); });
+    if (STORE.get('vo-' + card.dataset.clip) === '1') { show(steps.length - 1); fill.style.width = '100%'; btn.innerHTML = '&#8635; Replay'; card.classList.add('finished'); }
+    else show(-1);
+  });
+})();
+
+</script>
+<script>
+/* ---- Module 2 shared widgets ---- */
+(function(){
+  function W(s){ return ((s || '').trim().match(/\S+/g) || []).length; }
+  /* tissue-ID style tables: <div class="idtable"> rows .idrow with select[data-ans]; button.idcheck */
+  $$('.idtable').forEach(function(t){
+    var btn = $('.idcheck', t), out = $('.idout', t);
+    function check(show){
+      var n = 0, rows = $$('.idrow', t);
+      rows.forEach(function(r){
+        var ok = $$('select[data-ans]', r).every(function(s){ return s.value === s.dataset.ans; });
+        var done = $$('select[data-ans]', r).every(function(s){ return s.value; });
+        if (ok) n++;
+        r.classList.toggle('good', show && ok); r.classList.toggle('try', show && done && !ok);
+        $('.mk', r).textContent = show ? (ok ? '✓' : (done ? '✗' : '')) : '';
+      });
+      if (out && show) out.textContent = n + ' of ' + rows.length + ' rows right' + (n < rows.length ? ' · fix the marked rows, then check again' : ' · well done');
+      return n;
+    }
+    if (btn) btn.addEventListener('click', function(){ check(true); STORE.set('idc-' + t.id, '1'); });
+    if (STORE.get('idc-' + t.id) === '1') check(true);
+  });
+  /* chip pickers that fill the next empty field: .pickset[data-targets="a,b,c"] button[data-v] */
+  $$('.pickset').forEach(function(p){
+    var ids = p.dataset.targets.split(','), els = ids.map(function(i){ return document.getElementById(i); });
+    function sync(){ var vals = els.map(function(e){ return (e.value || '').trim().toLowerCase(); }); $$('button', p).forEach(function(b){ b.classList.toggle('on', vals.indexOf(b.dataset.v.toLowerCase()) > -1); }); }
+    $$('button', p).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var v = b.dataset.v, hit = els.filter(function(e){ return e.value.trim().toLowerCase() === v.toLowerCase(); })[0];
+        var tgt = hit || els.filter(function(e){ return !e.value.trim(); })[0];
+        if (!tgt) return;
+        tgt.value = hit ? '' : v; tgt.dispatchEvent(new Event('input', { bubbles: true })); sync();
+      });
+    });
+    els.forEach(function(e){ e.addEventListener('input', sync); }); sync();
+  });
+  /* word meters: .wmeter[data-fields][data-min][data-max] */
+  $$('.wmeter').forEach(function(m){
+    var f = m.dataset.fields.split(',').map(function(i){ return document.getElementById(i); }).filter(Boolean), lo = +m.dataset.min, hi = +m.dataset.max, top = hi * 1.35;
+    m.innerHTML = '<span class="readout"></span><div class="bar"><div class="zone" style="left:' + (lo / top * 100) + '%;width:' + ((hi - lo) / top * 100) + '%"></div><div class="fill"></div></div><span class="hint">' + lo + '&ndash;' + hi + ' words</span>';
+    function up(){ var n = f.reduce(function(a, e){ return a + W(e.value); }, 0); $('.readout', m).textContent = n + (n === 1 ? ' word' : ' words'); $('.fill', m).style.width = Math.min(100, n / top * 100) + '%'; m.classList.toggle('ok', n >= lo && n <= hi); }
+    f.forEach(function(e){ e.addEventListener('input', up); }); up();
+  });
+  /* term trackers: .ttrack[data-field] .tt[data-t="regex"] */
+  $$('.ttrack').forEach(function(tr){
+    var el = document.getElementById(tr.dataset.field); if (!el) return;
+    function up(){ $$('.tt', tr).forEach(function(t){ t.classList.toggle('on', new RegExp('\\b(' + t.dataset.t + ')', 'i').test(el.value)); }); }
+    el.addEventListener('input', up); up();
+  });
+})();
+/* click-to-load YouTube: <div class="ytbox" data-yt="ID" data-title="..."> */
+(function(){
+  $$('.ytbox').forEach(function(b){
+    b.innerHTML = '<button type="button" class="yt-go"><span class="yt-play" aria-hidden="true">&#9654;</span><span>' + esc(b.dataset.title || 'Play video') + '</span><small>Loads from YouTube (no cookies)</small></button>';
+    $('.yt-go', b).addEventListener('click', function(){
+      var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.dataset.title || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceChildren(f);
+    });
+  });
+})();
+/* put-in-order: <div class="order" id data-order="k1,k2,..."> <div class="opool"> button[data-k] … </div> <ol class="ostack"></ol> <p class="ofb"></p> */
+(function(){
+  $$('.order').forEach(function(o){
+    var want = o.dataset.order.split(','), stack = $('.ostack', o), fb = $('.ofb', o), got = (STORE.get('ord-' + o.id) || '').split(',').filter(Boolean);
+    function render(){
+      stack.innerHTML = got.map(function(k){ var b = $('.opool [data-k="' + k + '"]', o); return '<li>' + (b ? b.innerHTML : k) + '</li>'; }).join('');
+      $$('.opool button', o).forEach(function(b){ b.disabled = got.indexOf(b.dataset.k) > -1; });
+      if (got.length === want.length) { fb.textContent = o.dataset.done || 'In order.'; fb.className = 'ofb fb show good'; }
+    }
+    $$('.opool button', o).forEach(function(b){
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var next = want[got.length];
+        if (b.dataset.k === next) { got.push(next); STORE.set('ord-' + o.id, got.join(',')); fb.textContent = b.dataset.fb || 'Yes.'; fb.className = 'ofb fb show good'; render(); }
+        else { b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); fb.textContent = b.dataset.miss || 'Not yet. Which comes next?'; fb.className = 'ofb fb show try'; }
+      });
+    });
+    var r = $('.oreset', o); if (r) r.addEventListener('click', function(){ got = []; STORE.set('ord-' + o.id, ''); fb.className = 'ofb'; fb.textContent = ''; render(); });
+    render();
+  });
+})();
+
+</script>
+<script>
+/* ---------- Canvas frame kit (added for the course site) ----------
+   Inside a Canvas iframe the page does not scroll itself; the Canvas page scrolls around it. So:
+   1. track which slice of this page is on screen (IntersectionObserver on thin strips),
+   2. keep the drawers, the figure zoom and the tab bar inside that slice,
+   3. after a tab change, bring the tab bar back into view,
+   4. tell Canvas the page height (lti.frameResize), for hosts that honor it. */
+/* a link can open a tab directly: page.html#report */
+(function(){
+  var h = (location.hash || '').slice(1);
+  if (h && typeof switchTab === 'function' && document.querySelector('.tab[data-tab="' + h.replace(/[^a-z0-9_-]/gi, '') + '"]')) switchTab(h, true);
+})();
+(function(){
+  var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+  if (!framed) return;
+  var R = document.documentElement; R.classList.add('framed');
+  var bar = document.querySelector('.tabs');
+  var anchor = document.createElement('div'); anchor.className = 'tabs-anchor';
+  if (bar) bar.parentNode.insertBefore(anchor, bar);
+  var vis = { top: 0, h: Math.min(window.innerHeight, 900) }, seen = {};
+  function pageH(){ return Math.ceil(document.body.getBoundingClientRect().bottom + window.scrollY); }
+  function apply(){
+    R.style.setProperty('--vis-top', vis.top + 'px');
+    R.style.setProperty('--vis-h', vis.h + 'px');
+    if (bar) {
+      var nat = anchor.getBoundingClientRect().top + window.scrollY + (parseFloat(getComputedStyle(bar).marginTop) || 0), max = pageH() - bar.offsetHeight;
+      var dy = Math.max(0, Math.min(vis.top - nat, max - nat));
+      bar.style.transform = dy > 0 ? 'translateY(' + dy + 'px)' : '';
+      bar.classList.toggle('floating', dy > 0);
+    }
+  }
+  /* visible slice */
+  var STEP = 100, layer = document.createElement('div'), io = null, n = 0;
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:0;pointer-events:none;visibility:hidden;z-index:-1';
+  document.body.appendChild(layer);
+  var th = []; for (var i = 0; i <= 20; i++) th.push(i / 20);
+  function onIO(entries){
+    entries.forEach(function(e){
+      var k = e.target.dataset.i;
+      if (e.isIntersecting && e.intersectionRect.height > 0) seen[k] = [e.intersectionRect.top + window.scrollY, e.intersectionRect.bottom + window.scrollY];
+      else delete seen[k];
+    });
+    var t = Infinity, b = -Infinity;
+    for (var k in seen) { t = Math.min(t, seen[k][0]); b = Math.max(b, seen[k][1]); }
+    if (t < Infinity && b - t > 40) { vis.top = Math.round(t); vis.h = Math.round(b - t); apply(); }
+  }
+  function strips(){
+    var want = Math.ceil(pageH() / STEP) + 1;
+    if (!io) io = new IntersectionObserver(onIO, { threshold: th });
+    while (n < want) {
+      var d = document.createElement('div'); d.dataset.i = n;
+      d.style.cssText = 'position:absolute;left:0;width:2px;top:' + (n * STEP) + 'px;height:' + STEP + 'px';
+      layer.appendChild(d); io.observe(d); n++;
+    }
+  }
+  /* height for Canvas */
+  var lastH = 0;
+  function post(){
+    var h = pageH() + 24;
+    if (Math.abs(h - lastH) < 8) return; lastH = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch(e){}
+  }
+  function changed(){ strips(); post(); apply(); }
+  if (window.ResizeObserver) new ResizeObserver(changed).observe(document.body);
+  window.addEventListener('load', changed);
+  changed();
+  /* tab change: jump back to the tab bar if it is above the visible slice */
+  var user = false;
+  ['pointerdown', 'keydown'].forEach(function(t){ document.addEventListener(t, function(){ user = true; }, true); });
+  document.addEventListener('tabchange', function(){
+    if (!user || !bar) return;
+    setTimeout(function(){
+      var nat = anchor.getBoundingClientRect().top + window.scrollY;
+      if (vis.top > nat + 4) { try { anchor.scrollIntoView({ block: 'start' }); } catch(e){ anchor.scrollIntoView(true); } }
+      changed();
+    }, 30);
+  });
+})();
+</script>
+<script>
+/* ---------- pronunciations: <button class="say" data-say="key"> plays audio/say/key.mp3 (Professor Leonard's voice) ---------- */
+(function(){
+  var cache = {}, cur = null;
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.say'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.say, a = cache[k] || (cache[k] = new Audio('audio/say/' + k + '.mp3'));
+    if (cur && cur !== a) { cur.pause(); }
+    document.querySelectorAll('.say.on').forEach(function(x){ x.classList.remove('on'); });
+    cur = a; a.currentTime = 0; b.classList.add('on');
+    a.onended = a.onpause = function(){ b.classList.remove('on'); };
+    a.play().catch(function(){ b.classList.remove('on'); });
+  }, true);
+})();
+</script>
+<script src="../../assets/oao-3d/oao-3d.js" defer></script>
+</body>
+</html>
